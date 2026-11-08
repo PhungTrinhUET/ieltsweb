@@ -34,7 +34,7 @@
               { "no": 14, "type": "mcq", "text": "Experience in reception may help employees", "options": ["to learn foreign languages.", "to manage stressful situations.", "to get a better job eventually."], "answer": 2, "explanation": "\"a good way of moving your career forward\"" },
               { "no": 15, "type": "mcq", "text": "The speaker says that interview skills", "options": ["are particularly important in hospitality.", "are easy to learn if you have some practice.", "are understood better now than in the past."], "answer": 1, "explanation": "\"not too difficult to develop these skills with a little training and rehearsal\"" }
             ] },
-          { "instruction": "Label the plan below. Write the correct letter, A–J, next to questions 16–20. (Sơ đồ gốc là hình: Hall ở dưới, Office cạnh hall, Square ở giữa, First Aid Room, Gym, Library.)", "bank": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+          { "instruction": "Label the plan below. Write the correct letter, A–J, next to questions 16–20.", "image": "img/vol2/t9-l2-plan.png", "imageAlt": "College plan: Gym góc tây bắc; Square ở giữa; Hall phía nam; First Aid Room, Library và Office phía đông. Các ô chữ A–J đánh dấu phòng.", "bank": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
             "questions": [
               { "no": 16, "type": "match", "text": "Restaurant Service", "answer": 9, "explanation": "Ra khỏi hall rẽ phải, lớp ngay cạnh office (J)." },
               { "no": 17, "type": "match", "text": "Kitchen Hands", "answer": 2, "explanation": "Qua quảng trường, khối 2 lớp, lớp bên trái (C)." },

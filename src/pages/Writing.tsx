@@ -1,13 +1,15 @@
 // Writing: đề + biểu đồ, dàn ý, soạn bài (đếm từ, bấm giờ, tự lưu nháp), AI chấm theo 4 tiêu chí IELTS.
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft, Bot, BookmarkPlus, Check, Loader2, Sparkles } from 'lucide-react';
+import { ArrowLeft, Bot, BookmarkPlus, Check, FileCheck2, Loader2, Sparkles } from 'lucide-react';
 import type { WritingMaterial } from '../types';
-import { addAttempt, findCard, resolveUrl, saveCard, saveDraft, useDb } from '../db';
-import { getAiConfig, setLastOpen, touchStreak } from '../store';
+import { addAttempt, findCard, updateAttempt, resolveUrl, saveCard, saveDraft, useDb } from '../db';
+import { aiReady, getAiConfig, setLastOpen, touchStreak, useAiConfig } from '../store';
+import SelfCheck from '../components/SelfCheck';
 import Timer from '../components/Timer';
+import ZoomImage from '../components/ZoomImage';
 import { Collapse } from '../components/ui';
-import { AiGate, BandPill, ChartView, CriteriaBars, WordDiff } from '../components/misc';
+import { BandPill, ChartView, CriteriaBars, WordDiff } from '../components/misc';
 import type { WritingGrade } from '../ai/writing';
 import { wordCount } from '../lib/text';
 import { newCard } from '../lib/srs';
@@ -48,7 +50,9 @@ export default function Writing() {
   const [err, setErr] = useState('');
   const [img, setImg] = useState<string | null>(null);
   const [tab, setTab] = useState<'fixes' | 'corrected' | 'improved' | 'upgrades'>('fixes');
-  const started = useRef(Date.now());
+  const [done, setDone] = useState<{ id: string; words: number; minutes: number } | null>(null);
+  const cfg = useAiConfig();
+  const started = useRef(0); // lúc gõ chữ đầu tiên (đồng hồ bắt đầu)
   const saveT = useRef(0);
   useEffect(() => {
     if (id && db.materials[id]) setLastOpen(id, `/writing/${id}`, 'practice');
@@ -56,24 +60,37 @@ export default function Writing() {
     const last = db.attempts.find((a) => a.materialId === id && a.mode === 'ai');
     setGrade((last?.detail as { grade?: WritingGrade } | undefined)?.grade ?? null);
     if (m?.image) resolveUrl(m.image).then(setImg); else setImg(null);
-    started.current = Date.now();
+    started.current = 0;
+    setDone(null); setErr('');
     touchStreak();
   }, [id]); // eslint-disable-line
   const n = useMemo(() => wordCount(text), [text]);
   if (!m) return <div className="page"><p className="empty">Không tìm thấy bài.</p></div>;
   const min = m.task === 1 ? 150 : 250;
   const minutes = m.task === 1 ? 20 : 40;
-  const onText = (v: string) => { setText(v); window.clearTimeout(saveT.current); saveT.current = window.setTimeout(() => saveDraft(key, v), 500); };
+  const usedMin = () => (started.current ? Math.max(1, Math.round((Date.now() - started.current) / 60000)) : 0);
+  const onText = (v: string) => { if (!started.current && v.trim()) started.current = Date.now(); setText(v); window.clearTimeout(saveT.current); saveT.current = window.setTimeout(() => saveDraft(key, v), 500); };
   const submit = async () => {
     if (n < 30) return setErr('Bài quá ngắn để chấm.');
     setBusy(true); setErr('');
     try {
       const { gradeWriting } = await import('../ai/writing');
-      const g = await gradeWriting(m, text, getAiConfig(), Math.round((Date.now() - started.current) / 60000));
+      const g = await gradeWriting(m, text, getAiConfig(), usedMin());
       setGrade(g); setTab('fixes');
-      await addAttempt({ materialId: m.id, skill: 'writing', title: m.title, mode: 'ai', band: g.overall, detail: { text, grade: g } });
+      // Đã "Nộp bài" rồi thì nâng bản ghi đó thành bản AI chấm, không tạo 2 dòng lịch sử.
+      if (done) await updateAttempt(done.id, { mode: 'ai', band: g.overall, detail: { text, words: n, minutes: done.minutes, grade: g } });
+      else await addAttempt({ materialId: m.id, skill: 'writing', title: m.title, mode: 'ai', band: g.overall, detail: { text, words: n, minutes: usedMin(), grade: g } });
       window.scrollTo({ top: document.getElementById('ai-result')?.offsetTop ?? 0 });
     } catch (e) { setErr(e instanceof Error ? e.message : String(e)); } finally { setBusy(false); }
+  };
+
+  const handIn = async () => {
+    if (!text.trim()) return setErr('Chưa viết gì.');
+    setErr('');
+    const minutesUsed = usedMin();
+    const a = await addAttempt({ materialId: m.id, skill: 'writing', title: m.title, mode: 'self', score: n, detail: { text, words: n, minutes: minutesUsed } });
+    setDone({ id: a.id, words: n, minutes: minutesUsed });
+    window.setTimeout(() => document.getElementById('self-result')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
   };
 
   return (
@@ -81,15 +98,18 @@ export default function Writing() {
       <div className="topbar topbar--sticky">
         <button className="icon-btn" onClick={() => nav('/writing')} aria-label="Quay lại"><ArrowLeft size={20} /></button>
         <div className="topbar__title"><small>Writing Task {m.task} · {TYPE_LABEL[m.type] ?? m.type}{m.module === 'general' && ' · GT'}</small><strong>{m.title}</strong></div>
-        <div className="topbar__actions"><Timer minutes={minutes} /></div>
+        <div className="topbar__actions"><Timer key={m.id} minutes={minutes} start={text.trim().length > 0} overtime stopped={!!done} /></div>
       </div>
 
       <div className="split">
         <section className="split__pane">
           <div className="wtask card pad">
             <div className="wtask__prompt">{m.prompt.split('\n').map((l, i) => <p key={i}>{l}</p>)}</div>
-            {img && <img src={img} alt="Biểu đồ / bản đồ" className="wtask__img" />}
+            {img && <ZoomImage src={img} alt={m.imageAlt ?? 'Biểu đồ / bản đồ của đề'} className="wtask__img" />}
             {m.chart && !img && <ChartView chart={m.chart} />}
+            {m.imageAlt && (img || m.chart
+              ? <Collapse title="Mô tả hình bằng chữ" defaultOpen={false}><p className="small wtask__alt">{m.imageAlt}</p></Collapse>
+              : <div className="qcontext wtask__alt"><strong className="small">Hình của đề (mô tả bằng chữ – tài liệu gốc chỉ có hình):</strong>{'\n'}{m.imageAlt}</div>)}
           </div>
           <Collapse title="Cấu trúc bài gợi ý" tone="tip" defaultOpen={false}>
             <ol className="plan">{(m.outline ?? STRUCTURE[m.type] ?? []).map((o, i) => <li key={i}>{o}</li>)}</ol>
@@ -106,14 +126,27 @@ export default function Writing() {
             <textarea className="wbox__input" value={text} onChange={(e) => onText(e.target.value)} placeholder={`Viết bài tại đây (tối thiểu ${min} từ)…`} spellCheck={false} rows={18} />
             <div className="wbox__meta"><span className="wbox__count">{n} từ</span><span className="muted small">tối thiểu {min} · tự lưu nháp</span></div>
           </div>
-          <AiGate feature="Chấm Writing">
-            <div className="row wrap">
-              <button className="btn btn--primary btn--grow" onClick={submit} disabled={busy || n < 30}>{busy ? <><Loader2 size={16} className="spin" /> Claude đang chấm (30–90 giây)…</> : <><Bot size={16} /> Nộp bài & chấm AI</>}</button>
-            </div>
-          </AiGate>
+          <div className="row wrap">
+            <button className="btn btn--primary btn--grow" onClick={handIn} disabled={!!done || !text.trim()}><FileCheck2 size={16} /> {done ? 'Đã nộp' : 'Nộp bài'}</button>
+            {aiReady(cfg) && <button className="btn btn--ghost btn--grow" onClick={submit} disabled={busy || n < 30}>{busy ? <><Loader2 size={16} className="spin" /> AI đang chấm (30–90 giây)…</> : <><Bot size={16} /> Chấm bằng AI</>}</button>}
+          </div>
+          {!aiReady(cfg) && <p className="small muted">Nộp bài để lưu vào Lịch sử, xem bài mẫu và tự chấm. Muốn AI chấm thêm: <a href="#/settings">Cài đặt → AI</a>.</p>}
           {err && <p className="no-text small">{err}</p>}
         </section>
       </div>
+
+      {done && (
+        <div id="self-result" className="stack">
+          <section className="card pad">
+            <div className="ai__head"><FileCheck2 size={18} /> <strong>Đã nộp bài</strong></div>
+            <p className="small">{done.words} từ{done.words < min && <span className="no-text"> (thiếu {min - done.words} từ so với tối thiểu {min} – bị trừ điểm Task {m.task === 1 ? 'Achievement' : 'Response'})</span>} · {done.minutes ? `${done.minutes} phút` : 'không bấm giờ'}{done.minutes > minutes && <span className="no-text"> (quá {done.minutes - minutes} phút)</span>} · đã lưu vào Lịch sử.</p>
+            {m.sample
+              ? <><h4>Bài mẫu</h4><div className="sample sample--long">{m.sample.split('\n').map((l, i) => <p key={i}>{l}</p>)}</div></>
+              : <p className="small muted">Đề này chưa có bài mẫu.</p>}
+          </section>
+          <SelfCheck kind="writing" task={m.task} attemptId={done.id} />
+        </div>
+      )}
 
       {grade && (
         <section className="card pad ai" id="ai-result">

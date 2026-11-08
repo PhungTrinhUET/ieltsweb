@@ -901,11 +901,11 @@
   {
    "task": 1,
    "type": "process",
-   "title": "The process of making Pu-erh raw tea and ripe tea",
+   "image": "img/vol3/w1-t9.png", "imageAlt": "Pan frying (inactivation of enzymes) → Rolling → Drying under the sun → Loose raw tea. Nhánh ripe tea: Loose raw tea → Fermentation by mould → Loose ripe tea → Compression → Ripe tea. Nhánh raw tea: Loose raw tea → Compression → Aging by storage → Vintage Pu-erh raw tea.", "title": "The process of making Pu-erh raw tea and ripe tea",
    "topic": "Food",
-   "prompt": "The diagram below shows the process of producing Pu-erh raw tea and ripe tea.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.\n\n[Mô tả sơ đồ – bản gốc là hình ảnh: Pan frying (inactivation of enzymes) → Rolling → Drying under the sun → Loose raw tea. Nhánh ripe tea: Loose raw tea → Fermentation by mould → Loose ripe tea → Compression → Ripe tea. Nhánh raw tea: Loose raw tea → Compression → Aging by storage → Vintage Pu-erh raw tea.]",
+   "prompt": "The diagram below shows the process of producing Pu-erh raw tea and ripe tea.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
    "sample": "The diagram featured above details the steps by which Pu-erh raw and ripened tea are produced.\n\nOverall, it is readily apparent that there are three main stages, beginning with initial activation and drying, followed by either ageing or fermentation, and finally storage in the case of the raw tea and compression for the ripe tea.\n\nThe process for both varieties of tea commences when the leaves are fried in pans in order to inactivate specific enzymes. This is followed by rolling of the fried leaves and drying in the sun. In the next stage, the two kinds of tea are treated in different ways.\n\nFor the ripe tea, the loose raw tea is fermented with mould and then compressed to form the final product. In terms of the raw tea, the leaves are first compressed. Subsequent to this step, the tea is aged, rather than fermented, and the vintage Pu-erh raw tea is then available for use.",
-   "sampleNote": "Bài mẫu trong tài liệu gốc (hình gốc không có trong bản số hóa)."
+   "sampleNote": "Bài mẫu trong tài liệu gốc."
   },
   {
    "task": 2,

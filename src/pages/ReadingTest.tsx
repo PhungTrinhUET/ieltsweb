@@ -46,7 +46,7 @@ export default function ReadingTest() {
         <button className="icon-btn" onClick={() => nav('/reading')} aria-label="Quay lại"><ArrowLeft size={20} /></button>
         <div className="topbar__title"><small>Thi thử · Reading · {m.module === 'general' ? 'General Training' : 'Academic'}</small><strong>{m.title}</strong></div>
         <div className="topbar__actions">
-          {!checked && <Timer minutes={m.minutes ?? 20} onEnd={submit} />}
+          {!checked && <Timer key={m.id} minutes={m.minutes ?? 20} onEnd={submit} autoStart />}
           {checked ? <Link to={`/reading/${m.id}/practice`} className="btn btn--primary btn--sm"><GraduationCap size={16} /> Luyện tập bài này</Link> : null}
         </div>
         <div className="topbar__progress" style={{ width: `${(done / total) * 100}%` }} />
@@ -90,7 +90,7 @@ export default function ReadingTest() {
           </article>
         </section>
         <section className={`split__pane split__pane--questions${tab !== 'questions' ? ' hide-sm' : ''}`}>
-          <GroupsView groups={m.groups} answers={answers} onChange={(no, a) => setAnswers((s) => ({ ...s, [no]: a }))} checked={checked} />
+          <GroupsView groups={m.groups} note={m.note} answers={answers} onChange={(no, a) => setAnswers((s) => ({ ...s, [no]: a }))} checked={checked} />
         </section>
       </div>
 

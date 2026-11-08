@@ -3,7 +3,7 @@
 Web app luyện IELTS 4 kỹ năng: Reading, Listening, Speaking, Writing.
 - Công nghệ: Vite 8 + React 19 + TypeScript, HashRouter, IndexedDB, PWA.
 - Giao diện viết bằng tiếng Việt; nội dung đề giữ nguyên tiếng Anh.
-- Phần chấm Writing/Speaking bằng AI gọi Anthropic SDK. Người dùng dán API key trong *Cài đặt → AI*, hoặc dựng proxy theo `server/grader-proxy/`.
+- Phần chấm Writing/Speaking bằng AI: Claude qua Anthropic SDK; DeepSeek/OpenAI/Gemini/OpenRouter/tuỳ chỉnh qua backend OpenAI-compatible trong `src/ai/client.ts` (JSON + zod, hỏi lại 1 lần). Danh sách model/giá ở `src/ai/models.ts`. Người dùng dán key trong *Cài đặt → AI*, hoặc dùng proxy `server/grader-proxy/` (mã truy cập + giới hạn/ngày).
 - Tính năng và hướng dẫn dùng xem `README.md`.
 
 ## Lệnh
@@ -16,14 +16,15 @@ Web app luyện IELTS 4 kỹ năng: Reading, Listening, Speaking, Writing.
 | `npm run audio -- "<thư mục>"` | chép/nén audio đề gốc vào `public/audio/vol<N>/test<M>/s1..s4.mp3`. ffmpeg bắt buộc với `.wma`; whisper tạo `.srt` (tuỳ chọn) |
 | `npx tsc -b` | kiểm tra kiểu |
 | `npm run build` | data + tsc + vite build → `dist/` |
+| `npm run smoke [lọc]` | sau `npm run build`: mở `dist/` bằng Chrome headless (desktop + iPhone), đi qua mọi trang và các kiểm tra theo mục audit (A1–C16). `BASE_URL=… npm run smoke` để kiểm tra bản đang chạy |
 | `npm run deploy` | build rồi đẩy `dist/` lên nhánh `gh-pages` → https://phungtrinhuet.github.io/ieltsweb/ (Actions bị khoá do billing nên deploy từ máy) |
 
-Dự án chưa có test tự động. Sau khi sửa, chạy `npm run data` (không được còn `⚠`) và `npx tsc -b`, rồi mở vài trang để xem, ví dụ `#/listening/vol5-t6-l2`, `#/reading/vol5-t6-r2`.
+Chưa có unit test; có `scripts/smoke.mjs` (trình duyệt thật). Sau khi sửa, chạy `npm run data` (không được còn `⚠`), `npx tsc -b`, `npm run build && npm run smoke`, rồi mở vài trang để xem, ví dụ `#/listening/vol5-t6-l2`, `#/reading/vol5-t6-r2`.
 
 ## Bản đồ mã
 
 - `src/types.ts`: schema `Material` / `Question`. Đây là nguồn chuẩn cho các dạng câu hỏi.
-- `src/db.ts`: IndexedDB. Khi app mở, file này nạp `public/data/index.json`.
+- `src/db.ts`: IndexedDB (DB v2). Khi app mở, file này hỏi `public/data/index.json` rồi chỉ tải file có `hash` khác bản đã cache trong store `bundle`.
 - `src/components/Questions.tsx`: hiển thị và chấm mọi dạng câu hỏi.
 - `src/pages/`: các màn hình. Gồm SkillList, ReadingTest/ReadingStudy, ListeningTest, Dictation, GapFill, MockTest, Speaking, Writing, Vocab, Library, History, Guide, Settings.
 - `src/ai/`: gọi Claude (structured output) để chấm Writing/Speaking, dịch, tra từ, sinh đề.
@@ -47,16 +48,19 @@ Dự án chưa có test tự động. Sau khi sửa, chạy `npm run data` (khô
   - `tfng` / `ynng`: chuỗi `TRUE` / `FALSE` / `NOT GIVEN` (hoặc `YES` / `NO`).
   - `fill`: phải có `___` trong `text`; đáp án là mảng các cách viết được chấp nhận.
   - `match`: chỉ số trong `bank` của group.
+- Group có thể ghi `layout` (`form`/`notes`/`table`/`flowchart`) và `table: { title?, columns?, rows }`: ô chứa `{{n}}` cho chỗ trống, mỗi câu đúng một lần (`npm run data` kiểm tra). Form/notes: hàng 1 ô = dòng, `"# X"` = tiêu đề, 2 ô = nhãn | giá trị.
 - `explanation`: trích nguyên câu làm bằng chứng từ transcript hoặc bài đọc, có thể thêm ghi chú tiếng Việt ngắn.
   - Khi key gốc sai hoặc mâu thuẫn với bài: chọn đáp án đúng theo bài và ghi "(key trong file giải thích ghi X)".
   - Khi bộ đề không có key: ghi rằng đáp án được suy từ transcript.
 - Câu điền bản đồ/sơ đồ không có hình: `bank` là các vị trí mô tả bằng chữ, lấy từ lời chỉ đường. Xáo thứ tự, thêm 1–2 vị trí nhiễu, và ghi chú trong `instruction` rằng không có hình.
+- Câu thiếu ngay trong đề gốc (không tìm được bản đủ): không bịa. Ghi vào `"gaps": [{ "skill": "reading", "passage": 3, "nos": [27], "note": "…" }]` ở đầu file test (listening dùng `"section"`). `note` hiện trên trang bài đó; `npm run data` báo `⚠` nếu một số 1–40 vừa không có câu vừa không nằm trong `gaps` (câu `multi` tính đủ số theo `answer.length`).
 - Lỗi OCR: sửa chính tả, sắp lại đoạn bị đảo, không bịa thêm nội dung. Nếu buộc phải dựng lại câu hay phương án bị mất, ghi rõ trong `source` hoặc `explanation`.
 
 ## Tình trạng (08/11/2026)
 
 - **Đã xong 64 file / 707 bài luyện**: VOL 1–4 đủ 40 đề; VOL 5 đủ 10 đề + 19 đề Writing lẻ; VOL 6 đủ 6 đề (chưa có Writing); 240 bộ Speaking (forecast 2023 Q1, Q2, "gộp đề ver 1", 2024 Q1: 87, Sep 2024–Apr 2025: 74, 2025 Q2: 35).
 - **TẠM DỪNG 08/11/2026 theo yêu cầu người dùng**; chờ người dùng bảo chạy tiếp (dự kiến tuần sau). Khi tiếp tục: làm VOL 6 Writing, rồi VOL 7 từ Test 1.
+- Đợt audit 08/11/2026 (nhánh `fix/audit-1108`, đã merge vào `master`): A1–A7, B8–B12, C13–C16 xong; smoke 100/100. Audio (A4) tải từ Drive bằng `../ieltsweb-src/tools/dlaudio.py` (gdown), Drive hay chặn tạm ("Cannot retrieve the public link") → chạy lại sau, rồi `npm run audio`.
 - VOL 4 có vài chỗ thiếu: Test 5 không có audio; Test 7 (Q15–20) và Test 9 (Section 1) thiếu transcript; Writing trùng VOL 3 nên bỏ qua.
 
 ## Tiến độ phiên chuyển đổi (cập nhật liên tục)
@@ -81,7 +85,7 @@ Quyết định đã ghi:
 - VOL5 T7: L Q2 (số điện thoại ghép "0784, double 0, 51963"), L Q17–18 (C, D), L Q24 (transcript ghi "effective", hiểu là "affected"), L Q30 (phụ thuộc việc sắp lại Step 3/5 bị OCR đảo), R Q1 "adaptation" (câu ghi chú OCR lộn xộn). R P1 đoạn 2 và R P2 đoạn A có chữ dựng lại/mất; P3 không có tiêu đề gốc.
 - VOL5 T8: L Q5 (đuôi "EG" từ transcript "e g"), L Q21 (B, có thể là A), L Q25–26 (A, E). R Q7 FALSE theo key (có thể NOT GIVEN).
 - VOL5 T9: L Q21–22 (A, B), L Q26, L Q27 (A, C cũng hợp lý), L Q37 (nhận "materials"/"content"). R Q34 không có trong đề gốc → dựng lại từ bản công khai (ielts.xdf.cn), khớp key C. R Q35 NO theo key. Đoạn H P3 "more enduring" là đoán.
-- VOL5 T10: L Q1 "0478883925" (ghép "triple 8"), L Q2 "Vander" (dựng từ đánh vần), L Q13 bed/bedroom, L Q15 "rare", L Q18–20 (C, F, E; bản đồ mô tả bằng chữ), L Q21–23 (A, B, D: phân vai transcript không chắc). R Q2 NOT GIVEN (key ghi TRUE). Offset S2–S4 (7:44 / 13:01 / 18:41) ước lượng; mốc trong S2, S4 nội suy. R P2 dựng lại "the arrival of humans on the continent".
+- VOL5 T10: L Q1 "0478883925" (ghép "triple 8"), L Q2 "Vander" (dựng từ đánh vần), L Q13 bed/bedroom, L Q15 "rare", L Q18–20 (C, F, E; đã đối chiếu bản đồ gốc), L Q21–23 (A, B, D: phân vai transcript không chắc). R Q2 NOT GIVEN (key ghi TRUE). Offset S2–S4 (7:44 / 13:01 / 18:41) ước lượng; mốc trong S2, S4 nội suy. R P2 dựng lại "the arrival of humans on the continent".
 - VOL6 T2: không có transcript Listening; bản đồ Q16–20 chỉ có chữ A–I (PDF 8 MB, connector không tải được hình). L Q25–30 key lặp C, D dù đề "Choose SIX" (chưa kiểm được). R Q2 NOT GIVEN (key ghi FALSE). R Q38–40 F, B, C (key ghi D, C, B; key có vẻ bị lệch chữ).
 - VOL6 T3: Listening KHÔNG có transcript (nguồn gốc không có) → đáp án theo L-key; bản đồ Q15–20 chỉ có chữ A–I, không có hình. L Q14 thứ tự B/C khác nhau giữa PDF và docx (theo PDF). R Q25–26 chọn C, E (key ghi B, E). R Q30–32 file giải thích đánh số lệch: 30 C, 31 B, 32 G suy từ bài. R Q34 hai chỗ trống tính một câu. P2 đoạn F dựng lại "experiments to find out how wings work".
 - VOL6 T4: không có transcript; key Listening OCR lộn cột, đã ghép lại (P2: 11B 12E 13C 14F 15G 16A 17B 18B 19A 20A; P3: 21A 22B 23B 24C 25C 26C 27F 28A 29E 30B). R Q7 FALSE theo key (có thể đọc TRUE). R Q29 B suy luận. R Q40 chữ "positive" lấy từ expl (PDF bị cắt).

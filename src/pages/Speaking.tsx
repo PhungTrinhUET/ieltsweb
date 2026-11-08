@@ -1,17 +1,18 @@
 // Speaking: Part 1 / 2 / 3 – máy đọc câu hỏi, ghi âm + nhận dạng giọng nói, nghe lại, so với mẫu, AI chấm theo band descriptors.
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
+import Timer from '../components/Timer';
 import { useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft, Bot, BookmarkPlus, Check, Loader2, Sparkles, Timer as TimerIcon, Volume2 } from 'lucide-react';
+import { ArrowLeft, Bot, BookmarkPlus, Check, FileCheck2, Loader2, Sparkles, Timer as TimerIcon, Volume2 } from 'lucide-react';
 import type { SpeakingMaterial } from '../types';
-import { addAttempt, findCard, saveCard, useDb } from '../db';
-import { aiReady, getAiConfig, setLastOpen, touchStreak } from '../store';
+import { addAttempt, findCard, saveBlob, saveCard, updateAttempt, useDb } from '../db';
+import { aiReady, getAiConfig, setLastOpen, touchStreak, useAiConfig } from '../store';
+import SelfCheck from '../components/SelfCheck';
 import Recorder, { speechRecognitionAvailable, type Recording } from '../components/Recorder';
 import { speak, stopSpeak } from '../lib/tts';
 import { Collapse } from '../components/ui';
-import { AiGate, BandPill, CriteriaBars } from '../components/misc';
+import { BandPill, CriteriaBars } from '../components/misc';
 import type { SpeakingGrade, SpeakingTurn } from '../ai/speaking';
 import { newCard } from '../lib/srs';
-import { fmtTime } from '../lib/text';
 import { SKILL_META } from './SkillList';
 
 type Part = 1 | 2 | 3;
@@ -27,10 +28,13 @@ export default function Speaking() {
   const [grade, setGrade] = useState<Record<Part, SpeakingGrade | null>>({ 1: null, 2: null, 3: null });
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState('');
-  const [prep, setPrep] = useState<number | null>(null);
+  /** Part 2: null → 'prep' (1 phút chuẩn bị) → 'talk' (2 phút nói) → 'done'. */
+  const [phase, setPhase] = useState<null | 'prep' | 'talk' | 'done'>(null);
   const [notes, setNotes] = useState('');
   const [pron, setPron] = useState(0);
-  const prepTimer = useRef(0);
+  /** Part đã nộp → id bản ghi lịch sử (để AI chấm sau đó cập nhật cùng bản ghi). */
+  const [handed, setHanded] = useState<Partial<Record<Part, string>>>({});
+  const cfg = useAiConfig();
 
   useEffect(() => {
     if (!m) return;
@@ -40,18 +44,14 @@ export default function Speaking() {
     const p3 = (m.part3?.questions ?? []).map((q, i) => ({ question: q, transcript: '', sample: m.part3?.samples?.[i] }));
     setTurns({ 1: p1, 2: p2, 3: p3 });
     setGrade({ 1: null, 2: null, 3: null });
+    setPhase(null); setNotes(''); setHanded({}); setErr('');
     touchStreak();
-    return () => { stopSpeak(); window.clearInterval(prepTimer.current); };
+    return () => { stopSpeak(); };
   }, [id]); // eslint-disable-line
 
   if (!m) return <div className="page"><p className="empty">Không tìm thấy bài.</p></div>;
   const list = turns[part];
   const update = (i: number, patch: Partial<Turn>) => setTurns((t) => ({ ...t, [part]: t[part].map((x, k) => (k === i ? { ...x, ...patch } : x)) }));
-  const startPrep = () => {
-    setPrep(60);
-    window.clearInterval(prepTimer.current);
-    prepTimer.current = window.setInterval(() => setPrep((p) => { if (p === null || p <= 1) { window.clearInterval(prepTimer.current); return 0; } return p - 1; }), 1000);
-  };
   const doGrade = async () => {
     const answered: SpeakingTurn[] = list.filter((t) => t.transcript.trim()).map((t) => ({ question: t.question, answer: t.transcript, seconds: t.rec?.seconds }));
     if (!answered.length) return setErr('Chưa có câu trả lời nào (ghi âm hoặc gõ transcript).');
@@ -60,10 +60,27 @@ export default function Speaking() {
       const { gradeSpeaking } = await import('../ai/speaking');
       const g = await gradeSpeaking(part, m.topic ?? m.title, answered, getAiConfig(), pron || undefined);
       setGrade((x) => ({ ...x, [part]: g }));
-      await addAttempt({ materialId: m.id, skill: 'speaking', title: `${m.title} – Part ${part}`, mode: 'ai', band: g.overall, detail: { part, turns: answered, grade: g } });
+      const h = handed[part];
+      if (h) await updateAttempt(h, { mode: 'ai', band: g.overall, detail: { part, turns: answered, grade: g } });
+      else await addAttempt({ materialId: m.id, skill: 'speaking', title: `${m.title} – Part ${part}`, mode: 'ai', band: g.overall, detail: { part, turns: answered, grade: g } });
     } catch (e) { setErr(e instanceof Error ? e.message : String(e)); } finally { setBusy(false); }
   };
+  const handIn = async () => {
+    const done = list.filter((t) => t.rec || t.transcript.trim());
+    if (!done.length) return setErr('Chưa có câu trả lời nào (ghi âm hoặc gõ câu trả lời).');
+    setErr('');
+    const saved = [];
+    for (const t of done) {
+      let audio: string | undefined;
+      if (t.rec?.blob) { try { audio = await saveBlob(t.rec.blob); } catch { /* hết chỗ lưu → bỏ qua bản ghi */ } }
+      saved.push({ question: t.question, answer: t.transcript, seconds: t.rec?.seconds, audio });
+    }
+    const a = await addAttempt({ materialId: m.id, skill: 'speaking', title: `${m.title} – Part ${part}`, mode: 'self', score: done.length, max: list.length, detail: { part, turns: saved } });
+    setHanded((x) => ({ ...x, [part]: a.id }));
+    window.setTimeout(() => document.getElementById('self-result')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+  };
   const g = grade[part];
+  const handedId = handed[part];
   const parts: Part[] = ([1, 2, 3] as Part[]).filter((p) => (p === 1 ? m.part1?.length : p === 2 ? m.part2 : m.part3));
 
   return (
@@ -87,7 +104,10 @@ export default function Speaking() {
         <div className="cue card">
           <div className="cue__head"><span className="badge">Part 2 · Cue card</span>
             <div className="row">
-              {prep === null ? <button className="btn btn--ghost btn--sm" onClick={startPrep}><TimerIcon size={15} /> Chuẩn bị 1 phút</button> : <span className={`timer${prep === 0 ? ' is-out' : ' is-run'}`}>{prep === 0 ? 'Hết giờ chuẩn bị – nói 2 phút' : fmtTime(prep)}</span>}
+              {phase === null && <button className="btn btn--ghost btn--sm" onClick={() => setPhase('prep')}><TimerIcon size={15} /> Chuẩn bị 1 phút</button>}
+              {phase === 'prep' && <><Timer key="prep" minutes={1} label="Chuẩn bị" warnAt={10} autoStart onEnd={() => setPhase('talk')} /><button className="btn btn--text btn--sm" onClick={() => setPhase('talk')}>Nói luôn</button></>}
+              {phase === 'talk' && <Timer key="talk" minutes={2} label="Nói" warnAt={15} autoStart onEnd={() => setPhase('done')} />}
+              {phase === 'done' && <><span className="timer is-out">Hết 2 phút</span><button className="btn btn--text btn--sm" onClick={() => setPhase('prep')}>Làm lại</button></>}
             </div>
           </div>
           <h2 className="cue__title">{m.part2.cue}</h2>
@@ -102,22 +122,30 @@ export default function Speaking() {
 
       <div className="turns">
         {list.map((t, i) => (
-          <TurnView key={i} t={t} i={i} part={part} onRec={(r) => update(i, { rec: r, transcript: r.transcript || t.transcript })} onTranscript={(v) => update(i, { transcript: v })} fb={g?.perQuestion.find((q) => q.question === t.question) ?? (g ? g.perQuestion[list.filter((x) => x.transcript.trim()).indexOf(t)] : undefined)} />
+          <TurnView key={`${part}-${i}`} t={t} i={i} part={part} showSample={!!handedId} onRec={(r) => update(i, { rec: r, transcript: r.transcript || t.transcript })} onTranscript={(v) => update(i, { transcript: v })} fb={g?.perQuestion.find((q) => q.question === t.question) ?? (g ? g.perQuestion[list.filter((x) => x.transcript.trim()).indexOf(t)] : undefined)} />
         ))}
       </div>
 
-      <section className="card pad ai">
-        <div className="ai__head"><Sparkles size={18} /> <strong>AI chấm Part {part}</strong></div>
-        <AiGate feature="Chấm Speaking">
+      {(part as number) !== 0 && (
+        <section className="card pad">
           <div className="row wrap">
-            <label className="small muted">Tự đánh giá phát âm (tuỳ chọn):
+            <button className="btn btn--primary btn--grow" onClick={handIn} disabled={!!handedId}><FileCheck2 size={16} /> {handedId ? `Đã nộp Part ${part}` : `Nộp bài Part ${part}`}</button>
+            {aiReady(cfg) && <button className="btn btn--ghost btn--grow" onClick={doGrade} disabled={busy}>{busy ? <><Loader2 size={16} className="spin" /> Đang chấm…</> : <><Bot size={16} /> Chấm bằng AI ({list.filter((t) => t.transcript.trim()).length} câu)</>}</button>}
+          </div>
+          {aiReady(cfg) && (
+            <label className="small muted">Tự đánh giá phát âm cho AI (tuỳ chọn):{' '}
               <select className="select" value={pron} onChange={(e) => setPron(+e.target.value)}><option value={0}>Không chấm</option>{[5, 5.5, 6, 6.5, 7, 7.5, 8].map((b) => <option key={b} value={b}>{b}</option>)}</select>
             </label>
-            <span style={{ flex: 1 }} />
-            <button className="btn btn--primary" onClick={doGrade} disabled={busy}>{busy ? <><Loader2 size={16} className="spin" /> Đang chấm…</> : <><Bot size={16} /> Chấm {list.filter((t) => t.transcript.trim()).length} câu đã trả lời</>}</button>
-          </div>
+          )}
+          {!aiReady(cfg) && <p className="small muted">Nộp bài để lưu bản ghi / câu trả lời vào Lịch sử, mở bài mẫu từng câu và tự chấm. Muốn AI chấm thêm: <a href="#/settings">Cài đặt → AI</a>.</p>}
           {err && <p className="no-text small">{err}</p>}
-          {g && (
+        </section>
+      )}
+      {handedId && (part as number) !== 0 && <div id="self-result"><SelfCheck key={handedId} kind="speaking" attemptId={handedId} extra="Nghe lại bản ghi của bạn rồi so với bài mẫu dưới mỗi câu." /></div>}
+
+      {g && (
+      <section className="card pad ai">
+        <div className="ai__head"><Sparkles size={18} /> <strong>AI chấm Part {part}</strong></div>
             <div className="ai__result">
               <div className="ai__top"><BandPill band={g.overall} label="Band" /><p>{g.summary}</p></div>
               <CriteriaBars items={[
@@ -131,14 +159,13 @@ export default function Speaking() {
                 <div><h4>Cụm từ nên học</h4><ul className="vlist">{g.vocabulary.map((v, i) => { const saved = !!findCard(v.phrase); return <li key={i} className="vlist__row"><div className="vlist__body"><strong>{v.phrase}</strong> – {v.meaning}<div className="vocab__ex">{v.example}</div></div><button className="icon-btn" disabled={saved} onClick={() => saveCard(newCard({ id: `v-${v.phrase}-${Date.now().toString(36)}`, word: v.phrase, meaning: v.meaning, example: v.example, from: m.id }))}>{saved ? <Check size={16} /> : <BookmarkPlus size={16} />}</button></li>; })}</ul></div>
               </div>
             </div>
-          )}
-        </AiGate>
       </section>
+      )}
     </div>
   );
 }
 
-function TurnView({ t, i, part, onRec, onTranscript, fb }: { t: Turn; i: number; part: Part; onRec: (r: Recording) => void; onTranscript: (v: string) => void; fb?: SpeakingGrade['perQuestion'][number] }) {
+function TurnView({ t, i, part, onRec, onTranscript, fb, showSample }: { t: Turn; i: number; part: Part; showSample?: boolean; onRec: (r: Recording) => void; onTranscript: (v: string) => void; fb?: SpeakingGrade['perQuestion'][number] }) {
   const [edit, setEdit] = useState(false);
   return (
     <div className="turn card">
@@ -168,7 +195,7 @@ function TurnView({ t, i, part, onRec, onTranscript, fb }: { t: Turn; i: number;
           <Collapse title="Câu trả lời mẫu AI (band 7–8, giữ ý của bạn)" tone="tip"><p className="sample">{fb.improved}</p></Collapse>
         </div>
       )}
-      {t.sample && <Collapse title="Bài mẫu tham khảo" tone="info"><p className="sample">{t.sample}</p></Collapse>}
+      {t.sample && <Collapse key={String(!!showSample)} defaultOpen={showSample} title="Bài mẫu tham khảo" tone="info"><p className="sample">{t.sample}</p></Collapse>}
     </div>
   );
 }

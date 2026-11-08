@@ -38,6 +38,19 @@ export interface QuestionGroup {
   wordLimit?: string;
   /** Đoạn tóm tắt / bảng / form cho dạng completion: hiển thị trước danh sách câu. */
   context?: string;
+  /** Ảnh bản đồ / sơ đồ (đường dẫn trong public/, vd. "img/vol1/t4-l2-map.png") – hiện trên các câu, bấm để phóng to. */
+  image?: string;
+  /** Mô tả ảnh bằng chữ (alt; cũng dùng khi ảnh không tải được). */
+  imageAlt?: string;
+  /**
+   * Bố cục như đề thật. Bỏ trống thì tự suy từ instruction (form / notes / flow-chart).
+   * - form / notes: khung giấy, mỗi câu một dòng gọn.
+   * - table: bảng thật (cần `table`), cuộn ngang trên điện thoại.
+   * - flowchart: các bước xếp dọc nối bằng mũi tên.
+   */
+  layout?: 'form' | 'notes' | 'table' | 'flowchart';
+  /** Bảng cho layout "table". Ô chứa `{{n}}` là chỗ trống của câu n (mỗi câu đúng một lần). */
+  table?: { title?: string; columns?: string[]; rows: string[][] };
   questions: Question[];
 }
 
@@ -54,6 +67,8 @@ export interface MaterialBase {
   addedAt: number;
   /** true = nội dung mẫu đi kèm app. */
   builtin?: boolean;
+  /** Ghi chú về đề (vd. câu bị thiếu trong đề gốc) – hiện phía trên câu hỏi. */
+  note?: string;
 }
 
 export interface ReadingMaterial extends MaterialBase {
@@ -110,6 +125,8 @@ export interface WritingMaterial extends MaterialBase {
   prompt: string;
   /** Ảnh biểu đồ/bản đồ (URL hoặc idb:<key>). */
   image?: string;
+  /** Mô tả chi tiết ảnh bằng chữ (alt + hiện dưới ảnh / thay ảnh khi chưa có ảnh). */
+  imageAlt?: string;
   /** Dữ liệu biểu đồ để app tự vẽ khi không có ảnh: { labels, series:[{name, values}], unit }. */
   chart?: { labels: string[]; series: { name: string; values: number[] }[]; unit?: string; kind?: 'line' | 'bar' | 'pie' | 'table' };
   /** Dàn ý gợi ý. */
@@ -128,12 +145,16 @@ export interface Attempt {
   skill: Skill;
   title: string;
   at: number;
-  mode: 'test' | 'dictation' | 'gapfill' | 'ai';
+  /** self = nộp bài không AI (tự chấm theo checklist). */
+  mode: 'test' | 'dictation' | 'gapfill' | 'ai' | 'self';
   score?: number;
   max?: number;
   band?: number;
   /** Chi tiết (đáp án đã chọn, kết quả AI…) – mỗi mode một kiểu. */
   detail?: unknown;
+  /** Band tự ước lượng từ checklist (mode self) – không tính vào band trang chủ. */
+  selfBand?: number;
+  selfCheck?: string[];
 }
 
 export interface VocabCard {

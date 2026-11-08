@@ -81,6 +81,7 @@
               { "no": 36, "type": "fill", "text": "Prices: generally ___", "answer": ["affordable"], "explanation": "\"small and affordable samples\"" }
             ] },
           { "instruction": "Complete the table below. Write NO MORE THAN TWO WORDS for each answer.", "wordLimit": "NO MORE THAN TWO WORDS", "context": "Tools – Function or purpose",
+            "layout": "table", "table": {"rows": [["A tape measure", "record the {{37}} of each fossil"], ["A notebook", "record the types of {{38}}"], ["A camera", "record the {{39}} of each fossil"], ["A compass", "detect {{40}} to locate the fossils"]], "columns": ["Tools", "Function or purpose"]},
             "questions": [
               { "no": 37, "type": "fill", "text": "A tape measure: record the ___ of each fossil", "answer": ["dimensions", "dimension"], "explanation": "\"note the dimensions of each fossil\"" },
               { "no": 38, "type": "fill", "text": "A notebook: record the types of ___", "answer": ["rocks", "rock"], "explanation": "\"record as many different types of rocks\"" },

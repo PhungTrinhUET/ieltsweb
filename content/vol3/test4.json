@@ -17,6 +17,7 @@
       "instruction": "Complete the table below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.",
       "wordLimit": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
       "context": "Student Accommodation – Type / Cost / Contract. Example – College: single room (meals not included). Standard: £3,276 per year, 36 weeks.",
+      "layout": "table", "table": {"rows": [["Example – College: single room (meals not included)", "Standard: £3,276 per year, 36 weeks\nEn-suite: £{{1}} per year", "(Rooms not available during the {{2}})"], ["Room with a family: {{3}}", "£150 per week, all inclusive", "Arrangements are {{4}}"], ["Private renting: room in a shared house or a {{5}}", "From £275 to £490 per month\nAdditional costs (for this year): gas and electricity £{{6}} per month approx.\n{{7}} £9\n{{8}}", "Contract: 6 months\nNeed {{9}}\ntwo {{10}}"]], "columns": ["Type", "Cost", "Contract / notes"], "title": "Student Accommodation"},
       "questions": [
        {
         "no": 1,
@@ -405,6 +406,7 @@
       "instruction": "Complete the table below. Write ONE WORD ONLY for each answer.",
       "wordLimit": "ONE WORD ONLY",
       "context": "Research findings – columns: Social and environmental factors / Other factors / Personal characteristics. First level: Effective support | Perceived success in study | Enjoyment of a (33). Second level: Positive experiences at (34) | Good (35) | Many (36) in daily life. Third level: Good interaction with the (37) | No family problems | Capacity for multi-tasking.",
+      "layout": "table", "table": {"rows": [["First level", "Effective support", "Perceived success in study", "Enjoyment of a {{33}}"], ["Second level", "Positive experiences at {{34}}", "Good {{35}}", "Many {{36}} in daily life"], ["Third level", "Good interaction with the {{37}}", "No family problems", "Capacity for multi-tasking"]], "columns": ["", "Social and environmental factors", "Other factors", "Personal characteristics"], "title": "Research findings"},
       "questions": [
        {
         "no": 33,
@@ -897,11 +899,11 @@
   {
    "task": 1,
    "type": "map",
-   "title": "A museum and its surroundings, 1990 and 2010",
+   "image": "img/vol3/w1-t4.png", "imageAlt": "1990: bên trong bảo tàng có store room (góc trên trái), các exhibition rooms xung quanh, shop nhỏ (góc dưới phải); bên ngoài: entrance phía dưới, car park bên phải với một garden phía dưới car park và một garden phía trên; cottage ở góc dưới trái, đối diện bảo tàng, cạnh main road. 2010: shop mở rộng sang trái lấn một phần exhibition room; car park mở rộng xuống chiếm chỗ garden phía dưới; cottage trở thành café; đường đi và garden phía trên không đổi.", "title": "A museum and its surroundings, 1990 and 2010",
    "topic": "Buildings",
-   "prompt": "The diagrams below show a museum and its surroundings in 1990 and 2010.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.\n\n[Mô tả sơ đồ – bản gốc là hình ảnh: 1990: bên trong bảo tàng có store room (góc trên trái), các exhibition rooms xung quanh, shop nhỏ (góc dưới phải); bên ngoài: entrance phía dưới, car park bên phải với một garden phía dưới car park và một garden phía trên; cottage ở góc dưới trái, đối diện bảo tàng, cạnh main road. 2010: shop mở rộng sang trái lấn một phần exhibition room; car park mở rộng xuống chiếm chỗ garden phía dưới; cottage trở thành café; đường đi và garden phía trên không đổi.]",
+   "prompt": "The diagrams below show a museum and its surroundings in 1990 and 2010.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
    "sample": "The map details renovations to a museum and the surrounding grounds from 1990 to 2010.\n\nLooking from an overall perspective, it is readily apparent that the museum itself decreased the square footage for exhibitions, and outside there were significant alterations to the surrounding area to allow greater access and leisure.\n\nInternally, the museum in 1990 contained a store room in the top left corner, various exhibition spaces on all sides, and a small shop in the bottom right. By 2010, the only modification was that the shop was extended towards the left at the expense of the adjacent exhibition room.\n\nOutside the main structure, the largest single change was the expansion of the car park on the right side, which subsumed a garden beneath it. The paths and roads, as well as the garden above the car park, were unchanged. The final difference was that the cottage in the bottom left corner across from the museum was renovated to become a café.",
-   "sampleNote": "Bài mẫu trong tài liệu gốc (hình gốc không có trong bản số hóa)."
+   "sampleNote": "Bài mẫu trong tài liệu gốc."
   },
   {
    "task": 2,

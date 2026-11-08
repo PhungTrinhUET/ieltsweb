@@ -35,14 +35,14 @@
               { "no": 13, "type": "mcq", "text": "Which group will run first?", "options": ["yellow", "purple", "red"], "answer": 0, "explanation": "\"the yellow group are our elite athletes. We'd like them to start the race\"" },
               { "no": 14, "type": "mcq", "text": "The race organisers still need to find volunteers to help with", "options": ["giving first aid.", "handing out water.", "starting the race."], "answer": 1, "explanation": "\"desperately need volunteers along the race course to distribute water bottles\"" }
             ] },
-          { "instruction": "Label the map of the Race Village. Write the correct letter, A–I, next to questions 15–20.", "bank": ["A – near the exit to the Train Station", "B – on Bowen Road, by the north exit", "C – on Bowen Road, centre", "D – on Bowen Road, near the Finish Line", "E – beside the Finish Line", "F – next to Corporate Catering", "G – inside the Race Village, centre", "H – next to the Shade Tents", "I – by the Gregory Terrace entry"], "context": "Bản đồ Race Village (Bowen Road – Finish Line – Exit to Train Station – Shade Tents – Corporate Catering – Gregory Terrace Entry). Không có hình và không có transcript; vị trí A–I mô tả ước lượng theo bố cục đề.",
+          { "instruction": "Label the map below. Write the correct letter, A–I, next to questions 15–20.", "image": "img/vol4/t7-l2-map.png", "imageAlt": "Map of Race Village: Bowen Road và lối ra góc tây bắc (B ngay cạnh); Exit to Train Station góc đông bắc; Finish Line ở giữa, hai lối mòn chạy về A phía tây; H ngay dưới Finish Line; Shade Tents, G cạnh Corporate Catering; F phía đông; I cạnh Exit ra Gregory Terrace; Race Village Entry góc đông nam.", "bank": ["A", "B", "C", "D", "E", "F", "G", "H", "I"],
             "questions": [
-              { "no": 15, "type": "match", "text": "T-shirt Stand", "answer": 5, "explanation": "Đáp án gốc: F" },
-              { "no": 16, "type": "match", "text": "Bag Collection Area", "answer": 0, "explanation": "Đáp án gốc: A" },
-              { "no": 17, "type": "match", "text": "Stage", "answer": 1, "explanation": "Đáp án gốc: B" },
-              { "no": 18, "type": "match", "text": "Information Centre", "answer": 7, "explanation": "Đáp án gốc: H" },
-              { "no": 19, "type": "match", "text": "Prize Draw Box", "answer": 6, "explanation": "Đáp án gốc: G" },
-              { "no": 20, "type": "match", "text": "Water Station", "answer": 8, "explanation": "Đáp án gốc: I" }
+              { "no": 15, "type": "match", "text": "Stage", "answer": 5, "explanation": "\"as you continue along the course, you'll see the stage on your right\" (key F)" },
+              { "no": 16, "type": "match", "text": "T-shirt Stand", "answer": 0, "explanation": "\"get their finishers' T-shirts from the T-shirt stand at the end of those paths\" (key A)" },
+              { "no": 17, "type": "match", "text": "Bag Collection Area", "answer": 1, "explanation": "\"all bags are kept in the building on Bowen Road… quite close to the exit in the top left-hand corner\" (key B)" },
+              { "no": 18, "type": "match", "text": "Information Centre", "answer": 7, "explanation": "\"the building in the centre of the map, not far from the Finish Line, it's just below it\" (key H)" },
+              { "no": 19, "type": "match", "text": "Prize Draw Box", "answer": 6, "explanation": "\"the entry boxes between the shade tents and the corporate catering buildings\" (key G)" },
+              { "no": 20, "type": "match", "text": "Water Station", "answer": 8, "explanation": "\"the main water station … is just beside the third exit through to Gregory Terrace\" (key I)" }
             ] }
         ]
       },

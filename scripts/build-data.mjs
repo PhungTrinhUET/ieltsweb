@@ -3,6 +3,7 @@
 // Audio: đặt mp3 vào public/<audioDir>/s1.mp3 … s4.mp3 (xem scripts/copy-audio.mjs). Thiếu file → bài dùng giọng máy.
 import { readdirSync, readFileSync, writeFileSync, mkdirSync, existsSync, statSync } from 'node:fs';
 import { join, basename } from 'node:path';
+import { createHash } from 'node:crypto';
 
 const ROOT = new URL('..', import.meta.url).pathname;
 const CONTENT = join(ROOT, 'content');
@@ -52,6 +53,18 @@ function validate(id, groups) {
     if (q.type === 'match') { const bank = q.options ?? g.bank ?? []; if (q.answer < 0 || q.answer >= bank.length) console.warn(`⚠ ${id}: câu ${q.no} đáp án ngoài bank`); }
     if (q.type === 'fill' && !/_{3,}/.test(q.text)) console.warn(`⚠ ${id}: câu ${q.no} thiếu ___`);
   }
+  // Bảng (layout "table"): mỗi câu của nhóm xuất hiện đúng một lần dạng {{n}}, không có {{n}} lạ; số ô mỗi hàng = số cột.
+  for (const g of groups) {
+    if (g.layout === 'table' && !g.table) console.warn(`⚠ ${id}: layout "table" nhưng thiếu table`);
+    if (!g.table) continue;
+    const cells = g.table.rows.flat().join(' ');
+    const refs = [...cells.matchAll(/\{\{(\d+)\}\}/g)].map((m) => +m[1]);
+    const nos = g.questions.map((q) => q.no);
+    for (const n of nos) { const c = refs.filter((r) => r === n).length; if (c !== 1) console.warn(`⚠ ${id}: bảng có {{${n}}} ${c} lần`); }
+    for (const r of refs) if (!nos.includes(r)) console.warn(`⚠ ${id}: bảng có {{${r}}} không thuộc nhóm`);
+    const w = g.table.columns?.length;
+    if (w) g.table.rows.forEach((row, i) => { if (row.length !== w) console.warn(`⚠ ${id}: bảng hàng ${i + 1} có ${row.length} ô, cần ${w}`); });
+  }
 }
 /** SRT/VTT đặt cạnh audio (public/audio/.../s1.srt) được ưu tiên hơn mốc ước lượng. */
 function parseSrt(text) {
@@ -63,6 +76,8 @@ function parseSrt(text) {
   }).filter(Boolean);
 }
 
+// Số câu một câu hỏi chiếm: multi "Choose TWO" có no = số đầu, tính cho answer.length số.
+const span = (q) => Array.from({ length: q.type === 'multi' ? Math.max(1, q.answer.length) : 1 }, (_, i) => q.no + i);
 const index = [];
 let total = 0;
 for (const vol of readdirSync(CONTENT).filter((d) => statSync(join(CONTENT, d)).isDirectory())) {
@@ -95,15 +110,31 @@ for (const vol of readdirSync(CONTENT).filter((d) => statSync(join(CONTENT, d)).
       out.push({ ...base, id: `${id}-r${r.passage}`, skill: 'reading', module: 'academic', title: `${prefix} · Passage ${r.passage} – ${r.title}`, topic: r.topic, level: r.level ?? 'medium', passage: r.passage_text, groups: r.groups, minutes: 20 });
     }
     for (const w of t.writing ?? []) {
-      out.push({ ...base, id: `${id}-w${w.id ?? w.task}`, skill: 'writing', module: w.module ?? 'academic', task: w.task, type: w.type, title: `${prefix} · Task ${w.task} – ${w.title}`, topic: w.topic, prompt: w.prompt, chart: w.chart, image: w.image, sample: w.sample, outline: w.outline });
+      out.push({ ...base, id: `${id}-w${w.id ?? w.task}`, skill: 'writing', module: w.module ?? 'academic', task: w.task, type: w.type, title: `${prefix} · Task ${w.task} – ${w.title}`, topic: w.topic, prompt: w.prompt, chart: w.chart, image: w.image, imageAlt: w.imageAlt, sample: w.sample, outline: w.outline });
     }
     (t.speaking ?? []).forEach((sp, i) => {
       out.push({ ...base, id: `${id}-s${sp.id ?? i + 1}`, skill: 'speaking', title: `${prefix} · ${sp.title}`, topic: sp.topic, level: sp.level ?? 'medium',
         part1: sp.part1, part2: sp.part2, part3: sp.part3, vocab: sp.vocab, tags: [...base.tags, ...(sp.tags ?? [])] });
     });
+    // `gaps`: câu thiếu ngay trong đề gốc (đã ghi rõ lý do) → gắn ghi chú vào bài, và không báo ⚠.
+    const gaps = t.gaps ?? [];
+    for (const g of gaps) {
+      const m = out.find((x) => x.id === `${id}-${g.skill === 'reading' ? 'r' : 'l'}${g.passage ?? g.section}`);
+      if (m) m.note = [m.note, g.note].filter(Boolean).join(' ');
+      else console.warn(`⚠ ${id}: gaps trỏ tới bài không tồn tại (${g.skill} ${g.passage ?? g.section})`);
+    }
+    if (t.vol) for (const skill of ['reading', 'listening']) {
+      const nos = new Set(out.filter((m) => m.skill === skill).flatMap((m) => m.groups.flatMap((g) => g.questions.flatMap(span))));
+      if (!nos.size) continue;
+      const known = new Set(gaps.filter((g) => g.skill === skill).flatMap((g) => g.nos));
+      const miss = Array.from({ length: 40 }, (_, i) => i + 1).filter((n) => !nos.has(n) && !known.has(n));
+      if (miss.length) console.warn(`⚠ ${id} ${skill}: thiếu câu ${miss.join(',')} (thêm câu hoặc ghi vào "gaps")`);
+    }
     const name = `${id}.json`;
-    writeFileSync(join(OUT, name), JSON.stringify(out));
-    index.push({ file: name, vol: t.vol ?? 0, test: t.test ?? 0, count: out.length });
+    const body = JSON.stringify(out);
+    writeFileSync(join(OUT, name), body);
+    // `hash`: app chỉ tải lại file có hash đổi (cache trong IndexedDB).
+    index.push({ file: name, hash: createHash('sha1').update(body).digest('hex').slice(0, 12), vol: t.vol ?? 0, test: t.test ?? 0, count: out.length, ...(gaps.length ? { gaps: gaps.map((g) => ({ skill: g.skill, nos: g.nos })) } : {}) });
     total += out.length;
   }
 }

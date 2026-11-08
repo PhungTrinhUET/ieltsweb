@@ -33,7 +33,7 @@
               { "no": 13, "type": "mcq", "text": "Participants without a fishing licence are recommended to apply for one", "options": ["at the registration desk.", "over the phone.", "on the internet."], "answer": 2, "explanation": "\"go online and they'll issue you one immediately\"" },
               { "no": 14, "type": "mcq", "text": "What will happen at 6 pm on Sunday?", "options": ["The time allocated for fishing will end.", "The fish caught will be judged.", "The prizes will be awarded to the winners."], "answer": 1, "explanation": "5.30 dừng câu; 6 pm bắt đầu cân cá; trao giải muộn hơn." }
             ] },
-          { "instruction": "Label the map below. Write the correct letter, A–I, next to questions 15–20. (Bản đồ gốc là hình – chưa có trong bản số hoá. Luyện nghe chỉ dẫn: roundabout ở giữa; đường đông, tây, bắc, phải; skate park, car park, first aid, playground, lighthouse, beach.)", "bank": ["A", "B", "C", "D", "E", "F", "G", "H", "I"],
+          { "instruction": "Label the map below. Write the correct letter, A–I, next to questions 15–20.", "image": "img/vol1/t4-l2-map.png", "imageAlt": "Albany Fishing Competition Map: bãi biển ở phía bắc; lighthouse góc tây bắc; skate park và playground ở giữa; roundabout ở trung tâm; first aid và car park phía nam; barbecue area phía đông nam. Các ô chữ A–I đánh dấu vị trí.", "bank": ["A", "B", "C", "D", "E", "F", "G", "H", "I"],
             "questions": [
               { "no": 15, "type": "match", "text": "Registration area", "answer": 6, "explanation": "Đáp án gốc: G – từ roundabout đi đường hướng đông, khu có cây." },
               { "no": 16, "type": "match", "text": "Shore fishing area", "answer": 0, "explanation": "Đáp án gốc: A – ngay phía bắc skate park." },

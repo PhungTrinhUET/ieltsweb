@@ -5,8 +5,9 @@ import type { Attempt, Material, Note, Skill, VocabCard } from './types';
 import { SAMPLE_MATERIALS } from './content/samples';
 
 const DB = 'ielts-practice';
-const VERSION = 1;
-const STORES = ['materials', 'blobs', 'attempts', 'vocab', 'notes', 'drafts'] as const;
+const VERSION = 2;
+// `bundle`: cache các file public/data/*.json theo hash trong index.json (v2).
+const STORES = ['materials', 'blobs', 'attempts', 'vocab', 'notes', 'drafts', 'bundle'] as const;
 type StoreName = (typeof STORES)[number];
 
 let dbp: Promise<IDBDatabase> | null = null;
@@ -83,14 +84,36 @@ export async function init() {
   }
 }
 
-/** Bộ đề đóng gói sẵn trong public/data (sinh bởi scripts/build-data.mjs). */
+/**
+ * Bộ đề đóng gói sẵn trong public/data (sinh bởi scripts/build-data.mjs).
+ * index.json luôn được hỏi lại; từng file chỉ tải khi `hash` khác bản đã cache trong IndexedDB
+ * (index cũ không có hash thì so `generatedAt`). Mất mạng → dùng cache.
+ */
+type BundleEntry = { hash: string; items: Material[] };
 async function loadBundled(): Promise<Material[]> {
+  let cached: Record<string, BundleEntry> = {};
+  try { cached = await all<BundleEntry>('bundle'); } catch { /* IndexedDB lỗi → tải hết */ }
   try {
-    const idx = await fetch('./data/index.json').then((r) => (r.ok ? r.json() : null));
-    if (!idx?.files) return [];
-    const lists = await Promise.all((idx.files as { file: string }[]).map((f) => fetch(`./data/${f.file}`).then((r) => (r.ok ? r.json() : [])).catch(() => [])));
+    const idx = await fetch('./data/index.json', { cache: 'no-cache' }).then((r) => (r.ok ? r.json() : null));
+    if (!idx?.files) return Object.values(cached).flatMap((e) => e.items);
+    const files = idx.files as { file: string; hash?: string }[];
+    const lists = await Promise.all(files.map(async (f) => {
+      const key = f.hash ?? String(idx.generatedAt);
+      const hit = cached[f.file];
+      if (hit && hit.hash === key) return hit.items;
+      try {
+        const r = await fetch(`./data/${f.file}`);
+        if (!r.ok) return hit?.items ?? [];
+        const items = await r.json() as Material[];
+        put('bundle', f.file, { hash: key, items }).catch(() => {});
+        return items;
+      } catch { return hit?.items ?? []; }
+    }));
+    // File đã bỏ khỏi index → xoá cache.
+    const keep = new Set(files.map((f) => f.file));
+    for (const k of Object.keys(cached)) if (!keep.has(k)) del('bundle', k).catch(() => {});
     return lists.flat();
-  } catch { return []; }
+  } catch { return Object.values(cached).flatMap((e) => e.items); }
 }
 export const bundledCount = async () => (await loadBundled()).length;
 
@@ -133,6 +156,7 @@ export const materialsOf = (skill: Skill) => Object.values(state.materials).filt
 
 // ---------- Blobs (audio / ảnh) ----------
 const urlCache = new Map<string, string>();
+const AUDIO_BASE = String(import.meta.env.VITE_AUDIO_BASE ?? '').replace(/([^/])$/, '$1/');
 export async function saveBlob(blob: Blob, key = uid()) {
   await put('blobs', key, blob);
   return `idb:${key}`;
@@ -140,6 +164,8 @@ export async function saveBlob(blob: Blob, key = uid()) {
 /** Trả URL dùng được cho <audio>/<img>: URL thường giữ nguyên, idb:<key> → blob URL. */
 export async function resolveUrl(src: string | undefined): Promise<string | null> {
   if (!src) return null;
+  // Audio đề gốc có thể đặt ở host khác (R2, S3, Drive công khai…): VITE_AUDIO_BASE=https://…/ → https://…/vol5/test7/s1.mp3
+  if (src.startsWith('audio/') && AUDIO_BASE) return AUDIO_BASE + src.slice('audio/'.length);
   if (!src.startsWith('idb:')) return src;
   const cached = urlCache.get(src);
   if (cached) return cached;
@@ -156,6 +182,13 @@ export async function addAttempt(a: Omit<Attempt, 'id' | 'at'>) {
   set({ attempts: [full, ...state.attempts] });
   await put('attempts', full.id, full);
   return full;
+}
+export async function updateAttempt(id: string, patch: Partial<Attempt>) {
+  const cur = state.attempts.find((a) => a.id === id);
+  if (!cur) return;
+  const full = { ...cur, ...patch };
+  set({ attempts: state.attempts.map((a) => (a.id === id ? full : a)) });
+  await put('attempts', id, full);
 }
 export async function clearAttempts() {
   set({ attempts: [] });

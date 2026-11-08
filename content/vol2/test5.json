@@ -34,7 +34,7 @@
               { "no": 14, "type": "mcq", "text": "Why is the wild dog area closed?", "options": ["The wild dogs are unwell.", "The enclosure is under repair.", "The dogs have not arrived."], "answer": 1, "explanation": "\"Right now we are fixing the fences\"" },
               { "no": 15, "type": "mcq", "text": "Where can visitors get discount tickets this year?", "options": ["at the café", "on the official website", "at the gift shop"], "answer": 0, "explanation": "\"available only at the café near the gift shop\"" }
             ] },
-          { "instruction": "Label the map below. Write the correct letter, A–G, next to questions 16–20. (Bản đồ gốc là hình: entrance ở dưới, cầu qua sông, botanic garden phía tây, toilets phía bắc, exit cạnh gift shop.)", "bank": ["A", "B", "C", "D", "E", "F", "G"],
+          { "instruction": "Label the map below. Write the correct letter, A–G, next to questions 16–20.", "image": "img/vol2/t5-l2-map.png", "imageAlt": "Bản đồ sở thú: entrance ở phía nam; botanic garden phía tây; sông (river) chảy chéo từ tây nam; đường mòn (path) và bike track chạy chéo qua giữa; toilet ở phía bắc; exit góc đông bắc. Các ô chữ A–G đánh dấu vị trí.", "bank": ["A", "B", "C", "D", "E", "F", "G"],
             "questions": [
               { "no": 16, "type": "match", "text": "Arena", "answer": 2, "explanation": "Qua cầu, đi thẳng hết đường, bên phải (C)." },
               { "no": 17, "type": "match", "text": "Educational hall", "answer": 4, "explanation": "Phía bắc, ngay phía tây toilets (E)." },

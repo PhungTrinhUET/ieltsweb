@@ -181,17 +181,20 @@
       ]
      },
      {
-      "instruction": "Label the map below. Choose the correct location for each place. (Không có hình bản đồ: các vị trí được mô tả bằng chữ, lấy từ lời chỉ đường; có 2 vị trí nhiễu.)",
-      "context": "Map of the Rivermead School campus – main entrance (with a fork: left and right), classroom block, a roundabout, car parks P1 and P2, Park Road and Rennies Drive.",
+      "instruction": "Label the map below. Write the correct letter, A–J, next to questions 15–20.",
+      "image": "img/vol5/t9-l2-map.png",
+      "imageAlt": "Bản đồ khuôn viên trường Rivermead (hướng bắc ở trên). Cổng chính (Main entrance) ở góc dưới bên trái; ngay sau cổng đường chia hai nhánh. Nhánh trái đi lên phía bắc, qua A (bên trái), tới ngã ba có B ở góc trên. Nhánh phải đi vòng lên phía đông bắc, qua J và I, tới bùng binh; Classroom block nằm phía dưới bên phải, cạnh nhánh này. G ở cạnh bùng binh; từ bùng binh có đường đi tiếp về phía đông, H nằm bên phải đường đó. Giữa B và bùng binh là đoạn đường ngang có C ở phía nam, đối diện Car park P2 ở phía bắc. Park Road chạy chéo từ B lên phía đông bắc, gặp Rennie's Drive; F ở phía bắc chỗ hai đường gặp nhau, D ở phía nam. Rennie's Drive chạy lên phía bắc, qua Car park P1 (bên phải), tới E ở đầu cực bắc của khuôn viên.",
       "bank": [
-       "at the junction of Park Road and Rennies Drive, on the north side of Park Road",
-       "at the roundabout",
-       "opposite car park P2, on the south side",
-       "next to car park P1",
-       "on the right-hand side of the road beyond the roundabout (past the classroom block)",
-       "at the most northern end of the campus",
-       "facing you at the junction reached by going left after the main entrance and taking the first turning on the right",
-       "just inside the main entrance, on the left"
+       "A",
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I",
+       "J"
       ],
       "questions": [
        {
@@ -205,35 +208,35 @@
         "no": 16,
         "type": "match",
         "text": "New car park",
-        "answer": 5,
+        "answer": 4,
         "explanation": "\"there's a new car park which has only just been completed, and that's at the most northern end of the campus\""
        },
        {
         "no": 17,
         "type": "match",
         "text": "Bus stop",
-        "answer": 1,
+        "answer": 6,
         "explanation": "\"the bus stops at the roundabout. That's where it turns round to go back\""
        },
        {
         "no": 18,
         "type": "match",
         "text": "Sports hall",
-        "answer": 4,
+        "answer": 7,
         "explanation": "\"You have to go straight across the roundabout and it's further on, on the right-hand side of that road\""
        },
        {
         "no": 19,
         "type": "match",
         "text": "Cafeteria",
-        "answer": 0,
-        "explanation": "\"it's at the junction of Park Road and Rennies Drive, on the north side of Park Road\""
+        "answer": 5,
+        "explanation": "\"it's at the junction of Park Road and Rennies Drive, on the north side of Park Road\" (key trong file giải thích ghi E – trùng đáp án câu 16; trên bản đồ vị trí này là F)"
        },
        {
         "no": 20,
         "type": "match",
         "text": "Museum",
-        "answer": 6,
+        "answer": 1,
         "explanation": "\"Just go left after the main entrance, take the first turning on the right, and when you reach a junction the museum is facing you\""
        }
       ]

@@ -59,13 +59,50 @@
               { "no": 25, "type": "match", "text": "Tie-dyeing", "answer": 7, "explanation": "\"we did it over three classes\"" },
               { "no": 26, "type": "match", "text": "Glue from milk", "answer": 4, "explanation": "\"they got feedback straight away\"" }
             ] },
-          { "instruction": "Label the diagram of the condenser. Write ONE WORD for each answer.", "wordLimit": "ONE WORD", "context": "Condenser: metal container (hot water) – integral strainer – container at top – drip tip – pottery container at bottom.",
+          {
+            "instruction": "Label the diagram below. Write the correct letter, A–G, next to questions 27–30.",
+            "image": "img/vol5/t2-l3-diagram.png",
+            "imageAlt": "Sơ đồ bình ngưng (Condenser): một nồi kim loại có hai quai, đáy chứa nước nóng (Hot Water); bên trong có khay lọc đựng lá cây, giữa khay là một đĩa nhỏ; phía trên đặt một bình có miệng rộng, đáy bình thu lại thành một đầu nhọn chĩa xuống đĩa. Các chữ A–G chỉ vào: A – lòng bình phía trên; B – đống lá trong khay; C – mép đĩa nhỏ ở giữa; D – thành nồi ngoài; E – lòng đĩa nhỏ; F – khay lọc dưới đống lá; G – đầu nhọn ở đáy bình trên.",
+            "bank": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E",
+              "F",
+              "G"
+            ],
             "questions": [
-              { "no": 27, "type": "fill", "text": "The strainer inside the metal container holds the ___ matter.", "answer": ["plant"], "explanation": "\"This is where you put the plant matter\"" },
-              { "no": 28, "type": "fill", "text": "The container at the top is made of ___.", "answer": ["glass"], "explanation": "\"It's made of glass\"" },
-              { "no": 29, "type": "fill", "text": "The top container holds the ___.", "answer": ["ice"], "explanation": "\"It's where we put the ice\"" },
-              { "no": 30, "type": "fill", "text": "The ___ collects at the drip tip and drops into the pottery dish.", "answer": ["essence"], "explanation": "\"It's where the essence collects\"" }
-            ] }
+              {
+                "no": 27,
+                "type": "match",
+                "text": "Metal container",
+                "answer": 3,
+                "explanation": "\"The large container's made of metal, right?\" – \"And that holds the hot water.\""
+              },
+              {
+                "no": 28,
+                "type": "match",
+                "text": "Integral strainer",
+                "answer": 5,
+                "explanation": "\"it has a strainer which sits inside it. This is where you put the plant matter\""
+              },
+              {
+                "no": 29,
+                "type": "match",
+                "text": "Drip tip",
+                "answer": 6,
+                "explanation": "\"The glass container has a drip tip at the bottom.\" – \"It's where the essence collects.\""
+              },
+              {
+                "no": 30,
+                "type": "match",
+                "text": "Pottery container",
+                "answer": 2,
+                "explanation": "\"Into the dish at the bottom. It's made of pottery.\""
+              }
+            ]
+          }
         ]
       },
       {

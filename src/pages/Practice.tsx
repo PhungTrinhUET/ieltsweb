@@ -119,7 +119,7 @@ export default function Practice() {
 
   const questionsPane = (
     <>
-      <GroupsView groups={m.groups} answers={answers} onChange={(no, a) => setAnswers((s) => ({ ...s, [no]: a }))} checked={all}
+      <GroupsView groups={m.groups} note={m.note} answers={answers} onChange={(no, a) => setAnswers((s) => ({ ...s, [no]: a }))} checked={all}
         revealed={revealed} onReveal={(no) => setRevealed((r) => ({ ...r, [no]: true }))} />
       <section className="card pad">
         <h3 className="h3"><StickyNote size={16} /> Ghi chú của bạn</h3>
@@ -142,7 +142,7 @@ export default function Practice() {
       <p className="muted small practice-tip">
         Không tính giờ. <strong>Bấm vào một từ</strong> để xem nghĩa tiếng Việt, phiên âm và lưu vào sổ từ ·
         <strong> bôi đen</strong> một đoạn để highlight (5 màu) ·
-        bấm <Languages size={12} /> cuối mỗi {isL ? 'lượt lời' : 'đoạn'} để dịch · làm câu nào bấm <em>Kiểm tra câu này</em> để xem đáp án và giải thích ngay.
+        bấm <Languages size={12} /> cuối mỗi {isL ? 'lượt lời' : 'đoạn'} để dịch · làm câu nào bấm <em>Kiểm tra câu này</em> (câu điền từ: nút <Eye size={12} /> sau chỗ trống) để xem đáp án và giải thích ngay.
       </p>
       {hl.list.length > 0 && <p className="small"><button className="btn btn--text btn--sm" onClick={hl.clear}>Xoá hết highlight ({hl.list.length})</button></p>}
       {err && <p className="no-text small">{err}</p>}

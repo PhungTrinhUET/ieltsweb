@@ -1,5 +1,6 @@
 {
   "vol": 2, "test": 8, "source": "ORIGINAL IELTS PAPERS – VOL 2, Test 8 (audio: part 1–4; transcript chỉ có Section 4)",
+  "gaps": [{"skill": "reading", "passage": 3, "nos": [14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26], "note": "Tài liệu gốc VOL 2 Test 8 chỉ có 2 bài đọc (\"book review\" – Passage 1 và \"whale culture\" – Passage 3, câu 27–40); Passage 2 (câu 14–26) không có trong bộ đề nên không dựng lại."}],
   "listening": {
     "audioDir": "audio/vol2/test8",
     "sections": [
@@ -80,7 +81,7 @@
               { "no": 35, "type": "fill", "text": "The SW40 has a maximum output of ___ litres on a sunny day.", "answer": ["9", "nine"], "explanation": "\"as much as nine litres\"" },
               { "no": 36, "type": "fill", "text": "Each SW40 produces enough water for a ___.", "answer": ["family"], "explanation": "\"one family could live off one of these devices\"" }
             ] },
-          { "instruction": "Label the diagram below (cross-section of SW40 solar water purifier). Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.", "wordLimit": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+          { "instruction": "Label the diagram below (cross-section of SW40 solar water purifier). Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.", "image": "img/vol2/t8-l4-diagram.png", "imageAlt": "Mặt cắt máy lọc nước SW40 dùng năng lượng mặt trời: một khay dài đặt nghiêng, mặt trên có nắp (câu 37); bên trong có các ngăn (pockets) đựng nước bẩn đổ vào từ ống ở đầu cao bên phải. Mặt trời chiếu tia hồng ngoại làm nóng nước và tia UV (câu 39). Góc nghiêng của khay ghi ở câu 38 (độ). Nước sạch nhỏ giọt từ đầu thấp bên trái xuống một thùng chứa (câu 40).", "wordLimit": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
             "questions": [
               { "no": 37, "type": "fill", "text": "Lid made of ___", "answer": ["glass"], "explanation": "\"a rectangular box with a glass lid\"" },
               { "no": 38, "type": "fill", "text": "Best inclined at angle of ___ degrees", "answer": ["12.5"], "explanation": "\"The optimum is 12.5 degrees\"" },

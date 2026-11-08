@@ -202,36 +202,37 @@
       ]
      },
      {
-      "instruction": "Label the map below. Choose the correct location for each place. (Không có hình bản đồ: các vị trí A–F được mô tả bằng chữ. Bản đồ: đường đi hình vòng cung, lối vào (Entrance) ở dưới bên phải, lối ra (Exit) ở dưới bên trái, nhà vệ sinh (Toilet) ở phía tây bắc.)",
-      "context": "Map of the Barton museum site – a curved path from the Entrance (bottom right) round to the Exit (bottom left); the toilet is in the north-west.",
+      "instruction": "Label the map below. Write the correct letter, A–F, next to questions 18–20.",
+      "image": "img/vol5/t10-l2-map.png",
+      "imageAlt": "Sơ đồ khu vườn (hướng bắc ở trên). Một lối đi lát hình vòng cung chữ U ngược: đầu bên phải ở lối vào (Entrance, cạnh dưới bên phải), vòng lên phía bắc rồi xuống tới lối ra (Exit, cạnh dưới bên trái). C ngay bên phải lối vào; D phía trên C, sát vòng cung; B ở mép phía đông, cạnh D; F ở đỉnh vòng cung, chính giữa phía bắc; Toilet ở phía tây bắc, E là khu tròn ngay dưới Toilet; A ở góc dưới bên trái, gần lối ra.",
       "bank": [
-       "the round area beside the toilet, on the west side of the site",
-       "the small building on the far eastern edge, at the top right",
-       "the building at the top of the curved path, halfway along, east of the toilet",
-       "the building just to the right of the entrance, beside the road",
-       "the building in the bottom left-hand corner, near the exit",
-       "the building on the right of the path near the top, west of the far-east building"
+       "A",
+       "B",
+       "C",
+       "D",
+       "E",
+       "F"
       ],
       "questions": [
        {
         "no": 18,
         "type": "match",
         "text": "gallery",
-        "answer": 3,
+        "answer": 2,
         "explanation": "\"there is a gallery just at the right side of the road, a few feet from the entrance\" (= C trên bản đồ gốc)"
        },
        {
         "no": 19,
         "type": "match",
         "text": "woodland",
-        "answer": 2,
+        "answer": 5,
         "explanation": "\"Halfway down the path to the east of the toilet, we have the woodland\" (= F trên bản đồ gốc)"
        },
        {
         "no": 20,
         "type": "match",
         "text": "gift shop",
-        "answer": 0,
+        "answer": 4,
         "explanation": "\"to the west of the site, you will see a large gift shop beside the toilet\" (= E trên bản đồ gốc)"
        }
       ]

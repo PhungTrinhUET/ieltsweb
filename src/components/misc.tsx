@@ -26,7 +26,7 @@ export function AiGate({ children, feature }: { children: ReactNode; feature: st
   return (
     <div className="banner banner--link">
       <Bot size={18} />
-      <span>{feature} cần Claude API. Vào <Link to="/settings"><strong>Cài đặt → AI</strong></Link> để nhập API key hoặc địa chỉ proxy.</span>
+      <span>{feature} cần cấu hình AI (Claude, DeepSeek, OpenAI, Gemini…). Vào <Link to="/settings"><strong>Cài đặt → AI</strong></Link> để nhập API key hoặc địa chỉ proxy.</span>
     </div>
   );
 }

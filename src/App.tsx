@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { HashRouter, NavLink, Outlet, Route, Routes, useLocation } from 'react-router-dom';
+import { HashRouter, NavLink, Outlet, Route, Routes, useLocation, useParams } from 'react-router-dom';
+import ErrorBoundary from './components/ErrorBoundary';
 import { BookOpen, ChevronLeft, ChevronRight, FolderInput, GraduationCap, Headphones, History as HistoryIcon, House, Layers, Mic, NotebookPen, Settings as SettingsIcon } from 'lucide-react';
 import { init, useDb } from './db';
 import Home from './pages/Home';
@@ -18,6 +19,7 @@ import Guide from './pages/Guide';
 import Settings from './pages/Settings';
 import MockTest from './pages/MockTest';
 import Practice from './pages/Practice';
+import TestPage from './pages/TestPage';
 
 const NAV: { to: string; label: string; icon: typeof House; end?: boolean }[] = [
   { to: '/', label: 'Trang chủ', icon: House, end: true },
@@ -37,7 +39,7 @@ const NAV2: { to: string; label: string; icon: typeof House; end?: boolean }[] =
 function Shell() {
   const loc = useLocation();
   const db = useDb();
-  const focus = /^\/(reading|listening|speaking|writing|mock)\/[^/]+/.test(loc.pathname);
+  const focus = /^\/(reading|listening|speaking|writing|mock)\/[^/]+|^\/test\/[^/]+\/[^/]+\/full/.test(loc.pathname);
   const [collapsed, setCollapsed] = useState(() => { try { return localStorage.getItem('ielts:nav-collapsed') === '1'; } catch { return false; } });
   const toggle = () => setCollapsed((c) => { try { localStorage.setItem('ielts:nav-collapsed', c ? '0' : '1'); } catch { /* ignore */ } return !c; });
   useEffect(() => { window.scrollTo({ top: 0 }); }, [loc.pathname]);
@@ -55,7 +57,7 @@ function Shell() {
         </nav>
         <p className="sidebar__foot">Reading · Listening · Speaking · Writing – tự nạp tài liệu, AI chấm bài</p>
       </aside>
-      <main className="main"><Outlet /></main>
+      <main className="main"><ErrorBoundary key={loc.pathname}><Outlet /></ErrorBoundary></main>
       <nav className="tabbar">
         {[...NAV.slice(0, 5), NAV2[0]].map(({ to, label, icon: Icon, end }) => <NavLink key={to} to={to} end={end} className="tabbar__link"><Icon size={22} /><span>{label}</span></NavLink>)}
       </nav>
@@ -66,6 +68,9 @@ function Shell() {
 export function Logo({ size = 28 }: { size?: number }) {
   return <svg width={size} height={size} viewBox="0 0 64 64" aria-hidden><rect width="64" height="64" rx="14" fill="#0f766e" /><path d="M18 20h28M18 32h28M18 44h18" stroke="#fff" strokeWidth="6" strokeLinecap="round" /></svg>;
 }
+
+/** Đổi :skill / :tid → dựng lại MockTest từ đầu (không giữ state của skill cũ). */
+function MockKeyed() { const { skill, tid } = useParams(); return <MockTest key={`${skill}-${tid ?? ''}`} />; }
 
 export default function App() {
   return (
@@ -87,7 +92,9 @@ export default function App() {
           <Route path="speaking/:id" element={<Speaking />} />
           <Route path="writing" element={<SkillList skill="writing" />} />
           <Route path="writing/:id" element={<Writing />} />
-          <Route path="mock/:skill" element={<MockTest />} />
+          <Route path="mock/:skill" element={<MockKeyed />} />
+          <Route path="test/:skill/:tid" element={<TestPage />} />
+          <Route path="test/:skill/:tid/full" element={<MockKeyed />} />
           <Route path="vocab" element={<Vocab />} />
           <Route path="library" element={<Library />} />
           <Route path="history" element={<History />} />

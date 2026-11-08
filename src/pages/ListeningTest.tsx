@@ -3,12 +3,16 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, BookOpenCheck, Check, GraduationCap, Keyboard, Pause, PenLine, Play, RotateCcw, Volume2 } from 'lucide-react';
 import type { ListeningMaterial } from '../types';
 import { addAttempt, resolveUrl, useDb } from '../db';
-import { setLastOpen, touchStreak } from '../store';
+import { getSettings, setLastOpen, touchStreak } from '../store';
 import AudioPlayer, { stopAudio, type AudioHandle } from '../components/AudioPlayer';
 import { GroupsView, scoreGroups, type Answers } from '../components/Questions';
 import { rawToBand, fmtBand } from '../lib/band';
-import { speak, stopSpeak, ttsAvailable, englishVoices } from '../lib/tts';
+import { speak, stopSpeak, ttsAvailable, speakerVoices } from '../lib/tts';
 import { SKILL_META } from './SkillList';
+import Timer from '../components/Timer';
+
+/** Một section: ~7–8 phút audio + thời gian kiểm tra. */
+const SECTION_MINUTES = 10;
 import { RichText } from '../components/ui';
 
 /** Đọc cả kịch bản bằng giọng máy, đổi giọng theo người nói nếu có nhiều giọng. */
@@ -18,15 +22,18 @@ export function useScriptSpeaker(m: ListeningMaterial | undefined) {
   const lines = useMemo(() => (m ? m.transcript.split('\n').map((l) => l.trim()).filter(Boolean) : []), [m]);
   const play = async (from = 0) => {
     stop.current = false;
-    const voices = englishVoices();
+    const st = getSettings();
+    const narrator = st.ttsVoice;
+    const voices = st.ttsOneVoice ? [] : speakerVoices(narrator);
     const speakers = new Map<string, string>();
     for (let i = from; i < lines.length; i++) {
       if (stop.current) break;
       setLine(i);
       const sm = lines[i].match(/^([A-Z][A-Za-z ]{0,20}):\s*/);
-      let voice = m?.voice ?? 'en-GB';
-      if (sm && voices.length > 1) {
-        if (!speakers.has(sm[1])) speakers.set(sm[1], voices[speakers.size % voices.length].name);
+      // Người dẫn (Narrator/Announcer) và dòng không tên: giọng chọn trong Cài đặt; nhân vật khác xoay vòng giọng tốt.
+      let voice = narrator;
+      if (sm && voices.length && !/^(narrator|announcer|presenter)$/i.test(sm[1].trim())) {
+        if (!speakers.has(sm[1])) speakers.set(sm[1], voices[speakers.size % voices.length]);
         voice = speakers.get(sm[1])!;
       }
       await speak(sm ? lines[i].slice(sm[0].length) : lines[i], { voice });
@@ -69,6 +76,7 @@ export default function ListeningTest() {
       <div className="topbar topbar--sticky">
         <button className="icon-btn" onClick={() => nav('/listening')} aria-label="Quay lại"><ArrowLeft size={20} /></button>
         <div className="topbar__title"><small>Thi thử · Listening · Section {m.section ?? '?'}</small><strong>{m.title}</strong></div>
+        <div className="topbar__actions">{!checked && <Timer key={m.id} minutes={SECTION_MINUTES} warnAt={120} onEnd={submit} autoStart />}</div>
         <div className="topbar__progress" style={{ width: `${(done / total) * 100}%` }} />
       </div>
 
@@ -102,7 +110,7 @@ export default function ListeningTest() {
         </div>
       )}
 
-      <GroupsView groups={m.groups} answers={answers} onChange={(no, a) => setAnswers((s) => ({ ...s, [no]: a }))} checked={checked} />
+      <GroupsView groups={m.groups} note={m.note} answers={answers} onChange={(no, a) => setAnswers((s) => ({ ...s, [no]: a }))} checked={checked} />
 
       {!checked && (
         <div className="actionbar"><div className="actionbar__inner">
