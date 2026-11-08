@@ -16,6 +16,7 @@ Web app luyện IELTS 4 kỹ năng: Reading, Listening, Speaking, Writing.
 | `npm run audio -- "<thư mục>"` | chép/nén audio đề gốc vào `public/audio/vol<N>/test<M>/s1..s4.mp3`. ffmpeg bắt buộc với `.wma`; whisper tạo `.srt` (tuỳ chọn) |
 | `npx tsc -b` | kiểm tra kiểu |
 | `npm run build` | data + tsc + vite build → `dist/` |
+| `npm run deploy` | build rồi đẩy `dist/` lên nhánh `gh-pages` → https://phungtrinhuet.github.io/ieltsweb/ (Actions bị khoá do billing nên deploy từ máy) |
 
 Dự án chưa có test tự động. Sau khi sửa, chạy `npm run data` (không được còn `⚠`) và `npx tsc -b`, rồi mở vài trang để xem, ví dụ `#/listening/vol5-t6-l2`, `#/reading/vol5-t6-r2`.
 
