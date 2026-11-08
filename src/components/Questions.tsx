@@ -132,7 +132,7 @@ export function GroupsView({ groups, answers, onChange, checked, onFocus, reveal
         return (
           <section key={gi} className="qgroup">
             <h3>{range}</h3>
-            <p className="instruction">{g.instruction}{g.wordLimit && <> <strong>{g.wordLimit}</strong>.</>}</p>
+            <p className="instruction"><Instruction text={g.instruction} limit={g.wordLimit} /></p>
             {g.bank && g.questions.some((q) => q.type === 'match') && !g.bank.every((b) => b.length <= 2) && (
               <ol className="qbank">{g.bank.map((b, i) => <li key={i}><span>{g.bank!.length > 8 || /heading/i.test(g.instruction) ? ['i', 'ii', 'iii', 'iv', 'v', 'vi', 'vii', 'viii', 'ix', 'x', 'xi', 'xii'][i] : 'ABCDEFGH'[i]}</span>{b}</li>)}</ol>
             )}
@@ -145,4 +145,17 @@ export function GroupsView({ groups, answers, onChange, checked, onFocus, reveal
       })}
     </div>
   );
+}
+
+/** Hướng dẫn của nhóm câu: bôi đậm giới hạn số từ (đã nằm sẵn trong câu, hoặc dạng chữ IN HOA như ONE WORD ONLY). Không nối thêm. */
+const LIMIT_RE = /((?:NO MORE THAN |ONLY )?(?:ONE|TWO|THREE|FOUR|FIVE)(?: WORDS?)?(?: AND\/OR A NUMBER| OR A NUMBER)?(?: ONLY)?|A NUMBER)/;
+function Instruction({ text, limit }: { text: string; limit?: string }) {
+  const at = limit ? text.toUpperCase().indexOf(limit.toUpperCase().replace(/\.$/, '')) : -1;
+  if (limit && at >= 0) {
+    const len = limit.replace(/\.$/, '').length;
+    return <>{text.slice(0, at)}<strong>{text.slice(at, at + len)}</strong>{text.slice(at + len)}</>;
+  }
+  const m = LIMIT_RE.exec(text);
+  if (m && /[A-Z]{3}/.test(m[0]) && m[0] === m[0].toUpperCase() && /WORD|NUMBER/.test(m[0])) return <>{text.slice(0, m.index)}<strong>{m[0]}</strong>{text.slice(m.index + m[0].length)}</>;
+  return <>{text}{limit && <> <strong>{limit}</strong>.</>}</>;
 }
