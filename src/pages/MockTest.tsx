@@ -30,7 +30,7 @@ export default function MockTest() {
   const want = isR ? 3 : 4;
   const minutes = isR ? 60 : 32;
 
-  const sel = picked.map((id) => db.materials[id] as M).filter(Boolean);
+  const sel = picked.map((id) => db.materials[id] as M).filter((x) => x && x.skill === skill);
   const m = sel[cur];
   const total = sel.reduce((n, x) => n + x.groups.reduce((k, g) => k + g.questions.length, 0), 0);
   const done = Object.values(answers).reduce((n, a) => n + Object.values(a).filter((v) => v !== null && v !== '' && !(Array.isArray(v) && !v.length)).length, 0);
@@ -73,7 +73,7 @@ export default function MockTest() {
       <div className="topbar topbar--sticky">
         <button className="icon-btn" onClick={() => confirm('Thoát thi thử? Bài làm sẽ mất.') && nav(`/${skill}`)}><ArrowLeft size={20} /></button>
         <div className="topbar__title"><small>Thi thử {SKILL_META[skill].label} · {isR ? 'Passage' : 'Section'} {cur + 1}/{sel.length}</small><strong>{m.title}</strong></div>
-        <div className="topbar__actions">{!checked && <Timer minutes={minutes} onEnd={submit} />}</div>
+        <div className="topbar__actions">{!checked && <Timer key={picked.join()} minutes={minutes} onEnd={submit} autoStart />}</div>
         <div className="topbar__progress" style={{ width: `${(done / total) * 100}%` }} />
       </div>
       {checked && res && (

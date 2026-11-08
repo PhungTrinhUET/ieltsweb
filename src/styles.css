@@ -1521,3 +1521,40 @@ mark { background: #fde68a; color: #1a1a1a; border-radius: 3px; padding: 0 1px; 
 .recent__body { display: flex; flex-direction: column; min-width: 0; }
 .recent__title { font-weight: 600; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .home__foot { text-align: center; margin: 4px 0 8px; }
+
+/* ---------- ErrorBoundary ---------- */
+.crash { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; max-width: 640px; padding-top: 40px; }
+.crash h1 { margin: 0; font-size: 24px; }
+.crash__icon { color: var(--no); }
+.crash__msg { background: var(--surface-2); border-radius: 10px; padding: 10px 12px; font-size: 13px; white-space: pre-wrap; word-break: break-word; max-width: 100%; color: var(--text-2); }
+
+/* ---------- Đồng hồ ---------- */
+.timer-wrap { position: relative; display: inline-flex; flex-shrink: 0; }
+.timer { cursor: pointer; }
+.timer:disabled { cursor: default; opacity: .75; }
+.timer__num { min-width: 4ch; text-align: right; }
+.timer__label, .timer__state { font-size: 11px; font-weight: 600; opacity: .8; }
+.timer.is-paused { border-style: dashed; color: var(--text); }
+.timer.is-low { background: var(--no-soft); color: var(--no); border-color: color-mix(in srgb, var(--no) 40%, transparent); animation: timer-pulse 1.2s ease-in-out 3; }
+@keyframes timer-pulse { 50% { transform: scale(1.06); } }
+.timer__toast {
+  position: absolute; top: calc(100% + 8px); right: 0; z-index: 60; white-space: nowrap;
+  background: var(--text); color: var(--bg); font-size: 13px; font-weight: 600; padding: 7px 12px; border-radius: 10px;
+  box-shadow: 0 6px 24px rgb(0 0 0 / .2);
+}
+
+/* ---------- Tự chấm (A3) ---------- */
+.stack { display: grid; gap: 14px; margin-top: 14px; }
+.selfcheck__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin: 10px 0; }
+.selfcheck__crit { border: 1px solid var(--border); border-radius: 12px; padding: 10px 12px; display: grid; gap: 6px; align-content: start; }
+.selfcheck__band { font-weight: 700; color: var(--skill, var(--primary)); min-width: 2.5em; text-align: right; }
+.selfcheck__item { display: flex; gap: 8px; align-items: flex-start; font-size: .9rem; line-height: 1.4; cursor: pointer; }
+.selfcheck__item input { margin-top: 3px; flex: none; }
+#self-result { scroll-margin-top: 80px; margin-top: 14px; }
+
+/* ---------- Danh sách giọng (A4) ---------- */
+.voice-select { max-width: 100%; flex: 1 1 260px; }
+.voice-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 4px 12px; }
+.voice-list li { display: flex; align-items: center; gap: 6px; min-width: 0; border-radius: 10px; padding: 2px 6px; }
+.voice-list li.is-on { background: var(--primary-soft); }
+.voice-list__name { background: none; border: 0; padding: 4px 0; color: var(--text); text-align: left; cursor: pointer; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; min-width: 0; font: inherit; font-size: .9rem; }
