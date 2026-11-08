@@ -148,6 +148,17 @@ for (const profile of Object.keys(PROFILES)) {
     return { ok: okRows && more > rows.length && chips >= 6, info: `map VOL3=${rows.length} +mcq=${more} chip=${chips}` };
   });
 
+  await check(`[${profile}] C16 câu điền Listening gọn (nút xem đáp án nằm trong dòng)`, async () => {
+    await go(page, '/listening/vol1-t1-l4/practice');
+    const fills = page.locator('.qgroup .q:has(.qtext--fill)');
+    const n = await fills.count();
+    const rows = await page.locator('.qgroup .q:has(.qtext--fill) .q__check').count();
+    const h = await fills.first().evaluate((e) => e.getBoundingClientRect().height);
+    await fills.first().locator('.q__peek').click();
+    const shown = await page.locator('#q-31.q--no, #q-31.q--ok').count();
+    return { ok: n >= 5 && rows === 0 && shown === 1 && h < 80, info: `fill=${n} dòng nút=${rows} cao=${Math.round(h)}px hiện=${shown}` };
+  });
+
   await check(`[${profile}] B10 bảng/form/flowchart gọn như đề giấy`, async () => {
     await go(page, '/listening/vol1-t2-l4/practice');
     const blanks = await page.locator('table.qtable .tblank input').count();

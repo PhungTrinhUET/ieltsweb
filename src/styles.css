@@ -1392,6 +1392,8 @@ mark { background: #fde68a; color: #1a1a1a; border-radius: 3px; padding: 0 1px; 
 
 /* Kiểm tra từng câu */
 .q__check { display: flex; justify-content: flex-end; margin-top: 4px; }
+.q__peek { display: inline-grid; place-items: center; width: 26px; height: 26px; margin-left: 6px; vertical-align: middle; border: 1px solid var(--border); border-radius: 50%; background: var(--surface); color: var(--text-3); cursor: pointer; }
+.q__peek:hover, .q__peek:focus-visible { color: var(--primary); border-color: var(--primary); }
 
 /* Danh sách bài: 2 chế độ */
 .modes { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }

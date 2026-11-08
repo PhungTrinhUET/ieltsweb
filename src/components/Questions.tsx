@@ -1,7 +1,7 @@
 // Render & chấm mọi dạng câu hỏi Reading / Listening.
 import ZoomImage, { publicUrl } from './ZoomImage';
 import { Fragment, type ReactNode } from 'react';
-import { Check, X } from 'lucide-react';
+import { Check, Eye, X } from 'lucide-react';
 import type { Question, QuestionGroup } from '../types';
 import { answerMatches } from '../lib/text';
 import { Options, PickMenu, RichText, Segmented } from './ui';
@@ -97,9 +97,21 @@ export function QuestionView({ q, group, value, onChange, checked, onFocus, comp
       body = <><div className="qtext">{q.text}</div><Segmented options={opts.map((v) => ({ value: v, label: v }))} value={typeof value === 'string' ? value : null} onChange={(v) => onChange(v)} checked={checked} correct={q.answer} /></>;
       break;
     }
-    case 'fill':
-      body = <div className="qtext qtext--fill"><FillText q={q} value={typeof value === 'string' ? value : ''} onChange={onChange} checked={checked} ok={ok} onFocus={onFocus} /></div>;
+    case 'fill': {
+      // Luyện tập: nút xem/kiểm tra nằm ngay sau câu (không chiếm thêm một dòng).
+      const filled = typeof value === 'string' && value.trim() !== '';
+      body = (
+        <div className="qtext qtext--fill">
+          <FillText q={q} value={typeof value === 'string' ? value : ''} onChange={onChange} checked={checked} ok={ok} onFocus={onFocus} />
+          {!checked && onReveal && (
+            <button className="q__peek" onClick={onReveal} title={filled ? 'Kiểm tra câu này' : 'Xem đáp án'} aria-label={`${filled ? 'Kiểm tra' : 'Xem đáp án'} câu ${q.no}`}>
+              {filled ? <Check size={15} /> : <Eye size={15} />}
+            </button>
+          )}
+        </div>
+      );
       break;
+    }
     case 'match': {
       const bank = q.options ?? group.bank ?? [];
       body = (
@@ -118,7 +130,7 @@ export function QuestionView({ q, group, value, onChange, checked, onFocus, comp
         {body}
         {checked && !ok && q.type === 'fill' && <div className="q__fix"><Check size={14} /> {correctText(q, group.bank)}</div>}
         {checked && q.explanation && <div className="q__explain"><RichText text={q.explanation} /></div>}
-        {!checked && onReveal && (
+        {!checked && onReveal && q.type !== 'fill' && (
           <div className="q__check">
             <button className="btn btn--text btn--sm" onClick={onReveal}>{value === null || value === '' || (Array.isArray(value) && !value.length) ? 'Xem đáp án' : 'Kiểm tra câu này'}</button>
           </div>
