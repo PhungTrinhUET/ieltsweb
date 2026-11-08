@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
-import { Download, Moon, Sun, SunMoon, Upload, Volume2 } from 'lucide-react';
+import { Download, Moon, Play, Sun, SunMoon, Upload, Volume2 } from 'lucide-react';
 import { updateSettings, useSettings } from '../store';
 import { exportAll, importBackup } from '../db';
 import AiSettings from '../components/AiSettings';
-import { englishVoices, speak, ttsAvailable } from '../lib/tts';
+import { englishVoices, speak, ttsAvailable, voiceGender } from '../lib/tts';
+
+const SAMPLE = 'Good morning. This is a test of the reading voice for IELTS practice.';
 
 export default function Settings() {
   const s = useSettings();
@@ -43,16 +45,30 @@ export default function Settings() {
           <p className="small muted">Dùng cho Listening không có audio, chép chính tả, đọc bài Reading, đọc câu hỏi Speaking. Giọng phụ thuộc trình duyệt/hệ điều hành – Chrome có giọng "Google UK English" chất lượng tốt; Edge có giọng "Natural".</p>
           {!ttsAvailable() ? <p className="no-text small">Trình duyệt không hỗ trợ Web Speech API.</p> : (
             <>
-              <select className="select" value={s.ttsVoice} onChange={(e) => updateSettings({ ttsVoice: e.target.value })}>
-                <option value="en-GB">Tự chọn – Anh (en-GB)</option>
-                <option value="en-US">Tự chọn – Mỹ (en-US)</option>
-                <option value="en-AU">Tự chọn – Úc (en-AU)</option>
-                {voices.map((v) => <option key={v.name} value={v.name}>{v.name} ({v.lang})</option>)}
-              </select>
+              <div className="row wrap">
+                <select className="select voice-select" value={s.ttsVoice} onChange={(e) => updateSettings({ ttsVoice: e.target.value })} aria-label="Giọng người dẫn">
+                  <option value="en-GB">Tự động – giọng tốt nhất{voices[0] ? ` (${voices[0].name})` : ''}</option>
+                  {voices.map((v) => <option key={v.name} value={v.name}>{v.name} ({v.lang}{voiceGender(v) ? `, ${voiceGender(v) === 'f' ? 'nữ' : 'nam'}` : ''})</option>)}
+                </select>
+                <button className="btn btn--ghost btn--sm" onClick={() => speak(SAMPLE)}><Play size={14} /> Nghe thử</button>
+              </div>
+              {voices.length === 0 && <p className="small muted">Máy chưa có giọng tiếng Anh dùng được (đã ẩn giọng robot/“Compact”).</p>}
+              {voices.length > 0 && (
+                <ul className="voice-list">
+                  {voices.slice(0, 12).map((v) => (
+                    <li key={v.name} className={s.ttsVoice === v.name ? 'is-on' : ''}>
+                      <button className="icon-btn" onClick={() => speak(SAMPLE, { voice: v.name })} aria-label={`Nghe giọng ${v.name}`}><Play size={14} /></button>
+                      <button className="voice-list__name" onClick={() => updateSettings({ ttsVoice: v.name })}>{v.name}</button>
+                      <small className="muted">{v.lang}{voiceGender(v) && ` · ${voiceGender(v) === 'f' ? 'nữ' : 'nam'}`}</small>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              <p className="small muted">Listening không có audio: người dẫn đọc bằng giọng đã chọn, các nhân vật khác lần lượt dùng 3–4 giọng tốt nhất (xen kẽ nam/nữ).</p>
+              <label className="row small"><input type="checkbox" checked={!!s.ttsOneVoice} onChange={(e) => updateSettings({ ttsOneVoice: e.target.checked })} /> Một giọng cho cả bài</label>
               <div className="row wrap">
                 <span className="small muted">Tốc độ:</span>
                 {[0.7, 0.85, 0.95, 1, 1.1].map((r) => <button key={r} className={`chip${s.ttsRate === r ? ' is-on' : ''}`} onClick={() => updateSettings({ ttsRate: r })}>{r}×</button>)}
-                <button className="btn btn--ghost btn--sm" onClick={() => speak('Good morning. This is a test of the reading voice for IELTS practice.')}>Nghe thử</button>
               </div>
             </>
           )}

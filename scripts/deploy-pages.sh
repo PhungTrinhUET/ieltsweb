@@ -5,6 +5,8 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 npm run build
 touch dist/.nojekyll
+# Audio để ở host ngoài (VITE_AUDIO_BASE trong .env.production.local) → không đẩy dist/audio lên Pages.
+if grep -qs '^VITE_AUDIO_BASE=.\+' .env.production.local .env.production .env.local .env 2>/dev/null || [ -n "${VITE_AUDIO_BASE:-}" ]; then rm -rf dist/audio; echo "Bỏ dist/audio (dùng VITE_AUDIO_BASE)"; fi
 TMP=$(mktemp -d)
 cp -r dist/. "$TMP"
 cd "$TMP"

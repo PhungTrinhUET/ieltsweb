@@ -8,6 +8,8 @@ export interface Settings {
   /** Giọng đọc máy (TTS) khi tài liệu không có audio. */
   ttsVoice: string;
   ttsRate: number;
+  /** Listening TTS: một giọng cho cả bài (không đổi giọng theo người nói). */
+  ttsOneVoice?: boolean;
   /** Mục tiêu band. */
   targetBand: number;
   /** Mỗi ngày học bao nhiêu từ mới. */
