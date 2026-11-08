@@ -8,7 +8,7 @@ import { fmtBand, overallBand } from '../lib/band';
 import { fmtDate } from '../lib/text';
 
 const SKILLS: Skill[] = ['reading', 'listening', 'speaking', 'writing'];
-const MODE: Record<string, string> = { test: 'Làm đề', dictation: 'Chép chính tả', gapfill: 'Điền từ', ai: 'AI chấm' };
+const MODE: Record<string, string> = { test: 'Làm đề', dictation: 'Chép chính tả', gapfill: 'Điền từ', ai: 'AI chấm', self: 'Tự chấm' };
 
 export default function History() {
   const db = useDb();

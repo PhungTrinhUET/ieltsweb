@@ -128,12 +128,16 @@ export interface Attempt {
   skill: Skill;
   title: string;
   at: number;
-  mode: 'test' | 'dictation' | 'gapfill' | 'ai';
+  /** self = nộp bài không AI (tự chấm theo checklist). */
+  mode: 'test' | 'dictation' | 'gapfill' | 'ai' | 'self';
   score?: number;
   max?: number;
   band?: number;
   /** Chi tiết (đáp án đã chọn, kết quả AI…) – mỗi mode một kiểu. */
   detail?: unknown;
+  /** Band tự ước lượng từ checklist (mode self) – không tính vào band trang chủ. */
+  selfBand?: number;
+  selfCheck?: string[];
 }
 
 export interface VocabCard {

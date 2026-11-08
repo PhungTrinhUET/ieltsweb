@@ -11,7 +11,7 @@ import { Ring } from '../components/ui';
 import { Logo } from '../App';
 
 const SKILLS: Skill[] = ['reading', 'listening', 'speaking', 'writing'];
-const MODE_VI: Record<Attempt['mode'], string> = { test: 'Làm đề', dictation: 'Chép chính tả', gapfill: 'Điền từ', ai: 'AI chấm' };
+const MODE_VI: Record<Attempt['mode'], string> = { test: 'Làm đề', dictation: 'Chép chính tả', gapfill: 'Điền từ', ai: 'AI chấm', self: 'Tự chấm' };
 const dayKey = (d: Date) => d.toISOString().slice(0, 10);
 
 function greeting() {

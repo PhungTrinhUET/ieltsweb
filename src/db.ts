@@ -133,6 +133,7 @@ export const materialsOf = (skill: Skill) => Object.values(state.materials).filt
 
 // ---------- Blobs (audio / ảnh) ----------
 const urlCache = new Map<string, string>();
+const AUDIO_BASE = String(import.meta.env.VITE_AUDIO_BASE ?? '').replace(/([^/])$/, '$1/');
 export async function saveBlob(blob: Blob, key = uid()) {
   await put('blobs', key, blob);
   return `idb:${key}`;
@@ -140,6 +141,8 @@ export async function saveBlob(blob: Blob, key = uid()) {
 /** Trả URL dùng được cho <audio>/<img>: URL thường giữ nguyên, idb:<key> → blob URL. */
 export async function resolveUrl(src: string | undefined): Promise<string | null> {
   if (!src) return null;
+  // Audio đề gốc có thể đặt ở host khác (R2, S3, Drive công khai…): VITE_AUDIO_BASE=https://…/ → https://…/vol5/test7/s1.mp3
+  if (src.startsWith('audio/') && AUDIO_BASE) return AUDIO_BASE + src.slice('audio/'.length);
   if (!src.startsWith('idb:')) return src;
   const cached = urlCache.get(src);
   if (cached) return cached;
@@ -156,6 +159,13 @@ export async function addAttempt(a: Omit<Attempt, 'id' | 'at'>) {
   set({ attempts: [full, ...state.attempts] });
   await put('attempts', full.id, full);
   return full;
+}
+export async function updateAttempt(id: string, patch: Partial<Attempt>) {
+  const cur = state.attempts.find((a) => a.id === id);
+  if (!cur) return;
+  const full = { ...cur, ...patch };
+  set({ attempts: state.attempts.map((a) => (a.id === id ? full : a)) });
+  await put('attempts', id, full);
 }
 export async function clearAttempts() {
   set({ attempts: [] });
