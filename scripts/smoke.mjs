@@ -148,6 +148,21 @@ for (const profile of Object.keys(PROFILES)) {
     return { ok: okRows && more > rows.length && chips >= 6, info: `map VOL3=${rows.length} +mcq=${more} chip=${chips}` };
   });
 
+  await check(`[${profile}] B10 bảng/form/flowchart gọn như đề giấy`, async () => {
+    await go(page, '/listening/vol1-t2-l4/practice');
+    const blanks = await page.locator('table.qtable .tblank input').count();
+    await page.locator('table.qtable .tblank input').first().fill('xyz');
+    await page.getByRole('button', { name: /Kiểm tra các câu trong bảng/ }).click();
+    const marked = await page.locator('table.qtable .tblank.is-no').count();
+    const notes = await page.locator('.qtable-notes .q').count();
+    await go(page, '/listening/vol1-t6-l1/practice');
+    const paper = await page.locator('.paper').count();
+    await go(page, '/listening/vol5-t1-l4/practice');
+    const flow = await page.locator('.flowc__step').count();
+    const sw = await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1);
+    return { ok: blanks >= 5 && marked >= 1 && notes >= blanks && paper > 0 && flow > 0 && sw, info: `blank=${blanks} sai=${marked} notes=${notes} paper=${paper} flow=${flow} noHScroll=${sw}` };
+  });
+
   await check(`[${profile}] A2 Writing: chạy từ chữ đầu tiên, reset khi đổi bài`, async () => {
     await go(page, '/writing/vol1-t2-w2');
     const before = await timerRuns(page);

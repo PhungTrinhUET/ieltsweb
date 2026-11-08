@@ -154,6 +154,7 @@
       "instruction": "Complete the table below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
       "wordLimit": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
       "context": "Vacation job – Main advantage / Main disadvantage / Recommendation",
+      "layout": "table", "table": {"rows": [["Stocktaking", "{{11}}", "tiring", "{{12}}"], ["Office work", "air-conditioning", "{{13}}", "choose a {{14}}"], ["Theme park attendant", "{{15}}", "rude customers", "{{16}}"]], "columns": ["Vacation job", "Main advantage", "Main disadvantage", "Recommendation"]},
       "questions": [
        {
         "no": 11,
@@ -307,6 +308,7 @@
       "instruction": "Complete the table below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
       "wordLimit": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
       "context": "Plan for study syndicate – Date / Geology topic / Name of presenter",
+      "layout": "table", "table": {"rows": [["9th May", "{{23}}", "Bob"], ["{{24}}", "Glaciated areas", "Andy"], ["23rd May", "Rock formation", "Helen and John"], ["{{25}}", "Volcanoes", "John"]], "columns": ["Date", "Geology topic", "Name of presenter"], "title": "Plan for study syndicate"},
       "questions": [
        {
         "no": 23,

@@ -74,6 +74,7 @@
       "instruction": "Complete the table below. Write ONE WORD ONLY for each answer.",
       "wordLimit": "ONE WORD ONLY",
       "context": "Columns: Recommendations | Customer preferences. Age: from 16 to 62 | children: 6 and 4. Accommodation type: lodges | a (6). Accommodation location: Lakeside | near the farm or in the (7). Food: a wide range of food | meat, seafood and (8) food. Transport: train or (9) | ferry and van. Courses: flower planting courses | active courses (e.g. a (10) course).",
+      "layout": "table", "table": {"rows": [["Age", "from 16 to 62", "children: 6 and 4"], ["Accommodation type", "lodges", "a {{6}}"], ["Accommodation location", "Lakeside", "near the farm or in the {{7}}"], ["Food", "a wide range of food", "meat, seafood and {{8}} food"], ["Transport", "train or {{9}}", "ferry and van"], ["Courses", "flower planting courses", "active courses (e.g. a {{10}} course)"]], "columns": ["", "Recommendations", "Customer preferences"]},
       "questions": [
        {
         "no": 6,
@@ -568,6 +569,7 @@
      "instruction": "Complete the table below. Choose ONE WORD ONLY from the passage for each answer.",
      "wordLimit": "ONE WORD ONLY",
      "context": "The development of paper (Place | Date of introduction | Materials used | Method of production). Egypt | about 2400 BC | a plant called papyrus | (8). Europe | unknown | parchment (9) | (10). China | 105 AD | (11) | ingredients mixed with water, pressed and put outside in the sun. (12) | 751 AD | flax and hemp | (13).",
+     "layout": "table", "table": {"rows": [["Egypt", "about 2400 BC", "a plant called papyrus", "{{8}} of the plant were softened in water, woven and pounded"], ["Europe", "unknown", "parchment made from the skin of animals such as {{9}}", "skin was dried and {{10}}"], ["China", "105 AD", "{{11}} of a mulberry tree and hemp rags", "ingredients mixed with water, pressed and put outside in the sun"], ["{{12}}", "751 AD", "flax and hemp", "mills made of {{13}} were used"]], "columns": ["Place", "Date of introduction", "Materials used", "Method of production"], "title": "The development of paper"},
      "questions": [
       {
        "no": 8,

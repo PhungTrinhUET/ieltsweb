@@ -72,6 +72,7 @@
             "instruction": "Complete the table below. Write ONE WORD AND/OR A NUMBER for each answer.",
             "wordLimit": "ONE WORD AND/OR A NUMBER",
             "context": "Overview of Bicycling Tours – columns: Number of nights | Terrain | Other attractions | Accommodation. Southern California: Ten nights; inviting food and good weather.",
+            "layout": "table", "table": {"rows": [["Eastern United States", "{{6}}", "riverside and {{7}} trails", "beautiful homes and {{8}}", ""], ["Southern California", "Ten nights", "mountain trail and {{9}} roads", "inviting food and good weather", "hotels and a {{10}}"]], "columns": ["Tour", "Number of nights", "Terrain", "Other attractions", "Accommodation"], "title": "Overview of Bicycling Tours"},
             "questions": [
               {
                 "no": 6,

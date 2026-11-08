@@ -47,6 +47,7 @@ Dự án chưa có test tự động. Sau khi sửa, chạy `npm run data` (khô
   - `tfng` / `ynng`: chuỗi `TRUE` / `FALSE` / `NOT GIVEN` (hoặc `YES` / `NO`).
   - `fill`: phải có `___` trong `text`; đáp án là mảng các cách viết được chấp nhận.
   - `match`: chỉ số trong `bank` của group.
+- Group có thể ghi `layout` (`form`/`notes`/`table`/`flowchart`) và `table: { title?, columns?, rows }`: ô chứa `{{n}}` cho chỗ trống, mỗi câu đúng một lần (`npm run data` kiểm tra). Form/notes: hàng 1 ô = dòng, `"# X"` = tiêu đề, 2 ô = nhãn | giá trị.
 - `explanation`: trích nguyên câu làm bằng chứng từ transcript hoặc bài đọc, có thể thêm ghi chú tiếng Việt ngắn.
   - Khi key gốc sai hoặc mâu thuẫn với bài: chọn đáp án đúng theo bài và ghi "(key trong file giải thích ghi X)".
   - Khi bộ đề không có key: ghi rằng đáp án được suy từ transcript.

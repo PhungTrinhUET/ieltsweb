@@ -17,6 +17,7 @@
       "instruction": "Complete the table below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.",
       "wordLimit": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
       "context": "Student Accommodation – Type / Cost / Contract. Example – College: single room (meals not included). Standard: £3,276 per year, 36 weeks.",
+      "layout": "table", "table": {"rows": [["Example – College: single room (meals not included)", "Standard: £3,276 per year, 36 weeks\nEn-suite: £{{1}} per year", "(Rooms not available during the {{2}})"], ["Room with a family: {{3}}", "£150 per week, all inclusive", "Arrangements are {{4}}"], ["Private renting: room in a shared house or a {{5}}", "From £275 to £490 per month\nAdditional costs (for this year): gas and electricity £{{6}} per month approx.\n{{7}} £9\n{{8}}", "Contract: 6 months\nNeed {{9}}\ntwo {{10}}"]], "columns": ["Type", "Cost", "Contract / notes"], "title": "Student Accommodation"},
       "questions": [
        {
         "no": 1,
@@ -405,6 +406,7 @@
       "instruction": "Complete the table below. Write ONE WORD ONLY for each answer.",
       "wordLimit": "ONE WORD ONLY",
       "context": "Research findings – columns: Social and environmental factors / Other factors / Personal characteristics. First level: Effective support | Perceived success in study | Enjoyment of a (33). Second level: Positive experiences at (34) | Good (35) | Many (36) in daily life. Third level: Good interaction with the (37) | No family problems | Capacity for multi-tasking.",
+      "layout": "table", "table": {"rows": [["First level", "Effective support", "Perceived success in study", "Enjoyment of a {{33}}"], ["Second level", "Positive experiences at {{34}}", "Good {{35}}", "Many {{36}} in daily life"], ["Third level", "Good interaction with the {{37}}", "No family problems", "Capacity for multi-tasking"]], "columns": ["", "Social and environmental factors", "Other factors", "Personal characteristics"], "title": "Research findings"},
       "questions": [
        {
         "no": 33,

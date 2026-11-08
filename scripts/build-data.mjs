@@ -52,6 +52,18 @@ function validate(id, groups) {
     if (q.type === 'match') { const bank = q.options ?? g.bank ?? []; if (q.answer < 0 || q.answer >= bank.length) console.warn(`⚠ ${id}: câu ${q.no} đáp án ngoài bank`); }
     if (q.type === 'fill' && !/_{3,}/.test(q.text)) console.warn(`⚠ ${id}: câu ${q.no} thiếu ___`);
   }
+  // Bảng (layout "table"): mỗi câu của nhóm xuất hiện đúng một lần dạng {{n}}, không có {{n}} lạ; số ô mỗi hàng = số cột.
+  for (const g of groups) {
+    if (g.layout === 'table' && !g.table) console.warn(`⚠ ${id}: layout "table" nhưng thiếu table`);
+    if (!g.table) continue;
+    const cells = g.table.rows.flat().join(' ');
+    const refs = [...cells.matchAll(/\{\{(\d+)\}\}/g)].map((m) => +m[1]);
+    const nos = g.questions.map((q) => q.no);
+    for (const n of nos) { const c = refs.filter((r) => r === n).length; if (c !== 1) console.warn(`⚠ ${id}: bảng có {{${n}}} ${c} lần`); }
+    for (const r of refs) if (!nos.includes(r)) console.warn(`⚠ ${id}: bảng có {{${r}}} không thuộc nhóm`);
+    const w = g.table.columns?.length;
+    if (w) g.table.rows.forEach((row, i) => { if (row.length !== w) console.warn(`⚠ ${id}: bảng hàng ${i + 1} có ${row.length} ô, cần ${w}`); });
+  }
 }
 /** SRT/VTT đặt cạnh audio (public/audio/.../s1.srt) được ưu tiên hơn mốc ước lượng. */
 function parseSrt(text) {

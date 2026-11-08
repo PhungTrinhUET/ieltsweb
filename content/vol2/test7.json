@@ -30,6 +30,7 @@
         "transcriptNote": "Không có transcript trong tài liệu gốc – dùng whisper (`npm run audio`).",
         "groups": [
           { "instruction": "Complete the table below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.", "wordLimit": "NO MORE THAN THREE WORDS AND/OR A NUMBER", "context": "Vacation Job · Recommendation · Main advantage · Main disadvantage",
+            "layout": "table", "table": {"rows": [["Stocktaking", "{{11}}", "tiring", "{{12}}"], ["Office work", "air-conditioning", "{{13}}", "choose a {{14}}"], ["Theme park attendant", "{{15}}", "rude customers", "{{16}}"]], "columns": ["Vacation job", "Main advantage", "Main disadvantage", "Recommendation"]},
             "questions": [
               { "no": 11, "type": "fill", "text": "Stocktaking – main advantage: ___ (main disadvantage: tiring)", "answer": ["travelling", "traveling"], "explanation": "Được đi lại nhiều nơi." },
               { "no": 12, "type": "fill", "text": "Stocktaking – recommendation: ___", "answer": ["get good shoes", "good shoes"], "explanation": "Mua giày tốt." },
@@ -57,6 +58,7 @@
               { "no": 22, "type": "fill", "text": "D – You can do ___", "answer": ["much deeper research", "deeper research"], "explanation": "Nghiên cứu sâu hơn." }
             ] },
           { "instruction": "Complete the table below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.", "wordLimit": "NO MORE THAN THREE WORDS AND/OR A NUMBER", "context": "Plan for study syndicate – Date · Geology topic · Presenter. 9th May: (23) – Bob · (24): Glaciated areas – Andy · 23rd May: Rock formation – Helen and John · (25): Volcanoes – John",
+            "layout": "table", "table": {"rows": [["9th May", "{{23}}", "Bob"], ["{{24}}", "Glaciated areas", "Andy"], ["23rd May", "Rock formation", "Helen and John"], ["{{25}}", "Volcanoes", "John"]], "columns": ["Date", "Geology topic", "Name of presenter"], "title": "Plan for study syndicate"},
             "questions": [
               { "no": 23, "type": "fill", "text": "9th May – topic: ___ (Bob)", "answer": ["mountain building"], "explanation": "Mountain building." },
               { "no": 24, "type": "fill", "text": "___ – Glaciated areas (Andy)", "answer": ["17th May", "17 May", "May 17"], "explanation": "17 May." },

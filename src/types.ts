@@ -42,6 +42,15 @@ export interface QuestionGroup {
   image?: string;
   /** Mô tả ảnh bằng chữ (alt; cũng dùng khi ảnh không tải được). */
   imageAlt?: string;
+  /**
+   * Bố cục như đề thật. Bỏ trống thì tự suy từ instruction (form / notes / flow-chart).
+   * - form / notes: khung giấy, mỗi câu một dòng gọn.
+   * - table: bảng thật (cần `table`), cuộn ngang trên điện thoại.
+   * - flowchart: các bước xếp dọc nối bằng mũi tên.
+   */
+  layout?: 'form' | 'notes' | 'table' | 'flowchart';
+  /** Bảng cho layout "table". Ô chứa `{{n}}` là chỗ trống của câu n (mỗi câu đúng một lần). */
+  table?: { title?: string; columns?: string[]; rows: string[][] };
   questions: Question[];
 }
 

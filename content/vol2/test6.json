@@ -21,6 +21,7 @@
               { "no": 6, "type": "fill", "text": "Then turn left at the ___.", "answer": ["first traffic light", "first traffic lights"], "explanation": "Đèn giao thông đầu tiên." }
             ] },
           { "instruction": "Complete the table below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.", "wordLimit": "NO MORE THAN TWO WORDS AND/OR A NUMBER", "context": "Personal information – Name: Anu Bhatt",
+            "layout": "table", "table": {"rows": [["Name", "Anu Bhatt"], ["Address", "{{7}} Road"], ["Postcode", "{{8}}"], ["Family medical history", "both of her parents have {{9}}"], ["Medicine allergy", "{{10}}"]], "title": "Personal information"},
             "questions": [
               { "no": 7, "type": "fill", "text": "Address: ___ Road", "answer": ["21 Eagle"], "explanation": "21 Eagle Road." },
               { "no": 8, "type": "fill", "text": "Postcode: ___", "answer": ["AL2 1DY", "AL21DY"], "explanation": "AL2 1DY." },

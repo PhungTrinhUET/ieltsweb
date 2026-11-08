@@ -108,7 +108,10 @@ public/audio/vol<N>/test<M>/s1..s4.mp3 (+ .srt)   ← npm run audio
   - `tfng` / `ynng`: đáp án là chuỗi.
   - `fill`: trong `text` có `___`; đáp án là mảng các cách viết được chấp nhận.
   - `match`: đáp án là chỉ số trong `bank`.
-- `npm run data` cảnh báo khi có câu trùng số, đáp án nằm ngoài options/bank, hoặc câu fill thiếu `___`.
+- Trình bày như đề giấy (tuỳ chọn, trên group): `layout` = `form` | `notes` | `table` | `flowchart`. Không ghi thì app tự đoán theo dạng câu (form/note/flow-chart chỉ gồm fill/match, không có hình).
+  - `table: { title?, columns?, rows: string[][] }`: mỗi ô là chuỗi, chỗ trống ghi `{{số câu}}`, xuống dòng bằng `\n`. Mỗi câu của group phải xuất hiện đúng một lần; nếu có `columns` thì mỗi hàng đủ số ô.
+  - Với `form`/`notes`, `rows` là các dòng: một ô = một dòng (bắt đầu `•` là gạch đầu dòng), `"# Tiêu đề"` = tiêu đề nhỏ, hai ô = nhãn | giá trị.
+- `npm run data` cảnh báo khi có câu trùng số, đáp án nằm ngoài options/bank, câu fill thiếu `___`, hoặc bảng thiếu/thừa `{{n}}`, sai số ô.
 
 ### Tình trạng chuyển đổi (08/11/2026)
 

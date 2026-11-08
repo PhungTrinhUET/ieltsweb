@@ -84,6 +84,7 @@
               { "no": 36, "type": "mcq", "text": "This year's competitors were surprised that the vehicles", "options": ["were so easy to design.", "were as successful as they were.", "took such a short time to construct."], "answer": 1, "explanation": "\"amazed that the vehicles did what they wanted them to do at all\"" }
             ] },
           { "instruction": "Complete the table below. Write ONE WORD ONLY for each answer.", "wordLimit": "ONE WORD ONLY", "context": "Schedule – June: visit to a factory; September: workshop; December: submission of initial designs",
+            "layout": "table", "table": {"rows": [["Early May", "Introductory {{37}} about the project"], ["Late May", "Essay giving information about relevant {{38}} and experience"], ["June", "Visit to a factory"], ["September", "Workshop:\n• discuss {{39}}\n• learn to use design package"], ["December", "Submission of initial designs"], ["January", "Selection of the {{40}}"]], "title": "Schedule"},
             "questions": [
               { "no": 37, "type": "fill", "text": "Early May: introductory ___ about the project", "answer": ["seminar"], "explanation": "\"scheduling a seminar to introduce the project\"" },
               { "no": 38, "type": "fill", "text": "Late May: essay giving information about relevant ___ and experience", "answer": ["skills"], "explanation": "\"any particular skills that you have\"" },

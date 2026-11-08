@@ -17,6 +17,7 @@
       "instruction": "Complete the table below. Write ONE WORD AND/OR A NUMBER for each answer.",
       "wordLimit": "ONE WORD AND/OR A NUMBER",
       "context": "The London Relocation Services. Customer's name: Anna Woods.",
+      "layout": "table", "table": {"rows": [["Customer's personal details", "Name: Anna Woods\nCurrent address: 118 {{1}} Park, Ballysillan\nPostcode: BT14 9BJ\nPhone No: {{2}} (Mobile)"], ["Other information", "Anna is hoping to find work as a {{3}}\nShe needs to find a {{4}} school for her son."], ["Requirements for the new property", "Location: her preferred location is in the {{5}} of the city.\nHer husband would like to be near a {{6}}\nHer son would prefer to be close to a {{7}}"], ["Property details", "She would like to live in a {{8}}\nShe would prefer {{9}} bedrooms.\nA small {{10}} is also desirable."]], "title": "The London Relocation Services"},
       "questions": [
        {
         "no": 1,
