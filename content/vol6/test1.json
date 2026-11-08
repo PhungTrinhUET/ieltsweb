@@ -1,0 +1,873 @@
+{
+  "vol": 6,
+  "test": 1,
+  "source": "ORIGINAL EXAMS – VOL 6, Test 1 (audio: S1 (1).mp3, S2 (1).mp3, S3 (1).mp3, S4 (1).mp3). Listening: đề L-TEST 1.pdf, đáp án L-key.pdf; bộ đề không kèm transcript nên transcript được tạo bằng nhận dạng giọng nói tự động (Whisper) từ audio trên Drive, đã sửa chính tả và phân vai người nói; hai chỗ audio nghe không ra để […] (S1 trước \"you need to know who his doctor is\", S2 trước \"for weekends\"); câu đầu S1 \"You will hear\" được dựng lại. Câu 24 chọn A theo transcript (key ghi C). Reading: đề R-TEST 1-update.pdf, key và giải thích từ expl 1-4.pdf; lỗi OCR đã sửa chính tả (Passage 2 đoạn A, D). Một số key Reading mâu thuẫn với chính lời giải thích kèm theo (Q10, Q29, Q30, Q36, Q40) – đã chọn theo bài và ghi chú trong explanation. Passage 2 có thêm đoạn G (kết luận) không thuộc câu hỏi tiêu đề.",
+  "listening": {
+    "audioDir": "audio/vol6/test1",
+    "timingNote": "Audio tách 4 file S1–S4 và transcript (Whisper) được lấy riêng từng file, mỗi phần bắt đầu từ 0:00 nên offset = 0 cho cả 4 section. Mốc là của bản nhận dạng tự động (độ chính xác ~1 giây). File S3 bắt đầu ngay ở \"Now listen carefully and answer questions 21 to 26\"; cuối file S3 có đoạn giới thiệu Part 4 của một đề khác (bài về màu tím) – đã bỏ khỏi transcript. File S4 dài ~18 phút vì gồm 10 phút chuyển đáp án.",
+    "sections": [
+      {
+        "section": 1,
+        "title": "Sailing courses – phone enquiry",
+        "topic": "Leisure",
+        "offset": 0,
+        "transcript": "[00:00] Narrator: You will hear a number of different recordings and you will have to answer questions on what you hear. There will be time for you to read the instructions and questions and you will have a chance to check your work. All the recordings will be played once only. The test is in four sections. Write all your answers in the listening question booklet. At the end of the test, you will be given 10 minutes to transfer your answers to an answer sheet.\n[00:35] Narrator: Now turn to section 1 on page 2 of your question booklet.\n[00:45] Narrator: Section 1. You will hear a woman phoning to enquire about sailing courses. First you have some time to look at questions 1 to 6 on page 2.\n[01:21] Narrator: You will see that there is an example that has been done for you. On this occasion only, the conversation relating to this will be played first.\n[01:38] Staff: Hello.\n[01:39] Mother: Oh, good morning. I'm calling on behalf of my 13-year-old son, Jacob. He's interested in learning to sail.\n[01:50] Staff: Great. Well, we have what we call a taster day on the 22nd of June.\n[01:55] Mother: I'm not sure he can make it, but we'll see.\n[02:01] Narrator: The taster day is on the 22nd of June. So 22nd June has been written in the space. Now we shall begin. You should answer the questions as you listen, because you will not hear the recording a second time. Listen carefully and answer questions 1 to 6.\n[02:26] Staff: Hello.\n[02:27] Mother: Oh, good morning. I'm calling on behalf of my 13-year-old son Jacob. He's interested in learning to sail.\n[02:37] Staff: Great. Well, we have what we call a taster day on the 22nd of June.\n[02:42] Mother: I'm not sure he can make it, but we'll see. Jacob's really interested though, so can you tell me about the courses?\n[02:50] Staff: OK, we have two types of courses for children under 16, two-day and five-day.\n[02:56] Mother: Could you explain the difference?\n[02:58] Staff: Well, the two-day one just covers basic techniques in sailing. And on this course the kids always sail with the instructor they've been allocated.\n[03:07] Mother: Well, that's good to know.\n[03:08] Staff: Yeah, and the cost is £65.\n[03:11] Mother: Oh, I thought it was more than that. I heard it was £125.\n[03:17] Staff: That's for the five-day course.\n[03:18] Mother: OK. I presume that course goes into much more detail.\n[03:23] Staff: Yes, and from the third day the kids are given the choice to sail on their own if they want. We use the same types of boat, but we help them learn more techniques, in particular how to manage the boat in a variety of types of weather.\n[03:36] Mother: Hmm, I think Jacob would enjoy that course. Do you give them a certificate if they complete the course?\n[03:43] Staff: Absolutely. We give them out on the final day, which a lot of the kids really like.\n[03:48] Mother: Great. Could you tell me a bit more about what the children have to bring and so forth?\n[03:53] Staff: Well, the most important thing is the clothing. It goes without saying that whatever the time of year, they should have plenty of warm clothes, as it can be quite cool out on the water.\n[04:04] Mother: What about footwear? Do they have to wear anything special?\n[04:08] Staff: The only rule is that they've got to have shoes of some kind. They mustn't have bare feet.\n[04:13] Mother: OK.\n[04:14] Staff: And we suggest the kids pack an extra pair of trousers, you know, waterproof ones. They don't have to wear them unless it starts to rain.\n[04:22] Mother: Fine. So basically it's just using your common sense.\n[04:26] Staff: Yes. Oh, and one other thing we do say is that the children mustn't wear jeans, because they get extremely heavy when they're wet.\n[04:34] Mother: Oh, OK.\n[04:39] Narrator: Before you hear the rest of the conversation, you have some time to look at questions 7 to 10 on page 2.\n[05:07] Narrator: Now listen and answer questions 7 to 10.\n[05:15] Mother: One thing I forgot to ask is whether it's possible to get a meal anywhere.\n[05:19] Staff: I'm afraid not, but we do have a shop called the Marina Stores where he can get a snack.\n[05:25] Mother: OK, and before I forget, when I drop Jacob off, where can I park?\n[05:30] Staff: Good question. There are spaces near the entrance, but you have to pay for them. But there's no charge for the car park just by the bridge. Do you know it?\n[05:39] Mother: Oh yes, I know where you mean.\n[05:42] Staff: Now, we do need you to fill in a registration form. You should send that in a couple of weeks before the course starts. The form is on the website, but we ask you to print it off and add your signature.\n[05:53] Mother: Yes, of course. What sort of information do you need?\n[05:57] Staff: About your child's swimming ability, any special requirements and so on. […] you need to know who his doctor is.\n[06:04] Mother: Yes. We've just recently changed surgeries, so I'll make a note to get that.\n[06:08] Staff: And one more thing, there's a separate form on the website which is optional that asks whether you're willing for photographs to be taken during the course.\n[06:19] Mother: Yes, of course, no problem.\n[06:21] Staff: Great, so I'll send you…\n[06:23] Narrator: That is the end of section 1. You now have half a minute to check your answers.\n[06:53] Narrator: Now turn to section 2 on page 3.",
+        "groups": [
+          {
+            "instruction": "Complete the form below. Write ONE WORD AND/OR A NUMBER for each answer.",
+            "wordLimit": "ONE WORD AND/OR A NUMBER",
+            "context": "Sailing Courses. Example: There will be a Taster Day on 22nd June.",
+            "questions": [
+              {
+                "no": 1,
+                "type": "fill",
+                "text": "Two-day course: covers basic techniques. Children are always accompanied by their ___.",
+                "answer": [
+                  "instructor"
+                ],
+                "explanation": "\"on this course the kids always sail with the instructor they've been allocated.\""
+              },
+              {
+                "no": 2,
+                "type": "fill",
+                "text": "Two-day course – cost: £___",
+                "answer": [
+                  "65"
+                ],
+                "explanation": "\"Yeah, and the cost is £65.\" – £125 là giá khoá năm ngày."
+              },
+              {
+                "no": 3,
+                "type": "fill",
+                "text": "Five-day course (cost: £125): children can sail alone from the third day onwards and learn how to sail in different kinds of weather. Children receive a ___ on the last day.",
+                "answer": [
+                  "certificate"
+                ],
+                "explanation": "\"Do you give them a certificate if they complete the course?\" – \"Absolutely. We give them out on the final day\""
+              },
+              {
+                "no": 4,
+                "type": "fill",
+                "text": "Clothing: children should wear warm clothes. Children must wear ___.",
+                "answer": [
+                  "shoes"
+                ],
+                "explanation": "\"The only rule is that they've got to have shoes of some kind. They mustn't have bare feet.\""
+              },
+              {
+                "no": 5,
+                "type": "fill",
+                "text": "Children are recommended to bring extra trousers which are ___.",
+                "answer": [
+                  "waterproof"
+                ],
+                "explanation": "\"we suggest the kids pack an extra pair of trousers, you know, waterproof ones.\""
+              },
+              {
+                "no": 6,
+                "type": "fill",
+                "text": "Children are not allowed to wear ___.",
+                "answer": [
+                  "jeans"
+                ],
+                "explanation": "\"the children mustn't wear jeans, because they get extremely heavy when they're wet.\""
+              },
+              {
+                "no": 7,
+                "type": "fill",
+                "text": "Additional information: visitors can buy a ___ in the Marina Stores.",
+                "answer": [
+                  "snack"
+                ],
+                "explanation": "\"we do have a shop called the Marina Stores where he can get a snack.\""
+              },
+              {
+                "no": 8,
+                "type": "fill",
+                "text": "There is a free car park next to the ___.",
+                "answer": [
+                  "bridge"
+                ],
+                "explanation": "\"there's no charge for the car park just by the bridge.\" – bãi gần lối vào phải trả tiền."
+              },
+              {
+                "no": 9,
+                "type": "fill",
+                "text": "Send the registration form two weeks before the course. Remember to include the name of Jacob's ___.",
+                "answer": [
+                  "doctor"
+                ],
+                "explanation": "\"[…] you need to know who his doctor is.\" – \"Yes. We've just recently changed surgeries, so I'll make a note to get that.\""
+              },
+              {
+                "no": 10,
+                "type": "fill",
+                "text": "There is an optional form giving permission to take ___.",
+                "answer": [
+                  "photographs",
+                  "photos"
+                ],
+                "explanation": "\"there's a separate form on the website which is optional that asks whether you're willing for photographs to be taken during the course.\""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section": 2,
+        "title": "Working for Johnson Jones – recruitment talk",
+        "topic": "Work",
+        "offset": 0,
+        "transcript": "[00:00] Narrator: Section 2. You will hear a manager called Mark Bergin, who works for a large retailer called Johnson Jones, giving a talk at a recruitment fair. First, you have some time to look at questions 11 to 15 on page 3.\n[00:30] Narrator: Now listen carefully and answer questions 11 to 15.\n[00:58] Mark: Good morning. My name's Mark Bergin. I'm a human resources manager at Johnson Jones, and I'm here to tell you about what it's like working for one of the country's best employers.\n[01:16] Mark: The company has 225 department stores and owns a further 150 supermarkets. At our latest store opening, we had over 9,000 applicants for 750 posts. So why do so many people want to work for us? Well, the first thing that attracts them isn't so much the salary, although that is a little above average, it's the idea of getting a massive 25% off everything from washing machines to designer handbags. People are prepared to put in long hours to get those kinds of perks.\n[01:58] Mark: Johnson Jones has been going strong for nearly 150 years and has outlived many of its strongest competitors. Of course, this has something to do with the high quality products that we sell and our motto, 'better for less', which means customers know they are getting good value for money. But we're not alone in that. Where we are different is in our approach to making a profit. Other companies think in the short term, whereas we always take a more strategic view, looking three or five years ahead.\n[02:39] Mark: The company isn't owned by a family or shareholders. It's a partnership, which means it's owned by its full-time employees, who are all partners and have a share in the company. In return for the very generous benefits they get, they're expected to put in extra effort and take an active role in running the company. This means they're involved in things like making decisions about pension contributions, for example.\n[03:06] Mark: Another very attractive reason for working for us is the annual bonus, which we get as a percentage of our salary. Last year it was 15%, about two months' salary, which is pretty standard. It can go down to 8%, but that's unusual, and a couple of times it's even been above 20%. Some people use it to pay off loans, others save it for a deposit on a house.\n[03:34] Mark: The most popular benefit for partners are the subsidised holiday centres which are owned by the company. Once a year partners can book in for up to two weeks. It's for anyone, from cleaners to directors, with a minimum of three months' service. After six months' service, partners are entitled to a further subsidy on the cost of their stay.\n[04:05] Narrator: Before you hear the rest of the talk, you have some time to look at questions 16 to 20 on page 4.\n[04:35] Narrator: Now listen and answer questions 16 to 20.\n[04:45] Mark: Let me just give you an idea of what's on offer at the holiday centres. The Grange, which is the largest of the holiday centres, is used for conferences by the company, and the board of directors always have their annual meeting there. It's all very informal, not like a normal conference centre.\n[05:05] Mark: Meadow House is located in Kent, which is famous for its apples and other fruit, and it's a large country house. What's unusual about it is that, unlike other hotels, you have access to the kitchen, so it feels more like staying with a friend.\n[05:23] Mark: Coombe Manor is a working farm. There are loads of cows and sheep, none of which actually end up on our supermarket shelves. It's a paradise for kids, as there's plenty of space to run wild and also an indoor pool. You can choose to stay in cottages or camp by the lake.\n[05:43] Mark: The Barn is where I recently celebrated my 25th wedding anniversary. You can rent the whole place out for a large group of up to 40 friends. We got all our food delivered from the nearest Johnson Jones supermarket, so there was no cooking to be done. Perfect. All that was missing was the spa, which should be opening next year.\n[06:10] Mark: The Stable is often hard to get into because it's so popular. That's partly because it's right on the beach with beautiful sea views and only an hour by train from London. […] for weekends. The company Sailing Club is located there, which was started by the company's founder in 1885.\n[06:53] Narrator: Now turn to section 3 on page 5.",
+        "groups": [
+          {
+            "instruction": "Choose the correct letter, A, B or C.",
+            "context": "Working for Johnson Jones",
+            "questions": [
+              {
+                "no": 11,
+                "type": "mcq",
+                "text": "What does Mark say first attracts people to working for Johnson Jones?",
+                "options": [
+                  "the pay",
+                  "the staff discount",
+                  "the working hours"
+                ],
+                "answer": 1,
+                "explanation": "\"the first thing that attracts them isn't so much the salary ... it's the idea of getting a massive 25% off everything\""
+              },
+              {
+                "no": 12,
+                "type": "mcq",
+                "text": "Mark says the company is one of the country's most successful retailers because it",
+                "options": [
+                  "is focused on long-term planning.",
+                  "provides excellent customer service.",
+                  "offers value for money."
+                ],
+                "answer": 0,
+                "explanation": "\"Where we are different is in our approach to making a profit. Other companies think in the short term, whereas we always take a more strategic view, looking three or five years ahead.\" – value for money thì công ty khác cũng có (\"we're not alone in that\")."
+              },
+              {
+                "no": 13,
+                "type": "mcq",
+                "text": "Mark says that because Johnson Jones is a partnership, the staff",
+                "options": [
+                  "are better trained.",
+                  "have better job security.",
+                  "are given more responsibility."
+                ],
+                "answer": 2,
+                "explanation": "\"they're expected to put in extra effort and take an active role in running the company.\""
+              },
+              {
+                "no": 14,
+                "type": "mcq",
+                "text": "What is the typical annual bonus that partners receive?",
+                "options": [
+                  "8%",
+                  "15%",
+                  "20%"
+                ],
+                "answer": 1,
+                "explanation": "\"Last year it was 15%, about two months' salary, which is pretty standard. It can go down to 8%, but that's unusual\""
+              },
+              {
+                "no": 15,
+                "type": "mcq",
+                "text": "To qualify for the leisure and holiday facilities, partners must have worked for the company for",
+                "options": [
+                  "one year.",
+                  "six months.",
+                  "three months."
+                ],
+                "answer": 2,
+                "explanation": "\"It's for anyone, from cleaners to directors, with a minimum of three months' service.\" – sáu tháng là để được trợ giá thêm."
+              }
+            ]
+          },
+          {
+            "instruction": "What information is given about each of the following staff holiday centres? Choose FIVE answers from the box and write the correct letter, A–G, next to questions 16–20.",
+            "bank": [
+              "available for celebrations and parties",
+              "suitable for families with children",
+              "regularly used by senior management",
+              "also supplies food to the company's supermarkets",
+              "spa facilities available",
+              "similar to being in someone's home",
+              "good for short breaks"
+            ],
+            "questions": [
+              {
+                "no": 16,
+                "type": "match",
+                "text": "The Grange",
+                "answer": 2,
+                "explanation": "\"the board of directors always have their annual meeting there.\""
+              },
+              {
+                "no": 17,
+                "type": "match",
+                "text": "Meadow House",
+                "answer": 5,
+                "explanation": "\"you have access to the kitchen, so it feels more like staying with a friend.\""
+              },
+              {
+                "no": 18,
+                "type": "match",
+                "text": "Coombe Manor",
+                "answer": 1,
+                "explanation": "\"It's a paradise for kids, as there's plenty of space to run wild and also an indoor pool.\" – bẫy D: \"none of which actually end up on our supermarket shelves\"."
+              },
+              {
+                "no": 19,
+                "type": "match",
+                "text": "The Barn",
+                "answer": 0,
+                "explanation": "\"The Barn is where I recently celebrated my 25th wedding anniversary. You can rent the whole place out for a large group of up to 40 friends.\" – bẫy E: spa \"should be opening next year\"."
+              },
+              {
+                "no": 20,
+                "type": "match",
+                "text": "The Stable",
+                "answer": 6,
+                "explanation": "\"only an hour by train from London. […] for weekends.\" – bản ghi tự động mất vài chữ trước \"for weekends\"; đáp án theo key."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section": 3,
+        "title": "Organising a debate – students and tutor",
+        "topic": "Education",
+        "offset": 0,
+        "transcript": "[00:00] Narrator: Now listen carefully and answer questions 21 to 26.\n[00:25] Tutor: Right, now you wanted to organise a formal discussion of some sort in the class, is that right, Daniel?\n[00:33] Daniel: Yes, we thought it would be really good to end our psychology course with a formal debate, you know, where there's a statement and people argue for or against it.\n[00:43] Tutor: Good idea. Where did the enthusiasm come from? Have either of you organised debates before? Fiona?\n[00:51] Fiona: No, but one of my friends did in his last year at secondary school, and he says he got a lot out of doing it. And I know they have debates in lots of other departments here at the university.\n[01:03] Tutor: I see. So what do you think the students, you and the others, would get out of this?\n[01:09] Fiona: Well, a debate will encourage people to study all sides of the subject matter. And also, listening to other people's ideas can have a focusing effect on your own. Sometimes you kind of don't know what you truly believe until you hear something you disagree with.\n[01:26] Tutor: OK, what about the topic for the debate?\n[01:29] Daniel: We've got three to choose from. We'll show you in a minute to check they're OK. At first we thought we'd ask the other students to suggest something, but we were afraid we'd get 30 different topics. So instead we brainstormed some, just the two of us, then made a shortlist, and we'll get them to vote for the one they like best.\n[01:50] Tutor: Right.\n[01:51] Fiona: But the thing is, if people don't know how debates work, they could feel at a disadvantage. I mean, it wouldn't affect their grades or anything, but it could put them off. So we thought we should have a meeting beforehand to make sure everyone's clear about what's involved in a debate and how to prepare for it.\n[02:09] Tutor: I think that's a good idea.\n[02:10] Daniel: And we thought we could establish some key points of a successful debate there, like that debates are effective methods for considering an issue, and that you need to understand both sides of an argument in order to support one side effectively.\n[02:27] Fiona: We think it'll be best if we can use an issue that the students already have strong opinions about. Then some people will be happy to speak in support of it, and others to oppose it.\n[02:37] Tutor: Right. What else do you want to do at the meeting?\n[02:41] Daniel: Well, we've got to think about how people will do the background research for the debate. We could organise everyone into two teams. That should save time for the main speakers. They won't have to do it on their own.\n[02:51] Fiona: And we'll need to decide on some rules, like how long each person speaks for. And to select a chair for the debate, someone who's really confident.\n[03:02] Tutor: Fine. Now, I think you should have some sort of follow-up to the debate. And after it's over, I'd like you to get everyone to write a short essay focusing on what they gained from participating in it. And in turn, that can feed into the work we've been doing on learning and motivation.\n[03:21] Fiona: But would you be willing to read them and report back? I mean, give some feedback on them.\n[03:27] Tutor: I wouldn't have made the suggestion if I wasn't.\n[03:29] Fiona: Thanks.\n[03:30] Narrator: Before you hear the rest of the discussion, you have some time to look at questions 27 to 30.\n[03:40] Narrator: Now listen and answer questions 27 to 30.\n[04:07] Tutor: OK, now let's think a bit more about the meeting. You need to decide exactly how you'll introduce the students to different features of a debate.\n[04:16] Daniel: Well, first of all we need to inform everyone about what actually happens at a debate, the procedures and so on. We could talk about that and write the main information on the board.\n[04:26] Fiona: Or instead of that we could make a summary of the main stages and hand that out. Then talk it through.\n[04:34] Daniel: Yes, OK, that's better.\n[04:36] Fiona: OK, but we do need to talk about body language as well.\n[04:40] Tutor: Yes, that's a very important tool. I've got an interesting article on that with some good diagrams of techniques for things like eye contact. I'll make some copies for you to give out.\n[04:52] Fiona: Great!\n[04:53] Daniel: Then we need to think about where people will find the information on the debate topic, so they'll need to know where to look for the information. We could compile a list of sources – textbooks and articles and so on.\n[05:05] Fiona: We could, but couldn't people offer their own suggestions and advice on that at the meeting instead?\n[05:11] Daniel: Yes, get everyone involved.\n[05:13] Tutor: Right. What about preparation for asking and answering questions?\n[05:18] Fiona: We could try to demonstrate that, but I'm not sure how.\n[05:22] Daniel: Maybe we could put up a list of points on the board, then discuss them.\n[05:27] Fiona: Yes, that sounds better.\n[05:29] Tutor: OK, well, let's meet up again…\n[05:35] Narrator: That is the end of part 3. You now have 30 seconds to check your answers to part 3.",
+        "groups": [
+          {
+            "instruction": "Choose the correct letter, A, B or C.",
+            "context": "Organising a debate",
+            "questions": [
+              {
+                "no": 21,
+                "type": "mcq",
+                "text": "Why is Fiona keen to organise a debate?",
+                "options": [
+                  "She has attended debates in other departments.",
+                  "She organised debates while at secondary school.",
+                  "She has talked about debating with a friend."
+                ],
+                "answer": 2,
+                "explanation": "\"one of my friends did in his last year at secondary school, and he says he got a lot out of doing it.\""
+              },
+              {
+                "no": 22,
+                "type": "mcq",
+                "text": "Fiona says that an advantage of debating is that it can",
+                "options": [
+                  "help students to form opinions.",
+                  "improve students' listening skills.",
+                  "develop students' self-confidence."
+                ],
+                "answer": 0,
+                "explanation": "\"listening to other people's ideas can have a focusing effect on your own. Sometimes you kind of don't know what you truly believe until you hear something you disagree with.\""
+              },
+              {
+                "no": 23,
+                "type": "mcq",
+                "text": "How will the debate topic be selected?",
+                "options": [
+                  "Daniel and Fiona will ask the lecturer to choose one from a list.",
+                  "The other students will select one of Daniel and Fiona's suggestions.",
+                  "Daniel and Fiona will collect suggestions from the other students."
+                ],
+                "answer": 1,
+                "explanation": "\"we brainstormed some, just the two of us, then made a shortlist, and we'll get them to vote for the one they like best.\""
+              },
+              {
+                "no": 24,
+                "type": "mcq",
+                "text": "Daniel and Fiona think one key to a successful debate is for students to",
+                "options": [
+                  "have a topic that really involves them.",
+                  "plan their speech carefully.",
+                  "be given positions to defend."
+                ],
+                "answer": 0,
+                "explanation": "\"We think it'll be best if we can use an issue that the students already have strong opinions about. Then some people will be happy to speak in support of it, and others to oppose it.\" (key gốc ghi C; transcript không nói tới việc giao lập trường cho sinh viên mà nói chọn chủ đề họ có sẵn quan điểm mạnh → chọn A, chưa chắc chắn.)"
+              },
+              {
+                "no": 25,
+                "type": "mcq",
+                "text": "Daniel thinks it would be good for the students to be in two teams because it would",
+                "options": [
+                  "give everyone a chance to speak.",
+                  "help students with less confidence.",
+                  "share out the preparation required."
+                ],
+                "answer": 2,
+                "explanation": "\"We could organise everyone into two teams. That should save time for the main speakers. They won't have to do it on their own.\""
+              },
+              {
+                "no": 26,
+                "type": "mcq",
+                "text": "What does the lecturer agree to do after the debate?",
+                "options": [
+                  "make comments on students' written work.",
+                  "help Daniel and Fiona to write a report.",
+                  "set the students an essay on a different topic."
+                ],
+                "answer": 0,
+                "explanation": "\"would you be willing to read them and report back? I mean, give some feedback on them.\" – \"I wouldn't have made the suggestion if I wasn't.\""
+              }
+            ]
+          },
+          {
+            "instruction": "What will Daniel and Fiona do at the meeting to help students with each aspect of a debate? Choose FOUR answers from the box and write the correct letter, A–F, next to questions 27–30.",
+            "bank": [
+              "ask for suggestions",
+              "give a handout of key points",
+              "write on the board",
+              "provide a photocopy of an article",
+              "recommend a textbook",
+              "give a demonstration"
+            ],
+            "questions": [
+              {
+                "no": 27,
+                "type": "match",
+                "text": "understanding debating procedures",
+                "answer": 1,
+                "explanation": "\"we could make a summary of the main stages and hand that out.\" – \"Yes, OK, that's better.\" (bẫy C: viết lên bảng bị thay)."
+              },
+              {
+                "no": 28,
+                "type": "match",
+                "text": "using body language",
+                "answer": 3,
+                "explanation": "\"I've got an interesting article on that ... I'll make some copies for you to give out.\""
+              },
+              {
+                "no": 29,
+                "type": "match",
+                "text": "accessing resources",
+                "answer": 0,
+                "explanation": "\"couldn't people offer their own suggestions and advice on that at the meeting instead?\" – \"Yes, get everyone involved.\""
+              },
+              {
+                "no": 30,
+                "type": "match",
+                "text": "asking and answering questions",
+                "answer": 2,
+                "explanation": "\"Maybe we could put up a list of points on the board, then discuss them.\" – \"Yes, that sounds better.\" (bẫy F: \"We could try to demonstrate that, but I'm not sure how\")."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section": 4,
+        "title": "Crisis communication theory – lecture",
+        "topic": "Business",
+        "offset": 0,
+        "transcript": "[00:00] Narrator: Section 4. You will hear part of a lecture to business management students about what managers should do when their organisation faces a crisis. First you have some time to look at questions 31 to 40 on page 7.\n[01:00] Narrator: Now listen carefully and answer questions 31 to 40.\n[01:15] Lecturer: Today I want to talk about how organisations can respond to a crisis, which happens when a serious problem occurs suddenly and must be dealt with quickly. I will talk about a theory that tells crisis managers how to communicate in different kinds of crises.\n[01:37] Lecturer: Some people ask why we need theory in crisis communication. Isn't logic the answer? Yes, it is sometimes. But organisations often handle crisis communication badly. What we find is that, in reality, much of the advice that organisations receive on how to respond to a crisis is just a guess. Theory and research allow us to take those suggestions and test them. Then managers can be given advice based on actual evidence of what works and what doesn't.\n[02:21] Lecturer: The crisis theory has categorised three general types of crises. One type is a crisis where the organisation is a victim and has very little responsibility. For example, this kind of crisis could be caused by a rumour. The second kind is accidental. There isn't much responsibility because there are other outside factors that contributed to it. And the third one, and the most difficult to actually manage, is a preventable crisis. In this kind of crisis, those affected believe strongly that a mistake was made within the organisation.\n[03:09] Lecturer: The type of crisis is important because the more people think the organisation is responsible for the crisis, the angrier they become at the organisation.\n[03:22] Lecturer: The theory begins by suggesting a two-part basic response that can be used in all kinds of crisis. The first part is to provide information to those affected so that they can protect themselves from further harm. Many crises pose a risk to people. For example, if there is a chemical release, people might have to evacuate an area. Or, if there's a product which could be harmful, people need to be told about it so they don't buy it, or so if they have bought it, they can return it.\n[04:00] Lecturer: The second part of the basic response is to communicate the action the organisation is planning in order to prevent another crisis. This is important because those affected by a crisis are often concerned that it is going to happen again.\n[04:25] Lecturer: Beyond this, crisis managers also have other tools to shape how people think about the crisis. Crisis managers can use several strategies to do this. One strategy is to diminish the crisis. If crisis managers have proof which is convincing, they can argue that a crisis is not as bad as people think. If they can argue this successfully, the harmful effects are reduced.\n[04:59] Lecturer: Another way to shape thinking is to give excuses which emphasise a lack of intent. Therefore, people will see the crisis as an accident. This is important because an accidental crisis is much easier to manage than an intentional crisis.\n[05:20] Lecturer: Crisis managers can also protect the organisation's reputation when there is a major crisis. Our first goal is to reduce the negative opinions generated by the crisis. This can be done by presenting new positive facts and figures about the organisation, or by reminding people of past good works done by the organisation.\n[05:49] Lecturer: Rebuild strategies are useful for preventable crises or when there has been a series of accidental crises, as these crises present a severe threat to the perceived reliability of the organisation. For example, a crisis where the organisation is clearly at fault, or broke a law, can be very damaging, and can result in loss of business. Rebuild strategies can also be used to reduce the impact of the crisis. To do this, crisis managers say and do things to benefit those affected by the crisis.\n[06:33] Lecturer: The reputation of the organisation can also be protected in practical ways. The problem can sometimes be addressed by offering an apology to those affected by the crisis. This may be sufficient action when the problem is relatively minor. However, if the crisis is very severe, the most common strategy is to offer compensation to those affected.\n[07:03] Lecturer: So to summarise, crisis communication theory is interesting to managers as it gives positive guidance on how to respond. It can help them figure out which strategy is the most effective.\n[07:20] Narrator: That is the end of section 4. You now have half a minute to check your answers.\n[07:50] Narrator: That is the end of the listening test. You now have 10 minutes to transfer your answers to the listening answer sheet.",
+        "groups": [
+          {
+            "instruction": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+            "wordLimit": "ONE WORD ONLY",
+            "context": "Crisis Communication Theory",
+            "questions": [
+              {
+                "no": 31,
+                "type": "fill",
+                "text": "Why do we need theory? Some people think using ___ is better than theory.",
+                "answer": [
+                  "logic"
+                ],
+                "explanation": "\"Some people ask why we need theory in crisis communication. Isn't logic the answer?\""
+              },
+              {
+                "no": 32,
+                "type": "fill",
+                "text": "But a lot of advice is simply a ___.",
+                "answer": [
+                  "guess"
+                ],
+                "explanation": "\"much of the advice that organisations receive on how to respond to a crisis is just a guess.\""
+              },
+              {
+                "no": 33,
+                "type": "fill",
+                "text": "Types of crisis: the organisation can be a victim – e.g. due to a ___.",
+                "answer": [
+                  "rumour",
+                  "rumor"
+                ],
+                "explanation": "\"For example, this kind of crisis could be caused by a rumour.\""
+              },
+              {
+                "no": 34,
+                "type": "fill",
+                "text": "Crisis can be preventable – resulting from a ___ in the organisation.",
+                "answer": [
+                  "mistake"
+                ],
+                "explanation": "\"those affected believe strongly that a mistake was made within the organisation.\""
+              },
+              {
+                "no": 35,
+                "type": "fill",
+                "text": "Suggested response for all crises: give information to prevent any more damage; communicate what ___ is to be taken.",
+                "answer": [
+                  "action"
+                ],
+                "explanation": "\"communicate the action the organisation is planning in order to prevent another crisis.\""
+              },
+              {
+                "no": 36,
+                "type": "fill",
+                "text": "Strategies to influence people's thinking – diminish the crisis: provide ___ that the crisis is not so bad.",
+                "answer": [
+                  "proof"
+                ],
+                "explanation": "\"If crisis managers have proof which is convincing, they can argue that a crisis is not as bad as people think.\""
+              },
+              {
+                "no": 37,
+                "type": "fill",
+                "text": "Protecting the organisation's reputation: initial objective is to lessen ___ opinions.",
+                "answer": [
+                  "negative"
+                ],
+                "explanation": "\"Our first goal is to reduce the negative opinions generated by the crisis.\""
+              },
+              {
+                "no": 38,
+                "type": "fill",
+                "text": "Rebuild strategies are important when there is a serious ___ to the organisation's reputation.",
+                "answer": [
+                  "threat"
+                ],
+                "explanation": "\"these crises present a severe threat to the perceived reliability of the organisation.\""
+              },
+              {
+                "no": 39,
+                "type": "fill",
+                "text": "Things can be improved by providing an ___.",
+                "answer": [
+                  "apology"
+                ],
+                "explanation": "\"The problem can sometimes be addressed by offering an apology to those affected by the crisis.\""
+              },
+              {
+                "no": 40,
+                "type": "fill",
+                "text": "In serious cases, ___ is usually offered.",
+                "answer": [
+                  "compensation"
+                ],
+                "explanation": "\"if the crisis is very severe, the most common strategy is to offer compensation to those affected.\""
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "reading": [
+    {
+      "passage": 1,
+      "title": "Mungo Lady and Mungo Man",
+      "topic": "Archaeology",
+      "passage_text": "Controversies in Australian Prehistory\n\nFifty thousand years ago, a lush landscape greeted the first Australians moving towards the south-east of the continent. Temperatures were cooler than now. Megafauna – giant prehistoric animals such as marsupial lions and the rhinoceros-sized diprotodon – were abundant. Freshwater lakes in areas of western New South Wales (NSW) were brimming with fish. But change was coming. By 40,000 years ago, water levels had started to drop.\n\nA study of the sediments and graves of Lake Mungo, a dry lake bed in western NSW, has uncovered the muddy layers deposited as the lake began to dry up. Forty thousand years ago, families took refuge at the lake from the encroaching desert, leaving artefacts such as stone tools, which researchers used to determine that the first wanderers came to the area between 46,000 and 50,000 years ago. By 20,000 years ago, the lake had become the dry, dusty hole it is today. This area was first examined by the University of Melbourne geologist Professor Jim Bowler in 1969. He was searching for ancient lakes and came across the remains of a woman who had been buried with some ceremony; she was given the name 'Mungo Lady'. In 1974, he found a second set of remains, Mungo Man, buried 300 metres away. Bowler's comprehensive study of different sediment layers has concluded that both graves are 40,000 years old.\n\nThis is much younger than the 62,000 years Mungo Man was attributed with in 1999 by a team led by Professor Alan Thorne, of the Australian National University. Thorne is the country's leading opponent of the 'Out of Africa' theory – that modern humans spread around the globe from Africa about 100,000 years ago. The revision of Mungo Man's age has refocused attention on academic disputes about mankind's origins.\n\nThe arrival date of these early Australians is linked to another vexed question: the reason for the disappearance of the megafauna. Dr Tim Flannery, a proponent of the controversial theory that these animals were wiped out by the extreme hunting practices of humans, claims that the new Mungo dates support this view. For Bowler, however, these debates are speculative distractions. At 40,000 years old, he argues, Mungo Man and Mungo Lady remain Australia's oldest human burials and the earliest evidence on Earth of cultural sophistication. 'At Lake Mungo, we have a cameo of people reacting to environmental change. It is one of the great stories of the people of the world.'\n\nTwo rival groups of researchers have each attacked the techniques used by the other to ascertain the date of Mungo Man. In the 1999 study, Thorne's team used three techniques to date Mungo Man – bone, tooth enamel and sand. Bowler has strongly challenged the results ever since. Dating human bones is 'notoriously unreliable', he says. In addition, the sand sample used by Thorne's group was taken hundreds of metres from the burial site.\n\nBowler has stated that 'it is not difficult to realise that the age of sand is not the same as the age of the grave'. He says his team's results are based on careful fieldwork, crosschecked between four laboratories, while Thorne's team misinterpreted the evidence, 'locked in a laboratory in Canberra'. Thorne counters that Bowler's team used one dating technique, while his used three. Best practice is to have at least two methods producing the same result. A Thorne team member, Professor Rainer Grün, says the fact that the latest results were consistent between laboratories doesn't mean they are correct. 'We now have two data sets that are contradictory. I do not have a plausible explanation.'\n\nThorne recently made headlines with a study of Mungo Man's DNA, which he claimed supported his idea that modern humans developed from archaic humans in several places around the world, rather than emerging from Africa a relatively short time ago. Now, however, Thorne says the age of Mungo Man is irrelevant. Recent fossil finds show that modern humans were in China 110,000 years ago. 'So he has a long time to arrive in Australia. It doesn't matter if he is 40,000 or 60,000 years old.'\n\nIn 2001, a member of Bowler's team, Dr Richard Roberts of Wollongong University, along with Flannery, Director of the South Australian Museum, published research on the extinction of the megafauna. They dated 28 sites across the continent, arguing that their analysis showed that the megafauna died out suddenly 46,600 years ago. This conclusion has been challenged by other scientists, including Dr Judith Field of the University of Sydney and Dr Richard Fullager of the Australian Museum, who point to the presence of megafauna fossils at the 36,000-year-old Cuddie Springs site in NSW.\n\nFlannery praises the Bowler team's research as thorough and rigorous. He says the finding that humans arrived at Lake Mungo between 46,000 and 50,000 years ago supports the idea that that was a critical time in Australia's history. There is no evidence of a dramatic climate change at that time, he says. 'It's my view that humans arrived and megafauna extinction took place in almost the same geological instant.' Bowler, however, is sceptical of Flannery's theory about the disappearance of the giant animals. He argues that climate change 40,000 years ago was more intense than has been previously realised and could have played an important role in their extinction.",
+      "groups": [
+        {
+          "instruction": "Look at the following theories (Questions 1–8) and the list of researchers. Match each theory with the correct researcher(s), A–F. NB You may use any letter more than once.",
+          "bank": [
+            "Jim Bowler",
+            "Alan Thorne",
+            "Tim Flannery",
+            "Rainer Grün",
+            "Richard Roberts and Tim Flannery",
+            "Judith Field and Richard Fullager"
+          ],
+          "questions": [
+            {
+              "no": 1,
+              "type": "match",
+              "text": "Our human ancestors did not originate in only one area.",
+              "answer": 1,
+              "explanation": "\"Thorne recently made headlines with a study of Mungo Man's DNA, which he claimed supported his idea that modern humans developed from archaic humans in several places around the world, rather than emerging from Africa\" – Thorne phản đối thuyết 'Out of Africa'."
+            },
+            {
+              "no": 2,
+              "type": "match",
+              "text": "The extinction of the megafauna happened within a brief period.",
+              "answer": 4,
+              "explanation": "\"Dr Richard Roberts ... along with Flannery ... arguing that their analysis showed that the megafauna died out suddenly 46,600 years ago.\" – died out suddenly = within a brief period."
+            },
+            {
+              "no": 3,
+              "type": "match",
+              "text": "The megafauna died out as a result of human activity.",
+              "answer": 2,
+              "explanation": "\"Dr Tim Flannery, a proponent of the controversial theory that these animals were wiped out by the extreme hunting practices of humans\""
+            },
+            {
+              "no": 4,
+              "type": "match",
+              "text": "The similarity of results does not always guarantee their validity.",
+              "answer": 3,
+              "explanation": "\"Professor Rainer Grün, says the fact that the latest results were consistent between laboratories doesn't mean they are correct.\""
+            },
+            {
+              "no": 5,
+              "type": "match",
+              "text": "How old Mungo Man is, is unimportant.",
+              "answer": 1,
+              "explanation": "\"Now, however, Thorne says the age of Mungo Man is irrelevant.\""
+            },
+            {
+              "no": 6,
+              "type": "match",
+              "text": "There is evidence to disprove the theory of mass megafauna extinction.",
+              "answer": 5,
+              "explanation": "\"This conclusion has been challenged by other scientists, including Dr Judith Field ... and Dr Richard Fullager ..., who point to the presence of megafauna fossils at the 36,000-year-old Cuddie Springs site in NSW.\""
+            },
+            {
+              "no": 7,
+              "type": "match",
+              "text": "An extreme environmental change occurred at the time that humans first moved into the Lake Mungo area.",
+              "answer": 0,
+              "explanation": "\"He argues that climate change 40,000 years ago was more intense than has been previously realised\" – Bowler; ngược với Flannery (\"There is no evidence of a dramatic climate change at that time\")."
+            },
+            {
+              "no": 8,
+              "type": "match",
+              "text": "The earliest evidence of advanced human culture is found in Australia.",
+              "answer": 0,
+              "explanation": "\"Mungo Man and Mungo Lady remain Australia's oldest human burials and the earliest evidence on Earth of cultural sophistication.\" – ý kiến của Bowler."
+            }
+          ]
+        },
+        {
+          "instruction": "Do the following statements agree with the information given in Reading Passage 1? Write TRUE, FALSE or NOT GIVEN.",
+          "questions": [
+            {
+              "no": 9,
+              "type": "tfng",
+              "text": "Objects found in the Lake Mungo area were used to date the arrival of humans.",
+              "answer": "TRUE",
+              "explanation": "\"leaving artefacts such as stone tools, which researchers used to determine that the first wanderers came to the area between 46,000 and 50,000 years ago\""
+            },
+            {
+              "no": 10,
+              "type": "tfng",
+              "text": "Ancient weapons were found in the Lake Mungo area.",
+              "answer": "NOT GIVEN",
+              "explanation": "Bài chỉ nói \"leaving artefacts such as stone tools\"; không nhắc tới vũ khí, cũng không nói là không có → NOT GIVEN. (key trong file giải thích ghi FALSE, nhưng chính lời giải thích \"The passage does not mention ancient weapons\" là dấu hiệu của NOT GIVEN.)"
+            },
+            {
+              "no": 11,
+              "type": "tfng",
+              "text": "Scientists agree about the age of Mungo Man.",
+              "answer": "FALSE",
+              "explanation": "\"Two rival groups of researchers have each attacked the techniques used by the other to ascertain the date of Mungo Man.\""
+            },
+            {
+              "no": 12,
+              "type": "tfng",
+              "text": "Thorne's research involved analysing more than one material.",
+              "answer": "TRUE",
+              "explanation": "\"In the 1999 study, Thorne's team used three techniques to date Mungo Man – bone, tooth enamel and sand.\""
+            },
+            {
+              "no": 13,
+              "type": "tfng",
+              "text": "Bowler has criticised the research methods used by Thorne.",
+              "answer": "TRUE",
+              "explanation": "\"Bowler has strongly challenged the results ever since. Dating human bones is 'notoriously unreliable', he says.\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "passage": 2,
+      "title": "The attraction of video games",
+      "topic": "Technology",
+      "passage_text": "The world's love of video games has much to do with people's desires and motives\n\nA Video games, it is often claimed, are about wasting time. It is a misunderstanding that players and game makers have been trying to correct for many years. While movies and television are endlessly analysed in the media, games are often dismissed as irresponsible, unimportant by-products of the broader digital revolution.\n\nBut a growing number of experts disagree. This is, after all, an entertainment medium that worldwide makes $50b a year. Using ideas from psychology and sociology, theorists and designers suggest that our love of video games may actually have important things to tell us about our most basic desires and motivations.\n\nGame design has become big business and has led to the creation of a multitude of companies. The industry attitude toward training has changed radically, says prominent game researcher Jesper Juul. 'I recall hearing professionals claim that game design was a strange and unteachable art, but now this attitude has mostly faded.' Designing video games is increasingly recognised as a valid field of university study throughout the world.\n\nB Central to an understanding of games is the theory that games are fun because they teach us in a way that our brains prefer, that is, through systems and puzzles. Raph Koster, designer of multiplayer fantasy games, points out that an effective learning environment is one in which failure is acceptable, even welcomed. Accordingly, Koster says that in games, the player enters into a situation where the rules of the real world don't apply – and typically being judged on success and failure is part of the real world. When gaming, people feel free to try things and to learn, and not worry about what might happen.\n\nConsistently, Koster says, the best games are the ones that provide us with interesting tools such as weapons or magic, and allow us to experiment with them. For example, in one early game, players are given the ability to jump, and can practise this for as long as they like, but to get to the next stage they need to master this ability so they can leap over an enemy and onto a platform. 'Games allow us to create these little systems where learning is controlled really brilliantly,' says Margaret Robertson, director at a London-based game design company. 'Something we don't talk about is that, actually, one of the strengths of games is the vague sense of disapproval that still surrounds them – they feel like something that's forbidden!' And that can, of course, be very exciting.\n\nC Another important element in the popularity of games is the player's ability to determine what happens. Games tap into our need to have direction; this is very obvious in games where we shape the lives of virtual humans, but it's becoming a vital element of action adventures too.\n\n'Games are increasingly complex systems,' says Dan Pinchbeck, an experimental game designer. 'There's an emphasis on the pleasure of choosing and planning. We've moved quite dramatically away from the very first video games. These games mostly involved the player merely reacting to events. But games then became more about approaching a situation and making a plan depending on your preferred play style.'\n\nD Many studios design their games around reward systems. 'A good game will have progression at the end of each level, but it will also provide surprise rewards halfway through,' says Ben Weedon, a games studio consultant. 'In a game, you're essentially pressing the same buttons and doing the same things over and over again, so you need those occasional surprises to stay motivated.'\n\nE Games have constantly evolved over the years and continue to do so right up to the present. Now, incorporating a narrative structure into a game is becoming increasingly important. Many games have adopted Hollywood's three-act structure, which is designed to maintain our loyalty to a particular game. As in many films, a short final act is often used to give a sense of acceleration towards a preferably startling climax. Opening levels of games are also short, because this flatters us into thinking we're making good progress, whereas the middle levels are more extensive.\n\nF Games even tap into our friendships. The rise of multiplayer gaming means that gaming increasingly involves social interaction. And other businesses are taking notice and using this as an element in advertising their brands. Then there's the new concept of 'gamification', in which websites and smartphone apps are being designed like games, with high scores and achievement points to keep customers entertained. Research estimates that businesses spent more than $100m worldwide on gamification projects last year, a figure predicted to rise to $1.6b in the next four years.\n\nG So, in fact, games aren't just an insignificant fad, as some people might suggest. They fulfil intrinsic human needs, whether we are conscious of it or not. The loop of learning, control and rewards is at the heart of something very important, and very attractive.",
+      "groups": [
+        {
+          "instruction": "Reading Passage 2 has sections A–G. Choose the correct heading for sections A–F from the list of headings below.",
+          "bank": [
+            "i. Being able to experiment without consequences",
+            "ii. Why stories are included in games",
+            "iii. The key role of the unexpected for game players",
+            "iv. Transferring features of games to other types of products",
+            "v. The age group that games most appeal to",
+            "vi. The development of the video game design industry",
+            "vii. Players' ability to control what occurs in games"
+          ],
+          "questions": [
+            {
+              "no": 14,
+              "type": "match",
+              "text": "Section A",
+              "answer": 5,
+              "explanation": "\"Game design has become big business and has led to the creation of a multitude of companies ... Designing video games is increasingly recognised as a valid field of university study\""
+            },
+            {
+              "no": 15,
+              "type": "match",
+              "text": "Section B",
+              "answer": 0,
+              "explanation": "\"the player enters into a situation where the rules of the real world don't apply ... people feel free to try things and to learn, and not worry about what might happen.\""
+            },
+            {
+              "no": 16,
+              "type": "match",
+              "text": "Section C",
+              "answer": 6,
+              "explanation": "\"Another important element in the popularity of games is the player's ability to determine what happens.\""
+            },
+            {
+              "no": 17,
+              "type": "match",
+              "text": "Section D",
+              "answer": 2,
+              "explanation": "\"it will also provide surprise rewards halfway through ... so you need those occasional surprises to stay motivated.\""
+            },
+            {
+              "no": 18,
+              "type": "match",
+              "text": "Section E",
+              "answer": 1,
+              "explanation": "\"Now, incorporating a narrative structure into a game is becoming increasingly important.\""
+            },
+            {
+              "no": 19,
+              "type": "match",
+              "text": "Section F",
+              "answer": 3,
+              "explanation": "\"the new concept of 'gamification', in which websites and smartphone apps are being designed like games\""
+            }
+          ]
+        },
+        {
+          "instruction": "Look at the following statements (Questions 20–23) and the list of experts. Match each statement with the correct expert, A–E. NB You may use any letter more than once.",
+          "bank": [
+            "Jesper Juul",
+            "Raph Koster",
+            "Margaret Robertson",
+            "Dan Pinchbeck",
+            "Ben Weedon"
+          ],
+          "questions": [
+            {
+              "no": 20,
+              "type": "match",
+              "text": "Players' involvement in games often includes thinking ahead.",
+              "answer": 3,
+              "explanation": "\"There's an emphasis on the pleasure of choosing and planning.\" – Dan Pinchbeck."
+            },
+            {
+              "no": 21,
+              "type": "match",
+              "text": "The inclusion of unanticipated elements keeps players interested.",
+              "answer": 4,
+              "explanation": "\"so you need those occasional surprises to stay motivated\" – Ben Weedon."
+            },
+            {
+              "no": 22,
+              "type": "match",
+              "text": "It's now accepted that creating video games is a skill that can be learned.",
+              "answer": 0,
+              "explanation": "\"I recall hearing professionals claim that game design was a strange and unteachable art, but now this attitude has mostly faded.\" – Jesper Juul."
+            },
+            {
+              "no": 23,
+              "type": "match",
+              "text": "Early games were much simpler than more recent ones.",
+              "answer": 3,
+              "explanation": "\"We've moved quite dramatically away from the very first video games. These games mostly involved the player merely reacting to events.\" – Dan Pinchbeck."
+            }
+          ]
+        },
+        {
+          "instruction": "Complete the sentences below. Choose ONE WORD ONLY from the passage for each answer.",
+          "wordLimit": "ONE WORD ONLY",
+          "questions": [
+            {
+              "no": 24,
+              "type": "fill",
+              "text": "Koster believes that games remove people's fear of ___.",
+              "answer": [
+                "failure"
+              ],
+              "explanation": "\"an effective learning environment is one in which failure is acceptable, even welcomed ... and not worry about what might happen.\""
+            },
+            {
+              "no": 25,
+              "type": "fill",
+              "text": "Robertson's view is that games feel exciting partly because of the ___ that is associated with them.",
+              "answer": [
+                "disapproval"
+              ],
+              "explanation": "\"one of the strengths of games is the vague sense of disapproval that still surrounds them\""
+            },
+            {
+              "no": 26,
+              "type": "fill",
+              "text": "Narrative games are often structured so that the first and last part are both ___.",
+              "answer": [
+                "short"
+              ],
+              "explanation": "\"a short final act is often used ... Opening levels of games are also short\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "passage": 3,
+      "title": "Blind to Change",
+      "topic": "Psychology",
+      "passage_text": "How much of the world around you do you really see?\n\nPicture the following and prepare to be amazed. You're walking across a college campus when a stranger asks you for directions. While you're talking to him, two men pass between you carrying a wooden door. You feel a moment's irritation, but you carry on describing the route. When you've finished, you're told you've just taken part in a psychology experiment. 'Did you notice anything after the two men passed with the door?' the stranger asks. 'No,' you reply uneasily. He explains that the man who initially approached you walked off behind the door leaving him in his place. The first man now rejoins you. Comparing them, you notice that they are of different height and build and are dressed very differently.\n\nDaniel Simons of Harvard University found that 50% of participants missed the substitution because of what is called 'change blindness'. When considered with a large number of recent experimental results, this phenomenon suggests we 'see' far less than we think we do. Rather than logging every detail of the visual scene, says Simons, we are actually highly selective. Our impression of seeing everything is just that. In fact, we extract a few details and rely on memory, or even our imagination, for the rest.\n\nUntil recently, scientists believed that vision involved creating images within the brain. By forming detailed internal representations of our surroundings and comparing them over time, we could detect any alterations. However, in his book Consciousness Explained, philosopher Daniel Dennett argued that our brains only store a few key details about the world, which is why we can function effectively. According to Dennett, creating elaborate images in short-term memory would consume valuable cognitive resources. Instead, we record what has changed and assume everything else remains unchanged. As a result, we inevitably overlook some details. Experiments had demonstrated that we tend to ignore elements in our visual field that seem unimportant, such as a repeated word or line in a text. But even Dennett didn't fully realise just how little we actually 'see'.\n\nA year later, John Grimes from the University of Illinois drew attention by showing that people who were presented with computer-generated images of natural scenes failed to notice changes made while their eyes were, for example, scanning the scene or blinking. Dennett was pleased: 'In hindsight, I wish I had been bolder, as the effects are more pronounced than I originally claimed.' Subsequently, it was discovered that our eyes don't even need to be moving to be deceived. A typical laboratory experiment might display an image on a computer screen, like a couple dining on a terrace. The image would briefly disappear, replaced by a blank screen, then reappear with a significant change, such as a raised railing behind the couple. Many people search the screen for up to a minute before spotting the alteration, and some never see it.\n\nThis is disconcerting. However, 'change blindness' is somewhat artificial because, in real-life scenarios, a visible motion usually signals a change. Yet, not always. As Simons points out, 'We all know the experience of missing a traffic signal change because we briefly looked away. \"Inattentional blindness\" refers to not noticing a feature of a scene when you aren't paying attention to it.'\n\nLast year, Simons showed people a video of a basketball game and asked them to count the passes made by one of the teams. After 45 seconds, a man in a gorilla suit slowly walked behind the players. Forty percent didn't notice him. When the tape was replayed, and they were simply told to watch it, they easily saw the gorilla. Some even doubted it was the same video.\n\nNow, consider if the viewers had been driving a car, and the man in the gorilla suit had been a pedestrian. Some estimates suggest that nearly half of all fatal motor vehicle accidents in the US result from driver error, including attention lapses. It's more than just academic interest that has spurred research into these cognitive errors.\n\nThese errors prompt critical questions: how can we reconcile such significant lapses with our subjective experience of continuously perceiving a rich visual environment? Last year, Stephen Kosslyn from Harvard University demonstrated that imagining a scene activates parts of the visual cortex similarly to actually seeing it. He argues that this supports the idea that we only absorb the information we consider important and mentally fill in the gaps where details are less crucial. 'The illusion that we see \"everything\" is partly due to filling in gaps with memory,' he says. 'These memories can be shaped by beliefs and expectations.'\n\nRonald Rensink from the University of British Columbia in Canada believes our perception of a detailed visual world comes from constructing internal representations. He suggests that the brain first creates a temporary layout of the visual scene, and then our attention enhances the resolution of the scene. 'What attention does,' he explains, 'is stabilise these representations so they form distinct objects. Once attention shifts, they revert to an unstable, unresolved state.'\n\nWhile Rensink or Kosslyn propose that internal images or memory play some role, others argue that we can perceive visual richness without storing any of that richness in our brains. Kevin O'Regan, an experimental psychologist, contends that our brains do not store a visual image of the world. Instead, we rely on the external visual environment as different parts of a scene become relevant. According to O'Regan, our sense of controlling what we see is also an illusion. 'We believe that when something flickers outside the window, we choose to look,' says Susan Blackmore from the University of the West of England, who supports O'Regan's view. 'In reality,' she explains, 'our change detection mechanisms automatically drag our attention to various stimuli.'",
+      "groups": [
+        {
+          "instruction": "Look at the following people (Questions 27–30) and the list of claims. Match each person with the correct claim, A–G.",
+          "bank": [
+            "People overlook changes that happen during eye movements.",
+            "At times, we fail to notice something because we choose to deceive ourselves.",
+            "Retaining every image and memory would hinder our ability to function effectively.",
+            "Sometimes, people overlook the significance of a crucial figure in a scene.",
+            "We misunderstand what we see because we rely on our imagination.",
+            "We don't have complete control over what captures our attention.",
+            "Imagining a scene and physically being there impact our visual processes in similar ways."
+          ],
+          "questions": [
+            {
+              "no": 27,
+              "type": "match",
+              "text": "Daniel Dennett",
+              "answer": 2,
+              "explanation": "\"our brains only store a few key details about the world, which is why we can function effectively. According to Dennett, creating elaborate images in short-term memory would consume valuable cognitive resources.\""
+            },
+            {
+              "no": 28,
+              "type": "match",
+              "text": "John Grimes",
+              "answer": 0,
+              "explanation": "\"failed to notice changes made while their eyes were, for example, scanning the scene or blinking\""
+            },
+            {
+              "no": 29,
+              "type": "match",
+              "text": "Stephen Kosslyn",
+              "answer": 6,
+              "explanation": "\"Stephen Kosslyn from Harvard University demonstrated that imagining a scene activates parts of the visual cortex similarly to actually seeing it.\" (key trong file giải thích ghi F, nhưng lời giải thích của key – \"imagining a scene activates the brain like real vision\" – đúng là phương án G.)"
+            },
+            {
+              "no": 30,
+              "type": "match",
+              "text": "Kevin O'Regan",
+              "answer": 5,
+              "explanation": "\"According to O'Regan, our sense of controlling what we see is also an illusion.\" (key trong file giải thích ghi E, nhưng lời giải thích của key – \"we don't control what captures our attention\" – đúng là phương án F.)"
+            }
+          ]
+        },
+        {
+          "instruction": "Do the following statements agree with the information given in Reading Passage 3? Write TRUE, FALSE or NOT GIVEN.",
+          "questions": [
+            {
+              "no": 31,
+              "type": "tfng",
+              "text": "One expert expressed regret for having underemphasised his argument in a publication.",
+              "answer": "TRUE",
+              "explanation": "\"Dennett was pleased: 'In hindsight, I wish I had been bolder, as the effects are more pronounced than I originally claimed.'\""
+            },
+            {
+              "no": 32,
+              "type": "tfng",
+              "text": "We overlook insignificant items that come into our view.",
+              "answer": "TRUE",
+              "explanation": "\"Experiments had demonstrated that we tend to ignore elements in our visual field that seem unimportant, such as a repeated word or line in a text.\""
+            },
+            {
+              "no": 33,
+              "type": "tfng",
+              "text": "Research into cognitive errors might potentially save lives.",
+              "answer": "TRUE",
+              "explanation": "\"nearly half of all fatal motor vehicle accidents in the US result from driver error, including attention lapses. It's more than just academic interest that has spurred research into these cognitive errors.\""
+            },
+            {
+              "no": 34,
+              "type": "tfng",
+              "text": "The aging process increases the need to fill in gaps in our visual perception.",
+              "answer": "NOT GIVEN",
+              "explanation": "Bài có nói \"mentally fill in the gaps where details are less crucial\" nhưng không nhắc gì tới tuổi tác."
+            },
+            {
+              "no": 35,
+              "type": "tfng",
+              "text": "Our eyes are only at risk of being deceived when they are in motion.",
+              "answer": "FALSE",
+              "explanation": "\"Subsequently, it was discovered that our eyes don't even need to be moving to be deceived.\""
+            }
+          ]
+        },
+        {
+          "instruction": "Complete each sentence with the correct ending, A–G.",
+          "bank": [
+            "is not backed by scientific evidence.",
+            "is provided by memory.",
+            "has been especially fruitful in recent times.",
+            "causes us to overlook other details.",
+            "has sparked significant public debate.",
+            "is challenging for us to accept.",
+            "helps us see the overall picture more clearly."
+          ],
+          "questions": [
+            {
+              "no": 36,
+              "type": "match",
+              "text": "Concentrating on a particular aspect of an activity or scene",
+              "answer": 3,
+              "explanation": "\"asked them to count the passes made by one of the teams ... a man in a gorilla suit slowly walked behind the players. Forty percent didn't notice him.\" (key trong file giải thích ghi C, nhưng nội dung key – \"Causes us to overlook other details\" – là phương án D.)"
+            },
+            {
+              "no": 37,
+              "type": "match",
+              "text": "The fact that we make visual errors",
+              "answer": 5,
+              "explanation": "\"This is disconcerting.\" / \"Some even doubted it was the same video.\" – khó chấp nhận."
+            },
+            {
+              "no": 38,
+              "type": "match",
+              "text": "The part of the picture that we fail to see clearly",
+              "answer": 1,
+              "explanation": "\"In fact, we extract a few details and rely on memory, or even our imagination, for the rest.\" / \"The illusion that we see 'everything' is partly due to filling in gaps with memory\""
+            },
+            {
+              "no": 39,
+              "type": "match",
+              "text": "The idea that we see everything in our visual field",
+              "answer": 0,
+              "explanation": "\"this phenomenon suggests we 'see' far less than we think we do ... Our impression of seeing everything is just that.\""
+            },
+            {
+              "no": 40,
+              "type": "match",
+              "text": "Research into the nature of human vision",
+              "answer": 2,
+              "explanation": "\"When considered with a large number of recent experimental results, this phenomenon suggests we 'see' far less than we think we do.\" (key trong file giải thích ghi E \"has sparked significant public debate\", nhưng bài không nhắc tới tranh luận công chúng; C khớp với \"a large number of recent experimental results\" – chưa chắc chắn.)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "writing": []
+}

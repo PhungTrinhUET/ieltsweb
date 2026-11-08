@@ -1,0 +1,890 @@
+{
+  "vol": 6,
+  "test": 3,
+  "source": "ORIGINAL IELTS EXAMS – VOL 6, Test 3 (Listening: L-TEST 3.pdf + L-key.pdf; audio: 01 Track 1.mp3, 02 Track 2.mp3, 03 Track 3.mp3, 04 Track 4.mp3; Reading: R-TEST 3.pdf, đối chiếu Full Reading.docx, key/giải thích trong expl 1-4.pdf). Listening không có transcript trong tài liệu gốc nên phần giải thích chỉ dẫn key. Reading đã sửa lỗi OCR; Passage 1 đoạn về người La Mã bị OCR trộn lẫn câu nên được sắp lại (\"…to build these systems. Then, as the Roman empire expanded…\", \"…observed in Africa, Asia, and Europe. By 2,000 years ago much of Earth's population…\"); Passage 2 đoạn F câu \"He carried out experiments to find out how wings work and…\" bị mất chữ trong PDF, phần \"experiments to find out how wings work\" là dựng lại tối thiểu; đoạn E thêm chữ \"realised\" bị mất (\"perhaps some realised it was the shape…\").",
+  "listening": {
+    "audioDir": "audio/vol6/test3",
+    "timingNote": "Audio tách 4 file (Track 1–4 = Part 1–4). Tài liệu gốc không có transcript nên không có mốc thời gian. Câu 15–20 là bản đồ: không có hình và không có lời chỉ đường, chỉ chọn chữ cái A–I.",
+    "sections": [
+      {
+        "section": 1,
+        "title": "Get Away Tours – bicycling holidays",
+        "topic": "Travel",
+        "transcriptNote": "Không có transcript cho section này trong tài liệu gốc (L-TEST 3.pdf và Full Listening.docx chỉ có câu hỏi). Chạy `npm run audio` (có cài whisper) để tự tạo từ file mp3.",
+        "transcript": "",
+        "groups": [
+          {
+            "instruction": "Complete the notes below. Write ONE WORD AND/OR A NUMBER for each answer.",
+            "wordLimit": "ONE WORD AND/OR A NUMBER",
+            "context": "Get Away Tours. Office hours: 10am to 7pm. Price includes accommodation and meals.",
+            "questions": [
+              {
+                "no": 1,
+                "type": "fill",
+                "text": "Cost of cheapest tour per person is $___ (this month only)",
+                "answer": [
+                  "1100",
+                  "1,100"
+                ],
+                "explanation": "Key gốc (L-key.pdf): \"1100\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 2,
+                "type": "fill",
+                "text": "The number of bicycle trips to choose from is ___",
+                "answer": [
+                  "36",
+                  "thirty-six"
+                ],
+                "explanation": "Key gốc (L-key.pdf): \"36\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 3,
+                "type": "fill",
+                "text": "Most tours last a ___",
+                "answer": [
+                  "week"
+                ],
+                "explanation": "Key gốc (L-key.pdf): \"week\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 4,
+                "type": "fill",
+                "text": "This company offers ___ holidays as well as bicycling",
+                "answer": [
+                  "walking"
+                ],
+                "explanation": "Key gốc (L-key.pdf): \"walking\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 5,
+                "type": "fill",
+                "text": "Travellers start their trips on ___",
+                "answer": [
+                  "Tuesday",
+                  "Tuesdays"
+                ],
+                "explanation": "Key gốc (L-key.pdf): \"Tuesday\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              }
+            ]
+          },
+          {
+            "instruction": "Complete the table below. Write ONE WORD AND/OR A NUMBER for each answer.",
+            "wordLimit": "ONE WORD AND/OR A NUMBER",
+            "context": "Overview of Bicycling Tours – columns: Number of nights | Terrain | Other attractions | Accommodation. Southern California: Ten nights; inviting food and good weather.",
+            "questions": [
+              {
+                "no": 6,
+                "type": "fill",
+                "text": "Eastern United States – number of nights: ___",
+                "answer": [
+                  "6",
+                  "six"
+                ],
+                "explanation": "Key gốc (L-key.pdf): \"6/six\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 7,
+                "type": "fill",
+                "text": "Eastern United States – terrain: riverside and ___ trails",
+                "answer": [
+                  "forest"
+                ],
+                "explanation": "Key gốc (L-key.pdf): \"forest\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 8,
+                "type": "fill",
+                "text": "Eastern United States – other attractions: beautiful homes and ___",
+                "answer": [
+                  "gardens"
+                ],
+                "explanation": "Key gốc (L-key.pdf): \"gardens\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 9,
+                "type": "fill",
+                "text": "Southern California – terrain: mountain trail and ___ roads",
+                "answer": [
+                  "coastal"
+                ],
+                "explanation": "Key gốc (L-key.pdf): \"coastal\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 10,
+                "type": "fill",
+                "text": "Southern California – accommodation: hotels and a ___",
+                "answer": [
+                  "farm"
+                ],
+                "explanation": "Key gốc (L-key.pdf): \"farm\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section": 2,
+        "title": "Sports information for parents",
+        "topic": "Education",
+        "transcriptNote": "Không có transcript cho section này trong tài liệu gốc (L-TEST 3.pdf và Full Listening.docx chỉ có câu hỏi). Chạy `npm run audio` (có cài whisper) để tự tạo từ file mp3.",
+        "transcript": "",
+        "groups": [
+          {
+            "instruction": "Choose the correct letter, A, B or C.",
+            "context": "Sports Information for Parents",
+            "questions": [
+              {
+                "no": 11,
+                "type": "mcq",
+                "text": "The school is looking for new team coaches and managers because",
+                "options": [
+                  "the overall interest in sport has grown.",
+                  "certain parents have given up these roles.",
+                  "new types of sport are being introduced."
+                ],
+                "answer": 1,
+                "explanation": "Key gốc (L-key.pdf): \"B\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 12,
+                "type": "mcq",
+                "text": "What does the speaker say is the most important thing a coach needs?",
+                "options": [
+                  "confidence about the rules of a particular sport",
+                  "the ability to make children enthusiastic about a sport",
+                  "commitment to training the team for a full season"
+                ],
+                "answer": 1,
+                "explanation": "Key gốc (L-key.pdf): \"B\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 13,
+                "type": "mcq",
+                "text": "For parents who would like to coach rugby, one requirement is that they",
+                "options": [
+                  "attend an upcoming registration event.",
+                  "can commit to two coaching sessions per week.",
+                  "have their own child in the team."
+                ],
+                "answer": 0,
+                "explanation": "Key gốc (L-key.pdf): \"A\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 14,
+                "type": "mcq",
+                "text": "In order to get a netball uniform, parents will need to",
+                "options": [
+                  "pay a deposit at school.",
+                  "visit the recommended local sports store.",
+                  "ask the team manager for one."
+                ],
+                "answer": 0,
+                "explanation": "Key gốc (L-key.pdf): \"A\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key. Thứ tự phương án B/C theo PDF đề; bản Full Listening.docx đảo B và C, không ảnh hưởng đáp án A."
+              }
+            ]
+          },
+          {
+            "instruction": "Label the map below. Write the correct letter, A–I, next to questions 15–20. (Không có hình bản đồ và không có transcript: chỉ có thể chọn chữ cái A–I; đáp án theo key gốc.)",
+            "context": "Cross country running event – trên bản đồ gốc có: North car park, South car park, Flag post, School, Satellite dish, Footpath; các vị trí cần điền đánh dấu A–I.",
+            "bank": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E",
+              "F",
+              "G",
+              "H",
+              "I"
+            ],
+            "questions": [
+              {
+                "no": 15,
+                "type": "match",
+                "text": "Drinks station",
+                "answer": 2,
+                "explanation": "Key gốc (L-key.pdf): \"C\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 16,
+                "type": "match",
+                "text": "Crossing point",
+                "answer": 7,
+                "explanation": "Key gốc (L-key.pdf): \"H\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 17,
+                "type": "match",
+                "text": "Halfway point",
+                "answer": 1,
+                "explanation": "Key gốc (L-key.pdf): \"B\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 18,
+                "type": "match",
+                "text": "First aid",
+                "answer": 5,
+                "explanation": "Key gốc (L-key.pdf): \"F\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 19,
+                "type": "match",
+                "text": "Rest area",
+                "answer": 6,
+                "explanation": "Key gốc (L-key.pdf): \"G\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 20,
+                "type": "match",
+                "text": "Filming area",
+                "answer": 3,
+                "explanation": "Key gốc (L-key.pdf): \"D\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section": 3,
+        "title": "Buildings made of plastic",
+        "topic": "Architecture",
+        "transcriptNote": "Không có transcript cho section này trong tài liệu gốc (L-TEST 3.pdf và Full Listening.docx chỉ có câu hỏi). Chạy `npm run audio` (có cài whisper) để tự tạo từ file mp3.",
+        "transcript": "",
+        "groups": [
+          {
+            "instruction": "Choose the correct letter, A, B or C.",
+            "context": "Buildings made of plastic",
+            "questions": [
+              {
+                "no": 21,
+                "type": "mcq",
+                "text": "Why did buildings made of plastic fail to please the public in the 1960s?",
+                "options": [
+                  "People didn't think they were good for the environment.",
+                  "People didn't want to live in them.",
+                  "People didn't find them visually appealing."
+                ],
+                "answer": 1,
+                "explanation": "Key gốc (L-key.pdf): \"B\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 22,
+                "type": "mcq",
+                "text": "In the 1960s and 1970s, engineers were unable to overcome the problem of",
+                "options": [
+                  "damage caused in the production process.",
+                  "the effects of light and water.",
+                  "the potential danger of wind."
+                ],
+                "answer": 1,
+                "explanation": "Key gốc (L-key.pdf): \"B\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 23,
+                "type": "mcq",
+                "text": "Luke and Millie agree to try to get more information about present-day plastics from",
+                "options": [
+                  "journals.",
+                  "a PhD student.",
+                  "websites."
+                ],
+                "answer": 0,
+                "explanation": "Key gốc (L-key.pdf): \"A\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 24,
+                "type": "mcq",
+                "text": "What do Luke and Millie agree about the article by Peterson?",
+                "options": [
+                  "It provided useful examples.",
+                  "It was easy to understand.",
+                  "It was a good introduction to the topic."
+                ],
+                "answer": 1,
+                "explanation": "Key gốc (L-key.pdf): \"B\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              }
+            ]
+          },
+          {
+            "instruction": "What description applies to each of the following structures? Choose SIX answers from the box and write the correct letter, A–G, next to questions 25–30.",
+            "bank": [
+              "easy to transport",
+              "not much room inside",
+              "made from recycled materials",
+              "designed to promote technology",
+              "never actually built",
+              "easy to keep clean",
+              "very strong construction"
+            ],
+            "questions": [
+              {
+                "no": 25,
+                "type": "match",
+                "text": "the 'house of the future' (1957)",
+                "answer": 6,
+                "explanation": "Key gốc (L-key.pdf): \"G\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 26,
+                "type": "match",
+                "text": "the 'wonderhouse' (1964)",
+                "answer": 4,
+                "explanation": "Key gốc (L-key.pdf): \"E\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 27,
+                "type": "match",
+                "text": "spaceship houses (1968–78)",
+                "answer": 1,
+                "explanation": "Key gốc (L-key.pdf): \"B\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 28,
+                "type": "match",
+                "text": "foam houses (1979–83)",
+                "answer": 3,
+                "explanation": "Key gốc (L-key.pdf): \"D\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 29,
+                "type": "match",
+                "text": "plastic exhibition hall",
+                "answer": 0,
+                "explanation": "Key gốc (L-key.pdf): \"A\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 30,
+                "type": "match",
+                "text": "New Zealand house",
+                "answer": 2,
+                "explanation": "Key gốc (L-key.pdf): \"C\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section": 4,
+        "title": "Calotype photography in Britain and France",
+        "topic": "Art & History",
+        "transcriptNote": "Không có transcript cho section này trong tài liệu gốc (L-TEST 3.pdf và Full Listening.docx chỉ có câu hỏi). Chạy `npm run audio` (có cài whisper) để tự tạo từ file mp3.",
+        "transcript": "",
+        "groups": [
+          {
+            "instruction": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+            "wordLimit": "ONE WORD ONLY",
+            "context": "Calotype photography in Britain and France. From Daguerreotype to Calotype: Daguerreotype was the first commercial photographic process. William Talbot began looking for an alternative approach in the 1840s. Talbot used paper instead of copper. French Calotype: in 1851, the first society for photographers was created; Gustave Le Gray became fascinated by calotype photography. People thought photography was more reliable than drawing.",
+            "questions": [
+              {
+                "no": 31,
+                "type": "fill",
+                "text": "Daguerreotype had a problem: the use of copper made it ___",
+                "answer": [
+                  "expensive"
+                ],
+                "explanation": "Key gốc (L-key.pdf): \"expensive\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 32,
+                "type": "fill",
+                "text": "Talbot was not originally a photographer but an artist who specialised in ___",
+                "answer": [
+                  "painting"
+                ],
+                "explanation": "Key gốc (L-key.pdf): \"painting\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 33,
+                "type": "fill",
+                "text": "These calotype photographs were more ___ because they weren't so sharp.",
+                "answer": [
+                  "realistic"
+                ],
+                "explanation": "Key gốc (L-key.pdf): \"realistic\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 34,
+                "type": "fill",
+                "text": "Le Gray carried out experiments and produced the first ___ using a camera.",
+                "answer": [
+                  "enlargement",
+                  "enlargements"
+                ],
+                "explanation": "Key gốc (L-key.pdf): \"enlargement\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 35,
+                "type": "fill",
+                "text": "He developed equipment that was easier to use outside the ___",
+                "answer": [
+                  "studio"
+                ],
+                "explanation": "Key gốc (L-key.pdf): \"studio\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 36,
+                "type": "fill",
+                "text": "Calotype became famous because Le Gray produced ___ about it.",
+                "answer": [
+                  "books"
+                ],
+                "explanation": "Key gốc (L-key.pdf): \"books\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 37,
+                "type": "fill",
+                "text": "It was used to record the work done on old ___",
+                "answer": [
+                  "buildings"
+                ],
+                "explanation": "Key gốc (L-key.pdf): \"buildings\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 38,
+                "type": "fill",
+                "text": "Photography was not 'art', according to ___",
+                "answer": [
+                  "critics"
+                ],
+                "explanation": "Key gốc (L-key.pdf): \"critics\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 39,
+                "type": "fill",
+                "text": "Summary: Photography was thought of as a ___ so reflected the culture of the 1850s.",
+                "answer": [
+                  "science"
+                ],
+                "explanation": "Key gốc (L-key.pdf): \"science\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              },
+              {
+                "no": 40,
+                "type": "fill",
+                "text": "The use of new materials, particularly ___, led to new techniques.",
+                "answer": [
+                  "glass"
+                ],
+                "explanation": "Key gốc (L-key.pdf): \"glass\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "reading": [
+    {
+      "passage": 1,
+      "title": "The growth of agriculture",
+      "topic": "History",
+      "level": "easy",
+      "passage_text": "The growth of agriculture\nSome developments in Western agriculture from prehistory to the nineteenth century\n\nAgriculture is the art and science of cultivating the soil, growing crops and raising livestock. It includes the preparation of plant and animal products for people to use and their distribution to markets.\n\nBefore agriculture became widespread, prehistoric people spent most of their lives hunting animals and gathering wild plants. Then, about 11,500 years ago, people gradually learned how to cultivate plants for food use and settled down to a life based on farming. Scholars are unsure why this shift to farming took place, but it may have occurred because of climate change. The earliest crop was most likely to have been rice, corn, or similar types of cereals. At around the same time, people also began herding and breeding animals. Sheep and goats were probably domesticated first, followed by cattle and pigs. Eventually, people started keeping animals such as oxen for ploughing and transportation.\n\nAgriculture enabled people to produce a surplus of food which could be eaten when crops failed or swapped for other goods. This exchange of goods was how trade began, and this in turn allowed people to work at other tasks unrelated to farming. Agriculture also kept formerly nomadic people near their fields and led to the establishment of permanent villages which became linked through trade. This development was so successful in some areas that cities emerged, and eventually entire civilisations arose. The earliest of these developed near the Tigris and Euphrates rivers in Mesopotamia – now Iraq – and along the River Nile in Egypt, eventually spreading to Europe, Asia and beyond.\n\nFor thousands of years, agricultural development was very slow. Farmers cultivated small plots of land by hand using axes to clear away trees and sticks to break up and till the soil. However, over time, improved farming tools of bone, stone, bronze, and iron were developed. Around 7,500 years ago, farmers in Mesopotamia developed simple irrigation systems. By channeling water from streams onto their fields, farmers were able to settle in areas once thought to be unsuited to agriculture. In Mesopotamia and later in Egypt, people organized themselves and worked together to build these systems. Then, as the Roman empire expanded, the Romans adapted the best agricultural methods of the people they conquered. They even wrote manuals about the farming techniques they observed in Africa, Asia, and Europe. By 2,000 years ago much of Earth's population was reliant on agriculture.\n\nIn medieval times, European farmers adopted an open-field system of planting in which one field would be planted in spring, another in autumn, and one would be left unplanted, or fallow. This system preserved nutrients in the soil, so increasing crop production. Later in the 15th and 16th centuries, explorers travelling to Africa, Asia and the Americas began to introduce new varieties of plants into Europe. From the Americas, for example, they brought back agricultural products such as potatoes, tomatoes, maize and beans, which eventually became staple crops and an integral part of the European diet.\n\nA period of major agricultural development began in the early 1700s for Great Britain and northern Europe. One of the most important of these developments was the horse-drawn seed drill, invented in England by Jethro Tull. Until that time, farmers sowed seeds by hand. Tull's invention made rows of holes for the seeds and dropped them into the holes, thus greatly improving the speed and efficiency of the process. By the end of the 18th century, seed drilling was widely practised in many countries across Europe.\n\nAlong with new machines, there were several other important advances in farming methods. By selectively breeding their livestock – deliberately breeding animals with a certain combination of desirable qualities from chosen parent animals – farmers increased both the size of their herds and the productivity of their livestock. An early example of this is the Leicester sheep, an animal selectively bred in England for its quality meat and long, coarse wool. Then, in Austria in 1866, a monk and science teacher by the name of Gregor Mendel published his studies of heredity, which were the first to show how traits are passed from one generation of plants to the next. Mendel is widely recognised as the founder of the science of genetics, and his experiments paved the way for the selective breeding of plants and the improvement of crops through genetics.\n\nAnother major agricultural breakthrough came from the field of chemistry. For thousands of years, farmers had relied on natural fertiliser – materials such as animal or bird waste, wood ash, or ground bones – to replenish or increase nutrients in the soil. Then, in the early 1800s, scientists discovered which elements were most essential to plant growth: nitrogen, phosphorus, and potassium. This led to the manufacture of chemical fertilisers based on nitrates and phosphates, which greatly increased crop yields. With the population of Europe doubling during the 1800s – from around 200 million at the beginning of the century to around 400 million mouths to feed at its end – farming had finally become big business.",
+      "groups": [
+        {
+          "instruction": "Complete the notes below. Choose ONE WORD AND/OR A NUMBER from the passage for each answer.",
+          "wordLimit": "ONE WORD AND/OR A NUMBER",
+          "context": "Farming in the ancient world",
+          "questions": [
+            {
+              "no": 1,
+              "type": "fill",
+              "text": "prehistoric times – people collected wild plants, and went ___ to get meat",
+              "answer": [
+                "hunting"
+              ],
+              "explanation": "\"prehistoric people spent most of their lives hunting animals and gathering wild plants\""
+            },
+            {
+              "no": 2,
+              "type": "fill",
+              "text": "11,500 years ago – people began growing crops, probably ___ e.g. rice or corn",
+              "answer": [
+                "cereals"
+              ],
+              "explanation": "\"The earliest crop was most likely to have been rice, corn, or similar types of cereals\""
+            },
+            {
+              "no": 3,
+              "type": "fill",
+              "text": "creation of a ___ of food",
+              "answer": [
+                "surplus"
+              ],
+              "explanation": "\"Agriculture enabled people to produce a surplus of food\""
+            },
+            {
+              "no": 4,
+              "type": "fill",
+              "text": "led to the exchange of goods and the beginnings of trade, which resulted in the emergence of cities and the growth of ___",
+              "answer": [
+                "civilisations",
+                "civilizations"
+              ],
+              "explanation": "\"cities emerged, and eventually entire civilisations arose\""
+            },
+            {
+              "no": 5,
+              "type": "fill",
+              "text": "farmers gradually began using better ___ made from different materials",
+              "answer": [
+                "tools"
+              ],
+              "explanation": "\"improved farming tools of bone, stone, bronze, and iron were developed\""
+            },
+            {
+              "no": 6,
+              "type": "fill",
+              "text": "systems of providing fields with a supply of ___ were invented in Mesopotamia",
+              "answer": [
+                "water"
+              ],
+              "explanation": "\"farmers in Mesopotamia developed simple irrigation systems. By channeling water from streams onto their fields\""
+            },
+            {
+              "no": 7,
+              "type": "fill",
+              "text": "___ years ago, a large proportion of people worldwide had become dependent on farming",
+              "answer": [
+                "2000",
+                "2,000"
+              ],
+              "explanation": "\"By 2,000 years ago much of Earth's population was reliant on agriculture\""
+            }
+          ]
+        },
+        {
+          "instruction": "Do the following statements agree with the information given in Reading Passage 1? Write TRUE, FALSE or NOT GIVEN.",
+          "questions": [
+            {
+              "no": 8,
+              "type": "tfng",
+              "text": "The Romans adapted their own farming methods for use in Africa and Asia.",
+              "answer": "FALSE",
+              "explanation": "\"the Romans adapted the best agricultural methods of the people they conquered\" (người La Mã học phương pháp của dân bị chinh phục, không phải đem phương pháp của mình sang)"
+            },
+            {
+              "no": 9,
+              "type": "tfng",
+              "text": "The medieval open-field system increased food production by allowing European farmers to have crops growing continuously in all their fields.",
+              "answer": "FALSE",
+              "explanation": "\"one field would be planted in spring, another in autumn, and one would be left unplanted, or fallow\" (luôn có một cánh đồng bỏ hoá)"
+            },
+            {
+              "no": 10,
+              "type": "tfng",
+              "text": "European eating habits changed as a result of international exploration in the 15th and 16th centuries.",
+              "answer": "TRUE",
+              "explanation": "\"they brought back agricultural products such as potatoes, tomatoes, maize and beans, which eventually became staple crops and an integral part of the European diet\""
+            },
+            {
+              "no": 11,
+              "type": "tfng",
+              "text": "During the 18th century many European countries created their own versions of the seed drill.",
+              "answer": "NOT GIVEN",
+              "explanation": "\"By the end of the 18th century, seed drilling was widely practised in many countries across Europe\" (không nói các nước tự chế phiên bản riêng)"
+            },
+            {
+              "no": 12,
+              "type": "tfng",
+              "text": "Selective breeding methods helped European farmers to produce more animals.",
+              "answer": "TRUE",
+              "explanation": "\"farmers increased both the size of their herds and the productivity of their livestock\""
+            },
+            {
+              "no": 13,
+              "type": "tfng",
+              "text": "Many farmers continued to use natural methods of fertilising their land, even after the development of chemical fertilisers.",
+              "answer": "NOT GIVEN",
+              "explanation": "\"For thousands of years, farmers had relied on natural fertiliser\" (bài không nói sau khi có phân hoá học nông dân có tiếp tục dùng phân tự nhiên hay không)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "passage": 2,
+      "title": "The aerofoil",
+      "topic": "Science & Technology",
+      "level": "medium",
+      "passage_text": "The aerofoil\nThe shape of an aeroplane's wing plays a key role in the achievement of flight\n\nA\nThe magic of flight lies in the interaction between the wings of a plane and the air. If the shape of the wing – the aerofoil – is right and the plane is moving fast enough, the wing is pushed into the air as it slices through it. It seems like magic because our all-too-literal brains tell us that because air is invisible it must be insubstantial too. But air is not nothing; air is a substance completely comprised of gases. If you think of a wing slicing through water rather than air, you can begin to imagine how air might provide the upward push that aeronautical scientists call lift. The key to the aerofoil's lift is the flow of air around it. Air flows around an aerofoil because the aerofoil is moving, just as the bow of a boat creates a flow in still water. What matters is the way the curved shape of the aerofoil diverts the flow around it.\n\nB\nTo really see why, it is worth carrying out an experiment with knives and spoons under a running tap. Hold the blade of a knife vertically in a stream of water and the water flows straight and undisturbed past the blade. Twist the blade slightly at an angle to the stream and you can see how it begins to block and split the flow, breaking it into turbulent eddies – and you may see the turbulence increase as you increase the angle of the knife. Hold the convex side of a spoon under the stream instead, however, and something different happens. The spoon diverts the water but does not disrupt it. You have to twist the spoon at a much steeper angle before it disrupts the flow. Like the curvature of the spoon, the curvature of the aerofoil ensures the flow of the air around it is diverted but not broken up.\n\nC\nThe curvature of the spoon, like that of the aerofoil, is crucial. Far above or below the aerofoil, the airflow is undisturbed, but the closer the air is to the aerofoil the more the flow is bent to follow the aerofoil's shape. As the airflow changes direction, it begins to push in a different direction too, and the more it bends, the greater the change. Right on top and underneath the aerofoil, the airflow is turned effectively at right angles, pushing the aerofoil upwards and creating lift. Since it is the way that the airflow is distorted that creates lift, it is evident that the pattern of the airflow distortion is critical. This depends on the angle that the aerofoil moves through the air – its angle of attack; the steeper the angle, the greater the lift.\n\nD\nThe overall shape of the aerofoil is also crucial. A gentle, thin curve provides the best lift, and this is the shape of the wings of birds as well as the shape that the flexible wings of hang-gliders and microlights bend into. But it is hard to make a large wing strong enough in this shape. So, the wings of most large aircraft are, in profile, the shape of a narrow teardrop. This shape does not give us much lift, which is why the wings have to be huge. They are hollow inside, which provides room for fuel storage. There are also flaps on the rear of the wings that can be swung up or down to alter the aerofoil curvature and its effective angle of attack and so allow the pilot to climb or descend.\n\nE\nOf course the wings of birds were the original inspiration for the aerofoil. Countless thinkers in the distant past must have marvelled at birds gliding through the sky and guessed that they were held aloft by their outstretched wings. And perhaps some realised it was the shape of the wings that mattered, such as the 5th-century Greek philosopher Archytas, who is said to have built a mechanical bird that flew. Brave pioneers like the 9th-century Cordoban inventor Abbas Ibn-Firnas were even bold enough to strap artificial wings to their arms and leap from high places. Ibn-Firnas was lucky enough to glide through the air for ten minutes before crash-landing and almost breaking his neck.\n\nF\nYet the first person who really began to explore the shape of wings methodically was the British engineer Sir George Cayley (1773–1857), and it is to Cayley that we owe the idea of the curved aerofoil. Cayley was an extraordinary and inventive man, and he is credited with developing self-righting lifeboats, wire-spoked wheels, seatbelts and even an internal combustion engine. But it is mostly as the father of aviation that he is remembered, and it is he who pioneered much of the theory of flight. He carried out experiments to find out how wings work and what shapes and angles produced the greatest lift. In his analyses, he developed the names of the key forces involved in flight – lift, drag and thrust – which still play an important role today. Flight involves a balance between these four forces, but for a successful aeroplane you need both power and control, which is why it took another half-century before Orville and Wilbur Wright made their historic flight at Kittyhawk in the USA on 17th December 1903.",
+      "groups": [
+        {
+          "instruction": "Reading Passage 2 has six paragraphs, A–F. Choose the correct heading for each paragraph from the list of headings below.",
+          "bank": [
+            "i – The earliest attempts to achieve human flight",
+            "ii – Public reaction to the pioneers of flight",
+            "iii – A practical demonstration of an aeronautical principle",
+            "iv – The importance of angles in achieving lift",
+            "v – A misunderstanding about the nature of air",
+            "vi – The discovery of several key factors affecting wing design",
+            "vii – Additional wing features that help control flight"
+          ],
+          "questions": [
+            {
+              "no": 14,
+              "type": "match",
+              "text": "Paragraph A",
+              "answer": 4,
+              "explanation": "\"our all-too-literal brains tell us that because air is invisible it must be insubstantial too. But air is not nothing\""
+            },
+            {
+              "no": 15,
+              "type": "match",
+              "text": "Paragraph B",
+              "answer": 2,
+              "explanation": "\"it is worth carrying out an experiment with knives and spoons under a running tap\""
+            },
+            {
+              "no": 16,
+              "type": "match",
+              "text": "Paragraph C",
+              "answer": 3,
+              "explanation": "\"This depends on the angle that the aerofoil moves through the air – its angle of attack; the steeper the angle, the greater the lift\""
+            },
+            {
+              "no": 17,
+              "type": "match",
+              "text": "Paragraph D",
+              "answer": 6,
+              "explanation": "\"There are also flaps on the rear of the wings that can be swung up or down … and so allow the pilot to climb or descend\""
+            },
+            {
+              "no": 18,
+              "type": "match",
+              "text": "Paragraph E",
+              "answer": 0,
+              "explanation": "\"Brave pioneers like the 9th-century Cordoban inventor Abbas Ibn-Firnas were even bold enough to strap artificial wings to their arms\""
+            },
+            {
+              "no": 19,
+              "type": "match",
+              "text": "Paragraph F",
+              "answer": 5,
+              "explanation": "\"He carried out experiments to find out how wings work and what shapes and angles produced the greatest lift\""
+            }
+          ]
+        },
+        {
+          "instruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer.",
+          "wordLimit": "ONE WORD ONLY",
+          "context": "Designing aeroplane wings",
+          "questions": [
+            {
+              "no": 20,
+              "type": "fill",
+              "text": "Hang-gliders, microlights, small planes and birds share the same wing shape – a curve which provides the maximum amount of ___",
+              "answer": [
+                "lift"
+              ],
+              "explanation": "\"A gentle, thin curve provides the best lift\""
+            },
+            {
+              "no": 21,
+              "type": "fill",
+              "text": "The enormous wings of a modern plane look like a thin ___ when viewed from the side.",
+              "answer": [
+                "teardrop"
+              ],
+              "explanation": "\"the wings of most large aircraft are, in profile, the shape of a narrow teardrop\""
+            },
+            {
+              "no": 22,
+              "type": "fill",
+              "text": "Space is not wasted because the ___ needed to power a flight is kept inside each wing.",
+              "answer": [
+                "fuel"
+              ],
+              "explanation": "\"They are hollow inside, which provides room for fuel storage\""
+            },
+            {
+              "no": 23,
+              "type": "fill",
+              "text": "The pilot can adjust the ___ …",
+              "answer": [
+                "flaps"
+              ],
+              "explanation": "\"There are also flaps on the rear of the wings that can be swung up or down\""
+            },
+            {
+              "no": 24,
+              "type": "fill",
+              "text": "… which are located at the ___ of the wings.",
+              "answer": [
+                "rear"
+              ],
+              "explanation": "\"flaps on the rear of the wings\""
+            }
+          ]
+        },
+        {
+          "instruction": "Choose TWO letters, A–E. Which TWO things does the writer state about George Cayley?",
+          "questions": [
+            {
+              "no": 25,
+              "type": "multi",
+              "text": "Which TWO things does the writer state about George Cayley?",
+              "options": [
+                "He made a lot of money from his inventions.",
+                "He understood how to design aeroplane engines 50 years before Orville and Wilbur Wright.",
+                "His studies included how to achieve the maximum lift.",
+                "He worked closely with other scientists.",
+                "He reached his conclusions by conducting a series of tests."
+              ],
+              "answer": [
+                2,
+                4
+              ],
+              "explanation": "C: \"what shapes and angles produced the greatest lift\"; E: \"the first person who really began to explore the shape of wings methodically\" / \"He carried out experiments\". B sai: bài chỉ nói \"it took another half-century before Orville and Wilbur Wright made their historic flight\" vì cần thêm \"power and control\", không nói Cayley biết thiết kế động cơ máy bay. (key trong file giải thích ghi B, E)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "passage": 3,
+      "title": "Looking for inspiration",
+      "topic": "Psychology",
+      "level": "medium",
+      "passage_text": "Looking for inspiration\nHelen Phillips asks what makes one person more creative than another\n\nPeople have speculated about their own creativity for centuries – perhaps ever since we became able to think about thinking. Whatever creativity is, it is thinking that results in new ideas and new ways of doing things. The only bit of the creative process we actually know about is the moment of insight, yet creative ideas and projects may incubate beyond our awareness for months. Not surprising, then, that creativity has long eluded scientific study.\n\nIn the early 1970s, it was still seen as a type of intelligence. But when more subtle tests of IQ and creative skills were developed in the 1970s, particularly by the father of creativity testing, Paul Torrance, it became clear that the link was not so simple. Creative people are intelligent, in terms of IQ tests at least, but only averagely or just above. While it depends on the discipline, in general, having beyond a certain level of IQ does not help boost creativity.\n\nBecause of the difficulty of studying the actual process, most early attempts to study creativity concentrated on personality. According to creativity specialist Mark Runco of California State University, the creative personality tends to place a high value on aesthetic qualities and have broad interests, providing lots of resources to draw on and knowledge to recombine into novel solutions. 'Creatives' have an attraction to complexity and an ability to handle conflict. They are also highly self-motivated, perhaps even a little obsessive, when it comes to realising their ambitions.\n\nBut there may be a price to pay for having a creative personality. For centuries, a link has been made between creativity and mental illness. Psychiatrist and author Kay Redfield Jamison of Johns Hopkins University, who herself has bipolar disorder, found that established artists are significantly more likely to have mood disorders. But she also suggests that a switch of mood state might be the key to triggering a creative event, rather than the negative mood itself.\n\nJordan Peterson, a psychologist at the University of Toronto, has carried out work that suggests that the brains of creative people are more open to incoming stimuli than less creative types. Our senses are continuously feeding a mass of data into our brains, which have to block most of it to save us from being snowed under. Peterson calls this process latent inhibition and argues that people who have less of it, and who have a reasonably high IQ, can juggle more of the data, and so may be open to more ideas.\n\nBut what of the creative act itself? One of the first studies of the creative brain at work was by Colin Martindale, a psychologist from the University of Maine. Back in 1978, he used a network of scalp electrodes to record the pattern of brain waves as people made up stories. Creativity, he showed, has two stages: inspiration and elaboration, each characterised by very different states of mind. While people were dreaming up their stories, he found their brains were surprisingly quiet. The dominant activity was alpha waves, which is the same sort of brain activity as in some stages of dreaming or rest. This could explain why sleep and relaxation can help people be creative.\n\nHowever, when these quiet-minded people were asked to work on their stories, the alpha wave activity dropped off and the brain became busier, revealing increased cortical arousal, and more organised thinking. Strikingly, it was the people who showed the biggest difference in brain activity between the two stages who produced the most creative storylines. Nothing in their background brain activity marked them as creative or uncreative. 'It's as if the less creative person can't move up a gear,' says Guy Claxton, a psychologist at the University of Bristol. 'Creativity requires different kinds of thinking. Very creative people move between these states intuitively.'\n\nResearchers are now trying to identify some of the specific anatomy of creativity. Brain studies of people with particular types of creativity show, perhaps not surprisingly, that active areas are determined by the specialist knowledge being used. Imagery, spatial awareness, language and so on – whatever the skill, it is localised to some extent to a particular brain part or parts. But it's not just these speciality areas that are active. Using information creatively needs coordination. 'Creative synthesis requires a new pattern, to put the brain in a state where many areas are simultaneously active,' says Claxton. When we concentrate in a less creative way, such as when reading the gas bill, there are fewer active centres and less synthesis.\n\nBut to be truly creative needs more than just the right personality and the right brain areas and networks. It's about using them effectively. Skills, situations and our social setting can shape our creativity just as dramatically as the brain resources we are born with. The most creative people also use the different rhythms of the day, the weekends and the holidays to help alter focus and brain state. They may spend two hours at their desk, then go for a walk, because they know that pattern works for them.\n\nAnother often forgotten aspect of creativity is social. Vera John-Steiner of the University of New Mexico says that to be really creative you need strong social networks and trusting relationships, not just active neural networks. One vital characteristic of a 'creative', she says, is that they have at least one other person in their life who doesn't think they are completely mad!",
+      "groups": [
+        {
+          "instruction": "Look at the following statements (Questions 27–32) and the list of people below. Match each statement with the correct person, A–G. NB You may use any letter more than once.",
+          "bank": [
+            "Paul Torrance",
+            "Mark Runco",
+            "Kay Redfield Jamison",
+            "Jordan Peterson",
+            "Colin Martindale",
+            "Guy Claxton",
+            "Vera John-Steiner"
+          ],
+          "questions": [
+            {
+              "no": 27,
+              "type": "match",
+              "text": "Creative people are receptive to the immense amounts of information that the brain has to deal with.",
+              "answer": 3,
+              "explanation": "\"the brains of creative people are more open to incoming stimuli … can juggle more of the data\""
+            },
+            {
+              "no": 28,
+              "type": "match",
+              "text": "Creativity requires numerous parts of the brain to be active at the same time.",
+              "answer": 5,
+              "explanation": "\"'Creative synthesis requires a new pattern, to put the brain in a state where many areas are simultaneously active,' says Claxton\""
+            },
+            {
+              "no": 29,
+              "type": "match",
+              "text": "Creative people engage in, and are well informed about, a wide range of subjects.",
+              "answer": 1,
+              "explanation": "\"the creative personality tends to … have broad interests, providing lots of resources to draw on and knowledge to recombine\""
+            },
+            {
+              "no": 30,
+              "type": "match",
+              "text": "Creative people may have unstable personalities.",
+              "answer": 2,
+              "explanation": "\"established artists are significantly more likely to have mood disorders\" (file giải thích đánh số lệch: câu này ghi là 31)"
+            },
+            {
+              "no": 31,
+              "type": "match",
+              "text": "Creative people are driven to achieve the goals they set themselves.",
+              "answer": 1,
+              "explanation": "\"They are also highly self-motivated, perhaps even a little obsessive, when it comes to realising their ambitions\" (file giải thích đánh số lệch: câu này ghi là 32)"
+            },
+            {
+              "no": 32,
+              "type": "match",
+              "text": "Creative people need support from others.",
+              "answer": 6,
+              "explanation": "\"to be really creative you need strong social networks and trusting relationships\" (file giải thích bỏ sót câu này; đáp án suy từ bài)"
+            }
+          ]
+        },
+        {
+          "instruction": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+          "wordLimit": "NO MORE THAN TWO WORDS",
+          "context": "Colin Martindale carried out research into the creative brain at work.",
+          "questions": [
+            {
+              "no": 33,
+              "type": "fill",
+              "text": "For his study, volunteers had a series of ___ placed on their heads which were used to monitor brain activity while they made up stories.",
+              "answer": [
+                "electrodes",
+                "scalp electrodes"
+              ],
+              "explanation": "\"he used a network of scalp electrodes to record the pattern of brain waves\" (key ghi \"electrods\", lỗi chính tả)"
+            },
+            {
+              "no": 34,
+              "type": "fill",
+              "text": "Martindale demonstrated that creativity consisted of ___ phases. (điền hai từ: … and …)",
+              "answer": [
+                "inspiration and elaboration",
+                "inspiration, elaboration",
+                "inspiration elaboration"
+              ],
+              "explanation": "\"Creativity, he showed, has two stages: inspiration and elaboration\" (đề gốc có hai chỗ trống \"… and …\" nhưng chỉ tính một câu 34)"
+            },
+            {
+              "no": 35,
+              "type": "fill",
+              "text": "In the first of these, the brain was mostly inactive except for ___, and this corresponds to what takes place during dreaming or relaxation.",
+              "answer": [
+                "alpha waves"
+              ],
+              "explanation": "\"The dominant activity was alpha waves, which is the same sort of brain activity as in some stages of dreaming or rest\""
+            },
+            {
+              "no": 36,
+              "type": "fill",
+              "text": "The most creative stories were produced by those volunteers with the greatest ___ in brain activity between the two phases.",
+              "answer": [
+                "difference"
+              ],
+              "explanation": "\"it was the people who showed the biggest difference in brain activity between the two stages who produced the most creative storylines\""
+            }
+          ]
+        },
+        {
+          "instruction": "Do the following statements agree with the information given in Reading Passage 3? Write TRUE, FALSE or NOT GIVEN.",
+          "questions": [
+            {
+              "no": 37,
+              "type": "tfng",
+              "text": "People with very high IQs are more likely to be creative than those with average IQs.",
+              "answer": "FALSE",
+              "explanation": "\"Creative people are intelligent … but only averagely or just above. … having beyond a certain level of IQ does not help boost creativity\""
+            },
+            {
+              "no": 38,
+              "type": "tfng",
+              "text": "Society tends to value aesthetic skills highly.",
+              "answer": "NOT GIVEN",
+              "explanation": "\"the creative personality tends to place a high value on aesthetic qualities\" (nói về người sáng tạo, không nói về xã hội)"
+            },
+            {
+              "no": 39,
+              "type": "tfng",
+              "text": "There can be disadvantages to having a creative personality.",
+              "answer": "TRUE",
+              "explanation": "\"But there may be a price to pay for having a creative personality\""
+            },
+            {
+              "no": 40,
+              "type": "tfng",
+              "text": "Language skills are more important than spatial awareness in any form of creativity.",
+              "answer": "NOT GIVEN",
+              "explanation": "\"Imagery, spatial awareness, language and so on – whatever the skill, it is localised to some extent to a particular brain part or parts\" (không so sánh mức quan trọng)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "writing": []
+}

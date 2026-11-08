@@ -54,7 +54,8 @@ Dự án chưa có test tự động. Sau khi sửa, chạy `npm run data` (khô
 
 ## Tình trạng (08/11/2026)
 
-- **Đã xong 59 đề / 577 bài luyện** (tính cả VOL 6 Test 2–3): VOL 1–4 đủ 40 đề; VOL 5 đủ 10 đề + 19 đề Writing lẻ; 131 bộ Speaking (forecast 2023 Q1, Q2, "gộp đề ver 1", 2024 Q1: 87 bộ).
+- **Đã xong 64 file / 707 bài luyện**: VOL 1–4 đủ 40 đề; VOL 5 đủ 10 đề + 19 đề Writing lẻ; VOL 6 đủ 6 đề (chưa có Writing); 240 bộ Speaking (forecast 2023 Q1, Q2, "gộp đề ver 1", 2024 Q1: 87, Sep 2024–Apr 2025: 74, 2025 Q2: 35).
+- **TẠM DỪNG 08/11/2026 theo yêu cầu người dùng**; chờ người dùng bảo chạy tiếp (dự kiến tuần sau). Khi tiếp tục: làm VOL 6 Writing, rồi VOL 7 từ Test 1.
 - VOL 4 có vài chỗ thiếu: Test 5 không có audio; Test 7 (Q15–20) và Test 9 (Section 1) thiếu transcript; Writing trùng VOL 3 nên bỏ qua.
 
 ## Tiến độ phiên chuyển đổi (cập nhật liên tục)
@@ -63,8 +64,8 @@ Task list (đánh dấu `[x]` khi xong; dòng `→` là đang làm):
 - [x] VOL 5 Test 7 · [x] Test 8 · [x] Test 9 · [x] Test 10
 - [x] 2. VOL 5 Writing → `content/vol5/writing-bank.json` (19 đề: 9 Task 1 + 10 Task 2, ảnh ở `public/img/vol5/`; Drive không có file Task 1 số 8; đề Task 1 viết lại theo hình vì file gốc chỉ có hình + bài mẫu, đã ghi trong `source`)
 - [x] 3. Speaking quý 1.2024 → `content/speaking/forecast-2024q1.json` (87 bộ; "50 đề mới update.pdf" là scan không đọc được; "CÁC GÓI DỰ ĐOÁN…" chỉ là tờ quảng cáo)
-- → 4a. VOL 6: [x] Test 2 · [x] Test 3 · → Test 1, 4, 5 (subagent đang chạy) · [ ] Test 6 · [ ] Writing · [ ] Speaking. ID thêm: `L-TEST 5.pdf` `1BTzFTv7mUd2dqRKYkO42vznYdP9OBzFN`, `expl 1-4.pdf` `1Fr6tiPAWmwHXFPv57gRco95fCPZIit0e`; Audio Lis: Test 1 `1dP2C3xIe67DyEHbVxzhoLVW3y3v_sxni`, Test 2 `1jf9BOusktTVs8BqyblInKa-9aQwukCnH`, Test 3 `13s3vKn6oiAXwVeWZNvLiGRGeK_d7_td_`, Test 4 `10S_zJ20o5wAJaKOtJXJ9LrwD3I9LbTEG`, Test 6 `1tWYBG7t4FxwDDYlgc3pZVvlusBlb78W3` (Test 5 chưa thấy).
-- [ ] 4b. VOL 7 · [ ] 4c. VOL 8
+- → 4a. VOL 6: [x] Test 2 · [x] Test 3 · [x] Test 4 · [x] Test 1 · [x] Test 5 · [x] Test 6 · [x] Speaking (`forecast-2024sep-2025apr.json` 74 bộ, `forecast-2025q2.json` 35 bộ có bài mẫu) · [ ] Writing (đã dừng giữa chừng, làm lại từ đầu). ID thêm: `L-TEST 5.pdf` `1BTzFTv7mUd2dqRKYkO42vznYdP9OBzFN`, `expl 1-4.pdf` `1Fr6tiPAWmwHXFPv57gRco95fCPZIit0e`; Audio Lis: Test 1 `1dP2C3xIe67DyEHbVxzhoLVW3y3v_sxni`, Test 2 `1jf9BOusktTVs8BqyblInKa-9aQwukCnH`, Test 3 `13s3vKn6oiAXwVeWZNvLiGRGeK_d7_td_`, Test 4 `10S_zJ20o5wAJaKOtJXJ9LrwD3I9LbTEG`, Test 6 `1tWYBG7t4FxwDDYlgc3pZVvlusBlb78W3` Test 5 `1N5aWYH9DQxzsS8_3657lv6jQu4EMsKQP`.
+- [ ] 4b. VOL 7 (bản nháp Test 1 do subagent bị dừng, chưa soát, để ở scratchpad phiên cũ; không dùng được ở phiên sau → làm lại) · [ ] 4c. VOL 8
 - [ ] 5. Audio: máy chưa có audio đề tải về → bỏ qua cho tới khi có thư mục tải về
 - [ ] 6. `npm run build` + báo cáo cuối
 
@@ -82,6 +83,10 @@ Quyết định đã ghi:
 - VOL5 T10: L Q1 "0478883925" (ghép "triple 8"), L Q2 "Vander" (dựng từ đánh vần), L Q13 bed/bedroom, L Q15 "rare", L Q18–20 (C, F, E; bản đồ mô tả bằng chữ), L Q21–23 (A, B, D: phân vai transcript không chắc). R Q2 NOT GIVEN (key ghi TRUE). Offset S2–S4 (7:44 / 13:01 / 18:41) ước lượng; mốc trong S2, S4 nội suy. R P2 dựng lại "the arrival of humans on the continent".
 - VOL6 T2: không có transcript Listening; bản đồ Q16–20 chỉ có chữ A–I (PDF 8 MB, connector không tải được hình). L Q25–30 key lặp C, D dù đề "Choose SIX" (chưa kiểm được). R Q2 NOT GIVEN (key ghi FALSE). R Q38–40 F, B, C (key ghi D, C, B; key có vẻ bị lệch chữ).
 - VOL6 T3: Listening KHÔNG có transcript (nguồn gốc không có) → đáp án theo L-key; bản đồ Q15–20 chỉ có chữ A–I, không có hình. L Q14 thứ tự B/C khác nhau giữa PDF và docx (theo PDF). R Q25–26 chọn C, E (key ghi B, E). R Q30–32 file giải thích đánh số lệch: 30 C, 31 B, 32 G suy từ bài. R Q34 hai chỗ trống tính một câu. P2 đoạn F dựng lại "experiments to find out how wings work".
+- VOL6 T4: không có transcript; key Listening OCR lộn cột, đã ghép lại (P2: 11B 12E 13C 14F 15G 16A 17B 18B 19A 20A; P3: 21A 22B 23B 24C 25C 26C 27F 28A 29E 30B). R Q7 FALSE theo key (có thể đọc TRUE). R Q29 B suy luận. R Q40 chữ "positive" lấy từ expl (PDF bị cắt).
+- VOL6 T1: transcript Listening tự dựng bằng Whisper từ audio Drive (offset 0, mỗi file S1–S4 từ 0:00); 2 chỗ nghe không ra để `[…]`. L Q24 A (key ghi C). R Q10 NOT GIVEN (key ghi FALSE). R Q29 G / Q30 F / Q36 D: chữ trong key mâu thuẫn lời giải thích (key F/E/C). R Q40 C (key ghi E), chưa chắc.
+- VOL6 T5: không có transcript (đáp án theo L-key); sơ đồ Q16–20 mô tả bằng chữ từ hình gốc. R Q24–26 lấy từ expl 5-6.pdf (đề PDF thiếu). R Q24 G (key ghi E). R Q38 H "period" (key ghi B). R Q27–30 D, B, C, B suy từ giải thích (Q28 kém chắc). P2 đoạn G "about 10 seconds" dựng lại (gốc mất số).
+- VOL6 T6: không có transcript (đáp án theo L-key); bản đồ Q11–14 chỉ chữ A–I. L Q14 I (OCR key ghi "1"); L Q26–30 H E I A D ghép lại từ OCR. R3 câu Canton dựng lại "mixes the quantitative and the qualitative" (gốc chỉ còn "mixes the qualitative") – cần soát. Audio tên `P1 - .mp3`, `P3 .mp3` cần xem copy-audio đoán đúng.
 - VOL5 T7: transcript tách từng phần (mỗi phần bắt đầu từ 0:00) nên offset = 0 cho cả 4 section.
 
 Cấu trúc Drive đã dò (listing hay thiếu file → lọc thêm `title contains '<số>'`):

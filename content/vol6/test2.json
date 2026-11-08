@@ -1,0 +1,911 @@
+{
+  "vol": 6,
+  "test": 2,
+  "source": "ORIGINAL IELTS PAPERS – VOL 6, Test 2 (audio: S1.mp3, S2-.mp3, S3.mp3, S4- .mp3). Listening: tài liệu gốc không có transcript; đáp án theo L-key.pdf. Bản đồ câu 16–20 không có hình. Reading: văn bản lấy từ Full Reading.docx, đối chiếu R-TEST 2.pdf; key và giải thích từ expl 1-4.pdf. Key gốc Q2, Q38–40 mâu thuẫn với bài/lời giải thích nên đã chọn theo bài (ghi chú trong explanation).",
+  "listening": {
+    "audioDir": "audio/vol6/test2",
+    "timingNote": "Audio tách 4 file (S1–S4). Tài liệu gốc không có transcript nên không có mốc thời gian; transcript để trống (chạy `npm run audio` với whisper để tự tạo .srt).",
+    "sections": [
+      {
+        "section": 1,
+        "title": "Booking a residential workshop",
+        "topic": "Education",
+        "transcript": "",
+        "transcriptNote": "Tài liệu gốc (VOL 6) không kèm transcript cho Listening Test 2. Đáp án lấy từ L-key.pdf.",
+        "groups": [
+          {
+            "instruction": "Complete the form below. Write ONE WORD AND/OR A NUMBER for each answer.",
+            "wordLimit": "ONE WORD AND/OR A NUMBER",
+            "context": "Booking a residential workshop. Course required: drama workshop.",
+            "questions": [
+              {
+                "no": 1,
+                "type": "fill",
+                "text": "Full name of participant: Jan ___",
+                "answer": [
+                  "Creswick"
+                ],
+                "explanation": "Đáp án gốc (L-key.pdf): \"Creswick\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 2,
+                "type": "fill",
+                "text": "Previous course attended: Writing for the ___",
+                "answer": [
+                  "theatre",
+                  "theater"
+                ],
+                "explanation": "Đáp án gốc (L-key.pdf): \"theatre/theater\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 3,
+                "type": "fill",
+                "text": "Address: 20, Gregory ___",
+                "answer": [
+                  "Place"
+                ],
+                "explanation": "Đáp án gốc (L-key.pdf): \"Place\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 4,
+                "type": "fill",
+                "text": "Current occupation: ___",
+                "answer": [
+                  "waitress"
+                ],
+                "explanation": "Đáp án gốc (L-key.pdf): \"Waitress\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 5,
+                "type": "fill",
+                "text": "Date chosen course begins: ___",
+                "answer": [
+                  "13th June",
+                  "13 June",
+                  "June 13",
+                  "June 13th",
+                  "13th of June"
+                ],
+                "explanation": "Đáp án gốc (L-key.pdf): \"13th June/13 June/June 13\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 6,
+                "type": "fill",
+                "text": "Estimated arrival time: ___ pm",
+                "answer": [
+                  "5.30",
+                  "5:30",
+                  "five thirty"
+                ],
+                "explanation": "Đáp án gốc (L-key.pdf): \"5.30\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 7,
+                "type": "fill",
+                "text": "Special dietary requests: no ___ products",
+                "answer": [
+                  "milk"
+                ],
+                "explanation": "Đáp án gốc (L-key.pdf): \"milk\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 8,
+                "type": "fill",
+                "text": "Preferred afternoon course: ___ work",
+                "answer": [
+                  "comic"
+                ],
+                "explanation": "Đáp án gốc (L-key.pdf): \"comic\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 9,
+                "type": "fill",
+                "text": "First source of course information: ___",
+                "answer": [
+                  "internet",
+                  "the internet"
+                ],
+                "explanation": "Đáp án gốc (L-key.pdf): \"internet\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 10,
+                "type": "fill",
+                "text": "Pre-course material requested: the ___ mentioned in the publicity",
+                "answer": [
+                  "leaflet"
+                ],
+                "explanation": "Đáp án gốc (L-key.pdf): \"leaflet\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section": 2,
+        "title": "Working at Parson's Fruit Farm",
+        "topic": "Work",
+        "transcript": "",
+        "transcriptNote": "Tài liệu gốc (VOL 6) không kèm transcript cho Listening Test 2. Đáp án lấy từ L-key.pdf.",
+        "groups": [
+          {
+            "instruction": "Choose the correct letter, A, B or C.",
+            "context": "Working at Parson's Fruit Farm",
+            "questions": [
+              {
+                "no": 11,
+                "type": "mcq",
+                "text": "What does the manager say about accommodation?",
+                "options": [
+                  "The backpackers' hostel is full.",
+                  "The motel is close to the farm.",
+                  "The campground is cheap."
+                ],
+                "answer": 1,
+                "explanation": "Đáp án gốc (L-key.pdf): \"B\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 12,
+                "type": "mcq",
+                "text": "The weather this summer has been",
+                "options": [
+                  "perfect for growing fruit.",
+                  "worse than last year.",
+                  "hard to predict accurately."
+                ],
+                "answer": 2,
+                "explanation": "Đáp án gốc (L-key.pdf): \"C\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 13,
+                "type": "mcq",
+                "text": "The manager says that tractor drivers",
+                "options": [
+                  "require an appropriate licence.",
+                  "need previous orchard experience.",
+                  "must be over 18 years old."
+                ],
+                "answer": 0,
+                "explanation": "Đáp án gốc (L-key.pdf): \"A\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 14,
+                "type": "mcq",
+                "text": "Working inside the shed",
+                "options": [
+                  "may be rather hot.",
+                  "can be noisy at times.",
+                  "will often be dirty."
+                ],
+                "answer": 1,
+                "explanation": "Đáp án gốc (L-key.pdf): \"B\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 15,
+                "type": "mcq",
+                "text": "What final advice does the manager give?",
+                "options": [
+                  "Eat and drink regularly.",
+                  "Try not to damage the trees.",
+                  "Leave your phones in a secure location."
+                ],
+                "answer": 0,
+                "explanation": "Đáp án gốc (L-key.pdf): \"A\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              }
+            ]
+          },
+          {
+            "instruction": "Label the map below. Write the correct letter, A–I, next to questions 16–20. (Lưu ý: bản PDF gốc quá lớn để tải qua connector và tài liệu không có transcript, nên app không có hình bản đồ và không mô tả được vị trí bằng lời chỉ đường; ngân hàng lựa chọn chỉ là các chữ cái A–I trên bản đồ gốc. Trên bản đồ có các nhãn: Farm House, Vegetable Gardens, Main Yard, lối 'to Orchards'.)",
+            "bank": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E",
+              "F",
+              "G",
+              "H",
+              "I"
+            ],
+            "context": "Parson's Fruit Farm (map)",
+            "questions": [
+              {
+                "no": 16,
+                "type": "match",
+                "text": "Workshop",
+                "answer": 6,
+                "explanation": "Đáp án gốc (L-key.pdf): \"G\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 17,
+                "type": "match",
+                "text": "Lunchroom",
+                "answer": 1,
+                "explanation": "Đáp án gốc (L-key.pdf): \"B\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 18,
+                "type": "match",
+                "text": "Farm Office",
+                "answer": 7,
+                "explanation": "Đáp án gốc (L-key.pdf): \"H\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 19,
+                "type": "match",
+                "text": "First Aid Room",
+                "answer": 5,
+                "explanation": "Đáp án gốc (L-key.pdf): \"F\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 20,
+                "type": "match",
+                "text": "Store Shed",
+                "answer": 3,
+                "explanation": "Đáp án gốc (L-key.pdf): \"D\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section": 3,
+        "title": "Stone Point: a New Zealand historical site",
+        "topic": "History",
+        "transcript": "",
+        "transcriptNote": "Tài liệu gốc (VOL 6) không kèm transcript cho Listening Test 2. Đáp án lấy từ L-key.pdf.",
+        "groups": [
+          {
+            "instruction": "Choose the correct letter, A, B or C.",
+            "context": "Stone Point: a New Zealand historical site",
+            "questions": [
+              {
+                "no": 21,
+                "type": "mcq",
+                "text": "According to Liz, Stone Point played a key role in local history because",
+                "options": [
+                  "it was used for defence or attack purposes.",
+                  "it was the landing point for the first Maori settlers.",
+                  "it was developed as a commercial port."
+                ],
+                "answer": 0,
+                "explanation": "Đáp án gốc (L-key.pdf): \"A\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 22,
+                "type": "mcq",
+                "text": "Scott and Liz agree that Maori originally chose to inhabit Stone Point because of",
+                "options": [
+                  "its rich soil.",
+                  "the supply of fish.",
+                  "available building materials."
+                ],
+                "answer": 1,
+                "explanation": "Đáp án gốc (L-key.pdf): \"B\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 23,
+                "type": "mcq",
+                "text": "Scott and Liz agree that using Maori terminology in their presentation",
+                "options": [
+                  "will be of interest to international students.",
+                  "is required as a component of their research.",
+                  "would be best avoided."
+                ],
+                "answer": 0,
+                "explanation": "Đáp án gốc (L-key.pdf): \"A\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 24,
+                "type": "mcq",
+                "text": "When Scott mentions the engines at Stone Point, Liz advises him to",
+                "options": [
+                  "focus on the human aspect instead.",
+                  "check the accuracy of specific dates.",
+                  "explain complex technical language."
+                ],
+                "answer": 1,
+                "explanation": "Đáp án gốc (L-key.pdf): \"B\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              }
+            ]
+          },
+          {
+            "instruction": "What do Liz and Scott agree they must do for each of the following sections of their presentation on Stone Point? Choose SIX answers from the box and write the correct letter, A–H, next to questions 25–30.",
+            "bank": [
+              "provide further description",
+              "find images",
+              "set up an interview",
+              "check author's details",
+              "check the exact location",
+              "obtain official permission",
+              "be more objective",
+              "reduce it in length"
+            ],
+            "context": "Things to do / Sections of presentation",
+            "questions": [
+              {
+                "no": 25,
+                "type": "match",
+                "text": "Early Maori inhabitation of Stone Point",
+                "answer": 2,
+                "explanation": "Đáp án gốc (L-key.pdf): \"C\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 26,
+                "type": "match",
+                "text": "The use of Stone Point as a lookout point",
+                "answer": 4,
+                "explanation": "Đáp án gốc (L-key.pdf): \"E\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 27,
+                "type": "match",
+                "text": "The reconstruction of the fort",
+                "answer": 2,
+                "explanation": "Đáp án gốc (L-key.pdf): \"C\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe. Lưu ý: key dùng C hai lần (Q25, Q27) và D hai lần (Q28, Q30) dù đề ghi \"Choose SIX answers\"; không có transcript để kiểm tra."
+              },
+              {
+                "no": 28,
+                "type": "match",
+                "text": "Modernisation of the fort in the 1930s–40s",
+                "answer": 3,
+                "explanation": "Đáp án gốc (L-key.pdf): \"D\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 29,
+                "type": "match",
+                "text": "Uses of Stone Point from 1950s to the present day",
+                "answer": 0,
+                "explanation": "Đáp án gốc (L-key.pdf): \"A\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 30,
+                "type": "match",
+                "text": "The use of Stone Point as a public park",
+                "answer": 3,
+                "explanation": "Đáp án gốc (L-key.pdf): \"D\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe. Lưu ý: key dùng D cho cả Q28 và Q30; chưa kiểm chứng được."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section": 4,
+        "title": "Jatropha: a new biofuel",
+        "topic": "Environment",
+        "transcript": "",
+        "transcriptNote": "Tài liệu gốc (VOL 6) không kèm transcript cho Listening Test 2. Đáp án lấy từ L-key.pdf.",
+        "groups": [
+          {
+            "instruction": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+            "wordLimit": "NO MORE THAN TWO WORDS",
+            "context": "Jatropha: a new biofuel. Plant facts – the plant jatropha is originally from Central America.",
+            "questions": [
+              {
+                "no": 31,
+                "type": "fill",
+                "text": "The plant can grow in poor ___",
+                "answer": [
+                  "soil",
+                  "soils"
+                ],
+                "explanation": "Đáp án gốc (L-key.pdf): \"soil\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 32,
+                "type": "fill",
+                "text": "The plant can survive ___ for several years",
+                "answer": [
+                  "drought",
+                  "droughts"
+                ],
+                "explanation": "Đáp án gốc (L-key.pdf): \"drought\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 33,
+                "type": "fill",
+                "text": "The plant can stop ___ of land",
+                "answer": [
+                  "erosion"
+                ],
+                "explanation": "Đáp án gốc (L-key.pdf): \"eroison\" (lỗi chính tả trong key, đúng là \"erosion\"). Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 34,
+                "type": "fill",
+                "text": "Its seeds produce far more fuel than soybean or ___ (seeds also used to produce diesel oil; residue after processing used to make electricity)",
+                "answer": [
+                  "corn"
+                ],
+                "explanation": "Đáp án gốc (L-key.pdf): \"corn\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 35,
+                "type": "fill",
+                "text": "Uses in Africa: for water pumps and fridges; made into ___; used as fencing",
+                "answer": [
+                  "candles"
+                ],
+                "explanation": "Đáp án gốc (L-key.pdf): \"candles\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 36,
+                "type": "fill",
+                "text": "Uses in Africa: the ___ are boiled and used to treat malaria",
+                "answer": [
+                  "leaves"
+                ],
+                "explanation": "Đáp án gốc (L-key.pdf): \"leaves\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 37,
+                "type": "fill",
+                "text": "Uses in Africa: for problems with ___",
+                "answer": [
+                  "digestion"
+                ],
+                "explanation": "Đáp án gốc (L-key.pdf): \"digestion\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 38,
+                "type": "fill",
+                "text": "European companies' claims: it could help stop poverty among rural populations; it could be used in current diesel engines; the plants use up lots of ___",
+                "answer": [
+                  "carbon dioxide",
+                  "CO2"
+                ],
+                "explanation": "Đáp án gốc (L-key.pdf): \"carbon dioxide\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 39,
+                "type": "fill",
+                "text": "Other criticisms of biofuels: environmental damage caused by loss of rainforest and ___",
+                "answer": [
+                  "wildlife"
+                ],
+                "explanation": "Đáp án gốc (L-key.pdf): \"wildife\" (lỗi chính tả trong key, đúng là \"wildlife\"). Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              },
+              {
+                "no": 40,
+                "type": "fill",
+                "text": "Other criticisms of biofuels: adding to the problem of ___",
+                "answer": [
+                  "global warming"
+                ],
+                "explanation": "Đáp án gốc (L-key.pdf): \"global warming\". Tài liệu gốc không có transcript cho test này nên chưa có câu trích từ bài nghe."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "reading": [
+    {
+      "passage": 1,
+      "title": "The world's first cities",
+      "topic": "History",
+      "level": "medium",
+      "passage_text": "The creation of Mesopotamian cities\n\nThe inhabitants of Mesopotamia – which now forms part of eastern Syria, southeastern Turkey and Iraq – lived for thousands of years on individual farms and in small, isolated communities, working relentlessly just to meet their basic needs. But then, about 6,000 years ago something remarkable happened. The people left the security of their family homes and villages and came together with others to create something far more complex and difficult: the world's first city, called Uruk.\n\nThere is not much left now of Uruk, which is about 250 kilometres south of Iraq's capital Baghdad, but enough does remain to show that this initial experiment in urban living was extraordinarily successful. At its height, around 5,000 years ago, Uruk was home to more than 40,000 people. The outlines of the city walls indicate an enclosed area of about 600 hectares.\n\nThe archaeological record of Uruk reveals the intensive building and rebuilding which went on for four or five centuries after the city's initial establishment. In that period the people of Uruk built a dozen or so large public buildings. They would carefully level what had stood before, and then build another structure on top, often trying out a different building material or an innovative technique. They seemed to be searching for ways in which architecture could express the revolutionary new social structures that had come into being there.\n\nSoon Uruk was not the only Mesopotamian city. People all across the flat plains of southern Mesopotamia were enjoying many of the benefits of city life. By about 4,500 years ago, 80 per cent of the Mesopotamian population lived in cities over 40 hectares in size, with populations of between 15,000 and 30,000 people. The emergence of these thriving communities, made up mostly of individuals and groups with no blood ties, was unprecedented in human history. Why did these extraordinary advances happen?\n\nReasons for the creation of cities in Mesopotamia\n\nSmaller communities in Mesopotamia sometimes decided to come together to make it easier to defend themselves from their enemies. But the underlying reason for the creation of cities can be found in the harshness of this particular environment. The area was a place of extremes, where narrow strips of fertile river valleys were bounded by thousands of kilometres of desert and unproductive wetlands. As the small amount of rainfall in the region was incapable of sustaining anything but very limited agriculture, it was only through sophisticated irrigation that isolated pieces of land were kept fertile. The Tigris and the Euphrates rivers provided water for irrigation, and were also the basis of a communication system that led to the spread of the latest concepts in farming.\n\nIn such a region, the only way for humans to prosper was by forming groups that could work together. The threat of famine, which could be caused by a prolonged drought or the sudden change in the course of a river, forced people to look outside their families, and work with their neighbours to create an elaborate system of dams, channels and canals to manage water. These projects needed specific skills and labour from outside the farmer's family, and this established more firmly the patterns of dependence that are at the heart of civilisation.\n\nChanges in the organisation of farming\n\nThe intensive farming that came about in Mesopotamia was more efficient and productive and therefore generated a surplus of food, allowing crops in years of good harvests to be stored as protection against future less successful years. It also allowed more land for the production of a wider range of crops. It created a world where there was a need for traders and for skilled craftsmen: in short, it was the beginning of industry and consumerism. The concept of specialisation emerged within the population - with increasing numbers of soldiers, builders, musicians, doctors, fortune tellers - all supported directly or indirectly by agriculture. At the same time, this increased the control that powerful institutions, gradually emerging in the early cities, had over the urban population. Although large numbers of people were freed from the struggle of subsistence farming, they were now totally dependent on the institutions that employed them for their daily sustenance.\n\nThe role of the temples\n\nThe earliest and most powerful of these institutions was centred on the religious temple. Ever more temple structures were erected in the form of massive pyramids which had enormous storerooms for the output from the farming estates. Over time, the temples acquired these farms for themselves, and appointed a large number of staff to administer them and to deal with the storage of produce. The temples' greatest advantage was that each citizen was expected to give up some time to work for the temples. This meant that temples could easily store huge amounts of agricultural produce which could be used to buy yet more land. In addition, the revenues generated allowed the temples to serve as primitive kinds of banks making loans to people in difficult economic times.\n\nThe emergence of writing\n\nWe know a surprising amount about these times thanks to the development of an important new technology: writing. In Mesopotamia basic records were inscribed in wet clay, unlike the fragile papyrus used in ancient Egypt and Greece. These first writings were largely lists of people and things, simple bookkeeping. But within several hundred years, writing systems had become more advanced capable of recording concepts as well as lists. The clay tablets used for writing were tough, and the fires that often burnt down the archives where they were stored usually merely baked them for future generations.",
+      "groups": [
+        {
+          "instruction": "Do the following statements agree with the information given in Reading Passage 1? Write TRUE, FALSE or NOT GIVEN.",
+          "questions": [
+            {
+              "no": 1,
+              "type": "tfng",
+              "text": "Some physical evidence of Uruk still exists in Iraq.",
+              "answer": "TRUE",
+              "explanation": "\"There is not much left now of Uruk, which is about 250 kilometres south of Iraq's capital Baghdad, but enough does remain\""
+            },
+            {
+              "no": 2,
+              "type": "tfng",
+              "text": "The people of Uruk lived in large apartment buildings.",
+              "answer": "NOT GIVEN",
+              "explanation": "\"the people of Uruk built a dozen or so large public buildings\" – bài chỉ nói nhà công cộng, không nói về nơi ở của dân (key trong file giải thích ghi FALSE, nhưng chính lời giải thích lại viết \"does not mention\")."
+            },
+            {
+              "no": 3,
+              "type": "tfng",
+              "text": "Builders in Uruk frequently experimented with new construction methods.",
+              "answer": "TRUE",
+              "explanation": "\"often trying out a different building material or an innovative technique\""
+            },
+            {
+              "no": 4,
+              "type": "tfng",
+              "text": "Urban settlements were unusual in Mesopotamia 4,500 years ago.",
+              "answer": "FALSE",
+              "explanation": "\"By about 4,500 years ago, 80 per cent of the Mesopotamian population lived in cities\""
+            },
+            {
+              "no": 5,
+              "type": "tfng",
+              "text": "The Tigris and the Euphrates rivers were important for the interchange of ideas.",
+              "answer": "TRUE",
+              "explanation": "\"were also the basis of a communication system that led to the spread of the latest concepts in farming\""
+            },
+            {
+              "no": 6,
+              "type": "tfng",
+              "text": "When there were food shortages, farmers relied mainly on the help of their relatives.",
+              "answer": "FALSE",
+              "explanation": "\"The threat of famine … forced people to look outside their families, and work with their neighbours\""
+            }
+          ]
+        },
+        {
+          "instruction": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer.",
+          "wordLimit": "ONE WORD ONLY",
+          "context": "Early changes in Mesopotamia",
+          "questions": [
+            {
+              "no": 7,
+              "type": "fill",
+              "text": "Improved agricultural methods led to: a food ___ being used as insurance",
+              "answer": [
+                "surplus"
+              ],
+              "explanation": "\"generated a surplus of food, allowing crops in years of good harvests to be stored as protection against future less successful years\""
+            },
+            {
+              "no": 8,
+              "type": "fill",
+              "text": "Temples were built in the shape of large ___",
+              "answer": [
+                "pyramids"
+              ],
+              "explanation": "\"temple structures were erected in the form of massive pyramids\""
+            },
+            {
+              "no": 9,
+              "type": "fill",
+              "text": "Temples had large ___ where produce was kept",
+              "answer": [
+                "storerooms"
+              ],
+              "explanation": "\"which had enormous storerooms for the output from the farming estates\""
+            },
+            {
+              "no": 10,
+              "type": "fill",
+              "text": "Temples: many needed ___ to manage the farms",
+              "answer": [
+                "staff"
+              ],
+              "explanation": "\"appointed a large number of staff to administer them\""
+            },
+            {
+              "no": 11,
+              "type": "fill",
+              "text": "Temples acted as ___ in hard economic periods",
+              "answer": [
+                "banks"
+              ],
+              "explanation": "\"the temples to serve as primitive kinds of banks making loans to people in difficult economic times\""
+            },
+            {
+              "no": 12,
+              "type": "fill",
+              "text": "The development of writing: people wrote on surfaces made of ___",
+              "answer": [
+                "clay"
+              ],
+              "explanation": "\"basic records were inscribed in wet clay\""
+            },
+            {
+              "no": 13,
+              "type": "fill",
+              "text": "Written records remained undamaged after ___ in the archives they were kept in",
+              "answer": [
+                "fires"
+              ],
+              "explanation": "\"the fires that often burnt down the archives where they were stored usually merely baked them for future generations\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "passage": 2,
+      "title": "Australia's camouflaged creatures",
+      "topic": "Animals",
+      "level": "medium",
+      "passage_text": "Many species of animal in Australia protect themselves by using camouflage – a way of 'hiding' by blending into the surroundings\n\nA Most species use camouflage to some extent. If they are convincing, they survive to pass their genes on to future generations. After generation of natural selection, animals can develop astonishingly complex camouflage techniques, manipulating shape, colour and movement. 'The principle of camouflage is to make it economically unviable for a predator to pursue a particular species of prey.' explains Professor Mark Elgar, of the University of Melbourne. 'Camouflage increases the search time and, as a consequence, the predator will simply target another species, either because it doesn't see the camouflaged individual or it just finds something more obvious to do.'\n\nB The easiest way for an animal to disguise itself is to be invisible in its surroundings. To that end, stick and leaf insects have evolved complex camouflage to hide themselves from predators. Many have the texture of sticks or dry leaves, while others imitate living foliage, even the veins in a leaf. Some insects develop blemishes to match the spots caused by disease. A convincing appearance only works if its owner also acts the part, so during the day the creature using this type of camouflage keeps motionless, or sways like a dead leaf in the breeze. If disturbed, it falls to the ground and stays still. Entomologist Paul Zborowski, who has spent decades photographing inconspicuous creatures, rates the desert insects of Central Australia as the most convincingly disguised creatures he's seen. \"It's an incredibly old habitat so the creatures have had a long time to adapt,\" Zborowski explains. Most of them behave like stones and don't move all day feeding only at night.\n\nC A tawny frogmouth sitting motionless on a stump also illustrates the importance of pairing a persuasive costume with behaviour. Professor Gisela Kaplan of the University of New England, in Australia, says the frogmouth's skill at camouflaging is learned behaviour. While adopting a pose may be a reflex of the bird, and can be observed in a hatchling's first week, the ability to choose a backdrop which matches its colouration does not develop for 4-6 months. When the chicks land they are usually highly conspicuous, and their parents try to signal to them to move to a safe location.\n\nD Fixed camouflage is only good against a relatively unchanging environment, so some animals, such as the cuttlefish, have evolved an adaptable disguise. The cuttlefish can almost instantly change its colour, pattern and texture to match its surroundings, using specialised cells and muscles. On Queensland's reefs, scientists have been studying another ocean dweller that uses colour change, although not to blend into the surroundings. Dr Karen Cheney, from the University of Queensland, says the bluestriped fangblenny alters its colouration to mimic other species of fish, allowing it to travel with them and benefit from safety in numbers. Its most impressive impersonation is of the black-with-neon-blue striped cleaner wrasse which eats the parasites on larger fish. Not only does the fangblenny benefit from the reduced predation that comes with the wrasse's beneficial relationships with other fish, but the disguise also lets it get closer to prey. It darts out from the safety of the wrasse's cleaning station to nip at unsuspecting fish passing by but doesn't attack those coming to be cleaned.\n\nE The most famous form of mimicry, however, is for defence, not attack. Batesian mimicry refers to animals that gain protection from predators by imitating a dangerous organism, often using conspicuous colours. The nineteenth-century naturalist Henry Bates first suggested this camouflage technique after noticing that several Amazonian butterfly species looked the same. The technique was later called after him. In Australian waters, the harmless harlequin snake eel sports the same black and white bandings as the highly toxic, yellow-lipped sea krait, ensuring no predator will attack. However, the success of Batesian mimicry depends on the ratio of mimics to originals. If a predator encounters too many that are edible, it will just assume none of the animals with those markings are dangerous, explains Martyn Robinson, an educational naturalist with the Australian Museum.\n\nF An imitation of a more dangerous creature needn't be exact, just enough to make potential predators hesitate. The hawk moth caterpillar has markings resembling a snake's eyes on its abdomen. When confronted, the caterpillar pulls its head in and the 'eyes' flash open. Whether the potential predator thinks it has seen a snake, or is simply startled is unclear, but the outcome is that the caterpillar lives to see another day.\n\nG In Queensland's tablelands, the chameleon gecko has another way of making predators hesitate. Its body is brown, but its tail is banded in black and white. Robinson explains that if attacked, the chameleon gecko will drop off its tail, which will wriggle around on the ground. Many lizards do this, but in the case of the chameleon gecko the tail bones actually rub against one another, so it squeaks. 'The predator is, of course, thoroughly absorbed by this black-and-white-striped, wriggling, squeaking thing on the ground, and the gecko can sneak away,' Robinson says. It's a one-time-only trick: the regrown tail is brown, the same as the gecko's body. Such precise disguise and elaborate trickery illustrate the limitless possibilities of nature. But, as Robinson points out, only the most successful illusionists are here to tell the tale.",
+      "groups": [
+        {
+          "instruction": "Reading Passage 2 has seven sections, A–G. Which section contains the following information?",
+          "bank": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E",
+            "F",
+            "G"
+          ],
+          "questions": [
+            {
+              "no": 14,
+              "type": "match",
+              "text": "a species that indicates to its young to move to a place where they are less visible",
+              "answer": 2,
+              "explanation": "\"their parents try to signal to them to move to a safe location\" (đoạn C)"
+            },
+            {
+              "no": 15,
+              "type": "match",
+              "text": "an instance where sound is used to help an animal escape",
+              "answer": 6,
+              "explanation": "\"the tail bones actually rub against one another, so it squeaks … and the gecko can sneak away\" (đoạn G)"
+            },
+            {
+              "no": 16,
+              "type": "match",
+              "text": "a creature that can use camouflage to match a range of different backgrounds",
+              "answer": 3,
+              "explanation": "\"The cuttlefish can almost instantly change its colour, pattern and texture to match its surroundings\" (đoạn D)"
+            },
+            {
+              "no": 17,
+              "type": "match",
+              "text": "a claim that the majority of animals disguise themselves in some way",
+              "answer": 0,
+              "explanation": "\"Most species use camouflage to some extent.\" (đoạn A)"
+            },
+            {
+              "no": 18,
+              "type": "match",
+              "text": "examples of animals that use camouflage to look like plants",
+              "answer": 1,
+              "explanation": "\"stick and leaf insects … Many have the texture of sticks or dry leaves, while others imitate living foliage\" (đoạn B)"
+            }
+          ]
+        },
+        {
+          "instruction": "Look at the following statements and the list of people below. Match each statement with the correct person, A–F.",
+          "bank": [
+            "Professor Mark Elgar",
+            "Paul Zborowski",
+            "Professor Gisela Kaplan",
+            "Dr Karen Cheney",
+            "Henry Bates",
+            "Martyn Robinson"
+          ],
+          "questions": [
+            {
+              "no": 19,
+              "type": "match",
+              "text": "One species has a camouflage tactic that is not present from birth.",
+              "answer": 2,
+              "explanation": "\"Professor Gisela Kaplan … says the frogmouth's skill at camouflaging is learned behaviour\""
+            },
+            {
+              "no": 20,
+              "type": "match",
+              "text": "Species that live in an ancient environment have become very effective at camouflaging themselves.",
+              "answer": 1,
+              "explanation": "\"It's an incredibly old habitat so the creatures have had a long time to adapt,\" Zborowski explains."
+            },
+            {
+              "no": 21,
+              "type": "match",
+              "text": "Part of an animal is left behind to distract predators.",
+              "answer": 5,
+              "explanation": "\"Robinson explains that if attacked, the chameleon gecko will drop off its tail, which will wriggle around on the ground.\""
+            },
+            {
+              "no": 22,
+              "type": "match",
+              "text": "If it takes too long to find one kind of prey, animals will look for an alternative source of food.",
+              "answer": 0,
+              "explanation": "\"'Camouflage increases the search time and, as a consequence, the predator will simply target another species'\" (Mark Elgar)"
+            },
+            {
+              "no": 23,
+              "type": "match",
+              "text": "Camouflage can involve copying a threatening type of animal.",
+              "answer": 4,
+              "explanation": "\"Batesian mimicry refers to animals that gain protection from predators by imitating a dangerous organism … Henry Bates first suggested this camouflage technique\""
+            }
+          ]
+        },
+        {
+          "instruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer.",
+          "wordLimit": "ONE WORD ONLY",
+          "context": "The bluestriped fangblenny",
+          "questions": [
+            {
+              "no": 24,
+              "type": "fill",
+              "text": "Dr Karen Cheney studies the bluestriped fangblenny on ___ off Queensland's coast.",
+              "answer": [
+                "reefs"
+              ],
+              "explanation": "\"On Queensland's reefs, scientists have been studying another ocean dweller\""
+            },
+            {
+              "no": 25,
+              "type": "fill",
+              "text": "The fangblenny impersonates the striped cleaner wrasse, a fish that is welcomed by other species as it gets rid of their ___",
+              "answer": [
+                "parasites"
+              ],
+              "explanation": "\"the black-with-neon-blue striped cleaner wrasse which eats the parasites on larger fish\""
+            },
+            {
+              "no": 26,
+              "type": "fill",
+              "text": "The fangblenny can approach its ___ without drawing the attention of predators or disturbing the work of the striped cleaner wrasse.",
+              "answer": [
+                "prey"
+              ],
+              "explanation": "\"the disguise also lets it get closer to prey\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "passage": 3,
+      "title": "The effectiveness of an online course",
+      "topic": "Education",
+      "level": "hard",
+      "passage_text": "As access to the internet has continued to grow, web-based learning has continued to expand. With approximately half of the households in the United States (or 150 million people) connected to the internet, an estimated 2 million students are taking post-secondary courses that are fully delivered online. Millions of other students at all educational levels (primary, secondary, post-secondary) participate in online courses. However, the effectiveness of online courses, particularly in relation to individual student needs, perceptions, and student outcomes, is sometimes questioned.\n\nCommon elements for learning in a typical classroom environment are the social and communicative interactions between student and teacher, and student and student. The ability to ask a question, to share an opinion with a fellow student, or to disagree with the point of view in a reading assignment are all fundamental learning activities. However, effective web-based learning requires adjustments on the part of students and teachers for successful interactions to occur, for example. Many online courses provide students and faculty, and students and students with the ability to interact with each other via an electronic bulletin or discussion board.\n\nWhile most studies show a link between interaction and satisfaction in web-based courses, some observers have cautioned that this is not always the case. Ruberg, Taylor and Moore, for example, observe that in order to interact successfully, students must adjust to the nonlinear nature of web-based learning. Typical face-to-face situations tend to be linear, focusing on a single discussion thread. Web-based learning sessions on an electronic bulletin board can have multiple threads with several discussions and interactions progressing simultaneously. Students respond to a teacher but also to other students, depending on their interest and points of view.\n\nSproull and Kiesler caution about discussions based on misinformation, that continue because online an instructor cannot necessarily immediately correct or clarify a comment. As a result, students need to have the experience and knowledge base to sift through the discussion for misinformation. In online learning, the amount of student interaction and the number of comments can easily lead to what is described as information overload. Furthermore, comments in online discussions tend to be lengthier than in face-to-face situations. With more information from many sources, students need to be more attentive to both the who and what of a comment. Cartens Shat, an economist, states 'a wealth of information can create a poverty of attention.'\n\nIn examinations of interaction, the concept of 'presence', or a sense of being in a place and belonging to a group, has received attention. It is generally assumed that when a student is physically present in a face-to-face course, he or she has a sense of belonging to the class or group enrolled in the course and this sense of belonging is greater than that experienced on an online course. He or she listens to the discussion and may choose to raise a hand to comment, answer or ask a question. Furthermore, this same student may develop a relationship with other students in the class and discuss topics related to the class during a break. However, this is an assumption and not always true. For a variety of reasons, some students can also feel alienated in a face-to-face class and not feel part of a group.\n\nThe idea of presence has been redefined in relation to an online course. The simplest definition of presence for an online course refers to a student's sense of being registered and belonging in a course, and the ability to interact with other students and an instructor even though physical contact is not available. However, as this concept is studied, the definition is expanding and being refined to include telepresence, cognitive presence, social presence, teaching presence, and other forms of presence. The term 'community' is related to presence, and refers to a group of individuals who belong to a social unit, such as students in a class. In an online course, however, terms such as communities of inquiry, communities of learners, and knowledge-building communities have evolved.\n\nAs the definition of presence has expanded and evolved, a distinction has been made between interaction and presence, emphasizing that they are not the same. Interaction may indicate presence but it is also possible for a student to interact by posting a message on an electronic bulletin board, while not necessarily feeling that he or she is part of a group or a class.\n\nA study conducted by Professor Anthony Picciano used questionnaires to determine students' attitudes in relation to their interactions and sense of purpose in online courses. An attempt was made to go beyond student perceptions of interaction and performance and to include perceptions of social presence, as well as actual participation in class activities. In addition, data was collected on performance measures that related specifically to course objectives. While much of the research, including this study, supports the strong relationship between students' perception of interaction and perceived learning, the results of the study indicated that the relationship of actual measures of interaction and performance is mixed. The success of many online courses is dependent upon the nature of student-to-student and student-to-faculty interaction. However, how interaction affects learning outcomes and what the relationships between the two are, is in need of further study.",
+      "groups": [
+        {
+          "instruction": "Choose the correct letter, A, B, C or D.",
+          "questions": [
+            {
+              "no": 27,
+              "type": "mcq",
+              "text": "Which of the following is mentioned in the article in relation to classroom-based learning?",
+              "options": [
+                "the development of academic skills",
+                "the documenting of information",
+                "the completion of assignments",
+                "the exchange of ideas"
+              ],
+              "answer": 3,
+              "explanation": "\"The ability to ask a question, to share an opinion with a fellow student, or to disagree with the point of view in a reading assignment are all fundamental learning activities.\""
+            },
+            {
+              "no": 28,
+              "type": "mcq",
+              "text": "Ruberg, Taylor and Moore point out that web-based learning requires learners to",
+              "options": [
+                "think sequentially.",
+                "research different points of view.",
+                "limit their responses to other students.",
+                "follow more than one discussion at a time."
+              ],
+              "answer": 3,
+              "explanation": "\"Web-based learning sessions on an electronic bulletin board can have multiple threads with several discussions and interactions progressing simultaneously.\""
+            },
+            {
+              "no": 29,
+              "type": "mcq",
+              "text": "What problem did Sproull and Kiesler identify with online discussions?",
+              "options": [
+                "Online discussions demand less attention than face-to-face ones.",
+                "Teachers have difficulty monitoring the length of comments.",
+                "Face-to-face interactions between students are lost.",
+                "There is a delay in giving feedback to students."
+              ],
+              "answer": 3,
+              "explanation": "\"discussions based on misinformation, that continue because online an instructor cannot necessarily immediately correct or clarify a comment\""
+            },
+            {
+              "no": 30,
+              "type": "mcq",
+              "text": "The writer refers to the concept of online presence as",
+              "options": [
+                "listening to a discussion.",
+                "a feeling of being part of a group.",
+                "posting ideas on an electronic bulletin board.",
+                "having a good relationship with other students."
+              ],
+              "answer": 1,
+              "explanation": "\"The simplest definition of presence for an online course refers to a student's sense of being registered and belonging in a course\""
+            },
+            {
+              "no": 31,
+              "type": "mcq",
+              "text": "What was a focus of Anthony Picciano's study?",
+              "options": [
+                "to examine the relationship between presence and course outcomes",
+                "to analyse the differences between online and class-based courses",
+                "to examine the importance of being present in a classroom",
+                "to demonstrate that online courses are not generally effective"
+              ],
+              "answer": 0,
+              "explanation": "\"to include perceptions of social presence … In addition, data was collected on performance measures that related specifically to course objectives\""
+            }
+          ]
+        },
+        {
+          "instruction": "Do the following statements agree with the claims of the writer in Reading Passage 3? Write YES, NO or NOT GIVEN.",
+          "questions": [
+            {
+              "no": 32,
+              "type": "ynng",
+              "text": "The ability of online courses to meet an individual participant's needs is unclear.",
+              "answer": "YES",
+              "explanation": "\"the effectiveness of online courses, particularly in relation to individual student needs … is sometimes questioned\""
+            },
+            {
+              "no": 33,
+              "type": "ynng",
+              "text": "Researchers caution against building strong online relationships.",
+              "answer": "NOT GIVEN",
+              "explanation": "\"some observers have cautioned that this is not always the case\" – bài có nói \"caution\" nhưng không nói về việc xây dựng quan hệ online."
+            },
+            {
+              "no": 34,
+              "type": "ynng",
+              "text": "Common assumptions about the benefits of face-to-face courses have proved to be correct.",
+              "answer": "NO",
+              "explanation": "\"However, this is an assumption and not always true.\""
+            },
+            {
+              "no": 35,
+              "type": "ynng",
+              "text": "The meaning of presence is still being clarified.",
+              "answer": "YES",
+              "explanation": "\"as this concept is studied, the definition is expanding and being refined\""
+            },
+            {
+              "no": 36,
+              "type": "ynng",
+              "text": "Research on the impacts of interaction on learning outcomes has produced consistent results.",
+              "answer": "NO",
+              "explanation": "\"the relationship of actual measures of interaction and performance is mixed\""
+            }
+          ]
+        },
+        {
+          "instruction": "Complete each sentence with the correct ending, A–F, below.",
+          "bank": [
+            "is dependent on adapting to unfamiliar interaction formats.",
+            "is key in determining whether a student has a sense of belonging in a course.",
+            "is a subject that the writer believes will require more study.",
+            "is essential to excel in study and scholarship.",
+            "is key in determining whether a student feels they have learned something from a course.",
+            "is important for determining their validity."
+          ],
+          "questions": [
+            {
+              "no": 37,
+              "type": "match",
+              "text": "The ability to succeed in an online course",
+              "answer": 0,
+              "explanation": "\"in order to interact successfully, students must adjust to the nonlinear nature of web-based learning\""
+            },
+            {
+              "no": 38,
+              "type": "match",
+              "text": "The need to be mindful of the source of comments in an online discussion",
+              "answer": 5,
+              "explanation": "\"students need to have the experience and knowledge base to sift through the discussion for misinformation … students need to be more attentive to both the who and what of a comment\" (key trong file giải thích ghi D, nhưng lời giải thích của key – \"assess the reliability\" – khớp với F)"
+            },
+            {
+              "no": 39,
+              "type": "match",
+              "text": "In online courses, it is presence, rather than interaction, that",
+              "answer": 1,
+              "explanation": "\"it is also possible for a student to interact by posting a message on an electronic bulletin board, while not necessarily feeling that he or she is part of a group or a class\" (key trong file giải thích ghi C)"
+            },
+            {
+              "no": 40,
+              "type": "match",
+              "text": "The relationship between interaction and learning achievement",
+              "answer": 2,
+              "explanation": "\"how interaction affects learning outcomes and what the relationships between the two are, is in need of further study\" (key trong file giải thích ghi B, nhưng lời giải thích của key – \"requires further study\" – khớp với C)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "writing": []
+}

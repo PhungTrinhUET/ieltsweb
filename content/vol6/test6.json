@@ -1,0 +1,901 @@
+{
+ "vol": 6,
+ "test": 6,
+ "source": "ORIGINAL IELTS EXAMS – VOL 6, Test 6 (Listening: L-TEST 6.pdf + L-key.pdf, đối chiếu Full Listening.docx; audio: P1 - .mp3, P2.mp3, P3 .mp3, P4.mp3; Reading: R-TEST 6.pdf, đối chiếu Full Reading.docx, key/giải thích trong expl 5-6.pdf). Listening không có transcript trong tài liệu gốc nên phần giải thích chỉ dẫn key; bản đồ Q11–14 không có hình (chỉ chọn A–I). Đáp án Q26–30 Listening trong L-key.pdf bị OCR tách cột (khối \"H E I A D\"), đã ghép lại theo thứ tự 26–30; Q14 OCR đọc \"1\", hiểu là I. Reading đã sửa lỗi OCR (\"they waxy\" → \"the waxy\", \"whale whale\" → \"whale\", \"the what lower intestine\" → \"the whale's lower intestine\", \"ragale\" → \"regale\", \"a far 3,000\" → \"as far as 3,000\", \"soda uses\" → \"social uses\", \"accuratem\" → \"accurate\", \"Medics\" → \"Medici\", \"Dr Jame Canton\" → \"Dr James Canton\", \"form across\" → \"from across\", \"help if\" → \"help of\"…); đoạn 4 Passage 1 và đoạn E Passage 2 bị OCR đảo dòng, đã sắp lại theo Full Reading.docx. Dựng lại: câu của Canton \"mixes the qualitative\" bị mất chữ trong cả PDF và docx, đã bổ sung thành \"mixes the quantitative and the qualitative\" theo bản công bố của bài đọc; phương án C câu 38–40 thêm chữ \"conference\".",
+ "listening": {
+  "audioDir": "audio/vol6/test6",
+  "timingNote": "Audio tách 4 file (P1–P4 = Part 1–4). Tài liệu gốc không có transcript nên không có mốc thời gian.",
+  "sections": [
+   {
+    "section": 1,
+    "title": "A residence survey",
+    "topic": "Daily Life",
+    "transcriptNote": "Không có transcript cho section này trong tài liệu gốc (L-TEST 6.pdf và Full Listening.docx chỉ có câu hỏi). Chạy `npm run audio` (có cài whisper) để tự tạo từ file mp3.",
+    "transcript": "",
+    "groups": [
+     {
+      "instruction": "Complete the notes below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.",
+      "wordLimit": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "context": "A Residence Survey. Example: Age of the interviewee: 19. Means of transport – private: walking and bicycles.",
+      "questions": [
+       {
+        "no": 1,
+        "type": "fill",
+        "text": "Current occupation: ___",
+        "answer": [
+         "salesman"
+        ],
+        "explanation": "Đáp án gốc (L-key.pdf): \"salesman\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 2,
+        "type": "fill",
+        "text": "Length of living in the north: ___",
+        "answer": [
+         "9 years",
+         "nine years",
+         "9"
+        ],
+        "explanation": "Đáp án gốc (L-key.pdf): \"9 years\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 3,
+        "type": "fill",
+        "text": "Exact living area: ___",
+        "answer": [
+         "Spring Park"
+        ],
+        "explanation": "Đáp án gốc (L-key.pdf): \"Spring Park\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 4,
+        "type": "fill",
+        "text": "Type of accommodation: a shared ___",
+        "answer": [
+         "apartment"
+        ],
+        "explanation": "Đáp án gốc (L-key.pdf): \"apartment\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 5,
+        "type": "fill",
+        "text": "Means of transport – public: ___ and taxi",
+        "answer": [
+         "train",
+         "trains"
+        ],
+        "explanation": "Đáp án gốc (L-key.pdf): \"train\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       }
+      ]
+     },
+     {
+      "instruction": "Complete the notes below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "wordLimit": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "context": "Preferred exercises: go swimming; go to the gym; …",
+      "questions": [
+       {
+        "no": 6,
+        "type": "fill",
+        "text": "Frequency of eating out: ___",
+        "answer": [
+         "once a month",
+         "once per month"
+        ],
+        "explanation": "Đáp án gốc (L-key.pdf): \"once a month\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 7,
+        "type": "fill",
+        "text": "Places for entertainment: ___",
+        "answer": [
+         "clubs"
+        ],
+        "explanation": "Đáp án gốc (L-key.pdf): \"clubs\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 8,
+        "type": "fill",
+        "text": "Other free time activity: go to the ___",
+        "answer": [
+         "cinema"
+        ],
+        "explanation": "Đáp án gốc (L-key.pdf): \"cinema\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 9,
+        "type": "fill",
+        "text": "Preferred exercises: go ___",
+        "answer": [
+         "sailing"
+        ],
+        "explanation": "Đáp án gốc (L-key.pdf): \"sailing\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 10,
+        "type": "fill",
+        "text": "Part-time course: ___",
+        "answer": [
+         "Japanese"
+        ],
+        "explanation": "Đáp án gốc (L-key.pdf): \"Japanese\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "section": 2,
+    "title": "The Elmsden Way – a cycle route",
+    "topic": "Travel & Leisure",
+    "transcriptNote": "Không có transcript cho section này trong tài liệu gốc (L-TEST 6.pdf và Full Listening.docx chỉ có câu hỏi). Chạy `npm run audio` (có cài whisper) để tự tạo từ file mp3.",
+    "transcript": "",
+    "groups": [
+     {
+      "instruction": "Label the map below. Write the correct letter, A–I, next to questions 11–14. (Không có hình bản đồ và không có transcript: chỉ có thể chọn chữ cái A–I; đáp án theo key gốc.)",
+      "context": "The Elmsden Way – trên bản đồ gốc có: Elmsden Station, Langton Station, Lake, River Cleve, đường bộ, tuyến xe đạp (cycle route) và đường sắt; các vị trí cần điền đánh dấu A–I.",
+      "bank": [
+       "A",
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H",
+       "I"
+      ],
+      "questions": [
+       {
+        "no": 11,
+        "type": "match",
+        "text": "Rocks",
+        "answer": 1,
+        "explanation": "Đáp án gốc (L-key.pdf): \"B\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 12,
+        "type": "match",
+        "text": "Colleen Nature Reserve",
+        "answer": 4,
+        "explanation": "Đáp án gốc (L-key.pdf): \"E\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 13,
+        "type": "match",
+        "text": "Ashington China Factory",
+        "answer": 5,
+        "explanation": "Đáp án gốc (L-key.pdf): \"F\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 14,
+        "type": "match",
+        "text": "Langton forest",
+        "answer": 8,
+        "explanation": "Đáp án gốc (L-key.pdf): \"I\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key. (OCR của L-key.pdf đọc thành \"1\"; hiểu là chữ I.)"
+       }
+      ]
+     },
+     {
+      "instruction": "Choose the correct letter, A, B or C.",
+      "context": "The Elmsden Way",
+      "questions": [
+       {
+        "no": 15,
+        "type": "mcq",
+        "text": "What kind of warning does the speaker give to cyclists?",
+        "options": [
+         "there may be traffic jams",
+         "avoid wet cycle paths",
+         "there may be animals in the way"
+        ],
+        "answer": 2,
+        "explanation": "Đáp án gốc (L-key.pdf): \"C\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 16,
+        "type": "mcq",
+        "text": "The starting point of Elmsden station is",
+        "options": [
+         "very busy",
+         "more modern",
+         "re-opened recently"
+        ],
+        "answer": 0,
+        "explanation": "Đáp án gốc (L-key.pdf): \"A\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 17,
+        "type": "mcq",
+        "text": "What can people do at the visitor's centre?",
+        "options": [
+         "rent a bike",
+         "buy refreshments",
+         "learn local history"
+        ],
+        "answer": 0,
+        "explanation": "Đáp án gốc (L-key.pdf): \"A\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 18,
+        "type": "mcq",
+        "text": "To commute between Langton and Elmsden by train, you need to",
+        "options": [
+         "book in advance",
+         "go on weekends",
+         "pay additional charges"
+        ],
+        "answer": 1,
+        "explanation": "Đáp án gốc (L-key.pdf): \"B\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 19,
+        "type": "mcq",
+        "text": "What should you be aware of when visiting River Elm?",
+        "options": [
+         "it takes a long time",
+         "the waterfall is inaccessible",
+         "go by bike"
+        ],
+        "answer": 0,
+        "explanation": "Đáp án gốc (L-key.pdf): \"A\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 20,
+        "type": "mcq",
+        "text": "Where can you get the information if you want to join the local route?",
+        "options": [
+         "the local newspaper",
+         "the station website",
+         "national cycling network"
+        ],
+        "answer": 0,
+        "explanation": "Đáp án gốc (L-key.pdf): \"A\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "section": 3,
+    "title": "Taking part in archaeological excavations",
+    "topic": "Education & History",
+    "transcriptNote": "Không có transcript cho section này trong tài liệu gốc (L-TEST 6.pdf và Full Listening.docx chỉ có câu hỏi). Chạy `npm run audio` (có cài whisper) để tự tạo từ file mp3.",
+    "transcript": "",
+    "groups": [
+     {
+      "instruction": "Choose the correct letter, A, B or C.",
+      "context": "Taking part in archaeological excavations",
+      "questions": [
+       {
+        "no": 21,
+        "type": "mcq",
+        "text": "How did Tomas and May both feel about parts of their studies before going on the excavations?",
+        "options": [
+         "They lacked motivation.",
+         "They were enthusiastic.",
+         "They were confused."
+        ],
+        "answer": 2,
+        "explanation": "Đáp án gốc (L-key.pdf): \"C\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 22,
+        "type": "mcq",
+        "text": "What surprised Tomas and May most when they were excavating?",
+        "options": [
+         "how important photography was",
+         "how careful you had to be with your records",
+         "how many rules there were to follow"
+        ],
+        "answer": 1,
+        "explanation": "Đáp án gốc (L-key.pdf): \"B\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 23,
+        "type": "mcq",
+        "text": "What did May find that was particularly interesting?",
+        "options": [
+         "some fabric",
+         "some pieces of pots",
+         "some jewellery"
+        ],
+        "answer": 0,
+        "explanation": "Đáp án gốc (L-key.pdf): \"A\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 24,
+        "type": "mcq",
+        "text": "What did Tomas and May both find surprising about the people they were studying?",
+        "options": [
+         "The food they ate was very varied.",
+         "Their main activity was fishing.",
+         "They were not as tall as people today."
+        ],
+        "answer": 0,
+        "explanation": "Đáp án gốc (L-key.pdf): \"A\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 25,
+        "type": "mcq",
+        "text": "What do Tomas and May both say about the people they worked with?",
+        "options": [
+         "They came from a variety of countries.",
+         "They worked really hard.",
+         "They were young and enthusiastic."
+        ],
+        "answer": 1,
+        "explanation": "Đáp án gốc (L-key.pdf): \"B\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       }
+      ]
+     },
+     {
+      "instruction": "Complete the flow chart below. Choose FIVE answers from the box and write the correct letter, A–I, next to questions 26–30.",
+      "context": "Excavation Projects Next Week: Take (26) and clean the area → Take photos of the site to be excavated → Ask your team leader for (27) → Make (28) of the site and measure the levels → Take (29) → Register and put (30) → Put in site hut together with tools",
+      "bank": [
+       "some soil samples",
+       "some photographs",
+       "objects to team leader",
+       "labels on objects",
+       "a record sheet",
+       "a unit number",
+       "further analysis of objects",
+       "tools from the site hut",
+       "a comprehensive plan"
+      ],
+      "questions": [
+       {
+        "no": 26,
+        "type": "match",
+        "text": "Take ___ and clean the area",
+        "answer": 7,
+        "explanation": "Đáp án gốc (L-key.pdf): \"H\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 27,
+        "type": "match",
+        "text": "Ask your team leader for ___",
+        "answer": 4,
+        "explanation": "Đáp án gốc (L-key.pdf): \"E\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 28,
+        "type": "match",
+        "text": "Make ___ of the site and measure the levels",
+        "answer": 8,
+        "explanation": "Đáp án gốc (L-key.pdf): \"I\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 29,
+        "type": "match",
+        "text": "Take ___",
+        "answer": 0,
+        "explanation": "Đáp án gốc (L-key.pdf): \"A\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 30,
+        "type": "match",
+        "text": "Register and put ___",
+        "answer": 3,
+        "explanation": "Đáp án gốc (L-key.pdf): \"D\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "section": 4,
+    "title": "Crocodile study",
+    "topic": "Science & Nature",
+    "transcriptNote": "Không có transcript cho section này trong tài liệu gốc (L-TEST 6.pdf và Full Listening.docx chỉ có câu hỏi). Chạy `npm run audio` (có cài whisper) để tự tạo từ file mp3.",
+    "transcript": "",
+    "groups": [
+     {
+      "instruction": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+      "wordLimit": "ONE WORD ONLY",
+      "context": "Crocodile Study. Background: type of crocodile studied – crocodiles found in salt water; location of study – Northern Territory, Australia. Reasons for study: the management of crocodiles by the government may not be effective. Research questions: How far can crocodiles travel? Details of study: number of crocodiles involved – three. Conclusions: a change in policy is needed.",
+      "questions": [
+       {
+        "no": 31,
+        "type": "fill",
+        "text": "Significance of study: unique because it was the first time a ___ had been used to track crocodiles",
+        "answer": [
+         "satellite"
+        ],
+        "explanation": "Đáp án gốc (L-key.pdf): \"satellite\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 32,
+        "type": "fill",
+        "text": "Previous studies: done using ___",
+        "answer": [
+         "radio"
+        ],
+        "explanation": "Đáp án gốc (L-key.pdf): \"radio\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 33,
+        "type": "fill",
+        "text": "Stressful method, also unreliable due to loss of the ___",
+        "answer": [
+         "signal"
+        ],
+        "explanation": "Đáp án gốc (L-key.pdf): \"signal\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 34,
+        "type": "fill",
+        "text": "Research question: How easily can crocodiles ___?",
+        "answer": [
+         "navigate"
+        ],
+        "explanation": "Đáp án gốc (L-key.pdf): \"navigate\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 35,
+        "type": "fill",
+        "text": "Challenge: crocodiles are difficult to observe because they avoid ___",
+        "answer": [
+         "people"
+        ],
+        "explanation": "Đáp án gốc (L-key.pdf): \"people\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 36,
+        "type": "fill",
+        "text": "Method: crocodiles were measured and tagged, then relocated using a ___",
+        "answer": [
+         "helicopter"
+        ],
+        "explanation": "Đáp án gốc (L-key.pdf): \"helicopter\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 37,
+        "type": "fill",
+        "text": "Monitoring: scientists got data from a transmitter located on the crocodile's ___",
+        "answer": [
+         "head"
+        ],
+        "explanation": "Đáp án gốc (L-key.pdf): \"head\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 38,
+        "type": "fill",
+        "text": "Results: each crocodile first stayed at the site for a few weeks, moving in a random way, then took the most ___ way home",
+        "answer": [
+         "direct"
+        ],
+        "explanation": "Đáp án gốc (L-key.pdf): \"direct\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 39,
+        "type": "fill",
+        "text": "When travelling long distances, crocodiles may use their own senses and the position of the ___",
+        "answer": [
+         "sun"
+        ],
+        "explanation": "Đáp án gốc (L-key.pdf): \"sun\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       },
+       {
+        "no": 40,
+        "type": "fill",
+        "text": "When travelling long distances, crocodiles may use a similar system to ___",
+        "answer": [
+         "birds"
+        ],
+        "explanation": "Đáp án gốc (L-key.pdf): \"birds\". Tài liệu gốc không có transcript nên không trích được câu bằng chứng; đáp án theo key."
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "reading": [
+  {
+   "passage": 1,
+   "title": "Ambergris – what is it and where does it come from?",
+   "topic": "Nature & History",
+   "level": "easy",
+   "passage_text": "Ambergris – what is it and where does it come from?\n\nIn the ancient world, the waxy grey substance we now refer to as ambergris was highly prized for its medicinal properties, and was widely used as a spice, which was believed to be an aphrodisiac when added to food or wine. Ambergris itself is pleasantly aromatic, especially when warmed, and it was also highly valued as a fixing agent in the making of perfume, since it enabled a scent to retain its fragrance for much longer than might otherwise have been possible. Most ambergris was found in the form of lumps floating on the surface of the sea, or washed up on the shores of tropical and temperate oceans. At one time, ambergris was worth its weight in gold, but there was much confusion about its origins.\n\nAmbergris was known to the Arabs as 'ambar' and was originally called amber in the west in the Middle Ages. This eventually led to further confusion in the popular mind between ambergris and true amber, the mineral known to mineralogists as succinite, which is actually fossilised tree resin, and generally yellow in colour. Both substances were rare and costly, and both were associated with the sea, largely because for Europeans the most common source of amber was the shores of the Baltic. In Chapter 92 of Moby Dick, the American writer Herman Melville pours scorn on those who believed the two substances to be the same: 'Though the word ambergris is but the French compound for grey amber, yet the two substances are quite distinct. For amber, though at times found on the sea-coast, is also dug up in some far inland soils, whereas ambergris is never found except upon the sea. Besides, amber is a hard, transparent, brittle, odorless substance, used for mouth-pieces to pipes, for beads and ornaments; but ambergris is soft, waxy, and so highly fragrant that it is largely used in perfumery.'\n\nMoby Dick was published in 1851, by which time the mystery of the origins of ambergris had been resolved by the scientific community. In 1783, the botanist Joseph Banks, who had accompanied Captain James Cook on his voyages of discovery in the Pacific, presented a paper to the Royal Society of London by the German physician Dr. Franz Xavier Schwediawer in which it was conclusively proved that ambergris came from sperm whales. In this, he was confirming an observation made in the 13th century by the great Venetian traveller Marco Polo who, while on the island of Socotra in the Indian Ocean, had witnessed a sperm whale vomiting up ambergris. But whereas Marco Polo imagined that the whale had swallowed the lump in the depths of the sea, Schwediawer showed that the origin of the material was inside the whale itself.\n\nThe sperm whale is the largest of the odontocetes, or toothed whales. Males can grow up to 20 metres in length. Melville described the sperm whale as 'the king of whales', and his novel Moby Dick is based on the pursuit of one such creature. Sperm whales are renowned for their ability to dive to great depths, possibly as far as 3,000 metres below the surface, and for remaining underwater for periods of two hours or more in pursuit of their favourite prey, the giant squid.\n\nIt is from the problems the whales have in digesting the beaks of such creatures that ambergris has its origins. The beak is sharp and irritates the whale's lower intestine, which responds by producing a black, foul-smelling liquid. It is not clear to scientists whether this secretion should be considered a normal response by the whale's digestive system or a pathological one, but from time to time large quantities of the liquid are vomited up by the whale. Once outside the whale's body and exposed to air, the substance hardens, acquiring the waxy, greyish and pleasantly aromatic characteristics of ambergris. Often the beaks of squid are still found embedded in lumps of ambergris, some of which can weigh several hundred kilograms. Melville took some delight in contrasting the origins of ambergris with the high value placed upon it by refined society: 'Who would think, then, that such fine ladies and gentlemen should regale themselves with an essence found in the inglorious bowels of a sick whale!'\n\nSperm whales were ruthlessly pursued by commercial whalers in the 19th and 20th centuries. In 1963–64 alone, almost 30,000 individuals were killed, and only the imposition of a ban on the hunting of sperm whales in 1984 saved the species from extinction. Ambergris was by far the most valuable product to be extracted during the processing of the whales' carcasses, and over 90 per cent of the annual worldwide total was acquired in this way, as a by-product of commercial whaling. However, even before the ban on hunting sperm whales was imposed, the 1972 Marine Mammal Protection Act had prohibited trade in ambergris. Just as petroleum and plastic products were replacing other natural products of whaling, so ambergris was supplanted in the making of perfume by other materials, some natural and some synthetic in origin. Nevertheless, it is possible that, as sperm whale populations recover to their former numbers in the wild, so the sight of lumps of ambergris washed ashore along the tide line will once again become a familiar one to beachcombers the world over.",
+   "groups": [
+    {
+     "instruction": "Classify the following facts as referring to A ambergris only, B amber only, C both ambergris and amber, D neither ambergris nor amber.",
+     "bank": [
+      "ambergris only",
+      "amber only",
+      "both ambergris and amber",
+      "neither ambergris nor amber"
+     ],
+     "questions": [
+      {
+       "no": 1,
+       "type": "match",
+       "text": "very expensive",
+       "answer": 2,
+       "explanation": "\"Both substances were rare and costly\""
+      },
+      {
+       "no": 2,
+       "type": "match",
+       "text": "a food flavouring",
+       "answer": 0,
+       "explanation": "\"ambergris was highly prized for its medicinal properties, and was widely used as a spice\""
+      },
+      {
+       "no": 3,
+       "type": "match",
+       "text": "used as currency",
+       "answer": 3,
+       "explanation": "Bài không nói chất nào được dùng làm tiền (\"worth its weight in gold\" chỉ nói về giá trị)."
+      },
+      {
+       "no": 4,
+       "type": "match",
+       "text": "sweet-smelling",
+       "answer": 0,
+       "explanation": "\"Ambergris itself is pleasantly aromatic\"; còn amber là \"odorless substance\""
+      },
+      {
+       "no": 5,
+       "type": "match",
+       "text": "referred to by Herman Melville",
+       "answer": 2,
+       "explanation": "\"Though the word ambergris is but the French compound for grey amber, yet the two substances are quite distinct.\""
+      },
+      {
+       "no": 6,
+       "type": "match",
+       "text": "can be seen through",
+       "answer": 1,
+       "explanation": "\"Besides, amber is a hard, transparent, brittle, odorless substance\""
+      }
+     ]
+    },
+    {
+     "instruction": "Complete the flow-chart below. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "context": "How ambergris is formed",
+     "questions": [
+      {
+       "no": 7,
+       "type": "fill",
+       "text": "Ambergris is formed in whales because of problems digesting the ___ of giant squid.",
+       "answer": [
+        "beaks"
+       ],
+       "explanation": "\"It is from the problems the whales have in digesting the beaks of such creatures that ambergris has its origins.\""
+      },
+      {
+       "no": 8,
+       "type": "fill",
+       "text": "Black liquid is produced and is ___ from time to time.",
+       "answer": [
+        "vomited",
+        "vomited up"
+       ],
+       "explanation": "\"from time to time large quantities of the liquid are vomited up by the whale\""
+      },
+      {
+       "no": 9,
+       "type": "fill",
+       "text": "The liquid ___ on contact with the air.",
+       "answer": [
+        "hardens"
+       ],
+       "explanation": "\"Once outside the whale's body and exposed to air, the substance hardens\""
+      }
+     ]
+    },
+    {
+     "instruction": "Do the following statements agree with the information given in Reading Passage 1? Write TRUE, FALSE or NOT GIVEN.",
+     "questions": [
+      {
+       "no": 10,
+       "type": "tfng",
+       "text": "In the 20th century, most of the world's ambergris came from processing dead whales.",
+       "answer": "TRUE",
+       "explanation": "\"Ambergris was by far the most valuable product to be extracted during the processing of the whales' carcasses, and over 90 per cent of the annual worldwide total was acquired in this way\""
+      },
+      {
+       "no": 11,
+       "type": "tfng",
+       "text": "The value of ambergris has increased recently.",
+       "answer": "NOT GIVEN",
+       "explanation": "Bài chỉ nói \"At one time, ambergris was worth its weight in gold\", không nói giá trị gần đây."
+      },
+      {
+       "no": 12,
+       "type": "tfng",
+       "text": "Ambergris remains an important ingredient in perfume.",
+       "answer": "FALSE",
+       "explanation": "\"so ambergris was supplanted in the making of perfume by other materials, some natural and some synthetic in origin\""
+      },
+      {
+       "no": 13,
+       "type": "tfng",
+       "text": "New uses have recently been found for ambergris.",
+       "answer": "NOT GIVEN",
+       "explanation": "Bài không nhắc đến công dụng mới nào của ambergris."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage": 2,
+   "title": "Photography",
+   "topic": "Arts & History",
+   "level": "medium",
+   "passage_text": "Photography\n\nPhotography emerged as part of a cluster of technical inventions and innovations around the middle of the nineteenth century. Hailed as a great technological invention, it immediately became the subject of debates concerning its aesthetic status and social uses.\n\nA Central to the nineteenth-century debate about the nature of photography as a new technology was the question as to how far it could be considered as art. It was celebrated for its putative ability to produce accurate images of what was in front of the camera's lens: images which were seen as being mechanically produced and thus free of the selective discriminations of the human eye and hand. On precisely the same grounds, the medium was often regarded as falling outside the realm of art as its assumed power of accurate, dispassionate recording appeared to leave no room for the artist's compositional creativity.\n\nB Debates concerning the status of photography as art continued to take place in periodicals throughout the nineteenth century. The French poet Baudelaire linked 'the invasion of photography and the great industrial madness of today' and asserted that if photography is allowed to deputise for art in some of art's activities, it will not be long before it has supplanted or corrupted art altogether. In his view, photography's only function was to support intellectual enquiry.\n\nC Baudelaire was not alone in this view. Absolute material accuracy was seen as the hallmark of photography, and the nineteenth-century desire to explore, record and catalogue human experience, both at home and overseas, encouraged people to emphasise photography as a method of naturalistic documentation, rather than any type of art form.\n\nD Photographers responded to criticisms of this kind in two ways: either they accepted that photography was something different from art and sought to discover what the intrinsic properties of the medium were, or they pointed out that photography was more than a mechanical form of image-making, that it could be worked on and contrived so as to produce pictures which in some ways resembled paintings. 'Pictorial' photography from the 1850s onwards sought to overcome the problems of photography by careful arrangement of all the elements of the composition and by reducing the signifiers of technological production within the photograph. For example, they ensured that the image was somewhat blurred: they made pictures of allegorical subjects, including religious scenes, and those who worked with the gum bichromate process scratched their prints in an effort to imitate something of the appearance of a canvas.\n\nE In the other camp were those photographers who celebrated the qualities of straight photography (with an emphasis upon direct documentary typical of the Modern period in American photography) and did not want to treat the medium as a kind of monochrome painting. They were interested in photography's ability to provide apparently accurate records of the visual world and tried to give their images the formal status and finish of paintings while concentrating their attention on its intrinsic quality.\n\nF Photography in Britain and France was initially heralded for its technical recording abilities. With few exceptions, the emphasis was on picture-taking rather than picture-making – to echo a distinction made by Margaret Harker. She suggests that the development of the art of photography in the late 1850s can be partly accounted for through the increasing involvement of people trained as artists. They brought with them a concern for form and composition and, in particular, the use of light. Photography came to encroach very directly on genres of painting such as portraiture, not only taking over some of the work of painters, but also extending their work. For instance, while few could afford the time and cost of sitting for a painted portrait, the studio photographer could offer a similar service more cheaply. As such, portraiture became more democratically available. This did not prevent a continuing hierarchy: the painted portrait was still commissioned by the wealthy and the aristocracy. But it did allow a greater number of people the status of seeing themselves pictured.\n\nG Furthermore, photography provoked artists to re-examine the nature and potential of paint as a particular medium. Photography appeared to be more successful than painting in capturing likenesses. It had a sense of instantaneousness that painting lacked. It has been suggested that photography encouraged Impressionist painters to experiment with manners of painting which could also capture a sense of the moment, and the passage of light. It is a truism that photography released painting from its responsibility for literal depiction, allowing it to become more experimental. However, the developing relationship between the two was considerably more symbiotic.\n\nH Another respect in which photography may be said to have extended art was in its role as the re-presenter of art objects. It was no longer necessary to travel to Florence to see paintings of the Medici, or to Egypt to contemplate classical architecture or artefacts; you could visit an exhibition and view reproductions.",
+   "groups": [
+    {
+     "instruction": "Reading Passage 2 has eight paragraphs, A–H. Which paragraph contains the following information?",
+     "bank": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+     ],
+     "questions": [
+      {
+       "no": 14,
+       "type": "match",
+       "text": "fears voiced about the potential threat posed to art by photography",
+       "answer": 1,
+       "explanation": "\"asserted that if photography is allowed to deputise for art in some of art's activities, it will not be long before it has supplanted or corrupted art altogether\""
+      },
+      {
+       "no": 15,
+       "type": "match",
+       "text": "the skills of artists being used in photography",
+       "answer": 5,
+       "explanation": "\"the development of the art of photography in the late 1850s can be partly accounted for through the increasing involvement of people trained as artists. They brought with them a concern for form and composition and, in particular, the use of light.\""
+      },
+      {
+       "no": 16,
+       "type": "match",
+       "text": "the attempts of photographers to imitate art",
+       "answer": 3,
+       "explanation": "\"those who worked with the gum bichromate process scratched their prints in an effort to imitate something of the appearance of a canvas\""
+      },
+      {
+       "no": 17,
+       "type": "match",
+       "text": "the influence of photography on artists and painting",
+       "answer": 6,
+       "explanation": "\"It has been suggested that photography encouraged Impressionist painters to experiment with manners of painting which could also capture a sense of the moment, and the passage of light.\""
+      }
+     ]
+    },
+    {
+     "instruction": "Complete the summary of paragraphs D and E below. Choose ONE WORD ONLY from paragraph D or E for each answer.",
+     "wordLimit": "ONE WORD ONLY",
+     "context": "Photographers' responses to criticism. In response to the suggestion that photography could not be considered an art form, photographers acted in two ways. Some of them rejected this criticism, certain that they could create pictures similar to (18). They did this by carefully setting up the different parts of the (19) before taking the photograph. Other things they did included causing the picture to be rather (20) and some who wanted to try to make the print look like a canvas even (21) their photographs. Others were anxious that their work should not be looked upon as some sort of (22) painting and were much more concerned with the fact that the camera seemed to be able to produce a more accurate representation of what they could see around them.",
+     "questions": [
+      {
+       "no": 18,
+       "type": "fill",
+       "text": "certain that they could create pictures similar to ___",
+       "answer": [
+        "paintings"
+       ],
+       "explanation": "\"it could be worked on and contrived so as to produce pictures which in some ways resembled paintings\""
+      },
+      {
+       "no": 19,
+       "type": "fill",
+       "text": "by carefully setting up the different parts of the ___ before taking the photograph",
+       "answer": [
+        "composition"
+       ],
+       "explanation": "\"by careful arrangement of all the elements of the composition\""
+      },
+      {
+       "no": 20,
+       "type": "fill",
+       "text": "causing the picture to be rather ___",
+       "answer": [
+        "blurred"
+       ],
+       "explanation": "\"they ensured that the image was somewhat blurred\""
+      },
+      {
+       "no": 21,
+       "type": "fill",
+       "text": "some who wanted to try to make the print look like a canvas even ___ their photographs",
+       "answer": [
+        "scratched"
+       ],
+       "explanation": "\"those who worked with the gum bichromate process scratched their prints in an effort to imitate something of the appearance of a canvas\""
+      },
+      {
+       "no": 22,
+       "type": "fill",
+       "text": "their work should not be looked upon as some sort of ___ painting",
+       "answer": [
+        "monochrome"
+       ],
+       "explanation": "\"did not want to treat the medium as a kind of monochrome painting\""
+      }
+     ]
+    },
+    {
+     "instruction": "Do the following statements agree with the information given in Reading Passage 2? Write TRUE, FALSE or NOT GIVEN.",
+     "questions": [
+      {
+       "no": 23,
+       "type": "tfng",
+       "text": "In the 1850s, trained artists were reluctant to take up photography.",
+       "answer": "FALSE",
+       "explanation": "\"the development of the art of photography in the late 1850s can be partly accounted for through the increasing involvement of people trained as artists\""
+      },
+      {
+       "no": 24,
+       "type": "tfng",
+       "text": "Many photographers felt the need to learn certain techniques from taking art courses.",
+       "answer": "NOT GIVEN",
+       "explanation": "Bài không nói nhiếp ảnh gia đi học các khoá mỹ thuật."
+      },
+      {
+       "no": 25,
+       "type": "tfng",
+       "text": "Photography brought the demand for portrait painting to an end.",
+       "answer": "FALSE",
+       "explanation": "\"This did not prevent a continuing hierarchy: the painted portrait was still commissioned by the wealthy and the aristocracy.\""
+      },
+      {
+       "no": 26,
+       "type": "tfng",
+       "text": "With the advent of photography, some painters no longer concerned themselves with accuracy.",
+       "answer": "TRUE",
+       "explanation": "\"It is a truism that photography released painting from its responsibility for literal depiction, allowing it to become more experimental.\""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage": 3,
+   "title": "The long view",
+   "topic": "Science & Society",
+   "level": "hard",
+   "passage_text": "The long view\n\nClimate change, moon bases, cybercrime – we all know the predictions, but how are they made? One expert explains the science of futurology.\n\nThe business of predicting the future has a long history. Several millennia ago in ancient Greece, people would consult Apollo, the god of prophecy, to learn if fortune favoured their chosen course of action. The tradition has changed considerably since then. Today, futurology is a science that drives a thriving business – its three main consumers being the military, big business and national governments. Modern futurists do not predict that a certain event will occur at a particular time. Instead they look at what is happening now to see what this may lead to further down the line. Alternatively, they start with a desired result and work out how people and organisations can be manoeuvred into realising that ambition.\n\nThe oil company Shell has been one of the major producers of future studies. It recently published a comprehensive study looking at how people may live in 2020 and 2050, given the type of energy which is purchased. Philip Watts from Shell says, 'This is not an exercise in prophecy. Rather it is designed to challenge our thinking so that we can make better choices in today's business world.'\n\nThe short-term attitudes and bureaucracy of many governments can be frustrating to futurists, but this mutual wariness is slowly changing. The Scottish Parliament recently hosted a conference of 150 futurists from across the globe. The parliament is setting up a forum to look at where Scotland is heading in the next 20 years. Among the issues are demographics and economic competition within Europe and with Asia. It's a first for the United Kingdom, although not for Europe – this strategy has already been put into practice in Finland.\n\nEamonn Kelly, head of the San Francisco-based Global Business Network futurist group, was one of those who attended the conference. According to Kelly, 'There are many different tools a futurist can employ but essentially there are three main ingredients. First, there is the \"science\", which can encompass everything from environmental studies to psychology. Then, there is the \"craft\", which may include interviews and the creation of maps of cause and effect. Finally, there is the \"art\", the intuitive ability to meld all this into a coherent whole.'\n\nDr James Canton is founder of the San Francisco-based Institute for Global Futures and has been an adviser to leading US companies. Like many futurists he started in the private sector but is also comfortable in academia and has an urge to change things for the better. 'A futurist is an alchemist who mixes the quantitative and the qualitative,' he says. 'He needs intuition and has to work with people from a range of academic backgrounds gathering primary evidence about what motivates people. Futurists are constantly discussing ideas with their peers, but they do not simply surf the net picking up on the latest fad.'\n\nNew Zealand futurist Robin Gunston says, 'I don't believe you can train yourself to become a futurist. A certain amount of this is to do with how your brain is hard-wired and we know this is difficult to change. Futurology requires extensive life experience and a broad education to test theories against. Much of modern teenage culture is about me, what I want and what the world owes me – that does not make it easy to see different kinds of futures and pose the hard questions about how we will get there.'\n\nThose best able to respond to futurists are the most agile. 'Large corporations beholden to shareholders and governments burdened by bureaucracy are often simply too slow. Asian companies tend to be better prepared because they take a longer perspective. Sony, for example, is very forward looking,' Canton says. 'There will be sunset and sunrise nations and corporations, in terms of prosperity in the 21st century. The winners will be those corporations and governments which conduct future studies and take steps to become future-proofed.'\n\nAccording to Alan Beckley, a former West Mercia chief inspector and past president of the Police Futurists International (PFI), getting public bodies in the UK future-proofed could be a long process. 'People are concerned about the methodology and the reliability of future studies,' he says. 'They are more likely to follow their political masters than go to them and say, \"We have done this scenario, and this is what we should do\".' However, as the Scottish Parliament has shown, there are a few examples of government exercises. Also, in 2003 Britain's Foreign and Commonwealth Office (FCO) published for the first time its strategic thinking for the next decade. This document was drawn up with the help of in-house and outside futurists. FCO minister Bill Rammell says, 'We do occasionally look further ahead than the next ten years on issues such as demographics. But the period chosen for the strategy was deliberately a decade. Even assumptions about technology get very shaky beyond that.'\n\nAmerican futurist Steve Brant stresses the importance of remembering that the road ahead has yet to be chosen. 'People can create the future they want using various points of leverage,' he says. 'We have much more influence over what the future will be like than many of us realise.' Futurists used to be like firefighters – they tried to work out what to do if things went wrong. Now, the aim of this profession is to imagine the best possible future for society and start creating it today.",
+   "groups": [
+    {
+     "instruction": "Look at the following statements (Questions 27–33) and the list of people below. Match each statement with the correct person, A–F. NB You may use any letter more than once.",
+     "bank": [
+      "Philip Watts",
+      "Dr James Canton",
+      "Robin Gunston",
+      "Alan Beckley",
+      "Bill Rammell",
+      "Steve Brant"
+     ],
+     "questions": [
+      {
+       "no": 27,
+       "type": "match",
+       "text": "Flexible organisations are in a better position to make use of futurology.",
+       "answer": 1,
+       "explanation": "\"Those best able to respond to futurists are the most agile. 'Large corporations beholden to shareholders and governments burdened by bureaucracy are often simply too slow.' ... Canton says.\""
+      },
+      {
+       "no": 28,
+       "type": "match",
+       "text": "Predictions about any period beyond the next ten years cannot be trusted.",
+       "answer": 4,
+       "explanation": "\"FCO minister Bill Rammell says, 'We do occasionally look further ahead than the next ten years on issues such as demographics. But the period chosen for the strategy was deliberately a decade. Even assumptions about technology get very shaky beyond that.'\""
+      },
+      {
+       "no": 29,
+       "type": "match",
+       "text": "Only certain people are suited to becoming futurists.",
+       "answer": 2,
+       "explanation": "\"New Zealand futurist Robin Gunston says, 'I don't believe you can train yourself to become a futurist. A certain amount of this is to do with how your brain is hard-wired'\""
+      },
+      {
+       "no": 30,
+       "type": "match",
+       "text": "Future studies are designed to inform current commercial decisions.",
+       "answer": 0,
+       "explanation": "\"Philip Watts from Shell says, 'This is not an exercise in prophecy. Rather it is designed to challenge our thinking so that we can make better choices in today's business world.'\""
+      },
+      {
+       "no": 31,
+       "type": "match",
+       "text": "Futurology involves a broad exchange of information but is not influenced by every new idea.",
+       "answer": 1,
+       "explanation": "\"Futurists are constantly discussing ideas with their peers, but they do not simply surf the net picking up on the latest fad.\" (lời Dr James Canton)"
+      },
+      {
+       "no": 32,
+       "type": "match",
+       "text": "People are not aware of the extent to which they can determine the future.",
+       "answer": 5,
+       "explanation": "\"'We have much more influence over what the future will be like than many of us realise.'\" (Steve Brant)"
+      },
+      {
+       "no": 33,
+       "type": "match",
+       "text": "A lack of confidence in futurology affects how widely it is used.",
+       "answer": 3,
+       "explanation": "\"getting public bodies in the UK future-proofed could be a long process. 'People are concerned about the methodology and the reliability of future studies,' he says.\" (Alan Beckley)"
+      }
+     ]
+    },
+    {
+     "instruction": "Complete the sentences below. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "questions": [
+      {
+       "no": 34,
+       "type": "fill",
+       "text": "A report by Shell considered the impact of various kinds of ___ on future lifestyles.",
+       "answer": [
+        "energy"
+       ],
+       "explanation": "\"It recently published a comprehensive study looking at how people may live in 2020 and 2050, given the type of energy which is purchased.\""
+      },
+      {
+       "no": 35,
+       "type": "fill",
+       "text": "The Scottish parliament has decided to use futurists to advise on ___ from Asian and other European countries.",
+       "answer": [
+        "economic competition"
+       ],
+       "explanation": "\"Among the issues are demographics and economic competition within Europe and with Asia.\""
+      },
+      {
+       "no": 36,
+       "type": "fill",
+       "text": "Dr James Canton is similar to other futurists in that he began his career in the ___.",
+       "answer": [
+        "private sector"
+       ],
+       "explanation": "\"Like many futurists he started in the private sector\""
+      },
+      {
+       "no": 37,
+       "type": "fill",
+       "text": "Britain's FCO sometimes studies developments in areas like ___ beyond 10 years.",
+       "answer": [
+        "demographics"
+       ],
+       "explanation": "\"We do occasionally look further ahead than the next ten years on issues such as demographics.\""
+      }
+     ]
+    },
+    {
+     "instruction": "Choose THREE letters, A–G. Which THREE of the following statements are true according to the passage?",
+     "questions": [
+      {
+       "no": 38,
+       "type": "multi",
+       "text": "Which THREE statements are true according to the passage? (Q38–40)",
+       "options": [
+        "Present-day futurology can focus on achieving a particular outcome.",
+        "Futurists recognise that most governments have already made long-term plans.",
+        "The world's first futurology conference was hosted by Finland.",
+        "Futurists need to talk to people from various areas of expertise.",
+        "Futurists should carry out internet research to keep up with popular trends.",
+        "Aspects of modern culture prepare people well for a career in futurology.",
+        "Conducting future studies can affect whether a company continues to be successful."
+       ],
+       "answer": [
+        0,
+        3,
+        6
+       ],
+       "explanation": "A: \"Alternatively, they start with a desired result and work out how people and organisations can be manoeuvred into realising that ambition.\"; D: \"He needs intuition and has to work with people from a range of academic backgrounds gathering primary evidence about what motivates people.\"; G: \"The winners will be those corporations and governments which conduct future studies and take steps to become future-proofed.\" (Q38–40, thứ tự tuỳ ý. Phương án C trong đề gốc ghi \"The world's first futurology was hosted by Finland\", đã thêm chữ \"conference\" cho đủ nghĩa.)"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "writing": []
+}
