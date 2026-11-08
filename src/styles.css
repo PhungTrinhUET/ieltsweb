@@ -1192,6 +1192,8 @@ button.part-card:disabled { opacity: .5; transform: none; }
 .banner--link a { color: var(--primary); }
 .ai-badge { display: inline-flex; align-items: center; gap: 3px; font-size: 11px; font-weight: 700; color: var(--primary); }
 .log { margin: 0; padding: 10px 12px; border-radius: 10px; background: var(--surface-2); font-size: 13px; list-style: none; display: flex; flex-direction: column; gap: 3px; max-height: 180px; overflow: auto; }
+.lib-search { width: 100%; margin: 4px 0 10px; }
+.lib-more { display: flex; margin: 12px auto 0; }
 .form-grid { display: flex; flex-direction: column; gap: 10px; }
 .file-row { display: flex; flex-direction: column; gap: 4px; font-size: 13.5px; color: var(--text-2); }
 .dropzone {

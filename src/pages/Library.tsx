@@ -12,6 +12,8 @@ import { SAMPLE_MATERIALS } from '../content/samples';
 
 const AUDIO = /\.(mp3|m4a|wav|ogg|aac|webm|flac)$/i;
 const IMAGE = /\.(png|jpe?g|webp|gif|svg)$/i;
+// Hiện danh sách theo trang để trang không dựng hàng nghìn dòng một lúc.
+const PAGE = 60;
 
 export default function Library() {
   const db = useDb();
@@ -27,7 +29,12 @@ export default function Library() {
   const [gen, setGen] = useState({ kind: 'reading' as 'reading' | 'listening' | 'listening-topic' | 'speaking' | 'writing', text: '', topic: '', task: 2 as 1 | 2, type: 'opinion' as WritingType, module: 'academic' as 'academic' | 'general', section: 1 });
 
   const push = (s: string) => setLog((l) => [s, ...l].slice(0, 30));
-  const items = Object.values(db.materials).filter((m) => skill === 'all' || m.skill === skill).sort((a, b) => b.addedAt - a.addedAt);
+  const [q, setQ] = useState('');
+  const [shown, setShown] = useState(PAGE);
+  const needle = q.trim().toLowerCase();
+  const items = Object.values(db.materials)
+    .filter((m) => (skill === 'all' || m.skill === skill) && (!needle || m.title.toLowerCase().includes(needle) || m.id.toLowerCase().includes(needle)))
+    .sort((a, b) => b.addedAt - a.addedAt);
 
   /** Nạp nhiều file: JSON → materials; .md → reading; audio + .srt/.txt cùng tên → listening; ảnh → chỉ lưu khi JSON tham chiếu "file:<tên>". */
   const importFiles = async (files: File[]) => {
@@ -184,10 +191,11 @@ export default function Library() {
       <section>
         <div className="row-between">
           <h2 className="h2">Tất cả tài liệu ({items.length})</h2>
-          <div className="seg">{(['all', 'reading', 'listening', 'speaking', 'writing'] as const).map((k) => <button key={k} className={`seg__btn${skill === k ? ' is-selected' : ''}`} onClick={() => setSkill(k)}>{k === 'all' ? 'Tất cả' : SKILL_META[k].label}</button>)}</div>
+          <div className="seg">{(['all', 'reading', 'listening', 'speaking', 'writing'] as const).map((k) => <button key={k} className={`seg__btn${skill === k ? ' is-selected' : ''}`} onClick={() => { setSkill(k); setShown(PAGE); }}>{k === 'all' ? 'Tất cả' : SKILL_META[k].label}</button>)}</div>
         </div>
+        <input className="input lib-search" type="search" placeholder="Tìm theo tên hoặc mã bài (vd. vol5-t6)" value={q} onChange={(e) => { setQ(e.target.value); setShown(PAGE); }} />
         <ul className="items items--1">
-          {items.map((m) => (
+          {items.slice(0, shown).map((m) => (
             <li key={m.id} className="item">
               <div className="item__no" style={{ color: SKILL_META[m.skill].color }}>{SKILL_META[m.skill].label.slice(0, 1)}</div>
               <div className="item__body"><Link to={`/${m.skill}/${m.id}`} className="item__title">{m.title}</Link><div className="item__sub">{subtitle(m)}{m.builtin && ' · mẫu'}{m.source && ` · ${m.source}`}</div></div>
@@ -196,7 +204,9 @@ export default function Library() {
             </li>
           ))}
         </ul>
-        {items.length < SAMPLE_MATERIALS.length && <button className="btn btn--text btn--sm" onClick={restoreSamples}>Khôi phục nội dung mẫu</button>}
+        {items.length > shown && <button className="btn btn--ghost btn--sm lib-more" onClick={() => setShown((n) => n + PAGE)}>Hiện thêm {Math.min(PAGE, items.length - shown)} bài (còn {items.length - shown})</button>}
+        {needle && !items.length && <p className="muted small">Không có bài nào khớp "{q}".</p>}
+        {!needle && items.length < SAMPLE_MATERIALS.length && <button className="btn btn--text btn--sm" onClick={restoreSamples}>Khôi phục nội dung mẫu</button>}
       </section>
     </div>
   );
