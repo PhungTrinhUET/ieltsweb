@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { HashRouter, NavLink, Outlet, Route, Routes, useLocation } from 'react-router-dom';
+import { HashRouter, NavLink, Outlet, Route, Routes, useLocation, useParams } from 'react-router-dom';
+import ErrorBoundary from './components/ErrorBoundary';
 import { BookOpen, ChevronLeft, ChevronRight, FolderInput, GraduationCap, Headphones, History as HistoryIcon, House, Layers, Mic, NotebookPen, Settings as SettingsIcon } from 'lucide-react';
 import { init, useDb } from './db';
 import Home from './pages/Home';
@@ -55,7 +56,7 @@ function Shell() {
         </nav>
         <p className="sidebar__foot">Reading · Listening · Speaking · Writing – tự nạp tài liệu, AI chấm bài</p>
       </aside>
-      <main className="main"><Outlet /></main>
+      <main className="main"><ErrorBoundary key={loc.pathname}><Outlet /></ErrorBoundary></main>
       <nav className="tabbar">
         {[...NAV.slice(0, 5), NAV2[0]].map(({ to, label, icon: Icon, end }) => <NavLink key={to} to={to} end={end} className="tabbar__link"><Icon size={22} /><span>{label}</span></NavLink>)}
       </nav>
@@ -66,6 +67,9 @@ function Shell() {
 export function Logo({ size = 28 }: { size?: number }) {
   return <svg width={size} height={size} viewBox="0 0 64 64" aria-hidden><rect width="64" height="64" rx="14" fill="#0f766e" /><path d="M18 20h28M18 32h28M18 44h18" stroke="#fff" strokeWidth="6" strokeLinecap="round" /></svg>;
 }
+
+/** Đổi :skill → dựng lại MockTest từ đầu (không giữ state của skill cũ). */
+function MockKeyed() { const { skill } = useParams(); return <MockTest key={skill} />; }
 
 export default function App() {
   return (
@@ -87,7 +91,7 @@ export default function App() {
           <Route path="speaking/:id" element={<Speaking />} />
           <Route path="writing" element={<SkillList skill="writing" />} />
           <Route path="writing/:id" element={<Writing />} />
-          <Route path="mock/:skill" element={<MockTest />} />
+          <Route path="mock/:skill" element={<MockKeyed />} />
           <Route path="vocab" element={<Vocab />} />
           <Route path="library" element={<Library />} />
           <Route path="history" element={<History />} />
