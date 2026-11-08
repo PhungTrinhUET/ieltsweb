@@ -5,6 +5,8 @@ import type { Skill, Material } from '../types';
 import { useDb } from '../db';
 import { fmtBand } from '../lib/band';
 import { BANK_TEST, bestResults, groupByTest, parseId, partLabel, testName } from '../lib/tests';
+import ScrollRow from '../components/ScrollRow';
+import { topicGroup, TOPIC_GROUPS, SPEAKING_GROUPS } from '../lib/topics';
 import { QKINDS, QKIND_LABEL, materialKinds, type QKind } from '../lib/qtypes';
 
 export const SKILL_META: Record<Skill, { label: string; icon: typeof BookOpen; color: string; desc: string }> = {
@@ -34,8 +36,12 @@ export default function SkillList({ skill }: { skill: Skill }) {
   const [tag, setTag] = useState('');
   const all = useMemo(() => Object.values(db.materials), [db.materials]);
   const items = useMemo(() => all.filter((m) => m.skill === skill).sort((a, b) => b.addedAt - a.addedAt), [all, skill]);
-  const topics = useMemo(() => [...new Set(items.map((m) => m.topic).filter(Boolean))] as string[], [items]);
-  const shown = items.filter((m) => (!q || m.title.toLowerCase().includes(q.toLowerCase())) && (!tag || m.topic === tag));
+  const topicOf = useMemo(() => new Map(items.map((m) => [m.id, topicGroup(m)])), [items]);
+  const topics = useMemo(() => {
+    const n = new Map<string, number>(); for (const t of topicOf.values()) n.set(t, (n.get(t) ?? 0) + 1);
+    return (skill === 'speaking' ? SPEAKING_GROUPS : TOPIC_GROUPS).filter((t) => n.has(t)).map((t) => [t, n.get(t)!] as const);
+  }, [topicOf, skill]);
+  const shown = items.filter((m) => (!q || m.title.toLowerCase().includes(q.toLowerCase())) && (!tag || topicOf.get(m.id) === tag));
   const results = useMemo(() => bestResults(db.attempts), [db.attempts]);
   const lastAi = (id: string) => db.attempts.find((a) => a.materialId === id && (a.mode === 'ai' || a.mode === 'self'));
   const Icon = meta.icon;
@@ -105,10 +111,10 @@ export default function SkillList({ skill }: { skill: Skill }) {
         <Link to={`/library?skill=${skill}`} className="btn btn--ghost"><FolderInput size={16} /> Nạp / tạo đề</Link>
       </div>
       {topics.length > 1 && (
-        <div className="tabs">
-          <button className={`tabs__btn${!tag ? ' is-on' : ''}`} onClick={() => setTag('')}>Tất cả</button>
-          {topics.map((t) => <button key={t} className={`tabs__btn${tag === t ? ' is-on' : ''}`} onClick={() => setTag(t)}>{t}</button>)}
-        </div>
+        <ScrollRow label="Chủ đề">
+          <button className={`tabs__btn${!tag ? ' is-on' : ''}`} onClick={() => setTag('')}>Tất cả chủ đề</button>
+          {topics.map(([t, n]) => <button key={t} className={`tabs__btn${tag === t ? ' is-on' : ''}`} onClick={() => setTag(tag === t ? '' : t)}>{t} <small>{n}</small></button>)}
+        </ScrollRow>
       )}
       {dual && (
         <div className="filters" aria-label="Bộ lọc dạng bài">

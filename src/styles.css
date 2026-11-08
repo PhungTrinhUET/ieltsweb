@@ -1660,3 +1660,13 @@ a.item:focus-visible { outline: 2px solid var(--skill, var(--primary)); outline-
 .paper__row { display: grid; grid-template-columns: minmax(110px, 38%) 1fr; gap: 10px; }
 .paper__label { color: var(--text-2); }
 @media (max-width: 560px) { .paper { padding: 10px 12px; } .paper__row { grid-template-columns: minmax(80px, 36%) 1fr; gap: 8px; } .paper__label { font-size: 13px; } }
+
+/* B11: hàng chip cuộn ngang có mép mờ + nút mũi tên */
+.srow { position: relative; }
+.srow--l .tabs { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 48px); mask-image: linear-gradient(90deg, transparent 0, #000 48px); }
+.srow--r .tabs { -webkit-mask-image: linear-gradient(270deg, transparent 0, #000 48px); mask-image: linear-gradient(270deg, transparent 0, #000 48px); }
+.srow--l.srow--r .tabs { -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 48px, #000 calc(100% - 48px), transparent 100%); mask-image: linear-gradient(90deg, transparent 0, #000 48px, #000 calc(100% - 48px), transparent 100%); }
+.srow__btn { position: absolute; top: 50%; transform: translateY(-50%); z-index: 1; width: 30px; height: 30px; border-radius: 50%; display: none; align-items: center; justify-content: center; background: var(--surface); border: 1px solid var(--border); color: var(--text); box-shadow: 0 1px 4px rgba(0,0,0,.12); cursor: pointer; }
+.srow__btn--l { left: -4px; } .srow__btn--r { right: -4px; }
+@media (hover: hover) and (pointer: fine) { .srow__btn { display: inline-flex; } }
+.tabs__btn small { opacity: .65; margin-left: 2px; font-size: 12px; }

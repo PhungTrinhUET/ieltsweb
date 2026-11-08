@@ -163,6 +163,21 @@ for (const profile of Object.keys(PROFILES)) {
     return { ok: blanks >= 5 && marked >= 1 && notes >= blanks && paper > 0 && flow > 0 && sw, info: `blank=${blanks} sai=${marked} notes=${notes} paper=${paper} flow=${flow} noHScroll=${sw}` };
   });
 
+  await check(`[${profile}] B11 chủ đề gom ≤ 12 nhóm, Speaking theo cue card`, async () => {
+    const res = {};
+    for (const s of ['reading', 'listening', 'writing', 'speaking']) {
+      await go(page, `/${s}`);
+      const tabs = await page.locator('.srow .tabs__btn').allInnerTexts();
+      res[s] = tabs.length - 1;
+      if (new Set(tabs.map((t) => t.replace(/\d+/g, '').trim().toLowerCase())).size !== tabs.length) return { ok: false, info: `${s} trùng tab: ${tabs.join('|')}` };
+    }
+    await page.locator('.srow .tabs__btn', { hasText: 'Người' }).click();
+    const want = +(await page.locator('.srow .tabs__btn.is-on small').innerText());
+    const got = await page.locator('.items a.item, .items .item').count();
+    const ok = Object.values(res).every((n) => n >= 4 && n <= 12) && want > 10 && got === want;
+    return { ok, info: `${JSON.stringify(res)} Người=${got}/${want}` };
+  });
+
   await check(`[${profile}] A2 Writing: chạy từ chữ đầu tiên, reset khi đổi bài`, async () => {
     await go(page, '/writing/vol1-t2-w2');
     const before = await timerRuns(page);
