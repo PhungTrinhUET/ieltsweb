@@ -1392,9 +1392,34 @@ mark { background: #fde68a; color: #1a1a1a; border-radius: 3px; padding: 0 1px; 
 .q__check { display: flex; justify-content: flex-end; margin-top: 4px; }
 
 /* Danh sách bài: 2 chế độ */
-.mode-hint { margin: -4px 0 12px; }
-.item__modes { display: flex; gap: 6px; flex-shrink: 0; }
-@media (max-width: 520px) { .item { flex-wrap: wrap; } .item__modes { width: 100%; justify-content: flex-end; } }
+.modes { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+.mode { display: flex; gap: 12px; align-items: flex-start; text-align: left; padding: 14px 16px; border-radius: 16px; border: 2px solid var(--border); background: var(--surface); color: var(--text); cursor: pointer; font: inherit; transition: border-color .15s, background .15s; }
+.mode:hover { border-color: var(--skill, var(--primary)); }
+.mode.is-on { border-color: var(--skill, var(--primary)); background: color-mix(in srgb, var(--skill, var(--primary)) 9%, var(--surface)); box-shadow: 0 0 0 3px color-mix(in srgb, var(--skill, var(--primary)) 18%, transparent); }
+.mode__icon { flex-shrink: 0; width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; background: var(--surface-2); color: var(--text-2); }
+.mode.is-on .mode__icon { background: var(--skill, var(--primary)); color: #fff; }
+.mode__body { display: flex; flex-direction: column; gap: 3px; }
+.mode__body strong { font-size: 17px; }
+.mode__body span { font-size: 13px; color: var(--text-2); line-height: 1.45; }
+@media (max-width: 560px) { .modes { gap: 8px; } .mode { flex-direction: column; gap: 8px; padding: 12px; } .mode__icon { width: 36px; height: 36px; } .mode__body span { font-size: 12px; } }
+.item__mode { flex-shrink: 0; font-size: 12px; font-weight: 700; padding: 3px 9px; border-radius: 999px; background: var(--surface-2); color: var(--text-2); }
+.item__mode--practice { color: var(--skill, var(--primary)); background: color-mix(in srgb, var(--skill, var(--primary)) 12%, transparent); }
+@media (max-width: 520px) { .item__mode { display: none; } }
+
+/* Highlight nhiều màu */
+.hl { border-radius: 2px; color: #1a1a1a; }
+.hl--yellow { background: #fde68a; }
+.hl--green { background: #bbf7d0; }
+.hl--blue { background: #bfdbfe; }
+.hl--pink { background: #fbcfe8; }
+.hl--orange { background: #fed7aa; }
+:root[data-theme='dark'] .hl { color: #111; }
+.hl.w:hover { color: var(--primary); }
+.hlbar { position: fixed; z-index: 60; display: flex; align-items: center; gap: 6px; padding: 6px 8px; border-radius: 999px; background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow-lg); }
+.hlbar__dot { width: 26px; height: 26px; border-radius: 50%; border: 2px solid rgba(0,0,0,.12); cursor: pointer; padding: 0; }
+.hlbar__dot:hover { transform: scale(1.12); }
+.hlbar__clear { width: 30px; height: 30px; border-radius: 50%; border: none; background: var(--surface-2); color: var(--text-2); display: grid; place-items: center; cursor: pointer; margin-left: 2px; }
+.hl-list .hl { padding: 0 2px; }
 
 /* Chế độ Luyện tập */
 .practice-tip { margin: 0 0 10px; }

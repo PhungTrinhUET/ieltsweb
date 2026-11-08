@@ -2,14 +2,15 @@
 // không bấm giờ, bấm từ để tra nghĩa tiếng Việt và lưu sổ từ, dịch từng đoạn/câu,
 // kiểm tra từng câu và xem giải thích ngay, ghi chú riêng cho bài.
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft, Check, Eye, EyeOff, Languages, Loader2, Pause, Play, RotateCcw, StickyNote, Timer, Volume2 } from 'lucide-react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { ArrowLeft, Check, Eye, EyeOff, Languages, Loader2, Pause, Play, RotateCcw, StickyNote, Volume2 } from 'lucide-react';
 import type { ListeningMaterial, ReadingMaterial } from '../types';
-import { resolveUrl, saveNote, useDb } from '../db';
+import { getState, resolveUrl, saveNote, useDb } from '../db';
 import { touchStreak } from '../store';
 import { GroupsView, scoreGroups, type Answers } from '../components/Questions';
 import AudioPlayer, { stopAudio } from '../components/AudioPlayer';
-import WordPopover, { Clickable, type WordSel } from '../components/WordPopover';
+import WordPopover, { type WordSel } from '../components/WordPopover';
+import { HighlightBar, HlText, colorMap, useHighlights } from '../components/Highlight';
 import { paragraphs, paraLabel, sentences } from '../lib/text';
 import { ttsAvailable } from '../lib/tts';
 import { translateText } from '../lib/freeTranslate';
@@ -36,6 +37,7 @@ export default function Practice() {
   const [note, setNote] = useState(db.notes[id!]?.text ?? '');
   const [src, setSrc] = useState<string | null>(null);
   const noteTimer = useRef(0);
+  const hl = useHighlights(id);
   const sp = useScriptSpeaker(isL ? (m as ListeningMaterial) : undefined);
 
   useEffect(() => {
@@ -71,7 +73,7 @@ export default function Practice() {
   const onNote = (t: string) => {
     setNote(t);
     window.clearTimeout(noteTimer.current);
-    noteTimer.current = window.setTimeout(() => saveNote({ materialId: m.id, text: t, highlights: db.notes[m.id]?.highlights ?? [], updatedAt: Date.now() }), 600);
+    noteTimer.current = window.setTimeout(() => saveNote({ materialId: m.id, text: t, highlights: getState().notes[m.id]?.highlights ?? [], updatedAt: Date.now() }), 600);
   };
   const reset = () => { setAnswers({}); setRevealed({}); setAll(false); };
 
@@ -89,6 +91,9 @@ export default function Practice() {
           const s2 = body.match(/^([^:]{1,30}):\s*/);
           if (s2) { speaker = s2[1]; body = body.slice(s2[0].length); }
         } else if (sm) { speaker = sm[1]; body = t.slice(sm[0].length); }
+        body = body.replace(/\s+/g, ' ').trim();
+        const map = colorMap(body, hl.list);
+        let cur = 0;
         const vi = viOf(i);
         return (
           <div key={i} className={`pp${sp.line === i ? ' is-reading' : ''}`}>
@@ -96,7 +101,10 @@ export default function Practice() {
               {label && <span className="passage__label">{label}</span>}
               {ts && <span className="pp__ts">{ts[1]}</span>}
               {speaker && <strong className="pp__speaker">{speaker}:</strong>}{' '}
-              {sentences(body).map((s, si) => <span key={si}><Clickable text={s} onWord={setSel} />{' '}</span>)}
+              {sentences(body).map((s, si) => {
+                const off = body.indexOf(s, cur); cur = off + s.length;
+                return <span key={si}><HlText text={s} map={map} offset={off} onWord={setSel} />{' '}</span>;
+              })}
               <button className={`pp__tr${vi ? ' is-on' : ''}`} onClick={() => translatePara(i)} title={vi ? 'Ẩn bản dịch' : 'Dịch đoạn này'} aria-label="Dịch đoạn">
                 {tr[i] === 'busy' ? <Loader2 size={13} className="spin" /> : <Languages size={13} />}
               </button>
@@ -126,15 +134,16 @@ export default function Practice() {
         <div className="topbar__title"><small>Luyện tập · {meta.label}{isL ? ` · Section ${(m as ListeningMaterial).section ?? '?'}` : ''}</small><strong>{m.title}</strong></div>
         <div className="topbar__actions">
           {stored.length > 0 && (!isL || hasScript) && <button className={`btn btn--sm ${showAllVi ? 'btn--primary' : 'btn--ghost'}`} onClick={() => setShowAllVi(!showAllVi)}><Languages size={15} /> Dịch cả bài</button>}
-          <Link to={`/${m.skill}/${m.id}`} className="btn btn--ghost btn--sm" title="Làm bài này như thi thật: bấm giờ, nộp bài mới xem đáp án"><Timer size={15} /> Thi thử</Link>
         </div>
         <div className="topbar__progress" style={{ width: `${(done / total) * 100}%` }} />
       </div>
 
       <p className="muted small practice-tip">
         Không tính giờ. <strong>Bấm vào một từ</strong> để xem nghĩa tiếng Việt, phiên âm và lưu vào sổ từ ·
+        <strong> bôi đen</strong> một đoạn để highlight (5 màu) ·
         bấm <Languages size={12} /> cuối mỗi {isL ? 'lượt lời' : 'đoạn'} để dịch · làm câu nào bấm <em>Kiểm tra câu này</em> để xem đáp án và giải thích ngay.
       </p>
+      {hl.list.length > 0 && <p className="small"><button className="btn btn--text btn--sm" onClick={hl.clear}>Xoá hết highlight ({hl.list.length})</button></p>}
       {err && <p className="no-text small">{err}</p>}
 
       {isL && (
@@ -189,6 +198,7 @@ export default function Practice() {
         {all || checkedNos.length > 0 ? <button className="btn btn--ghost" onClick={reset}><RotateCcw size={16} /> Làm lại</button> : null}
         {!all && <button className="btn btn--primary" onClick={() => setAll(true)}><Check size={18} /> Kiểm tra tất cả</button>}
       </div></div>
+      <HighlightBar scopeClass="passage" onAdd={hl.add} onRemove={hl.remove} />
       {sel && <WordPopover sel={sel} vocab={m.vocab} from={m.id} onClose={() => setSel(null)} />}
     </div>
   );

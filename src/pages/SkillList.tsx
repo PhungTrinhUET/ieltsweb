@@ -38,7 +38,9 @@ export default function SkillList({ skill }: { skill: Skill }) {
   const lastAi = (id: string) => db.attempts.find((a) => a.materialId === id && a.mode === 'ai');
   const Icon = meta.icon;
   const dual = skill === 'reading' || skill === 'listening';
-  const open = (id: string) => nav(dual ? `/${skill}/${id}/practice` : `/${skill}/${id}`);
+  const [mode, setModeState] = useState<'practice' | 'test'>(() => { try { return localStorage.getItem(`ielts-mode-${skill}`) === 'test' ? 'test' : 'practice'; } catch { return 'practice'; } });
+  const setMode = (v: 'practice' | 'test') => { setModeState(v); try { localStorage.setItem(`ielts-mode-${skill}`, v); } catch { /* bỏ qua */ } };
+  const open = (id: string) => nav(dual && mode === 'practice' ? `/${skill}/${id}/practice` : `/${skill}/${id}`);
 
   return (
     <div className="page" style={{ ['--skill' as string]: meta.color }}>
@@ -46,10 +48,21 @@ export default function SkillList({ skill }: { skill: Skill }) {
         <span className="skill__icon skill__icon--lg"><Icon size={26} /></span>
         <div><h1>{meta.label}</h1><p>{meta.desc}</p></div>
       </div>
-      {dual && <p className="muted small mode-hint"><strong>Luyện tập</strong>: không tính giờ, bấm từ để tra nghĩa tiếng Việt và lưu sổ từ, dịch từng đoạn, kiểm tra từng câu kèm giải thích. <strong>Thi thử</strong>: bấm giờ như thi thật, nộp bài mới xem đáp án.</p>}
+      {dual && (
+        <div className="modes" role="tablist" aria-label="Chế độ">
+          <button role="tab" aria-selected={mode === 'practice'} className={`mode${mode === 'practice' ? ' is-on' : ''}`} onClick={() => setMode('practice')}>
+            <span className="mode__icon"><GraduationCap size={22} /></span>
+            <span className="mode__body"><strong>Luyện tập</strong><span>Không tính giờ · bấm từ tra nghĩa tiếng Việt, lưu sổ từ · dịch từng đoạn · highlight · xem đáp án và giải thích từng câu</span></span>
+          </button>
+          <button role="tab" aria-selected={mode === 'test'} className={`mode${mode === 'test' ? ' is-on' : ''}`} onClick={() => setMode('test')}>
+            <span className="mode__icon"><Timer size={22} /></span>
+            <span className="mode__body"><strong>Thi thử</strong><span>Bấm giờ như thi thật · nộp bài mới xem đáp án · chấm band</span></span>
+          </button>
+        </div>
+      )}
       <div className="toolbar">
         <input className="input" placeholder="Tìm bài…" value={q} onChange={(e) => setQ(e.target.value)} />
-        {(skill === 'reading' || skill === 'listening') && <Link to={`/mock/${skill}`} className="btn btn--primary"><Timer size={16} /> Thi thử cả đề</Link>}
+        {dual && mode === 'test' && <Link to={`/mock/${skill}`} className="btn btn--primary" title="Ghép nhiều bài thành một đề đầy đủ, tính giờ"><Timer size={16} /> Thi cả đề (nhiều bài)</Link>}
         <Link to={`/library?skill=${skill}`} className="btn btn--ghost"><FolderInput size={16} /> Nạp / tạo đề</Link>
       </div>
       {topics.length > 1 && (
@@ -74,12 +87,8 @@ export default function SkillList({ skill }: { skill: Skill }) {
                   <div className="item__sub">{subtitle(m)}{m.source?.startsWith('AI') && <> · <Sparkles size={11} /> AI</>}</div>
                 </div>
                 {b?.band ? <span className="item__score">Band {fmtBand(b.band)}</span> : ai?.band ? <span className="item__score">Band {fmtBand(ai.band)}</span> : null}
-                {dual ? (
-                  <div className="item__modes" onClick={(e) => e.stopPropagation()}>
-                    <Link to={`/${skill}/${m.id}/practice`} className="btn btn--ghost btn--sm" title="Không tính giờ, tra từ, dịch, xem đáp án từng câu"><GraduationCap size={15} /> Luyện tập</Link>
-                    <Link to={`/${skill}/${m.id}`} className="btn btn--ghost btn--sm" title="Bấm giờ như thi thật, nộp bài mới xem đáp án"><Timer size={15} /> Thi thử</Link>
-                  </div>
-                ) : <ChevronRight size={18} className="item__arrow" />}
+                {dual && <span className={`item__mode item__mode--${mode}`}>{mode === 'practice' ? 'Luyện tập' : 'Thi thử'}</span>}
+                <ChevronRight size={18} className="item__arrow" />
               </li>
             );
           })}

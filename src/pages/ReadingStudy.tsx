@@ -3,7 +3,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, BookmarkPlus, Check, Languages, Loader2, Pause, Play, Sparkles, StickyNote } from 'lucide-react';
 import type { ListeningMaterial, ReadingMaterial, Vocab } from '../types';
-import { findCard, saveCard, saveMaterial, saveNote, useDb } from '../db';
+import { findCard, getState, saveCard, saveMaterial, saveNote, useDb } from '../db';
+import { parseHl } from '../components/Highlight';
 import { aiReady, getAiConfig, touchStreak } from '../store';
 import { paragraphs, paraLabel, sentences } from '../lib/text';
 import { speak, stopSpeak, ttsAvailable } from '../lib/tts';
@@ -71,7 +72,7 @@ export default function ReadingStudy() {
   const onNote = (t: string) => {
     setNote(t);
     window.clearTimeout(noteTimer.current);
-    noteTimer.current = window.setTimeout(() => saveNote({ materialId: m.id, text: t, highlights: db.notes[m.id]?.highlights ?? [], updatedAt: Date.now() }), 600);
+    noteTimer.current = window.setTimeout(() => saveNote({ materialId: m.id, text: t, highlights: getState().notes[m.id]?.highlights ?? [], updatedAt: Date.now() }), 600);
   };
   const ai = aiReady(getAiConfig());
   const savedCount = (m.vocab ?? []).filter((v) => findCard(v[0])).length;
@@ -153,7 +154,7 @@ export default function ReadingStudy() {
             <h3 className="h3"><StickyNote size={16} /> Ghi chú của bạn</h3>
             <textarea className="textarea" rows={6} value={note} onChange={(e) => onNote(e.target.value)} placeholder="Ý chính từng đoạn, cấu trúc đáng học, bẫy đã mắc…" />
             {(db.notes[m.id]?.highlights?.length ?? 0) > 0 && (
-              <div><p className="small muted">Đã highlight:</p><ul className="hl-list">{db.notes[m.id]!.highlights.map((h, i) => <li key={i}>“{h}”</li>)}</ul></div>
+              <div><p className="small muted">Đã highlight:</p><ul className="hl-list">{db.notes[m.id]!.highlights.map(parseHl).map((h, i) => <li key={i}><span className={`hl hl--${h.color}`}>“{h.text}”</span></li>)}</ul></div>
             )}
           </section>
         </aside>

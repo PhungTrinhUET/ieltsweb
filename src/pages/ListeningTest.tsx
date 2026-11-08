@@ -69,7 +69,6 @@ export default function ListeningTest() {
       <div className="topbar topbar--sticky">
         <button className="icon-btn" onClick={() => nav('/listening')} aria-label="Quay lại"><ArrowLeft size={20} /></button>
         <div className="topbar__title"><small>Thi thử · Listening · Section {m.section ?? '?'}</small><strong>{m.title}</strong></div>
-        <div className="topbar__actions"><Link to={`/listening/${m.id}/practice`} className="btn btn--ghost btn--sm"><GraduationCap size={15} /> Luyện tập</Link></div>
         <div className="topbar__progress" style={{ width: `${(done / total) * 100}%` }} />
       </div>
 

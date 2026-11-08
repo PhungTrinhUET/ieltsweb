@@ -1,15 +1,16 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft, BookOpenCheck, Check, Highlighter, RotateCcw, GraduationCap } from 'lucide-react';
+import { ArrowLeft, Check, Highlighter, RotateCcw, GraduationCap } from 'lucide-react';
+import { HighlightBar, HlText, colorMap, useHighlights } from '../components/Highlight';
 import type { ReadingMaterial } from '../types';
-import { addAttempt, useDb, saveNote } from '../db';
+import { addAttempt, useDb } from '../db';
 import { touchStreak } from '../store';
 import Timer from '../components/Timer';
 import { GroupsView, scoreGroups, type Answers } from '../components/Questions';
 import { paragraphs, paraLabel } from '../lib/text';
 import { rawToBand, fmtBand } from '../lib/band';
 import { SKILL_META } from './SkillList';
-import WordPopover, { Clickable, type WordSel } from '../components/WordPopover';
+import WordPopover, { type WordSel } from '../components/WordPopover';
 
 export default function ReadingTest() {
   const { id } = useParams();
@@ -20,7 +21,7 @@ export default function ReadingTest() {
   const [checked, setChecked] = useState(false);
   const [tab, setTab] = useState<'passage' | 'questions'>('passage');
   const [sel, setSel] = useState<WordSel | null>(null);
-  const [hl, setHl] = useState<string[]>(() => db.notes[id!]?.highlights ?? []);
+  const hl = useHighlights(id);
   const startedAt = useMemo(() => Date.now(), []);
   const paras = useMemo(() => (m ? paragraphs(m.passage) : []), [m]);
   useEffect(() => { setAnswers({}); setChecked(false); }, [id]);
@@ -39,20 +40,6 @@ export default function ReadingTest() {
     setTab('questions');
     window.scrollTo({ top: 0 });
   };
-  const addHighlight = () => {
-    const s = window.getSelection()?.toString().trim();
-    if (!s || s.length < 3) return;
-    const next = [...new Set([...hl, s])];
-    setHl(next);
-    saveNote({ materialId: m.id, text: db.notes[m.id]?.text ?? '', highlights: next, updatedAt: Date.now() });
-    window.getSelection()?.removeAllRanges();
-  };
-  const mark = (text: string) => {
-    if (!hl.length) return text;
-    const re = new RegExp(`(${hl.map((h) => h.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`, 'g');
-    return text.split(re).map((p, i) => (hl.includes(p) ? <mark key={i}>{p}</mark> : p));
-  };
-
   return (
     <div className="page page--wide page--practice" style={{ ['--skill' as string]: SKILL_META.reading.color }}>
       <div className="topbar topbar--sticky">
@@ -60,7 +47,7 @@ export default function ReadingTest() {
         <div className="topbar__title"><small>Thi thử · Reading · {m.module === 'general' ? 'General Training' : 'Academic'}</small><strong>{m.title}</strong></div>
         <div className="topbar__actions">
           {!checked && <Timer minutes={m.minutes ?? 20} onEnd={submit} />}
-          {checked ? <Link to={`/reading/${m.id}/practice`} className="btn btn--primary btn--sm"><GraduationCap size={16} /> Luyện tập bài này</Link> : <Link to={`/reading/${m.id}/practice`} className="btn btn--ghost btn--sm" title="Chuyển sang luyện tập: không tính giờ, tra từ, dịch"><GraduationCap size={16} /> Luyện tập</Link>}
+          {checked ? <Link to={`/reading/${m.id}/practice`} className="btn btn--primary btn--sm"><GraduationCap size={16} /> Luyện tập bài này</Link> : null}
         </div>
         <div className="topbar__progress" style={{ width: `${(done / total) * 100}%` }} />
       </div>
@@ -86,8 +73,8 @@ export default function ReadingTest() {
       <div className="split">
         <section className={`split__pane split__pane--passage${tab !== 'passage' ? ' hide-sm' : ''}`}>
           <div className="passage-tools">
-            <button className="btn btn--ghost btn--sm" onClick={addHighlight} title="Bôi đen đoạn văn rồi bấm"><Highlighter size={15} /> Highlight</button>
-            {hl.length > 0 && <button className="btn btn--text btn--sm" onClick={() => { setHl([]); saveNote({ materialId: m.id, text: db.notes[m.id]?.text ?? '', highlights: [], updatedAt: Date.now() }); }}>Xoá highlight</button>}
+            <span className="small muted"><Highlighter size={14} /> Bôi đen chữ trong bài để highlight (5 màu){checked ? ' · bấm vào từ để tra nghĩa' : ''}</span>
+            {hl.list.length > 0 && <button className="btn btn--text btn--sm" onClick={hl.clear}>Xoá hết highlight</button>}
           </div>
           <article className="passage passage--reading">
             <h2>{m.title}</h2>
@@ -96,7 +83,7 @@ export default function ReadingTest() {
               return (
                 <p key={i} className="passage__p">
                   {label && <span className="passage__label">{label}</span>}
-                  {checked ? <Clickable text={text} onWord={setSel} /> : mark(text)}
+                  <span><HlText text={text} map={colorMap(text, hl.list)} onWord={checked ? setSel : undefined} /></span>
                 </p>
               );
             })}
@@ -113,6 +100,7 @@ export default function ReadingTest() {
           <button className="btn btn--primary" onClick={submit}><Check size={18} /> Nộp bài</button>
         </div></div>
       )}
+      <HighlightBar scopeClass="passage" onAdd={hl.add} onRemove={hl.remove} />
       {sel && <WordPopover sel={sel} vocab={m.vocab} from={m.id} onClose={() => setSel(null)} />}
     </div>
   );
