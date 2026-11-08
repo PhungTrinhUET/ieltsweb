@@ -19,6 +19,7 @@ import Guide from './pages/Guide';
 import Settings from './pages/Settings';
 import MockTest from './pages/MockTest';
 import Practice from './pages/Practice';
+import TestPage from './pages/TestPage';
 
 const NAV: { to: string; label: string; icon: typeof House; end?: boolean }[] = [
   { to: '/', label: 'Trang chủ', icon: House, end: true },
@@ -38,7 +39,7 @@ const NAV2: { to: string; label: string; icon: typeof House; end?: boolean }[] =
 function Shell() {
   const loc = useLocation();
   const db = useDb();
-  const focus = /^\/(reading|listening|speaking|writing|mock)\/[^/]+/.test(loc.pathname);
+  const focus = /^\/(reading|listening|speaking|writing|mock)\/[^/]+|^\/test\/[^/]+\/[^/]+\/full/.test(loc.pathname);
   const [collapsed, setCollapsed] = useState(() => { try { return localStorage.getItem('ielts:nav-collapsed') === '1'; } catch { return false; } });
   const toggle = () => setCollapsed((c) => { try { localStorage.setItem('ielts:nav-collapsed', c ? '0' : '1'); } catch { /* ignore */ } return !c; });
   useEffect(() => { window.scrollTo({ top: 0 }); }, [loc.pathname]);
@@ -68,8 +69,8 @@ export function Logo({ size = 28 }: { size?: number }) {
   return <svg width={size} height={size} viewBox="0 0 64 64" aria-hidden><rect width="64" height="64" rx="14" fill="#0f766e" /><path d="M18 20h28M18 32h28M18 44h18" stroke="#fff" strokeWidth="6" strokeLinecap="round" /></svg>;
 }
 
-/** Đổi :skill → dựng lại MockTest từ đầu (không giữ state của skill cũ). */
-function MockKeyed() { const { skill } = useParams(); return <MockTest key={skill} />; }
+/** Đổi :skill / :tid → dựng lại MockTest từ đầu (không giữ state của skill cũ). */
+function MockKeyed() { const { skill, tid } = useParams(); return <MockTest key={`${skill}-${tid ?? ''}`} />; }
 
 export default function App() {
   return (
@@ -92,6 +93,8 @@ export default function App() {
           <Route path="writing" element={<SkillList skill="writing" />} />
           <Route path="writing/:id" element={<Writing />} />
           <Route path="mock/:skill" element={<MockKeyed />} />
+          <Route path="test/:skill/:tid" element={<TestPage />} />
+          <Route path="test/:skill/:tid/full" element={<MockKeyed />} />
           <Route path="vocab" element={<Vocab />} />
           <Route path="library" element={<Library />} />
           <Route path="history" element={<History />} />

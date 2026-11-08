@@ -117,6 +117,23 @@ for (const profile of Object.keys(PROFILES)) {
     await page.getByRole('button', { name: /Bắt đầu/ }).click();
     return timerRuns(page);
   });
+  await check(`[${profile}] B8 duyệt VOL → Test, làm cả đề lưu một lần, hiện điểm từng phần`, async () => {
+    await go(page, '/reading');
+    const vols = await page.locator('details.vol').count();
+    await page.locator('a.item--test', { hasText: 'VOL 1 · Test 2' }).first().click();
+    await page.waitForTimeout(400);
+    if (!/#\/test\/reading\/vol1-t2$/.test(page.url())) return { ok: false, info: `url ${page.url()}` };
+    await page.getByRole('link', { name: /Làm cả đề/ }).click();
+    await page.getByRole('button', { name: /Bắt đầu/ }).click();
+    page.once('dialog', (d) => d.accept());
+    await page.getByRole('button', { name: /Nộp bài/ }).click();
+    await page.waitForSelector('.final');
+    await go(page, '/history');
+    const hist = await page.getByText(/VOL 1 · Test 2 – cả đề/).count();
+    await go(page, '/test/reading/vol1-t2');
+    const marked = await page.locator('.item--part.item--wrong, .item--part.item--done').count();
+    return { ok: vols >= 5 && hist === 1 && marked === 3, info: `vol=${vols} lịch sử=${hist} phần có điểm=${marked}` };
+  });
   await check(`[${profile}] A2 Writing: chạy từ chữ đầu tiên, reset khi đổi bài`, async () => {
     await go(page, '/writing/vol1-t2-w2');
     const before = await timerRuns(page);

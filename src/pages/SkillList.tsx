@@ -1,9 +1,10 @@
 import { useMemo, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { BookOpen, ChevronRight, FolderInput, GraduationCap, Headphones, Mic, NotebookPen, Sparkles, Timer } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { BookOpen, ChevronDown, ChevronRight, Shuffle, FolderInput, GraduationCap, Headphones, Mic, NotebookPen, Sparkles, Timer } from 'lucide-react';
 import type { Skill, Material } from '../types';
 import { useDb } from '../db';
 import { fmtBand } from '../lib/band';
+import { BANK_TEST, bestResults, groupByTest, partLabel, testName } from '../lib/tests';
 
 export const SKILL_META: Record<Skill, { label: string; icon: typeof BookOpen; color: string; desc: string }> = {
   reading: { label: 'Reading', icon: BookOpen, color: 'var(--c-reading)', desc: 'Làm đề đủ dạng câu hỏi, chế độ học: đọc – dịch – tra từ – ghi chú – nghe đọc.' },
@@ -27,20 +28,42 @@ export function subtitle(m: Material) {
 
 export default function SkillList({ skill }: { skill: Skill }) {
   const db = useDb();
-  const nav = useNavigate();
   const meta = SKILL_META[skill];
   const [q, setQ] = useState('');
   const [tag, setTag] = useState('');
-  const items = useMemo(() => Object.values(db.materials).filter((m) => m.skill === skill).sort((a, b) => b.addedAt - a.addedAt), [db.materials, skill]);
+  const all = useMemo(() => Object.values(db.materials), [db.materials]);
+  const items = useMemo(() => all.filter((m) => m.skill === skill).sort((a, b) => b.addedAt - a.addedAt), [all, skill]);
   const topics = useMemo(() => [...new Set(items.map((m) => m.topic).filter(Boolean))] as string[], [items]);
   const shown = items.filter((m) => (!q || m.title.toLowerCase().includes(q.toLowerCase())) && (!tag || m.topic === tag));
-  const best = (id: string) => db.attempts.filter((a) => a.materialId === id && a.mode === 'test').sort((a, b) => (b.score ?? 0) / (b.max ?? 1) - (a.score ?? 0) / (a.max ?? 1))[0];
-  const lastAi = (id: string) => db.attempts.find((a) => a.materialId === id && a.mode === 'ai');
+  const results = useMemo(() => bestResults(db.attempts), [db.attempts]);
+  const lastAi = (id: string) => db.attempts.find((a) => a.materialId === id && (a.mode === 'ai' || a.mode === 'self'));
   const Icon = meta.icon;
   const dual = skill === 'reading' || skill === 'listening';
+  const byTest = skill !== 'speaking';
+  const grouped = useMemo(() => groupByTest(all, skill), [all, skill]);
   const [mode, setModeState] = useState<'practice' | 'test'>(() => { try { return localStorage.getItem(`ielts-mode-${skill}`) === 'test' ? 'test' : 'practice'; } catch { return 'practice'; } });
   const setMode = (v: 'practice' | 'test') => { setModeState(v); try { localStorage.setItem(`ielts-mode-${skill}`, v); } catch { /* bỏ qua */ } };
-  const open = (id: string) => nav(dual && mode === 'practice' ? `/${skill}/${id}/practice` : `/${skill}/${id}`);
+  const href = (id: string) => (dual && mode === 'practice' ? `/${skill}/${id}/practice` : `/${skill}/${id}`);
+  const browse = byTest && !q && !tag && grouped.vols.size > 0;
+
+  const row = (m: Material, label?: string) => {
+    const b = results.get(m.id); const ai = lastAi(m.id);
+    const band = b?.band ?? ai?.band ?? ai?.selfBand;
+    return (
+      <li key={m.id}>
+        <Link to={href(m.id)} className={`item${b ? (b.score / (b.max || 1) >= 0.7 ? ' item--done' : ' item--wrong') : ai ? ' item--done' : ''}`}>
+          <div className="item__no">{b ? `${b.score}/${b.max}` : band ? fmtBand(band) : <Icon size={16} />}</div>
+          <div className="item__body">
+            <div className="item__title">{label ?? m.title}</div>
+            <div className="item__sub">{subtitle(m)}{m.source?.startsWith('AI') && <> · <Sparkles size={11} /> AI</>}</div>
+          </div>
+          {band ? <span className="item__score">Band {fmtBand(band)}</span> : null}
+          {dual && <span className={`item__mode item__mode--${mode}`}>{mode === 'practice' ? 'Luyện tập' : 'Thi thử'}</span>}
+          <ChevronRight size={18} className="item__arrow" />
+        </Link>
+      </li>
+    );
+  };
 
   return (
     <div className="page" style={{ ['--skill' as string]: meta.color }}>
@@ -62,7 +85,7 @@ export default function SkillList({ skill }: { skill: Skill }) {
       )}
       <div className="toolbar">
         <input className="input" placeholder="Tìm bài…" value={q} onChange={(e) => setQ(e.target.value)} />
-        {dual && mode === 'test' && <Link to={`/mock/${skill}`} className="btn btn--primary" title="Ghép nhiều bài thành một đề đầy đủ, tính giờ"><Timer size={16} /> Thi cả đề (nhiều bài)</Link>}
+        {dual && <Link to={`/mock/${skill}`} className="btn btn--ghost" title="Ghép ngẫu nhiên các bài từ nhiều đề thành một đề đủ, tính giờ"><Shuffle size={16} /> Ghép đề ngẫu nhiên</Link>}
         <Link to={`/library?skill=${skill}`} className="btn btn--ghost"><FolderInput size={16} /> Nạp / tạo đề</Link>
       </div>
       {topics.length > 1 && (
@@ -71,28 +94,49 @@ export default function SkillList({ skill }: { skill: Skill }) {
           {topics.map((t) => <button key={t} className={`tabs__btn${tag === t ? ' is-on' : ''}`} onClick={() => setTag(t)}>{t}</button>)}
         </div>
       )}
-      {shown.length === 0 ? (
-        <div className="empty empty--big">
-          <p>Chưa có bài nào. Vào <Link to={`/library?skill=${skill}`}><strong>Tài liệu</strong></Link> để nạp file hoặc nhờ AI tạo đề.</p>
-        </div>
-      ) : (
-        <ul className="items items--1">
-          {shown.map((m) => {
-            const b = best(m.id); const ai = lastAi(m.id);
+      {browse ? (
+        <div className="vols">
+          {[...grouped.vols].map(([vol, tests], vi) => {
+            const parts = tests.flatMap((t) => t.parts);
+            const done = parts.filter((m) => results.has(m.id) || lastAi(m.id)).length;
             return (
-              <li key={m.id} className={`item${b ? (b.score! / b.max! >= 0.7 ? ' item--done' : ' item--wrong') : ''}`} onClick={() => open(m.id)} role="link" tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && open(m.id)}>
-                <div className="item__no">{b ? `${b.score}/${b.max}` : ai?.band ? fmtBand(ai.band) : <Icon size={16} />}</div>
-                <div className="item__body">
-                  <div className="item__title">{m.title}</div>
-                  <div className="item__sub">{subtitle(m)}{m.source?.startsWith('AI') && <> · <Sparkles size={11} /> AI</>}</div>
-                </div>
-                {b?.band ? <span className="item__score">Band {fmtBand(b.band)}</span> : ai?.band ? <span className="item__score">Band {fmtBand(ai.band)}</span> : null}
-                {dual && <span className={`item__mode item__mode--${mode}`}>{mode === 'practice' ? 'Luyện tập' : 'Thi thử'}</span>}
-                <ChevronRight size={18} className="item__arrow" />
-              </li>
+              <details key={vol} className="vol" open={vi === 0}>
+                <summary className="vol__head"><strong>VOL {vol}</strong><span className="muted small">{tests.length} đề · đã làm {done}/{parts.length} phần</span><ChevronDown size={18} className="vol__chev" /></summary>
+                <ul className="items">
+                  {tests.map((t) => (
+                    <li key={t.key}>
+                      <Link to={`/test/${skill}/${t.key}`} className="item item--test">
+                        <div className="item__no">{t.test === BANK_TEST ? <Icon size={16} /> : `T${t.test}`}</div>
+                        <div className="item__body">
+                          <div className="item__title">{testName(t)}</div>
+                          <div className="partpills">
+                            {t.parts.map((m) => { const r = results.get(m.id); const ai = lastAi(m.id); return (
+                              <span key={m.id} className={`partpill${r ? (r.score / (r.max || 1) >= 0.7 ? ' is-ok' : ' is-no') : ai ? ' is-ok' : ''}`} title={m.title}>
+                                {t.test === BANK_TEST ? `T${(m as { task?: unknown }).task}` : partLabel(m).replace(/^(\w)\w+ /, '$1')}{r ? ` ${r.score}/${r.max}` : ai?.band ? ` ${fmtBand(ai.band)}` : ''}
+                              </span>); })}
+                          </div>
+                        </div>
+                        <ChevronRight size={18} className="item__arrow" />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </details>
             );
           })}
-        </ul>
+          {grouped.others.length > 0 && (
+            <details className="vol" open={grouped.vols.size === 0}>
+              <summary className="vol__head"><strong>Bài mẫu &amp; bài tự nạp</strong><span className="muted small">{grouped.others.length} bài</span><ChevronDown size={18} className="vol__chev" /></summary>
+              <ul className="items">{grouped.others.map((m) => row(m))}</ul>
+            </details>
+          )}
+        </div>
+      ) : shown.length === 0 ? (
+        <div className="empty empty--big">
+          <p>{items.length ? 'Không có bài nào khớp.' : <>Chưa có bài nào. Vào <Link to={`/library?skill=${skill}`}><strong>Tài liệu</strong></Link> để nạp file hoặc nhờ AI tạo đề.</>}</p>
+        </div>
+      ) : (
+        <ul className="items items--1">{shown.map((m) => row(m))}</ul>
       )}
     </div>
   );
