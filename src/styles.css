@@ -1601,3 +1601,18 @@ a.item:focus-visible { outline: 2px solid var(--skill, var(--primary)); outline-
 .item__actions { display: flex; gap: 6px; flex-shrink: 0; }
 @media (max-width: 560px) { .item--part .item__actions { width: 100%; justify-content: flex-end; } }
 @media (max-width: 560px) { .toolbar { flex-wrap: wrap; } .toolbar .input { flex-basis: 100%; } .toolbar .btn { flex: 1; justify-content: center; } }
+
+/* B9: lọc theo dạng bài + VOL, chip dạng câu hỏi */
+.filters { display: flex; flex-direction: column; gap: 8px; margin: 4px 0 14px; }
+.filters__row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.filters__label { font-size: 12px; font-weight: 600; color: var(--text-2); min-width: 64px; }
+.fchip { border: 1px solid var(--border); background: var(--surface); color: var(--text); border-radius: 999px; padding: 5px 11px; font-size: 13px; cursor: pointer; line-height: 1.2; }
+.fchip small { color: var(--text-2); margin-left: 2px; }
+.fchip:hover { border-color: var(--skill, var(--primary)); }
+.fchip.is-on { background: var(--skill, var(--primary)); border-color: var(--skill, var(--primary)); color: #fff; }
+.fchip.is-on small { color: rgba(255,255,255,.85); }
+.fchip--clear { border-style: dashed; color: var(--text-2); }
+.kchips { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 5px; }
+.kchip { font-size: 11px; padding: 2px 7px; border-radius: 6px; background: var(--track); color: var(--text-2); white-space: nowrap; }
+.kchip.is-on { background: color-mix(in srgb, var(--skill, var(--primary)) 18%, transparent); color: var(--text); }
+@media (max-width: 560px) { .filters__label { min-width: 100%; } }

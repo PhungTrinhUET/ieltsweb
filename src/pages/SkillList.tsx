@@ -4,7 +4,8 @@ import { BookOpen, ChevronDown, ChevronRight, Shuffle, FolderInput, GraduationCa
 import type { Skill, Material } from '../types';
 import { useDb } from '../db';
 import { fmtBand } from '../lib/band';
-import { BANK_TEST, bestResults, groupByTest, partLabel, testName } from '../lib/tests';
+import { BANK_TEST, bestResults, groupByTest, parseId, partLabel, testName } from '../lib/tests';
+import { QKINDS, QKIND_LABEL, materialKinds, type QKind } from '../lib/qtypes';
 
 export const SKILL_META: Record<Skill, { label: string; icon: typeof BookOpen; color: string; desc: string }> = {
   reading: { label: 'Reading', icon: BookOpen, color: 'var(--c-reading)', desc: 'Làm đề đủ dạng câu hỏi, chế độ học: đọc – dịch – tra từ – ghi chú – nghe đọc.' },
@@ -44,7 +45,21 @@ export default function SkillList({ skill }: { skill: Skill }) {
   const [mode, setModeState] = useState<'practice' | 'test'>(() => { try { return localStorage.getItem(`ielts-mode-${skill}`) === 'test' ? 'test' : 'practice'; } catch { return 'practice'; } });
   const setMode = (v: 'practice' | 'test') => { setModeState(v); try { localStorage.setItem(`ielts-mode-${skill}`, v); } catch { /* bỏ qua */ } };
   const href = (id: string) => (dual && mode === 'practice' ? `/${skill}/${id}/practice` : `/${skill}/${id}`);
-  const browse = byTest && !q && !tag && grouped.vols.size > 0;
+  const [kinds, setKinds] = useState<QKind[]>([]);
+  const [vol, setVol] = useState(0);
+  const kindOf = useMemo(() => new Map(items.map((m) => [m.id, materialKinds(m)])), [items]);
+  const kindCount = useMemo(() => {
+    const c = new Map<QKind, number>();
+    for (const m of items) if (!vol || parseId(m.id)?.vol === vol) for (const k of kindOf.get(m.id) ?? []) c.set(k, (c.get(k) ?? 0) + 1);
+    return c;
+  }, [items, kindOf, vol]);
+  const toggleKind = (k: QKind) => setKinds((ks) => (ks.includes(k) ? ks.filter((x) => x !== k) : [...ks, k]));
+  const filtering = kinds.length > 0;
+  const browse = byTest && !q && !tag && !filtering && grouped.vols.size > 0;
+  const byKind = filtering
+    ? items.filter((m) => (!vol || parseId(m.id)?.vol === vol) && kindOf.get(m.id)!.some((k) => kinds.includes(k)) && (!q || m.title.toLowerCase().includes(q.toLowerCase())))
+      .sort((a, b) => { const pa = parseId(a.id), pb = parseId(b.id); return pa && pb ? pa.vol - pb.vol || pa.test - pb.test || a.id.localeCompare(b.id) : pa ? -1 : pb ? 1 : 0; })
+    : [];
 
   const row = (m: Material, label?: string) => {
     const b = results.get(m.id); const ai = lastAi(m.id);
@@ -56,6 +71,7 @@ export default function SkillList({ skill }: { skill: Skill }) {
           <div className="item__body">
             <div className="item__title">{label ?? m.title}</div>
             <div className="item__sub">{subtitle(m)}{m.source?.startsWith('AI') && <> · <Sparkles size={11} /> AI</>}</div>
+            {filtering && <div className="kchips">{kindOf.get(m.id)!.map((k) => <span key={k} className={`kchip${kinds.includes(k) ? ' is-on' : ''}`}>{QKIND_LABEL[k]}</span>)}</div>}
           </div>
           {band ? <span className="item__score">Band {fmtBand(band)}</span> : null}
           {dual && <span className={`item__mode item__mode--${mode}`}>{mode === 'practice' ? 'Luyện tập' : 'Thi thử'}</span>}
@@ -94,9 +110,32 @@ export default function SkillList({ skill }: { skill: Skill }) {
           {topics.map((t) => <button key={t} className={`tabs__btn${tag === t ? ' is-on' : ''}`} onClick={() => setTag(t)}>{t}</button>)}
         </div>
       )}
-      {browse ? (
+      {dual && (
+        <div className="filters" aria-label="Bộ lọc dạng bài">
+          <div className="filters__row">
+            <span className="filters__label">VOL</span>
+            <button className={`fchip${!vol ? ' is-on' : ''}`} aria-pressed={!vol} onClick={() => setVol(0)}>Tất cả</button>
+            {[...grouped.vols.keys()].map((v) => <button key={v} className={`fchip${vol === v ? ' is-on' : ''}`} aria-pressed={vol === v} onClick={() => setVol(vol === v ? 0 : v)}>{v}</button>)}
+          </div>
+          <div className="filters__row">
+            <span className="filters__label">Dạng bài</span>
+            {QKINDS[skill as 'reading' | 'listening'].filter((k) => kindCount.get(k)).map((k) => (
+              <button key={k} className={`fchip${kinds.includes(k) ? ' is-on' : ''}`} aria-pressed={kinds.includes(k)} onClick={() => toggleKind(k)}>
+                {QKIND_LABEL[k]} <small>{kindCount.get(k)}</small>
+              </button>
+            ))}
+            {filtering && <button className="fchip fchip--clear" onClick={() => setKinds([])}>Bỏ lọc</button>}
+          </div>
+        </div>
+      )}
+      {filtering ? (
+        byKind.length ? <>
+          <p className="muted small">{byKind.length} bài có dạng {kinds.map((k) => QKIND_LABEL[k]).join(' / ')}{vol ? ` trong VOL ${vol}` : ''}</p>
+          <ul className="items items--1">{byKind.map((m) => row(m))}</ul>
+        </> : <div className="empty empty--big"><p>Không có bài nào khớp.</p></div>
+      ) : browse ? (
         <div className="vols">
-          {[...grouped.vols].map(([vol, tests], vi) => {
+          {[...grouped.vols].filter(([v]) => !vol || v === vol).map(([vol, tests], vi) => {
             const parts = tests.flatMap((t) => t.parts);
             const done = parts.filter((m) => results.has(m.id) || lastAi(m.id)).length;
             return (

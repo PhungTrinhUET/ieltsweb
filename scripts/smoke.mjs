@@ -134,6 +134,20 @@ for (const profile of Object.keys(PROFILES)) {
     const marked = await page.locator('.item--part.item--wrong, .item--part.item--done').count();
     return { ok: vols >= 5 && hist === 1 && marked === 3, info: `vol=${vols} lịch sử=${hist} phần có điểm=${marked}` };
   });
+  await check(`[${profile}] B9 lọc theo dạng bài + VOL, chip dạng trên trang đề`, async () => {
+    await go(page, '/listening');
+    await page.locator('.fchip', { hasText: /^3$/ }).click();
+    await page.locator('.fchip', { hasText: 'Map / Plan / Diagram' }).click();
+    await page.waitForTimeout(200);
+    const rows = await page.locator('.items a.item').allInnerTexts();
+    const okRows = rows.length > 0 && rows.every((t) => /VOL 3/.test(t) && /Map \/ Plan \/ Diagram/.test(t));
+    await page.locator('.fchip', { hasText: 'MCQ một đáp án' }).click();
+    const more = await page.locator('.items a.item').count();
+    await go(page, '/test/reading/vol5-t7');
+    const chips = await page.locator('.item--part .kchip').count();
+    return { ok: okRows && more > rows.length && chips >= 6, info: `map VOL3=${rows.length} +mcq=${more} chip=${chips}` };
+  });
+
   await check(`[${profile}] A2 Writing: chạy từ chữ đầu tiên, reset khi đổi bài`, async () => {
     await go(page, '/writing/vol1-t2-w2');
     const before = await timerRuns(page);

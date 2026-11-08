@@ -8,6 +8,7 @@ import { fmtBand, rawToBand } from '../lib/band';
 import { BANK_TEST, SECTION_DESC, bestResults, groupByTest, partLabel, shortTitle, testName } from '../lib/tests';
 import { SKILL_META, subtitle } from './SkillList';
 import { useSettings } from '../store';
+import { QKIND_LABEL, materialKinds } from '../lib/qtypes';
 
 const nQ = (m: Material) => ('groups' in m ? m.groups.reduce((n, g) => n + g.questions.length, 0) : 0);
 
@@ -58,6 +59,7 @@ export default function TestPage() {
               <div className="item__body">
                 <div className="item__title"><strong>{partLabel(m)}</strong> – {shortTitle(m).replace(/^(Section|Passage|Task) \d+\s*[–:-]\s*/, '')}</div>
                 <div className="item__sub">{m.skill === 'listening' && m.section ? SECTION_DESC[m.section] + ' · ' : ''}{subtitle(m)}{r ? ` · Tốt nhất ${r.score}/${r.max}` : band ? ` · Band ${fmtBand(band)}` : ''}</div>
+                {dual && <div className="kchips">{materialKinds(m).map((k) => <span key={k} className="kchip">{QKIND_LABEL[k]}</span>)}</div>}
               </div>
               <div className="item__actions">
                 {dual ? <>
