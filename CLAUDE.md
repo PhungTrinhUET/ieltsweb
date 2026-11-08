@@ -3,7 +3,7 @@
 Web app luyện IELTS 4 kỹ năng: Reading, Listening, Speaking, Writing.
 - Công nghệ: Vite 8 + React 19 + TypeScript, HashRouter, IndexedDB, PWA.
 - Giao diện viết bằng tiếng Việt; nội dung đề giữ nguyên tiếng Anh.
-- Phần chấm Writing/Speaking bằng AI gọi Anthropic SDK. Người dùng dán API key trong *Cài đặt → AI*, hoặc dựng proxy theo `server/grader-proxy/`.
+- Phần chấm Writing/Speaking bằng AI: Claude qua Anthropic SDK; DeepSeek/OpenAI/Gemini/OpenRouter/tuỳ chỉnh qua backend OpenAI-compatible trong `src/ai/client.ts` (JSON + zod, hỏi lại 1 lần). Danh sách model/giá ở `src/ai/models.ts`. Người dùng dán key trong *Cài đặt → AI*, hoặc dùng proxy `server/grader-proxy/` (mã truy cập + giới hạn/ngày).
 - Tính năng và hướng dẫn dùng xem `README.md`.
 
 ## Lệnh

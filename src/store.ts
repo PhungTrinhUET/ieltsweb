@@ -1,5 +1,5 @@
 import { useSyncExternalStore } from 'react';
-import { DEFAULT_EFFORT, DEFAULT_MODEL, type Effort } from './ai/models';
+import { DEFAULT_EFFORT, DEFAULT_MODEL, providerOf, type Effort, type ProviderId } from './ai/models';
 
 export interface Settings {
   theme: 'system' | 'light' | 'dark';
@@ -51,22 +51,48 @@ export function applyTheme(theme: Settings['theme']) {
   document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#0e1120' : '#0f766e');
 }
 
-// ---------- Cấu hình AI (Claude) ----------
+// ---------- Cấu hình AI ----------
 export interface AiConfig {
   mode: 'key' | 'proxy';
+  /** Nhà cung cấp; cấu hình cũ (chỉ có Claude) không có trường này → 'anthropic'. */
+  provider: ProviderId;
+  /** API key Claude (giữ tên cũ). */
   apiKey: string;
+  /** Key các nhà cung cấp khác – đổi qua lại không mất key. */
+  keys: Partial<Record<ProviderId, string>>;
+  /** Base URL OpenAI-compatible cho provider 'custom'. */
+  baseUrl: string;
   proxyUrl: string;
   accessCode: string;
+  /** Model Claude chính / nhẹ (giữ tên cũ). */
   model: string;
   effort: Effort;
   /** Model rẻ cho tác vụ nhẹ (dịch câu, tra từ). */
   lightModel: string;
+  /** Model chính / nhẹ của các nhà cung cấp khác. */
+  models: Partial<Record<ProviderId, { main: string; light: string }>>;
+  /** Giá người dùng nhập hoặc lấy từ danh sách model (USD / 1 triệu token vào, ra). */
+  prices: Record<string, [number, number]>;
 }
-const aiStore = createStore<AiConfig>('ielts:ai:v1', { mode: 'key', apiKey: '', proxyUrl: '', accessCode: '', model: DEFAULT_MODEL, effort: DEFAULT_EFFORT, lightModel: 'claude-haiku-5-5' });
+const aiStore = createStore<AiConfig>('ielts:ai:v1', { mode: 'key', provider: 'anthropic', apiKey: '', keys: {}, baseUrl: '', proxyUrl: '', accessCode: '', model: DEFAULT_MODEL, effort: DEFAULT_EFFORT, lightModel: 'claude-haiku-5-5', models: {}, prices: {} });
 export const useAiConfig = () => useSyncExternalStore(aiStore.subscribe, aiStore.get);
 export const getAiConfig = aiStore.get;
 export const updateAiConfig = (patch: Partial<AiConfig>) => aiStore.set({ ...aiStore.get(), ...patch });
-export const aiReady = (c: AiConfig) => (c.mode === 'key' ? c.apiKey.trim().length > 0 : /^https?:\/\//.test(c.proxyUrl.trim()));
+/** Key của nhà cung cấp đang chọn. */
+export const activeKey = (c: AiConfig) => (c.provider === 'anthropic' ? c.apiKey : c.keys?.[c.provider] ?? '').trim();
+/** Model chính / nhẹ đang dùng. */
+export function activeModels(c: AiConfig) {
+  const p = providerOf(c.provider);
+  if (p.id === 'anthropic') return { main: c.model, light: c.lightModel };
+  const m = c.models?.[p.id];
+  const main = m?.main || p.main;
+  return { main, light: m?.light || p.light || main };
+}
+export const aiReady = (c: AiConfig) => {
+  if (c.mode === 'proxy') return /^https?:\/\//.test(c.proxyUrl.trim());
+  if (!activeKey(c) && c.provider !== 'custom') return false;
+  return c.provider !== 'custom' || (/^https?:\/\//.test(c.baseUrl.trim()) && !!activeModels(c).main);
+};
 
 // ---------- Streak học tập ----------
 export function touchStreak() {

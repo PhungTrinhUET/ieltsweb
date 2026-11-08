@@ -289,6 +289,47 @@ for (const profile of Object.keys(PROFILES)) {
       const t = await page.locator('.qnote').first().textContent({ timeout: 10000 }).catch(() => '');
       return { ok: /27–29/.test(t ?? ''), info: (t ?? '').slice(0, 60) };
     });
+    // ---------- B12: nhà cung cấp OpenAI-compatible (giả lập DeepSeek) ----------
+    await check('B12 DeepSeek giả lập: kiểm tra kết nối, chấm Writing qua JSON + zod, hỏi lại khi sai', async () => {
+      const p = await newPage(profile);
+      await p.addInitScript(() => localStorage.setItem('ielts:ai:v1', JSON.stringify({ mode: 'key', provider: 'deepseek', keys: { deepseek: 'sk-test' } })));
+      // Sinh một thể hiện tối thiểu hợp lệ từ JSON Schema mà app gửi trong system prompt.
+      const inst = (s) => {
+        if (s.anyOf || s.oneOf) return inst((s.anyOf ?? s.oneOf)[0]);
+        if (s.enum) return s.enum[0];
+        if (s.const !== undefined) return s.const;
+        const t = Array.isArray(s.type) ? s.type[0] : s.type;
+        if (t === 'object') return Object.fromEntries(Object.entries(s.properties ?? {}).map(([k, v]) => [k, inst(v)]));
+        if (t === 'array') return Array.from({ length: Math.max(1, s.minItems ?? 1) }, () => inst(s.items ?? {}));
+        if (t === 'number' || t === 'integer') return s.minimum ?? 6;
+        if (t === 'boolean') return true;
+        return 'ok';
+      };
+      const calls = [];
+      await p.route('https://api.deepseek.com/**', async (route) => {
+        const body = JSON.parse(route.request().postData() ?? '{}');
+        calls.push(body);
+        const sys = body.messages?.[0]?.content ?? '';
+        const m = sys.match(/JSON Schema[^\n]*\n(\{[\s\S]*\})\s*$/);
+        // Lần đầu trả JSON sai để kiểm tra vòng hỏi lại; lần sau trả đúng schema.
+        const content = !m ? 'OK' : calls.filter((c) => c.response_format).length === 1 ? '{"oops":1}' : '```json\n' + JSON.stringify(inst(JSON.parse(m[1]))) + '\n```';
+        await route.fulfill({ status: 200, contentType: 'application/json', headers: { 'access-control-allow-origin': '*' },
+          body: JSON.stringify({ model: body.model, choices: [{ message: { role: 'assistant', content }, finish_reason: 'stop' }] }) });
+      });
+      await go(p, '/settings');
+      await p.getByRole('button', { name: /Kiểm tra kết nối/ }).click();
+      const okText = await p.locator('.ok-text, .no-text').first().innerText({ timeout: 10000 });
+      await go(p, '/writing/vol1-t2-w2');
+      await p.locator('.wbox__input').fill(Array.from({ length: 60 }, () => 'word').join(' '));
+      await p.getByRole('button', { name: /Chấm bằng AI/ }).click();
+      await p.waitForFunction(() => !document.querySelector('.spin'), null, { timeout: 15000 });
+      await p.waitForTimeout(500);
+      const err = await p.locator('.error, .no-text, [role="alert"]').allInnerTexts();
+      const band = await p.locator('text=/Band|band/').count();
+      const jsonCalls = calls.filter((c) => c.response_format).length;
+      await p.context().close();
+      return { ok: /Kết nối được \(deepseek-v4-pro\)/.test(okText) && jsonCalls === 2 && band > 0 && !err.join(' ').trim(), info: `${okText} · json calls=${jsonCalls} band=${band} err=${err.join('|').slice(0, 120)}` };
+    });
     // ---------- C13: lần mở thứ hai không tải lại toàn bộ dữ liệu ----------
     await check('C13 mở lại app không tải lại 65 file data', async () => {
       const p = await newPage('desktop');

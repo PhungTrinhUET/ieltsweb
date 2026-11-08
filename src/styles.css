@@ -1670,3 +1670,7 @@ a.item:focus-visible { outline: 2px solid var(--skill, var(--primary)); outline-
 .srow__btn--l { left: -4px; } .srow__btn--r { right: -4px; }
 @media (hover: hover) and (pointer: fine) { .srow__btn { display: inline-flex; } }
 .tabs__btn small { opacity: .65; margin-left: 2px; font-size: 12px; }
+/* B12: nhập giá model */
+.price-in { display: flex; gap: 12px; flex-wrap: wrap; }
+.price-in label { display: inline-flex; align-items: center; gap: 6px; font-weight: 500; }
+.price-in input { width: 90px; padding: 6px 8px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--text); font: inherit; }

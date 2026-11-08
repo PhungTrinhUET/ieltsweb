@@ -1,6 +1,6 @@
 # IELTS Practice
 
-Web luyện **Reading · Listening · Speaking · Writing** IELTS, xây trên nền (stack, UI, cơ chế chấm AI) của Aptis Practice. Chạy hoàn toàn trên trình duyệt, cài được như app (PWA), dữ liệu lưu trong máy (IndexedDB), **tự nạp hàng loạt tài liệu** của bạn và dùng Claude để chấm bài / sinh đề.
+Web luyện **Reading · Listening · Speaking · Writing** IELTS, xây trên nền (stack, UI, cơ chế chấm AI) của Aptis Practice. Chạy hoàn toàn trên trình duyệt, cài được như app (PWA), dữ liệu lưu trong máy (IndexedDB), **tự nạp hàng loạt tài liệu** của bạn và dùng AI (Claude, DeepSeek, OpenAI, Gemini, OpenRouter hoặc dịch vụ OpenAI-compatible) để chấm bài / sinh đề.
 
 ## Chạy
 
@@ -10,7 +10,13 @@ npm run dev       # http://localhost:5173
 npm run build     # bản tĩnh trong dist/ – deploy lên GitHub Pages / Cloudflare Pages / Netlify…
 ```
 
-Cấu hình AI (tuỳ chọn, nhưng cần cho chấm Writing/Speaking, dịch, tra từ, sinh đề): *Cài đặt → AI* → dán API key Anthropic, hoặc dựng proxy giữ key theo [server/grader-proxy](server/grader-proxy/README.md).
+Cấu hình AI (tuỳ chọn, nhưng cần cho chấm Writing/Speaking, dịch, tra từ, sinh đề), trong *Cài đặt → AI*:
+1. Chọn nhà cung cấp: Claude, DeepSeek, OpenAI, Gemini, OpenRouter hoặc *Tuỳ chỉnh* (mọi dịch vụ OpenAI-compatible, kể cả Ollama trên máy).
+2. Chọn model chính (chấm, sinh đề) và model nhẹ (dịch, tra từ). Có thể gõ tên model bất kỳ, hoặc bấm *Lấy danh sách model*.
+3. Dán API key (chỉ lưu trên máy), hoặc chọn *Qua proxy* rồi nhập địa chỉ và mã truy cập do người dựng [server/grader-proxy](server/grader-proxy/README.md) cấp (mỗi mã có giới hạn lượt/ngày).
+4. Bấm *Kiểm tra kết nối*. App hiện giá tham khảo và ước tính chi phí mỗi lần chấm; model chưa biết giá thì nhập giá tay.
+
+Claude dùng structured output của Anthropic SDK. Các nhà cung cấp khác được gọi qua `chat/completions`: app xin JSON, kiểm tra bằng zod, và nếu sai định dạng thì hỏi lại một lần. Có dịch vụ chặn gọi từ trình duyệt (CORS); khi đó hãy dùng proxy.
 
 ### Chạy trên máy của bạn và điều khiển từ xa bằng Claude Code Remote Control
 
@@ -136,10 +142,10 @@ src/types.ts            schema Material / Question
 src/db.ts               IndexedDB + state (materials, attempts, vocab, notes, drafts, blobs)
 src/content/samples.ts  nội dung mẫu
 src/lib/                band.ts (quy đổi), text.ts (tách câu, diff từ, so đáp án), tts.ts, srs.ts, importers.ts (JSON/MD/SRT)
-src/ai/                 client.ts (Claude SDK, structured output), writing.ts, speaking.ts, assist.ts (dịch, tra từ, sinh đề)
+src/ai/                 client.ts (Claude SDK + backend OpenAI-compatible), models.ts (nhà cung cấp, model, giá), writing.ts, speaking.ts, assist.ts (dịch, tra từ, sinh đề)
 src/components/         Questions (mọi dạng câu hỏi), WordPopover, Recorder, AudioPlayer, AiSettings, misc (diff, chart, band)
 src/pages/              SkillList, ReadingTest, ReadingStudy, ListeningTest, Dictation, GapFill, MockTest, Speaking, Writing, Vocab, Library, History, Guide, Settings
-server/grader-proxy/    Cloudflare Worker giữ API key
+server/grader-proxy/    Cloudflare Worker giữ API key, cấp mã truy cập + giới hạn lượt/ngày
 content/                đề gốc đã bóc tách (xem mục trên)
 CLAUDE.md               ghi chú cho Claude Code: lệnh, quy ước dữ liệu, việc còn lại
 scripts/                build-data.mjs (content → public/data), copy-audio.mjs (audio Drive → public/audio)

@@ -3,8 +3,18 @@ main = "worker.js"
 compatibility_date = "2026-10-01"
 
 [vars]
-# Chỉ cho phép model chấm bài của app.
-ALLOWED_MODELS = "claude-opus-5-5,claude-sonnet-5-5,claude-haiku-5-5"
+# Model cho phép (cả model chính và model nhẹ mà app dùng).
+ALLOWED_MODELS = "claude-opus-5-5,claude-sonnet-5-5,claude-haiku-5-5,deepseek-v4-pro,deepseek-flash"
+# Dịch vụ OpenAI-compatible cho POST /v1/chat/completions (DeepSeek, OpenAI, Gemini, OpenRouter…).
+COMPAT_BASE_URL = "https://api.deepseek.com"
+# Lượt gọi mỗi mã truy cập mỗi ngày (0 = không giới hạn). Mã có thể ghi riêng "mã:số" trong ACCESS_CODES.
+DAILY_LIMIT = "30"
 # Origin được phép gọi: app Android là https://localhost; thêm domain web nếu deploy bản web.
-# "*" = mọi nơi (vẫn được bảo vệ bởi ACCESS_CODE).
+# "*" = mọi nơi (vẫn được bảo vệ bởi ACCESS_CODES).
 ALLOWED_ORIGINS = "*"
+
+# Bộ đếm lượt dùng. Tạo bằng: npx wrangler kv namespace create USAGE  → dán id vào đây.
+# Bỏ khối này thì proxy vẫn chạy nhưng không giới hạn lượt.
+# [[kv_namespaces]]
+# binding = "USAGE"
+# id = "<id>"
