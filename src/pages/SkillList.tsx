@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { BookOpen, ChevronRight, FolderInput, Headphones, Mic, NotebookPen, Sparkles, Timer } from 'lucide-react';
+import { BookOpen, ChevronRight, FolderInput, GraduationCap, Headphones, Mic, NotebookPen, Sparkles, Timer } from 'lucide-react';
 import type { Skill, Material } from '../types';
 import { useDb } from '../db';
 import { fmtBand } from '../lib/band';
@@ -37,6 +37,8 @@ export default function SkillList({ skill }: { skill: Skill }) {
   const best = (id: string) => db.attempts.filter((a) => a.materialId === id && a.mode === 'test').sort((a, b) => (b.score ?? 0) / (b.max ?? 1) - (a.score ?? 0) / (a.max ?? 1))[0];
   const lastAi = (id: string) => db.attempts.find((a) => a.materialId === id && a.mode === 'ai');
   const Icon = meta.icon;
+  const dual = skill === 'reading' || skill === 'listening';
+  const open = (id: string) => nav(dual ? `/${skill}/${id}/practice` : `/${skill}/${id}`);
 
   return (
     <div className="page" style={{ ['--skill' as string]: meta.color }}>
@@ -44,9 +46,10 @@ export default function SkillList({ skill }: { skill: Skill }) {
         <span className="skill__icon skill__icon--lg"><Icon size={26} /></span>
         <div><h1>{meta.label}</h1><p>{meta.desc}</p></div>
       </div>
+      {dual && <p className="muted small mode-hint"><strong>Luyện tập</strong>: không tính giờ, bấm từ để tra nghĩa tiếng Việt và lưu sổ từ, dịch từng đoạn, kiểm tra từng câu kèm giải thích. <strong>Thi thử</strong>: bấm giờ như thi thật, nộp bài mới xem đáp án.</p>}
       <div className="toolbar">
         <input className="input" placeholder="Tìm bài…" value={q} onChange={(e) => setQ(e.target.value)} />
-        {(skill === 'reading' || skill === 'listening') && <Link to={`/mock/${skill}`} className="btn btn--primary"><Timer size={16} /> Thi thử</Link>}
+        {(skill === 'reading' || skill === 'listening') && <Link to={`/mock/${skill}`} className="btn btn--primary"><Timer size={16} /> Thi thử cả đề</Link>}
         <Link to={`/library?skill=${skill}`} className="btn btn--ghost"><FolderInput size={16} /> Nạp / tạo đề</Link>
       </div>
       {topics.length > 1 && (
@@ -64,14 +67,19 @@ export default function SkillList({ skill }: { skill: Skill }) {
           {shown.map((m) => {
             const b = best(m.id); const ai = lastAi(m.id);
             return (
-              <li key={m.id} className={`item${b ? (b.score! / b.max! >= 0.7 ? ' item--done' : ' item--wrong') : ''}`} onClick={() => nav(`/${skill}/${m.id}`)} role="link" tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && nav(`/${skill}/${m.id}`)}>
+              <li key={m.id} className={`item${b ? (b.score! / b.max! >= 0.7 ? ' item--done' : ' item--wrong') : ''}`} onClick={() => open(m.id)} role="link" tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && open(m.id)}>
                 <div className="item__no">{b ? `${b.score}/${b.max}` : ai?.band ? fmtBand(ai.band) : <Icon size={16} />}</div>
                 <div className="item__body">
                   <div className="item__title">{m.title}</div>
                   <div className="item__sub">{subtitle(m)}{m.source?.startsWith('AI') && <> · <Sparkles size={11} /> AI</>}</div>
                 </div>
                 {b?.band ? <span className="item__score">Band {fmtBand(b.band)}</span> : ai?.band ? <span className="item__score">Band {fmtBand(ai.band)}</span> : null}
-                <ChevronRight size={18} className="item__arrow" />
+                {dual ? (
+                  <div className="item__modes" onClick={(e) => e.stopPropagation()}>
+                    <Link to={`/${skill}/${m.id}/practice`} className="btn btn--ghost btn--sm" title="Không tính giờ, tra từ, dịch, xem đáp án từng câu"><GraduationCap size={15} /> Luyện tập</Link>
+                    <Link to={`/${skill}/${m.id}`} className="btn btn--ghost btn--sm" title="Bấm giờ như thi thật, nộp bài mới xem đáp án"><Timer size={15} /> Thi thử</Link>
+                  </div>
+                ) : <ChevronRight size={18} className="item__arrow" />}
               </li>
             );
           })}

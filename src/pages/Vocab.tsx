@@ -1,6 +1,7 @@
 // Sổ từ vựng + ôn tập theo lặp lại ngắt quãng (flashcard, gõ lại từ, trắc nghiệm).
 import { useMemo, useState } from 'react';
-import { Check, Keyboard, Layers, ListChecks, Plus, Trash2, Volume2, X } from 'lucide-react';
+import { Check, Keyboard, Layers, ListChecks, Pencil, Plus, Trash2, Volume2, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { deleteCard, saveCard, useDb } from '../db';
 import type { VocabCard } from '../types';
 import { dueCards, newCard, previewInterval, review, type Grade } from '../lib/srs';
@@ -19,6 +20,7 @@ export default function Vocab() {
   const [q, setQ] = useState('');
   const [adding, setAdding] = useState(false);
   const [form, setForm] = useState({ word: '', pos: '', meaning: '', example: '' });
+  const [edit, setEdit] = useState<{ id: string; meaning: string; pos: string; note: string } | null>(null);
 
   const start = (mode: Mode) => {
     const fresh = cards.filter((c) => c.reps === 0 && c.due <= Date.now()).slice(0, s.newCardsPerDay);
@@ -53,7 +55,7 @@ export default function Vocab() {
           {session.mode === 'flash' && (
             <>
               <div className="flash__front"><strong>{c.word}</strong> {c.pos && <em className="vocab__pos">{c.pos}</em>}<button className="icon-btn" onClick={() => speak(c.word, { rate: 0.9 })}><Volume2 size={18} /></button></div>
-              {session.flipped ? <div className="flash__back"><p className="flash__meaning">{c.meaning}</p>{c.example && <p className="flash__ex">{c.example}</p>}</div>
+              {session.flipped ? <div className="flash__back"><p className="flash__meaning">{c.meaning}</p>{c.example && <p className="flash__ex">{c.example}</p>}{c.note && <p className="small muted">📝 {c.note}</p>}</div>
                 : <button className="btn btn--primary" onClick={() => setSession({ ...session, flipped: true })}>Lật thẻ</button>}
             </>
           )}
@@ -118,17 +120,34 @@ export default function Vocab() {
         </form>
       )}
       <input className="input" placeholder="Tìm từ…" value={q} onChange={(e) => setQ(e.target.value)} />
-      {shown.length === 0 ? <p className="empty">Chưa có từ nào. Bấm vào từ trong bài Reading/Listening (chế độ học) để lưu.</p> : (
+      {shown.length === 0 ? <p className="empty">Chưa có từ nào. Bấm vào từ trong bài Reading/Listening (chế độ Luyện tập) để lưu.</p> : (
         <ul className="vlist card">
           {shown.map((c) => (
             <li key={c.id} className="vlist__row">
               <div className="vlist__body">
-                <strong className="vocab__w">{c.word}</strong> <em className="vocab__pos">{c.pos}</em>
-                <div className="vocab__vi">{c.meaning}</div>
-                {c.example && <div className="vocab__ex">{c.example}</div>}
+                <strong className="vocab__w">{c.word}</strong> {c.ipa && <span className="small muted">{c.ipa}</span>} <em className="vocab__pos">{c.pos}</em>
+                {edit?.id === c.id ? (
+                  <div className="wpop__form">
+                    <label className="small">Nghĩa tiếng Việt<input className="input" value={edit.meaning} onChange={(e) => setEdit({ ...edit, meaning: e.target.value })} /></label>
+                    <label className="small">Loại từ<input className="input" value={edit.pos} onChange={(e) => setEdit({ ...edit, pos: e.target.value })} /></label>
+                    <label className="small">Ghi chú<textarea className="textarea" rows={2} value={edit.note} onChange={(e) => setEdit({ ...edit, note: e.target.value })} /></label>
+                    <div className="wpop__actions">
+                      <button className="btn btn--ghost btn--sm" onClick={() => setEdit(null)}>Huỷ</button>
+                      <button className="btn btn--primary btn--sm" onClick={async () => { await saveCard({ ...c, meaning: edit.meaning, pos: edit.pos || undefined, note: edit.note || undefined }); setEdit(null); }}><Check size={15} /> Lưu</button>
+                    </div>
+                  </div>
+                ) : <>
+                  <div className="vocab__vi">{c.meaning}</div>
+                  {c.meaningEn && <div className="small muted">EN: {c.meaningEn}</div>}
+                  {c.example && <div className="vocab__ex">{c.example}</div>}
+                  {c.exampleVi && <div className="small vocab__exvi">→ {c.exampleVi}</div>}
+                  {c.note && <div className="small vocab__note">📝 {c.note}</div>}
+                  {c.from && db.materials[c.from] && <div className="small muted">Từ bài: <Link to={`/${db.materials[c.from].skill}/${c.from}/practice`} onClick={(e) => e.stopPropagation()}>{db.materials[c.from].title}</Link></div>}
+                </>}
                 <div className="small muted">{c.due <= Date.now() ? 'Đến hạn' : `Ôn lại sau ${Math.ceil((c.due - Date.now()) / 864e5)} ngày`} · {c.reps} lần đúng · {c.lapses} lần quên</div>
               </div>
               <button className="icon-btn" onClick={() => speak(c.word)} aria-label="Phát âm"><Volume2 size={16} /></button>
+              <button className="icon-btn" onClick={() => setEdit({ id: c.id, meaning: c.meaning, pos: c.pos ?? '', note: c.note ?? '' })} aria-label="Sửa"><Pencil size={16} /></button>
               <button className="icon-btn" onClick={() => deleteCard(c.id)} aria-label="Xoá"><Trash2 size={16} /></button>
             </li>
           ))}

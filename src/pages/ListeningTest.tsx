@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft, BookOpenCheck, Check, Keyboard, Pause, PenLine, Play, RotateCcw, Volume2 } from 'lucide-react';
+import { ArrowLeft, BookOpenCheck, Check, GraduationCap, Keyboard, Pause, PenLine, Play, RotateCcw, Volume2 } from 'lucide-react';
 import type { ListeningMaterial } from '../types';
 import { addAttempt, resolveUrl, useDb } from '../db';
 import { touchStreak } from '../store';
@@ -52,6 +52,7 @@ export default function ListeningTest() {
   useEffect(() => { setAnswers({}); setChecked(false); setShowScript(false); if (m?.audio) resolveUrl(m.audio).then(setSrc); else setSrc(null); return () => stopAudio(); }, [id]); // eslint-disable-line
 
   if (!m) return <div className="page"><p className="empty">Không tìm thấy bài.</p></div>;
+  const hasScript = !!m.transcript.trim();
   const total = m.groups.reduce((n, g) => n + g.questions.length, 0);
   const done = Object.values(answers).filter((a) => a !== null && a !== '' && !(Array.isArray(a) && !a.length)).length;
   const res = checked ? scoreGroups(m.groups, answers) : null;
@@ -67,11 +68,12 @@ export default function ListeningTest() {
     <div className="page page--practice" style={{ ['--skill' as string]: SKILL_META.listening.color }}>
       <div className="topbar topbar--sticky">
         <button className="icon-btn" onClick={() => nav('/listening')} aria-label="Quay lại"><ArrowLeft size={20} /></button>
-        <div className="topbar__title"><small>Listening · Section {m.section ?? '?'}</small><strong>{m.title}</strong></div>
+        <div className="topbar__title"><small>Thi thử · Listening · Section {m.section ?? '?'}</small><strong>{m.title}</strong></div>
+        <div className="topbar__actions"><Link to={`/listening/${m.id}/practice`} className="btn btn--ghost btn--sm"><GraduationCap size={15} /> Luyện tập</Link></div>
         <div className="topbar__progress" style={{ width: `${(done / total) * 100}%` }} />
       </div>
 
-      {m.audio ? <AudioPlayer ref={audio} src={src} label={m.title} /> : (
+      {m.audio ? <AudioPlayer ref={audio} src={src} label={m.title} /> : !hasScript ? <div className="banner"><span>Đề này chưa có audio và bộ đề gốc không có transcript, nên chưa nghe được. Bạn vẫn có thể làm câu hỏi (đáp án theo key gốc).</span></div> : (
         <div className="audio">
           <button className="audio__play" onClick={() => (sp.line === null ? sp.play() : sp.halt())} disabled={!ttsAvailable()} aria-label="Phát">{sp.line === null ? <Play size={22} fill="currentColor" /> : <Pause size={22} fill="currentColor" />}</button>
           <div className="audio__body">
@@ -90,12 +92,13 @@ export default function ListeningTest() {
             <div><strong style={{ fontSize: 28 }}>Band {fmtBand(band)}</strong><div className="muted small">ước tính</div></div>
             <div className="final__next"><button className="btn btn--ghost btn--sm" onClick={() => { setAnswers({}); setChecked(false); }}><RotateCcw size={15} /> Làm lại</button></div>
           </div>
-          <div className="row wrap">
-            <Link to={`/listening/${m.id}/dictation`} className="btn btn--primary btn--sm"><Keyboard size={15} /> Chép chính tả</Link>
+          {hasScript ? <div className="row wrap">
+            <Link to={`/listening/${m.id}/practice`} className="btn btn--primary btn--sm"><GraduationCap size={15} /> Luyện tập bài này</Link>
+            <Link to={`/listening/${m.id}/dictation`} className="btn btn--ghost btn--sm"><Keyboard size={15} /> Chép chính tả</Link>
             <Link to={`/listening/${m.id}/gapfill`} className="btn btn--ghost btn--sm"><PenLine size={15} /> Điền từ transcript</Link>
             <Link to={`/listening/${m.id}/study`} className="btn btn--ghost btn--sm"><BookOpenCheck size={15} /> Học transcript (dịch, từ vựng)</Link>
             <button className="btn btn--text btn--sm" onClick={() => setShowScript(!showScript)}>{showScript ? 'Ẩn transcript' : 'Xem transcript'}</button>
-          </div>
+          </div> : <div className="row wrap"><Link to={`/listening/${m.id}/practice`} className="btn btn--primary btn--sm"><GraduationCap size={15} /> Xem lại từng câu ở chế độ Luyện tập</Link></div>}
           {showScript && <div className="rich rich--transcript"><RichText text={m.transcript.split('\n').join('\n')} /></div>}
         </div>
       )}

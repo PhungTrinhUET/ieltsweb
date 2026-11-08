@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft, BookOpenCheck, Check, Highlighter, RotateCcw } from 'lucide-react';
+import { ArrowLeft, BookOpenCheck, Check, Highlighter, RotateCcw, GraduationCap } from 'lucide-react';
 import type { ReadingMaterial } from '../types';
 import { addAttempt, useDb, saveNote } from '../db';
 import { touchStreak } from '../store';
@@ -57,10 +57,10 @@ export default function ReadingTest() {
     <div className="page page--wide page--practice" style={{ ['--skill' as string]: SKILL_META.reading.color }}>
       <div className="topbar topbar--sticky">
         <button className="icon-btn" onClick={() => nav('/reading')} aria-label="Quay lại"><ArrowLeft size={20} /></button>
-        <div className="topbar__title"><small>Reading · {m.module === 'general' ? 'General Training' : 'Academic'}</small><strong>{m.title}</strong></div>
+        <div className="topbar__title"><small>Thi thử · Reading · {m.module === 'general' ? 'General Training' : 'Academic'}</small><strong>{m.title}</strong></div>
         <div className="topbar__actions">
           {!checked && <Timer minutes={m.minutes ?? 20} onEnd={submit} />}
-          {checked && <Link to={`/reading/${m.id}/study`} className="btn btn--primary btn--sm"><BookOpenCheck size={16} /> Học bài này</Link>}
+          {checked ? <Link to={`/reading/${m.id}/practice`} className="btn btn--primary btn--sm"><GraduationCap size={16} /> Luyện tập bài này</Link> : <Link to={`/reading/${m.id}/practice`} className="btn btn--ghost btn--sm" title="Chuyển sang luyện tập: không tính giờ, tra từ, dịch"><GraduationCap size={16} /> Luyện tập</Link>}
         </div>
         <div className="topbar__progress" style={{ width: `${(done / total) * 100}%` }} />
       </div>

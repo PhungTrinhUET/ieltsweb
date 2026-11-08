@@ -142,6 +142,14 @@ export interface VocabCard {
   pos?: string;
   meaning: string;
   example?: string;
+  /** Phiên âm IPA. */
+  ipa?: string;
+  /** Định nghĩa tiếng Anh ngắn. */
+  meaningEn?: string;
+  /** Dịch câu ví dụ. */
+  exampleVi?: string;
+  /** Ghi chú riêng của người học. */
+  note?: string;
   /** Nguồn: id tài liệu. */
   from?: string;
   addedAt: number;

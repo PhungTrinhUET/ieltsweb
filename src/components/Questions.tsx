@@ -48,8 +48,10 @@ function FillText({ q, value, onChange, checked, ok, onFocus }: { q: Question; v
   return <span>{parts.map((p, i) => <Fragment key={i}>{p}{i < parts.length - 1 && input}</Fragment>)}</span>;
 }
 
-export function QuestionView({ q, group, value, onChange, checked, onFocus, compact }: {
+export function QuestionView({ q, group, value, onChange, checked, onFocus, compact, onReveal }: {
   q: Question; group: QuestionGroup; value: Answer; onChange: (a: Answer) => void; checked: boolean; onFocus?: () => void; compact?: boolean;
+  /** Chế độ luyện tập: nút kiểm tra riêng câu này. */
+  onReveal?: () => void;
 }) {
   const ok = checked && isCorrect(q, value);
   let body: ReactNode;
@@ -107,13 +109,20 @@ export function QuestionView({ q, group, value, onChange, checked, onFocus, comp
         {body}
         {checked && !ok && q.type === 'fill' && <div className="q__fix"><Check size={14} /> {correctText(q, group.bank)}</div>}
         {checked && q.explanation && <div className="q__explain"><RichText text={q.explanation} /></div>}
+        {!checked && onReveal && (
+          <div className="q__check">
+            <button className="btn btn--text btn--sm" onClick={onReveal}>{value === null || value === '' || (Array.isArray(value) && !value.length) ? 'Xem đáp án' : 'Kiểm tra câu này'}</button>
+          </div>
+        )}
       </div>
     </div>
   );
 }
 
-export function GroupsView({ groups, answers, onChange, checked, onFocus }: {
+export function GroupsView({ groups, answers, onChange, checked, onFocus, revealed, onReveal }: {
   groups: QuestionGroup[]; answers: Answers; onChange: (no: number, a: Answer) => void; checked: boolean; onFocus?: (no: number) => void;
+  /** Chế độ luyện tập: các câu đã kiểm tra riêng. */
+  revealed?: Record<number, boolean>; onReveal?: (no: number) => void;
 }) {
   return (
     <div className="qgroups">
@@ -129,7 +138,7 @@ export function GroupsView({ groups, answers, onChange, checked, onFocus }: {
             )}
             {g.context && <div className="qcontext">{g.context}</div>}
             {g.questions.map((q) => (
-              <QuestionView key={q.no} q={q} group={g} value={answers[q.no] ?? null} onChange={(a) => onChange(q.no, a)} checked={checked} onFocus={() => onFocus?.(q.no)} />
+              <QuestionView key={q.no} q={q} group={g} value={answers[q.no] ?? null} onChange={(a) => onChange(q.no, a)} checked={checked || !!revealed?.[q.no]} onFocus={() => onFocus?.(q.no)} onReveal={onReveal ? () => onReveal(q.no) : undefined} />
             ))}
           </section>
         );

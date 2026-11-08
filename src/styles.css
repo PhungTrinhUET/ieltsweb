@@ -1242,6 +1242,7 @@ mark { background: #fde68a; color: #1a1a1a; border-radius: 3px; padding: 0 1px; 
 .wpop {
   position: absolute; z-index: 50; width: 330px; max-width: calc(100vw - 24px); padding: 12px 14px; border-radius: 14px;
   background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow-lg); display: flex; flex-direction: column; gap: 6px; font-size: 14px;
+  width: 360px; max-height: 70vh; overflow-y: auto;
 }
 .wpop__head { display: flex; align-items: center; gap: 6px; }
 .wpop__head strong { font-size: 17px; flex: 1; }
@@ -1371,3 +1372,40 @@ mark { background: #fde68a; color: #1a1a1a; border-radius: 3px; padding: 0 1px; 
 .wd-extra { color: var(--text-3); text-decoration: line-through; }
 .wd-wrong { color: var(--no); text-decoration: line-through; margin-right: 3px; }
 .wd-fix { color: var(--ok); font-weight: 700; background: var(--ok-soft); border-radius: 4px; padding: 0 3px; }
+
+/* Word popover – chi tiết */
+.wpop__row { display: grid; grid-template-columns: 74px 1fr; gap: 8px; align-items: baseline; }
+.wpop__k { font-size: 11.5px; font-weight: 700; color: var(--text-3); text-transform: uppercase; letter-spacing: .03em; }
+.wpop__vi { font-weight: 600; }
+.wpop__def { display: block; }
+.wpop__def em { color: var(--text-3); margin-right: 4px; }
+.wpop__sent { display: flex; flex-direction: column; gap: 4px; padding: 8px 10px; border-radius: 10px; background: var(--surface-2, var(--primary-soft)); }
+.wpop__sentvi { color: var(--text-2); }
+.wpop__form { display: flex; flex-direction: column; gap: 6px; }
+.wpop__form label { display: flex; flex-direction: column; gap: 3px; }
+@media (max-width: 600px) {
+  .wpop { position: fixed !important; left: 0 !important; right: 0 !important; top: auto !important; bottom: 0 !important; width: auto !important; max-width: none !important;
+    max-height: 62vh; border-radius: 16px 16px 0 0; padding-bottom: calc(14px + env(safe-area-inset-bottom)); }
+}
+
+/* Kiểm tra từng câu */
+.q__check { display: flex; justify-content: flex-end; margin-top: 4px; }
+
+/* Danh sách bài: 2 chế độ */
+.mode-hint { margin: -4px 0 12px; }
+.item__modes { display: flex; gap: 6px; flex-shrink: 0; }
+@media (max-width: 520px) { .item { flex-wrap: wrap; } .item__modes { width: 100%; justify-content: flex-end; } }
+
+/* Chế độ Luyện tập */
+.practice-tip { margin: 0 0 10px; }
+.passage--practice .pp { padding: 4px 6px; border-radius: 8px; margin: 0 -6px 12px; }
+.passage--practice .pp.is-reading { background: var(--primary-soft); }
+.pp__en { line-height: 1.75; }
+.pp__en .passage__label { display: inline-grid; margin-right: 6px; vertical-align: 1px; }
+.pp__ts { font-size: 11.5px; color: var(--text-3); margin-right: 6px; font-variant-numeric: tabular-nums; }
+.pp__speaker { margin-right: 2px; }
+.pp__tr { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 6px; border: 1px solid var(--border); background: var(--surface); color: var(--text-3); cursor: pointer; vertical-align: -4px; margin-left: 2px; }
+.pp__tr:hover, .pp__tr.is-on { color: var(--primary); border-color: var(--primary); }
+.pp__vi { margin: 4px 0 0; padding: 6px 10px; border-left: 3px solid var(--primary); background: var(--primary-soft); border-radius: 0 8px 8px 0; font-size: 14.5px; color: var(--text-2); }
+.vocab__exvi { color: var(--text-2); }
+.vocab__note { color: var(--text-2); }

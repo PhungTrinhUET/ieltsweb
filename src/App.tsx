@@ -17,6 +17,7 @@ import History from './pages/History';
 import Guide from './pages/Guide';
 import Settings from './pages/Settings';
 import MockTest from './pages/MockTest';
+import Practice from './pages/Practice';
 
 const NAV: { to: string; label: string; icon: typeof House; end?: boolean }[] = [
   { to: '/', label: 'Trang chủ', icon: House, end: true },
@@ -75,11 +76,13 @@ export default function App() {
           <Route path="reading" element={<SkillList skill="reading" />} />
           <Route path="reading/:id" element={<ReadingTest />} />
           <Route path="reading/:id/study" element={<ReadingStudy />} />
+          <Route path="reading/:id/practice" element={<Practice />} />
           <Route path="listening" element={<SkillList skill="listening" />} />
           <Route path="listening/:id" element={<ListeningTest />} />
           <Route path="listening/:id/dictation" element={<Dictation />} />
           <Route path="listening/:id/gapfill" element={<GapFill />} />
           <Route path="listening/:id/study" element={<ReadingStudy />} />
+          <Route path="listening/:id/practice" element={<Practice />} />
           <Route path="speaking" element={<SkillList skill="speaking" />} />
           <Route path="speaking/:id" element={<Speaking />} />
           <Route path="writing" element={<SkillList skill="writing" />} />
