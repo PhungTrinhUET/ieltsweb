@@ -1,0 +1,911 @@
+{
+ "vol": 5,
+ "test": 9,
+ "source": "ORIGINAL IELTS PAPERS – VOL 5, Test 9 (audio: P1.mp3, P2.mp3, P3.mp3, P4.mp3). VOL 5 không có key Listening: đáp án Listening được suy từ transcript. Transcript tự động đã được sửa vai người nói và chính tả; người dẫn đọc nhầm \"Test three\" ở đầu audio. Reading: đáp án theo key trong file \"Explanation- 9.pdf\". Đề PDF thiếu câu 34 (chỉ in câu 32–33): câu 34 được dựng lại theo bản công khai của cùng bài đọc, khớp key C. Một số lỗi in/OCR trong bài đọc đã sửa chính tả (\"nature male\" → \"mature male\", \"where was still present\" → \"where water was still present\", câu cuối đoạn H \"more ending\" → \"more enduring\", \"induced pain in pressure cuff\" → \"induced pain with a pressure cuff\").",
+ "listening": {
+  "audioDir": "audio/vol5/test9",
+  "timingNote": "Transcript gốc là dòng thời gian liên tục; offset ước lượng S2 7:52, S3 14:27, S4 20:12. Một số dòng không có mốc trong transcript gốc (lời hỏi chen giữa ở Section 1 và câu kết Section 4) được gán mốc ước lượng. Câu 15–20 là bản đồ: vì không có hình, các vị trí được mô tả bằng chữ.",
+  "sections": [
+   {
+    "section": 1,
+    "title": "Hot air balloon trip – phone enquiry",
+    "topic": "Travel",
+    "offset": 0,
+    "transcript": "[00:03] Narrator: Test three. This is the IELTS listening test. You will hear a number of different recordings, and you will have to answer questions on what you hear. There will be time for you to read the instructions and questions, and you will have a chance to check your work. All the recordings will be played once only. The test is in four parts. At the end of the test, you will be given 10 minutes to transfer your answers to the answer sheet. Now turn to part one. Part one. You will hear a woman phoning a travel agency about hot air balloon rides. First, you have some time to look at questions one to five.\n[01:28] Narrator: Now listen carefully, and answer questions one to five.\n[01:36] Jason: Good morning. Smart Travel. Jason speaking.\n[01:39] Woman: Hi, good morning. I saw your advert in today's paper about hot air balloon trips. It sounds pretty exciting. And I wonder how much it costs?\n[01:51] Jason: Well, the price may vary depending on the location, number of participants and add-ons. A single ride may cost you up to 280 pounds per person. But if you choose group booking, there is a discount. And the cheapest flight is 125 pounds each for a group booking of at least 10 people.\n[02:14] Woman: Oh, that's not too bad. What do you mean by add-ons?\n[02:19] Jason: They are optional items like taking photos for you during the ride, champagne and sit-down breakfast after the flight. Upon completing the trip, we will provide each participant with a certificate and that is entirely free of charge.\n[02:36] Woman: Can I book a ride over the phone?\n[02:39] Jason: Yes, that's an option. Reservations can be made one year ahead of your trip by telephone. But to pick a specific date, you must book online. A confirmation email will be sent to you right afterwards.\n[02:53] Woman: How high can the balloons go?\n[02:56] Jason: A hot air balloon's height is limited by the temperature of the air and how much fuel it can carry. And the highest altitude ever recorded for a ride is 1800 metres. But most rides stay below 300 metres.\n[03:13] Woman: Oh boy. That's impressive. How long is a single ride?\n[03:18] Jason: The average hot air balloon ride lasts about an hour. The entire ballooning experience, which includes ground preparation, flight and post-flight packing up and celebration, may take two to three hours.\n[03:33] Woman: And what time are the flights?\n[03:35] Jason: Our flights generally meet about an hour before sunrise on the day. You will be notified of the exact meeting time the evening before your flight. Night flights are avoided due to weather conditions.\n[03:51] Woman: Fair enough.\n[03:53] Narrator: Before you hear the rest of the conversation, you have some time to look at questions six to 10.\n[04:40] Narrator: Now listen, and answer questions six to 10.\n[04:45] Woman: Which month do you recommend for a hot air balloon trip?\n[04:51] Jason: Autumn is the best time of year to take the trip. Not only can you see the changing hues of the trees from above, but it is a great way to spend time with the whole family before it gets too cold.\n[05:05] Woman: I see.\n[05:06] Jason: But please note that our flight may be cancelled, and you will be notified by phone the day before.\n[05:12] Woman: Why is that?\n[05:14] Jason: It can be quite dangerous to fly under bad weather conditions like a thunderstorm. So our experienced pilots will not go under such conditions.\n[05:24] Woman: What should I wear for the ride?\n[05:27] Jason: We suggest wearing comfortable clothing like a jacket. Multiple layers are always better. Wearing a helmet for safety concerns is also a good idea. Sandals are not permitted.\n[05:41] Woman: Can children or older people participate?\n[05:45] Jason: All children must be above the minimum age of nine years old. And they have to be accompanied by at least a parent or guardian. However, an adult has no age limit as long as they meet the health requirements.\n[05:59] Woman: What exactly are the health requirements?\n[06:04] Jason: Participants must at least be in fair physical condition. For example, they shall have no significant knee, hip or back problems and no recent surgeries or broken bones. They must also stand unassisted for an hour during the flight. It is the required position during the whole flight. As the balloon comes to land, all passengers will need to adopt the landing position with knees bent in front of them.\n[06:30] Woman: Are those rides safe?\n[06:32] Jason: Hot air balloon companies are required to have a commercial balloon pilot licence and all our pilots go through rigorous training before they are allowed to fly. It is a relatively gentle activity. However, the impact of a balloon landing can vary drastically depending on factors like wind speed; sometimes it is similar to the momentum of jumping off a small chair. If you cannot jump off a small chair, speaking to your doctor before booking a balloon flight is best.\n[07:09] Woman: Thank you very much. I think that's all I need to know.\n[07:12] Jason: Thanks for calling. Goodbye.\n[07:18] Narrator: That is the end of part one. You now have half a minute to check your answers to part one.",
+    "groups": [
+     {
+      "instruction": "Complete the notes below. Write ONE WORD AND/OR A NUMBER for each answer.",
+      "wordLimit": "ONE WORD AND/OR A NUMBER",
+      "context": "Enquiries on Hot Air Balloon Trip",
+      "questions": [
+       {
+        "no": 1,
+        "type": "fill",
+        "text": "The lowest price: £___ per person",
+        "answer": [
+         "125"
+        ],
+        "explanation": "\"the cheapest flight is 125 pounds each for a group booking of at least 10 people\" (280 bảng là giá cao nhất cho chuyến đi lẻ)"
+       },
+       {
+        "no": 2,
+        "type": "fill",
+        "text": "Each participant will be given a free ___ at the end of the flight",
+        "answer": [
+         "certificate"
+        ],
+        "explanation": "\"Upon completing the trip, we will provide each participant with a certificate and that is entirely free of charge\""
+       },
+       {
+        "no": 3,
+        "type": "fill",
+        "text": "The exact date can only be booked ___",
+        "answer": [
+         "online"
+        ],
+        "explanation": "\"But to pick a specific date, you must book online\" (đặt qua điện thoại được, nhưng không chọn được ngày cụ thể)"
+       },
+       {
+        "no": 4,
+        "type": "fill",
+        "text": "The balloon can fly a maximum height of ___ metres",
+        "answer": [
+         "1800",
+         "1,800",
+         "one thousand eight hundred"
+        ],
+        "explanation": "\"the highest altitude ever recorded for a ride is 1800 metres. But most rides stay below 300 metres\""
+       },
+       {
+        "no": 5,
+        "type": "fill",
+        "text": "There are no flights at ___",
+        "answer": [
+         "night",
+         "nights"
+        ],
+        "explanation": "\"Night flights are avoided due to weather conditions\""
+       },
+       {
+        "no": 6,
+        "type": "fill",
+        "text": "The best time of year to go is in ___",
+        "answer": [
+         "autumn",
+         "fall",
+         "the autumn"
+        ],
+        "explanation": "\"Autumn is the best time of year to take the trip\""
+       },
+       {
+        "no": 7,
+        "type": "fill",
+        "text": "Flights may be cancelled because of bad weather, e.g., ___",
+        "answer": [
+         "thunderstorm",
+         "thunderstorms",
+         "a thunderstorm"
+        ],
+        "explanation": "\"It can be quite dangerous to fly under bad weather conditions like a thunderstorm\""
+       },
+       {
+        "no": 8,
+        "type": "fill",
+        "text": "It is advised to wear a jacket and a ___",
+        "answer": [
+         "helmet"
+        ],
+        "explanation": "\"Wearing a helmet for safety concerns is also a good idea\""
+       },
+       {
+        "no": 9,
+        "type": "fill",
+        "text": "There is no ___ restriction for adults",
+        "answer": [
+         "age"
+        ],
+        "explanation": "\"an adult has no age limit as long as they meet the health requirements\""
+       },
+       {
+        "no": 10,
+        "type": "fill",
+        "text": "Participants must be able to ___ throughout the flight",
+        "answer": [
+         "stand"
+        ],
+        "explanation": "\"They must also stand unassisted for an hour during the flight. It is the required position during the whole flight\""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "section": 2,
+    "title": "Rivermead School – facilities open to the public",
+    "topic": "Education",
+    "offset": 472,
+    "transcript": "[07:52] Narrator: Part two. You will hear the head teacher of Rivermead School talking to a group of journalists about facilities at the school that are open to the general public. First, you have some time to look at questions 11 to 14.\n[08:39] Narrator: Now listen carefully and answer questions 11 to 14.\n[08:46] Head teacher: What I'd like to do at this meeting is to tell you a bit about the facilities that Rivermead School offers people in the community. I'd like to start by talking about the new theatre that we've just opened in our school. Its mission is to maximise opportunities for local audiences to experience productions of the highest quality, amongst other things. This will involve offering a place where professional drama companies in the area can perform. But there'll also be opportunities to host national and international companies, both those which are up and coming and those which have already established a reputation. The details of our first season's theatre programme are already online. I hope you'll agree that it looks very exciting. As well as music and dance, there'll be drama from modern writers. And there'll also be a high proportion of shows aimed at children and families. You will notice that there is one empty space in November. That's because the Chinese State Acrobatic Troupe have had to cancel their visit. But hopefully, we'll be able to announce a replacement very soon. Now, we're often asked about the theatre's sources of funding. Well, a limited amount of money will come from various government subsidies, but the bulk of the revenue will be generated by the sale of tickets, which is one reason why we'd be grateful for your help in promoting the work of the theatre. In addition, there are opportunities for individuals to support the theatre on a regular basis through its sponsorship scheme. The benefits to donors include access to rehearsals and to show previews. But the new theatre isn't the only facility which is open to everyone. The school also has a small museum. This holds various objects that were found when the ground was excavated to lay the foundations for the building, as well as other historical objects. Entrance to this is free. We also have a state-of-the-art sports hall. This is reserved for our students during term time, but anyone can use it in the school holidays. And our cafeteria is worth a visit. It has a varied menu, and it's open all day to visitors as well as staff and students.\n[11:28] Narrator: Before you hear the rest of the talk, you have some time to look at questions 15 to 20.\n[12:04] Narrator: Now listen and answer questions 15 to 20.\n[12:11] Head teacher: Right, I'll just point out some things on the map of the school campus I've given you. First of all, the theatre. That's opposite car park P2, on the south side. You're not allowed to park anywhere except in the car parks. There are two marked on your map, P1 and P2. But there's a new car park which has only just been completed, and that's at the most northern end of the campus. Some people might want to consider coming by bus. There's a good service from the city centre to the school, and the bus stops at the roundabout. That's where it turns round to go back, so you have to get off there. It doesn't go up as far as Park Road. Then to get to the sports hall, you take the right fork after the main entrance and just keep going past the classroom block. You have to go straight across the roundabout and it's further on, on the right-hand side of that road. Then there's the cafeteria. There are various ways to get there, because it's at the junction of Park Road and Rennies Drive, on the north side of Park Road. In nice weather you can sit outside to eat and admire the view. Then the museum is fairly central. Just go left after the main entrance, take the first turning on the right, and when you reach a junction the museum is facing you.\n[13:51] Narrator: That is the end of part two. You now have 30 seconds to check your answers to part two.",
+    "groups": [
+     {
+      "instruction": "Choose the correct letter, A, B or C.",
+      "context": "Rivermead School: facilities open to the public",
+      "questions": [
+       {
+        "no": 11,
+        "type": "mcq",
+        "text": "What is the main aim of the school's new theatre?",
+        "options": [
+         "to gain an international reputation",
+         "to give local people access to good performances",
+         "to provide support for talented amateur actors"
+        ],
+        "answer": 1,
+        "explanation": "\"Its mission is to maximise opportunities for local audiences to experience productions of the highest quality\""
+       },
+       {
+        "no": 12,
+        "type": "mcq",
+        "text": "The first season's theatre programme will include",
+        "options": [
+         "plays by modern writers",
+         "displays by Chinese acrobats",
+         "concerts performed by schoolchildren"
+        ],
+        "answer": 0,
+        "explanation": "\"As well as music and dance, there'll be drama from modern writers\" (đoàn xiếc Trung Quốc đã huỷ; trẻ em là khán giả chứ không biểu diễn)"
+       },
+       {
+        "no": 13,
+        "type": "mcq",
+        "text": "Most of the theatre's funding will come from",
+        "options": [
+         "sponsors",
+         "government grants",
+         "ticket sales"
+        ],
+        "answer": 2,
+        "explanation": "\"the bulk of the revenue will be generated by the sale of tickets\""
+       },
+       {
+        "no": 14,
+        "type": "mcq",
+        "text": "Which facility at the school is open to the public on a limited basis only?",
+        "options": [
+         "the sports hall",
+         "the museum",
+         "the cafeteria"
+        ],
+        "answer": 0,
+        "explanation": "\"This is reserved for our students during term time, but anyone can use it in the school holidays\""
+       }
+      ]
+     },
+     {
+      "instruction": "Label the map below. Choose the correct location for each place. (Không có hình bản đồ: các vị trí được mô tả bằng chữ, lấy từ lời chỉ đường; có 2 vị trí nhiễu.)",
+      "context": "Map of the Rivermead School campus – main entrance (with a fork: left and right), classroom block, a roundabout, car parks P1 and P2, Park Road and Rennies Drive.",
+      "bank": [
+       "at the junction of Park Road and Rennies Drive, on the north side of Park Road",
+       "at the roundabout",
+       "opposite car park P2, on the south side",
+       "next to car park P1",
+       "on the right-hand side of the road beyond the roundabout (past the classroom block)",
+       "at the most northern end of the campus",
+       "facing you at the junction reached by going left after the main entrance and taking the first turning on the right",
+       "just inside the main entrance, on the left"
+      ],
+      "questions": [
+       {
+        "no": 15,
+        "type": "match",
+        "text": "Theatre",
+        "answer": 2,
+        "explanation": "\"First of all, the theatre. That's opposite car park P2, on the south side\""
+       },
+       {
+        "no": 16,
+        "type": "match",
+        "text": "New car park",
+        "answer": 5,
+        "explanation": "\"there's a new car park which has only just been completed, and that's at the most northern end of the campus\""
+       },
+       {
+        "no": 17,
+        "type": "match",
+        "text": "Bus stop",
+        "answer": 1,
+        "explanation": "\"the bus stops at the roundabout. That's where it turns round to go back\""
+       },
+       {
+        "no": 18,
+        "type": "match",
+        "text": "Sports hall",
+        "answer": 4,
+        "explanation": "\"You have to go straight across the roundabout and it's further on, on the right-hand side of that road\""
+       },
+       {
+        "no": 19,
+        "type": "match",
+        "text": "Cafeteria",
+        "answer": 0,
+        "explanation": "\"it's at the junction of Park Road and Rennies Drive, on the north side of Park Road\""
+       },
+       {
+        "no": 20,
+        "type": "match",
+        "text": "Museum",
+        "answer": 6,
+        "explanation": "\"Just go left after the main entrance, take the first turning on the right, and when you reach a junction the museum is facing you\""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "section": 3,
+    "title": "Peter and Lynne discuss Professor Smith's article on online courses",
+    "topic": "Education",
+    "offset": 867,
+    "transcript": "[14:27] Narrator: Part three. You will hear two students named Peter and Lynne discussing Professor John Smith's article about online courses. First you have some time to look at questions 21 to 26.\n[15:11] Narrator: Now listen carefully and answer questions 21 to 26.\n[15:17] Peter: Lynne, I just finished reading Professor Smith's article about the benefits of online courses. What are your thoughts on the article?\n[15:25] Lynne: Hi, Peter. When I read that article, it was clear to me that Professor Smith does not favour the traditional methods of classroom teaching. Although I can certainly acknowledge that there are some advantages to online courses, I would say that internet courses are not always the best means for teaching and learning.\n[15:44] Peter: I think it's about time to revolutionise the old teaching style, though.\n[15:47] Lynne: But I would hope that students consider the negatives of online learning before enrolling in online courses.\n[15:53] Peter: This shouldn't be a big issue. Since online courses are so common these days, at least I won't struggle so much. And Professor Smith points out that computer learning is well suited for some courses, especially the technical courses.\n[16:09] Lynne: Unfortunately, that theory doesn't work for me.\n[16:12] Peter: What a shame. I got an A for the online computing course last year. Anyway, the next part is personal interaction. I think the personal interaction offered by traditional teaching is overrated in the article and doesn't have much value. I think it's a distraction, and the time could be better spent on the subject matter of the course.\n[16:33] Lynne: Oh, I disagree. Strongly. Peter, you're dismissing the benefits of face-to-face interaction between students and teachers in traditional classroom settings. The article says that learning is a two-way street, and it's much easier for students to learn if they can ask questions and have discussions with their teachers.\n[16:51] Peter: I'm still not sure about that. But online courses can foster students' technological skills. In learning the subject matter online, students will gain the technical know-how they'll need in their future endeavours.\n[17:04] Lynne: I can't agree more. What do you think Professor Smith means when he says online courses should be flexible in time?\n[17:11] Peter: That's the essential point of learning online: to allow those who can't attend courses at fixed times.\n[17:18] Lynne: I agree.\n[17:21] Narrator: Before you hear the rest of the discussion, you have some time to look at questions 27 to 30.\n[17:48] Narrator: Now listen, and answer questions 27 to 30.\n[17:54] Lynne: The second part of the article shares some thoughts about the use of the internet on campus, and I'm kind of lost in that part.\n[18:01] Peter: Well, I think what he's trying to say is that students are already accustomed to doing their research on the internet. Although some people say computers could be better used for other purposes, he emphasises that many teachers are already instructing students to use the computer as a research tool.\n[18:19] Lynne: Thanks for clarifying that. What about the next part saying that students are divided? Do you know what that means?\n[18:27] Peter: Well, it's certainly not that some students are afraid to use computers. They're already well accustomed to that.\n[18:34] Lynne: You're right about that. Most students already use the internet as their primary source for news and information.\n[18:41] Peter: Professor Smith probably intends to say that computers are not easily accessible and available to all students.\n[18:48] Lynne: Yes, not all students can afford computers. And as Professor Smith notes, with online courses, the student support system is already in place. Instead of asking fellow students or the professor for assistance, students would be able to get any information they need online, and this assistance would be available immediately.\n[19:09] Peter: So why do you think Professor Smith is recommending the use of computers as the school's main means of educating students? Do you think he is interested in reducing some of the fees associated with traditional classroom courses?\n[19:23] Lynne: I think it's all about the money. He is promoting online courses simply because he thinks it will enable the school to make more money.\n[19:30] Peter: I never thought of it that way.\n[19:32] Lynne: Many schools already have limited space for classrooms. If the school board wants to enrol more students, they can do that through distance learning mode instead of recruiting more teachers. The same course resources can be sold to both online and offline students. Plus, some computer companies are willing to financially support the schools that promote this type of learning.\n[19:56] Peter: I see. This is profitable in every sense. Alright. Now we'll have something to write about in the research paper.\n[20:05] Narrator: That's the end of part three. You now have 30 seconds to check your answers.",
+    "groups": [
+     {
+      "instruction": "Who agrees with the following statements in Professor Smith's article? Write the correct letter, A, B or C, next to questions 21–26.",
+      "bank": [
+       "Peter",
+       "Lynne",
+       "both Peter and Lynne"
+      ],
+      "questions": [
+       {
+        "no": 21,
+        "type": "match",
+        "text": "It brings teaching problems when based on old methods.",
+        "answer": 0,
+        "explanation": "Peter: \"I think it's about time to revolutionise the old teaching style, though.\" (Lynne cho rằng khoá học online \"not always the best means for teaching and learning\")"
+       },
+       {
+        "no": 22,
+        "type": "match",
+        "text": "Students should be cautious about applying for an online course.",
+        "answer": 1,
+        "explanation": "Lynne: \"I would hope that students consider the negatives of online learning before enrolling in online courses\" (Peter: \"This shouldn't be a big issue\")"
+       },
+       {
+        "no": 23,
+        "type": "match",
+        "text": "Computers can be applied to certain courses.",
+        "answer": 0,
+        "explanation": "Peter: \"Professor Smith points out that computer learning is well suited for some courses\"; Lynne: \"Unfortunately, that theory doesn't work for me.\""
+       },
+       {
+        "no": 24,
+        "type": "match",
+        "text": "The opinion about personal contact is not helpful.",
+        "answer": 0,
+        "explanation": "Peter: \"the personal interaction offered by traditional teaching is overrated in the article and doesn't have much value\"; Lynne: \"Oh, I disagree. Strongly.\""
+       },
+       {
+        "no": 25,
+        "type": "match",
+        "text": "Online courses come with technological development.",
+        "answer": 2,
+        "explanation": "Peter: \"online courses can foster students' technological skills\"; Lynne: \"I can't agree more.\""
+       },
+       {
+        "no": 26,
+        "type": "match",
+        "text": "Online courses should have more time flexibility.",
+        "answer": 2,
+        "explanation": "Peter: \"That's the essential point of learning online: to allow those who can't attend courses at fixed times.\" Lynne: \"I agree.\""
+       }
+      ]
+     },
+     {
+      "instruction": "Choose the correct letter, A, B or C.",
+      "questions": [
+       {
+        "no": 27,
+        "type": "mcq",
+        "text": "What does Professor Smith think of the usage of the Internet on campus?",
+        "options": [
+         "The students depend heavily on the internet.",
+         "Schools could make better use of computers.",
+         "Teachers should encourage students to use computers."
+        ],
+        "answer": 0,
+        "explanation": "\"students are already accustomed to doing their research on the internet\" (\"computers could be better used for other purposes\" là ý của \"some people\", không phải của giáo sư; câu này không có key, khá mơ hồ giữa A và C)"
+       },
+       {
+        "no": 28,
+        "type": "mcq",
+        "text": "What's the meaning of Professor Smith's term \"divided\"?",
+        "options": [
+         "Students tend to avoid using the computer.",
+         "Students don't have access to the computer.",
+         "Students are encouraged to use other useful resources."
+        ],
+        "answer": 1,
+        "explanation": "\"computers are not easily accessible and available to all students\" (\"it's certainly not that some students are afraid to use computers\")"
+       },
+       {
+        "no": 29,
+        "type": "mcq",
+        "text": "What kind of help does Professor Smith think students should get?",
+        "options": [
+         "classmates' help",
+         "online help",
+         "teachers' help"
+        ],
+        "answer": 1,
+        "explanation": "\"Instead of asking fellow students or the professor for assistance, students would be able to get any information they need online\""
+       },
+       {
+        "no": 30,
+        "type": "mcq",
+        "text": "What is Professor Smith's view on the purpose of introducing computers in school?",
+        "options": [
+         "for computer companies to sell computers more easily",
+         "for cutting other fees",
+         "a simple way to make profit"
+        ],
+        "answer": 2,
+        "explanation": "\"He is promoting online courses simply because he thinks it will enable the school to make more money\" (việc giảm học phí chỉ là câu hỏi của Peter)"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "section": 4,
+    "title": "Technology and education",
+    "topic": "Education",
+    "offset": 1212,
+    "transcript": "[20:12] Narrator: Section four. You will hear part of a lecture related to how technology contributes to education. First, you have some time to look at questions 31 to 40.\n[21:15] Narrator: Now listen carefully and answer questions 31 to 40.\n[21:20] Lecturer: Hello, and welcome to today's seminar about education. Education is a lifelong process. There is no limit on when to start and stop. And we have been using technology so much these days in each and every sector of our lives, including education. Have we ever taken out a second to wonder if it's leaving a positive impact on our work, or is it just that we have been relying on it so much that we've become used to it? Earlier, there was a lot of debate about technology and education amongst the faculty at our school; everyone had their own views. At first, some believed that the use of email between students and teachers made them interact with each other less, and this was not a good thing. But gradually, as technology was embraced by more educational institutes, they realised the importance of technology in education. Technology and education are a great combination, if used together with the right reason and vision. Moreover, there is a strong relationship with the local economy when it comes to the effectiveness of the use of IT in education. In the more developed areas, the schools and institutions have better access to more advanced technology, and the teachers are better trained to use the technology to improve the quality of their classes. In contrast, in some less developed regions and remote areas where technology is not so common, the effectiveness can't be guaranteed. However, wherever they are, the most common example of teachers using technology in education is the usage of computers in their teaching methods. In most classrooms, you can see teachers using computers to present teaching notes and other materials. This year, the IT School of Westbrook University has implemented a brand new education mode. Since its implementation, both teachers and students have been praising this new mode. It involves a kind of software which allows students as well as teachers to talk and discuss with each other more easily, and they said they enjoy this way of communication. Once more, the mode offers students a channel to post any work that they are proud of, whether it's a nice photograph that they take, a case study they do, a song they record, or even just a great idea they have. So it gives them a chance to showcase their strengths and build up their confidence. Many students use this feature to show the best of themselves. It also provides students an opportunity to choose what they learn on the internet, so they no longer have to sit in the classroom listening to something they are bored with. And they don't have to wait all night trying to register for their favourite elective courses. Compared with the traditional platform, it is more flexible.\n[24:54] Lecturer: The open source which the new mode provides is free for students to use when they are trying to look up online materials for their papers or research, and the data will not easily be found on the internet, because only registered users have access to the database. By the way, all the materials are original works of teachers or scholars, so there is no need to worry about the quality of the content. And with the overwhelming amount of unwanted information on the internet, this mode gives students a new search engine they can use on campus, so information like advertisements and sceptical sources will be filtered easily. This is a perfect example of new solutions to new problems. Apart from that, students can arrange their daily activities and improve their time management skills. By simply ticking the boxes in the timetable online, they can set up their own starting time and their deadline for each assignment based on statistics. The use of this function has a positive effect on the students who constantly procrastinate: by the end of the first term, the number of students who asked for extensions for their papers had decreased by 10%, which was quite an achievement. Another feature that seems very creative to me is that students can help people who have questions or problems relating to their field of studies on a special platform. They can even have some income by providing people with good solutions. So this new mode is making the most of IT.\n[26:30] Narrator: That is the end of section four. You now have half a minute to check your answers.",
+    "groups": [
+     {
+      "instruction": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+      "wordLimit": "ONE WORD ONLY",
+      "context": "Technology and Education",
+      "questions": [
+       {
+        "no": 31,
+        "type": "fill",
+        "text": "Some people believed ___ failed to help students interact with teachers",
+        "answer": [
+         "email",
+         "e-mail",
+         "emails"
+        ],
+        "explanation": "\"some believed that the use of email between students and teachers made them interact with each other less\""
+       },
+       {
+        "no": 32,
+        "type": "fill",
+        "text": "IT in education develops a tight ___ with local economy",
+        "answer": [
+         "relationship"
+        ],
+        "explanation": "\"there is a strong relationship with the local economy when it comes to the effectiveness of the use of IT in education\""
+       },
+       {
+        "no": 33,
+        "type": "fill",
+        "text": "Computers are commonly used to develop teaching ___",
+        "answer": [
+         "methods"
+        ],
+        "explanation": "\"the most common example of teachers using technology in education is the usage of computers in their teaching methods\""
+       },
+       {
+        "no": 34,
+        "type": "fill",
+        "text": "The new mode in the IT school of Westbrook University – Students enjoy the ___ with teachers.",
+        "answer": [
+         "communication"
+        ],
+        "explanation": "\"allows students as well as teachers to talk and discuss with each other more easily, and they said they enjoy this way of communication\""
+       },
+       {
+        "no": 35,
+        "type": "fill",
+        "text": "New technology builds up greater ___ for students",
+        "answer": [
+         "confidence"
+        ],
+        "explanation": "\"So it gives them a chance to showcase their strengths and build up their confidence\""
+       },
+       {
+        "no": 36,
+        "type": "fill",
+        "text": "Compared with traditional teaching, the new way is more ___",
+        "answer": [
+         "flexible"
+        ],
+        "explanation": "\"Compared with the traditional platform, it is more flexible\""
+       },
+       {
+        "no": 37,
+        "type": "fill",
+        "text": "It offers students quality ___",
+        "answer": [
+         "materials",
+         "content"
+        ],
+        "explanation": "\"all the materials are original works of teachers or scholars, so there is no need to worry about the quality of the content\" (chấp nhận materials / content)"
+       },
+       {
+        "no": 38,
+        "type": "fill",
+        "text": "It is seen as new solutions to new ___",
+        "answer": [
+         "problems"
+        ],
+        "explanation": "\"This is a perfect example of new solutions to new problems\""
+       },
+       {
+        "no": 39,
+        "type": "fill",
+        "text": "It nurtures ___ management skills",
+        "answer": [
+         "time"
+        ],
+        "explanation": "\"students can arrange their daily activities and improve their time management skills\""
+       },
+       {
+        "no": 40,
+        "type": "fill",
+        "text": "It also provides students a source of ___",
+        "answer": [
+         "income"
+        ],
+        "explanation": "\"They can even have some income by providing people with good solutions\""
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "reading": [
+  {
+   "passage": 1,
+   "title": "The Blockbuster Phenomenon: a new museum trend",
+   "topic": "Art & Culture",
+   "level": "medium",
+   "passage_text": "Museums in Australia, like other pleasure-giving public organisations, are adapting their activities so that they more closely reflect the marketplace.\n\nA\nSince the 1980s, the term \"blockbuster\" has become the fashionable word for spectacular, high-profile museum exhibitions that have the ability to attract large crowds. A blockbuster is a \"large-scale loan exhibition that people who normally don't go to museums will stand in line for hours to see\" (Elsen 1984). Once the museum that created the exhibition has shown it to their local market, it can be offered to other organisations for a fee. This means that you can boost your own door takings and make money from boosting someone else's door takings.\n\nB\nWhile partaking of the excitement of the blockbuster, visitors thus lured are likely to stay longer at the museum. Betty Churcher, when Director of the Australian National Gallery, summed up the new blockbuster creed as follows: \"The bonus of the blockbuster exhibitions is that people come to see the blockbuster and they stay to look at the permanent collection, so you are getting broader exposure for your collection.\"\n\nC\nMuseums across the UK, USA, Canada and Australia currently operate under a system of plural funding: revenue raised through contributions by federal, state and/or local governments, combined with revenue raised through admission charges and other activities. Maintaining and increasing visitor levels is thus paramount and involves not only creating or hiring blockbuster exhibitions, but providing regular exhibition changes and innovations. In addition, the visiting public have become known as customers rather than visitors, and the skills that are valued in museums to keep the new customers coming through the door have changed. Curators are now administrators and being a museum director no longer requires an Arts degree – but public relations skills are essential if the museum is going to compete with other museums to stage travelling exhibitions which draw huge crowds.\n\nD\nThe convergence of museums, the heritage industry, tourism, profit-making and pleasure-giving has resulted in the new \"museology\". This has given rise to much debate about whether it is appropriate to see museums primarily as tourist attractions. In literature from both the UK and USA, the words that are starting to appear in some descriptions of blockbusters are \"less scholarly\", \"non-elitist\" and \"popularist\", while others extol the virtues of encouraging scholars to co-operate on projects, and to provide exhibitions that cater for a broad selection of the community rather than an elite sector. Whatever commentators may think, managers of museums worldwide are looking for artful ways to blend culture and commerce, and blockbuster exhibitions are at the top of the list.\n\nE\nBut do blockbusters held in public institutions really create a surplus to fund other activities? If the bottom line is profit, then according to the records of many major museums blockbusters do make money. For museums in some countries, it may be the money that they require to replace parts of their collections or to fix buildings that are in need of attention. For some museums in Australia, it may be the opportunity to illustrate that they are attempting to pay their way by recovering part of their operating costs. Also, creating or hiring a blockbuster has many positive spin-offs: blockbusters mean crowds, and crowds are good for the local economy, provide increased trade for shops, hotels, restaurants, the transport industry and retailers. The arrangement that the arts provide sustained economic benefits has been well illustrated in impact studies in the USA and UK.\n\nF\nHowever, blockbusters require large capital expenditure, and draw on resources across all branches of an organisation, and the costs don't end there. There is a Human Resource Management cost in addition to a measurable \"real\" dollar cost. Receiving a touring exhibition draws resources from across functional management structures in project management style. Everyone, from general labourers to building services, front of house, technical, promotional, educational and administrative staff, is required to perform additional tasks. Furthermore, as an increasing number of institutions try their hand at increasing visitor numbers and memberships (and therefore revenue) by staging blockbuster exhibitions, it may be less likely that blockbusters will continue to provide a surplus to subsidise other activities due to the competitive nature of the market.\n\nG\nIt has been illustrated in both the UK and USA that the blockbuster ideology has resulted in the false expectation that the momentum required to stage blockbusters can be maintained continually. Creating, mounting or hiring blockbusters is exhausting, with the real costs throughout an institution difficult to calculate. Secondly, as some analysts have argued, the \"shop-keeping\" mentality and cost-benefit analysis and a pure concentration on the bottom line can squeeze substance out of an exhibition. Taking out substance can be a recipe for blockbuster failure and therefore financial failure.\n\nH\nPerhaps the best pathway to take is one that balances both blockbusters and regular exhibitions. However, this easy middle ground may only work if you have enough space, and have alternate sources of funding to continue to support the regular, less exciting fare. Perhaps the advice should be to make sure that you find out what your local community wants from you and make sure that your regular activities and exhibitions are more enduring.",
+   "groups": [
+    {
+     "instruction": "Reading Passage 1 has eight paragraphs, A–H. Which paragraph contains the following information? NB You may use any letter more than once.",
+     "bank": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+     ],
+     "questions": [
+      {
+       "no": 1,
+       "type": "match",
+       "text": "the reason why museum directors need to constantly alter and update their exhibits",
+       "answer": 2,
+       "explanation": "\"Maintaining and increasing visitor levels is thus paramount and involves not only creating or hiring blockbuster exhibitions, but providing regular exhibition changes and innovations.\""
+      },
+      {
+       "no": 2,
+       "type": "match",
+       "text": "mention of the length of time people will queue up to see a blockbuster",
+       "answer": 0,
+       "explanation": "\"A blockbuster is a 'large-scale loan exhibition that people who normally don't go to museums will stand in line for hours to see'\""
+      },
+      {
+       "no": 3,
+       "type": "match",
+       "text": "terms that people have used when referring to blockbusters",
+       "answer": 3,
+       "explanation": "\"the words that are starting to appear in some descriptions of blockbusters are 'less scholarly', 'non-elitist' and 'popularist'\""
+      },
+      {
+       "no": 4,
+       "type": "match",
+       "text": "the various ways that institutions like museums get financial support",
+       "answer": 2,
+       "explanation": "\"Museums … currently operate under a system of plural funding: revenue raised through contributions by federal, state and/or local governments, combined with revenue raised through admission charges and other activities.\""
+      }
+     ]
+    },
+    {
+     "instruction": "Complete the sentences below. Choose NO MORE THAN THREE WORDS from the passage for each answer.",
+     "wordLimit": "NO MORE THAN THREE WORDS",
+     "questions": [
+      {
+       "no": 5,
+       "type": "fill",
+       "text": "These days, museum visitors tend to be referred to as ___",
+       "answer": [
+        "customers"
+       ],
+       "explanation": "\"the visiting public have become known as customers rather than visitors\""
+      },
+      {
+       "no": 6,
+       "type": "fill",
+       "text": "Museum curators now need ___ rather than academic qualifications",
+       "answer": [
+        "public relations skills",
+        "public relation skills",
+        "public relations"
+       ],
+       "explanation": "\"being a museum director no longer requires an Arts degree – but public relations skills are essential\""
+      },
+      {
+       "no": 7,
+       "type": "fill",
+       "text": "The linking of a range of public institutions that entertain the public is known as ___",
+       "answer": [
+        "museology",
+        "the new museology",
+        "new museology"
+       ],
+       "explanation": "\"The convergence of museums, the heritage industry, tourism, profit-making and pleasure-giving has resulted in the new 'museology'.\""
+      },
+      {
+       "no": 8,
+       "type": "fill",
+       "text": "There is discussion about whether museums can be regarded in the same way as other ___",
+       "answer": [
+        "tourist attractions"
+       ],
+       "explanation": "\"This has given rise to much debate about whether it is appropriate to see museums primarily as tourist attractions.\""
+      }
+     ]
+    },
+    {
+     "instruction": "Choose TWO letters, A–E. Which TWO of the following are mentioned by the writer as advantages of blockbusters?",
+     "questions": [
+      {
+       "no": 9,
+       "type": "multi",
+       "text": "Which TWO of the following are mentioned by the writer as advantages of blockbusters?",
+       "options": [
+        "Some of the money they raise can be used for structural repairs.",
+        "They can provide funds to help support amateur artists.",
+        "Local services benefit from the extra business they bring about.",
+        "They encourage overseas workers into the local area.",
+        "They raise employee performance levels."
+       ],
+       "answer": [
+        0,
+        2
+       ],
+       "explanation": "\"it may be the money that they require to replace parts of their collections or to fix buildings that are in need of attention\"; \"crowds are good for the local economy, provide increased trade for shops, hotels, restaurants, the transport industry and retailers\""
+      }
+     ]
+    },
+    {
+     "instruction": "Choose THREE letters, A–G. Which THREE of the following are mentioned by the writer as disadvantages of blockbusters?",
+     "questions": [
+      {
+       "no": 11,
+       "type": "multi",
+       "text": "Which THREE of the following are mentioned by the writer as disadvantages of blockbusters?",
+       "options": [
+        "They do not suit museum management styles.",
+        "Specialist business advice has to be paid for.",
+        "They involve an increased workload for personnel.",
+        "They do not increase overall annual visitor numbers.",
+        "They are very tiring to put on.",
+        "What is popular in one country may not be popular in another.",
+        "The content can be weakened through financial pressure."
+       ],
+       "answer": [
+        2,
+        4,
+        6
+       ],
+       "explanation": "\"Everyone, from general labourers to … administrative staff, is required to perform additional tasks\"; \"Creating, mounting or hiring blockbusters is exhausting\"; \"a pure concentration on the bottom line can squeeze substance out of an exhibition\""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage": 2,
+   "title": "Saving the Bittern",
+   "topic": "Environment",
+   "level": "easy",
+   "passage_text": "A\nThe bittern, a British waterbird, does not have a good record as far as survival is concerned. By 1886, habitat destruction and other pressures had pushed it close to extinction. Fortunately, it recovered a few decades later, and in 1950 the numbers of mature male bitterns rose to a peak of about 70. By the 1980s, however, it was clear that the bird was in trouble again. The bittern needs extensive wet reedbeds to survive, and long periods of drainage, pollution and lack of management had destroyed most of its habitat. By 1997, it again faced imminent extinction. To prevent this, the British government set up a plan for the bittern, aiming to establish a population of 50 males by 2010. However, this target was reached six years early, a rate of recovery faster than anyone had dared hope for. We at the Royal Society for the Protection of Birds (RSPB) now claim the bittern as one of Britain's greatest wildlife success stories, since figures reveal that the number of these rare birds has increased fivefold in just seven years.\n\nB\nBitterns have feathers that help them to conceal themselves and a shy nature; they usually remain hidden within the cover of reedbed vegetation. Our first challenge was to develop standard methods to monitor their numbers. The booming call of the male bittern is its most distinctive feature during the breeding season, and we developed a method to count them using the sound patterns unique to each individual. This not only allowed us to be much more certain of the number of booming males in the UK, but also enabled us to estimate local survival of males from one year to the next.\n\nC\nOur first direct understanding of what breeding bitterns require in their ideal habitat came from comparisons of reedbed sites that had lost their male birds with those that retained them. This research showed that bitterns had been retained in reedbeds where the natural process of drying out had been slowed through management. Based on this work, broad recommendations on how to manage and rehabilitate reedbeds for bitterns were made, and funding was provided through a European Union (EU) wildlife fund to manage 13 sites within the core breeding range.\n\nD\nTo refine these recommendations and provide fine-scale, quantitative habitat prescriptions on the bitterns' preferred feeding habitat, we started radio-tracking male bitterns on the RSPB's Minsmere and Leighton Moss reserves. This showed clear preferences for feeding in the wetter reedbed areas, particularly within reedbed next to larger open pools. The average home range sizes of the male bitterns we followed (about 20 hectares) provided a good indication of the area of reedbed necessary when managing or creating habitat for this species. Female bitterns undertake all the incubation and care of the young, so it was important to understand their requirements as well. Over the course of our research, we located 87 bittern nests and found that female bitterns preferred to nest in areas of continuous vegetation, well into the reedbed, but where water was still present during the driest part of the breeding season.\n\nE\nThe success of the habitat prescriptions developed from this research has been spectacular. For instance, at Minsmere, male bittern numbers gradually increased from one to ten following reedbed lowering, a management technique designed to halt the drying out process. After a low point of 11 mature males in 1997, bittern numbers in Britain responded to all the habitat management work and started to increase for the first time since 1950.\n\nF\nThe final phase of research involved understanding the diet, survival and dispersal of bittern chicks. To do this we fitted small radio tags to young bittern chicks in the nest, to determine their fate through to fledging, when they begin to fly, and beyond. Many chicks did not survive to this stage, and starvation was found to be the most likely reason for their demise. The fish prey fed to chicks was mainly those species penetrating into the reed edge. So, an important element of recent studies has been the development of recommendations on habitat and water conditions to promote native fish populations. Once independent, radio-tagged young bitterns were found to seek out new sites during their first winter; a proportion of these would remain on new sites to breed if the conditions were suitable. A second EU-funded project aims to provide these suitable sites in new areas. A network of 19 sites developed through this partnership project will secure a more sustainable UK bittern population with successful breeding outside of the core area, less vulnerable to chance events and sea level rise.\n\nG\nBy 2004, the number of booming male bitterns in the UK had increased to 55. Almost all of the increase occurred on those sites undertaking management based on advice derived from our research. While rescuing the bittern, the work has helped a range of other spectacular wetland species such as otters. Although science has been at the core of the bittern story, success has only been achieved through the trust, hard work and dedication of all the managers, owners and wardens of sites that have implemented, in some cases very drastic, management to secure the future of this wetland species in the UK.",
+   "groups": [
+    {
+     "instruction": "Reading Passage 2 has seven paragraphs, A–G. Choose the correct heading for each paragraph from the list of headings below.",
+     "bank": [
+      "i – Fluctuations in bittern numbers over time",
+      "ii – Research findings on habitat needs of adult bitterns",
+      "iii – Predators in the natural world",
+      "iv – The importance in the natural world",
+      "v – Initial habitat investigation and decisions",
+      "vi – The need for co-operation to ensure nature preservation",
+      "vii – Impressive results of initial intervention",
+      "viii – Determining how many bitterns there are",
+      "ix – Education as the key to preserving wildlife"
+     ],
+     "questions": [
+      {
+       "no": 14,
+       "type": "match",
+       "text": "Paragraph A",
+       "answer": 0,
+       "explanation": "\"By 1886, habitat destruction and other pressures had pushed it close to extinction. Fortunately, it recovered a few decades later … By the 1980s, however, it was clear that the bird was in trouble again.\""
+      },
+      {
+       "no": 15,
+       "type": "match",
+       "text": "Paragraph B",
+       "answer": 7,
+       "explanation": "\"Our first challenge was to develop standard methods to monitor their numbers.\""
+      },
+      {
+       "no": 16,
+       "type": "match",
+       "text": "Paragraph C",
+       "answer": 4,
+       "explanation": "\"Our first direct understanding of what breeding bitterns require in their ideal habitat came from comparisons of reedbed sites … Based on this work, broad recommendations … were made\""
+      },
+      {
+       "no": 17,
+       "type": "match",
+       "text": "Paragraph D",
+       "answer": 1,
+       "explanation": "\"This showed clear preferences for feeding in the wetter reedbed areas … female bitterns preferred to nest in areas of continuous vegetation\""
+      },
+      {
+       "no": 18,
+       "type": "match",
+       "text": "Paragraph E",
+       "answer": 6,
+       "explanation": "\"The success of the habitat prescriptions developed from this research has been spectacular.\""
+      },
+      {
+       "no": 19,
+       "type": "match",
+       "text": "Paragraph F",
+       "answer": 3,
+       "explanation": "\"The final phase of research involved understanding the diet, survival and dispersal of bittern chicks.\" (heading iv in trong đề gốc là \"The importance in the natural world\", có vẻ bị in sai/mất chữ; key trong file giải thích vẫn chọn iv cho đoạn F)"
+      },
+      {
+       "no": 20,
+       "type": "match",
+       "text": "Paragraph G",
+       "answer": 5,
+       "explanation": "\"success has only been achieved through the trust, hard work and dedication of all the managers, owners and wardens of sites\""
+      }
+     ]
+    },
+    {
+     "instruction": "Answer the questions below. Choose ONE WORD AND/OR A NUMBER from the passage for each answer.",
+     "wordLimit": "ONE WORD AND/OR A NUMBER",
+     "questions": [
+      {
+       "no": 21,
+       "type": "fill",
+       "text": "When was the bittern population largest? ___",
+       "answer": [
+        "1950",
+        "in 1950"
+       ],
+       "explanation": "\"in 1950 the numbers of mature male bitterns rose to a peak of about 70\""
+      },
+      {
+       "no": 22,
+       "type": "fill",
+       "text": "What word is used in the passage to describe the bittern's character? ___",
+       "answer": [
+        "shy"
+       ],
+       "explanation": "\"Bitterns have feathers that help them to conceal themselves and a shy nature\""
+      },
+      {
+       "no": 23,
+       "type": "fill",
+       "text": "What is probably the main cause of death of bittern chicks? ___",
+       "answer": [
+        "starvation"
+       ],
+       "explanation": "\"starvation was found to be the most likely reason for their demise\""
+      },
+      {
+       "no": 24,
+       "type": "fill",
+       "text": "What food supply do bittern chicks depend on? ___",
+       "answer": [
+        "fish"
+       ],
+       "explanation": "\"The fish prey fed to chicks was mainly those species penetrating into the reed edge.\""
+      },
+      {
+       "no": 25,
+       "type": "fill",
+       "text": "What other creature mentioned in the passage has also benefited from improvements made to the bittern's habitat? ___",
+       "answer": [
+        "otters",
+        "otter"
+       ],
+       "explanation": "\"the work has helped a range of other spectacular wetland species such as otters\""
+      }
+     ]
+    },
+    {
+     "instruction": "Choose the correct letter, A, B, C or D.",
+     "questions": [
+      {
+       "no": 26,
+       "type": "mcq",
+       "text": "What is the main theme of Reading Passage 2?",
+       "options": [
+        "how one species may be helped at the expense of another",
+        "disagreement among environmentalists on methods to protect species from extinction",
+        "fighting the destruction of wetland reedbeds",
+        "how research and good management can save an endangered species"
+       ],
+       "answer": 3,
+       "explanation": "\"Although science has been at the core of the bittern story, success has only been achieved through the trust, hard work and dedication of all the managers, owners and wardens of sites\""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage": 3,
+   "title": "The Placebo Effect",
+   "topic": "Health",
+   "level": "hard",
+   "passage_text": "With the right encouragement, your mind can convince the body to heal itself. What is the mysterious force that can do this?\n\nWant to devise a new form of alternative medical treatment? No problem. Here's the recipe. As a practitioner, be warm, sympathetic, reassuring and enthusiastic. Your treatment should involve physical contact, and each session with your patients should take at least half an hour. Encourage your patients to take an active part in their treatment and understand how their disorders relate to the rest of their lives. Tell them that their own bodies possess the true power to heal. Get them to pay you well. Describe your treatment in familiar words, but embroidered with a hint of mysticism: energy fields, energy flows, energy blocks, meridians, forces, auras, rhythms and the like. Refer to the knowledge of an earlier age: wisdom carelessly swept aside by the rise of blind mechanistic science. Oh, come off it, you're saying. Something like that couldn't possibly work, could it?\n\nWell yes, it could – and often well enough to earn you a living. And a very good living if you are sufficiently convincing or, better still, really believe in your therapy. Many illnesses get better on their own, so if you are lucky and administer your treatment at just the right time you'll get the credit. But that's only part of it. Some of the improvement really would be down to you. Not necessarily because you'd recommended ginseng rather than chamomile tea or used this crystal as opposed to that pressure point. Nothing so specific. Your healing power would be the outcome of a paradoxical force that conventional medicine recognises but remains oddly ambivalent about: the placebo effect.\n\nPlacebos are treatments that have no direct effect on the body, yet still work because the patient has faith in their power to heal. Most often the term refers to a dummy pill, but it applies just as much to any device or procedure, from a sticking plaster to a crystal. The existence of the placebo effect implies that even a complete fraud could make a difference to someone's health, which is why some practitioners of alternative medicine are sensitive about any mention of the subject. In fact, the placebo is a powerful part of all medical care, orthodox or otherwise, though its role is often neglected and misunderstood.\n\nAt one level, it should come as no surprise that our state of mind can influence our physiology: anger opens the superficial blood vessels of the face; sadness pumps the tear glands. But exactly how placebos work their medical magic is still largely unknown. Most of the scant research to date has focused on the control of pain, because it's one of the commonest complaints and lends itself to experimental study. Here, attention has turned to the endorphins, natural substances produced in the brain that are known to help control pain. \"Any of the neurochemicals involved in transmitting pain impulses or modulating them might also be involved in generating the placebo response,\" says Don Price, an oral surgeon at the University of Florida.\n\nThat case has been strengthened by the recent work of Fabrizio Benedetti of the University of Turin, who showed that the placebo effect can be abolished by a drug, naloxone, which blocks the effects of endorphins. Benedetti induced pain with a pressure cuff on the forearm. He did this several times a day for several days, using morphine each time to control the pain. On the final day, without saying anything, he replaced the morphine with a saline solution. This still relieved the subjects' pain: a placebo effect. But when he added naloxone to the saline, and blocked the endorphins, the pain relief disappeared. Here was direct proof that the relief of pain by a placebo is carried out, at least in part, by these natural opiates.\n\nThough scientists don't know exactly how placebos work, they have accumulated a fair bit of knowledge about how to trigger the effect. A London rheumatologist found, for example, that red dummy capsules made more effective painkillers than blue, green or yellow ones. Research on American students revealed that blue pills make better tranquillisers than pink, a colour more suitable for stimulants. Even branding can make a difference: if Aspro or Tylenol are what you like to take for a headache, their chemically identical generic equivalents may be less effective.\n\nIt matters too how the treatment is delivered. Decades ago, when the major tranquilliser chlorpromazine was being introduced, a doctor in Kansas categorised his colleagues according to whether they were keen on it, openly sceptical of its benefits, or took a let's-try-and-see attitude. His conclusion: the more enthusiastic the doctor, the better the drug performed. A recent survey by Ernst on doctors' bedside manners turned up one consistent finding: physicians who adopt a warm, friendly, reassuring manner are more effective than those whose consultations are formal and do not offer reassurance.\n\nWarm, friendly and reassuring are precisely what alternative treatment is all about, of course. Many of the ingredients of that opening recipe – the physical contact, the generous swathes of time, the strong hints of supernormal healing power – are just the kind of thing likely to impress patients. It's hardly surprising, then, that complementary practitioners are generally best at mobilising the placebo effect, says Arthur Kleinman, professor of social anthropology at Harvard University.",
+   "groups": [
+    {
+     "instruction": "Complete each sentence with the correct ending, A–H, below.",
+     "bank": [
+      "should be easy to understand",
+      "can improve without treatment",
+      "can cost the patient less",
+      "ought to last a minimum length of time",
+      "can require a range of different products",
+      "can be described as serious",
+      "should give it greater recognition",
+      "should be able to get a high income"
+     ],
+     "questions": [
+      {
+       "no": 27,
+       "type": "match",
+       "text": "An appointment with an alternative practitioner",
+       "answer": 3,
+       "explanation": "\"each session with your patients should take at least half an hour\""
+      },
+      {
+       "no": 28,
+       "type": "match",
+       "text": "An alternative practitioner's explanation of their treatment",
+       "answer": 0,
+       "explanation": "\"Describe your treatment in familiar words, but embroidered with a hint of mysticism\""
+      },
+      {
+       "no": 29,
+       "type": "match",
+       "text": "If alternative practitioners have faith in their treatment, they",
+       "answer": 7,
+       "explanation": "\"And a very good living if you are sufficiently convincing or, better still, really believe in your therapy.\""
+      },
+      {
+       "no": 30,
+       "type": "match",
+       "text": "Quite often, a patient's illness",
+       "answer": 1,
+       "explanation": "\"Many illnesses get better on their own\""
+      },
+      {
+       "no": 31,
+       "type": "match",
+       "text": "Conventional doctors are aware of the placebo effect and they",
+       "answer": 6,
+       "explanation": "\"a paradoxical force that conventional medicine recognises but remains oddly ambivalent about\"; \"its role is often neglected and misunderstood\""
+      }
+     ]
+    },
+    {
+     "instruction": "Choose the correct letter, A, B, C or D.",
+     "questions": [
+      {
+       "no": 32,
+       "type": "mcq",
+       "text": "In the third paragraph, the writer says that the placebo effect",
+       "options": [
+        "works best in tablet form.",
+        "is a new type of medical treatment.",
+        "is trusted more by some patients than others.",
+        "has a significant role in both alternative and conventional medicine."
+       ],
+       "answer": 3,
+       "explanation": "\"In fact, the placebo is a powerful part of all medical care, orthodox or otherwise, though its role is often neglected and misunderstood.\""
+      },
+      {
+       "no": 33,
+       "type": "mcq",
+       "text": "A reference is made to anger and sadness in order to show that",
+       "options": [
+        "personal feelings can alter our physical condition.",
+        "some human behaviour has no clear explanation.",
+        "placebos, like emotions, are experienced by everyone.",
+        "people find some physical reactions hard to control."
+       ],
+       "answer": 0,
+       "explanation": "\"it should come as no surprise that our state of mind can influence our physiology: anger opens the superficial blood vessels of the face; sadness pumps the tear glands\""
+      },
+      {
+       "no": 34,
+       "type": "mcq",
+       "text": "Fabrizio Benedetti's research on endorphins indicates that",
+       "options": [
+        "they are widely used to regulate pain.",
+        "they can be produced by wilful thoughts.",
+        "they can be neutralised by introducing naloxone.",
+        "their pain-relieving effects do not last long enough."
+       ],
+       "answer": 2,
+       "explanation": "\"But when he added naloxone to the saline, and blocked the endorphins, the pain relief disappeared.\" (Câu 34 bị thiếu trong đề PDF; câu hỏi và phương án được dựng lại theo bản công khai của cùng bài đọc, khớp với key C trong file giải thích.)"
+      }
+     ]
+    },
+    {
+     "instruction": "Do the following statements agree with the claims of the writer in Reading Passage 3? Write YES, NO or NOT GIVEN.",
+     "questions": [
+      {
+       "no": 35,
+       "type": "ynng",
+       "text": "Scientists now have enough information to understand how the placebo effect becomes active in people.",
+       "answer": "NO",
+       "explanation": "\"Though scientists don't know exactly how placebos work\"; \"But exactly how placebos work their medical magic is still largely unknown.\""
+      },
+      {
+       "no": 36,
+       "type": "ynng",
+       "text": "As a result of experiments, some painkillers have been taken off the market.",
+       "answer": "NOT GIVEN",
+       "explanation": "\"A London rheumatologist found, for example, that red dummy capsules made more effective painkillers than blue, green or yellow ones.\" (bài không nhắc việc thuốc giảm đau bị rút khỏi thị trường)"
+      },
+      {
+       "no": 37,
+       "type": "ynng",
+       "text": "Individual preference can have an impact on the effectiveness of different brands of headache tablet.",
+       "answer": "YES",
+       "explanation": "\"if Aspro or Tylenol are what you like to take for a headache, their chemically identical generic equivalents may be less effective\""
+      },
+      {
+       "no": 38,
+       "type": "ynng",
+       "text": "Doctors expressed a range of views on the drug chlorpromazine when it was first introduced.",
+       "answer": "YES",
+       "explanation": "\"a doctor in Kansas categorised his colleagues according to whether they were keen on it, openly sceptical of its benefits, or took a let's-try-and-see attitude\""
+      },
+      {
+       "no": 39,
+       "type": "ynng",
+       "text": "Ernst's study had a big influence on doctors' behaviour with patients.",
+       "answer": "NOT GIVEN",
+       "explanation": "\"A recent survey by Ernst on doctors' bedside manners turned up one consistent finding\" (bài không nói khảo sát này ảnh hưởng đến cách bác sĩ cư xử)"
+      },
+      {
+       "no": 40,
+       "type": "ynng",
+       "text": "Alternative practitioners work in a way that is likely to trigger the placebo effect.",
+       "answer": "YES",
+       "explanation": "\"It's hardly surprising, then, that complementary practitioners are generally best at mobilising the placebo effect\""
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "writing": []
+}

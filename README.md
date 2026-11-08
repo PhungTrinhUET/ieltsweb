@@ -115,9 +115,10 @@ public/audio/vol<N>/test<M>/s1..s4.mp3 (+ .srt)   ← npm run audio
 | Bộ | Trạng thái |
 |---|---|
 | VOL 1–4 | Xong 40 đề. VOL 4 Test 5 không có audio; Test 7 (Q15–20) và Test 9 (Section 1) thiếu transcript; Writing của VOL 4 trùng VOL 3 nên bỏ qua |
-| VOL 5 | Xong Test 1–6. Còn Test 7–10, thư mục Writing và "Speaking quý 1.2024" |
-| VOL 6–8 | Chưa làm |
-| Speaking | 44 bộ (forecast 2023 Q1, Q2 và "gộp đề ver 1") |
+| VOL 5 | Xong 10 đề + 19 đề Writing lẻ (`writing-bank.json`) |
+| VOL 6 | Đang làm (Test 2–3 xong). Listening VOL 6 không có transcript, đáp án theo L-key |
+| VOL 7–8 | Chưa làm |
+| Speaking | 131 bộ (forecast 2023 Q1, Q2, "gộp đề ver 1" và 2024 Q1) |
 
 Lưu ý về chất lượng dữ liệu:
 - VOL 5 không kèm key Listening, nên đáp án được suy từ transcript.

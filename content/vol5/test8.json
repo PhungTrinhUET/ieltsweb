@@ -1,0 +1,940 @@
+{
+ "vol": 5,
+ "test": 8,
+ "source": "ORIGINAL IELTS PAPERS – VOL 5, Test 8 (audio: P1–P4). Listening: đề lấy từ \"Test 8- up.pdf\", transcript tự động \"test 8- transcripts.pdf\" (đã phân lại vai người nói, sửa lỗi nhận dạng như \"boss\" → bus, \"Munna/Moon Island\" → Muna Island; một số mốc thời gian bị thiếu đã ước lượng). VOL 5 không có key Listening nên đáp án Listening được suy từ transcript. Reading: đề \"TEST 8-up.pdf\" và key trong \"explanation - 8.pdf\"; đã sửa vài lỗi OCR nhỏ (vd. \"yearns regain\" → \"yearns to regain\", lặp chữ ở đoạn Tang Dynasty). Bộ đề không có Writing.",
+ "listening": {
+  "audioDir": "audio/vol5/test8",
+  "timingNote": "Transcript gốc là dòng thời gian liên tục; offset ước lượng S2 6:30, S3 13:53, S4 21:28 (S1 bắt đầu 0:00 gồm cả lời giới thiệu bài thi). Một số mốc trong transcript gốc bị thiếu nên được ước lượng.",
+  "sections": [
+   {
+    "section": 1,
+    "title": "Eco-farm holiday – phone enquiry",
+    "topic": "Travel",
+    "offset": 0,
+    "transcript": "[00:00] Narrator: This is the IELTS listening test. You will hear a number of different recordings, and you will have to answer questions on what you hear. There will be time for you to read the instructions and questions, and you will have a chance to check your work. All the recordings will be played once only. The test is in four parts. At the end of the test, you will be given 10 minutes to transfer your answers to the answer sheet. Now turn to part one. Part one. You will hear a woman telephoning an eco-farm. First, you have some time to look at questions one to five.\n[01:13] Narrator: Now listen carefully and answer questions one to five.\n[01:19] Mark: Good afternoon. Lakeside Eco-farm, Mark speaking.\n[01:24] Helen: Oh, good afternoon. My name is Helen. I was listening to a programme the other day, and it said that you are a member of the Northern Hotel Group.\n[01:33] Mark: Yes, that's correct. Are you a member of the group?\n[01:37] Helen: Yes, I am. And I would like to find out about staying with you for a week during the school holidays.\n[01:43] Mark: No problem, Helen. May I have your full name?\n[01:46] Helen: Helen Pennington. That's P-E-double N-I-N-G-T-O-N.\n[01:53] Mark: Thank you, Helen. And your email address?\n[01:57] Helen: helen123@email.com. No dashes or underscores. Oh, sorry. Actually, it's probably better if I give you my work email address, which is more convenient for me. That is helen123@greenfield.com. And Greenfield is one word.\n[02:16] Mark: Okay. And your home address?\n[02:19] Helen: It is 66 Lake Road, Sheffield.\n[02:23] Mark: May I ask where you heard about us? You mentioned a programme. Is it on TV, or…?\n[02:28] Helen: Actually, I heard about you on the radio, and I thought it might be a good place to take my children during the summer holidays. What kind of activities do you have?\n[02:39] Mark: Well, here we have lodges in the woods, a couple of lakes, lots of activities and great food, so I'm sure your whole family will love it. I can give you prices for all these, but first, could I have your membership number?\n[02:55] Helen: Oh yes, I think it's UK 765042 G, but I will just check. It has been a while since I used it. Just a moment… Ah, actually it is UK 765024 EG.\n[03:12] Mark: That's fine. Thank you.\n[03:15] Narrator: Before you hear the rest of the conversation, you have some time to look at questions six to ten.\n[03:48] Narrator: Now listen carefully and answer questions six to ten.\n[03:56] Helen: Can you see my information on your system?\n[03:59] Mark: Yes, I found you. So, regarding accommodation here at the eco-farm for families, I recommend our family lodges, as they are large and suitable for both adults and children.\n[04:10] Helen: Okay, that sounds nice. But a lodge is probably too big for us, and I don't think we have much time and energy for cleaning. So we would like to stay in a flat, preferably near the farm.\n[04:24] Mark: I'm afraid there's no accommodation near the farm. Would you want to be located near the lake? It's got a great view.\n[04:31] Helen: Actually, my daughter would prefer to stay in the forest if possible.\n[04:36] Mark: That's fine. We have some lovely log cabins with room for four people, which would suit your family.\n[04:42] Helen: Yes, that's the kind of thing we want. I hope you have a wide range of food available. My husband is a meat eater, I like seafood, and my children like organic food, including plenty of vegetables.\n[04:55] Mark: Yes, we cater for all different types of diet, so you can get all those preferences here. Don't worry.\n[05:01] Helen: Great. So what is the transport situation? Can we get there by ferry or van, for instance?\n[05:09] Mark: No, the best way is by train. There's a regular service from Sheffield. Or there is a bike trail all the way here. It generally takes about six hours to ride here from Sheffield.\n[05:22] Helen: That sounds good, but it might be difficult with our luggage. It's a pity you don't have vans or ferry boats. But I think we will take the train. So what activities do you have there?\n[05:33] Mark: We have a gardening course on planting flowers. Would that be suitable?\n[05:38] Helen: I was hoping for something a little more energetic, to give us more exercise – a dance course, for example.\n[05:46] Mark: That is something guests have requested in the past, but it's not something we're doing at the moment. I will bear that in mind for the future, though.\n[05:55] Helen: Okay, that would be great. I need to get back to work. So can you email me through the prices and all the details?\n[06:02] Mark: Certainly. I'll send all the details through to your work email address right now.\n[06:07] Helen: Great. Thank you.\n[06:08] Mark: You're welcome. And we hope to see you here at Lakeside Eco-farm soon.\n[06:13] Helen: Thanks. Goodbye.\n[06:19] Narrator: That is the end of part one. You now have one minute to check your answers to part one.",
+    "groups": [
+     {
+      "instruction": "Complete the notes below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.",
+      "wordLimit": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "context": "Eco-farm Tour. Dates offered: 6–20 June.",
+      "questions": [
+       {
+        "no": 1,
+        "type": "fill",
+        "text": "Name: Helen ___",
+        "answer": [
+         "Pennington"
+        ],
+        "explanation": "\"Helen Pennington. That's P-E-double N-I-N-G-T-O-N.\""
+       },
+       {
+        "no": 2,
+        "type": "fill",
+        "text": "Email address: helen123@___.com",
+        "answer": [
+         "greenfield"
+        ],
+        "explanation": "\"That is helen123@greenfield.com. And Greenfield is one word.\" (helen123@email.com là địa chỉ cô ấy đổi ý không dùng)"
+       },
+       {
+        "no": 3,
+        "type": "fill",
+        "text": "Home address: ___ Road, Sheffield",
+        "answer": [
+         "66 Lake",
+         "66 lake"
+        ],
+        "explanation": "\"It is 66 Lake Road, Sheffield.\""
+       },
+       {
+        "no": 4,
+        "type": "fill",
+        "text": "Source of information: ___",
+        "answer": [
+         "radio",
+         "the radio"
+        ],
+        "explanation": "\"Actually, I heard about you on the radio\" (không phải TV)"
+       },
+       {
+        "no": 5,
+        "type": "fill",
+        "text": "Membership number: ___",
+        "answer": [
+         "UK765024EG",
+         "UK 765024 EG",
+         "UK765024 EG",
+         "UK 765024EG"
+        ],
+        "explanation": "\"Ah, actually it is UK 765024 EG.\" (số đầu tiên UK 765042 G bị đính chính; transcript tự động ghi \"e g\")"
+       }
+      ]
+     },
+     {
+      "instruction": "Complete the table below. Write ONE WORD ONLY for each answer.",
+      "wordLimit": "ONE WORD ONLY",
+      "context": "Columns: Recommendations | Customer preferences. Age: from 16 to 62 | children: 6 and 4. Accommodation type: lodges | a (6). Accommodation location: Lakeside | near the farm or in the (7). Food: a wide range of food | meat, seafood and (8) food. Transport: train or (9) | ferry and van. Courses: flower planting courses | active courses (e.g. a (10) course).",
+      "questions": [
+       {
+        "no": 6,
+        "type": "fill",
+        "text": "Accommodation type – customer preference: a ___",
+        "answer": [
+         "flat"
+        ],
+        "explanation": "\"So we would like to stay in a flat, preferably near the farm.\""
+       },
+       {
+        "no": 7,
+        "type": "fill",
+        "text": "Accommodation location – customer preference: near the farm or in the ___",
+        "answer": [
+         "forest"
+        ],
+        "explanation": "\"my daughter would prefer to stay in the forest if possible\""
+       },
+       {
+        "no": 8,
+        "type": "fill",
+        "text": "Food – customer preference: meat, seafood and ___ food",
+        "answer": [
+         "organic"
+        ],
+        "explanation": "\"my children like organic food, including plenty of vegetables\""
+       },
+       {
+        "no": 9,
+        "type": "fill",
+        "text": "Transport – recommendation: train or ___",
+        "answer": [
+         "bike",
+         "bicycle"
+        ],
+        "explanation": "\"No, the best way is by train … Or there is a bike trail all the way here.\""
+       },
+       {
+        "no": 10,
+        "type": "fill",
+        "text": "Courses – customer preference: active courses (e.g. a ___ course)",
+        "answer": [
+         "dance",
+         "dancing"
+        ],
+        "explanation": "\"I was hoping for something a little more energetic … a dance course, for example.\""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "section": 2,
+    "title": "Muna Island – tour guide's tips",
+    "topic": "Travel",
+    "offset": 390,
+    "transcript": "[06:30] Narrator: Part two. You will hear an introduction from a tour guide giving suggestions about an island. First, you have some time to look at questions 11 to 14.\n[07:05] Narrator: Now listen carefully and answer questions 11 to 14.\n[07:12] Hazel: Hello, everyone. I'm Hazel, the guide from Travel Light agency. Since we mentioned the trip to Muna Island in the last programme, we've received several online messages from those who have been there. As a result, we've collected some helpful do's and don'ts for new visitors, which will hopefully help you to know the island better and enjoy your stay to the fullest. The first suggestion is about tips. Although tipping is required in most circumstances on Muna Island, the amount you should give differs significantly. If you take a taxi, there is no set rate on how much you should leave the driver. Someone may give a generous tip if he thinks the service is fantastic. It's up to you entirely. However, if you go to the hairdresser's or enjoy a meal in a restaurant and the bill comes with no service charge, a 10% tip is advisable. Muna Island has got relatively good medical service. If you get sick, the quickest way is to ask the hotel to arrange an English-speaking doctor for you. But remember, it's not a complimentary service. The other alternative is to visit the local clinic, and you have to prepare for the charge as well. I should remind you that the medical service on the island can be pricey, so it's better to buy your insurance before you leave. When you visit Muna Island, you'll see the notice nearly everywhere: tap water is safe to drink. But you might not get used to its weird taste, because it contains minerals. In this case, you can buy bottled water sold in every shop, but you'd better make sure the sealed lid is untouched, as the locals often put tap water into the bottles.\n[09:29] Narrator: Before you hear the rest of the talk, you have some time to look at questions 15 to 20.\n[10:05] Narrator: Now listen and answer questions 15 to 20.\n[10:12] Hazel: Then I'll focus on transportation on Muna Island. The bus is the most commonly used means of transportation for local residents. Although there aren't many bus lines, they're always on time. However, some people complained that the road was so bumpy that they even got nausea and dizziness. As a result, it's not a good choice if you want to sit peacefully and relax on the way. And another thing is, before you jump on the bus, enquire of the driver about where the bus will go. Unlike most cities, here on Muna Island you cannot find the destination shown in front of the bus or at the bus stop. Maybe you find the bus service is not so enjoyable. In that case, you can always rent a car. If you choose this way, I advise you to prepare well beforehand. Although some taxi companies provide car rental services, many visitors sometimes find nobody answering the phone, so leave this way when you are in a hurry. It's wise to compare several car rental companies online beforehand, as the price may vary a lot. Booking via the hotel may be overcharged, as it contains a 10% commission, so it's also not advisable. More importantly, don't forget to check with the company what the price covers in detail, like daily rental expenses, car insurance, commission, etc. It usually includes unlimited mileage too, but fuel is excluded. If you don't want to drive, a taxi is the quickest and most comfortable way, although few are available on Muna Island. If you want to find a taxi quickly, it's not a good idea to reserve through the taxi company, as sometimes you will have quite a wait, especially in the rush hour. The easiest way is just waving your hand on the street to stop the taxi. Otherwise, the driver will drive away directly after he drops off the guests. Oh, another thing is, I have to remind you that there is no meter for taxis on Muna Island. So before you jump in the taxi, you'd better negotiate with the driver about how much you're going to pay. For example, if you take a taxi from the airport at night, it may cost you a lot, so confirm the price before you get in. Okay, that's all about the tips for Muna Island that I want to share today. Are there any questions?\n[13:18] Narrator: That is the end of part two. You now have half a minute to check your answers to part two.",
+    "groups": [
+     {
+      "instruction": "Choose the correct letter, A, B or C.",
+      "context": "Muna Island",
+      "questions": [
+       {
+        "no": 11,
+        "type": "mcq",
+        "text": "How much should visitors tip taxi drivers on the island?",
+        "options": [
+         "as much as they feel right",
+         "no tip at all",
+         "10% tip"
+        ],
+        "answer": 0,
+        "explanation": "\"If you take a taxi, there is no set rate on how much you should leave the driver … It's up to you entirely.\" (10% là cho tiệm làm tóc/nhà hàng)"
+       },
+       {
+        "no": 12,
+        "type": "mcq",
+        "text": "What is mentioned about the medical service on the island?",
+        "options": [
+         "It will be charged.",
+         "Visitors should contact their insurance company.",
+         "Visitors have to find the hotel doctor."
+        ],
+        "answer": 0,
+        "explanation": "\"But remember, it's not a complimentary service … you have to prepare for the charge as well.\""
+       },
+       {
+        "no": 13,
+        "type": "mcq",
+        "text": "The tour guide says the tap water",
+        "options": [
+         "contains no mineral.",
+         "is unsafe.",
+         "has an unusual taste."
+        ],
+        "answer": 2,
+        "explanation": "\"But you might not get used to its weird taste, because it contains minerals.\""
+       },
+       {
+        "no": 14,
+        "type": "mcq",
+        "text": "What point is made about bottled water?",
+        "options": [
+         "It is expensive.",
+         "The bottle is not always sealed.",
+         "It isn't sold everywhere."
+        ],
+        "answer": 1,
+        "explanation": "\"you'd better make sure the sealed lid is untouched, as the locals often put tap water into the bottles\""
+       }
+      ]
+     },
+     {
+      "instruction": "Choose the correct letter, A, B or C.",
+      "questions": [
+       {
+        "no": 15,
+        "type": "mcq",
+        "text": "What feature is mentioned about the bus on the island?",
+        "options": [
+         "frequent",
+         "not punctual",
+         "not comfortable"
+        ],
+        "answer": 2,
+        "explanation": "\"the road was so bumpy that they even got nausea and dizziness … it's not a good choice if you want to sit peacefully and relax\" (xe buýt luôn đúng giờ nhưng ít tuyến)"
+       },
+       {
+        "no": 16,
+        "type": "mcq",
+        "text": "How can visitors know the destination of the bus on the island?",
+        "options": [
+         "find it in front of the bus",
+         "check it with the driver",
+         "find it at the bus stop"
+        ],
+        "answer": 1,
+        "explanation": "\"before you jump on the bus, enquire of the driver about where the bus will go\""
+       },
+       {
+        "no": 17,
+        "type": "mcq",
+        "text": "What does the tour guide advise visitors to do before renting a car?",
+        "options": [
+         "find a taxi company",
+         "go to the hotel reception",
+         "compare the price in advance"
+        ],
+        "answer": 2,
+        "explanation": "\"It's wise to compare several car rental companies online beforehand, as the price may vary a lot.\""
+       },
+       {
+        "no": 18,
+        "type": "mcq",
+        "text": "When they rent a car, it's important for visitors to know",
+        "options": [
+         "the mileage is limited.",
+         "what is included in the price.",
+         "fuel is included in the price."
+        ],
+        "answer": 1,
+        "explanation": "\"don't forget to check with the company what the price covers in detail\" (mileage không giới hạn, nhiên liệu không bao gồm)"
+       },
+       {
+        "no": 19,
+        "type": "mcq",
+        "text": "How can visitors find a taxi easily?",
+        "options": [
+         "call the taxi company",
+         "look for a taxi in advance",
+         "stop a taxi on the street"
+        ],
+        "answer": 2,
+        "explanation": "\"The easiest way is just waving your hand on the street to stop the taxi.\""
+       },
+       {
+        "no": 20,
+        "type": "mcq",
+        "text": "What is suggested by the tour guide about the taxi fee?",
+        "options": [
+         "make sure no extra money is asked",
+         "check what is included in the fee",
+         "agree the price with the driver in advance"
+        ],
+        "answer": 2,
+        "explanation": "\"before you jump in the taxi, you'd better negotiate with the driver about how much you're going to pay\""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "section": 3,
+    "title": "Music and restaurant customers – student research",
+    "topic": "Business",
+    "offset": 833,
+    "transcript": "[13:53] Narrator: Part three. You will hear two students called Jeanne and Dan discussing some research on the effects of music on consumer behaviour. First, you have some time to look at questions 21 to 26.\n[14:50] Narrator: Now listen carefully and answer questions 21 to 26.\n[14:58] Jeanne: Hi, Dan. How's it going?\n[15:01] Dan: Oh, Jeanne. Pretty well, thanks. Have you finished your research yet?\n[15:05] Jeanne: Yes, it's all done. I've spent several weeks on it, from the very beginning of deciding the topic to carrying out the research and writing the essay.\n[15:16] Dan: Congratulations. Seems like a big project. I know the research has to do with music, but what is it exactly about?\n[15:23] Jeanne: Well, at first I didn't have a specific purpose. Until one day I read a report that said if appropriate music is played while people are eating, it may cause some changes in their behaviour. But the report didn't illustrate the changes in detail, so I wanted to carry out a thorough investigation into this.\n[15:46] Dan: That's quite unique. So how did you conduct your research?\n[15:51] Jeanne: I started by looking for five different restaurants, and then went to each of the restaurants to order some food and observe other people. I mainly focused on how the music is played instead of how people eat. The findings of my observations indicate that the five restaurants have something in common. They all have a special section to play the music. More importantly, although the music is played at different times, the volume is unchanged.\n[16:23] Dan: Sounds attractive. I've never read anything about this before. In addition to observation, what other research methods have you used?\n[16:31] Jeanne: I also distributed a survey questionnaire to people dining there.\n[16:36] Dan: What questions are posed in your questionnaire?\n[16:39] Jeanne: Well, the first section of the questionnaire asks subjects to indicate the number of times they have been to the restaurant previously, the number of people they dine with, and whether they think they will return to the restaurant. These early questions don't involve musical preferences, but largely act as distractors, the intention being that subjects will be less inclined to think that the survey is about the music being played.\n[17:07] Dan: That sounds very reasonable. Did you design the questionnaire by yourself?\n[17:11] Jeanne: Actually, no. I read an assignment a student wrote last year, which was just kept beside a dictionary in the library. I came across it when I was looking something up in the dictionary.\n[17:24] Dan: Oh, you're so lucky. Is there any other question included in the questionnaire?\n[17:28] Jeanne: Yes, subjects are also asked why they choose to dine at a particular restaurant. Several reasons are listed in the questionnaire. I thought people would put service first, but that's not the case. Only about 12% of them have chosen this reason, while the majority of respondents think whether they will pick this restaurant depends on how many available seats it has. They think it's terrible to eat in a crowded place.\n[17:58] Dan: Yes, everyone wants to enjoy a meal comfortably. Then I guess maybe the location of a restaurant is an important factor, since no one likes to waste too much time on the way.\n[18:08] Jeanne: It used to be. But nowadays nearly every household has a private car, so they don't have to be worried about the traffic problem. What I find interesting, however, is that a large percentage of people say they will compare different restaurants in the neighbourhood on the internet first. If one of them stands out from its rivals, they will choose it.\n[18:33] Dan: Wow, it's really interesting.\n[18:38] Narrator: Before you hear the rest of the discussion, you have some time to look at questions 27 to 30.\n[19:05] Narrator: Now listen and answer questions 27 to 30.\n[19:12] Dan: What else?\n[19:14] Jeanne: Well, the second section of the questionnaire asked subjects to respond to the music being played by rating, so that the relationship between music and perceived atmosphere could be examined directly as a means of examining purchase intention. The final section of the questionnaire asks them to indicate the maximum amount of money they are prepared to spend on their main meal.\n[19:41] Dan: So what have you finally discovered?\n[19:44] Jeanne: I collected all the questionnaires and analysed people's answers to get a clearer idea of their reactions to different music conditions. The result shows that music has become an indispensable part of restaurants. If people find there isn't any music during the meal, they will think the restaurant charges too much.\n[20:06] Dan: Yes. Now music is everywhere in our life. Is there any difference in people's attitudes towards different musical styles?\n[20:12] Jeanne: Yes. Most people think that if jazz is being played when eating, they tend to stay at the restaurant longer and order more food to enjoy the music. But this is quite the opposite of what happens when classical music is played. Many customers think if the restaurant plays classical music, they wouldn't like to stay there for another minute, but would finish the food quickly and hurry away, because they don't like this type of music at all. And lastly, about pop music. It's very popular these days, especially among young people. As I've noticed in restaurants, they like listening to this type of music during their meals. As a result, this greatly increases the possibility of their presence at the same restaurant.\n[21:03] Dan: Great. I've learned a lot from your research. I think it's meaningful and innovative. Thanks for telling me, Jeanne.\n[21:10] Jeanne: You're welcome, Dan.\n[21:14] Narrator: That is the end of part three. You now have 30 seconds to check your answers to part three.",
+    "groups": [
+     {
+      "instruction": "Choose the correct letter, A, B or C.",
+      "questions": [
+       {
+        "no": 21,
+        "type": "mcq",
+        "text": "What is the topic of the research?",
+        "options": [
+         "the effect of music on consumers",
+         "the effect of music on eating",
+         "the effect of music on the price of food"
+        ],
+        "answer": 1,
+        "explanation": "\"if appropriate music is played while people are eating, it may cause some changes in their behaviour … I wanted to carry out a thorough investigation into this\" (câu khó: lời dẫn của người đọc nói \"effects of music on consumer behaviour\"; chọn theo lời Jeanne mô tả đề tài)"
+       },
+       {
+        "no": 22,
+        "type": "mcq",
+        "text": "The research finds out in the restaurant",
+        "options": [
+         "the music is played everywhere.",
+         "the music is played at a uniform volume level.",
+         "the music is played at a certain time."
+        ],
+        "answer": 1,
+        "explanation": "\"although the music is played at different times, the volume is unchanged\" (nhạc chỉ phát ở một khu riêng)"
+       },
+       {
+        "no": 23,
+        "type": "mcq",
+        "text": "The first few questions in the questionnaire are",
+        "options": [
+         "to understand people's taste in music.",
+         "to clarify the research aim.",
+         "to disguise the purpose of the survey."
+        ],
+        "answer": 2,
+        "explanation": "\"These early questions … largely act as distractors, the intention being that subjects will be less inclined to think that the survey is about the music being played.\""
+       },
+       {
+        "no": 24,
+        "type": "mcq",
+        "text": "The questions in the questionnaire came from",
+        "options": [
+         "a previous study.",
+         "a professional dictionary.",
+         "the student herself."
+        ],
+        "answer": 0,
+        "explanation": "\"I read an assignment a student wrote last year, which was just kept beside a dictionary in the library.\""
+       }
+      ]
+     },
+     {
+      "instruction": "Choose TWO letters, A–E. Which TWO are the main reasons given for choosing a restaurant?",
+      "questions": [
+       {
+        "no": 25,
+        "type": "multi",
+        "text": "Questions 25–26: Which TWO are the main reasons given for choosing a restaurant?",
+        "options": [
+         "competitors nearby",
+         "environment",
+         "transport facilities",
+         "service",
+         "seat capacity"
+        ],
+        "answer": [
+         0,
+         4
+        ],
+        "explanation": "\"the majority of respondents think whether they will pick this restaurant depends on how many available seats it has\"; \"they will compare different restaurants in the neighbourhood on the internet first. If one of them stands out from its rivals, they will choose it\" (service chỉ 12%, giao thông không còn là vấn đề)"
+       }
+      ]
+     },
+     {
+      "instruction": "What is people's attitude toward playing each of the following music in restaurants? Choose FOUR answers from the box and write the correct letter, A–F, next to Questions 27–30.",
+      "bank": [
+       "People will spend more money in the restaurant.",
+       "People don't even notice the music.",
+       "People will come back again.",
+       "People don't think the restaurant is worth the price.",
+       "People will leave the restaurant right after eating.",
+       "People don't like the restaurant at all."
+      ],
+      "questions": [
+       {
+        "no": 27,
+        "type": "match",
+        "text": "no music",
+        "answer": 3,
+        "explanation": "\"If people find there isn't any music during the meal, they will think the restaurant charges too much.\""
+       },
+       {
+        "no": 28,
+        "type": "match",
+        "text": "jazz",
+        "answer": 0,
+        "explanation": "\"if jazz is being played when eating, they tend to stay at the restaurant longer and order more food\""
+       },
+       {
+        "no": 29,
+        "type": "match",
+        "text": "classical music",
+        "answer": 4,
+        "explanation": "\"they wouldn't like to stay there for another minute, but would finish the food quickly and hurry away\" (họ không thích loại nhạc này, không phải không thích nhà hàng)"
+       },
+       {
+        "no": 30,
+        "type": "match",
+        "text": "pop music",
+        "answer": 2,
+        "explanation": "\"this greatly increases the possibility of their presence at the same restaurant\""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "section": 4,
+    "title": "Life on the International Space Station",
+    "topic": "Science",
+    "offset": 1288,
+    "transcript": "[21:28] Narrator: Part four. You will hear an engineering student giving a presentation about a research project on design features of the International Space Station. First, you have some time to look at questions 31 to 40.\n[22:34] Narrator: Now listen carefully and answer questions 31 to 40.\n[22:40] Student: In my presentation, I'm going to summarise the findings of a research project on life aboard the International Space Station in the early days of its operation – its teething problems, as it were. I'll start by giving a little background information. The space station crew were essentially a constantly changing team of scientists from different countries, who lived on the space station for several months at a time. And they conducted a number of experiments, including some studies of living conditions in space, which is what I'm going to be looking at now. So what was life like on board in the very confined conditions of the space station? Well, the early impressions recorded by the astronauts were very different from what people had expected. They expected that the air would smell stale or artificial, but the astronauts found that it was fresh. So that was one very positive finding. And although they were in such a confined space, people worried that it would get very hot. In fact, they found that it was very easy to turn the temperature up or down in order to keep it within a comfortable range. The feedback on the food was also positive. Astronauts on previous space stations had described the meals as boring, but the International Space Station meals were praised for their variety. So that was another good piece of feedback. And something which is taken for granted today, but was the key morale booster in those days, was communication between the space station and Earth, which the astronauts said was clear and reliable. So in the early days, it seems that the mood was overall very positive.\n[24:35] Student: However, after a few days, the difficulties and frustrations became clearer. Above all, the crew complained about the constant noise caused by the air filters, which used to rattle and buzz 24 hours a day, interrupting their sleep. As well as that, the astronauts complained that the Velcro fasteners which were positioned all over the station didn't work well, and so a lot of the time objects weren't secure in the cabin but floated about. A particularly serious problem was that the systems used on the space station had been developed in a number of different countries, and they didn't always work well together. For example, it was impossible to mix the water produced from different systems, because it contained different sorts of preservatives, and these reacted together and blocked the pipes. Another problem was connected to repairs. At the best of times, these took up an inordinate amount of time on the station, and the crew complained that many of the tools that they had been provided with weren't suitable for the jobs they had to do. So they had to improvise, which meant that jobs took a lot longer than they needed to. Another related problem was to do with access to equipment that needed maintaining. Because the instructions on the equipment were often located in places where they were difficult to read, like on the back of equipment, it was often difficult or impossible to read them. So, having identified these problems, the researchers came up with a number of suggestions about how conditions could be improved on subsequent missions. First, it became clear that although there had been a great deal of consultation with the crews, the systems and equipment on the space station needed much more wide-ranging testing. Then the whole issue of language training came under review. Astronauts from different countries had to be able to talk to the controllers on Earth and to understand them. Now, although they'd had extensive language training, the astronauts sometimes had problems comprehending what was said, because they weren't familiar with the accent of the speaker, and this sometimes led to quite dangerous misunderstandings. Finally, and this is the point I found most surprising, the researchers felt that the designers of the space station were paying too much attention to safety rather than considering operating issues – that is, how the station could be run comfortably and smoothly. And the recommendation was to make changes here at quite a fundamental level. So those were the main points I covered in the…\n[27:28] Narrator: That is the end of part four. You now have one minute to check your answers to part four.\n[28:34] Narrator: That is the end of the listening test. In the IELTS test, you would now have 10 minutes to transfer your answers to the answer sheet.",
+    "groups": [
+     {
+      "instruction": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+      "wordLimit": "ONE WORD ONLY",
+      "context": "Life on the International Space Station. Background: station was occupied by international teams of scientists over several months; research was done on living conditions.",
+      "questions": [
+       {
+        "no": 31,
+        "type": "fill",
+        "text": "Early impressions: the air smelt ___",
+        "answer": [
+         "fresh"
+        ],
+        "explanation": "\"They expected that the air would smell stale or artificial, but the astronauts found that it was fresh.\""
+       },
+       {
+        "no": 32,
+        "type": "fill",
+        "text": "Early impressions: the food had enough ___",
+        "answer": [
+         "variety"
+        ],
+        "explanation": "\"the International Space Station meals were praised for their variety\""
+       },
+       {
+        "no": 33,
+        "type": "fill",
+        "text": "Early impressions: ___ was efficient",
+        "answer": [
+         "communication",
+         "communications"
+        ],
+        "explanation": "\"communication between the space station and Earth, which the astronauts said was clear and reliable\""
+       },
+       {
+        "no": 34,
+        "type": "fill",
+        "text": "Problems: difficulties with air filters caused lack of ___",
+        "answer": [
+         "sleep"
+        ],
+        "explanation": "\"the constant noise caused by the air filters, which used to rattle and buzz 24 hours a day, interrupting their sleep\""
+       },
+       {
+        "no": 35,
+        "type": "fill",
+        "text": "Problems: systems were incompatible, e.g. there were problems when mixing ___ because of the preservatives",
+        "answer": [
+         "water"
+        ],
+        "explanation": "\"it was impossible to mix the water produced from different systems, because it contained different sorts of preservatives\""
+       },
+       {
+        "no": 36,
+        "type": "fill",
+        "text": "Problems: the ___ available were not always suitable for their purpose",
+        "answer": [
+         "tools"
+        ],
+        "explanation": "\"many of the tools that they had been provided with weren't suitable for the jobs they had to do\""
+       },
+       {
+        "no": 37,
+        "type": "fill",
+        "text": "Problems: it was difficult to access the ___ for equipment maintenance",
+        "answer": [
+         "instructions"
+        ],
+        "explanation": "\"Because the instructions on the equipment were often located in places where they were difficult to read\""
+       },
+       {
+        "no": 38,
+        "type": "fill",
+        "text": "Suggested improvements: systems and equipment should undergo more extensive ___",
+        "answer": [
+         "testing",
+         "tests"
+        ],
+        "explanation": "\"the systems and equipment on the space station needed much more wide-ranging testing\""
+       },
+       {
+        "no": 39,
+        "type": "fill",
+        "text": "Suggested improvements: in language training, astronauts needed practice in understanding the controller's ___",
+        "answer": [
+         "accent",
+         "accents"
+        ],
+        "explanation": "\"they weren't familiar with the accent of the speaker\""
+       },
+       {
+        "no": 40,
+        "type": "fill",
+        "text": "Suggested improvements: there should be less emphasis on ___ and more on other issues",
+        "answer": [
+         "safety"
+        ],
+        "explanation": "\"the designers of the space station were paying too much attention to safety rather than considering operating issues\""
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "reading": [
+  {
+   "passage": 1,
+   "title": "The Origin of Paper",
+   "topic": "History",
+   "level": "easy",
+   "passage_text": "The word paper derives from the Greek term for the ancient Egyptian writing material called papyrus. In about 2400 BC, the Egyptians discovered how to make a writing surface out of papyrus, a type of reed that grows along waterways in southern Europe and North Africa. The Egyptians cut the plant into strips which they softened in water. Papyrus was cross-woven into a mat and then pounded into a hard thin sheet.\n\nAs the papyrus plant requires subtropical conditions to grow, papyrus was not much used in Europe at that time; instead, the main material used for writing was parchment. This was made from animal skin and was extremely expensive. In fact, it has been estimated that a single book written on parchment required the skins of 300 sheep. The skins had to be specifically prepared by drying them and they were then stretched on a special frame. It is not known when parchment was first introduced, but it was the main writing material in Europe for hundreds of years.\n\nPaper, which is made from pulp, rags, and fibers of plants, seems to have been invented in China and is considered to be one of the Four Great Inventions of Ancient China. In 105 AD, under the Han Dynasty emperor Ho-Ti, a government official in China named Ts'ai Lun was the first to start a papermaking industry. Ts'ai Lun seems to have made his paper by mixing finely chopped mulberry bark and hemp rags with water, mashing the mixture flat with a stone mortar, and then pressing out the water and letting it dry in the sun. He may have based his idea on bark cloth, which was very common in China and also made from mulberry.\n\nPreviously, during the Shang (1600–1050 BC) and Zhou (1050–256 BC) dynasties of Ancient China, documents were ordinarily written on bone or bamboo (on tablets or on bamboo strips sewn and rolled together into scrolls), making them very heavy and awkward to transport. The light material of silk was sometimes used, but was normally too expensive to consider. When it was first invented, paper was used for purposes of wrapping or padding protection for delicate bronze mirrors. Although paper used for writing became popular by the 3rd century AD, it continued to be used for wrapping and other purposes.\n\nDuring the Tang Dynasty (618–907 AD) paper was folded and sewn into square bags to preserve the flavor of tea. During the same period, according to a written account, tea was served from baskets with multi-colored paper cups and paper napkins of different sizes and shapes. During the Chinese Song Dynasty (960–1279 AD) not only did the government produce the world's first known printed paper money, or banknote, but paper money bestowed as gifts was wrapped in special paper envelopes.\n\nPaper spread slowly outside of China; other Asian cultures, even after seeing paper, could not make it themselves. Instruction in the manufacturing process was required, and the Chinese were reluctant to share their secrets. It made its true push westward in 751 AD when the Tang Dynasty was at war with the Islamic world. During a battle on the banks of the Tarus river, a Chinese caravan was captured which happened to include several papermakers. They were taken away to Samarkand, which was a good place to make paper because it had an abundant supply of hemp and flax.\n\nSamarkanders changed the technology of manufacturing paper. They began to prepare it in stone mills and Samarkand became an important papermaking center.\n\nThe rudimentary and laborious process of papermaking was refined and bulk manufacturing of paper began in Iran, where they invented a method to make a thicker sheet of paper, which helped transform papermaking from an art into an important business.\n\nGradually papermakers made their way further west through the Arab world – to Baghdad, Damascus and Cairo. Finally, when the Moors from North Africa invaded Spain and Portugal they brought the technology with them and so it was that papermaking entered Europe in the 12th century.\n\nIn Europe, the preferred medium for the artists and literati of the time was still the smooth and lustrous parchment. The notion of paper being used as a practical everyday item did not occur until the 15th century when Johannes Gutenberg perfected movable type printing, which included the use of metal molds and alloys, a special press, and oil-based inks, allowing the mass production of printed books. The birth of the modern paper and printing industry is commonly marked from this date.\n\nPrinting technology rapidly developed and created an ever-increasing demand for paper. The early European papers were made from recycled cotton and linen – and a huge trade quickly developed around the trading of old rags. It is said that the disease known as 'the Black Death' entered England from Europe on these old rags. Yet soon this source became insufficient and some curious attempts were made to find new materials. Experiments with fibers such as straw, cabbage, wasp nests and finally wood, resulted in inexpensive – and replaceable – materials for papermaking. Today, the long soft fibers of softwoods such as spruce have become the most suitable source of pulp for the mass production of paper.",
+   "groups": [
+    {
+     "instruction": "Do the following statements agree with the information given in Reading Passage 1? Write TRUE, FALSE or NOT GIVEN.",
+     "questions": [
+      {
+       "no": 1,
+       "type": "tfng",
+       "text": "In Ancient China, writing was occasionally done on silk.",
+       "answer": "TRUE",
+       "explanation": "\"The light material of silk was sometimes used, but was normally too expensive to consider.\""
+      },
+      {
+       "no": 2,
+       "type": "tfng",
+       "text": "Coloured paper was invented during the Tang Dynasty.",
+       "answer": "NOT GIVEN",
+       "explanation": "\"tea was served from baskets with multi-colored paper cups and paper napkins\" – bài chỉ nói có cốc giấy nhiều màu thời Đường, không nói giấy màu được phát minh vào thời này."
+      },
+      {
+       "no": 3,
+       "type": "tfng",
+       "text": "Papermakers from Samarkand were captured by the Chinese.",
+       "answer": "FALSE",
+       "explanation": "\"a Chinese caravan was captured which happened to include several papermakers. They were taken away to Samarkand\" – người làm giấy Trung Quốc bị bắt đưa tới Samarkand, không phải ngược lại."
+      },
+      {
+       "no": 4,
+       "type": "tfng",
+       "text": "Papermaking as a large-scale industry originated in Iran.",
+       "answer": "TRUE",
+       "explanation": "\"bulk manufacturing of paper began in Iran … which helped transform papermaking from an art into an important business\""
+      },
+      {
+       "no": 5,
+       "type": "tfng",
+       "text": "Papermaking skills were brought to Europe via North Africa.",
+       "answer": "TRUE",
+       "explanation": "\"when the Moors from North Africa invaded Spain and Portugal they brought the technology with them\""
+      },
+      {
+       "no": 6,
+       "type": "tfng",
+       "text": "When Gutenberg invented movable type, paper materials were very expensive.",
+       "answer": "NOT GIVEN",
+       "explanation": "\"The notion of paper being used as a practical everyday item did not occur until the 15th century when Johannes Gutenberg perfected movable type printing\" – không nói gì về giá nguyên liệu giấy lúc đó."
+      },
+      {
+       "no": 7,
+       "type": "tfng",
+       "text": "The end of the trade in rags was brought about by the difficulty of transporting them.",
+       "answer": "FALSE",
+       "explanation": "\"Yet soon this source became insufficient and some curious attempts were made to find new materials.\" – lý do là nguồn giẻ không đủ, không phải khó vận chuyển."
+      }
+     ]
+    },
+    {
+     "instruction": "Complete the table below. Choose ONE WORD ONLY from the passage for each answer.",
+     "wordLimit": "ONE WORD ONLY",
+     "context": "The development of paper (Place | Date of introduction | Materials used | Method of production). Egypt | about 2400 BC | a plant called papyrus | (8). Europe | unknown | parchment (9) | (10). China | 105 AD | (11) | ingredients mixed with water, pressed and put outside in the sun. (12) | 751 AD | flax and hemp | (13).",
+     "questions": [
+      {
+       "no": 8,
+       "type": "fill",
+       "text": "Egypt – method of production: ___ of the plant were softened in water, woven and pounded",
+       "answer": [
+        "strips"
+       ],
+       "explanation": "\"The Egyptians cut the plant into strips which they softened in water.\""
+      },
+      {
+       "no": 9,
+       "type": "fill",
+       "text": "Europe – materials used: parchment made from the skin of animals such as ___",
+       "answer": [
+        "sheep"
+       ],
+       "explanation": "\"a single book written on parchment required the skins of 300 sheep\""
+      },
+      {
+       "no": 10,
+       "type": "fill",
+       "text": "Europe – method of production: skin was dried and ___",
+       "answer": [
+        "stretched"
+       ],
+       "explanation": "\"The skins had to be specifically prepared by drying them and they were then stretched on a special frame.\""
+      },
+      {
+       "no": 11,
+       "type": "fill",
+       "text": "China (105 AD) – materials used: ___ of a mulberry tree and hemp rags",
+       "answer": [
+        "bark"
+       ],
+       "explanation": "\"mixing finely chopped mulberry bark and hemp rags with water\""
+      },
+      {
+       "no": 12,
+       "type": "fill",
+       "text": "Place: ___ (751 AD) – materials used: flax and hemp",
+       "answer": [
+        "Samarkand"
+       ],
+       "explanation": "\"They were taken away to Samarkand, which was a good place to make paper because it had an abundant supply of hemp and flax.\""
+      },
+      {
+       "no": 13,
+       "type": "fill",
+       "text": "Method of production: mills made of ___ were used",
+       "answer": [
+        "stone"
+       ],
+       "explanation": "\"They began to prepare it in stone mills\""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage": 2,
+   "title": "A new look for Talbot Park",
+   "topic": "Urban planning",
+   "level": "medium",
+   "passage_text": "Talbot Park, a housing project in Auckland, New Zealand, was once described as a ghetto, troubled by high rates of crime and vandalism. However, it has just been rebuilt at a cost of $48m and the project reflects some new thinking about urban design.\n\nA\nThe new Talbot Park is immediately eye-catching because the buildings look quite different to other state housing* projects in Auckland. 'There is no reason why state housing should look cheap in my view,' says architect Neil Cotton, one of the design team. 'In fact, I was anticipating a backlash by those who objected to the quality of what is provided with government money.' The tidy brick and wood apartments and townhouses would not look out of place in some of the city's most affluent suburbs and this is a central theme of the Talbot Park philosophy.\n\nB\nTalbot Park is a triangle of government-owned land, which in the early 1960s was developed for state housing built around a linear garden that ran through the middle. Initially, there was a strong sense of neighbourliness. Former residents recall how the garden played a big part in their childhoods – a place where kids came together to play softball, cricket and bullrush. 'We had respect for our neighbours and addressed them by title – Mr and Mrs so-and-so,' recalls Georgie Thompson, who grew up there in the 1960s.\n\nC\nExactly what went wrong with Talbot Park is unclear. The community began to change in the late 1970s as more immigrants moved in. The new arrivals didn't always integrate with the community and a 'them and us' mentality developed. In the process, standards dropped and the neighbourhood began to look shabbier. The buildings themselves were also deteriorating and becoming run down, petty crime was on the rise and the garden was considered unsafe. In 2002, Housing New Zealand decided the properties needed upgrading. The question was, how to avoid repeating the mistakes of the past?\n\nD\nOne controversial aspect of the upgrade is that the new development has actually made the density of housing in Talbot Park greater, putting 52 more homes on the same site. Doing this required a fresh approach that can be summed up as 'mix and match'. The first priority was to mix up the housing by employing a variety of plans by different architects: some of the accommodation is free-standing houses, some semi-detached, some low level, multi-apartment blocks. By doing this, the development avoids the uniform appearance of so many state housing projects, which residents complain denies them any sense of individual identity. The next goal was to prevent overspending by using efficient designs to maximise the sense of space from minimum room sizes. There was also a no-frills, industrial approach to kitchens, bathrooms and flooring, to optimise durability and ensure the project did not go over budget. Architecturally, the buildings are relatively conservative: fairly plain houses standing in a small garden. There's a slight reflection of the traditional Pacific beach house (a fale) but it's not overplayed. 'It seems to us that low-cost housing is about getting as much amenity as you can for the money,' says architect Michael Thompson. Another key aspect of the 'mix and match' approach is openness: one that not only lets residents see what is going on but also lets them know they are seen. The plan ensures there are no cul-de-sacs or properties hidden from view, that the gardens are not enclosed by trees and that most boundary fences are see-through – a community contained but without walls.\n\nE\nThe population today is cosmopolitan: 50% Pacific Islanders, 20% Maori, 15% Asian, 10% New Zealand European and the rest composed of immigrants from Russia, Ukraine and Iran. 'It was important that the buildings were sufficiently flexible to cater for the needs of people from a wide variety of cultural backgrounds,' explains designer James Lundy.\n\nF\nDespite the quality of the buildings, however, there should be no doubt that Talbot Park and its surrounding suburb of Tamaki are low socio-economic areas. Of the 5,000 houses there, 55% are state houses, 28% privately owned (compared to about 65% nationally) and 17% private rental. The area has a high density of households with incomes in the $5,000 to $15,000 range and very few with an income over $70,000. That's in sharp contrast to the more affluent suburbs in Auckland.\n\nG\nAnother important part of the new development is what Housing New Zealand calls 'intensive tenancy management'. Opponents of the project call it social control. 'The focus is on frequent inspections and setting clear guidelines and boundaries regarding the sort of behaviour we expect from tenants,' says Graham Bodman, Housing New Zealand's regional manager. The result is a code of sometimes strict rules: no loud parties after 10pm; no washing hung over balcony rails and a requirement to mow lawns and keep the property tidy. The Tenancy Manager walks the site every day, knows everyone by name and deals with problems quickly. 'It's all based on the intensification,' says project manager Stuart Bracey. 'We acknowledge that if you are going to ask people to live in these quite tightly-packed communities, you have to actually help them to get to know each other by organising morning teas and street barbecues.' So far it seems to be working and many involved in the project believe Talbot Park represents the way forward for state housing.\n\n* state housing: government subsidised accommodation for people who cannot pay market rents",
+   "groups": [
+    {
+     "instruction": "Reading Passage 2 has seven paragraphs, A–G. Choose the correct heading for each paragraph from the list of headings below.",
+     "bank": [
+      "i – Some of the problems that developed at Talbot Park",
+      "ii – Where the residents lived while the work was being completed",
+      "iii – The ethnic makeup of the new Talbot Park",
+      "iv – The unexpectedly high standard of the housing",
+      "v – Financial hardship in Talbot Park and a neighbouring community",
+      "vi – The experiences of one family living at Talbot Park today",
+      "vii – How to co-ordinate and assist the people who live at Talbot Park",
+      "viii – Raising the money to pay for the makeover",
+      "ix – A close community in the original Talbot Park development",
+      "x – Details of the style of buildings used in the makeover"
+     ],
+     "questions": [
+      {
+       "no": 14,
+       "type": "match",
+       "text": "Paragraph A",
+       "answer": 3,
+       "explanation": "\"'There is no reason why state housing should look cheap in my view' … 'I was anticipating a backlash by those who objected to the quality of what is provided with government money.'\""
+      },
+      {
+       "no": 15,
+       "type": "match",
+       "text": "Paragraph B",
+       "answer": 8,
+       "explanation": "\"Initially, there was a strong sense of neighbourliness.\""
+      },
+      {
+       "no": 16,
+       "type": "match",
+       "text": "Paragraph C",
+       "answer": 0,
+       "explanation": "\"In the process, standards dropped and the neighbourhood began to look shabbier … petty crime was on the rise and the garden was considered unsafe.\""
+      },
+      {
+       "no": 17,
+       "type": "match",
+       "text": "Paragraph D",
+       "answer": 9,
+       "explanation": "\"The first priority was to mix up the housing by employing a variety of plans by different architects: some of the accommodation is free-standing houses, some semi-detached, some low level, multi-apartment blocks.\""
+      },
+      {
+       "no": 18,
+       "type": "match",
+       "text": "Paragraph E",
+       "answer": 2,
+       "explanation": "\"The population today is cosmopolitan: 50% Pacific Islanders, 20% Maori, 15% Asian, 10% New Zealand European\""
+      },
+      {
+       "no": 19,
+       "type": "match",
+       "text": "Paragraph F",
+       "answer": 4,
+       "explanation": "\"Talbot Park and its surrounding suburb of Tamaki are low socio-economic areas\""
+      },
+      {
+       "no": 20,
+       "type": "match",
+       "text": "Paragraph G",
+       "answer": 6,
+       "explanation": "\"Another important part of the new development is what Housing New Zealand calls 'intensive tenancy management'.\""
+      }
+     ]
+    },
+    {
+     "instruction": "Look at the following people (Questions 21–23) and the list of ideas below. Match each person with the correct idea, A–F.",
+     "bank": [
+      "Good tenant management involves supervision and regulation.",
+      "State housing must be built at minimum expense to the public.",
+      "Organising social events helps tenants to live close together.",
+      "Mixed-race communities require adaptable and responsive designs.",
+      "Complaints were expected about the high standard of the development.",
+      "Too many rules and regulations will cause resentment from tenants."
+     ],
+     "questions": [
+      {
+       "no": 21,
+       "type": "match",
+       "text": "James Lundy",
+       "answer": 3,
+       "explanation": "\"'It was important that the buildings were sufficiently flexible to cater for the needs of people from a wide variety of cultural backgrounds,' explains designer James Lundy.\""
+      },
+      {
+       "no": 22,
+       "type": "match",
+       "text": "Graham Bodman",
+       "answer": 0,
+       "explanation": "\"'The focus is on frequent inspections and setting clear guidelines and boundaries regarding the sort of behaviour we expect from tenants,' says Graham Bodman\""
+      },
+      {
+       "no": 23,
+       "type": "match",
+       "text": "Stuart Bracey",
+       "answer": 2,
+       "explanation": "\"you have to actually help them to get to know each other by organising morning teas and street barbecues\""
+      }
+     ]
+    },
+    {
+     "instruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer.",
+     "wordLimit": "ONE WORD ONLY",
+     "context": "The 'mix and match' strategy",
+     "questions": [
+      {
+       "no": 24,
+       "type": "fill",
+       "text": "One aspect of the Talbot Park project that some critics are concerned about is that the higher ___ of accommodation would lead to the old social problems returning.",
+       "answer": [
+        "density"
+       ],
+       "explanation": "\"One controversial aspect of the upgrade is that the new development has actually made the density of housing in Talbot Park greater\""
+      },
+      {
+       "no": 25,
+       "type": "fill",
+       "text": "To prevent this, a team of various ___ worked on the project to ensure the buildings were not uniform.",
+       "answer": [
+        "architects"
+       ],
+       "explanation": "\"employing a variety of plans by different architects\""
+      },
+      {
+       "no": 26,
+       "type": "fill",
+       "text": "Further, they created pleasant, functional interiors that could still be built within their ___. Finally, the absence of walls means Talbot Park is characterised by openness, making it easier to regulate behaviour within the community.",
+       "answer": [
+        "budget"
+       ],
+       "explanation": "\"to optimise durability and ensure the project did not go over budget\""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage": 3,
+   "title": "The Analysis of Fear",
+   "topic": "Psychology",
+   "level": "hard",
+   "passage_text": "Researchers are investigating the processes in the brain that give rise to fear in animals. The results may lead to new ways to treat human anxiety.\n\nOver the years, the majority of people acquire a range of skills for coping with frightening situations. They will attempt to placate a vexed teacher or boss and will shout and run when chased by a hostile stranger. But some individuals become overwhelmed in circumstances others would consider only minimally stressful: fear of ridicule might cause them to shake uncontrollably when called on to speak in a group, or terror of strangers might lead them to hide at home, unable to work or shop for groceries. Why do certain people fall prey to excessive fear?\n\nNed H. Kalin and Steven E. Shelton at the University of Wisconsin-Madison are addressing this problem by identifying specific brain processes that regulate fear and its associated behaviors. Despite the availability of non-invasive computer imaging techniques, such information is still extremely difficult to obtain in humans. Hence, they have turned their attention to another primate, the rhesus monkey. These animals undergo many of the same physiological and psychological developmental stages that humans do, but in a more compressed time span. As we gain more insight into the nature and operation of neural circuits that modulate fear in monkeys, it should be possible to pinpoint the brain processes that cause inordinate anxiety in people, and to devise new therapies to counteract it. Effective interventions would be particularly valuable if they were applied at an early age, as growing evidence suggests overly fearful youngsters are at high risk of later emotional distress.\n\nWhen they began their studies two decades ago, Kalin and Shelton knew that they would first have to find cues that elicit fear and identify behaviors that reflect different types of anxiety. With such information in hand, they could then proceed to determine the age at which monkeys begin to match defensive behaviors selectively to specific cues. Finally, by determining the parts of the brain that reach maturity during the same time span, they could gain clues to the regions that underlie the regulation of fear and fear-related behavior.\n\nThe experiments were carried out at the University of Wisconsin-Madison. Kalin and Shelton discerned varied behaviors by exposing monkeys between six and 12 months old to three related situations. In the alone condition, an animal was separated from its mother and left by itself in a cage for ten minutes. In the no-eye-contact condition, a person stood motionless outside the cage and avoided looking at the solitary infant. In the stare condition, a person was again present and motionless but, assuming a neutral expression, peered directly at the animal. These positions are no more frightening than those that primates encounter frequently in the wild, or those that human infants encounter every time they are left at a day-care center.\n\nIn the alone condition, most monkeys became very active and emitted frequent gentle 'coo' calls made with pursed lips. More than 40 years ago it was deduced that when an infant monkey is separated from its mother, it yearns to regain the closeness and security provided by nearness to the parent. These responses help to draw the mother's attention. In contrast, in the more frightening no-eye-contact situation, the monkeys reduced their activity greatly and sometimes froze for extended periods of time. When an infant spots a potential predator, its goal shifts from attracting the mother to becoming inconspicuous. Inhibiting motion and freezing are common attempts to achieve this in many species. If the infant perceives that it has been detected, its aim shifts to warding off an attack. So the stare condition evoked a third set of responses. The monkeys made several hostile gestures: barking (forcing air from the abdomen through the vocal cords to emit a harsh, growl-like sound) and staring back. Sometimes the animals mixed the threatening displays with submissive ones, such as fear grimaces, which look something like wary grins, or grinding of teeth.\n\nHaving identified three categories of defensive behaviors, Kalin and Shelton set about determining when infant monkeys first begin to apply them effectively. Several lines of work had led them to surmise that the ability to make such choices emerges when an infant is around two months old. To establish the critical period of development, they examined four groups of infant monkeys ranging in age up to 12 weeks old. The babies were separated from their mothers, left to acclimatize to a cage, and then exposed to the alone, no-eye-contact and stare conditions. All sessions were videotaped for analysis. They found that the infants in the youngest group (no more than two weeks old) engaged in defensive behaviors. But they lacked some motor control and seemed to act randomly, as if they had not noticed the human beings that were present. Babies in the two intermediate-age groups had good motor control, but their actions seemed unrelated to the test condition. Only animals in the oldest group (nine- to 12-week olds) conducted themselves differently in each situation, and their reactions were both appropriate and identical to those of mature monkeys. This finding meant motor control was not the prime determinant of selective responding and that nine to 12 weeks is the critical age for the appearance of a monkey's ability to adaptively modulate its defensive activity to meet changing demands.",
+   "groups": [
+    {
+     "instruction": "Choose the correct letter, A, B, C or D.",
+     "questions": [
+      {
+       "no": 27,
+       "type": "mcq",
+       "text": "In the first paragraph, the writer points out that",
+       "options": [
+        "fear and stress are different feelings.",
+        "most humans develop strategies for dealing with fear.",
+        "business situations cause more fear than others.",
+        "some people never experience fear."
+       ],
+       "answer": 1,
+       "explanation": "\"Over the years, the majority of people acquire a range of skills for coping with frightening situations.\""
+      },
+      {
+       "no": 28,
+       "type": "mcq",
+       "text": "When discussing the use of rhesus monkeys as experimental subjects, the writer notes that",
+       "options": [
+        "they react more quickly to fear than humans.",
+        "they are more influenced by fear than humans.",
+        "their mental growth resembles that of humans.",
+        "their brains work more slowly than those of humans."
+       ],
+       "answer": 2,
+       "explanation": "\"These animals undergo many of the same physiological and psychological developmental stages that humans do\""
+      },
+      {
+       "no": 29,
+       "type": "mcq",
+       "text": "Which of the following did Kalin and Shelton outline as the second stage in their research project?",
+       "options": [
+        "the identification of expressions of anxiety in monkeys",
+        "the identification of situations that arouse stress in monkeys",
+        "an analysis of brain development in monkeys",
+        "the study of reactions to fear in monkeys of different ages"
+       ],
+       "answer": 3,
+       "explanation": "\"With such information in hand, they could then proceed to determine the age at which monkeys begin to match defensive behaviors selectively to specific cues.\""
+      },
+      {
+       "no": 30,
+       "type": "mcq",
+       "text": "In the fourth paragraph, the writer notes that the three related situations",
+       "options": [
+        "reflect common experiences for infant humans and monkeys.",
+        "highlight the similarities between monkey and human infant care.",
+        "were predicted to cause monkeys more distress than human infants.",
+        "were graded in terms of their potential effect on young monkeys."
+       ],
+       "answer": 0,
+       "explanation": "\"These positions are no more frightening than those that primates encounter frequently in the wild, or those that human infants encounter every time they are left at a day-care center.\""
+      }
+     ]
+    },
+    {
+     "instruction": "Look at the following responses of monkeys (Questions 31–35) and the list of conditions below. Match each response with the correct condition, A, B or C. NB You may use any letter more than once.",
+     "bank": [
+      "the alone condition",
+      "the no-eye-contact condition",
+      "the stare condition"
+     ],
+     "questions": [
+      {
+       "no": 31,
+       "type": "match",
+       "text": "aggressive facial expressions",
+       "answer": 2,
+       "explanation": "\"The monkeys made several hostile gestures: barking … and staring back.\""
+      },
+      {
+       "no": 32,
+       "type": "match",
+       "text": "prolonged stillness",
+       "answer": 1,
+       "explanation": "\"in the more frightening no-eye-contact situation, the monkeys reduced their activity greatly and sometimes froze for extended periods of time\""
+      },
+      {
+       "no": 33,
+       "type": "match",
+       "text": "a combination of contradictory signals",
+       "answer": 2,
+       "explanation": "\"Sometimes the animals mixed the threatening displays with submissive ones\""
+      },
+      {
+       "no": 34,
+       "type": "match",
+       "text": "appeals for maternal protection",
+       "answer": 0,
+       "explanation": "\"it yearns to regain the closeness and security provided by nearness to the parent. These responses help to draw the mother's attention.\""
+      },
+      {
+       "no": 35,
+       "type": "match",
+       "text": "the production of soft sounds",
+       "answer": 0,
+       "explanation": "\"In the alone condition, most monkeys became very active and emitted frequent gentle 'coo' calls\""
+      }
+     ]
+    },
+    {
+     "instruction": "Complete the summary below. Choose NO MORE THAN THREE WORDS AND/OR A NUMBER from the passage for each answer.",
+     "wordLimit": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+     "questions": [
+      {
+       "no": 36,
+       "type": "fill",
+       "text": "Once they had identified three types of defensive behaviour, Kalin and Shelton grouped the monkeys according to their ___, in order to discover precisely when they were able to respond appropriately to different fear-related cues.",
+       "answer": [
+        "age"
+       ],
+       "explanation": "\"they examined four groups of infant monkeys ranging in age up to 12 weeks old\""
+      },
+      {
+       "no": 37,
+       "type": "fill",
+       "text": "They videotaped their results and found that monkeys as young as ___ reacted to the cues but in a haphazard fashion.",
+       "answer": [
+        "two weeks old",
+        "2 weeks old",
+        "two weeks",
+        "2 weeks"
+       ],
+       "explanation": "\"the infants in the youngest group (no more than two weeks old) engaged in defensive behaviors\""
+      },
+      {
+       "no": 38,
+       "type": "fill",
+       "text": "The researchers noted that they seemed to be unaware of the ___ who were around them.",
+       "answer": [
+        "human beings"
+       ],
+       "explanation": "\"as if they had not noticed the human beings that were present\""
+      },
+      {
+       "no": 39,
+       "type": "fill",
+       "text": "Despite demonstrating ___, the monkeys in the middle groups failed to react in ways corresponding to the experimental situation.",
+       "answer": [
+        "good motor control"
+       ],
+       "explanation": "\"Babies in the two intermediate-age groups had good motor control, but their actions seemed unrelated to the test condition.\""
+      },
+      {
+       "no": 40,
+       "type": "fill",
+       "text": "The oldest group, however, reacted in the same way as ___ and the researchers concluded that monkeys are capable of selective responding between nine and 12 weeks old.",
+       "answer": [
+        "mature monkeys"
+       ],
+       "explanation": "\"their reactions were both appropriate and identical to those of mature monkeys\""
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "writing": []
+}

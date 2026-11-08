@@ -54,8 +54,49 @@ Dự án chưa có test tự động. Sau khi sửa, chạy `npm run data` (khô
 
 ## Tình trạng (08/11/2026)
 
-- **Đã xong 50 đề / 422 bài luyện**: VOL 1–4 đủ 40 đề; VOL 5 Test 1–6; 44 bộ Speaking (forecast 2023 Q1, Q2, "gộp đề ver 1").
+- **Đã xong 59 đề / 577 bài luyện** (tính cả VOL 6 Test 2–3): VOL 1–4 đủ 40 đề; VOL 5 đủ 10 đề + 19 đề Writing lẻ; 131 bộ Speaking (forecast 2023 Q1, Q2, "gộp đề ver 1", 2024 Q1: 87 bộ).
 - VOL 4 có vài chỗ thiếu: Test 5 không có audio; Test 7 (Q15–20) và Test 9 (Section 1) thiếu transcript; Writing trùng VOL 3 nên bỏ qua.
+
+## Tiến độ phiên chuyển đổi (cập nhật liên tục)
+
+Task list (đánh dấu `[x]` khi xong; dòng `→` là đang làm):
+- [x] VOL 5 Test 7 · [x] Test 8 · [x] Test 9 · [x] Test 10
+- [x] 2. VOL 5 Writing → `content/vol5/writing-bank.json` (19 đề: 9 Task 1 + 10 Task 2, ảnh ở `public/img/vol5/`; Drive không có file Task 1 số 8; đề Task 1 viết lại theo hình vì file gốc chỉ có hình + bài mẫu, đã ghi trong `source`)
+- [x] 3. Speaking quý 1.2024 → `content/speaking/forecast-2024q1.json` (87 bộ; "50 đề mới update.pdf" là scan không đọc được; "CÁC GÓI DỰ ĐOÁN…" chỉ là tờ quảng cáo)
+- → 4a. VOL 6: [x] Test 2 · [x] Test 3 · → Test 1, 4, 5 (subagent đang chạy) · [ ] Test 6 · [ ] Writing · [ ] Speaking. ID thêm: `L-TEST 5.pdf` `1BTzFTv7mUd2dqRKYkO42vznYdP9OBzFN`, `expl 1-4.pdf` `1Fr6tiPAWmwHXFPv57gRco95fCPZIit0e`; Audio Lis: Test 1 `1dP2C3xIe67DyEHbVxzhoLVW3y3v_sxni`, Test 2 `1jf9BOusktTVs8BqyblInKa-9aQwukCnH`, Test 3 `13s3vKn6oiAXwVeWZNvLiGRGeK_d7_td_`, Test 4 `10S_zJ20o5wAJaKOtJXJ9LrwD3I9LbTEG`, Test 6 `1tWYBG7t4FxwDDYlgc3pZVvlusBlb78W3` (Test 5 chưa thấy).
+- [ ] 4b. VOL 7 · [ ] 4c. VOL 8
+- [ ] 5. Audio: máy chưa có audio đề tải về → bỏ qua cho tới khi có thư mục tải về
+- [ ] 6. `npm run build` + báo cáo cuối
+
+Quyết định đã ghi:
+- 08/11/2026: repo ban đầu chỉ có `ielts-practice.zip`; đã giải nén nội dung ra gốc repo, commit "baseline: 50 đề"; zip để trong `.gitignore`.
+- Máy không có `node`/`npm` trong PATH: đã tải Node v22 LTS vào `~/.local/opt/node` → trước khi chạy lệnh: `export PATH=$HOME/.local/opt/node/bin:$PATH`.
+- Không có tesseract/whisper; nguồn đề lấy qua Google Drive connector (`read_file_content` tự OCR PDF).
+- Ở VOL 5, ID cột "Transcript" là **file PDF** ("test N- transcripts.pdf"), không phải thư mục.
+- Audio đề chỉ có trên Drive (connector không tải được file mp3 lớn) → bước `npm run audio` chờ người dùng tải thư mục về máy.
+
+Đáp án chưa chắc chắn (gom cho báo cáo cuối):
+- VOL5 T7: L Q2 (số điện thoại ghép "0784, double 0, 51963"), L Q17–18 (C, D), L Q24 (transcript ghi "effective", hiểu là "affected"), L Q30 (phụ thuộc việc sắp lại Step 3/5 bị OCR đảo), R Q1 "adaptation" (câu ghi chú OCR lộn xộn). R P1 đoạn 2 và R P2 đoạn A có chữ dựng lại/mất; P3 không có tiêu đề gốc.
+- VOL5 T8: L Q5 (đuôi "EG" từ transcript "e g"), L Q21 (B, có thể là A), L Q25–26 (A, E). R Q7 FALSE theo key (có thể NOT GIVEN).
+- VOL5 T9: L Q21–22 (A, B), L Q26, L Q27 (A, C cũng hợp lý), L Q37 (nhận "materials"/"content"). R Q34 không có trong đề gốc → dựng lại từ bản công khai (ielts.xdf.cn), khớp key C. R Q35 NO theo key. Đoạn H P3 "more enduring" là đoán.
+- VOL5 T10: L Q1 "0478883925" (ghép "triple 8"), L Q2 "Vander" (dựng từ đánh vần), L Q13 bed/bedroom, L Q15 "rare", L Q18–20 (C, F, E; bản đồ mô tả bằng chữ), L Q21–23 (A, B, D: phân vai transcript không chắc). R Q2 NOT GIVEN (key ghi TRUE). Offset S2–S4 (7:44 / 13:01 / 18:41) ước lượng; mốc trong S2, S4 nội suy. R P2 dựng lại "the arrival of humans on the continent".
+- VOL6 T2: không có transcript Listening; bản đồ Q16–20 chỉ có chữ A–I (PDF 8 MB, connector không tải được hình). L Q25–30 key lặp C, D dù đề "Choose SIX" (chưa kiểm được). R Q2 NOT GIVEN (key ghi FALSE). R Q38–40 F, B, C (key ghi D, C, B; key có vẻ bị lệch chữ).
+- VOL6 T3: Listening KHÔNG có transcript (nguồn gốc không có) → đáp án theo L-key; bản đồ Q15–20 chỉ có chữ A–I, không có hình. L Q14 thứ tự B/C khác nhau giữa PDF và docx (theo PDF). R Q25–26 chọn C, E (key ghi B, E). R Q30–32 file giải thích đánh số lệch: 30 C, 31 B, 32 G suy từ bài. R Q34 hai chỗ trống tính một câu. P2 đoạn F dựng lại "experiments to find out how wings work".
+- VOL5 T7: transcript tách từng phần (mỗi phần bắt đầu từ 0:00) nên offset = 0 cho cả 4 section.
+
+Cấu trúc Drive đã dò (listing hay thiếu file → lọc thêm `title contains '<số>'`):
+- VOL 5 Writing `1yTW_…`: thư mục con `task 1` `1UF83fXEQ8DZDfu2wi1a-RmRzC3L5K9CU`, `task 2` `1DL5DnW9tfM_t3ze2fvhscJTQAs9UCv1d`.
+- Speaking quý 1.2024 `1Ar2…`: thư mục "gom đề speaking quý 1.2024" `1fVyT7VlaO7GS0umBl4425hY8OUKBoe6_`, "50 đề giữ lại" `1zxK1f_1a07BaItHMrOlJKijbOM7iMBZH`, "50 đề mới update" `1IRkjjnxIW_utU34ji1UzjiISIfE5NXEl`, sách "IELTS SPEAKING NGOCBACH 2024.pdf" `1oLCdl0MPvIyGKdJzR7eNd5ZsQgfUabrk`.
+- VOL 6 (`VOL 6- ORIGINAL EXAMS` `1_3MYuZ3fzO4Aelo-b5rrPQtZHxYb8Atn`), 6 test:
+  - `Lis` `1KyuRW5nngpAEU-WgLqTlJL2T4pCO2yBG`: `L-TEST 1..6.pdf`, `L-key.pdf` `1ywS-FYaMtjYVj7CbmAzJEAIexcdqWhZ-`, `Full Listening.docx` `1i8OJaKF_y3MMWEOafh2ZvTmmghc04BS-`, thư mục `Audio Lis/Test 1..6`.
+  - `Read` `14feG6uALluIqWZ7F0UKDD8d8OBLO8NHI`: `R-TEST 1-update.pdf`, `R-TEST 2..6.pdf`, `expl 5-6.pdf` (…), `Full Reading.docx` `1VhcxLcklfOVkVkxOnnccL8OnBiA6n1dO`.
+  - `Writing` `1UIBWSRIa6Lw-hpwBJAhKRXO71TnV-66Y`: 2 PDF dự đoán Writing 2025. `Speaking` `1qLOOTj8pYXrQ5f3CAIoawHGdKrM6AL7m`: 3 PDF Speaking quý 2/2025, Sep 2024–Apr 2025.
+- VOL 7 (`10IMzuyZ7EEIl47h4vofuOl52DXlB_h90`), có vẻ 16 test:
+  - `Listening` `1N7W-lR0VgoXHx3KhN8-2YEfulhEEmhI1`: thư mục `Test 1-10` `1m-iTmQdWvFryfEpLJ5Pk4g1RdeipIZGu`, `Test 11` `1kudW--PJfBcFeIyemGY9fFhA94j33zpT`.
+  - `Reading` `1TMv_UxVBkLanzKB-TWT65yk-YPBIaObj`: `Test 1-10` `177ZK952BY-sh39w0nix6DtYb4j_69AcB`, `Test 11-16` `1nbRnKQyf-GcV7jIbmP-gzMreR9AYyP3z`, `Explaination Read VOL 7` `1kCzgWTZ_sf2WARJkpOJc4Wpu2h_FdcS9`, `các đề update web khác trên bản pdf` `1QTMRC4ZK1okV8fldjXl-ItceGiPYFvZ0`, `Reading T1-10 VOL 7.pdf` `1wiz6POF32Bptz2RxBT4kGBRFSaOXI3Kg`.
+- VOL 8 (`1b1KUbK1IYj20EzP0wrs8_cFntsuiU9bC`):
+  - `LISTENING` `1D3Q90kRTp2h2GX4NfRxTO5L-3vPGawGk`: `TRANSCRIPT-KEY` `12zhHCpT80q-bWRPv4cGA2jPaTvdbs5Gn`, `AUDIO` `1bDkMX0QQ2nADnLIx9yHS7rKRyISLOB7H`, `VOL 8 TEST N LIS.docx` (thấy N = 1, 2, 8).
+  - `READING` `1bQced4SqsAeOVMHfVV4RoIbtvcP9JL5E`: `Test N.pdf` (thấy 1, 2), `Key.pdf` `1NHSfOHagX13W-D7eRXAN5M0sIFHMgrPc` (43 MB), 2 Google Doc "Test 2".
 
 ## Việc tiếp theo, theo thứ tự
 

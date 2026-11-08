@@ -1,0 +1,933 @@
+{
+ "vol": 5,
+ "test": 7,
+ "source": "ORIGINAL IELTS PAPERS – VOL 5, Test 7 (audio: P1.MP3, P2.mp3, P3.mp3, P4.mp3). Listening: bộ đề không có key, đáp án được suy từ transcript; transcript tự động đã được sửa chính tả và phân lại vai người nói. Câu 27–30: bản OCR đảo cụm \"for every picture\" sang Step 5, đã đặt lại vào Step 3. Reading: key lấy từ file Explanation. Lỗi OCR đã sửa chính tả; Passage 1 đoạn 2 mất chữ sau \"University of Utah engine…\" – phần trong [ ] là dựng lại tối thiểu; Passage 2 đoạn A mất một cụm sau \"what they see as\" (để […]); danh sách người câu 20–22 bị OCR xáo, đã sắp theo thứ tự xuất hiện trong bài (E Monet, F Pennell, G Calatrava) cho khớp key 20 G, 22 E; Passage 3 không có tiêu đề trong đề gốc (tiêu đề do người biên soạn đặt); câu 33 bị mất cuối câu, phần trong [ ] là dựng lại. Bộ đề không có phần Writing.",
+ "listening": {
+  "audioDir": "audio/vol5/test7",
+  "timingNote": "Transcript gốc của bộ này tách theo từng phần (mỗi phần bắt đầu lại từ 0:00, khớp với P1–P4), nên offset = 0 cho mọi section (chỉ ghi ở S1, S2–S4 dùng mặc định 0); đây là ước lượng. Một số mốc bị thiếu trong transcript gốc (S1 khi tách lời hai người; S3 3:10, 3:38, 3:43) là ước lượng.",
+  "sections": [
+   {
+    "section": 1,
+    "title": "London Relocation Services – phone enquiry",
+    "topic": "Housing",
+    "offset": 0,
+    "transcript": "[00:01] Narrator: You will hear a telephone conversation between a woman who is moving to London and an employee of a relocation service. First, you have some time to look at questions one to seven.\n[00:53] Narrator: Now listen carefully and answer questions one to seven.\n[01:01] Daniel: London Relocation Services, Daniel speaking, how may I help you?\n[01:05] Anna: Good morning. My family and I are moving to London later this year, and I'm wondering if you can help?\n[01:12] Daniel: Sure. First of all, I'll need to get some personal details. May I take your full name, please?\n[01:17] Anna: It's Anna Woods.\n[01:19] Daniel: Thanks. Where are you moving from?\n[01:24] Anna: Northern Ireland. Just outside Belfast, actually.\n[01:27] Daniel: Right. And what's your current address?\n[01:31] Anna: It's 118 Fordyce Park. I'll spell that for you. It's F-O-R-D-Y-C-E. And that's in Ballysillan.\n[01:45] Daniel: And what's the postcode?\n[01:48] Anna: It's BT14 9BJ.\n[01:52] Daniel: All right. And could I take a contact phone number?\n[01:57] Anna: I'll give you my mobile number as you can get me on that anytime. It's 0784, double 0, 51963.\n[02:09] Daniel: Great. Got that. Now, we always like to get a bit more information about the families that we're moving. It helps with the search. Are you moving for work?\n[02:20] Anna: Yes, my husband's just got a new job in London.\n[02:24] Daniel: And what about you? Do you work?\n[02:27] Anna: Well, I've been working as a teaching assistant recently. But I'm actually a qualified nurse, and I'd like to get back into that if possible.\n[02:35] Daniel: Right. And do you have any children?\n[02:38] Anna: Yes, a son. So we need to find a school for him.\n[02:42] Daniel: Is it a secondary school you'll be looking for?\n[02:45] Anna: No, he's still in primary school. He's not quite at the secondary level yet.\n[02:50] Daniel: Fine. So let's go on to talk about your requirements for the property. Do you have a preferred location? Is your husband's job in the centre?\n[02:59] Anna: No, it's in East London. But we'd rather live somewhere quieter.\n[03:05] Daniel: Sure. There are some lovely areas in the south.\n[03:08] Anna: Okay, that sounds great. Now, my husband doesn't want to spend too long commuting to work every day, so…\n[03:15] Daniel: I imagine that ideally he'd like to be not too far from a station, then.\n[03:22] Anna: Yes. He drives now, but I guess that's not going to be possible. And he's not keen on buses.\n[03:29] Daniel: What about you or your son? Do you have any preferences? Does your son do any sport, for example?\n[03:35] Anna: He's quite active, so I'm sure he'd love a park nearby to run around in. He doesn't do swimming or anything like that.\n[03:45] Daniel: Great.\n[03:48] Narrator: Before you hear the rest of the conversation, you have some time to look at questions eight to 10.\n[04:11] Narrator: Now listen, and answer questions eight to 10.\n[04:19] Daniel: So what sort of property do you have in mind?\n[04:22] Anna: We have friends who live in an amazing flat over there. But as we've always lived in a house, I think we'll stick with that. We'd find it hard to adapt to a flat.\n[04:33] Daniel: Okay. And size-wise, how many bedrooms would you like?\n[04:37] Anna: Well, there's just myself, my husband and our son.\n[04:41] Daniel: So you definitely need a two-bedroom property. But how about having a guest room? I might be able to find a three-bedroom property for you.\n[04:51] Anna: Yes, that would be ideal. We're sure to have family visiting often.\n[04:55] Daniel: All right. I've made a note of that. Now, are there any other requirements for your new property?\n[05:03] Anna: Well, it's not essential, but it would be handy to have an office for when my husband works from home. It doesn't need to be a big one. I guess it all comes down to budget.\n[05:13] Daniel: Yes. Okay, Anna. Well, I've certainly got enough to be getting on with, and I will…\n[05:24] Narrator: That is the end of part one. You now have one minute to check your answers to part one.",
+    "groups": [
+     {
+      "instruction": "Complete the table below. Write ONE WORD AND/OR A NUMBER for each answer.",
+      "wordLimit": "ONE WORD AND/OR A NUMBER",
+      "context": "The London Relocation Services. Customer's name: Anna Woods.",
+      "questions": [
+       {
+        "no": 1,
+        "type": "fill",
+        "text": "Customer's personal details – Current address: 118 ___ Park, Ballysillan; Postcode: BT14 9BJ",
+        "answer": [
+         "Fordyce"
+        ],
+        "explanation": "\"It's 118 Fordyce Park. I'll spell that for you. It's F-O-R-D-Y-C-E.\""
+       },
+       {
+        "no": 2,
+        "type": "fill",
+        "text": "Phone No: ___ (Mobile)",
+        "answer": [
+         "07840051963",
+         "0784 00 51963",
+         "07840 051963",
+         "0784 0051963"
+        ],
+        "explanation": "\"It's 0784, double 0, 51963.\" (double 0 = 00)"
+       },
+       {
+        "no": 3,
+        "type": "fill",
+        "text": "Other information – Anna is hoping to find work as a ___",
+        "answer": [
+         "nurse"
+        ],
+        "explanation": "\"I'm actually a qualified nurse, and I'd like to get back into that if possible\" (teaching assistant là công việc hiện tại)"
+       },
+       {
+        "no": 4,
+        "type": "fill",
+        "text": "She needs to find a ___ school for her son.",
+        "answer": [
+         "primary"
+        ],
+        "explanation": "\"No, he's still in primary school.\""
+       },
+       {
+        "no": 5,
+        "type": "fill",
+        "text": "Requirements for the new property – Location: her preferred location is in the ___ of the city.",
+        "answer": [
+         "south"
+        ],
+        "explanation": "\"There are some lovely areas in the south.\" – \"Okay, that sounds great.\" (chồng làm ở East London nhưng họ muốn chỗ yên tĩnh hơn)"
+       },
+       {
+        "no": 6,
+        "type": "fill",
+        "text": "Her husband would like to be near a ___",
+        "answer": [
+         "station"
+        ],
+        "explanation": "\"ideally he'd like to be not too far from a station\" (anh ấy không thích xe buýt)"
+       },
+       {
+        "no": 7,
+        "type": "fill",
+        "text": "Her son would prefer to be close to a ___",
+        "answer": [
+         "park"
+        ],
+        "explanation": "\"I'm sure he'd love a park nearby to run around in\""
+       },
+       {
+        "no": 8,
+        "type": "fill",
+        "text": "Property details: she would like to live in a ___",
+        "answer": [
+         "house"
+        ],
+        "explanation": "\"as we've always lived in a house, I think we'll stick with that\" (flat là nhà của bạn họ)"
+       },
+       {
+        "no": 9,
+        "type": "fill",
+        "text": "She would prefer ___ bedrooms.",
+        "answer": [
+         "three",
+         "3"
+        ],
+        "explanation": "\"I might be able to find a three-bedroom property for you.\" – \"Yes, that would be ideal.\""
+       },
+       {
+        "no": 10,
+        "type": "fill",
+        "text": "A small ___ is also desirable.",
+        "answer": [
+         "office"
+        ],
+        "explanation": "\"it would be handy to have an office for when my husband works from home. It doesn't need to be a big one\""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "section": 2,
+    "title": "Moving office – manager's talk to staff",
+    "topic": "Work",
+    "transcript": "[00:00] Narrator: Section two. You will hear a manager talking to company employees about moving to a new office building. First, you have some time to look at questions 11 to 16 on page three.\n[01:00] Narrator: Now listen carefully and answer questions 11 to 16.\n[01:07] Manager: Thank you for coming to today's meeting, everyone. I'd like to give you some information about moving to our new office building so that you know what the plans are. So first, let me explain why we're moving. Even though we've taken on quite a few new employees over the last year, we still have plenty of space here. But the problem is where we are. But we've now found the perfect place in the city centre. Originally, we chose this building in the suburbs because the rent was much cheaper, but our clients aren't always keen on coming out here. I visited the new office last week, and I'm pretty sure that you'll find the greatest advantage is the huge windows. I'm not sure we'll need desk lamps at all. Of course, we'll have everything checked out to make sure we can control the temperature of each office. And we may have to put some room dividers in some offices so that you're not disturbed by your colleagues' conversations. We've just set a date for the move. The finance department wanted us to wait until after the end of the tax year, in April, but we've decided to move earlier. As soon as the sales conference is over in January, we'll move. That'll give us plenty of time to organise everything before you start taking your annual holidays. We've already put quite a bit of information about the move on the company website, like restaurants and cafés around the new office. But we're still checking bus routes and things like that, so transport information will be up by next Monday. Another thing still to get confirmed is which car park we can use and how many people can use it. Okay, let's move on to some practical things you have to do now. Don't worry yet about taking home your photos and things like that; that can be sorted out much nearer the time. Along with getting rid of any unwanted paperwork, we need to find out how many new desks and chairs to order. So could you make a list of any of the ones you use that are scratched or broken? Just one thing: all documents containing non-confidential information can go into the general packing boxes. But when it comes to documents containing confidential information, you'll need to put these in special bags. You will be given grey plastic ones for this. So one thing to do now is go through your filing cabinets and identify which folders are confidential.\n[03:33] Narrator: Before you hear the rest of the talk, you have some time to look at questions 17 to 20 on page four.\n[04:00] Narrator: Now listen and answer questions 17 to 20.\n[04:07] Manager: Now, to help you prepare for the move, I'd like to talk about lifting heavy things. You shouldn't really have to do this because a removal company will be used, but you might want to move a box out of your way or something. It's surprising how often people don't remember to use the handles on the boxes, although they all have them. You've all had the leaflet explaining that you should keep your back straight and your head up when lifting. And it also tells you to stand with your feet firmly on the ground and a little bit apart. So I think that's clear. But the leaflet emphasises the importance of not twisting to the left or right once you've picked something up. And if you're like me, that's easy to forget. I'd also like to talk about papers. If they've been stored for a long time, they can get mould on them, a sort of fungus. And as soon as you start moving them, the fungus gets disturbed. As you know, you can't open the windows in this building, but I suggest you use the gloves that we'll provide. We'll also get some face masks, but we've been advised that these shouldn't be necessary. What you should do is drink one or two litres of water a day. That's essential. Often the best time to do this sort of work is after your afternoon break, so that you can leave the building soon afterwards. Now, are there any questions?\n[05:30] Narrator: That is the end of section two. You now have half a minute to check your answers.\n[06:06] Narrator: Now turn to section three on page five.",
+    "groups": [
+     {
+      "instruction": "Choose the correct letter, A, B or C.",
+      "context": "Moving Office",
+      "questions": [
+       {
+        "no": 11,
+        "type": "mcq",
+        "text": "What reason does the manager give for moving to a new office building?",
+        "options": [
+         "to have more space",
+         "to pay less rent",
+         "to be in a central location"
+        ],
+        "answer": 2,
+        "explanation": "\"we still have plenty of space here. But the problem is where we are. But we've now found the perfect place in the city centre\" (tiền thuê rẻ là lý do chọn văn phòng cũ)"
+       },
+       {
+        "no": 12,
+        "type": "mcq",
+        "text": "What is best about the new office building?",
+        "options": [
+         "the air-conditioning system",
+         "the amount of natural light",
+         "the low level of noise"
+        ],
+        "answer": 1,
+        "explanation": "\"you'll find the greatest advantage is the huge windows. I'm not sure we'll need desk lamps at all\""
+       },
+       {
+        "no": 13,
+        "type": "mcq",
+        "text": "When will the office move take place?",
+        "options": [
+         "after the sales conference",
+         "after the end of the tax year",
+         "after the annual holiday period"
+        ],
+        "answer": 0,
+        "explanation": "\"As soon as the sales conference is over in January, we'll move\""
+       },
+       {
+        "no": 14,
+        "type": "mcq",
+        "text": "What information about the new location is already on the company website?",
+        "options": [
+         "where to park",
+         "places to eat",
+         "public transport"
+        ],
+        "answer": 1,
+        "explanation": "\"We've already put quite a bit of information about the move on the company website, like restaurants and cafés around the new office\""
+       },
+       {
+        "no": 15,
+        "type": "mcq",
+        "text": "What practical thing must staff do now?",
+        "options": [
+         "give details of damaged furniture",
+         "throw away unnecessary papers",
+         "take home personal items"
+        ],
+        "answer": 0,
+        "explanation": "\"could you make a list of any of the ones you use that are scratched or broken?\""
+       },
+       {
+        "no": 16,
+        "type": "mcq",
+        "text": "Staff will need to put folders containing confidential details",
+        "options": [
+         "into packing boxes",
+         "into grey plastic bags",
+         "into new filing cabinets"
+        ],
+        "answer": 1,
+        "explanation": "\"you'll need to put these in special bags. You will be given grey plastic ones for this\""
+       }
+      ]
+     },
+     {
+      "instruction": "Choose TWO letters, A–E.",
+      "questions": [
+       {
+        "no": 17,
+        "type": "multi",
+        "text": "Which TWO things do people often forget when lifting heavy things?",
+        "options": [
+         "keep your head up",
+         "don't bend your back",
+         "don't lean to one side",
+         "use handles",
+         "stand with feet apart"
+        ],
+        "answer": [
+         2,
+         3
+        ],
+        "explanation": "\"It's surprising how often people don't remember to use the handles on the boxes\"; \"the importance of not twisting to the left or right once you've picked something up. And if you're like me, that's easy to forget\""
+       }
+      ]
+     },
+     {
+      "instruction": "Choose TWO letters, A–E.",
+      "questions": [
+       {
+        "no": 19,
+        "type": "multi",
+        "text": "Which TWO things should staff do when moving papers?",
+        "options": [
+         "wear a face mask",
+         "open windows",
+         "wear gloves",
+         "take frequent breaks",
+         "drink plenty of water"
+        ],
+        "answer": [
+         2,
+         4
+        ],
+        "explanation": "\"I suggest you use the gloves that we'll provide\"; \"What you should do is drink one or two litres of water a day\" (khẩu trang không cần thiết, cửa sổ không mở được)"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "section": 3,
+    "title": "Mona's presentation on design development",
+    "topic": "Design",
+    "transcript": "[00:03] Narrator: Section three. You will hear two students named Mona and Ted talking about a presentation on design development. First, you have some time to look at questions 21 to 26.\n[00:46] Narrator: Now listen carefully, and answer questions 21 to 26.\n[00:51] Mona: Ted, you've looked at my presentation, haven't you? What do you think of it?\n[00:57] Ted: Hey, Mona. Yes, I have. Before giving you some advice, I have a question. Why didn't you write about the development of design and its influence or connection with social advancement, or even art movement? In my opinion, this direction would have more significance.\n[01:14] Mona: Actually, I just want to focus on the history of design. I'm particularly interested in its history from the 1800s. That's why I wrote about it.\n[01:23] Ted: I see. It could save some effort.\n[01:27] Mona: Not really. I've covered different areas of design, such as building, clothing and products. It's a lot of work.\n[01:36] Ted: Right. Is it because you want to give a comprehensive talk?\n[01:40] Mona: To be honest, I was worried about my teacher's reaction. If I only talk about one area, she might think I've been lazy.\n[01:49] Ted: You know what, even though it's okay to talk about different aspects, I think the topic is too broad. It would be hard for the listeners to focus on any specific area.\n[01:58] Mona: Um, you are right. I only have about 45 minutes for the talk. Maybe I should narrow the range.\n[02:07] Ted: That would be much better. And you can use computer technology to assist you in your presentation, like using CAD or other computer software.\n[02:16] Mona: I'm not sure. Although computer technology can improve the visual effects in my presentation, I'd rather use the traditional way, since I'm talking about the history of design. I guess traditional media is more affected by computers, rather than the design industry.\n[02:31] Ted: That makes sense. You could do it your own way. As for the content, you mentioned purism, and you said it can save people's effort. I don't really agree with that. I think it's not really easy to achieve. On the other hand, I do think it's important to apply this concept in architecture. I mean, the building should look simple and elegant.\n[02:50] Mona: That's a good point. Ted, what do you think I should do to further improve my talk?\n[02:55] Ted: Well, I think you have read enough books about it, so it's not the theories that you lack. Why don't you visit the Design Museum in the north of the city? One of my friends went there last month, and he said it was worth it. I'm sure it can give you some inspiration.\n[03:10] Narrator: Before you hear the rest of the discussion, you have some time to look at questions 27 to 30.\n[03:38] Narrator: Now listen, and answer questions 27 to 30.\n[03:43] Mona: How do you usually prepare for a presentation? You have done it many times, right?\n[03:48] Ted: You can say that. When I prepare for a presentation, I would first try to come up with an introduction telling the audience what my topic is. It's very important to grasp people's attention and let them know what you want to talk about.\n[04:03] Mona: Okay, I think so. A good beginning can mean everything.\n[04:07] Ted: Exactly. Maybe you could use a story to start. Step two, I would research deeper into the topic and give the audience something new.\n[04:17] Mona: Yeah, that's what I've been working on. I always try to look for more related information online. I want them to learn something from my presentation.\n[04:25] Ted: Since you work so hard, they will like it. I noticed that you use a lot of pictures in your slides. What I would do is put a statement under each picture, so the audience would know what exactly the pictures are about.\n[04:40] Mona: I just thought it would be more impressive to use only pictures. All right, I will add that in.\n[04:47] Ted: In the next step, you should try illustrating slide by slide. Each slide should only contain one thought or idea, so all of these thoughts will link together in your illustration.\n[04:56] Mona: This step would need a lot of practice.\n[05:01] Ted: Exactly. A lot of practice is needed before you stand in front of the real audience. There's one final step you should not forget. I suggest you prepare some text handouts with important details.\n[05:12] Mona: What are they for?\n[05:13] Ted: The audience can reflect on what you talk about in and after your presentation.\n[05:18] Mona: I've never thought about that. Thank you so much, Ted. You're a great help.\n[05:24] Ted: No problem, Mona.\n[05:27] Narrator: That is the end of section three. You now have half a minute to check your answers.",
+    "groups": [
+     {
+      "instruction": "Choose the correct letter, A, B or C.",
+      "questions": [
+       {
+        "no": 21,
+        "type": "mcq",
+        "text": "Mona's presentation topic is about",
+        "options": [
+         "design development from the 1800s",
+         "design development and social advancement",
+         "design development and art movement"
+        ],
+        "answer": 0,
+        "explanation": "\"I just want to focus on the history of design. I'm particularly interested in its history from the 1800s.\""
+       },
+       {
+        "no": 22,
+        "type": "mcq",
+        "text": "Mona doesn't want to just talk about one topic because",
+        "options": [
+         "she is afraid of her tutor's response.",
+         "she wants to give a complete talk.",
+         "she thinks it would be too simple."
+        ],
+        "answer": 0,
+        "explanation": "\"To be honest, I was worried about my teacher's reaction.\""
+       },
+       {
+        "no": 23,
+        "type": "mcq",
+        "text": "What does Ted say about Mona's topic?",
+        "options": [
+         "very detailed",
+         "too old",
+         "too broad"
+        ],
+        "answer": 2,
+        "explanation": "\"I think the topic is too broad\""
+       },
+       {
+        "no": 24,
+        "type": "mcq",
+        "text": "What is Mona's viewpoint on computers?",
+        "options": [
+         "They have improved work efficiency.",
+         "They have influenced traditional media.",
+         "They have changed people's sense of style."
+        ],
+        "answer": 1,
+        "explanation": "\"I guess traditional media is more affected by computers, rather than the design industry.\" (transcript tự động ghi \"more effective by computers\" – đã sửa theo ngữ cảnh)"
+       },
+       {
+        "no": 25,
+        "type": "mcq",
+        "text": "What does Ted think of 'purism'?",
+        "options": [
+         "It's important for architecture.",
+         "It saves a lot of effort.",
+         "He admires it in arts."
+        ],
+        "answer": 0,
+        "explanation": "\"I do think it's important to apply this concept in architecture\" (Ted không đồng ý rằng nó tiết kiệm công sức)"
+       },
+       {
+        "no": 26,
+        "type": "mcq",
+        "text": "What does Ted suggest Mona do?",
+        "options": [
+         "meet one of his friends",
+         "read more books",
+         "visit a museum"
+        ],
+        "answer": 2,
+        "explanation": "\"Why don't you visit the Design Museum in the north of the city?\""
+       }
+      ]
+     },
+     {
+      "instruction": "According to Ted, what is the right way to make a successful presentation? Choose FOUR answers from the box and write the correct letter, A–G, next to questions 27–30.",
+      "context": "Step 4: every slide illustrates a thought, all the thoughts link together.",
+      "bank": [
+       "text handouts",
+       "questions",
+       "an outline",
+       "an introduction",
+       "statement",
+       "explain",
+       "research"
+      ],
+      "questions": [
+       {
+        "no": 27,
+        "type": "match",
+        "text": "Step 1. Write ___",
+        "answer": 3,
+        "explanation": "\"I would first try to come up with an introduction telling the audience what my topic is\""
+       },
+       {
+        "no": 28,
+        "type": "match",
+        "text": "Step 2. ___ further on the topic",
+        "answer": 6,
+        "explanation": "\"Step two, I would research deeper into the topic and give the audience something new\""
+       },
+       {
+        "no": 29,
+        "type": "match",
+        "text": "Step 3. Put a ___ for every picture",
+        "answer": 4,
+        "explanation": "\"What I would do is put a statement under each picture\""
+       },
+       {
+        "no": 30,
+        "type": "match",
+        "text": "Step 5. Write ___ and support it",
+        "answer": 0,
+        "explanation": "\"There's one final step you should not forget. I suggest you prepare some text handouts with important details.\""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "section": 4,
+    "title": "The graphical symbol",
+    "topic": "Communication",
+    "transcript": "[00:00] Narrator: Section four. You will hear a talk on the research of the graphical symbol. First, you have some time to look at questions 31 to 40.\n[00:52] Narrator: Now listen carefully and answer questions 31 to 40.\n[01:00] Lecturer: Good morning, everyone. Today I'm going to talk about the graphical symbol. A graphic symbol is a written symbol that is used to represent speech, such as those used in the Greek alphabet. The term graphic symbol encompasses anything from the logographs used in Egyptian hieroglyphic writing to ancient Chinese pictograms. Early symbols were based on pictographs and ideograms before they were developed into logographic writing systems. These systems are still in use in some non-literate cultures in Africa, the Americas and Oceania. Indeed, elements of pictography are still found in modern Chinese characters, and it is often an interesting exercise to trace the origins of some Chinese characters. Pictographs remain in common commercial use today as signs, instructions or statistical diagrams; road signs and public toilet signs, and even flat-pack assembly instructions utilising pictures, are considered pictographic. Ancient graphic writing systems provide researchers with a wealth of knowledge about past civilisations. In 1799, one of the most important historical discoveries was made by accident when members of Napoleon's expedition to Egypt found a stone in Rosetta that exhibited three different scripts. The stone, now known as the Rosetta Stone, was studied in significant depth by scholars and was first deciphered by Frenchman Jean-François Champollion in 1822. He was able to correctly determine the phonetic values of the symbols, and later research has confirmed his findings. In many of these symbols, lines are used to portray a multitude of meanings, and knowledge and understanding of these lines holds the key to comprehension of graphic writing systems. A key moment in the history of communication was the invention of the camera obscura, or camera. Although the concept can be traced back to the fifth-century BC Chinese philosopher Mozi, the first photographic image was ultimately created in 1826 by Joseph Nicéphore Niépce. Photography, as it was later known, enables researchers to piece together and better understand history. Today, photography forms a huge part of everyday life, and most publications contain a vast number of photographs. Photography is used in advertising, and is now becoming a way to increase awareness of existing world issues. For example, animal welfare charities are increasingly using photography to advertise animals that are at high risk of endangerment. Charity workers are sometimes flown to far-flung locations to document the suffering endured by high-risk animals in an attempt to raise human awareness of their consumption activities and how they impact others. One recent high-profile campaign was undertaken by attaching a camera to the foot of a bird in order to obtain photographs of the animals in their natural habitat, and understand how often they come into contact with human waste. A soon-to-be-released documentary about the suffering of animals on Midway Island shows the full extent to which human consumption is harming animals thousands of miles away from us. As photography continues to progress, with the use of drones now becoming somewhat commonplace, we should expect more and more objects to be included in the future, expanding the horizon of photography ever further. Indeed, the downward pressure on traditional media prices means that media companies are being forced to get creative on how to make a profit. Many have found that the answer to this lies in advertising, and companies are now willing to devote a large portion of their budgets to advertising in newspapers. By the same token, marketing has become an essential part of a company's business model, often meaning the success or failure of a company. As a result, much time and money has been pumped into the development of effective branding, with attractive packaging playing a large role in this. However, many governments now seem to be cracking down on marketing and packaging, in an attempt to protect consumers from being misled. In particular, tobacco companies are now subject to ever-increasing regulation. For example, in the United Kingdom, legislation is soon to pass preventing any form of branding or differentiation on cigarette packaging in efforts to curb the harmful effects of smoking. Finally, one must not forget the fundamental role that graphic writing systems have had to play in mathematics. Graphs, icons and diagrams often formed the very basis of these branches of academia. Indeed, one needs to look no further than chemistry's periodic table to see a perfect example of graphic writing systems in use today.\n[06:53] Narrator: That is the end of section four. You now have half a minute to check your answers.\n[07:29] Narrator: That is the end of the listening test. In the IELTS test, you will now have 10 minutes to transfer your answers to the answer sheet.",
+    "groups": [
+     {
+      "instruction": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+      "wordLimit": "ONE WORD ONLY",
+      "context": "Graphical symbol",
+      "questions": [
+       {
+        "no": 31,
+        "type": "fill",
+        "text": "'Graphical symbol' – includes the logographs in Egyptian hieroglyphic writing and ancient Chinese pictograms; found in Africa, the Americas and Oceania; still has something to do with ___ use today",
+        "answer": [
+         "commercial"
+        ],
+        "explanation": "\"Pictographs remain in common commercial use today as signs, instructions or statistical diagrams\""
+       },
+       {
+        "no": 32,
+        "type": "fill",
+        "text": "Ancient graphic writing systems – researchers obtain a wide range of ___ about past civilisations.",
+        "answer": [
+         "knowledge"
+        ],
+        "explanation": "\"Ancient graphic writing systems provide researchers with a wealth of knowledge about past civilisations.\""
+       },
+       {
+        "no": 33,
+        "type": "fill",
+        "text": "Rosetta Stone found in 1799 by members of Napoleon's expedition to Egypt; Champollion determined the phonetic values of the symbols in 1822. In those symbols, ___ are used to depict various meanings.",
+        "answer": [
+         "lines"
+        ],
+        "explanation": "\"In many of these symbols, lines are used to portray a multitude of meanings\""
+       },
+       {
+        "no": 34,
+        "type": "fill",
+        "text": "Camera obscura – ___ helps people understand history better.",
+        "answer": [
+         "photography"
+        ],
+        "explanation": "\"Photography, as it was later known, enables researchers to piece together and better understand history.\""
+       },
+       {
+        "no": 35,
+        "type": "fill",
+        "text": "Some charities will ___ many endangered species.",
+        "answer": [
+         "advertise"
+        ],
+        "explanation": "\"animal welfare charities are increasingly using photography to advertise animals that are at high risk of endangerment\""
+       },
+       {
+        "no": 36,
+        "type": "fill",
+        "text": "A camera was tied to one ___ of a bird.",
+        "answer": [
+         "foot"
+        ],
+        "explanation": "\"attaching a camera to the foot of a bird\""
+       }
+      ]
+     },
+     {
+      "instruction": "Complete the sentences below. Write ONE WORD ONLY for each answer.",
+      "wordLimit": "ONE WORD ONLY",
+      "questions": [
+       {
+        "no": 37,
+        "type": "fill",
+        "text": "More ___ will be included in the future with the development of photography.",
+        "answer": [
+         "objects"
+        ],
+        "explanation": "\"we should expect more and more objects to be included in the future, expanding the horizon of photography ever further\""
+       },
+       {
+        "no": 38,
+        "type": "fill",
+        "text": "Companies would like to invest a lot to advertise in ___",
+        "answer": [
+         "newspapers"
+        ],
+        "explanation": "\"companies are now willing to devote a large portion of their budgets to advertising in newspapers\""
+       },
+       {
+        "no": 39,
+        "type": "fill",
+        "text": "Designing appealing ___ is used as a way of effective branding.",
+        "answer": [
+         "packaging"
+        ],
+        "explanation": "\"the development of effective branding, with attractive packaging playing a large role in this\""
+       },
+       {
+        "no": 40,
+        "type": "fill",
+        "text": "Graphic writing systems are of great importance in the subject of ___",
+        "answer": [
+         "mathematics",
+         "maths",
+         "math"
+        ],
+        "explanation": "\"the fundamental role that graphic writing systems have had to play in mathematics\""
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "reading": [
+  {
+   "passage": 1,
+   "title": "Computer games",
+   "topic": "Technology",
+   "level": "easy",
+   "passage_text": "It's not whether you win or lose, but how you play the game. In the age of computers, that statement takes on new meanings: video games cannot ever really be defeated because, no matter how high the score, it is always the human who tires first or makes the fatal error. But millions of people continue to play, because microelectronic technology has enabled game designers to conveniently and inexpensively transform plain screens into playfields of extraordinary capability. At the same time, a multi-billion dollar industry has grown from very humble beginnings in just a few decades.\n\nThe technological roots of video games can be traced back to 1962, when an MIT (Massachusetts Institute of Technology) graduate student demonstrated Spacewar, a science-fiction fantasy game played on a mainframe computer and a large screen. That game immediately attracted a wide cult following among computer buffs. The next important step came in 1968, when a console was developed that could be used to play games on ordinary televisions. But it was not until the early 1970s that a young University of Utah engine[ering graduate, Nolan Bushnell, saw that technology had advanced] to the point that adaptation of Spacewar from a large computer into coin-operated form, for use in video game arcades, was becoming economically feasible. Bushnell and his associates began working on such a machine in a converted bedroom workshop, but were unsuccessful. What they ultimately developed instead was a simple tennis-like game that they named Pong.\n\nPong took the industry by storm and quickly became the first coin-operated video game hit. And soon thereafter commercial Pong-style home video games also appeared. Yet despite early enthusiasm, consumer interest in this area proved less sustained than had been anticipated and, as prices started to drop and losses mounted, most of the early manufacturers withdrew from the field. Profits proved to be just as elusive at Bushnell's company, Atari, where a rapidly growing market presence in coin-operated machines and home video required greater injections of capital and more professional management than the company was able to provide. In 1976, the founders of Atari sold their share of the company for a sum that was only equivalent to their sales in that year.\n\nAt that point, coin-operated video games seemed just another passing fad. But the introduction of Space Invaders – an arcade model produced by Japanese manufacturer Taito – proved otherwise. With its vibrant graphics it was so different from the previous black and white games that Space Invaders immediately captured public interest. There soon followed a rush of popular video games that employed the same or better hardware and even more imaginative software. Of these, Pac-Man (in 1980) was especially significant, because now females began to take an interest.\n\nBy this time, the same software improvements and technological advances (faster microprocessors and larger memories) that permitted designers to produce spectacular audio and visual effects for coin-operated machines were also being applied to home video units. It was thus only a short while before the programmable consoles that had been unpopular for lack of software suddenly began to sell in large numbers: consumers had discovered that they could finally play a reasonable version of their favourite arcade games in the comfort of their own home. The impact on Atari was astounding. Unprofitable for the first three years, Atari had, by the end of 1979, become a success. By either self-designing or licensing the most popular arcade concepts for cartridge format for use at home, the company had captured some 80 percent of the worldwide market for home video games.\n\nAll of this, however, was too good to last. By late 1982, the public's fascination with arcade games had begun to slow down, and fewer potential best-sellers were becoming available for conversion to cartridges that could be used on an Atari machine. At the same time, the market was flooded with illegal software of all types. It was thus not until the late 1980s that the unstructured nature of the industry, at least on the software side, had stabilized and become restructured in a manner similar, in many respects, to the book publishing business.\n\nUntil 1986, when Japan-based Nintendo introduced a more technologically sophisticated and user-friendly game console, the hardware side was also in disarray. But with tight control of software development and marketing, Nintendo was able to revive and then capture up to 80 percent of a once-again booming market in which no significant competition appeared until the early 1990s. By that point, the annual operating profits of Nintendo had already grown to over $1 billion – an amount exceeding the 1991 profits of all the major Hollywood film studios combined. In 1999, sales of game hardware and software, led by Playstation, were equal in size (around $7 billion) to US domestic box-office revenues.\n\nWith change the only constant, the game industry has moved on to become what it is today. However, no matter what the technology or the format, the essence of a successful game will always be the same: it is simple to understand and to play on an elementary level, but it is compulsive and maddeningly difficult – in fact, forever impossible – to master fully.",
+   "groups": [
+    {
+     "instruction": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer.",
+     "wordLimit": "ONE WORD ONLY",
+     "context": "A history of video games",
+     "questions": [
+      {
+       "no": 1,
+       "type": "fill",
+       "text": "1960s: Spacewar was first played on a computer and special screen. Advances in technology led to cheaper ___ and the possibility of coin-operated video games.",
+       "answer": [
+        "adaptation"
+       ],
+       "explanation": "\"it was not until the early 1970s that … adaptation of Spacewar from a large computer into coin-operated form, for use in video game arcades, was becoming economically feasible\" (economically feasible = cheaper)"
+      },
+      {
+       "no": 2,
+       "type": "fill",
+       "text": "1970s: The first successful coin-operated video game was ___",
+       "answer": [
+        "Pong"
+       ],
+       "explanation": "\"Pong took the industry by storm and quickly became the first coin-operated video game hit.\""
+      },
+      {
+       "no": 3,
+       "type": "fill",
+       "text": "___ was bought from its original owners.",
+       "answer": [
+        "Atari"
+       ],
+       "explanation": "\"In 1976, the founders of Atari sold their share of the company for a sum that was only equivalent to their sales in that year.\""
+      },
+      {
+       "no": 4,
+       "type": "fill",
+       "text": "Space Invaders was successful because of its colourful ___",
+       "answer": [
+        "graphics"
+       ],
+       "explanation": "\"With its vibrant graphics it was so different from the previous black and white games that Space Invaders immediately captured public interest.\" (key ghi \"graphic\"; dạng trong bài là graphics)"
+      },
+      {
+       "no": 5,
+       "type": "fill",
+       "text": "1980s: Pac-Man was the first game to attract ___",
+       "answer": [
+        "females",
+        "female"
+       ],
+       "explanation": "\"Of these, Pac-Man (in 1980) was especially significant, because now females began to take an interest.\""
+      },
+      {
+       "no": 6,
+       "type": "fill",
+       "text": "1990s: At first one company dominated the market. By the end of the decade ___ had become the biggest selling home entertainment product.",
+       "answer": [
+        "Playstation",
+        "PlayStation"
+       ],
+       "explanation": "\"In 1999, sales of game hardware and software, led by Playstation, were equal in size (around $7 billion) to US domestic box-office revenues.\""
+      }
+     ]
+    },
+    {
+     "instruction": "Do the following statements agree with the information given in Reading Passage 1? Write TRUE, FALSE or NOT GIVEN.",
+     "questions": [
+      {
+       "no": 7,
+       "type": "tfng",
+       "text": "Spacewar was unpopular at first.",
+       "answer": "FALSE",
+       "explanation": "\"That game immediately attracted a wide cult following among computer buffs.\""
+      },
+      {
+       "no": 8,
+       "type": "tfng",
+       "text": "Bushnell and his team failed to create a coin-operated version of Spacewar.",
+       "answer": "TRUE",
+       "explanation": "\"Bushnell and his associates began working on such a machine in a converted bedroom workshop, but were unsuccessful.\""
+      },
+      {
+       "no": 9,
+       "type": "tfng",
+       "text": "From the beginning the home video game market has been commercially successful.",
+       "answer": "FALSE",
+       "explanation": "\"consumer interest in this area proved less sustained than had been anticipated and, as prices started to drop and losses mounted, most of the early manufacturers withdrew from the field\""
+      },
+      {
+       "no": 10,
+       "type": "tfng",
+       "text": "Atari was successful for the first time in 1979.",
+       "answer": "TRUE",
+       "explanation": "\"Unprofitable for the first three years, Atari had, by the end of 1979, become a success.\""
+      },
+      {
+       "no": 11,
+       "type": "tfng",
+       "text": "Video arcade game usage continued strongly in the 1980s.",
+       "answer": "FALSE",
+       "explanation": "\"By late 1982, the public's fascination with arcade games had begun to slow down\""
+      },
+      {
+       "no": 12,
+       "type": "tfng",
+       "text": "The time taken to produce a video game can be compared to producing a book.",
+       "answer": "NOT GIVEN",
+       "explanation": "Bài chỉ nói ngành phần mềm được tái cấu trúc \"in a manner similar, in many respects, to the book publishing business\", không so sánh thời gian sản xuất."
+      },
+      {
+       "no": 13,
+       "type": "tfng",
+       "text": "The qualities needed for a video game to become successful have been researched thoroughly.",
+       "answer": "NOT GIVEN",
+       "explanation": "Bài nêu \"the essence of a successful game will always be the same: it is simple to understand …\" nhưng không nói điều này đã được nghiên cứu kỹ."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage": 2,
+   "title": "Art and engineering",
+   "topic": "Art & Engineering",
+   "level": "medium",
+   "passage_text": "A Works of engineering and technology are sometimes viewed as having nothing to do with art and humanity. Think of the connotations of assembly lines, robots and computers. The positive values associated with these creations can be overwhelmed by the negative associations of repetitive, stressful work and threatened jobs. Critics of technology protest against what they see as […]. At the same time, megastructures such as the Brooklyn and Golden Gate Bridges in the US are hailed as majestic human achievements, as well as great engineering monuments that have come to embody the spirit of their respective cities. The relationship between art and engineering has seldom been easy or consistent.\n\nB Arguably, the assembly line process associated with Henry Ford made workers tools of the system. The human worker may have appeared to be only a cog in the wheel of industry, yet photographers such as Lewis Hine revealed the beauty of line and composition in his study of a worker using a wrench to turn a bolt. Hine focused on the individuals engaged in the work. In the period around World War I, he visited New York and was given the opportunity to record the construction of the famous Empire State Building, the tallest building of its time. This resulted in a series of striking photographs which have become familiar images of daring. Hine put his own life at risk to photograph workers suspended on cables hundreds of feet in the air, or sitting on a high girder eating lunch.\n\nC When Ford's enormous River Rouge plant opened in 1927, the painter/photographer Charles Sheeler was chosen to photograph it. The world's largest car plant captured the imagination of Sheeler, who described it as the most thrilling subject he had ever had to work with.\n\nD Long before Hine and Sheeler, other photographers and painters had seen the art and humanity in works of engineering and technology. This is perhaps nowhere more evident than in the Coalbrookdale Museum of Iron, at Ironbridge in Shropshire in the UK. In the late 18th century, Abraham Darby cast the large iron ribs that formed the world's first iron bridge, a dramatic departure from the classic stone and timber bridges that dotted the countryside and had been captured in numerous landscape paintings. This structure still spans the River Severn, and the Coalbrookdale Museum is crowded with its portraits, showing the iron structure not as a blight on the landscape, but as its focal point. This is how Michael Rooker shows the iron bridge in his late 18th-century painting, in which the surrounding area radiates out from the bridge and pales behind it. Countless other contemporary representations of the bridge hang in the nearby museum.\n\nE In the 19th century, the railways were another feat of engineering which captured the imagination of painters, and the steam engine in the distance of a landscape became as much a part of it as the herd of cows in the foreground. The Impressionist Claude Monet painted railway stations – such as the Gare St-Lazare in Paris – as well as flowers and gardens. By the 20th century, engineering, technology and industry were very well established as subjects for artists.\n\nF American-born artist Joseph Pennell portrayed buildings under construction and shrouded in scaffolding, and recorded scenes of industry during World War I. He is perhaps best known for his prints of the Panama Canal as it neared completion and of the partially completed Hell Gate and Delaware River Bridges. Pennell has often been quoted as saying, 'Great engineering is great art', a sentiment that he expressed repeatedly. He wrote of his contemporaries: 'I understand nothing of engineering, but I know that engineers are the greatest architects and the most pictorial builders since the (ancient) Greeks.' Pennell called the sensation that he felt when he looked at a great construction project 'the Wonder of Work'. He saw engineering as a process memorialized in every completed dam, skyscraper, bridge or other great engineering feat.\n\nG Today, one of the most innovative and influential engineers is Santiago Calatrava, who also trained as an architect. His bridges and other structures provide public spaces on a human scale, and stand as pieces of sculpture in their own right. Increasingly, commissioners of bridges in the US are looking to such individuals, to teams of engineers and architects who work with artists. The growing awareness of the intangible added value of art is sure to give us more masterpieces like the Brooklyn Bridge. They in turn will continue to be noble monuments to civilization, and will be welcome subjects for artists of all kinds.",
+   "groups": [
+    {
+     "instruction": "Reading Passage 2 has seven paragraphs, A–G. Which paragraph contains the following information? NB You may use any letter more than once.",
+     "bank": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G"
+     ],
+     "questions": [
+      {
+       "no": 14,
+       "type": "match",
+       "text": "a time when a transport system became an inspiration for artists",
+       "answer": 4,
+       "explanation": "\"In the 19th century, the railways were another feat of engineering which captured the imagination of painters\""
+      },
+      {
+       "no": 15,
+       "type": "match",
+       "text": "a reference to the current trend of including artists in engineering projects",
+       "answer": 6,
+       "explanation": "\"Increasingly, commissioners of bridges in the US are looking to such individuals, to teams of engineers and architects who work with artists.\""
+      },
+      {
+       "no": 16,
+       "type": "match",
+       "text": "reasons for the idea that art and engineering are difficult to combine",
+       "answer": 0,
+       "explanation": "\"The positive values associated with these creations can be overwhelmed by the negative associations of repetitive, stressful work and threatened jobs.\""
+      },
+      {
+       "no": 17,
+       "type": "match",
+       "text": "how the depiction of human labour involved danger to an artist",
+       "answer": 1,
+       "explanation": "\"Hine put his own life at risk to photograph workers suspended on cables hundreds of feet in the air\""
+      },
+      {
+       "no": 18,
+       "type": "match",
+       "text": "a reference to an artist who celebrated a number of unfinished structures",
+       "answer": 5,
+       "explanation": "\"He is perhaps best known for his prints of the Panama Canal as it neared completion and of the partially completed Hell Gate and Delaware River Bridges.\""
+      },
+      {
+       "no": 19,
+       "type": "match",
+       "text": "a reference to two large engineering works that are symbols of their locations",
+       "answer": 0,
+       "explanation": "\"megastructures such as the Brooklyn and Golden Gate Bridges … have come to embody the spirit of their respective cities\""
+      }
+     ]
+    },
+    {
+     "instruction": "Look at the following statements (Questions 20–22) and the list of people below. Match each statement with the correct person, A–G.",
+     "bank": [
+      "Lewis Hine",
+      "Charles Sheeler",
+      "Abraham Darby",
+      "Michael Rooker",
+      "Claude Monet",
+      "Joseph Pennell",
+      "Santiago Calatrava"
+     ],
+     "questions": [
+      {
+       "no": 20,
+       "type": "match",
+       "text": "His engineering constructions are also regarded as works of art.",
+       "answer": 6,
+       "explanation": "\"His bridges and other structures provide public spaces on a human scale, and stand as pieces of sculpture in their own right.\" (Santiago Calatrava)"
+      },
+      {
+       "no": 21,
+       "type": "match",
+       "text": "He created images of builders constructing an iconic American skyscraper.",
+       "answer": 0,
+       "explanation": "\"he … was given the opportunity to record the construction of the famous Empire State Building\" (Lewis Hine)"
+      },
+      {
+       "no": 22,
+       "type": "match",
+       "text": "He painted a building connected with a significant innovation in transport.",
+       "answer": 4,
+       "explanation": "\"The Impressionist Claude Monet painted railway stations – such as the Gare St-Lazare in Paris\""
+      }
+     ]
+    },
+    {
+     "instruction": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "context": "The iron bridge",
+     "questions": [
+      {
+       "no": 23,
+       "type": "fill",
+       "text": "Before the late 18th century, bridges were traditionally constructed of wood and ___",
+       "answer": [
+        "stone"
+       ],
+       "explanation": "\"a dramatic departure from the classic stone and timber bridges that dotted the countryside\""
+      },
+      {
+       "no": 24,
+       "type": "fill",
+       "text": "Then the engineer ___ manufactured the elements of an innovative bridge",
+       "answer": [
+        "Abraham Darby",
+        "Darby"
+       ],
+       "explanation": "\"Abraham Darby cast the large iron ribs that formed the world's first iron bridge\""
+      },
+      {
+       "no": 25,
+       "type": "fill",
+       "text": "… across the ___",
+       "answer": [
+        "River Severn",
+        "the River Severn",
+        "Severn",
+        "the Severn"
+       ],
+       "explanation": "\"This structure still spans the River Severn\""
+      },
+      {
+       "no": 26,
+       "type": "fill",
+       "text": "This iron bridge was the subject of a number of artworks, including a notable one by ___. While some may have viewed it as ugly, artists regarded the bridge as a central feature of the landscape.",
+       "answer": [
+        "Michael Rooker",
+        "Rooker"
+       ],
+       "explanation": "\"This is how Michael Rooker shows the iron bridge in his late 18th-century painting\""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage": 3,
+   "title": "Evolutionary psychology in the workplace",
+   "topic": "Psychology",
+   "level": "hard",
+   "passage_text": "Charles Darwin, the brilliant anthropologist and creator of the theory of evolution, is not normally associated with the modern business world. Nevertheless, Darwinian evolutionary theory is the foundation of a new wave of ideas about human behaviour in general and particularly the way people behave in the workplace; these ideas have been given the title of evolutionary psychology. Evolutionary psychology revolves around the notion that our brains, like our bodies, have an inherited evolutionary design that has scarcely changed for 10,000 years. As respected evolutionary psychology experts Leda Cosmides and John Tooby comment, our modern skulls house a Stone Age mind. The US biologist Edward O Wilson sees evolutionary psychology as being a discipline which is based on both socio-biology, which is the study of the biological basis of social behaviour, and psychology, which is the systematic study of human behaviour.\n\nNigel Nicholson, an organisational psychologist from the London Business School, is a strong supporter of evolutionary psychology and on this subject has published Managing the Human Animal. His book takes the reader on a journey from the Stone Age plains of the savannah to the modern office, and includes a discussion of Darwinism and behavioural psychology together with a dissection of dysfunctional organisational behaviour. It is an effective approach explaining why people behave as they do, particularly at work. Evolutionary psychology is increasingly being cited in management circles, where managers are trying to understand puzzling aspects of human behaviour and by doing so improve the workplace. Nicholson believes that evolutionary psychology can help managers understand what goes wrong in organisational life and what they can do about it.\n\nNicholson maintains that evolutionary psychology dismisses the long-held assumption that our minds are like blank pages just waiting for culture and experience to write on them and shape our nature. He points out that sophisticated research shows the brain actually houses a store of knowledge when we are born, and now genetic research is establishing there are certain genes that account for abilities, tastes and tendencies. The stored knowledge in the human brain has not changed much since the Stone Age. As Tooby and Cosmides stress, there have not been enough generations for a brain that is well adapted to our post-industrial life to evolve through natural selection.\n\nThe evolutionary psychology version of human nature revolves around some key elements which we have inherited from our hunter-gatherer minds. One key element is emotion. Emotion was originally essential to keep early man alive and safe from predators. Emotion was, and continues to be, our radar, guiding us throughout today's techno-defined business world. Despite this, the business world emphasises rational not emotional behaviour, and does not admit the importance of emotion. We still use the emotional part of our minds to make sense of other people's behaviour and to create an impression, so we can often be taken in by appearances. This mental predisposition actually works best in small communities (the tribe), not in much larger environments filled with people we barely know (the modern workplace). Our minds naturally try to re-create our ancestral communities with networks of no more than 150 people, where there are clear hierarchies and leaders. As a consequence, it takes very little to trigger people's innate distrust of others because our safety in antiquity depended on supporting our near family and friends whom we valued more than other people.\n\nSo what advice does Nicholson have for the corporate world? He thinks that by knowing the reasons for people's behaviour it is possible to mould corporate environments into places that have more chance of working efficiently and being pleasant places to work in. Nicholson admits that not everybody in the business world agrees with his belief in the effectiveness of evolutionary psychology in the workplace. One group that resists the theory of evolutionary psychology is young MBA graduates who are just beginning their careers and feel that evolutionary psychology will make their lives at work more difficult. Older and wiser executives point out that they still tend to cling to the idea of a magic formula to bring people into line with corporate strategy. But that is back-to-front thinking according to Nicholson, who contends that we should be reinventing our business structures, not our fundamental human nature.\n\nAt the end of his book, Nicholson gives his forecast of what will and will not change in the business world. He believes that most people will still prefer more traditional forms of work and throughout their lives will continue to aim at lifelong status advancement. He also maintains that the line between work and home will be less defined, but that people will prefer traditional working patterns if working from home leaves them isolated from their work community. He doubts that the high-tech ideas of virtual companies will ever be very successful because people will still want to meet each other face-to-face. Nicholson describes his ideal organisation in the future: it would be decentralised, with small sub-units; the staff would be from diverse backgrounds and be allowed a high degree of self-determination. New endeavours and creativity would replace systems and rationality. Nicholson acknowledges that there is a long way to go in terms of the translation of his ideas of evolutionary psychology into practical propositions, but he is confident more and more people will come round to his way of thinking.",
+   "groups": [
+    {
+     "instruction": "Choose the correct letter, A, B, C or D.",
+     "questions": [
+      {
+       "no": 27,
+       "type": "mcq",
+       "text": "The writer's purpose in the first paragraph is to",
+       "options": [
+        "oppose the views of Charles Darwin.",
+        "compare experts' opinions of Darwin's theory.",
+        "explain the theory of evolutionary psychology.",
+        "name experts in the field of evolutionary psychology."
+       ],
+       "answer": 2,
+       "explanation": "\"Evolutionary psychology revolves around the notion that our brains, like our bodies, have an inherited evolutionary design that has scarcely changed for 10,000 years.\""
+      },
+      {
+       "no": 28,
+       "type": "mcq",
+       "text": "In the third paragraph, which view about evolutionary psychology matches Nicholson's opinion?",
+       "options": [
+        "Our characters determine our career choices.",
+        "We begin life without any preconceived notions.",
+        "Our interests and skills depend on our environment.",
+        "We inherit ideas and characteristics from our ancestors."
+       ],
+       "answer": 3,
+       "explanation": "\"the brain actually houses a store of knowledge when we are born, and now genetic research is establishing there are certain genes that account for abilities, tastes and tendencies\""
+      },
+      {
+       "no": 29,
+       "type": "mcq",
+       "text": "The writer discusses the key element of emotion in order to",
+       "options": [
+        "criticise primitive survival strategies.",
+        "explain attitudes and actions at work.",
+        "demonstrate the slowness of evolution.",
+        "suggest companies today are poorly structured."
+       ],
+       "answer": 1,
+       "explanation": "\"We still use the emotional part of our minds to make sense of other people's behaviour and to create an impression, so we can often be taken in by appearances.\""
+      },
+      {
+       "no": 30,
+       "type": "mcq",
+       "text": "Which of the following does Nicholson predict will happen in the business world?",
+       "options": [
+        "Companies will remain in city centres.",
+        "Promotion will no longer motivate people.",
+        "Employees will be less independent than now.",
+        "Social interaction will remain important to workers."
+       ],
+       "answer": 3,
+       "explanation": "\"people will prefer traditional working patterns if working from home leaves them isolated from their work community\"; \"people will still want to meet each other face-to-face\""
+      },
+      {
+       "no": 31,
+       "type": "mcq",
+       "text": "Which of the following is the most suitable title for Reading Passage 3?",
+       "options": [
+        "How successful companies manage change",
+        "Understanding the origins of workplace behaviour",
+        "Darwin's theories rejected by modern management",
+        "Why post-industrial organisations need to evolve more quickly"
+       ],
+       "answer": 1,
+       "explanation": "\"It is an effective approach explaining why people behave as they do, particularly at work.\""
+      }
+     ]
+    },
+    {
+     "instruction": "Do the following statements agree with the views of the writer in Reading Passage 3? Write YES, NO or NOT GIVEN.",
+     "questions": [
+      {
+       "no": 32,
+       "type": "ynng",
+       "text": "Nicholson makes a persuasive argument in his book.",
+       "answer": "YES",
+       "explanation": "\"It is an effective approach explaining why people behave as they do, particularly at work.\""
+      },
+      {
+       "no": 33,
+       "type": "ynng",
+       "text": "Tooby and Cosmides believe natural selection through the generations has prepared [the human brain well for post-industrial life].",
+       "answer": "NO",
+       "explanation": "\"As Tooby and Cosmides stress, there have not been enough generations for a brain that is well adapted to our post-industrial life to evolve through natural selection.\" (phần cuối câu hỏi bị mất trong bản đề, đã dựng lại theo bài)"
+      },
+      {
+       "no": 34,
+       "type": "ynng",
+       "text": "Our reliance on technology causes emotional problems in the workplace.",
+       "answer": "NOT GIVEN",
+       "explanation": "Bài chỉ nói \"Emotion was, and continues to be, our radar, guiding us throughout today's techno-defined business world\", không nói công nghệ gây vấn đề cảm xúc."
+      },
+      {
+       "no": 35,
+       "type": "ynng",
+       "text": "People today are more trusting than they used to be.",
+       "answer": "NO",
+       "explanation": "\"it takes very little to trigger people's innate distrust of others\""
+      }
+     ]
+    },
+    {
+     "instruction": "Complete the summary using the list of words, A–I, below.",
+     "context": "Nicholson's advice to the corporate world",
+     "bank": [
+      "business leaders",
+      "MBA graduates",
+      "promotion structures",
+      "reward strategy",
+      "magic formula",
+      "strategic planning",
+      "back-to-front thinking",
+      "business environments",
+      "human nature"
+     ],
+     "questions": [
+      {
+       "no": 36,
+       "type": "match",
+       "text": "Nicholson believes that if we know why people act the way they do, we can change ___ so employees will work more efficiently.",
+       "answer": 7,
+       "explanation": "\"it is possible to mould corporate environments into places that have more chance of working efficiently\""
+      },
+      {
+       "no": 37,
+       "type": "match",
+       "text": "Nicholson's ideas are unwelcome to ___, but some executives are more open to what evolutionary psychology says.",
+       "answer": 1,
+       "explanation": "\"One group that resists the theory of evolutionary psychology is young MBA graduates\""
+      },
+      {
+       "no": 38,
+       "type": "match",
+       "text": "However, these executives still believe that there is a ___ that will make employees act according to the company's practices.",
+       "answer": 4,
+       "explanation": "\"they still tend to cling to the idea of a magic formula to bring people into line with corporate strategy\""
+      },
+      {
+       "no": 39,
+       "type": "match",
+       "text": "According to Nicholson, these senior executives are engaging in ___",
+       "answer": 6,
+       "explanation": "\"But that is back-to-front thinking according to Nicholson\""
+      },
+      {
+       "no": 40,
+       "type": "match",
+       "text": "… and we should not try to change ___ but instead we should change our business structures.",
+       "answer": 8,
+       "explanation": "\"we should be reinventing our business structures, not our fundamental human nature\""
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "writing": []
+}
