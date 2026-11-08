@@ -7,3 +7,4 @@ public/data/
 public/audio/
 ielts-practice.zip
 .claude/settings.local.json
+tsconfig.tsbuildinfo
