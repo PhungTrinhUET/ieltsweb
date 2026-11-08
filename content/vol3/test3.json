@@ -1,0 +1,975 @@
+{
+ "vol": 3,
+ "test": 3,
+ "source": "ORIGINAL IELTS PAPERS – VOL 3, Test 3 (audio: test3.m4a gộp; cắt theo mốc cut)",
+ "listening": {
+  "audioDir": "audio/vol3/test3",
+  "timingNote": "Mốc thời gian lấy từ transcript ASR của file gộp (±10 s).",
+  "sections": [
+   {
+    "section": 1,
+    "title": "Wildlife Conservation Society – membership",
+    "topic": "Leisure",
+    "cut": "0:50",
+    "transcript": "[00:55] Narrator: Section one. You will hear a man enquiring about joining a wildlife conservation society. First, you have some time to look at questions one to six. You will see that there is an example that has been done for you.\n[01:53] Receptionist: Wildlife Conservation Society, good afternoon. Can I help you?\n[01:57] Michael: Oh, hello. Yes, I'd like to join, please.\n[02:01] Receptionist: Oh yes, certainly. I'll just get some details from you. Could I have your name?\n[02:07] Michael: Michael Jones.\n[02:12] Narrator: The caller's name is Michael Jones, so Michael Jones has been written in the space. Now we shall begin. Listen carefully and answer questions one to six.\n[02:35] Receptionist: Wildlife Conservation Society, good afternoon. Can I help you?\n[02:39] Michael: Oh, hello. Yes, I'd like to join, please.\n[02:44] Receptionist: Oh yes, certainly. I'll just get some details from you. Could I have your name?\n[02:50] Michael: Michael Jones.\n[02:52] Receptionist: Right. And can I ask where you heard about us? Was it in an advert, or did a friend tell you, or…?\n[02:59] Michael: Neither, actually. It was a radio programme. Then I just got your number from the phone book.\n[03:05] Receptionist: Oh, right. Now, I need some membership details. It's Michael Jones, and the address?\n[03:13] Michael: 21 Beel Street, Leeds.\n[03:18] Receptionist: Fine. And do you know your postcode?\n[03:22] Michael: Yes, it's LS14 2JW.\n[03:29] Receptionist: Okay. And do you have a daytime telephone number we can contact you on?\n[03:34] Michael: Yes, you can call me at work. The number's 01173 58642. And I can give you my office email address if you like.\n[03:48] Receptionist: That'd probably be useful. Yes, please.\n[03:51] Michael: It's mj@hennings.co.uk.\n[03:59] Receptionist: Is that H-E-double N-I-N-G-S?\n[04:03] Michael: That's right.\n[04:05] Receptionist: Thank you. Now I just need to ask you some questions about exactly what you want. First of all, how long do you want the membership for? We do two-, three- and five-year memberships, and we also do one for life.\n[04:20] Michael: I think I'll just get the minimum length this time round.\n[04:24] Receptionist: Fine. And then the type of membership – we do single, joint, or family, which covers up to four children.\n[04:31] Michael: Well, we haven't got any children, but I think I'll get the joint one, because my wife will probably want to do the activities with me.\n[04:39] Receptionist: Yes, fine. Let me see – that'll be 49 pounds altogether then, please.\n[04:49] Narrator: Before you hear the rest of the conversation, you have some time to look at questions seven to ten. Now listen and answer questions seven to ten.\n[05:23] Receptionist: How would you like to pay – by direct debit?\n[05:26] Michael: No problem.\n[05:28] Receptionist: I just need your bank details. Can you give me the name first?\n[05:32] Michael: It's the Union Bank.\n[05:34] Receptionist: And now, I've got your name, but I need your account number.\n[05:40] Michael: 01059612.\n[05:49] Receptionist: Okay. When would you like to start payment – next month, on the first of October?\n[05:54] Michael: Can you make it the 15th instead?\n[05:58] Receptionist: No problem. The membership will begin then too. Is that all right?\n[06:02] Michael: That's fine.\n[06:03] Receptionist: I'll just give you a reference number in case there's any problem. Have you got a pen? It's J-Y-Z-3-7. And we'll be sending you an information pack within a few days. Is there anything else?\n[06:18] Michael: Oh, yes. Could you send me an additional one? I've got a friend who's very interested.\n[06:24] Receptionist: Certainly, no problem. I'll make a note of that. There's also a video we can send you if you like. There's no charge.\n[06:30] Michael: Yes, please. That'll be great.\n[06:35] Narrator: That is the end of section one. You now have half a minute to check your answers.",
+    "groups": [
+     {
+      "instruction": "Complete the form below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "wordLimit": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "context": "Wildlife Conservation Society – Application for membership. Example – Caller's name: Michael Jones. Address: 21 Beel Street, Leeds. Phone number: 01173 58642. Account name: Michael Jones. Account number: 01059612.",
+      "questions": [
+       {
+        "no": 1,
+        "type": "fill",
+        "text": "Heard of WCS from: ___",
+        "answer": [
+         "a radio programme",
+         "radio programme",
+         "a radio program",
+         "radio program",
+         "radio"
+        ],
+        "explanation": "\"it was a radio programme\""
+       },
+       {
+        "no": 2,
+        "type": "fill",
+        "text": "Postcode: ___",
+        "answer": [
+         "LS14 2JW",
+         "LS142JW"
+        ],
+        "explanation": "\"LS14 2JW\""
+       },
+       {
+        "no": 3,
+        "type": "fill",
+        "text": "Email address: mj@ ___",
+        "answer": [
+         "hennings.co.uk",
+         "hennigs.co.uk"
+        ],
+        "explanation": "H-E-N-N-I-N-G-S"
+       },
+       {
+        "no": 4,
+        "type": "fill",
+        "text": "Length of membership: ___ years",
+        "answer": [
+         "2",
+         "two"
+        ],
+        "explanation": "\"the minimum length\" – two years"
+       },
+       {
+        "no": 5,
+        "type": "fill",
+        "text": "Type of membership: ___",
+        "answer": [
+         "joint"
+        ],
+        "explanation": "\"I'll get the joint one\""
+       },
+       {
+        "no": 6,
+        "type": "fill",
+        "text": "Fee: £ ___",
+        "answer": [
+         "49"
+        ],
+        "explanation": "\"49 pounds altogether\""
+       },
+       {
+        "no": 7,
+        "type": "fill",
+        "text": "Payment details: direct debit. Name of bank: ___",
+        "answer": [
+         "the Union Bank",
+         "Union Bank"
+        ],
+        "explanation": "\"It's the Union Bank\""
+       },
+       {
+        "no": 8,
+        "type": "fill",
+        "text": "Date of first payment: ___",
+        "answer": [
+         "15 October",
+         "15th October",
+         "October 15",
+         "15/10"
+        ],
+        "explanation": "\"Can you make it the 15th instead?\""
+       },
+       {
+        "no": 9,
+        "type": "fill",
+        "text": "Reference number: ___",
+        "answer": [
+         "JYZ37"
+        ],
+        "explanation": "\"J-Y-Z-3-7\""
+       },
+       {
+        "no": 10,
+        "type": "fill",
+        "text": "Other requests: extra information pack; ___",
+        "answer": [
+         "video",
+         "a video"
+        ],
+        "explanation": "\"There's also a video we can send you\""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "section": 2,
+    "title": "Yorktown Spring Festival",
+    "topic": "Events",
+    "cut": "7:15",
+    "transcript": "[07:20] Narrator: Section two. You will hear a woman talking on a radio programme about a festival that is about to take place. First, you have some time to look at questions 11 to 18. Now listen carefully and answer questions 11 to 18.\n[08:13] Presenter: I have in the studio with me Mary Smith from Yorktown Tourism, who is here to tell us about some of the events happening in our state capital over the next three weeks at the Spring Festival. So Mary, what can we expect to see?\n[08:27] Mary: Well, it's such an exciting time to be in Yorktown. To kick off the Spring Festival, there'll be a huge firework display down by the lake, starting at 9 p.m. this Saturday, the fourth of September. Over 10,000 fireworks will be set off, all choreographed to music and broadcast simultaneously here on Radio Yorkie. You should get there early if you want to get close to the action, so bring along a picnic and a blanket, as it could get chilly in the evening.\n[08:58] Mary: One of the things that attracts visitors to the festival from all over the country is the amazing collection of flowers on show in Central Park throughout the festival. Special buses will run from the town centre to the show at 20-minute intervals, for those of you who prefer to take public transport.\n[09:18] Mary: If you're interested in seeing the latest in cars, from the fastest to the most expensive, then head over to the Motor Show at the Exhibition Centre from the 10th to the 15th of September. It'll be open daily from 9 a.m. until 10 p.m., so you can even pop in there after work.\n[09:38] Mary: Do you like photography? Then go along to 'Grow Your Imagination', an exhibition of photographs of famous gardens, which will be held at the Art Gallery from the 11th to the 19th of September. Come and be inspired by some of the world's most beautiful gardens. I've had a sneak preview of some of the photographs, and they are magnificent.\n[10:00] Mary: If music is more your scene, then you should come and hear the Australian Philharmonic Orchestra performing 'Swing in Spring' at the Concert Hall on Friday the 17th and Saturday the 18th of September. It's a celebration of dance music from the 1940s and 50s. There will be three performances: both evenings start at 7 p.m., and a matinee performance at 2.30 on the Saturday. So get your dancing shoes on and head there – it's guaranteed to get your feet tapping.\n[10:45] Narrator: Before you hear the rest of the programme, you have some time to look at questions 19 and 20. Now listen and answer questions 19 and 20.\n[11:14] Mary: Those are just a few of the attractions on offer. But for something a little different, you could try 'Balloons Down Under', which is the largest gathering of hot-air balloons in the southern hemisphere. It's well worth it, because there'll be over 25 balloons of all shapes and sizes, which is a truly amazing sight. I'm also happy to announce that one lucky person will get the chance to go up in one of these balloons absolutely free. That's the prize in our special Spring Festival competition. It would normally cost you $200, so it's not a bad prize. I'm sure you all want a chance to win, so you'll need to fill out the entry form in today's edition of the Yorktown News. Don't forget to include your phone number, and send it to Radio Yorkie. Make sure your entry reaches us by 5 p.m. on Thursday the ninth of September. Then, to see if you've won, just check out the festival's website on Saturday the 11th of September, where we'll publish the name of the lucky winner. It's such a fantastic prize, so hurry up and get your entry in. So there you have it – just a few of the special events happening here in Yorktown over the Spring Festival. And if you'd like any more details about the festival…\n[12:47] Narrator: That is the end of section two. You now have half a minute to check your answers.",
+    "groups": [
+     {
+      "instruction": "Complete the notes below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.",
+      "wordLimit": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "context": "Spring Festival – Event / Location / Date and time / Other information",
+      "questions": [
+       {
+        "no": 11,
+        "type": "fill",
+        "text": "Firework display – Location: near the ___ (4 September, 9 p.m.)",
+        "answer": [
+         "lake"
+        ],
+        "explanation": "\"down by the lake\""
+       },
+       {
+        "no": 12,
+        "type": "fill",
+        "text": "Firework display – Other information: pack a ___ and blanket",
+        "answer": [
+         "picnic"
+        ],
+        "explanation": "\"bring along a picnic and a blanket\""
+       },
+       {
+        "no": 13,
+        "type": "fill",
+        "text": "Display of ___ – Central Park, daily",
+        "answer": [
+         "flowers"
+        ],
+        "explanation": "\"the amazing collection of flowers on show in Central Park\""
+       },
+       {
+        "no": 14,
+        "type": "fill",
+        "text": "Buses run from the town centre every ___ minutes",
+        "answer": [
+         "20",
+         "twenty"
+        ],
+        "explanation": "\"at 20-minute intervals\""
+       },
+       {
+        "no": 15,
+        "type": "fill",
+        "text": "The ___ Show – Exhibition Centre, 10–15 September, 9 a.m.–10 p.m.",
+        "answer": [
+         "Motor"
+        ],
+        "explanation": "\"the Motor Show at the Exhibition Centre\""
+       },
+       {
+        "no": 16,
+        "type": "fill",
+        "text": "'Grow Your Imagination' – in the ___, 11–19 September",
+        "answer": [
+         "art gallery",
+         "Art Gallery"
+        ],
+        "explanation": "\"held at the Art Gallery\""
+       },
+       {
+        "no": 17,
+        "type": "fill",
+        "text": "'Swing in Spring' – in the ___, 17 & 18 September",
+        "answer": [
+         "concert hall",
+         "Concert Hall"
+        ],
+        "explanation": "\"at the Concert Hall\""
+       },
+       {
+        "no": 18,
+        "type": "fill",
+        "text": "Saturday matinee performance at ___",
+        "answer": [
+         "2.30",
+         "2:30",
+         "2.30 pm",
+         "2.30pm"
+        ],
+        "explanation": "\"a matinee performance at 2.30 on the Saturday\""
+       }
+      ]
+     },
+     {
+      "instruction": "Choose the correct letter, A, B or C.",
+      "questions": [
+       {
+        "no": 19,
+        "type": "mcq",
+        "text": "In the Spring Festival competition, you can win",
+        "options": [
+         "a family pass to 'Balloons Down Under'",
+         "a cheque for $200",
+         "a flight in a hot-air balloon"
+        ],
+        "answer": 2,
+        "explanation": "\"the chance to go up in one of these balloons absolutely free\""
+       },
+       {
+        "no": 20,
+        "type": "mcq",
+        "text": "You can get an entry form for the competition from",
+        "options": [
+         "the radio station",
+         "the newspaper",
+         "the Festival's website"
+        ],
+        "answer": 1,
+        "explanation": "\"the entry form in today's edition of the Yorktown News\""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "section": 3,
+    "title": "Archaeology course – Paul and tutor",
+    "topic": "Education",
+    "cut": "13:22",
+    "transcript": "[13:27] Narrator: Section three. You will hear a student called Paul talking to a tutor about a course he is thinking of doing. First you have some time to look at questions 21 to 25. Now listen carefully and answer questions 21 to 25.\n[14:13] Tutor: Good morning. Come in. You're Paul, are you?\n[14:16] Paul: Yes, I spoke to you on the phone.\n[14:19] Tutor: Yes. Have a seat. You wanted to talk to me about the archaeology course?\n[14:24] Paul: Yes, I've read the handbook, but I'd like to find out a few more details before I decide whether to do it.\n[14:29] Tutor: Right, yes. What would you like to know?\n[14:33] Paul: Well, first of all, can I combine the archaeology course with one in anthropology?\n[14:38] Tutor: Yes, you can combine it with any other subject apart from classical history. That's simply because there's some overlap in the lecture times for those two courses; we weren't able to coordinate them.\n[14:51] Paul: Okay, fine. And could you tell me about the modules?\n[14:55] Tutor: Well, in the first semester there are three. All of them are compulsory; we don't offer optional modules till next year. The first one focuses on what can be learned from specific artefacts, such as pottery and stone tools. It's called 'Object Matters', and it's taught by Dr Morris.\n[15:16] Paul: How is the module presented? I mean, is it lectures?\n[15:21] Tutor: We refer to the means of presentation as the learning method, and in this case it's lectures integrated with practical sessions. So it's a mixture.\n[15:31] Paul: What about the content? I suppose we'll be looking at different kinds of archaeological remains, and how to date them and so on?\n[15:39] Tutor: To some extent, but the module is basically about processes. First of all, recording material, then classification, then interpretation of the data – that's how archaeologists draw conclusions about their findings – and finally, display. Is that okay?\n[15:58] Paul: I think so, yes, thanks. One other thing: how is the module assessed? Is there an exam?\n[16:05] Tutor: No, it's all based on coursework.\n[16:11] Narrator: Before you hear the rest of the discussion, you have some time to look at questions 26 to 30. Now listen and answer questions 26 to 30.\n[16:45] Tutor: Okay, and the second module, that's the one called 'Towns and Cities', is taught by our department head, Professor Elliot. And as the name suggests, the module's about the origins of built environments and how they developed.\n[17:01] Paul: That's mainly factual, I suppose?\n[17:04] Tutor: It is, really, and for that reason the assessment's by examination. But you may be pleased to know it's an oral rather than a written exam. It sounds a bit scary, but most of our students find they actually enjoy it, so don't worry too much. Okay. And then the title of the third module is 'Method and Science', and in that Dr Thompson will be introducing you to the standard techniques used in archaeological fieldwork and analysis – things like excavating and dating.\n[17:36] Paul: What about the learning method for this module? Are there any lectures, or is it all laboratory work?\n[17:42] Tutor: Oh, it's half lab work and half seminars. There aren't any lectures. Then, right at the end of the module, you'll take part in a site survey. The date for that is the week beginning the 10th of March, but I can't tell you the location yet; that will be announced later. But I think you'll find it very useful.\n[18:02] Paul: Yes, I know someone who went on that…\n[18:07] Narrator: That is the end of section three. You now have half a minute to check your answers.",
+    "groups": [
+     {
+      "instruction": "Complete the notes below. Write NO MORE THAN THREE WORDS for each answer.",
+      "wordLimit": "NO MORE THAN THREE WORDS",
+      "context": "Archaeology Course",
+      "questions": [
+       {
+        "no": 21,
+        "type": "fill",
+        "text": "Can be combined with any other subject except ___",
+        "answer": [
+         "classical history"
+        ],
+        "explanation": "\"apart from classical history\""
+       },
+       {
+        "no": 22,
+        "type": "fill",
+        "text": "Has three ___ modules in first semester",
+        "answer": [
+         "compulsory"
+        ],
+        "explanation": "\"All of them are compulsory\""
+       },
+       {
+        "no": 23,
+        "type": "fill",
+        "text": "Module 1 – Title: ___ (Lecturer: Dr Morris; learning method: lectures and practical sessions)",
+        "answer": [
+         "Object Matters",
+         "Object matters"
+        ],
+        "explanation": "\"It's called 'Object Matters'\""
+       },
+       {
+        "no": 24,
+        "type": "fill",
+        "text": "Content: based on processes – recording, ___, interpretation, display",
+        "answer": [
+         "classification"
+        ],
+        "explanation": "\"recording material, then classification, then interpretation\""
+       },
+       {
+        "no": 25,
+        "type": "fill",
+        "text": "Assessment: by ___",
+        "answer": [
+         "coursework"
+        ],
+        "explanation": "\"it's all based on coursework\""
+       },
+       {
+        "no": 26,
+        "type": "fill",
+        "text": "Module 2 – Title: ___ (Lecturer: Prof. Elliot)",
+        "answer": [
+         "Towns and Cities",
+         "Towns and cities"
+        ],
+        "explanation": "\"the one called 'Towns and Cities'\""
+       },
+       {
+        "no": 27,
+        "type": "fill",
+        "text": "Content: ___ and development of built environments",
+        "answer": [
+         "the origins",
+         "origins",
+         "origin"
+        ],
+        "explanation": "\"the origins of built environments and how they developed\""
+       },
+       {
+        "no": 28,
+        "type": "fill",
+        "text": "Assessment: by ___ examination",
+        "answer": [
+         "oral",
+         "an oral"
+        ],
+        "explanation": "\"an oral rather than a written exam\""
+       },
+       {
+        "no": 29,
+        "type": "fill",
+        "text": "Module 3 – 'Method and Science' (Dr Thompson). Learning method: 50% lab work, 50% ___",
+        "answer": [
+         "seminars"
+        ],
+        "explanation": "\"half lab work and half seminars\""
+       },
+       {
+        "no": 30,
+        "type": "fill",
+        "text": "Site survey at end of module (the ___ is to be announced later)",
+        "answer": [
+         "location"
+        ],
+        "explanation": "\"I can't tell you the location yet\""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "section": 4,
+    "title": "Digital natives and digital immigrants",
+    "topic": "Education",
+    "cut": "18:43",
+    "transcript": "[18:48] Narrator: Section four. You will hear a talk about the effects of our digital world on young people. First, you have some time to look at questions 31 to 40. Now listen carefully and answer questions 31 to 40.\n[19:53] Lecturer: In this lecture series, we're looking at changes occurring due to the rapid spread of digital technology in the last decades of the 20th century. By digital technology, I include any computer-related devices, such as email, the internet, cell phones, instant messaging, to name but a few. Today's lecture focuses on the ideas of Marc Prensky and what he believes are the major effects that high exposure to digital technology has had on young people today.\n[20:25] Lecturer: Firstly, what exactly does Prensky believe? He argues that because today's young people have been born into a digital world and spend hours simply playing with technology, they've changed in fundamental ways. He believes they're evolving differently, and as a result process information differently from previous generations. It's even possible that these young people's brains have physically changed, although whether this is literally true isn't yet known, nor does Prensky go quite this far.\n[21:00] Lecturer: Prensky divides people into digital natives and digital immigrants. Today's young people are the digital natives, and they belong in this new digital age because they were born into it and grew up as native speakers of the digital language of computer technology. Whereas digital immigrants are those born in the generations before the digital age. Just as those who learn a second language often retain their foreign accent, the immigrants are usually, in varying degrees, not quite as effective at speaking the digital language as the natives are. For example, they're more comfortable finding phone numbers using a phone book, or looking up information in an encyclopedia, rather than using the internet as a primary source of information. Prensky calls this the 'digital accent'. Another example of the digital accent is scanning a manual for a computer program, rather than assuming the program itself will teach you how to use it. Basically, people with a digital accent have never really stopped relying on their original non-digital means of sourcing information. They prefer doing things as they've always done them, without typing something into a computer.\n[22:29] Lecturer: Prensky predicts that due to all this, changes are in store, mainly in the area of education. But what do other educators and theorists, such as Thomas Allen, Samuel James and Peter Vander, believe? Samuel James from Sydney University agrees with Prensky's predictions. He believes that educators are no longer successful in the way they teach. However, not surprisingly, Prensky has been criticised by more traditional theorists like Peter Vander and Thomas Allen. They disagree with many of Prensky's assertions. Vander argues that a typical classroom is more varied than Prensky believes, with students coming from a range of backgrounds. He maintains that a large percentage of these students are not necessarily proficient with technology, and not all students today fit the one stereotype. And Allen adds that even though most students today have easy access to technology, some just don't find the digital medium appealing.\n[23:30] Lecturer: James disagrees, though. He believes that all today's students do share the same basic interest in and knowledge of digital technology. However, James believes our younger students can communicate with their digital-immigrant teachers and can still learn using methods which have proven to be successful in the past. James's theories are taken a step further by Allen, who recognises that both digital immigrants and natives have to deal with vast amounts of information in today's electronic society. Allen maintains that while most young students are proficient in playing computer games and using the web in quite basic ways, they're not used to using the computer at advanced levels – for example, to conduct complex information searches, which are so necessary for university study today. Irrespective of Allen's research, James believes it's possible for computer games to play a major role in making classroom learning more stimulating, and he cites many instances where this would be possible today. However, Vander asserts that rather than focusing on developing games, we should think of better ways to assist teachers, because no computer program comes close to doing what a human teacher does every day.\n[25:02] Narrator: That is the end of section four. You now have half a minute to check your answers.",
+    "groups": [
+     {
+      "instruction": "Choose the correct letter, A, B or C.",
+      "questions": [
+       {
+        "no": 31,
+        "type": "mcq",
+        "text": "What impact does Marc Prensky believe that digital technology has had on young people?",
+        "options": [
+         "It has altered their thinking patterns.",
+         "It has harmed their physical development.",
+         "It has limited their brain capacity."
+        ],
+        "answer": 0,
+        "explanation": "\"process information differently from previous generations\""
+       },
+       {
+        "no": 32,
+        "type": "mcq",
+        "text": "'Digital immigrants' tend to access computers",
+        "options": [
+         "using their native language.",
+         "less efficiently than young people.",
+         "for less important information."
+        ],
+        "answer": 1,
+        "explanation": "\"not quite as effective at speaking the digital language as the natives\""
+       },
+       {
+        "no": 33,
+        "type": "mcq",
+        "text": "What example is given of having a 'digital accent'?",
+        "options": [
+         "having less effective typing skills",
+         "doing things the old-fashioned way",
+         "being unable to understand instructions"
+        ],
+        "answer": 1,
+        "explanation": "\"They prefer doing things as they've always done them\""
+       }
+      ]
+     },
+     {
+      "instruction": "Which theorist makes each of the following points? Write the correct letter, A, B or C, next to questions 34–40.",
+      "bank": [
+       "Allen",
+       "James",
+       "Vander"
+      ],
+      "questions": [
+       {
+        "no": 34,
+        "type": "match",
+        "text": "Current teaching methods don't work.",
+        "answer": 1,
+        "explanation": "James: \"educators are no longer successful in the way they teach\""
+       },
+       {
+        "no": 35,
+        "type": "match",
+        "text": "Many students don't understand computers.",
+        "answer": 2,
+        "explanation": "Vander: \"a large percentage of these students are not necessarily proficient with technology\""
+       },
+       {
+        "no": 36,
+        "type": "match",
+        "text": "Computer technology doesn't interest all students.",
+        "answer": 0,
+        "explanation": "Allen: \"some just don't find the digital medium appealing\""
+       },
+       {
+        "no": 37,
+        "type": "match",
+        "text": "Students can still learn the traditional way.",
+        "answer": 1,
+        "explanation": "James: \"can still learn using methods which have proven to be successful in the past\""
+       },
+       {
+        "no": 38,
+        "type": "match",
+        "text": "Students still need to learn research skills.",
+        "answer": 0,
+        "explanation": "Allen: \"not used to … complex information searches\""
+       },
+       {
+        "no": 39,
+        "type": "match",
+        "text": "We should use computer games to teach.",
+        "answer": 1,
+        "explanation": "James: \"computer games to play a major role\""
+       },
+       {
+        "no": 40,
+        "type": "match",
+        "text": "Computers can't replace educators.",
+        "answer": 2,
+        "explanation": "Vander: \"no computer program comes close to doing what a human teacher does\""
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "reading": [
+  {
+   "passage": 1,
+   "title": "The pesticide-free village",
+   "topic": "Environment",
+   "level": "easy",
+   "passage_text": "Gerry Marten and Dona Glee Williams report on the Indian village of Punukula, so nearly destroyed by reliance on pesticides\n\nAround 20 years ago, a handful of families migrated from the Guntur district of Andhra Pradesh, south-east India, into Punukula, a community of around 900 people farming plots of between two and ten acres. The outsiders from Guntur brought cotton culture with them, and this attracted resident farmers by promising to bring in more hard cash than the mixed crops they were already growing to eat and sell, such as millet, mung beans, chilli and rice. But growing cotton meant using pesticides and fertilisers – until then a mystery to the mostly illiterate farmers of the community.\n\nLocal agrochemical dealers obligingly filled the need for information and supplies. These 'middlemen' sold commercial seeds, fertilisers and insecticides on credit, and guaranteed purchase of the crop. They offered technical advice provided by the companies that supplied their products. The farmers depended on the dealers. If they wanted to grow cotton – and they did – it seemed they had no choice.\n\nA quick 'high' of booming yields and incomes hooked growers during the early years of cotton in the region. Outlay on insecticides was fairly low because cotton pests hadn't moved in yet. Many farmers were so impressed with the chemicals that they started using them on their other crops as well. The immediate payoffs from chemically-dependent cotton agriculture both ensured and obscured the fact that the black dirt fields had gone into a freefall of environmental degradation, dragged down by a chain of cause and effect.\n\nSoon cotton-eaters, such as bollworms and aphids, plagued the fields. Repeated spraying killed off the most susceptible pests and left the strongest to reproduce and pass on their resistance to generations of ever-hardier offspring. As the bugs grew tougher and more abundant, farmers applied a greater variety and quantity of poisons, sometimes mixing 'cocktails' of as many as ten insecticides. At the same time, cotton was gobbling up the nutrients in the soil, leaving the growers no option but to invest in chemical fertilisers.\n\nBy the time some farmers tried to break free of their chemical dependence, insecticides had already decimated the birds, wasps, beetles, and other predators that had once provided natural control of crop pests. Without their balancing presence, pests ran riot if insecticide was cut back. As outlays for fertilisers and insecticides escalated, the cost of producing cotton mounted. Eventually the expense of chemical inputs outgrew the cash value of the crop, and farmers fell further and further into debt and poverty.\n\nTheir vicious cycle was only broken by the willingness of a prominent village elder to experiment with something different. He had been among the first villagers to grow cotton, and he would be the first to try it without chemicals, as set out by a programme in Non-Pesticide Management (NPM). This had been devised for Punukula with the help of a Non-Government Organisation called SECURE that had become aware of the hardships caused by the pesticide trap.\n\nIt involved turning to neem, a fast-growing, broad-leaved evergreen tree related to mahogany. Neem protects itself against insects by producing a multitude of natural pesticides that have evolved specifically to defeat plant-eating insects. Thus they are generally harmless to humans and other animals, including birds and insects that eat pests.\n\nThe plant is native to India and Burma, where it has been used for centuries to control pests and to promote health. To protect cotton, neem seeds are simply ground into a powder, soaked overnight in water, and sprayed onto the crop at least every 10 days. Neem cake applied to the soil kills insect pests and doubles as an organic fertiliser high in nitrogen. As neem grows locally and is easy to process, it is much less expensive than the chemical insecticides sold for profit by the dealers and their corporate suppliers.\n\nQuick, short-term gains had once pushed Punukula into chemical-dependent agriculture. Now they found that similar immediate rewards were helping to speed change in the other direction: the harvest of the next 20 NPM farmers was as good as the harvest of farmers using insecticides, and they came out ahead because they weren't buying insecticides. Instead of investing cash (in short supply) in chemicals, they invested time and labour in NPM practices.\n\nBy the end of 2000, all the farmers in Punukula village were using NPM rather than chemicals for cotton, and they began to use it on other crops as well. The change gathered momentum as NPM became even more effective once everyone was using it. The status and economic opportunities of women improved – neem became a source of income for some of them, as they gathered seeds from the surrounding area to sell for NPM in other villages. The improved situation meant that families could afford to put more land under cultivation.\n\nIn 2004, the panchayat (village government) formally declared Punukula to be a pesticide-free village. And they have big plans for the future, such as water purification. The village now serves as a model for disseminating NPM to other communities, with around 2,000 farmers visiting each year.\n\nWhat began as a few farmers desperate to find a way to farm without poisons has become a movement with the potential to pull an entire region back from ecological disaster.",
+   "groups": [
+    {
+     "instruction": "Do the following statements agree with the information given in Reading Passage 1? Write TRUE, FALSE or NOT GIVEN.",
+     "questions": [
+      {
+       "no": 1,
+       "type": "tfng",
+       "text": "Cotton growing was expected to raise more money than other crops.",
+       "answer": "TRUE",
+       "explanation": "\"promising to bring in more hard cash than the mixed crops\""
+      },
+      {
+       "no": 2,
+       "type": "tfng",
+       "text": "Some of the local agrochemical dealers had been farmers in the past.",
+       "answer": "NOT GIVEN",
+       "explanation": "Không nói về quá khứ của các đại lý."
+      },
+      {
+       "no": 3,
+       "type": "tfng",
+       "text": "Initially the farmers' cotton yields were low.",
+       "answer": "FALSE",
+       "explanation": "\"A quick 'high' of booming yields\""
+      },
+      {
+       "no": 4,
+       "type": "tfng",
+       "text": "At first, the farmers failed to notice the negative effects on their fields of pesticide use.",
+       "answer": "TRUE",
+       "explanation": "\"both ensured and obscured the fact that the black dirt fields had gone into a freefall\""
+      }
+     ]
+    },
+    {
+     "instruction": "Complete the notes below. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "context": "Non-Pesticide Management Programme – developed with the aid of SECURE",
+     "questions": [
+      {
+       "no": 5,
+       "type": "fill",
+       "text": "Based on use of an ___ called neem",
+       "answer": [
+        "evergreen tree"
+       ],
+       "explanation": "\"a fast-growing, broad-leaved evergreen tree\""
+      },
+      {
+       "no": 6,
+       "type": "fill",
+       "text": "Neem contains many ___ that target plant-eating predators",
+       "answer": [
+        "natural pesticides"
+       ],
+       "explanation": "\"producing a multitude of natural pesticides\""
+      },
+      {
+       "no": 7,
+       "type": "fill",
+       "text": "Used as a pesticide: ___ formed by grinding seeds",
+       "answer": [
+        "a powder",
+        "powder"
+       ],
+       "explanation": "\"neem seeds are simply ground into a powder\""
+      },
+      {
+       "no": 8,
+       "type": "fill",
+       "text": "left ___ to soak in water; sprayed regularly",
+       "answer": [
+        "overnight"
+       ],
+       "explanation": "\"soaked overnight in water\""
+      },
+      {
+       "no": 9,
+       "type": "fill",
+       "text": "Used as a pesticide and as a fertiliser: added in ___ form to soil",
+       "answer": [
+        "neem cake",
+        "cake"
+       ],
+       "explanation": "\"Neem cake applied to the soil\""
+      },
+      {
+       "no": 10,
+       "type": "fill",
+       "text": "contains a lot of ___",
+       "answer": [
+        "nitrogen"
+       ],
+       "explanation": "\"organic fertiliser high in nitrogen\""
+      }
+     ]
+    },
+    {
+     "instruction": "Answer the questions below. Choose NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage for each answer.",
+     "wordLimit": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+     "questions": [
+      {
+       "no": 11,
+       "type": "fill",
+       "text": "In which year did farmers finally stop using chemicals on cotton crops in Punukula? ___",
+       "answer": [
+        "2000"
+       ],
+       "explanation": "\"By the end of 2000, all the farmers … were using NPM\""
+      },
+      {
+       "no": 12,
+       "type": "fill",
+       "text": "What did the women of Punukula collect to make money? ___",
+       "answer": [
+        "seeds",
+        "neem seeds",
+        "(neem) seeds"
+       ],
+       "explanation": "\"they gathered seeds from the surrounding area to sell\""
+      },
+      {
+       "no": 13,
+       "type": "fill",
+       "text": "What project do the authorities in Punukula hope to set up in the future? ___",
+       "answer": [
+        "water purification"
+       ],
+       "explanation": "\"big plans for the future, such as water purification\""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage": 2,
+   "title": "New filter promises clean water for millions",
+   "topic": "Technology",
+   "level": "medium",
+   "passage_text": "An ingenious invention is set to bring clean water to developing countries, and while the science may be cutting edge, the materials are extremely down to earth.\n\nA handful of clay, yesterday's coffee grounds and some cow manure are the ingredients that could bring clean, safe drinking water to many developing countries. The simple new technology, developed by Australian National University (ANU) materials scientist and potter Tony Flynn, allows water filters to be made from commonly available materials and fired (or baked) using cow manure as the source of heat, without the need for a kiln (an oven for baking or drying pottery). The filters have been tested and shown to remove common pathogens (disease-producing organisms) including E-coli.\n\nThe invention was born out of a project involving the Manatuto community in East Timor. A charity operating there wanted to help set up a small industrial site manufacturing water filters, but initial research found the local clay to be too fine – a problem solved by the addition of organic material. While the problems of producing a working ceramic filter in East Timor were overcome, the solution was kiln-based and particular to that community's materials and couldn't be applied elsewhere. Flynn's technique for manure firing, with no requirement for a kiln, has made this zero-technology approach available anywhere it is needed.\n\nOther commercial clay filters do exist, but, even if available, with prices starting at US$5 each, they are often outside the budgets of most people in the developing world. Unlike other water filtering devices, Flynn's filters are inexpensive and simple to produce. Take a handful of clay, mix it with a handful of organic material such as used tea leaves, coffee grounds or rice hulls, add water in a sufficient quantity to make a stiff mixture and form a cylindrical pot that has one end closed, then dry it in the sun. According to Flynn, used coffee grounds have given the best results to date. The walls of the filter can be measured using the width of an adult finger as the standard. Next, surround the pots with straw, put them in a mound of cow manure, light the straw and then top up the burning manure as required. The filters are finished in 45 to 60 minutes.\n\nThe properties of cow manure are vital, as the fuel can reach a temperature of 700 degrees in half an hour, and will be up to 950 degrees after another 20 to 30 minutes. The manure makes a good fuel because it is very high in organic material that burns readily and quickly. The manure has to be dry and is best used exactly as found in the field; there is no need to break it up or process it any further. In contrast, a potter's kiln is an expensive item and can take up to four or five hours to get up to 800 degrees. It needs expensive, scarce fuel, such as gas or wood, to heat it, and experience to use it. With no technology, no insulation and nothing other than a pile of cow manure and a match, none of these requirements apply.\n\nIt is also helpful that, like clay and organic material, cow manure is freely available across the developing world. A cow is a natural fuel factory. Manure is a mixture of vegetable materials of different sizes, and cow manure as a fuel is the same wherever it is found.\n\nJust as using manure as a fuel for domestic use is not a new idea, the fact that liquid can pass through clay objects is something that potters have always known, and clay's porous nature is something that, as a former ceramics lecturer in the ANU School of Art, Flynn is well aware of. The difference is that, rather than viewing the porous nature of the material as a problem – after all, not many people want a pot that won't hold water – his filters capitalise on this property.\n\nThe filtration process is simple, but effective. The basic principle is that there are passages through the filter that are wide enough for water droplets to pass through, but too narrow for pathogens. Tests with the deadly E-coli bacterium have seen the filters remove 96.4 to 99.8 per cent of the pathogen – well within safe levels. The thickness of the clay container needs to be the same thickness as an adult finger for the process to be effective. If this is the case, using only one filter, a litre of water can be obtained in two hours.\n\nThe use of organic material, which burns away leaving cavities after firing, helps produce the structure in which pathogens will become trapped. It overcomes the potential problems of finer clays that may not let water through and also means that cracks are soon halted. And like clay and cow manure, organic material is universally available in the developing communities that need most assistance, as tea, coffee and rice are grown in these areas.\n\nWith all the components being widely available, Flynn says there is no reason the technology couldn't be applied throughout the developing world. He has no plans to exploit his idea financially by registering ownership through a patent. If he did, any commercial copying would legally entitle him to a share in any profits made. Without a patent, there will be no illegality in it being adopted in any community that needs it. 'Everyone has a right to clean water, and these filters have the potential to enable anyone in the world to drink water safely,' says Flynn.",
+   "groups": [
+    {
+     "instruction": "Complete the flow-chart below. Choose NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage for each answer.",
+     "wordLimit": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+     "context": "Step-by-step guide to making Flynn's water filters",
+     "questions": [
+      {
+       "no": 14,
+       "type": "fill",
+       "text": "Make the mixture for the filter from organic material (e.g. tea, coffee, rice), ___",
+       "answer": [
+        "clay"
+       ],
+       "explanation": "\"Take a handful of clay, mix it with … organic material\""
+      },
+      {
+       "no": 15,
+       "type": "fill",
+       "text": "and ___",
+       "answer": [
+        "water"
+       ],
+       "explanation": "\"add water in a sufficient quantity\""
+      },
+      {
+       "no": 16,
+       "type": "fill",
+       "text": "Shape into pots and place them in a fire made from ___",
+       "answer": [
+        "cow manure",
+        "manure"
+       ],
+       "explanation": "\"put them in a mound of cow manure\""
+      },
+      {
+       "no": 17,
+       "type": "fill",
+       "text": "and ___",
+       "answer": [
+        "straw"
+       ],
+       "explanation": "\"surround the pots with straw\""
+      },
+      {
+       "no": 18,
+       "type": "fill",
+       "text": "Fuel the fire to reach a maximum heat of ___",
+       "answer": [
+        "950 degrees",
+        "950"
+       ],
+       "explanation": "\"up to 950 degrees\""
+      },
+      {
+       "no": 19,
+       "type": "fill",
+       "text": "Bake the filters in the fire for a maximum period of ___. Remove the filters from the fire.",
+       "answer": [
+        "60 minutes",
+        "60",
+        "an hour",
+        "1 hour"
+       ],
+       "explanation": "\"finished in 45 to 60 minutes\""
+      }
+     ]
+    },
+    {
+     "instruction": "Do the following statements agree with the information given in Reading Passage 2? Write TRUE, FALSE or NOT GIVEN.",
+     "questions": [
+      {
+       "no": 20,
+       "type": "tfng",
+       "text": "The clay in the Manatuto project was initially unsuitable for the project's purpose.",
+       "answer": "TRUE",
+       "explanation": "\"found the local clay to be too fine\""
+      },
+      {
+       "no": 21,
+       "type": "tfng",
+       "text": "Coffee grounds produce filters that are twice as efficient as those using other organic materials.",
+       "answer": "NOT GIVEN",
+       "explanation": "Chỉ nói \"best results\", không có tỉ lệ."
+      },
+      {
+       "no": 22,
+       "type": "tfng",
+       "text": "It takes half an hour for a cow-manure fire to reach 950 degrees.",
+       "answer": "FALSE",
+       "explanation": "700 độ sau 30 phút; 950 độ sau thêm 20–30 phút."
+      },
+      {
+       "no": 23,
+       "type": "tfng",
+       "text": "E-coli is the most difficult bacterium to remove from water by filtration.",
+       "answer": "NOT GIVEN",
+       "explanation": "Không so sánh với vi khuẩn khác."
+      }
+     ]
+    },
+    {
+     "instruction": "Choose the correct letter, A, B, C or D.",
+     "questions": [
+      {
+       "no": 24,
+       "type": "mcq",
+       "text": "The Manatuto project aimed to set up a",
+       "options": [
+        "charitable trust.",
+        "filtration experiment.",
+        "water filter factory.",
+        "community kiln."
+       ],
+       "answer": 2,
+       "explanation": "\"a small industrial site manufacturing water filters\""
+      },
+      {
+       "no": 25,
+       "type": "mcq",
+       "text": "To be effective, the Flynn filters must",
+       "options": [
+        "remove all dangerous pathogens.",
+        "be a particular thickness.",
+        "filter water as quickly as possible.",
+        "be made from 100 per cent clay."
+       ],
+       "answer": 1,
+       "explanation": "\"needs to be the same thickness as an adult finger for the process to be effective\""
+      },
+      {
+       "no": 26,
+       "type": "mcq",
+       "text": "Flynn does not intend to patent his filter because he",
+       "options": [
+        "wants it to be freely available.",
+        "has produced a very simple design.",
+        "cannot make a profit in poor countries.",
+        "has already given the idea to a charity."
+       ],
+       "answer": 0,
+       "explanation": "\"Everyone has a right to clean water\""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage": 3,
+   "title": "Putting the brakes on climate change – Are hydrogen cars the answer?",
+   "topic": "Environment",
+   "level": "hard",
+   "passage_text": "A\nIt is tempting to think that the conservation of coral reefs and rainforests is a separate issue from traffic and air pollution. But it is not. Scientists are now confident that rapid changes in the Earth's climate are already disrupting and altering many wildlife habitats. Pollution from vehicles is a big part of the problem.\n\nB\nThe United Nations' Climate Change Panel has estimated that the global average temperature rise expected by the year 2100 could be as much as 6°C, causing forest fires and dieback on land and coral bleaching in the ocean. Few species, if any, will be immune from the changes in temperature, rainfall and sea levels. The panel believes that if such catastrophic temperature rises are to be avoided, the quantity of greenhouse gases, especially carbon dioxide, being released into the atmosphere must be reduced. That will depend on slowing the rate of deforestation and, more crucially, finding alternatives to coal, oil and gas as our principal energy sources.\n\nC\nTechnologies do exist to reduce or eliminate carbon dioxide as a waste product of our energy consumption. Wind power and solar power are both spreading fast, but what are we doing about traffic? Electric cars are one possible option, but their range and the time it takes to charge their batteries pose serious limitations. However, the technology that shows the most potential to make cars climate-friendly is fuel-cell technology. This was actually invented in the late nineteenth century, but because the world's motor industry put its effort into developing the combustion engine, it was never refined for mass production. One of the first prototype fuel-cell-powered vehicles has been built by the Ford Motor Company. It is like a conventional car, only with better acceleration and a smoother ride. Ford engineers expect to be able to produce a virtually silent vehicle in the future.\n\nD\nSo what's the process involved – and is there a catch? Hydrogen goes into the fuel tank, producing electricity. The only emission from the exhaust pipe is water. The fuel-cell is, in some ways, similar to a battery, but unlike a battery it does not run down. As long as hydrogen and oxygen are supplied to the cell, it will keep on generating electricity. Some cells work off methane and a few use liquid fuels such as methanol, but fuel-cells using hydrogen probably have the most potential. Furthermore, they need not be limited to transport. Fuel-cells can be made in a huge range of sizes, small enough for portable computers or large enough for power stations. They have no moving parts and therefore need no oil. They just need a supply of hydrogen. The big question, then, is where to get it from.\n\nE\nOne source of hydrogen is water. But to exploit the abundant resource, electricity is needed, and if the electricity is produced by a coal-fired power station or other fossil fuel, then the overall carbon reduction benefit of the fuel-cell disappears. Renewable sources, such as wind and solar power, do not produce enough energy for it to be economically viable to use them in the 'manufacture' of hydrogen as a transport fuel. Another source of hydrogen is, however, available and could provide a supply pending the development of more efficient and cheaper renewable energy technologies. By splitting natural gas (methane) into its constituent parts, hydrogen and carbon dioxide are produced. One way round the problem of what to do with the carbon dioxide could be to store it back below ground – so-called geological sequestration. Oil companies, such as Norway's Statoil, are experimenting with storing carbon dioxide below ground in oil and gas wells.\n\nF\nWith freak weather conditions, arguably caused by global warming, frequently in the headlines, the urgent need to get fuel-cell vehicles will mean they will be available in most showrooms. Even now, fuel-cell buses are operating in the US, while in Germany a courier company is planning to take delivery of fuel-cell-powered vans in the near future. The fact that centrally-run fleets of buses and vans are the first fuel-cell vehicles identifies another challenge – fuel distribution. The refuelling facilities necessary to top up hydrogen-powered vehicles are available only in a very few places at present. Public transport and delivery firms are logical places to start, since their vehicles are operated from central depots.\n\nG\nFuel-cell technology is being developed right across the automotive industry. This technology could have a major impact in slowing down climate change, but further investment is needed if the industry and the world's wildlife is to have a long-term future.",
+   "groups": [
+    {
+     "instruction": "Reading Passage 3 has seven paragraphs, A–G. Choose the correct heading for paragraphs A–F from the list of headings below.",
+     "bank": [
+      "i – Action already taken by the United Nations",
+      "ii – Marketing the hydrogen car",
+      "iii – Making the new technology available worldwide",
+      "iv – Some negative predictions from one group of experts",
+      "v – How the new vehicle technology works",
+      "vi – The history of fuel-cell technology",
+      "vii – A holistic view of climate change",
+      "viii – Locating the essential ingredient",
+      "ix – Sustaining car manufacture"
+     ],
+     "questions": [
+      {
+       "no": 27,
+       "type": "match",
+       "text": "Paragraph A",
+       "answer": 6,
+       "explanation": "Bảo tồn và ô nhiễm giao thông không tách rời."
+      },
+      {
+       "no": 28,
+       "type": "match",
+       "text": "Paragraph B",
+       "answer": 3,
+       "explanation": "UN Climate Change Panel dự báo tăng 6°C."
+      },
+      {
+       "no": 29,
+       "type": "match",
+       "text": "Paragraph C",
+       "answer": 5,
+       "explanation": "\"invented in the late nineteenth century\""
+      },
+      {
+       "no": 30,
+       "type": "match",
+       "text": "Paragraph D",
+       "answer": 4,
+       "explanation": "\"So what's the process involved\""
+      },
+      {
+       "no": 31,
+       "type": "match",
+       "text": "Paragraph E",
+       "answer": 7,
+       "explanation": "Nguồn hydrogen."
+      },
+      {
+       "no": 32,
+       "type": "match",
+       "text": "Paragraph F",
+       "answer": 2,
+       "explanation": "Xe buýt ở Mỹ, xe tải ở Đức, phân phối nhiên liệu."
+      }
+     ]
+    },
+    {
+     "instruction": "Complete the sentences below. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "questions": [
+      {
+       "no": 33,
+       "type": "fill",
+       "text": "In the late nineteenth century, the car industry invested in the development of the ___, rather than fuel-cell technology.",
+       "answer": [
+        "combustion engine"
+       ],
+       "explanation": "\"put its effort into developing the combustion engine\""
+      },
+      {
+       "no": 34,
+       "type": "fill",
+       "text": "Ford engineers predict that they will eventually design an almost ___ car.",
+       "answer": [
+        "silent"
+       ],
+       "explanation": "\"a virtually silent vehicle\""
+      },
+      {
+       "no": 35,
+       "type": "fill",
+       "text": "While a fuel-cell lasts longer, some aspects of it are comparable to a ___.",
+       "answer": [
+        "battery"
+       ],
+       "explanation": "\"similar to a battery, but unlike a battery it does not run down\""
+      },
+      {
+       "no": 36,
+       "type": "fill",
+       "text": "Fuel-cells can come in many sizes and can be used in power stations and in ___ as well as in vehicles.",
+       "answer": [
+        "portable computers"
+       ],
+       "explanation": "\"small enough for portable computers\""
+      }
+     ]
+    },
+    {
+     "instruction": "Do the following statements agree with the information given in Reading Passage 3? Write TRUE, FALSE or NOT GIVEN.",
+     "questions": [
+      {
+       "no": 37,
+       "type": "tfng",
+       "text": "Using electricity produced by burning fossil fuels to access sources of hydrogen may increase the positive effect of the fuel-cell.",
+       "answer": "FALSE",
+       "explanation": "\"the overall carbon reduction benefit of the fuel-cell disappears\""
+      },
+      {
+       "no": 38,
+       "type": "tfng",
+       "text": "The oil company Statoil in Norway owns gas wells in other parts of the world.",
+       "answer": "NOT GIVEN",
+       "explanation": "Không nói về vị trí các giếng."
+      },
+      {
+       "no": 39,
+       "type": "tfng",
+       "text": "Public transport is leading the way in the application of fuel-cell technology.",
+       "answer": "TRUE",
+       "explanation": "\"fuel-cell buses are operating in the US … logical places to start\""
+      },
+      {
+       "no": 40,
+       "type": "tfng",
+       "text": "More funding is necessary to ensure the success of the fuel-cell vehicle industry.",
+       "answer": "TRUE",
+       "explanation": "\"further investment is needed\""
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "writing": [
+  {
+   "task": 1,
+   "type": "line",
+   "title": "Requests for information at a UK tourist office",
+   "topic": "Tourism",
+   "prompt": "The chart below shows requests for information at a tourist office in the United Kingdom from January to June.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
+   "chart": {
+    "kind": "line",
+    "unit": "number of requests",
+    "labels": [
+     "Jan",
+     "Feb",
+     "Mar",
+     "Apr",
+     "May",
+     "Jun"
+    ],
+    "series": [
+     {
+      "name": "In person",
+      "values": [
+       420,
+       700,
+       1000,
+       1300,
+       1600,
+       1900
+      ]
+     },
+     {
+      "name": "Telephone",
+      "values": [
+       900,
+       800,
+       1000,
+       900,
+       1300,
+       1600
+      ]
+     },
+     {
+      "name": "Letter / email",
+      "values": [
+       770,
+       750,
+       700,
+       450,
+       400,
+       400
+      ]
+     }
+    ]
+   },
+   "sample": "The line chart details the frequency of requests in person, by letter/email and by telephone at a UK tourist office in the first six months of a given year.\n\nOverall, it is readily apparent that in-person requests increased from the least to the most common over the period, overtaking telephone, which also rose. Information requests by email and letter declined and were by far the least frequent by the end of the time surveyed.\n\nIn January, in-person information requests were the lowest of all three categories, at approximately 420. In contrast, written requests and telephone calls stood at 770 and 900 in turn. By mid-March, in-person questions (1,000) had surpassed other queries, an upward trend that culminated at 1,900 to finish the period.\n\nIn comparison, telephone requests fluctuated between 800 and 1,000 until the beginning of April, prior to growing sharply to end just behind in-person requests at 1,600. Letter and email requests fell marginally until March (to 700), before a steep drop and a levelling off at 400.",
+   "sampleNote": "Số liệu biểu đồ được dựng lại gần đúng từ bài mẫu."
+  },
+  {
+   "task": 2,
+   "type": "discussion",
+   "title": "Extra responsibilities for children",
+   "topic": "Education",
+   "prompt": "Write about the following topic:\n\nSome people believe that children of all ages should have extra responsibilities (for example, helping at home or at work). Others believe that, outside of school, children should be free to enjoy their lives.\n\nDiscuss both views and give your own opinion.\n\nGive reasons for your answer and include any relevant examples from your own knowledge or experience.\n\nWrite at least 250 words.",
+   "sample": "Many today have argued for the importance of children having greater responsibility in the home. I am generally in agreement with this position, though it should naturally not be taken to extremes.\n\nCritics of such an approach maintain that it can overburden young children. In many societies around the world today, children are under immense pressure at school to perform well academically. In many Asian countries, for example, young children must study at school until the late afternoon, have dinner, and then take additional classes before doing their homework each night. If these students were also tasked with cleaning the house or washing their own clothes, they simply would not have enough time to complete all their responsibilities and rest for the next day.\n\nHowever, increased responsibility encourages greater maturity and self-reliance. A child who must ensure their room is clean and takes part in either cooking or cleaning up afterwards better understands the importance of time management and how to run a household. In contrast, some parents are overly protective of their children and do not instil traits related to independence. If a child grows up and attends university without a variety of life skills or the maturity that comes from looking after themselves, then they will likely struggle to adjust and may be viewed as childish by their peers.\n\nIn conclusion, though there must be logical limits to the amount of work that children should do in the home, it is an advisable approach overall to increase a child's sense of responsibility. The benefits later in life justify any potential fatigue.",
+   "sampleNote": "Bài mẫu band 8 trong tài liệu gốc, đã sửa lỗi nhỏ."
+  }
+ ]
+}

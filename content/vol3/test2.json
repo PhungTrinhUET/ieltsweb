@@ -1,0 +1,948 @@
+{
+ "vol": 3,
+ "test": 2,
+ "source": "ORIGINAL IELTS PAPERS – VOL 3, Test 2 (audio: test 2.m4a gộp; cắt theo mốc cut)",
+ "listening": {
+  "audioDir": "audio/vol3/test2",
+  "timingNote": "Mốc thời gian lấy từ transcript ASR của file gộp (±10 s).",
+  "sections": [
+   {
+    "section": 1,
+    "title": "Health centre – temporary patient record",
+    "topic": "Health",
+    "cut": "0:40",
+    "transcript": "[00:45] Narrator: Section one. You will hear a man talking first to a receptionist and then to a doctor at a health centre. First, you have some time to look at questions one to three. You will see that there is an example that has been done for you.\n[01:46] Receptionist: Good morning, how can I help you?\n[01:48] Peter: Yes, I'm a visitor to this area. I had a sporting accident a little while ago, and I'm still in some pain. I wondered if I could see a doctor here.\n[01:58] Receptionist: Certainly, sir. We can take you on as a temporary patient. I'll just take down some personal details. Can I start with your name?\n[02:05] Peter: Yes, it's Peter. Peter Smith.\n[02:11] Narrator: The patient's name is Peter Smith, so Peter Smith has been written in the space. Now we shall begin. Listen carefully and answer questions one to three.\n[02:37] Receptionist: Good morning, how can I help you?\n[02:39] Peter: Yes, I'm a visitor to this area. I had a sporting accident a little while ago, and I'm still in some pain. I wondered if I could see a doctor here.\n[02:49] Receptionist: Certainly, sir. We can take you on as a temporary patient. I'll just take down some personal details. Can I start with your name?\n[02:56] Peter: Yes, it's Peter. Peter Smith.\n[02:58] Receptionist: Right, Peter. And where are you staying here?\n[03:02] Peter: At 95 Cross Street.\n[03:06] Receptionist: And the suburb?\n[03:07] Peter: Walkley. That's W-A-L-K-L-E-Y.\n[03:14] Receptionist: And can I have a contact phone number?\n[03:17] Peter: It's 4689 5324.\n[03:22] Receptionist: Thanks. Okay, if you'd just like to wait down there, the doctor will see you in a minute.\n[03:30] Narrator: Before you hear the rest of the conversation, you have some time to look at questions four to ten. Now listen and answer questions four to ten.\n[04:13] Doctor: Now, what can I do for you? It's Peter Smith, isn't it?\n[04:17] Peter: Yes. I had a sporting accident and was treated by a doctor at home, but I'm still in pain.\n[04:22] Doctor: Right. I just need to ask you a few questions first. Now, what sport were you doing?\n[04:32] Peter: I was playing tennis.\n[04:33] Doctor: I see. And what was the nature of your injury? Did you hurt your elbow or wrist?\n[04:38] Peter: Oh, no. I had a sprained knee. That was the original problem.\n[04:43] Doctor: Right. And when did this happen?\n[04:47] Peter: It was three weeks ago now. So that was June 18th.\n[04:51] Doctor: Fine. And you say you had medical treatment?\n[04:55] Peter: Yes. The doctor said I didn't need an X-ray or anything. He just told me to use an ice pack.\n[05:00] Doctor: An ice pack, fine. Yes.\n[05:05] Peter: And I've been using a walking stick to help me get around.\n[05:09] Doctor: Right. Now, what problems are you experiencing at the moment? Are you having any problems walking?\n[05:16] Peter: Well, I can walk okay, but I still can't go upstairs. So I've been sleeping downstairs.\n[05:22] Doctor: And you say your knee still hurts?\n[05:25] Peter: Well, no, actually, it's recovering nicely. It's my back that's hurting me now. It really aches at night and I can hardly sleep.\n[05:34] Doctor: Well, there are a few different things I can suggest for that. First, you should put your stick away, as that's probably the source of the problem. It will be making you unbalanced.\n[05:46] Peter: Oh, really? I wish I'd known.\n[05:47] Doctor: After that, I can prescribe you something to relax the muscles in your back.\n[05:55] Peter: Oh, sorry to be difficult, but I've had something like that in the past and there were lots of side effects and I had to stop taking it. Can you recommend anything else?\n[06:03] Doctor: Well, yes. We do have a leaflet showing some exercises you can do to help yourself at home. If you do them every day, they'll soon be effective.\n[06:11] Peter: Great, I'll do that.\n[06:16] Narrator: That is the end of section one. You now have half a minute to check your answers.",
+    "groups": [
+     {
+      "instruction": "Complete the form below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+      "wordLimit": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+      "context": "Temporary Patient Record Form. Example – Name: Peter Smith",
+      "questions": [
+       {
+        "no": 1,
+        "type": "fill",
+        "text": "Street address: ___",
+        "answer": [
+         "95 Cross Street"
+        ],
+        "explanation": "\"At 95 Cross Street\""
+       },
+       {
+        "no": 2,
+        "type": "fill",
+        "text": "Suburb: ___",
+        "answer": [
+         "Walkley"
+        ],
+        "explanation": "W-A-L-K-L-E-Y"
+       },
+       {
+        "no": 3,
+        "type": "fill",
+        "text": "Phone number: ___",
+        "answer": [
+         "4689 5324",
+         "46895324"
+        ],
+        "explanation": "\"It's 4689 5324\""
+       },
+       {
+        "no": 4,
+        "type": "fill",
+        "text": "Details of injury – Sport: tennis. Type of injury: sprained ___",
+        "answer": [
+         "knee"
+        ],
+        "explanation": "\"I had a sprained knee\""
+       },
+       {
+        "no": 5,
+        "type": "fill",
+        "text": "Date of injury: ___",
+        "answer": [
+         "18th June",
+         "18 June",
+         "June 18",
+         "June 18th"
+        ],
+        "explanation": "\"that was June 18th\""
+       },
+       {
+        "no": 6,
+        "type": "fill",
+        "text": "Previous treatment: the patient's own doctor advised treatment with ___.",
+        "answer": [
+         "an ice pack",
+         "ice pack"
+        ],
+        "explanation": "\"told me to use an ice pack\""
+       },
+       {
+        "no": 7,
+        "type": "fill",
+        "text": "The patient is unable to ___",
+        "answer": [
+         "go upstairs"
+        ],
+        "explanation": "\"I still can't go upstairs\""
+       },
+       {
+        "no": 8,
+        "type": "fill",
+        "text": "and he is experiencing pain in his ___ at night, which is affecting his sleep.",
+        "answer": [
+         "back"
+        ],
+        "explanation": "\"It's my back that's hurting me now\""
+       },
+       {
+        "no": 9,
+        "type": "fill",
+        "text": "Advice given: stop using the ___",
+        "answer": [
+         "stick",
+         "walking stick"
+        ],
+        "explanation": "\"you should put your stick away\""
+       },
+       {
+        "no": 10,
+        "type": "fill",
+        "text": "Do regular ___ at home",
+        "answer": [
+         "exercises"
+        ],
+        "explanation": "\"a leaflet showing some exercises you can do … at home\""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "section": 2,
+    "title": "Radio programme: Gisborne, New Zealand",
+    "topic": "Travel",
+    "cut": "6:53",
+    "transcript": "[06:58] Narrator: Section two. You will hear a radio announcer describing a city in New Zealand called Gisborne. First you have some time to look at questions 11 to 16. Now listen carefully and answer questions 11 to 16.\n[07:57] Announcer: Greetings, all you listeners out there. This is National Radio and I'm Kevin Lowe. This morning I'm going to tell you what's so special about the laid-back city of Gisborne. You'll hear a little bit about its past in the old days, and a lot about what attractions it has to offer foreign and domestic visitors today. So listen up to learn more about what there is to do in this city and its surrounding region, where the economy is booming but the lifestyle remains unspoiled.\n[08:30] Announcer: The Gisborne region is where the legendary canoe sailed by Maori explorers first landed in New Zealand about 1,400 years ago, after its long and risky voyage over the sea. It is also the easternmost point of the country, which is what inspired its original name, Te Tairawhiti, which in the Maori language means 'the coast where the sun rises across the waters'. Gisborne was also the place where the European explorer Captain Cook first landed his boat upon discovering New Zealand, all the way from England, back in 1769.\n[09:05] Announcer: Even in those early days, this district was a centre of horticulture, thanks to its fertile soil and subtropical climate. Soon after that, of course, the English settlers arrived, and soon Gisborne was shipping its products to larger settlements such as Auckland and Wellington. This began with maize and root crops, but quickly expanded to butter, meat and wool from the agricultural settlements in the rich pastoral country. Near the famous Poverty Bay, wharves and jetties were built beside the sea to service the coastal traders. Many of these wooden structures can still be seen on Gisborne beaches today.\n[09:45] Announcer: Today, Gisborne continues to export fresh produce to other regions of New Zealand. These include various award-winning cheeses, and of course the delicious lobsters and snapper fish harvested by hand from the local reefs and waters. As for exports to Asian markets, there is an increasing demand for the region's oranges and lemons. Gisborne is also becoming well known nationally and internationally as the source of some top-quality white and red grapes.\n[10:15] Announcer: Now, what's on in Gisborne? Well, first up, there's the annual Gisborne Summer Concert, held every summertime. This is a great experience. It's held at Waikiki Vineyard, which is near the traditional Maori meeting house, or marae, of the same name. They bring in a piano player and opera singers who perform on a purpose-built stage in a kind of natural amphitheatre in the middle of the rows of grapes. It's a fantastic concert-like atmosphere, a really good night out. What to do on a rainy day? I'd suggest a visit to the show called 'The Beach', which is on in Gallery One at Tairawhiti Museum. It's a big display, so it also takes up the hall next to Gallery One, and it's divided into different sections of the local culture, like surfing, camping, fashion and so on. If you buy the book of the exhibition, there are some interesting photographs in there.\n[11:29] Narrator: Before you hear the rest of the programme, you have some time to look at questions 17 to 20. Now listen and answer questions 17 to 20.\n[12:16] Announcer: There's a lot else to see in Gisborne as well. You shouldn't miss the Hot Springs Reserve, which has warm natural mineral pools and little houses where you can stay amongst the bush, being very secluded and private. This resort is most favoured by newlyweds, who often book a cabin for their honeymoon. The water is very therapeutic too; it's apparently good for your health to bathe there, though not recommended for pregnant women or the elderly. Around the corner is Mahia Peninsula, legendary as a New Year's Eve party destination for large crowds of university students after their graduation. The surfing and fishing here is excellent, and it's a safe spot for swimming and diving too.\n[13:05] Announcer: Now, also good for kids is taking a raft or jet-boat ride on the Motu River. This sounds quite wild, doesn't it? But in fact, this activity is often used by local primary schools, who take big groups of young children, several classes at a time, out here for a bit of fun while they're on their school camp. No parents required – you can have some time out, as this activity is a lot safer than it sounds and is carefully supervised by the rafting company. Finally, don't let's forget the Eden Woodlands Park, which is really a huge tree nursery. You can walk for hours here in the peaceful green surroundings along a variety of tracks. There's even a very nice walkway made wide enough for those in wheelchairs, so that everyone can go along and enjoy Mother Nature at her best.\n[14:00] Narrator: That is the end of section two. You now have half a minute to check your answers.",
+    "groups": [
+     {
+      "instruction": "Choose the correct letter, A, B or C.",
+      "questions": [
+       {
+        "no": 11,
+        "type": "mcq",
+        "text": "The announcer says that the main topic of today's talk will be Gisborne's",
+        "options": [
+         "economy",
+         "history",
+         "tourism"
+        ],
+        "answer": 2,
+        "explanation": "\"a lot about what attractions it has to offer … visitors today\""
+       },
+       {
+        "no": 12,
+        "type": "mcq",
+        "text": "The Maori name for the Gisborne region signifies",
+        "options": [
+         "dangerous journey",
+         "east coast",
+         "sailing boat"
+        ],
+        "answer": 1,
+        "explanation": "\"the coast where the sun rises\" – điểm cực đông."
+       },
+       {
+        "no": 13,
+        "type": "mcq",
+        "text": "Early exports from Gisborne came from its",
+        "options": [
+         "farms",
+         "fisheries",
+         "forests"
+        ],
+        "answer": 0,
+        "explanation": "\"maize and root crops … butter, meat and wool from the agricultural settlements\""
+       },
+       {
+        "no": 14,
+        "type": "mcq",
+        "text": "According to the speaker, what does Gisborne export to Asia nowadays?",
+        "options": [
+         "oranges and lemons",
+         "red and white grapes",
+         "seafood and shellfish"
+        ],
+        "answer": 0,
+        "explanation": "\"exports to Asian markets … oranges and lemons\""
+       },
+       {
+        "no": 15,
+        "type": "mcq",
+        "text": "The Gisborne Summer Concert takes place in",
+        "options": [
+         "an opera house",
+         "a vineyard",
+         "a Maori meeting house"
+        ],
+        "answer": 1,
+        "explanation": "\"It's held at Waikiki Vineyard\""
+       },
+       {
+        "no": 16,
+        "type": "mcq",
+        "text": "On wet days in Gisborne the announcer recommends",
+        "options": [
+         "a cultural display in the museum",
+         "a fashion show in the town hall",
+         "a photography exhibition in the art gallery"
+        ],
+        "answer": 0,
+        "explanation": "\"the show called 'The Beach' … at Tairawhiti Museum … sections of the local culture\""
+       }
+      ]
+     },
+     {
+      "instruction": "Which group of people is each of the following attractions recommended for? Choose FOUR answers from the box and write the correct letter, A–G, next to questions 17–20.",
+      "bank": [
+       "disabled people",
+       "elderly people",
+       "recently married couples",
+       "pregnant women",
+       "secondary school children",
+       "young school children",
+       "young adults"
+      ],
+      "questions": [
+       {
+        "no": 17,
+        "type": "match",
+        "text": "Hot Springs Reserve",
+        "answer": 2,
+        "explanation": "\"most favoured by newlyweds\""
+       },
+       {
+        "no": 18,
+        "type": "match",
+        "text": "Mahia Peninsula",
+        "answer": 6,
+        "explanation": "\"large crowds of university students\""
+       },
+       {
+        "no": 19,
+        "type": "match",
+        "text": "Motu River Rafting",
+        "answer": 5,
+        "explanation": "\"local primary schools … young children\""
+       },
+       {
+        "no": 20,
+        "type": "match",
+        "text": "Eden Woodlands Park",
+        "answer": 0,
+        "explanation": "\"walkway made wide enough for those in wheelchairs\""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "section": 3,
+    "title": "Marketing seminar: SUVs",
+    "topic": "Business",
+    "cut": "14:36",
+    "transcript": "[14:41] Narrator: Section three. You will hear three marketing students discussing their research findings on vehicles known as SUVs, or four-wheel-drive vehicles. First, you have some time to look at questions 21 to 25. Now listen carefully and answer questions 21 to 25.\n[15:46] Student A: So guys, have you got all your notes on four-wheel-drive vehicles? Shall we go through what we've each found and think about how we'll put it together for next week's marketing seminar?\n[15:58] Student B: Yeah, sure. Let's start with what these cars were originally designed for.\n[16:02] Student C: I've got something on that here. Well, four-wheel drives, or sports utility vehicles as they're officially known – SUVs for short – were originally designed for off-road use by people who need to get to remote areas, out in the bush, for instance. But the interesting thing is that they're actually sold now to a lot of people who just use them in cities. So they make quite different use of them.\n[16:26] Student A: Okay, then maybe we should make a list of their advantages, shall we? So, one thing is that they're good for commercial use.\n[16:39] Student B: How about also saying utilitarian rather than luxurious?\n[16:43] Student A: So you're not paying out for unnecessary luxuries. Okay, what else?\n[16:50] Student C: Well, they have increased engine capacity, and they're also heavier, so suitable for towing large loads.\n[16:58] Student A: So is this why so many people buy them, then?\n[17:03] Student C: They seem to have become fashionable now for other, different reasons. Research carried out by automobile clubs shows that people buy them for business because of the sort of image they project. And mums like to drive their kids to school in them because they think they're safe. So that's another reason.\n[17:23] Student B: And you can get about seven people into one of these, so we could say seating capacity is another factor. Okay, another thing that came out of my research is that people also like the higher seats. They say it means they can get a better view of the traffic ahead of them.\n[17:43] Narrator: Before you hear the rest of the discussion, you have some time to look at questions 26 to 30. Now listen and answer questions 26 to 30.\n[18:30] Student C: But, you know, some of these reasons just don't work. I mean, the safety thing is just a misconception, because generally in a collision they can do terrible damage to a smaller car.\n[18:43] Student B: That's right. That's one of the disadvantages I have here. Shall we go through those now?\n[18:48] Student A: Good idea. So let's say that potentially they are harmful in built-up areas. Generally the damage they cause is due to their weight. That's right, isn't it?\n[18:59] Student C: Yes, it is. I've got a note here about their chassis. The bodywork on an SUV is stiffer and doesn't crumple to absorb impact in a collision the way it does in smaller cars. And there's another reason why they're not safe: it's quite easy for them to roll over, more so than an ordinary car, because they've got a high centre of gravity.\n[19:20] Student A: So these are all the disadvantages. How are we going to round this up?\n[19:25] Student B: Well, I think maybe we could round up with a few ideas of how we can limit the use of these SUVs. One thing that can be done is to limit them to people like farmers who can prove that they need them.\n[19:39] Student A: That's good, but it might be hard to enforce.\n[19:42] Student C: Or companies could also increase the insurance for SUVs, since they cause more damage when there's an accident.\n[19:49] Student B: Now, that's a good idea. Tell you what, guys, I'll write up these notes onto an OHT so that everyone can see them when we talk through our notes in the seminar. But I think we need to put together a list of our sources too. Can you do that?\n[20:04] Student A: Sure, no problem.\n[20:09] Narrator: That is the end of section three. You now have half a minute to check your answers.",
+    "groups": [
+     {
+      "instruction": "Complete the notes below. Write NO MORE THAN THREE WORDS for each answer.",
+      "wordLimit": "NO MORE THAN THREE WORDS",
+      "context": "SUVs (Sports Utility Vehicles) – originally made for off-road driving (e.g. in remote areas)",
+      "questions": [
+       {
+        "no": 21,
+        "type": "fill",
+        "text": "Now widely used in ___",
+        "answer": [
+         "cities"
+        ],
+        "explanation": "\"people who just use them in cities\""
+       },
+       {
+        "no": 22,
+        "type": "fill",
+        "text": "Advantages: useful for ___ purposes",
+        "answer": [
+         "commercial"
+        ],
+        "explanation": "\"good for commercial use\""
+       },
+       {
+        "no": 23,
+        "type": "fill",
+        "text": "Larger ___ capacity; suitable for towing large loads",
+        "answer": [
+         "engine"
+        ],
+        "explanation": "\"increased engine capacity\""
+       },
+       {
+        "no": 24,
+        "type": "fill",
+        "text": "Why popular in a wider market? Because of their image; seen as ___ by mothers",
+        "answer": [
+         "safe"
+        ],
+        "explanation": "\"mums … think they're safe\""
+       },
+       {
+        "no": 25,
+        "type": "fill",
+        "text": "Larger seating capacity; drivers prefer the ___",
+        "answer": [
+         "higher seats",
+         "high seats"
+        ],
+        "explanation": "\"people also like the higher seats\""
+       },
+       {
+        "no": 26,
+        "type": "fill",
+        "text": "Disadvantages: SUVs can be ___ in urban centres",
+        "answer": [
+         "harmful"
+        ],
+        "explanation": "\"potentially they are harmful in built-up areas\""
+       },
+       {
+        "no": 27,
+        "type": "fill",
+        "text": "because of their ___",
+        "answer": [
+         "weight"
+        ],
+        "explanation": "\"the damage they cause is due to their weight\""
+       },
+       {
+        "no": 28,
+        "type": "fill",
+        "text": "Bodywork doesn't crumple in an accident; liable to ___ easily",
+        "answer": [
+         "roll over",
+         "rollover"
+        ],
+        "explanation": "\"quite easy for them to roll over\""
+       },
+       {
+        "no": 29,
+        "type": "fill",
+        "text": "How to limit use of SUVs: limit use to those people who need them (e.g. ___)",
+        "answer": [
+         "farmers"
+        ],
+        "explanation": "\"people like farmers who can prove that they need them\""
+       },
+       {
+        "no": 30,
+        "type": "fill",
+        "text": "Raise cost of ___ paid by SUV drivers",
+        "answer": [
+         "insurance"
+        ],
+        "explanation": "\"increase the insurance for SUVs\""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "section": 4,
+    "title": "The influence of children on adult diet",
+    "topic": "Health",
+    "cut": "20:45",
+    "transcript": "[20:50] Narrator: Section four. You will hear a university professor giving a lecture on the influence of children on the adult diet. First, you have some time to look at questions 31 to 40. Now listen carefully and answer questions 31 to 40.\n[22:13] Lecturer: Today we continue with our series of lectures on diet and society in the 21st century. We are all aware of the obesity epidemic facing our society. The reasons for this are well documented, and are mainly due to poor eating habits coupled with too little exercise. In fact, a National Health and Nutrition Survey here in the US concluded that the average total food intake increased considerably between the years 1971 and 2000. This appears to be a general trend across most age groups. In fact, apart from the over-60s, all areas of American society are consistently above the dietary guidelines for caloric intake and saturated fat. However, total fat consumption is highest for teenagers, and there is a clear correlation with fast food consumption.\n[23:10] Lecturer: Among the wide range of factors influencing an individual's dietary choices, one of the strongest influences is the home. It will come as no surprise that within a family, the fat intakes of husbands and wives, and parents and children who cohabit, are remarkably similar. Many people assumed that this relationship indicates the influence of parents on their children. But we wanted to ask if children influence poor diets in adults. This hypothesis had not been tested in a national sample until now.\n[23:45] Lecturer: In our study, we focused only on adults, and we set our lower age limit at 17 and the upper one at 65. The key variable was the presence or absence of children, so we identified only those adults whose children were under 17. Other variables included the age of the adult, the level of education they had reached, their ethnic background, their income, and foreign-born status. To obtain our data, first we conducted interviews in the respondents' own homes, and all in all we interviewed 6,600 adults aged over 17. Then we invited them to mobile examination centres, where surveys were conducted. From this information, we were able to focus not only on the total fat intake but also on the person's total caloric consumption.\n[24:40] Lecturer: Our results show that the presence of children led to significantly higher levels of both fat consumption and saturated fat in adults. We found on average that adults with children in the home ate 4.9 grams per day of fat more than adults without children. This result is consistent irrespective of race, gender or age. The foods more commonly eaten were convenience items high in fat or sugar, including pizza, salty snacks and ice cream. Interestingly, there is a significantly higher percentage of adults in this group who drink milk.\n[25:20] Lecturer: There are many explanations for this increased fat intake. Hectic schedules, where parents try to balance work, family and leisure, put time at a premium. Another issue is children's preference for fatty foods or foods with a high sugar content. Fast foods and ready-to-eat foods are convenient choices. It is inconvenient to prepare different meals for both the children and the parents, so it is likely that adults consume the same as their children.\n[25:50] Lecturer: Of course, there were limitations to our study. One of these is that we did not take into account the number of minors in each household, which could have an effect on the adult who feeds the children. In addition, this study does not take into account the relationship of the adult to the minor. We could also postulate that the older a child gets, the more independent he or she becomes, and so the influence a child has on an adult may lessen depending on the age of the child.\n[26:25] Lecturer: In terms of recommendations as a result of this study, we would like to see more research conducted to overcome the limitations outlined earlier. We also feel there is a need for even further research into the influence that friends can have on our fat intake, given the clear link we've established between family members.\n[26:50] Narrator: That is the end of section four. You now have half a minute to check your answers.",
+    "groups": [
+     {
+      "instruction": "Complete the notes below. Write NO MORE THAN TWO WORDS for each answer.",
+      "wordLimit": "NO MORE THAN TWO WORDS",
+      "context": "The Influence of Children on Adult Diet – Background / Methods & procedures / Results / Reasons / Limitations / Conclusions",
+      "questions": [
+       {
+        "no": 31,
+        "type": "fill",
+        "text": "National survey conclusions: the age group that eats most fat is ___",
+        "answer": [
+         "teenagers"
+        ],
+        "explanation": "\"total fat consumption is highest for teenagers\""
+       },
+       {
+        "no": 32,
+        "type": "fill",
+        "text": "Family members living together show ___ levels of fat in their diet",
+        "answer": [
+         "similar"
+        ],
+        "explanation": "\"remarkably similar\""
+       },
+       {
+        "no": 33,
+        "type": "fill",
+        "text": "Other variables: age, education, race, ___ and whether born overseas",
+        "answer": [
+         "income"
+        ],
+        "explanation": "\"their income, and foreign-born status\""
+       },
+       {
+        "no": 34,
+        "type": "fill",
+        "text": "___ held at Mobile Examination Centres",
+        "answer": [
+         "surveys"
+        ],
+        "explanation": "\"mobile examination centres, where surveys were conducted\""
+       },
+       {
+        "no": 35,
+        "type": "fill",
+        "text": "Results: adults living with children are more likely to eat more fat, eat convenience food, ___",
+        "answer": [
+         "drink milk"
+        ],
+        "explanation": "\"a significantly higher percentage … who drink milk\""
+       },
+       {
+        "no": 36,
+        "type": "fill",
+        "text": "Reasons: parents have little ___",
+        "answer": [
+         "time"
+        ],
+        "explanation": "\"put time at a premium\""
+       },
+       {
+        "no": 37,
+        "type": "fill",
+        "text": "Limitations: the study did not consider the effects of the ___ of children in each family",
+        "answer": [
+         "number"
+        ],
+        "explanation": "\"the number of minors in each household\""
+       },
+       {
+        "no": 38,
+        "type": "fill",
+        "text": "the ___ between the adults and children",
+        "answer": [
+         "relationship"
+        ],
+        "explanation": "\"the relationship of the adult to the minor\""
+       },
+       {
+        "no": 39,
+        "type": "fill",
+        "text": "Influence may decrease with ___",
+        "answer": [
+         "age"
+        ],
+        "explanation": "\"depending on the age of the child\""
+       },
+       {
+        "no": 40,
+        "type": "fill",
+        "text": "Research needed into how our ___ affect our diet",
+        "answer": [
+         "friends"
+        ],
+        "explanation": "\"the influence that friends can have on our fat intake\""
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "reading": [
+  {
+   "passage": 1,
+   "title": "Bovids",
+   "topic": "Nature",
+   "level": "easy",
+   "passage_text": "The family of mammals called bovids belongs to the Artiodactyl class, which also includes giraffes. Bovids are a highly diverse group consisting of 137 species, some of which are man's most important domestic animals.\n\nBovids are well represented in most parts of Eurasia and Southeast Asian islands, but they are by far the most numerous and diverse in the latter. Some species of bovid are solitary, but others live in large groups with complex social structures. Although bovids have adapted to a wide range of habitats, from arctic tundra to deep tropical forest, the majority of species favour open grassland, scrub or desert. This diversity of habitat is also matched by great diversity in size and form: at one extreme is the royal antelope of West Africa, which stands a mere 25 cm at the shoulder; at the other, the massively built bisons of North America and Europe, growing to a shoulder height of 2.2 m.\n\nDespite differences in size and appearance, bovids are united by the possession of certain common features. All species are ruminants, which means that they retain undigested food in their stomachs, and regurgitate it as necessary. Bovids are almost exclusively herbivorous*. Typically their teeth are highly modified for browsing and grazing: grass or foliage is cropped with the upper lip and lower incisors** (the upper incisors are usually absent), and then ground down by the cheek teeth. As well as having cloven, or split, hooves, the males of all bovid species and the females of most carry horns. Bovid horns have bony cores covered in a sheath of horny material that is constantly renewed from within; they are unbranched and never shed. They vary in shape and size: the relatively simple horns of a large Indian buffalo may measure around 4 m from tip to tip along the outer curve, while the various gazelles have horns with a variety of elegant curves.\n\nFive bovid groups, or sub-families, may be distinguished: Bovinae, Antelope, Caprinae, Cephalophinae and Antilocapridae. The sub-family Bovinae comprises most of the larger bovids, including the African bongo, and nilgae, eland, bison and cattle. Unlike most other bovids they are all non-territorial. The ancestors of the various species of domestic cattle, banteng, gaur, yak and water buffalo are generally rare and endangered in the wild, while the auroch (the ancestor of the domestic cattle of Europe) is extinct.\n\nThe term 'antelope' is not a very precise zoological name – it is used to loosely describe a number of bovids that have followed different lines of development. Antelopes are typically long-legged, fast-running species, often with long horns that may be laid along the back when the animal is in full flight. There are two main sub-groups of antelope: Hippotraginae, which includes the oryx and the addax, and Antilopinae, which generally contains slighter and more graceful animals such as gazelle and the springbok. Antelopes are mainly grassland species, but many have adapted to flooded grasslands: pukus, waterbucks and lechwes are all good at swimming, usually feeding in deep water, while the sitatunga has long, splayed hooves that enable it to walk freely on swampy ground.\n\nThe pronghorn is the sole survivor of a New World sub-family of herbivorous ruminants, the Antilocapridae in North America. It is similar in appearance and habits to the Old World antelope. Although greatly reduced in numbers since the arrival of Europeans, and the subsequent enclosure of grasslands, the pronghorn is still found in considerable numbers throughout North America, from Washington State to Mexico. When alarmed by the approach of wolves or other predators, hairs on the pronghorn's rump stand erect, so showing and emphasising the white patch there. At this signal, the whole herd gallops off at speed of over 60 km per hour.\n\nThe sub-family Caprinae includes the sheep and the goat, together with various relatives such as the goral and the tahr. Most are woolly or have long hair. Several species, such as wild goats, chamois and ibex, are agile cliff- and mountain-dwellers. Tolerance of extreme conditions is most marked in this group: Barbary and bighorn sheep have adapted to arid deserts, while Rocky Mountain sheep survive high up in mountains and musk oxen in arctic tundra.\n\nThe duiker of Africa belongs to the Cephalophinae sub-family. It is generally small and solitary, often living in thick forest. Although mainly feeding on grass and leaves, some duikers – unlike most other bovids – are believed to eat insects and feed on dead animal carcasses, and even to kill small animals.\n\n* herbivorous: plant-eating   ** incisors: front teeth",
+   "groups": [
+    {
+     "instruction": "Choose the correct letter, A, B, C or D.",
+     "questions": [
+      {
+       "no": 1,
+       "type": "mcq",
+       "text": "In which region is the biggest range of bovids to be found?",
+       "options": [
+        "Africa",
+        "Eurasia",
+        "North America",
+        "South-east Asia"
+       ],
+       "answer": 3,
+       "explanation": "\"by far the most numerous and diverse in the latter\" (Southeast Asian islands)"
+      },
+      {
+       "no": 2,
+       "type": "mcq",
+       "text": "Most bovids have a preference for living in",
+       "options": [
+        "isolation",
+        "small groups",
+        "tropical forest",
+        "wide open spaces"
+       ],
+       "answer": 3,
+       "explanation": "\"the majority of species favour open grassland, scrub or desert\""
+      },
+      {
+       "no": 3,
+       "type": "mcq",
+       "text": "Which of the following features do all bovids have in common?",
+       "options": [
+        "Their horns are short.",
+        "They have upper incisors.",
+        "They store food in the body.",
+        "Their hooves are undivided."
+       ],
+       "answer": 2,
+       "explanation": "\"All species are ruminants … retain undigested food in their stomachs\""
+      }
+     ]
+    },
+    {
+     "instruction": "Look at the following characteristics and the list of sub-families below. Match each characteristic with the correct sub-family, A–D. NB You may use any letter more than once.",
+     "bank": [
+      "Antelope",
+      "Bovinae",
+      "Caprinae",
+      "Cephalophinae"
+     ],
+     "questions": [
+      {
+       "no": 4,
+       "type": "match",
+       "text": "can endure very harsh environments",
+       "answer": 2,
+       "explanation": "\"Tolerance of extreme conditions is most marked in this group\""
+      },
+      {
+       "no": 5,
+       "type": "match",
+       "text": "includes the ox and the cow",
+       "answer": 1,
+       "explanation": "\"bison and cattle\""
+      },
+      {
+       "no": 6,
+       "type": "match",
+       "text": "may supplement its diet with meat",
+       "answer": 3,
+       "explanation": "duikers eat insects, carcasses"
+      },
+      {
+       "no": 7,
+       "type": "match",
+       "text": "can usually move at speed",
+       "answer": 0,
+       "explanation": "\"long-legged, fast-running species\""
+      },
+      {
+       "no": 8,
+       "type": "match",
+       "text": "does not defend a particular area of land",
+       "answer": 1,
+       "explanation": "\"they are all non-territorial\""
+      }
+     ]
+    },
+    {
+     "instruction": "Answer the questions below. Choose NO MORE THAN THREE WORDS from the passage for each answer.",
+     "wordLimit": "NO MORE THAN THREE WORDS",
+     "questions": [
+      {
+       "no": 9,
+       "type": "fill",
+       "text": "What is the smallest species of bovid called? ___",
+       "answer": [
+        "the royal antelope",
+        "royal antelope"
+       ],
+       "explanation": "\"the royal antelope of West Africa, which stands a mere 25 cm\""
+      },
+      {
+       "no": 10,
+       "type": "fill",
+       "text": "Which species of Bovinae has now died out? ___",
+       "answer": [
+        "the auroch",
+        "auroch"
+       ],
+       "explanation": "\"the auroch … is extinct\""
+      },
+      {
+       "no": 11,
+       "type": "fill",
+       "text": "What facilitates the movement of the sitatunga over wetland? ___",
+       "answer": [
+        "long, splayed hooves",
+        "long splayed hooves",
+        "splayed hooves"
+       ],
+       "explanation": "\"long, splayed hooves that enable it to walk freely on swampy ground\""
+      },
+      {
+       "no": 12,
+       "type": "fill",
+       "text": "What sort of terrain do Barbary sheep live in? ___",
+       "answer": [
+        "arid deserts",
+        "deserts"
+       ],
+       "explanation": "\"Barbary and bighorn sheep have adapted to arid deserts\""
+      },
+      {
+       "no": 13,
+       "type": "fill",
+       "text": "What is the only living member of the Antilocapridae sub-family? ___",
+       "answer": [
+        "the pronghorn",
+        "pronghorn"
+       ],
+       "explanation": "\"The pronghorn is the sole survivor\""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage": 2,
+   "title": "Photovoltaics on the rooftop",
+   "topic": "Technology",
+   "level": "medium",
+   "passage_text": "A natural choice for powering the family home\n\nA\nIn the past, urban home owners have not always had much choice in the way electricity is supplied to their homes. Now, however, there is a choice, and a rapidly increasing number of households worldwide are choosing the solar energy option. Solar energy, the conversion of sunlight into energy, is made possible through the use of 'photovoltaics', which are simple appliances that fit onto the roof of a house.\n\nB\nThe photovoltaics-powered home remains connected to the power lines, but no storage is required on-site, only a box of electronics (the inverter) to the interface between the photovoltaics and the grid network. During the day, when the home may not be using much electricity, excess power from the solar array is fed back to the grid, to factories and offices that need daytime power. At night, power flows the opposite way. The grid network effectively provides storage. If the demand for electricity is well matched to when the sun shines, solar energy is especially valuable. This occurs in places like California in the US and Japan, where air-conditioning loads for offices and factories are large but heating loads for homes are small.\n\nC\nThe first systematic exploration of the use of photovoltaics on homes began in the US during the 1970s. A well-conceived program started with the siting of a number of 'residential experiment stations' at selected locations around the country, representing different climatic zones. These stations contained a number of 'dummy' houses, each with a different solar-energy system design. Homes within the communities close to these stations were monitored to see how well their energy use matched the energy generated by the stations' dummy roofs. A change in US government priorities in the early 1980s halted this program.\n\nD\nWith the US effort dropping away, the Japanese Sunshine Project came to the fore. A large residential test station was installed on Rokko Island beginning in 1986. This installation consists of 18 'dummy' homes, each equipped with its own 2–5 kilowatt photovoltaic system (about 20–50 square metres for each system). Some of these simulated homes have their own electrical appliances inside, such as TV sets, refrigerators and air-conditioning units, which switch on and off under computer control, providing a lavish lifestyle for the non-existent occupants. For the other systems, electronics simulate these household loads. This test station has allowed the technical issues involved in using photovoltaics within the electricity network to be explored in a systematic way, under well-controlled test conditions. With no insurmountable problems identified, the Japanese have used the experience gained from this station to begin their own massive residential photovoltaics campaign.\n\nE\nMeanwhile, Germany began a very important '1,000 roof program' in 1990, aimed at installing photovoltaics on the roofs of 1,000 private homes. Large federal and regional government subsidies were involved, accounting in most cases for 70% of the total system costs. The program proved immensely popular, forcing its extension to over 2,000 homes scattered across Germany. The success of this program stimulated other European countries to launch similar programs.\n\nF\nJapan's 'one million roof program' was prompted by the experience gained in the Rokko Island test site and the success of the German 1,000 roof program. The initially quoted aims of the Japanese New Energy Development Organization were to have 70,000 homes equipped with photovoltaics by the year 2000, on the way to 1 million by 2010. The program made a modest start in 1994, when 539 systems were installed with a government subsidy of 50 percent. Under this program, entire new suburban developments are using photovoltaics.\n\nG\nThe Japanese initiative in embracing residential photovoltaics on a large scale prompted responses in both Europe and the US. The European Commission has called for one million solar residential systems before the year 2010, with 500,000 in Europe and 500,000 in the developing world, to be subsidised by the Commission. In 1997, a similar one million roof target was announced in the US. Since then, several other countries including Germany, Italy, the Netherlands and Australia have announced their own targets for residential photovoltaics.\n\nH\nThis is good news, not only for the photovoltaic industry, but for everyone concerned with the environment. The use of fossil fuels to generate electricity is not only costly in financial terms, but also in terms of environmental damage. Gases produced by the burning of fossil fuels in the production of electricity are a major contributor to the greenhouse effect. To deal with this problem, many governments are now proposing stringent targets on the amount of greenhouse gas emissions permitted. These targets mean that all sources of greenhouse gas emissions, including residential electricity use, will receive closer attention in the future.\n\nI\nIt is likely that in the future, governments will develop building codes that attempt to constrain the energy demands of new housing. For example, the use of photovoltaics or the equivalent may be stipulated to lessen demands on the grid network and hence reduce fossil fuel emissions. Approvals for building renovations may also be conditional upon taking such energy-saving measures. If this were to happen, everyone would benefit. Although there is an initial cost in attaching the system to the rooftop, the householder's outlay is soon compensated with the savings on energy bills. In addition, everyone living on the planet stands to gain from the more benign environmental impact.",
+   "groups": [
+    {
+     "instruction": "Reading Passage 2 has nine paragraphs, A–I. Which paragraph contains the following information? NB You may use any letter more than once.",
+     "bank": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I"
+     ],
+     "questions": [
+      {
+       "no": 14,
+       "type": "match",
+       "text": "examples of countries where electricity use is greater during the day than at night",
+       "answer": 1,
+       "explanation": "California and Japan"
+      },
+      {
+       "no": 15,
+       "type": "match",
+       "text": "a detailed description of an experiment that led to photovoltaics being promoted throughout the country",
+       "answer": 3,
+       "explanation": "Rokko Island test station"
+      },
+      {
+       "no": 16,
+       "type": "match",
+       "text": "the negative effects of using conventional means of generating electricity",
+       "answer": 7,
+       "explanation": "fossil fuels – greenhouse effect"
+      },
+      {
+       "no": 17,
+       "type": "match",
+       "text": "an explanation of the photovoltaics system",
+       "answer": 1,
+       "explanation": "inverter, grid as storage"
+      },
+      {
+       "no": 18,
+       "type": "match",
+       "text": "the long-term benefits of using photovoltaics",
+       "answer": 8,
+       "explanation": "\"outlay is soon compensated with the savings on energy bills\""
+      },
+      {
+       "no": 19,
+       "type": "match",
+       "text": "a reference to wealthy countries being prepared to help less wealthy countries have access to photovoltaics",
+       "answer": 6,
+       "explanation": "\"500,000 in the developing world, to be subsidised by the Commission\" (đáp án gốc ghi E – sai)"
+      }
+     ]
+    },
+    {
+     "instruction": "Do the following statements agree with the information given in Reading Passage 2? Write TRUE, FALSE or NOT GIVEN.",
+     "questions": [
+      {
+       "no": 20,
+       "type": "tfng",
+       "text": "Photovoltaics are used to store electricity.",
+       "answer": "FALSE",
+       "explanation": "\"no storage is required on-site … The grid network effectively provides storage\""
+      },
+      {
+       "no": 21,
+       "type": "tfng",
+       "text": "Since the 1970s, the US government has provided continuous support for the use of photovoltaics on homes.",
+       "answer": "FALSE",
+       "explanation": "\"A change in US government priorities in the early 1980s halted this program\""
+      },
+      {
+       "no": 22,
+       "type": "tfng",
+       "text": "The solar-powered houses on Rokko Island are uninhabited.",
+       "answer": "TRUE",
+       "explanation": "\"non-existent occupants\""
+      },
+      {
+       "no": 23,
+       "type": "tfng",
+       "text": "In 1994, the Japanese government was providing half the money required for installing photovoltaics on homes.",
+       "answer": "TRUE",
+       "explanation": "\"a government subsidy of 50 percent\""
+      },
+      {
+       "no": 24,
+       "type": "tfng",
+       "text": "Germany, Italy, the Netherlands and Australia all have strict goals with regard to greenhouse gas emissions.",
+       "answer": "NOT GIVEN",
+       "explanation": "Chỉ nói họ có mục tiêu về pin mặt trời."
+      },
+      {
+       "no": 25,
+       "type": "tfng",
+       "text": "Residential electricity use is the major source of greenhouse gas emission.",
+       "answer": "NOT GIVEN",
+       "explanation": "Không xếp hạng nguồn phát thải."
+      },
+      {
+       "no": 26,
+       "type": "tfng",
+       "text": "Energy-saving measures must now be included in the design of all new homes and improvements to buildings.",
+       "answer": "FALSE",
+       "explanation": "\"It is likely that in the future\" – chưa bắt buộc."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage": 3,
+   "title": "How should reading be taught?",
+   "topic": "Education",
+   "level": "hard",
+   "passage_text": "By Keith Rayner and Barbara R. Foorman\n\nA\nLearning to speak is automatic for almost all children, but learning to read requires elaborate instruction and conscious effort. Well aware of the difficulties, educators have given a great deal of thought to how they can best help children learn to read. No single method has triumphed. Indeed, heated arguments about the most appropriate form of reading instruction continue to polarise the teaching community.\n\nB\nThree general approaches have been tried. In one, called whole-word instruction, children learn by rote how to recognise at a glance a vocabulary of 50 to 100 words. Then they gradually acquire other words, often through seeing them used over and over again in the context of a story.\n\nSpeakers of most languages learn the relationship between letters and the sounds associated with them (phonemes). That is, children are taught how to use their knowledge of the alphabet to sound out words. This procedure constitutes a second approach to teaching reading – phonics.\n\nMany schools have adopted a different approach: the whole-language method. The strategy here relies on the child's experience with language. For example, students are offered engaging books and are encouraged to guess the words that they do not know by considering the context of the sentence or by looking for clues in the storyline and illustrations, rather than trying to sound them out.\n\nMany teachers adopted the whole-language approach because of its intuitive appeal. Making reading fun promises to keep children motivated, and learning to read depends more on what the student does than on what the teacher does. The presumed benefits of whole-language instruction – and the contrast to the perceived dullness of phonics – led to its growing acceptance across America during the 1990s, and a movement away from phonics.\n\nC\nHowever, many linguists and psychologists objected strongly to the abandonment of phonics in American schools. Why was this so? In short, because research had clearly demonstrated that understanding how letters related to the component sounds in words is critically important in reading. This conclusion rests, in part, on knowledge of how experienced readers make sense of words on a page. Advocates of whole-language instruction have argued forcefully that people often derive meanings directly from print without ever determining the sound of the word. Some psychologists today accept this view, but most believe that reading is typically a process of rapidly sounding out words mentally. Compelling evidence for this comes from experiments which show that subjects often confuse homophones (words that sound the same, such as 'rose' and 'rows'). This supports the idea that readers convert strings of letters to sounds.\n\nD\nIn order to evaluate different approaches to teaching reading, a number of experiments have been carried out, firstly with college students, then with school pupils. Investigators trained English-speaking college students to read using unfamiliar symbols such as Arabic letters (the phonics approach), while another group learned entire words associated with certain strings of Arabic letters (whole-word). Then both groups were required to read a new set of words constructed from the original characters. In general, readers who were taught the rules of phonics could read many more new words than those trained with a whole-word procedure.\n\nClassroom studies comparing phonics with either whole-word or whole-language instruction are also quite illuminating. One particularly persuasive study compared two programmes used in 20 first-grade classrooms. Half the students were offered traditional reading instruction, which included the use of phonics drills and applications. The other half were taught using an individualised method that drew from their experiences with language; these children produced their own booklets of stories and developed sets of words to be recognised (common components of the whole-language approach). This study found that the first group scored higher at year's end on tests of reading and comprehension.\n\nE\nIf researchers are so convinced about the need for phonics instruction, why does the debate continue? Because the controversy is enmeshed in the philosophical differences between traditional and progressive (or new) approaches, differences that have divided educators for years. The progressives challenge the results of laboratory tests and classroom studies on the basis of a broad philosophical scepticism about the values of such research. They champion student-centred learning and teacher empowerment. Sadly, they fail to realise that these very admirable educational values are equally consistent with the teaching of phonics.\n\nF\nIf schools of education insisted that would-be reading teachers learned something about the vast research in linguistics and psychology that bears on reading, their graduates would be more eager to use phonics and would be prepared to do so effectively. They could allow their pupils to apply the principles of phonics while reading for pleasure. Using whole-language activities to supplement phonics instruction certainly helps to make reading fun and meaningful for children, so no one would want to see such tools discarded. Indeed, recent work has indicated that the combination of literature-based instruction and phonics is more powerful than either method used alone.\n\nTeachers need to strike a balance. But in doing so, we urge them to remember that reading must be grounded in a firm understanding of the connections between letters and sounds. Educators who deny this reality are neglecting decades of research. They are also neglecting the needs of their students.",
+   "groups": [
+    {
+     "instruction": "Reading Passage 3 has six sections, A–F. Choose the correct heading for sections B–F from the list of headings below. Example: Section A – ix.",
+     "bank": [
+      "i – Disagreement about the reading process",
+      "ii – The roots of the debate",
+      "iii – A combined approach",
+      "iv – Methods of teaching reading",
+      "v – A controversial approach",
+      "vi – Inconclusive research",
+      "vii – Research with learners",
+      "viii – Allowing teachers more control",
+      "ix – A debate amongst educators"
+     ],
+     "questions": [
+      {
+       "no": 27,
+       "type": "match",
+       "text": "Section B",
+       "answer": 3,
+       "explanation": "\"Three general approaches have been tried\""
+      },
+      {
+       "no": 28,
+       "type": "match",
+       "text": "Section C",
+       "answer": 0,
+       "explanation": "Tranh cãi về việc đọc có cần chuyển chữ thành âm không."
+      },
+      {
+       "no": 29,
+       "type": "match",
+       "text": "Section D",
+       "answer": 6,
+       "explanation": "Thí nghiệm với sinh viên và học sinh."
+      },
+      {
+       "no": 30,
+       "type": "match",
+       "text": "Section E",
+       "answer": 1,
+       "explanation": "\"the controversy is enmeshed in the philosophical differences\""
+      },
+      {
+       "no": 31,
+       "type": "match",
+       "text": "Section F",
+       "answer": 2,
+       "explanation": "\"the combination of literature-based instruction and phonics\""
+      }
+     ]
+    },
+    {
+     "instruction": "Do the following statements agree with the information given in Reading Passage 3? Write TRUE, FALSE or NOT GIVEN.",
+     "questions": [
+      {
+       "no": 32,
+       "type": "tfng",
+       "text": "The whole-language approach relates letters to sounds.",
+       "answer": "FALSE",
+       "explanation": "\"rather than trying to sound them out\""
+      },
+      {
+       "no": 33,
+       "type": "tfng",
+       "text": "Many educators believe the whole-language approach to be the most interesting way to teach children to read.",
+       "answer": "TRUE",
+       "explanation": "\"intuitive appeal … the perceived dullness of phonics\""
+      },
+      {
+       "no": 34,
+       "type": "tfng",
+       "text": "Research supports the theory that we read without linking words to sounds.",
+       "answer": "FALSE",
+       "explanation": "\"readers convert strings of letters to sounds\""
+      },
+      {
+       "no": 35,
+       "type": "tfng",
+       "text": "Research has shown that the whole-word approach is less effective than the whole-language approach.",
+       "answer": "NOT GIVEN",
+       "explanation": "Không so sánh trực tiếp hai phương pháp này."
+      },
+      {
+       "no": 36,
+       "type": "tfng",
+       "text": "Research has shown that phonics is more successful than both the whole-word and whole-language approaches.",
+       "answer": "TRUE",
+       "explanation": "Thí nghiệm sinh viên (vs whole-word) và lớp 1 (vs whole-language)."
+      }
+     ]
+    },
+    {
+     "instruction": "Complete the summary of sections E and F using the list of words, A–G, below.",
+     "bank": [
+      "the phonics method",
+      "the whole-word method",
+      "the whole-language method",
+      "traditionalists",
+      "progressives",
+      "linguistics",
+      "research studies"
+     ],
+     "questions": [
+      {
+       "no": 37,
+       "type": "match",
+       "text": "In the teaching community, ___ question the usefulness of research into methods of teaching reading.",
+       "answer": 4,
+       "explanation": "\"The progressives challenge the results\""
+      },
+      {
+       "no": 38,
+       "type": "match",
+       "text": "These critics believe that ___ is incompatible with student-centred learning.",
+       "answer": 0,
+       "explanation": "\"these very admirable educational values are equally consistent with the teaching of phonics\""
+      },
+      {
+       "no": 39,
+       "type": "match",
+       "text": "In the future, teachers need to be aware of ___ so that they understand the importance of phonics.",
+       "answer": 6,
+       "explanation": "\"the vast research in linguistics and psychology\""
+      },
+      {
+       "no": 40,
+       "type": "match",
+       "text": "They should not, however, ignore the ideas of ___ which make reading enjoyable for learners.",
+       "answer": 2,
+       "explanation": "\"whole-language activities … make reading fun\""
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "writing": [
+  {
+   "task": 1,
+   "type": "bar",
+   "title": "People affected by four types of noise, Europe 2007",
+   "topic": "Environment",
+   "prompt": "The charts below show the number of people in Europe who were affected by four types of noise by day and by night in cities and rural areas in 2007.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
+   "chart": {
+    "kind": "bar",
+    "unit": "millions of people",
+    "labels": [
+     "Traffic (cities)",
+     "Train (cities)",
+     "Aircraft (cities)",
+     "Industry (cities)",
+     "Traffic (rural)",
+     "Train (rural)",
+     "Aircraft (rural)",
+     "Industry (rural)"
+    ],
+    "series": [
+     {
+      "name": "Day",
+      "values": [
+       64,
+       10,
+       4,
+       1,
+       34,
+       8,
+       1,
+       0
+      ]
+     },
+     {
+      "name": "Night",
+      "values": [
+       48,
+       8,
+       1,
+       0.25,
+       24,
+       6,
+       2,
+       0
+      ]
+     }
+    ]
+   },
+   "sample": "The bar charts detail noise levels in Europe in 2007, delineated by time of day and rural or urban location.\n\nOverall, it is readily apparent that traffic was overwhelmingly the main source of noise, followed by trains, aircraft and finally industry. Noise levels were also higher during the day in both rural and urban areas, though cities were generally noisier at all times.\n\nTraffic noise in cities during the day and at night was very common, affecting 64 million and 48 million residents respectively. Rural figures for traffic noise were approximately half as high, at 34 million and 24 million. Turning to noise from trains, in cities 10 million individuals were impacted in the day and 8 million at night. In rural areas, this data was only slightly lower (8 million and 6 million).\n\nAircraft and industry accounted for considerably less noise disturbance in 2007, with just 4 million and 1 million affected by flights in cities during the day and at night, in turn. 2 million residents also heard aircraft at night in the countryside, with half as many aware of daytime flights. In terms of industry, the data for the countryside was negligible, and in cities stood at 1 million impacted during the day and 0.25 million at night.",
+   "sampleNote": "Bài mẫu trong tài liệu gốc; biểu đồ dựng lại từ số liệu."
+  },
+  {
+   "task": 2,
+   "type": "discussion",
+   "title": "Car-free days and air pollution",
+   "topic": "Environment",
+   "prompt": "Write about the following topic:\n\nSome people believe that car-free days are an effective way to reduce air pollution. However, others argue that there are other ways that are more effective.\n\nDiscuss both views and give your own opinion.\n\nGive reasons for your answer and include any relevant examples from your own knowledge or experience.\n\nWrite at least 250 words.",
+   "sample": "Many today feel that designated car-free days are the optimal method to reduce rising levels of air pollution. In my opinion, despite other viable options, car-free days would be the best remedy.\n\nCritics of this policy argue that governments could instead create laws related to industrial production. Apart from automobiles, the main causes of air pollution are resource mining, consumer electronics manufacturing and textile fabrication. If governments legislated strict controls on production methods, there would be a concomitant decline in air pollution figures. For instance, in many European nations, companies have limited carbon emission thresholds they can utilise in production, and exceeding these numbers results in heavy fines and other penalties. This forward-looking solution is also appealing since it would encompass the entire calendar year, whereas car-free days are more limited in their scope.\n\nHowever, car-free days would have greater impact due to their far-reaching implications. Firstly, banning cars would massively reduce air pollution figures, since cars contribute more harmful gases to the atmosphere than any single industry. Secondly, banning cars would force motorists to find alternative modes of transportation that might then become habits. A person who cannot drive to work once a week may consider working at home or utilising public transport. If they find these options more efficient, then they may willingly abandon using their car on other days. Over time, this could begin to shift mindsets in society, and individuals might become less obsessed with car ownership as a symbol of wealth and success and start prioritising efficiency and a cleaner environment.\n\nIn conclusion, though regulation of particular industries would also aid in the reduction of air pollution, the banning of automobiles on certain days is the single best solution. Governments should consider implementing and expanding existing policies that prohibit private vehicles.",
+   "sampleNote": "Bài mẫu band 8 trong tài liệu gốc, đã sửa lỗi nhỏ."
+  }
+ ]
+}

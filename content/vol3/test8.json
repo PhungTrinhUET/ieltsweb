@@ -1,0 +1,477 @@
+{
+ "vol": 3,
+ "test": 8,
+ "source": "ORIGINAL IELTS PAPERS – VOL 3, Test 8 (Listening trùng VOL 2 Test 10 nên chỉ có Reading)",
+ "reading": [
+  {
+   "passage": 1,
+   "title": "Katherine Mansfield",
+   "topic": "Biography",
+   "level": "easy",
+   "passage_text": "Katherine Mansfield was a modernist writer of short fiction who was born and brought up in New Zealand.\n\nKatherine Mansfield Beauchamp Murry was born in 1888, into a prominent family in Wellington, New Zealand. She became one of New Zealand's best-known writers, using the pen name of Katherine Mansfield. The daughter of a banker, and born into a middle-class family, she was also a first cousin of Countess Elizabeth von Arnim, a distinguished novelist in her time. Mansfield had two older sisters and a younger brother. Her father, Harold Beauchamp, went on to become the chairman of the Bank of New Zealand. In 1893, the Mansfield family moved to Karori, a suburb of Wellington, where Mansfield would spend the happiest years of her childhood; she later used her memories of this time as an inspiration for her Prelude story.\n\nHer first published stories appeared in the High School Reporter and the Wellington Girls' High School magazine in 1898 and 1899. In 1902, she developed strong feelings for a musician who played the cello, Arnold Trowell, although her feelings were not, for the most part, returned. Mansfield herself was an accomplished cellist, having received lessons from Trowell's father. Mansfield wrote in her journals of feeling isolated to some extent in New Zealand, and, in general terms, of her interest in the Maori people (New Zealand's native people), who were often portrayed in a sympathetic light in her later stories, such as How Pearl Button Was Kidnapped.\n\nShe moved to London in 1903, where she attended Queen's College, along with her two sisters. Mansfield recommenced playing the cello, an occupation that she believed, during her time at Queen's, she would take up professionally. She also began contributing to the college newspaper, with such a dedication to it that she eventually became its editor. She was particularly interested in the works of the French writers of this period and in the 19th-century British writer Oscar Wilde, and she was appreciated amongst fellow students at Queen's for her lively and charismatic approach to life and work. She met fellow writer Ida Baker, a South African, at the college, and the pair became lifelong friends. Mansfield did not actively support the suffragette movement in the UK. Women in New Zealand had gained the right to vote in 1893.\n\nMansfield first began journeying into the other parts of Europe in the period 1903–1906, mainly to Belgium and Germany. After finishing her schooling in England, she returned to her New Zealand home in 1906, only then beginning to write short stories in a serious way. She had several works published in Australia in a magazine called Native Companion, which was her first paid writing work, and by this time she had her mind set on becoming a professional writer. It was also the first occasion on which she used the pseudonym 'K. Mansfield'.\n\nMansfield rapidly grew discontented with the provincial New Zealand lifestyle, and with her family. Two years later she headed again to London. Her father sent her an annual subsidy of £100 for the rest of her life. In later years, she would express both admiration and disdain for New Zealand in her journals.\n\nIn 1911, Mansfield met John Middleton Murry, the Oxford scholar and editor of the literary magazine Rhythm. They were later to marry in 1918. Mansfield became a co-editor of Rhythm, which was subsequently called The Blue Review, in which more of her works were published. She and Murry lived in various houses in England and briefly in Paris. The Blue Review failed to gain enough readers and was no longer published. Their attempt to set up as writers in Paris was cut short by Murry's bankruptcy, which resulted from the failure of this and other journals. Life back in England meant frequently changed addresses and very limited funds.\n\nBetween 1915 and 1918, Mansfield moved between England and Bandol, France. She and Murry developed close contact with other well-known writers of the time, such as D. H. Lawrence, Bertrand Russell and Aldous Huxley. By October 1918 Mansfield had become seriously ill; she had been diagnosed with tuberculosis and was advised to enter a sanatorium. She could no longer spend winters in London. In the autumn of 1918 she was so ill that she decided to go to Ospedaletti in Italy. It was the publication of Bliss and Other Stories in 1920 that was to solidify Mansfield's reputation as a writer.\n\nMansfield also spent time in Menton, France, as the tenant of her father's cousin at 'The Villa Isola Bella'. There she wrote what she pronounced to be '… the only story that satisfies me to any extent'.\n\nMansfield produced a great deal of work in the final years of her life, and much of her prose and poetry remained unpublished at her death in 1923. After her death, her husband, Murry, took on the task of editing and publishing her works. His efforts resulted in two additional volumes of short stories, The Doves' Nest and Something Childish, published in 1923 and 1924 respectively, the publication of her Poems, as well as a collection of critical writings (Novels and Novelists) and a number of editions of Mansfield's previously unpublished letters and journals.",
+   "groups": [
+    {
+     "instruction": "Do the following statements agree with the information given in Reading Passage 1? Write TRUE, FALSE or NOT GIVEN.",
+     "questions": [
+      {
+       "no": 1,
+       "type": "tfng",
+       "text": "The name Katherine Mansfield, that appears on the writer's books, was exactly the same as her original name.",
+       "answer": "FALSE",
+       "explanation": "Tên thật: Katherine Mansfield Beauchamp Murry; bút danh Katherine Mansfield."
+      },
+      {
+       "no": 2,
+       "type": "tfng",
+       "text": "Mansfield won a prize for a story she wrote for the High School Reporter.",
+       "answer": "NOT GIVEN",
+       "explanation": "Không nhắc đến giải thưởng."
+      },
+      {
+       "no": 3,
+       "type": "tfng",
+       "text": "How Pearl Button Was Kidnapped portrayed Maori people in a favourable way.",
+       "answer": "TRUE",
+       "explanation": "\"portrayed in a sympathetic light\""
+      },
+      {
+       "no": 4,
+       "type": "tfng",
+       "text": "When Mansfield was at Queen's College, she planned to be a professional writer.",
+       "answer": "FALSE",
+       "explanation": "Bà định theo nghề cello chuyên nghiệp."
+      },
+      {
+       "no": 5,
+       "type": "tfng",
+       "text": "Mansfield was unpopular with the other students at Queen's College.",
+       "answer": "FALSE",
+       "explanation": "\"appreciated amongst fellow students\""
+      },
+      {
+       "no": 6,
+       "type": "tfng",
+       "text": "In London, Mansfield showed little interest in politics.",
+       "answer": "TRUE",
+       "explanation": "\"did not actively support the suffragette movement\""
+      }
+     ]
+    },
+    {
+     "instruction": "Complete the notes below. Choose ONE WORD AND/OR A NUMBER from the passage for each answer.",
+     "wordLimit": "ONE WORD AND/OR A NUMBER",
+     "context": "Katherine Mansfield's adult years",
+     "questions": [
+      {
+       "no": 7,
+       "type": "fill",
+       "text": "___ – moved from England back to New Zealand",
+       "answer": [
+        "1906"
+       ],
+       "explanation": "\"returned to her New Zealand home in 1906\""
+      },
+      {
+       "no": 8,
+       "type": "fill",
+       "text": "first paid writing work was in a publication based in ___",
+       "answer": [
+        "Australia"
+       ],
+       "explanation": "\"published in Australia in a magazine called Native Companion\""
+      },
+      {
+       "no": 9,
+       "type": "fill",
+       "text": "her ___ and the New Zealand way of life made her feel dissatisfied; 1908 – returned to London",
+       "answer": [
+        "family"
+       ],
+       "explanation": "\"discontented with the provincial New Zealand lifestyle, and with her family\""
+      },
+      {
+       "no": 10,
+       "type": "fill",
+       "text": "1911–1919 – met John Middleton Murry in 1911; ___ prevented Mansfield and Murry from staying together in Paris",
+       "answer": [
+        "bankruptcy"
+       ],
+       "explanation": "\"cut short by Murry's bankruptcy\""
+      },
+      {
+       "no": 11,
+       "type": "fill",
+       "text": "spent time with distinguished ___",
+       "answer": [
+        "writers"
+       ],
+       "explanation": "\"other well-known writers of the time\""
+      },
+      {
+       "no": 12,
+       "type": "fill",
+       "text": "from 1918, tuberculosis restricted the time she spent in London. 1920 – her ___ was consolidated when Bliss and Other Stories was published",
+       "answer": [
+        "reputation"
+       ],
+       "explanation": "\"solidify Mansfield's reputation as a writer\""
+      },
+      {
+       "no": 13,
+       "type": "fill",
+       "text": "1923–1924 – Mansfield's ___ published more of her works after her death",
+       "answer": [
+        "husband"
+       ],
+       "explanation": "\"her husband, Murry, took on the task of editing and publishing\""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage": 2,
+   "title": "Australian parrots and their adaptation to habitat change",
+   "topic": "Nature",
+   "level": "medium",
+   "passage_text": "A\nParrots are found across the tropics and in all southern hemisphere continents except Antarctica, but nowhere do they display such a richness of diversity and form as in Australia. One-sixth of the world's 345 parrot species are found there, and Australia has long been renowned for the number and variety of its parrots.\n\nB\nIn the 16th century, the German cartographer Mercator made a world map that included a place, somewhere near present-day Australia, that he named Terra Psittacorum – the Land of Parrots – and the first European settlers in Australia often referred to the country as Parrot Land. In 1865, the celebrated British naturalist and wildlife artist John Gould said: 'No group of birds gives Australia so tropical and benign an air as the numerous species of this great family by which it is tenanted.'\n\nC\nParrots are descendants of an ancient line. Due to their great diversity, and since most species inhabit Africa, Australia and South America, it seems almost certain that parrots originated millions of years ago on the ancient southern continent of Gondwana, before it broke up into the separate southern hemisphere continents we know today. Much of Gondwana comprised vast rainforests intersected by huge slow-flowing rivers and expansive lakes, but by eight million years ago, great changes were under way. The centre of the continent of Australia had begun to dry out, and the rainforests that once covered it gradually contracted to the continental margins, where, to a limited extent, they still exist today.\n\nD\nThe creatures that remained in those shrinking rainforests had to adapt to the drier conditions or face extinction. Reacting to these desperate circumstances, the parrot family, typically found in jungles in other parts of the world, has populated some of Australia's harshest environments. The parrots spread from ancestral forests through eucalypt woodlands to colonise the central deserts of Australia, and as a consequence they diversified into a wide range of species with adaptations that reflect the many changes animals and plants had to make to survive in these areas.\n\nE\nThese evolutionary pressures helped mould keratin, the substance from which beaks are made, into a range of tools capable of gathering the new food types favoured by various species of parrot. The size of a parrot's short, blunt beak and the length of that beak's curved upper section are related to the type of food each species eats. Some have comparatively long beaks that are perfect for extracting seeds from fruit; others have broader and stronger beaks that are designed for cracking hard seeds.\n\nF\nDifferently shaped beaks are not the only adaptations that have been made during the developing relationship between parrots and their food plants. Like all of Australia's many honey-eating birds, the rainbow-coloured lorikeets and the flowers on which they feed have long co-evolved, with features such as the shape and colour of the flowers adapted to the birds' particular needs, and physical adaptations of the birds themselves. For example, red is the most attractive colour to birds, and thus flowers which depend on birds for pollination are more often red, and lorikeets' tongues have bristles which help them to collect as much pollen as possible.\n\nG\nToday, most of Australia's parrots inhabit woodland and open forest, and their numbers decline towards both deserts and wetter areas. The majority are nomadic to some degree, moving around to take advantage of feeding and breeding places. Two of the dry-country parrots, the pink and grey galah and the pink, white and yellow corella, have expanded their ranges in recent years. They are among the species that have adapted well to the changes brought about by European settlement: forest felling created grasslands where galahs and corellas thrive.\n\nH\nBut other parrot species did not fare so well when their environments were altered. The clearing of large areas of rainforest is probably responsible for the disappearance of the double-eyed fig parrot, and numbers of ground parrots declined when a great part of their habitat was destroyed by the draining of coastal swamps. Even some parrot species that benefited from forest clearing at first are now confronted by a shortage of nesting sites due to further man-made changes.\n\nI\nNew conditions also sometimes favour an incoming species over one that originally inhabited the area. For example, after farmers cleared large areas of forest on Kangaroo Island off the coast of South Australia, the island was colonised by galahs. They were soon going down holes and destroying black cockatoo eggs in order to take the hole for their own use. Their success precipitated a partial collapse in the black cockatoo population when the latter lost the struggle for scarce nesting hollows.\n\nJ\nThere may be no final answer to ensuring an equitable balance between parrot species. Nest box programmes help ease the shortage of nesting sites in some places, but there are not enough, they are expensive and they are not an adequate substitute for large, old trees, for the habitat they represent and the nectar, pollen and seeds they provide. Competition between parrots for nest sites is a result of the changes we humans have made to the Earth. We are the most widespread and dangerous competitors that parrots have ever had to face, but we also have the knowledge and skill to maintain the wonderfully rich diversity of Australia's parrots. All we need is the will to do so.",
+   "groups": [
+    {
+     "instruction": "Reading Passage 2 has ten paragraphs, A–J. Which paragraph contains the following information?",
+     "bank": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J"
+     ],
+     "questions": [
+      {
+       "no": 14,
+       "type": "match",
+       "text": "an example of how one parrot species may survive at the expense of another",
+       "answer": 8,
+       "explanation": "galahs vs black cockatoos on Kangaroo Island"
+      },
+      {
+       "no": 15,
+       "type": "match",
+       "text": "a description of how plants may adapt to attract birds",
+       "answer": 5,
+       "explanation": "\"flowers which depend on birds for pollination are more often red\""
+      },
+      {
+       "no": 16,
+       "type": "match",
+       "text": "examples of two parrot species which benefited from changes to the environment",
+       "answer": 6,
+       "explanation": "galah and corella"
+      },
+      {
+       "no": 17,
+       "type": "match",
+       "text": "how the varied Australian landscape resulted in a great variety of parrot species",
+       "answer": 3,
+       "explanation": "\"diversified into a wide range of species\""
+      },
+      {
+       "no": 18,
+       "type": "match",
+       "text": "a reason why most parrot species are native to the southern hemisphere",
+       "answer": 2,
+       "explanation": "Gondwana"
+      },
+      {
+       "no": 19,
+       "type": "match",
+       "text": "an example of a parrot species which did not survive changes to its habitat",
+       "answer": 7,
+       "explanation": "double-eyed fig parrot"
+      }
+     ]
+    },
+    {
+     "instruction": "Choose the correct letter, A, B, C or D.",
+     "questions": [
+      {
+       "no": 20,
+       "type": "mcq",
+       "text": "The writer believes that most parrot species",
+       "options": [
+        "moved from Africa and South America to Australia.",
+        "had ancestors in either Africa, Australia or South America.",
+        "had ancestors in a continent which later split up.",
+        "came from a continent now covered by water."
+       ],
+       "answer": 2,
+       "explanation": "\"originated … on the ancient southern continent of Gondwana, before it broke up\""
+      },
+      {
+       "no": 21,
+       "type": "mcq",
+       "text": "What does the writer say about parrots' beaks?",
+       "options": [
+        "They are longer than those of other birds.",
+        "They are made of a unique material.",
+        "They are used more efficiently than those of other species.",
+        "They are specially adapted to suit the diet."
+       ],
+       "answer": 3,
+       "explanation": "\"related to the type of food each species eats\""
+      },
+      {
+       "no": 22,
+       "type": "mcq",
+       "text": "Which of the following is NOT mentioned by the writer as a disadvantage of nesting boxes?",
+       "options": [
+        "They cost too much.",
+        "They need to be maintained.",
+        "They provide only shelter, not food.",
+        "There are too few of them."
+       ],
+       "answer": 1,
+       "explanation": "Bài không nói về bảo trì."
+      }
+     ]
+    },
+    {
+     "instruction": "Complete the summary below. Choose NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage for each answer.",
+     "wordLimit": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+     "context": "Parrots in Australia",
+     "questions": [
+      {
+       "no": 23,
+       "type": "fill",
+       "text": "There are 345 varieties of parrot in existence and, of these, ___ live in Australia.",
+       "answer": [
+        "one-sixth",
+        "one sixth",
+        "1/6"
+       ],
+       "explanation": "\"One-sixth of the world's 345 parrot species\""
+      },
+      {
+       "no": 24,
+       "type": "fill",
+       "text": "As early as the ___, the mapmaker",
+       "answer": [
+        "16th century"
+       ],
+       "explanation": "\"In the 16th century\""
+      },
+      {
+       "no": 25,
+       "type": "fill",
+       "text": "___ recognised that parrots lived in that part of the world.",
+       "answer": [
+        "Mercator"
+       ],
+       "explanation": "\"the German cartographer Mercator\""
+      },
+      {
+       "no": 26,
+       "type": "fill",
+       "text": "___, the famous painter of animals and birds, commented on the size and beauty of the Australian parrot family.",
+       "answer": [
+        "John Gould",
+        "Gould"
+       ],
+       "explanation": "\"naturalist and wildlife artist John Gould\""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage": 3,
+   "title": "Yawning",
+   "topic": "Science",
+   "level": "hard",
+   "passage_text": "How and why we yawn still presents problems for researchers in an area which has only recently been opened up to study\n\nWhen Robert R. Provine began studying yawning in the 1980s, it was difficult for him to convince research students of the merits of 'yawning science'. Although it may appear quirky to some, Provine's decision to study yawning was a logical extension of his research in developmental neuroscience.\n\nThe verb 'to yawn' is derived from the Old English ganien or ginian, meaning to gape or open wide. But in addition to gaping jaws, yawning has significant features that are easy to observe and analyse. Provine 'collected' yawns to study by using a variation of the contagion response. He asked people to 'think about yawning' and, once they began to yawn, to depress a button and that would record from the start of the yawn to the exhalation at its end.\n\nProvine's early discoveries can be summarised as follows: the yawn is highly stereotyped but not invariant in its duration and form. It is an excellent example of the instinctive 'fixed action pattern' of classical animal-behaviour study, or ethology. It is not a reflex (short-duration, rapid, proportional response to a simple stimulus), but, once started, a yawn progresses with the inevitability of a sneeze. The standard yawn runs its course over about six seconds on average, but its duration can range from about three seconds to much longer than the average. There are no half-yawns: this is an example of the typical intensity of fixed action patterns and a reason why you cannot stifle yawns. Just like a cough, yawns can come in bouts with a highly variable inter-yawn interval, which is generally about 68 seconds but rarely more than 70. There is no relation between yawn frequency and duration: producers of short or long yawns do not compensate by yawning more or less often. Furthermore, Provine's hypotheses about the form and function of yawning can be tested by three informative yawn variants which can be used to look at the roles of the nose, the mouth and the jaws.\n\ni) The closed-nose yawn\nSubjects are asked to pinch their nose closed when they feel themselves start to yawn. Most subjects report being able to perform perfectly normal closed-nose yawns. This indicates that the inhalation at the onset of a yawn, and the exhalation at its end, need not involve the nostrils – the mouth provides a sufficient airway.\n\nii) The clenched-teeth yawn\nSubjects are asked to clench their teeth when they feel themselves start to yawn but allow themselves to inhale normally through their open lips and clenched teeth. This variant gives one the sensation of being stuck mid-yawn. This shows that gaping of the jaws is an essential component of the fixed action pattern of the yawn, and unless it is accomplished, the program (or pattern) will not run to completion. The yawn is also shown to be more than a deep breath, because, unlike normal breathing, inhalation and exhalation cannot be performed so well through the clenched teeth as through the nose.\n\niii) The nose yawn\nThis variant tests the adequacy of the nasal airway to sustain a yawn. Unlike normal breathing, which can be performed equally well through mouth or nose, yawning is impossible via nasal inhalation alone. As with the clenched-teeth yawn, the nose yawn provides the unfulfilling sensation of being stuck in mid-yawn. Exhalation, on the other hand, can be accomplished equally well through nose or mouth. Through this methodology Provine demonstrated that inhalation through the oral airway and the gaping of jaws are necessary for normal yawns. The motor program for yawning will not run to completion without feedback that these parts of the program have been accomplished.\n\nBut yawning is a powerful, generalised movement that involves much more than airway manoeuvres and jaw-gaping. When yawning you also stretch your facial muscles, tilt your head back, narrow or close your eyes, produce tears, salivate, open the Eustachian tubes of your middle ear and perform many other, yet unspecified, cardiovascular and respiratory acts. Perhaps the yawn shares components with other behaviour. For example, is the yawn a kind of 'slow sneeze' or is the sneeze a 'fast yawn'? Both share common respiratory and other features, including jaw gaping, eye closing and head tilting.\n\nYawning and stretching share properties and may be performed together as parts of a global motor complex. Studies by J. I. P. de Vries et al. in the early 1980s, charting movement in the developing foetus using ultrasound, observed a link between yawning and stretching. The most extraordinary demonstration of the yawn–stretch linkage occurs in many people paralysed on one side of their body because of brain damage caused by a stroke. The prominent British neurologist Sir Francis Walshe noted in 1923 that when these people yawn, they are startled and mystified to observe that their otherwise paralysed arm rises and flexes automatically in what neurologists term an 'associated response'. Yawning apparently activates undamaged, unconsciously controlled connections between the brain and the motor system, causing the paralysed limb to move. It is not known whether the associated response is a positive prognosis for recovery, nor whether yawning is therapeutic for prevention of muscular deterioration.\n\nProvine speculated that, in general, yawning may have many functions, and selecting a single function from the available options may be an unrealistic goal. Yawning appears to be associated with a change of behavioural state, switching from one activity to another. Yawning is also a reminder that ancient and unconscious behaviour linking us to the animal world lurks beneath the veneer of culture, rationality and language.",
+   "groups": [
+    {
+     "instruction": "Complete the summary below using the list of words, A–K, below.",
+     "bank": [
+      "form and function",
+      "long yawns",
+      "3 seconds",
+      "fixed action pattern",
+      "68 seconds",
+      "short yawns",
+      "reflex",
+      "sneeze",
+      "short duration",
+      "6 seconds",
+      "half-yawns"
+     ],
+     "context": "Provine's early findings on yawns",
+     "questions": [
+      {
+       "no": 27,
+       "type": "match",
+       "text": "Through his observation of yawns, Provine was able to confirm that ___ do not exist.",
+       "answer": 10,
+       "explanation": "\"There are no half-yawns\""
+      },
+      {
+       "no": 28,
+       "type": "match",
+       "text": "Like a ___, yawns cannot be interrupted after they have begun.",
+       "answer": 7,
+       "explanation": "\"progresses with the inevitability of a sneeze\""
+      },
+      {
+       "no": 29,
+       "type": "match",
+       "text": "This is because yawns occur as a ___ rather than a stimulus response, as was previously thought.",
+       "answer": 3,
+       "explanation": "\"the instinctive 'fixed action pattern'\""
+      },
+      {
+       "no": 30,
+       "type": "match",
+       "text": "In measuring the time taken to yawn, Provine found that a typical yawn lasts about ___.",
+       "answer": 9,
+       "explanation": "\"about six seconds on average\""
+      },
+      {
+       "no": 31,
+       "type": "match",
+       "text": "He also found that it is common for people to yawn a number of times in quick succession, with the yawns usually being around ___ apart.",
+       "answer": 4,
+       "explanation": "\"generally about 68 seconds\""
+      },
+      {
+       "no": 32,
+       "type": "match",
+       "text": "When studying whether length and rate were connected, Provine concluded that people who yawn less do not necessarily produce ___ to make up for this.",
+       "answer": 1,
+       "explanation": "\"do not compensate by yawning more or less often\""
+      }
+     ]
+    },
+    {
+     "instruction": "Choose the correct letter, A, B, C or D.",
+     "questions": [
+      {
+       "no": 33,
+       "type": "mcq",
+       "text": "What did Provine conclude from his 'closed-nose yawn' experiment?",
+       "options": [
+        "Ending a yawn requires use of the nostrils.",
+        "You can yawn without breathing through your nose.",
+        "Breathing through the nose produces a silent yawn.",
+        "The role of the nose in yawning needs further investigation."
+       ],
+       "answer": 1,
+       "explanation": "\"the mouth provides a sufficient airway\""
+      },
+      {
+       "no": 34,
+       "type": "mcq",
+       "text": "Provine's 'clenched-teeth yawn' experiment shows that",
+       "options": [
+        "yawning is unconnected with fatigue.",
+        "a yawn is the equivalent of a deep intake of breath.",
+        "you have to be able to open your mouth wide to yawn.",
+        "breathing with the teeth together is as efficient as through the nose."
+       ],
+       "answer": 2,
+       "explanation": "\"gaping of the jaws is an essential component\""
+      },
+      {
+       "no": 35,
+       "type": "mcq",
+       "text": "The nose yawn experiment was used to test whether yawning",
+       "options": [
+        "can be stopped after it has started.",
+        "is the result of motor programming.",
+        "involves both inhalation and exhalation.",
+        "can be accomplished only through the nose."
+       ],
+       "answer": 3,
+       "explanation": "\"tests the adequacy of the nasal airway to sustain a yawn\""
+      },
+      {
+       "no": 36,
+       "type": "mcq",
+       "text": "In people paralysed on one side because of brain damage",
+       "options": [
+        "yawning may involve only one side of the face.",
+        "the yawning response indicates that recovery is likely.",
+        "movement in the paralysed arm is stimulated by yawning.",
+        "yawning can be used as an exercise to prevent muscle wasting."
+       ],
+       "answer": 2,
+       "explanation": "\"their otherwise paralysed arm rises and flexes automatically\""
+      },
+      {
+       "no": 37,
+       "type": "mcq",
+       "text": "In the last paragraph, the writer concludes that",
+       "options": [
+        "yawning is a sign of boredom.",
+        "we yawn in spite of the development of our species.",
+        "yawning is a more passive activity than we imagine.",
+        "we are stimulated to yawn when our brain activity is low."
+       ],
+       "answer": 1,
+       "explanation": "\"ancient and unconscious behaviour … lurks beneath the veneer of culture, rationality and language\""
+      }
+     ]
+    },
+    {
+     "instruction": "Do the following statements agree with the claims of the writer in Reading Passage 3? Write YES, NO or NOT GIVEN.",
+     "questions": [
+      {
+       "no": 38,
+       "type": "ynng",
+       "text": "Research students were initially reluctant to appreciate the value of Provine's studies.",
+       "answer": "YES",
+       "explanation": "\"difficult for him to convince research students of the merits\""
+      },
+      {
+       "no": 39,
+       "type": "ynng",
+       "text": "When foetuses yawn and stretch they are learning how to control movement.",
+       "answer": "NOT GIVEN",
+       "explanation": "Chỉ nói quan sát thấy mối liên hệ."
+      },
+      {
+       "no": 40,
+       "type": "ynng",
+       "text": "According to Provine, referring to only one function is probably inadequate to explain why people yawn.",
+       "answer": "YES",
+       "explanation": "\"selecting a single function … may be an unrealistic goal\""
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "writing": [
+  {
+   "task": 1,
+   "type": "map",
+   "title": "Changes in the town of Willington, 1780–2000",
+   "topic": "Buildings",
+   "prompt": "The maps below show the changes that occurred to a town named Willington in 1780, 1860 and 2000.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.\n\n[Mô tả bản đồ – bản gốc là hình ảnh: 1780: 100 ngôi nhà, sông chảy bắc–nam cạnh thị trấn, phía đông và nam là nông trại và rừng. 1860: 200 ngôi nhà ở đông bắc, một con đường từ sông vào khu dân cư, cầu bắc qua sông, một phần nông trại/rừng bị xoá. 2000: 500 ngôi nhà, nông trại và rừng biến mất hoàn toàn, thêm 2 trường học, 3 sân thể thao, dãy cửa hàng dọc bờ nam sông, một hồ lớn ở cuối phía nam của sông.]",
+   "sample": "The map details changes that occurred in the town of Willington in the years 1780, 1860 and 2000.\n\nLooking from an overall perspective, it is readily apparent that the village became more residential and commercial, including new homes, access roads, a bridge, shops, and areas for recreation and sports, at the expense of natural forests and farms. Only the river remained unchanged.\n\nIn 1780, there were only 100 homes in Willington, and a considerable region to the east and south was occupied by farms and woods. The river ran from north to south alongside the town, a feature that was unaltered by 2000. By 1860, some farms and forestry had been removed to allow for a road leading from the river to a residential area that had doubled in size (200 homes) in the northeast. There was also the appearance of a bridge over the river.\n\nIn 2000, the number of homes rose to 500 and the farms and forests were entirely cleared. This enabled the construction of two schools, three sports fields and numerous shops lining the southern side of the river. The final addition was a large lake at the south end of the river.",
+   "sampleNote": "Bài mẫu trong tài liệu gốc (hình gốc không có trong bản số hóa)."
+  },
+  {
+   "task": 2,
+   "type": "discussion",
+   "title": "Economic progress vs other types of progress",
+   "topic": "Government",
+   "prompt": "Write about the following topic:\n\nMany governments think that economic progress is their most important goal. Some people, however, think that other types of progress are equally important for a country.\n\nDiscuss both these views and give your own opinion.\n\nGive reasons for your answer and include any relevant examples from your own knowledge or experience.\n\nWrite at least 250 words.",
+   "sample": "Many today have made the argument that governments are overly focused on economic development to the detriment of more valuable areas of progress. In my opinion, though economic progress is often the catalyst for different forms of growth, the other areas are at least equally as important.\n\nSupporters of economic progress point out its importance for individuals and societies generally. A thriving economy allows the average citizen to increase their quality of life in various ways. Individuals who are provided with good jobs and lucrative opportunities are able to afford better healthcare, potentially own a home, purchase luxuries and take holidays. In the aggregate, all these minor additions combine to ground a satisfied and happy life, though they are naturally not absolute guarantees. The clearest evidence of the value of this approach is that voters in democratic nations like the United States typically base their decisions primarily on economic factors.\n\nHowever, economics is the basis for other areas of progress. This relates to education, standards of living, infrastructure and, most importantly in the 21st century, the environment. In past centuries, individuals could be forgiven for considering economics to be the most important duty of governments. Today, the possibility that the Earth will face cataclysmic changes in the next century has dramatically shifted that calculus. Most researchers agree that overpopulation and the manufacturing and consumption of consumer goods are greatly exacerbating climate change and may lead to seismic disruptions for all life on Earth. Therefore, simply prioritising the economic causes of a degrading environment would be short-sighted.\n\nIn conclusion, though economics is the basic foundation of modern civil societies, governments today should not neglect equally crucial aspects such as the environment. The economy is a means for enacting other reforms, not an end in itself.",
+   "sampleNote": "Bài mẫu band 8 trong tài liệu gốc, đã sửa lỗi nhỏ."
+  }
+ ]
+}

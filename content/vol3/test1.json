@@ -1,0 +1,957 @@
+{
+ "vol": 3,
+ "test": 1,
+ "source": "ORIGINAL IELTS PAPERS – VOL 3, Test 1 (audio: test 1.mp3 gộp; cắt theo mốc cut)",
+ "listening": {
+  "audioDir": "audio/vol3/test1",
+  "timingNote": "Mốc thời gian lấy từ transcript ASR của file gộp (±10 s). Dùng cut để tách file.",
+  "sections": [
+   {
+    "section": 1,
+    "title": "Manor Farm – summer fruit picking",
+    "topic": "Work",
+    "cut": "0:43",
+    "transcript": "[00:53] Narrator: Section one. You will hear a telephone conversation between a man who is looking for a summer job as a fruit picker and a woman who owns a farm. First, you have some time to look at questions one to three. You will see that there is an example that has been done for you.\n[01:37] Mrs Chandler: Manor Farm, hello.\n[01:39] Ben: Hi there. I'd like to apply to do fruit picking this summer.\n[01:42] Mrs Chandler: Oh, hello. I'm Mrs Chandler; my husband and I own Manor Farm. Let me take some details. I'll just get a form to fill in. Right, your name is?\n[01:58] Ben: It's Ben Miller.\n[02:05] Narrator: The man's name is Ben Miller, so Ben Miller has been written in the space. Now we shall begin. Listen carefully and answer questions one to three.\n[02:27] Mrs Chandler: Manor Farm, hello.\n[02:29] Ben: Hi there. I'd like to apply to do fruit picking this summer.\n[02:32] Mrs Chandler: Oh, hello. I'm Mrs Chandler. My husband and I own Manor Farm. Let me take some details. I'll just get a form to fill in. Right, your name is?\n[02:48] Ben: It's Ben Miller.\n[02:50] Mrs Chandler: And where are you from?\n[02:52] Ben: I'm from the USA.\n[02:54] Mrs Chandler: Fine. Can I ask your age?\n[02:58] Ben: I'm 20. You only take people over the age of 16, don't you?\n[03:03] Mrs Chandler: Yes, that's right. Are you able to work in the UK? Sorry, I mean, do you have a visa?\n[03:09] Ben: Oh, yeah. I have a thing called a blue card. It's valid until November.\n[03:14] Mrs Chandler: That's fine. Then we'll need fruit pickers from the middle of June until the end of September. What's your availability? When can you work?\n[03:24] Ben: Um, I'd like to do July, August and September, and could do October if there's any work then.\n[03:33] Mrs Chandler: Okay. Did you find out about us through our website?\n[03:38] Ben: That's right. It's much easier than going through an agency.\n[03:48] Narrator: Before you hear the rest of the conversation, you have some time to look at questions four to ten. Now listen and answer questions four to ten.\n[04:38] Ben: I see you need most pickers in September for apples and pears, but the whole picking season can last about 16 weeks.\n[04:46] Mrs Chandler: Well, yes, but it's a question of the weather that determines how much fruit we grow. That's why I can't give you exact picking dates now.\n[04:55] Ben: I see. Oh well, no problem. Can you tell me what pickers earn?\n[05:00] Mrs Chandler: Well, that depends on age. The rate is four pounds fifty an hour for the under-eighteens, but as you're over 18, it would rise to five pounds sixty an hour.\n[05:14] Ben: Your website says that you don't provide accommodation for pickers, so I guess I should arrange that in advance.\n[05:21] Mrs Chandler: Yes, there is no accommodation on the farm, but there is a campsite about 15 minutes away.\n[05:27] Ben: Is that walking distance, do you think?\n[05:32] Mrs Chandler: No. Maybe you should bring your bike to get around. Yes, we always recommend that. Some pickers bring a car but then find the roads rather narrow, and the bus is very infrequent.\n[05:47] Mrs Chandler: Do you have any questions?\n[05:49] Ben: I know that fruit picking is hard work, but is there anything special I need to bring with me?\n[05:55] Mrs Chandler: Well, firstly, documentation is extremely important. We will need proof of age, so we'll expect to see your passport, because without one you won't be allowed to work.\n[06:06] Ben: Oh, even if my age is written on my driving licence?\n[06:09] Mrs Chandler: Sorry, a driving licence isn't suitable – not enough.\n[06:13] Ben: I guess some lunch is provided for all the hungry fruit pickers?\n[06:20] Mrs Chandler: I'm afraid not. You'll need to bring your own food for lunch and, more importantly, enough water to last a full day. It can get very hot, so drinking is vital.\n[06:33] Ben: Right, like back home. Okay, well, thanks for all the information. What happens now?\n[06:40] Mrs Chandler: Well, I will post a contract to you at the end of…\n[06:45] Narrator: That is the end of section one. You now have half a minute to check your answers.",
+    "groups": [
+     {
+      "instruction": "Complete the form below. Write NO MORE THAN TWO WORDS for each answer.",
+      "wordLimit": "NO MORE THAN TWO WORDS",
+      "context": "Manor Farm – Application form: Summer fruit picking. Example: Name: Ben Miller. Country of origin: the USA. Age: 20.",
+      "questions": [
+       {
+        "no": 1,
+        "type": "fill",
+        "text": "Visa type: a ___",
+        "answer": [
+         "blue card"
+        ],
+        "explanation": "\"I have a thing called a blue card\""
+       },
+       {
+        "no": 2,
+        "type": "fill",
+        "text": "Visa valid until: November. Availability for work: from ___ to October",
+        "answer": [
+         "July"
+        ],
+        "explanation": "\"I'd like to do July, August and September, and could do October\""
+       },
+       {
+        "no": 3,
+        "type": "fill",
+        "text": "Heard about job: from the ___",
+        "answer": [
+         "website"
+        ],
+        "explanation": "\"Did you find out about us through our website? That's right.\""
+       }
+      ]
+     },
+     {
+      "instruction": "Complete the notes below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.",
+      "wordLimit": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+      "context": "Manor Farm – Important information for fruit pickers",
+      "questions": [
+       {
+        "no": 4,
+        "type": "fill",
+        "text": "Picking season: busiest month is ___",
+        "answer": [
+         "September"
+        ],
+        "explanation": "\"you need most pickers in September for apples and pears\""
+       },
+       {
+        "no": 5,
+        "type": "fill",
+        "text": "Exact picking dates depend on the ___",
+        "answer": [
+         "weather"
+        ],
+        "explanation": "\"it's a question of the weather\""
+       },
+       {
+        "no": 6,
+        "type": "fill",
+        "text": "Payment: pickers over 18 will earn £ ___ an hour",
+        "answer": [
+         "5.60"
+        ],
+        "explanation": "\"it would rise to five pounds sixty an hour\""
+       },
+       {
+        "no": 7,
+        "type": "fill",
+        "text": "Accommodation: none on the farm but there is a ___ nearby",
+        "answer": [
+         "campsite",
+         "camp site"
+        ],
+        "explanation": "\"there is a campsite about 15 minutes away\""
+       },
+       {
+        "no": 8,
+        "type": "fill",
+        "text": "Transport: pickers are advised to travel around by ___",
+        "answer": [
+         "bike",
+         "bicycle"
+        ],
+        "explanation": "\"bring your bike to get around … we always recommend that\""
+       },
+       {
+        "no": 9,
+        "type": "fill",
+        "text": "Documentation: only pickers with a ___ will be allowed to work",
+        "answer": [
+         "passport"
+        ],
+        "explanation": "\"we'll expect to see your passport, because without one you won't be allowed to work\""
+       },
+       {
+        "no": 10,
+        "type": "fill",
+        "text": "Meals: pickers must bring lunch and a day's supply of ___",
+        "answer": [
+         "water"
+        ],
+        "explanation": "\"enough water to last a full day\""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "section": 2,
+    "title": "Karrara Sports & Leisure Centre",
+    "topic": "Leisure",
+    "cut": "7:21",
+    "transcript": "[07:27] Narrator: Section two. You will hear the manager of a new sports centre talking to potential customers about the facilities there. First, you have some time to look at questions 11 to 16. Now listen carefully and answer questions 11 to 16.\n[08:19] Manager: Good evening and welcome to Karrara's brand new Sports and Leisure Centre. First, I'll tell you about our facilities, then feel free to wander around the centre. Now, as you can see from the map I've given you, we're sitting in our café, which we hope will be a favourite place to visit after exercising. To one side of us, and right in front of you as you enter the complex, is the shop. Be sure to have a look in there later, as we've got some great opening specials on footwear. On the other side of the café, and ideally situated between the café and the childminding facilities, we have the playground. You can sit and relax there while your kids have a great time on the equipment. And our childcare facilities are available to anyone using the centre.\n[09:12] Manager: Let's talk a little bit about our heated swimming pool, which is also near the entrance, on the other side from the café. It has a five-metre waterslide, which will be very popular with kids of all ages. And in the corner nearest the changing rooms, we have a high-tech hot spa. The water is heated to 38 degrees centigrade, which is the ideal temperature to relax tired muscles after a workout. So where can you do these workouts? Well, we have a large weights room located at the end of the administration block. In the weights room you'll find all the latest equipment. We also have trainers there who can put a programme together for you.\n[10:00] Manager: Another place to get a good workout is in the gym, which is shown on the map to the right of the changing rooms. There will be all sorts of classes offered there. Our aim is to provide all your exercise and recovery needs. So as well as the spa to help aching bodies, we also have a special area for massage. It's in the funny-shaped room close to the administration area. Its distinctive shape has already led to the nickname of 'the bullet room'. We'll be offering Swedish and Chinese massage there and will offer physiotherapy in the future.\n[10:43] Narrator: Before you hear the rest of the talk, you have some time to look at questions 17 to 20. Now listen and answer questions 17 to 20.\n[11:17] Manager: Now, let me tell you something about our different memberships. Firstly, we offer different types of membership to cater for different needs. If you are a fitness freak, then choose our All-in membership. This gives you access to everything in the centre, all the classes and sports. It's usually our most expensive option, but for a short time we're offering 12 months for the price of nine, which is a huge saving. If you prefer just the gym classes, you may want to consider the Gym and Weights package. It works out at $10 a week, which is good value. If you just want to swim, then we recommend getting a Swim Plus membership. With this, you have unlimited use of the pool and spa. The other package we've reduced for this month only is the Off-peak. This is aimed at people who are happy to come at less busy times. And finally, we have the Family Pack. We believe in keeping the whole family fit and healthy, so this package works out cheaper than buying it separately. Your flyer has details of all the prices.\n[12:25] Manager: So anyone who signs up for a new membership tonight will receive two fantastic presents from us. We wanted to make these rewards something different from the norm. We could have just chosen a towel for you to use in the gym, or some clothing from the shop, but we wanted to show our appreciation by giving you something special. So not only are we going to give you a voucher for a session in our massage centre, a great way to unwind after your workout, but you'll also get this great device that measures your heart rate. And finally, just for turning up tonight, we'd like to give everyone here a drink bottle to take away with them. That's all I wanted to say.\n[13:18] Narrator: That is the end of section two. You now have half a minute to check your answers.",
+    "groups": [
+     {
+      "instruction": "Label the plan of the Karrara Sports & Leisure Centre. Write the correct letter, A–I, next to questions 11–16.",
+      "bank": [
+       "A – seating area beside the pool",
+       "B – room beside the changing rooms",
+       "C – area by the entrance, near the café",
+       "D – end of the administration block",
+       "E – funny-shaped room next to administration",
+       "F – between café and administration",
+       "G – between the café and the child care room",
+       "H – in front of the entrance, next to the café",
+       "I – corner of the pool nearest the changing rooms"
+      ],
+      "context": "Sơ đồ gốc không có trong bản số hóa; các vị trí A–I được mô tả bằng lời theo sơ đồ: CAFÉ – CHILD CARE – ENTRANCE – ADMINISTRATION – SWIMMING POOL – changing rooms – SEATING.",
+      "questions": [
+       {
+        "no": 11,
+        "type": "match",
+        "text": "Shop",
+        "answer": 7,
+        "explanation": "\"right in front of you as you enter the complex is the shop\" (H)"
+       },
+       {
+        "no": 12,
+        "type": "match",
+        "text": "Playground",
+        "answer": 6,
+        "explanation": "\"between the café and the childminding facilities\" (G)"
+       },
+       {
+        "no": 13,
+        "type": "match",
+        "text": "Spa",
+        "answer": 8,
+        "explanation": "\"in the corner nearest the changing rooms\" (I)"
+       },
+       {
+        "no": 14,
+        "type": "match",
+        "text": "Weights room",
+        "answer": 3,
+        "explanation": "\"at the end of the administration block\" (D)"
+       },
+       {
+        "no": 15,
+        "type": "match",
+        "text": "Gym",
+        "answer": 1,
+        "explanation": "\"to the right of the changing rooms\" (B)"
+       },
+       {
+        "no": 16,
+        "type": "match",
+        "text": "Massage room",
+        "answer": 4,
+        "explanation": "\"the funny-shaped room close to the administration area\" (E)"
+       }
+      ]
+     },
+     {
+      "instruction": "Choose TWO letters, A–E.",
+      "questions": [
+       {
+        "no": 17,
+        "type": "multi",
+        "text": "Which TWO memberships have a special introductory price?",
+        "options": [
+         "Off-peak",
+         "Gym and Weights",
+         "Swim Plus",
+         "All-in",
+         "Family Pack"
+        ],
+        "answer": [
+         0,
+         3
+        ],
+        "explanation": "All-in: 12 months for the price of 9; Off-peak: reduced for this month only."
+       }
+      ]
+     },
+     {
+      "instruction": "Choose TWO letters, A–E.",
+      "questions": [
+       {
+        "no": 19,
+        "type": "multi",
+        "text": "Which TWO free gifts will new members get?",
+        "options": [
+         "heart monitor",
+         "sports towel",
+         "water bottle",
+         "sports socks",
+         "free massage"
+        ],
+        "answer": [
+         0,
+         4
+        ],
+        "explanation": "\"a voucher for a session in our massage centre … this great device that measures your heart rate\". (Bình nước chỉ tặng cho người đến dự tối nay.)"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "section": 3,
+    "title": "The Value Survey on house prices",
+    "topic": "Education",
+    "cut": "13:54",
+    "transcript": "[13:59] Narrator: Section three. You will hear two economics students called James and Anna discussing a recent survey about the cost of buying a house in New Zealand. First you have some time to look at questions 21 to 25. Now listen carefully and answer questions 21 to 25.\n[15:03] Tutor: Okay, for this week's assignment, you're going to assess the Value Survey on house prices. What were the survey's findings? Was it a reliable survey? Work in pairs, discuss what you've read and generate some ideas for the assignment.\n[15:18] James: All right. Shall we work together, Anna?\n[15:20] Anna: Sure, James.\n[15:22] James: So first, how did the Value Survey actually measure the cost of houses? Because there are lots of ways of calculating it.\n[15:29] Anna: Well, it looked at all houses, didn't it, new and old. So it started with average incomes across the whole workforce, and then worked out house prices in relation to that – I mean, to what people were earning.\n[15:42] James: So it's about affordability, what people pay in real terms. There's no information about the size of a house a typical family can buy.\n[15:50] Anna: No, that's a limitation.\n[15:52] James: Okay, then in the assignment we should give some background. I mean, what's different about the Value Survey?\n[15:58] Anna: Yeah, there are lots of these surveys every year. Value is actually one of the newer ones, but it stands out because it gives figures for a range of the largest urban centres, which none of the others do.\n[16:10] James: Okay, good point. Then one finding was that New Zealand houses are relatively expensive. Why is that? Because most of them are built of wood, and that's quite cheap.\n[16:21] Anna: Yeah, it is. But the problem is there are too many regulations and restrictions about where you can build. So if more building sites were created for housing, the costs would come down.\n[16:39] James: That's it, isn't it? Because there are plenty of contractors ready to do the work.\n[16:43] Anna: Exactly. So what else?\n[16:45] James: Well, what about transport? I mean, it's all very well to talk about new housing, but how are people going to get there? Is the survey proposing new roads, new rail networks? It should be a coordinated approach.\n[16:57] Anna: Yeah, but the survey didn't mention it. It's a missed opportunity, because a commitment to funding public transport from the outset would improve air quality in our cities.\n[17:08] James: True. Okay, then the next survey – what can we expect? A look at all the same places?\n[17:14] Anna: Right, exactly the same. But the next one will give an idea of the way prices are moving. The government may have to think about how house prices are affecting society.\n[17:28] Narrator: Before you hear the rest of the discussion, you have some time to look at questions 26 to 30. Now listen and answer questions 26 to 30.\n[18:08] James: Then, in the assignment, we need to evaluate how reliable the survey was. So we should look at some of the criticism made by commentators.\n[18:17] Anna: Okay. So there's the economist Andrew Coleman. He actually questioned whether the survey was money well spent, because it only looked at a single year in isolation – a year when it was difficult to borrow money to buy a house, pushing up costs. So he thought the survey should consider a longer timeframe.\n[18:36] James: Did you get that article by Professor Massey? Because he's the leading authority on this topic.\n[18:41] Anna: Yeah, interesting. He realised the method used to calculate how much money people had didn't take savings into account. So actually, people looking for a house were richer than the survey shows, making houses cheaper in real terms.\n[18:56] James: All right. Then Richard Bernard – his criticism was original. He found out they were using quite outdated software to process all the information they gathered, which was crazy, because they actually had the money available for an upgrade. So even though it was a highly regarded team of people, the way the statistics were interpreted was open to question.\n[19:16] Anna: Okay. Then Professor Lowndes – he thought the report was just badly written.\n[19:21] James: That's right. After all the work that went into gathering valid information, the finished report was just too long and weakly structured, and there was too much unnecessary detail.\n[19:31] Anna: And the last one, Maria Darling. She made a point about the properties that were evaluated.\n[19:36] James: There weren't enough of them, you mean?\n[19:38] Anna: No, it wasn't that. But they were never identified, for privacy reasons. She thought the actual properties used should have been revealed – you know, the process should have been transparent if people are going to have full confidence in the survey.\n[19:52] James: Right. So a lot of criticism.\n[19:54] Anna: Yeah, but this sort of research is often controversial.\n[20:00] Narrator: That is the end of section three. You now have half a minute to check your answers.",
+    "groups": [
+     {
+      "instruction": "Choose the correct letter, A, B or C.",
+      "context": "The Value Survey on House Prices",
+      "questions": [
+       {
+        "no": 21,
+        "type": "mcq",
+        "text": "According to James and Anna, the Value Survey measured the cost of houses by calculating",
+        "options": [
+         "the total price of building a new house.",
+         "the size of house a typical family can afford.",
+         "the price of houses compared to average income."
+        ],
+        "answer": 2,
+        "explanation": "\"started with average incomes … then worked out house prices in relation to that\""
+       },
+       {
+        "no": 22,
+        "type": "mcq",
+        "text": "Anna says the Value Survey is unusual because",
+        "options": [
+         "it compares prices in different cities.",
+         "it is the oldest survey of its kind.",
+         "it publishes its results annually."
+        ],
+        "answer": 0,
+        "explanation": "\"it gives figures for a range of the largest urban centres, which none of the others do\""
+       },
+       {
+        "no": 23,
+        "type": "mcq",
+        "text": "The students decide that New Zealand house prices are high because of",
+        "options": [
+         "the cost of construction materials.",
+         "the shortage of builders.",
+         "the rules concerning land use."
+        ],
+        "answer": 2,
+        "explanation": "\"too many regulations and restrictions about where you can build\""
+       },
+       {
+        "no": 24,
+        "type": "mcq",
+        "text": "When the students talk about transport, they are",
+        "options": [
+         "concerned there is no plan.",
+         "worried about rising costs.",
+         "alarmed by increasing congestion."
+        ],
+        "answer": 0,
+        "explanation": "\"the survey didn't mention it. It's a missed opportunity\""
+       },
+       {
+        "no": 25,
+        "type": "mcq",
+        "text": "The students agree that the next Value Survey will",
+        "options": [
+         "compare a wider number of locations.",
+         "indicate a future trend in house prices.",
+         "advise against regulation of house prices."
+        ],
+        "answer": 1,
+        "explanation": "\"the next one will give an idea of the way prices are moving\""
+       }
+      ]
+     },
+     {
+      "instruction": "What aspect of the Value Survey did each of the following people criticise? Choose FIVE answers from the box and write the correct letter, A–G, next to questions 26–30.",
+      "bank": [
+       "organisation of final text",
+       "researchers' qualifications",
+       "level of funding",
+       "period covered",
+       "lack of public access to full information",
+       "old-fashioned systems of data analysis",
+       "way of defining home-buyers' wealth"
+      ],
+      "questions": [
+       {
+        "no": 26,
+        "type": "match",
+        "text": "Andrew Coleman",
+        "answer": 3,
+        "explanation": "\"only looked at a single year … should consider a longer timeframe\""
+       },
+       {
+        "no": 27,
+        "type": "match",
+        "text": "Professor Massey",
+        "answer": 6,
+        "explanation": "\"the method used to calculate how much money people had didn't take savings into account\""
+       },
+       {
+        "no": 28,
+        "type": "match",
+        "text": "Richard Bernard",
+        "answer": 5,
+        "explanation": "\"using quite outdated software to process all the information\""
+       },
+       {
+        "no": 29,
+        "type": "match",
+        "text": "Professor Lowndes",
+        "answer": 0,
+        "explanation": "\"too long and weakly structured\""
+       },
+       {
+        "no": 30,
+        "type": "match",
+        "text": "Maria Darling",
+        "answer": 4,
+        "explanation": "\"the actual properties used should have been revealed\""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "section": 4,
+    "title": "Drama activities in the classroom",
+    "topic": "Education",
+    "cut": "20:35",
+    "transcript": "[20:41] Narrator: Section four. You will hear part of a lecture for teacher trainees on using drama activities in the classroom. First you have some time to look at questions 31 to 40. Now listen carefully and answer questions 31 to 40.\n[22:03] Lecturer: So, now we're going to look at some of the reasons why it's beneficial to include drama activities, such as role-play, in your teaching practice in a range of subject areas. There's a lot of evidence to show that drama helps a child's personal development. Firstly, creating the space for children to express themselves freely in a group situation helps to give them confidence in their own opinions and ideas. And of course, drama activities can work especially well for shy or introverted children who usually don't participate in other types of classroom situations. Secondly, unscripted improvisation activities, where children work from their imagination, if done in a supportive way, give children the opportunity to gain experience in taking risks, and encourage them to say things that they might normally be afraid to say.\n[23:06] Lecturer: Drama can also support the child's educational development. For example, the emphasis placed on cooperative activities in drama means that group members must learn the value of listening to one another. Being involved in any sort of performance, which relies on everyone working together and playing their part, also helps children to be responsible, not only for their learning but for their general behaviour. These are just a couple of ways in which drama can benefit a child's learning.\n[23:45] Lecturer: Now I'd like to look at how role-play can be such a valuable learning tool in the classroom. The value of role-play for children who are having difficulties, as a means of therapy, is now widely accepted. The experience of doing a role-play where children act out aspects of their own life, without explicitly stating that it is a direct representation of their own experiences, can help children to judge their own behaviour in an objective way.\n[24:17] Lecturer: One obvious example would be doing a role reversal, with a bully role-playing a victim. Because this approach doesn't involve direct confrontation, it may help the bully to see his or her behaviour in a different light. More generally, role-play also allows the teacher to explore potentially controversial or taboo subjects in a safe setting in which children feel at ease. It's obviously essential for children to feel they won't be criticised or judged for voicing certain views.\n[24:53] Lecturer: Getting children to examine their thoughts and opinions carefully can lead to a deeper self-knowledge and a stronger awareness of morality. This is an important factor in developing social skills.\n[25:07] Lecturer: Let's look at a specific subject area now and think about how drama can enrich the learning process for the study of history. Bringing characters from the past to life in the classroom by doing classroom drama activities is an easy way to improve the level of the children's participation in the lesson. So drama in the history classroom makes for a livelier atmosphere. But getting children to re-enact scenes from history can also be extremely useful, as it helps them to remember what happened and why it was important, as well as helping to bring the past alive. Another way of doing this is to ask children to find solutions to historical problems using role-play. This can help to focus attention on why certain decisions were taken. For example, children can be asked to decide how best to defend their town from attack, or where to build a new settlement. Okay, what I'd like to do now is to think about your next teaching practice session, and in groups discuss how you would incorporate an element of drama into your lesson plan.\n[26:26] Narrator: That is the end of section four. You now have half a minute to check your answers.",
+    "groups": [
+     {
+      "instruction": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+      "wordLimit": "ONE WORD ONLY",
+      "context": "Benefits of using drama activities in the classroom",
+      "questions": [
+       {
+        "no": 31,
+        "type": "fill",
+        "text": "Child's personal development: group participation develops ___ in own ideas",
+        "answer": [
+         "confidence"
+        ],
+        "explanation": "\"give them confidence in their own opinions and ideas\""
+       },
+       {
+        "no": 32,
+        "type": "fill",
+        "text": "Unscripted, imaginative activities allow children to take ___",
+        "answer": [
+         "risks"
+        ],
+        "explanation": "\"gain experience in taking risks\""
+       },
+       {
+        "no": 33,
+        "type": "fill",
+        "text": "Child's educational development: working as a group teaches the importance of ___ to others",
+        "answer": [
+         "listening"
+        ],
+        "explanation": "\"the value of listening to one another\""
+       },
+       {
+        "no": 34,
+        "type": "fill",
+        "text": "Performing makes children ___ for their learning and behaviour",
+        "answer": [
+         "responsible"
+        ],
+        "explanation": "\"helps children to be responsible\""
+       },
+       {
+        "no": 35,
+        "type": "fill",
+        "text": "Role-play can be used as a form of ___ for children experiencing problems",
+        "answer": [
+         "therapy"
+        ],
+        "explanation": "\"as a means of therapy\""
+       },
+       {
+        "no": 36,
+        "type": "fill",
+        "text": "to explore controversial issues with a class in a ___ environment",
+        "answer": [
+         "safe"
+        ],
+        "explanation": "\"in a safe setting\""
+       },
+       {
+        "no": 37,
+        "type": "fill",
+        "text": "to explore children's self-knowledge and understanding of ___",
+        "answer": [
+         "morality"
+        ],
+        "explanation": "\"a stronger awareness of morality\""
+       },
+       {
+        "no": 38,
+        "type": "fill",
+        "text": "Advantages of role-play in the study of history: drama activities increase children's ___ in class",
+        "answer": [
+         "participation"
+        ],
+        "explanation": "\"improve the level of the children's participation\""
+       },
+       {
+        "no": 39,
+        "type": "fill",
+        "text": "Makes it easier for children to ___ and understand historical events",
+        "answer": [
+         "remember"
+        ],
+        "explanation": "\"helps them to remember what happened\""
+       },
+       {
+        "no": 40,
+        "type": "fill",
+        "text": "Can find answers to ___ in history to see why certain decisions were made",
+        "answer": [
+         "problems"
+        ],
+        "explanation": "\"find solutions to historical problems\""
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "reading": [
+  {
+   "passage": 1,
+   "title": "Fishbourne Roman Palace",
+   "topic": "History",
+   "level": "easy",
+   "passage_text": "The largest Roman villa in Britain\n\nFishbourne Roman Palace is in the village of Fishbourne in West Sussex, England. This large palace was built in the 1st century AD, around thirty years after the Roman conquest of Britain, on the site of Roman army grain stores which had been established after the invasion, in the reign of the Roman Emperor Claudius in 43 AD. The rectangular palace was built around formal gardens, the northern half of which have been reconstructed. There were extensive alterations in the 2nd and 3rd centuries AD, with many of the original black and white mosaic floors being overlaid with more sophisticated coloured ones, including a perfectly preserved mosaic of a dolphin in the north wing. More alterations were in progress when the palace burnt down in around 270 AD, after which it was abandoned.\n\nLocal people had long believed that a Roman palace once existed in the area. However, it was not until 1960 that the archaeologist Barry Cunliffe, of Oxford University, first systematically excavated the site, after workmen had accidentally uncovered a wall while they were laying a water main. The Roman villa excavated by Cunliffe's team was so grand that it became known as Fishbourne Roman Palace, and a museum was erected to preserve some of the remains. This is administered by the Sussex Archaeological Society.\n\nIn its day, the completed palace would have comprised four large wings with colonnaded fronts. The north and east wings consisted of suites of private rooms built around courtyards, with a monumental entrance in the middle of the east wing. In the north-east corner there was an assembly hall. The west wing contained state rooms, a large ceremonial reception room, and a gallery. The south wing contained the owner's private apartments. The palace included as many as 50 mosaic floors, under-floor central heating and a bathhouse. In size, Fishbourne Palace would have been approximately equivalent to some of the great Roman palaces of Italy, and was by far the largest known Roman residence north of the European Alps, at about 500 feet (150 m) square. A team of volunteers and professional archaeologists are involved in an ongoing archaeological excavation on the site of nearby, possibly military, buildings.\n\nThe first buildings to be erected on the site were constructed in the early part of the conquest in 43 AD. Later, two timber buildings were constructed, one with clay and mortar floors and plaster walls, which appears to have been a house of some comfort. These buildings were demolished in the 60s AD and replaced by a substantial stone house, which included colonnades and a bath suite. It has been suggested that the palace itself, incorporating the previous house in its south-east corner, was constructed around 73–75 AD. However, Dr Miles Russell, of Bournemouth University, reinterpreted the ground plan and the collection of objects found and has suggested that, given the extremely close parallels with the imperial palace of Domitian in Rome, its construction may more plausibly date to after 92 AD.\n\nWith regard to who lived in Fishbourne Palace, there are a number of theories; for example, one proposed by Professor Cunliffe is that, in its early phase, the palace was the residence of Tiberius Claudius Cogidubnus, a local chieftain who supported the Romans, and who may have been installed as king of a number of territories following the first stage of the conquest. Cogidubnus is known from a reference to his loyalty in Agricola, a work by the Roman writer Tacitus, and from an inscription commemorating a temple dedicated to the gods Neptune and Minerva found in the nearby city of Chichester. Another theory is that it was built for Sallustius Lucullus, a Roman governor of Britain of the late 1st century, who may have been the son of the British prince Adminius. Two inscriptions recording the presence of Lucullus have been found in Chichester, and the redating by Miles Russell of the palace to the early 90s AD would fit with this. If the palace was designed for Lucullus, then it may have only been in use for a few years, as the Roman historian Suetonius records that Lucullus was executed by the Emperor Domitian in or shortly after 93 AD.\n\nAdditional theories suggest that either Verica, a British king of the Roman Empire in the years preceding the Claudian invasion, was owner of the palace, or Tiberius Claudius Catuarus, following the recent discovery of a gold ring belonging to him. The palace outlasted the original owner, whoever he was, and was extensively re-planned early in the 2nd century AD, and subdivided into a series of lesser apartments. Further redevelopment was begun in the late 3rd century AD, but these alterations were incomplete when the north wing was destroyed in a fire in around 270 AD. The damage was too great to repair, and the palace was abandoned and later dismantled.\n\nA modern museum has been built by the Sussex Archaeological Society, incorporating most of the visible remains, including one wing of the palace. The gardens have been re-planted using authentic plants from the Roman period.",
+   "groups": [
+    {
+     "instruction": "Do the following statements agree with the information given in Reading Passage 1? Write TRUE, FALSE or NOT GIVEN.",
+     "questions": [
+      {
+       "no": 1,
+       "type": "tfng",
+       "text": "Fishbourne Palace was the first structure to be built on its site.",
+       "answer": "FALSE",
+       "explanation": "Được xây trên nền kho lương của quân đội La Mã."
+      },
+      {
+       "no": 2,
+       "type": "tfng",
+       "text": "Fishbourne Palace was renovated more than once.",
+       "answer": "TRUE",
+       "explanation": "\"extensive alterations in the 2nd and 3rd centuries … More alterations were in progress\""
+      },
+      {
+       "no": 3,
+       "type": "tfng",
+       "text": "Fishbourne Palace was large in comparison with Roman palaces in Italy.",
+       "answer": "FALSE",
+       "explanation": "\"approximately equivalent to some of the great Roman palaces of Italy\""
+      },
+      {
+       "no": 4,
+       "type": "tfng",
+       "text": "Research is continuing in the area close to Fishbourne Palace.",
+       "answer": "TRUE",
+       "explanation": "\"an ongoing archaeological excavation on the site of nearby … buildings\""
+      },
+      {
+       "no": 5,
+       "type": "tfng",
+       "text": "Researchers agree on the identity of the person for whom Fishbourne Palace was constructed.",
+       "answer": "FALSE",
+       "explanation": "\"there are a number of theories\""
+      },
+      {
+       "no": 6,
+       "type": "tfng",
+       "text": "Fishbourne Palace was burnt down by local people.",
+       "answer": "NOT GIVEN",
+       "explanation": "Không nói nguyên nhân vụ cháy."
+      }
+     ]
+    },
+    {
+     "instruction": "Complete the notes below. Choose NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage for each answer.",
+     "wordLimit": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+     "context": "Fishbourne Palace – Construction / Discovery / Possible inhabitants / Present day",
+     "questions": [
+      {
+       "no": 7,
+       "type": "fill",
+       "text": "The first buildings on the site contained food for the ___.",
+       "answer": [
+        "Roman army",
+        "army"
+       ],
+       "explanation": "\"Roman army grain stores\""
+      },
+      {
+       "no": 8,
+       "type": "fill",
+       "text": "The palace building surrounded ___.",
+       "answer": [
+        "gardens",
+        "formal gardens"
+       ],
+       "explanation": "\"built around formal gardens\""
+      },
+      {
+       "no": 9,
+       "type": "fill",
+       "text": "In the 2nd and 3rd centuries colour was added to the ___.",
+       "answer": [
+        "floors",
+        "mosaic floors"
+       ],
+       "explanation": "\"mosaic floors being overlaid with more sophisticated coloured ones\""
+      },
+      {
+       "no": 10,
+       "type": "fill",
+       "text": "Discovery: the first part of the palace to be found was part of a ___.",
+       "answer": [
+        "wall"
+       ],
+       "explanation": "\"workmen had accidentally uncovered a wall\""
+      },
+      {
+       "no": 11,
+       "type": "fill",
+       "text": "Sallustius Lucullus – he may have lived there until approximately ___ AD.",
+       "answer": [
+        "93"
+       ],
+       "explanation": "\"executed … in or shortly after 93 AD\""
+      },
+      {
+       "no": 12,
+       "type": "fill",
+       "text": "Catuarus – his ___ was found there.",
+       "answer": [
+        "gold ring",
+        "ring"
+       ],
+       "explanation": "\"discovery of a gold ring belonging to him\""
+      },
+      {
+       "no": 13,
+       "type": "fill",
+       "text": "Present day: a ___ has been built on the site to help protect it.",
+       "answer": [
+        "modern museum",
+        "museum"
+       ],
+       "explanation": "\"A modern museum has been built\""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage": 2,
+   "title": "Insect decision-making",
+   "topic": "Science",
+   "level": "medium",
+   "passage_text": "A\nIt has long been held that decisions made collectively by large groups of people are more likely to turn out to be accurate than decisions made by individuals. The idea goes back to the 'jury theorem' of Nicolas de Condorcet, an 18th-century French philosopher who was one of the first to apply mathematics to the social sciences. Condorcet's theory describes collective decisions, outlining how democratic decisions tend to outperform dictatorial ones. If, for example, each member of a jury has only partial information, the majority decision is more likely to be correct than a decision arrived at by a single juror. Moreover, the probability of a correct decision increases with the size of the jury.\n\nB\nNow it is becoming clear that group decisions are also extremely valuable for the success of social animals, such as ants, bees, birds and dolphins. Bees make collective decisions, and they do it rather well, according to Christian List of the London School of Economics, who has studied group decision-making in humans and animals. Researchers led by Dr List looked at colonies of honeybees, which split once the original colony reaches a certain size. The queen goes off with about two-thirds of the worker bees to live in a new home or nest, leaving a daughter queen in the old nest with the remaining workers. Among the bees that depart are some that have searched for and found some new nest sites, and reported back using a characteristic body movement known as a 'waggle dance' to indicate to the other bees the suitable places they have located. The longer the dance, the better the site. After a while, other bees start to visit the sites signalled by their companions to see for themselves and, on their return, also perform more waggle dances. The process eventually leads to a consensus on the best site and the breakaway swarm migrates. The decision is remarkably reliable, with the bees choosing the best site even when there are only small differences between alternative sites.\n\nC\nBut exactly how do bees reach such a robust consensus? To find out, Dr List and his colleagues used a computer-generated model of the decision-making process. By experimenting with it they found that, when bees in the model were very good at finding nesting sites but did not share their information, this dramatically slowed down the migration, leaving the swarm homeless and vulnerable. Conversely, bees in the model blindly following the waggle dances of others without first checking led to a poor choice of site. The researchers concluded that the ability of bees to identify successfully and quickly the best site depends on both the bees' interdependence in communicating the whereabouts of the best site, and their independence in confirming this information for themselves.\n\nD\nAnother situation in which collective decisions are taken occurs when animals are either isolated from crucial sources of information or dominated by other members of the group. José Halloy of the Free University of Brussels in Belgium used robotic cockroaches to subvert the behaviour of living cockroaches and control their decision-making process. In his experiment, the artificial bugs were introduced to the live ones and soon became sufficiently socially integrated that they were perceived by the real cockroaches as equals. By manipulating the robots, which were in the minority, Halloy was able to persuade the living cockroaches to choose an inappropriate shelter – even one which they had rejected before being infiltrated by the robots.\n\nE\nThe way insects put into effect collective decisions can be complex and as important as the decisions themselves. At the University of Bristol, in the UK, Nigel Franks and his colleagues studied how a species of ant establishes a new nest. Franks and his associates reported how the insects reduce the problems associated with making a necessarily swift choice. If the ants' existing nest becomes suddenly threatened, the insects choose certain ants to act as scouts to find a new nest. How quickly they accomplish the transfer to a new home depends not only on how soon the best available site is found, but also on how quickly the migration there can be achieved.\n\nF\nOnce the suitable new nest is identified, the chosen ants begin to lead others, which have made it to the new site or which may simply be in the vicinity, back to the original threatened nest. In this way, those ants which are familiar with the route can help transport, for example, the queen and young ants to the new site, and simultaneously show the way to those ants which have been left behind to guard the old nest. In this way moving processes are accomplished faster and more efficiently. Thus the dynamics of collective decision-making are closely related to the efficient implementation of those decisions. How this might apply to choices that humans make is, as yet, unclear. But it does suggest, even for humans, the importance of recruiting dynamic leaders to a cause, because the most important thing about collective decision-making, as shown by these insect experiments, is to get others to follow.",
+   "groups": [
+    {
+     "instruction": "Reading Passage 2 has six paragraphs, A–F. Choose the correct heading for each paragraph from the list of headings below.",
+     "bank": [
+      "i – The effect of man-made imitations on insects",
+      "ii – The need to instruct additional insect guides",
+      "iii – Signals used by certain insects to indicate a discovery",
+      "iv – How urgency can affect the process of finding a new home",
+      "v – The use of trained insects in testing scientific theories",
+      "vi – The use of virtual scenarios in the study of insect behaviour",
+      "vii – How the number of decision-makers affects the decision"
+     ],
+     "questions": [
+      {
+       "no": 14,
+       "type": "match",
+       "text": "Paragraph A",
+       "answer": 6,
+       "explanation": "\"the probability of a correct decision increases with the size of the jury\""
+      },
+      {
+       "no": 15,
+       "type": "match",
+       "text": "Paragraph B",
+       "answer": 2,
+       "explanation": "waggle dance"
+      },
+      {
+       "no": 16,
+       "type": "match",
+       "text": "Paragraph C",
+       "answer": 5,
+       "explanation": "computer-generated model"
+      },
+      {
+       "no": 17,
+       "type": "match",
+       "text": "Paragraph D",
+       "answer": 0,
+       "explanation": "robotic cockroaches"
+      },
+      {
+       "no": 18,
+       "type": "match",
+       "text": "Paragraph E",
+       "answer": 3,
+       "explanation": "\"necessarily swift choice … nest becomes suddenly threatened\""
+      },
+      {
+       "no": 19,
+       "type": "match",
+       "text": "Paragraph F",
+       "answer": 1,
+       "explanation": "\"the chosen ants begin to lead others … show the way\""
+      }
+     ]
+    },
+    {
+     "instruction": "Look at the following findings and the list of academics below. Match each finding with the correct academic, A–D. NB You may use any letter more than once.",
+     "bank": [
+      "Nicolas de Condorcet",
+      "Christian List and colleagues",
+      "José Halloy",
+      "Nigel Franks and colleagues"
+     ],
+     "questions": [
+      {
+       "no": 20,
+       "type": "match",
+       "text": "A minority of individuals can persuade the rest of the group to alter a previous decision.",
+       "answer": 2,
+       "explanation": "\"the robots, which were in the minority … even one which they had rejected\""
+      },
+      {
+       "no": 21,
+       "type": "match",
+       "text": "Individual verification of a proposed choice is important for a successful decision outcome.",
+       "answer": 1,
+       "explanation": "\"their independence in confirming this information for themselves\""
+      },
+      {
+       "no": 22,
+       "type": "match",
+       "text": "The more individuals taking part in a decision, the better the decision will be.",
+       "answer": 0,
+       "explanation": "jury theorem"
+      },
+      {
+       "no": 23,
+       "type": "match",
+       "text": "The decision-making process of certain insects produces excellent results even when fine distinctions are required.",
+       "answer": 1,
+       "explanation": "\"even when there are only small differences between alternative sites\""
+      }
+     ]
+    },
+    {
+     "instruction": "Complete the summary below. Choose ONE WORD ONLY from the passage for each answer.",
+     "wordLimit": "ONE WORD ONLY",
+     "context": "A study of insect decision-making",
+     "questions": [
+      {
+       "no": 24,
+       "type": "fill",
+       "text": "A Bristol University study looked at how insects make decisions when their home has been ___.",
+       "answer": [
+        "threatened"
+       ],
+       "explanation": "\"existing nest becomes suddenly threatened\""
+      },
+      {
+       "no": 25,
+       "type": "fill",
+       "text": "The ants in the experiment relied on the use of individuals called ___ to find a new nest and efficiently direct the others to go there.",
+       "answer": [
+        "scouts"
+       ],
+       "explanation": "\"certain ants to act as scouts\""
+      },
+      {
+       "no": 26,
+       "type": "fill",
+       "text": "The study emphasised the necessity, for people as well as insects, of having active ___ to execute decisions successfully.",
+       "answer": [
+        "leaders"
+       ],
+       "explanation": "\"recruiting dynamic leaders to a cause\""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage": 3,
+   "title": "Fear of the Unknown – innovation in American companies",
+   "topic": "Business",
+   "level": "hard",
+   "passage_text": "American companies fear that innovation is the secret of success – and that they cannot innovate\n\nA\nIn the small Umagic office in midtown Manhattan, a team of 30 computer programmers are working on setting up websites that will allow subscribers to feed in details about themselves and their problems and to receive advice from 'virtual' versions of personalities regarded as experts in their fields: for example, a well-known dietician, a celebrity fitness trainer, a psychologist well known in the media for her work on parent–child relationships. Umagic Systems is a young firm and it's hard to predict how far they'll go. In ten years' time, consulting a computer about your diet problems might seem natural, or it might seem absurd. But the company and others like it are beginning to seriously worry large American firms, who see such half-crazy new and innovative ideas as a threat to their own future success.\n\nB\nInnovation has become a major concern of American management. Firms have found that it is increasingly difficult to redesign existing products or to produce them more economically. The stars of American business tend today to be innovators such as Amazon (the internet bookstore) and Wal-Mart (the supermarket chain), which have produced completely new ideas or products that have changed their industries.\n\nC\nOver the past 15 years, the firms which have achieved the greatest profits have been the ones which have had the most innovations. But such profits aren't easy to come by. One of the reasons for the increasing number of mergers between companies is a desperate search for new ideas. And a fortune is spent nowadays on identifying and protecting intellectual property: other people's ideas. According to the Pasadena-based Patent & License Exchange in the United States, trading in intangible assets such as intellectual property rose from $15 billion in 1990 to $100 billion in 1998, with an increasing proportion of the rewards going to small firms and individuals.\n\nD\nAnd therein lies the terror for big companies: that innovation seems to work best outside them. Many of the large established companies have been struggling to come up with new products recently. 'In the management of creativity, size is your enemy,' argues Peter Chernin, who runs the Fox TV and film empire for News Corporation. 'One person managing 20 movies is never going to be as involved as one doing five movies.' He has thus tried to break down the studio into smaller units, even at the risk of incurring higher costs.\n\nE\nIt is easier for ideas to develop outside big firms these days. In the past, if a clever scientist had an idea he wanted to commercialise, he would take it first to a big company. Now, with the banks encouraging individuals to set up new businesses through offering special loans, innovators are more likely to set up on their own. Umagic has already raised $5 million and is about to raise $25 million more. Even in capital-intensive businesses such as pharmaceuticals, entrepreneurs can conduct profitable, early-stage research, selling out to the big firms when they reach expensive, risky clinical trials.\n\nF\nSome giants, including General Electric and Cisco, have been remarkably successful at buying up and integrating scores of small companies. But many others worry about the prices they have to pay and the difficulty in keeping hold of the people who dreamt up the ideas. Everybody would like to develop more ideas in-house. Procter & Gamble is now changing the entire direction of its business from global expansion to product development; one of its new aims is to get innovations accepted across the company. Elsewhere, the search for innovation has led to a craze for 'intrapreneurship' – giving more power to individuals in the company and setting up internal ideas-factories so that talented staff will not leave.\n\nG\nAnd yet innovation does not happen just because the chief executive wills it. Indeed, it is extremely difficult to come up with new ideas year in, year out, especially brilliant ones. Underneath all the experts' diagrams, lists and charts, most of the available answers seem to focus on two strengths that are difficult to impose: a culture that looks for new ideas, and leaders who know which ones to back. Companies have to discredit the widespread view that jobs working on new products are for 'those who can't cope in the real business'. They have to change the culture by introducing hard incentives, such as giving more generous bonuses to those who come up with successful new ideas and, particularly, not punishing those whose experiments fail.\n\nH\nWill all this reorganisation and culture tweaking make big firms more creative? David Post, the founder of Umagic, isn't so sure. He also recalls with glee the looks of total incomprehension when he tried to sell his 'virtual experts' idea three years ago to firms such as IBM, though, as he cheerfully adds, 'of course, they could have been right'. Apparently, innovation – unlike diet, fitness and parenting – is one area where a computer cannot tell you what to do.",
+   "groups": [
+    {
+     "instruction": "Reading Passage 3 has eight paragraphs, A–H. Which paragraph contains the following information? NB You may use any letter more than once.",
+     "bank": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+     ],
+     "questions": [
+      {
+       "no": 27,
+       "type": "match",
+       "text": "the methods some companies use to try to keep their most creative employees",
+       "answer": 5,
+       "explanation": "'intrapreneurship' … so that talented staff will not leave"
+      },
+      {
+       "no": 28,
+       "type": "match",
+       "text": "a new way of getting help with your personal difficulties",
+       "answer": 0,
+       "explanation": "Umagic virtual experts"
+      },
+      {
+       "no": 29,
+       "type": "match",
+       "text": "how much investment goes into safeguarding the ideas of individuals",
+       "answer": 2,
+       "explanation": "\"a fortune is spent nowadays on identifying and protecting intellectual property\""
+      },
+      {
+       "no": 30,
+       "type": "match",
+       "text": "two examples of companies which have succeeded through being innovative",
+       "answer": 1,
+       "explanation": "Amazon and Wal-Mart"
+      },
+      {
+       "no": 31,
+       "type": "match",
+       "text": "how some innovators manage to avoid spending large sums of money on testing out their ideas",
+       "answer": 4,
+       "explanation": "\"selling out to the big firms when they reach expensive, risky clinical trials\""
+      },
+      {
+       "no": 32,
+       "type": "match",
+       "text": "a commonly held opinion about product designers that needs to be proved wrong",
+       "answer": 6,
+       "explanation": "\"discredit the widespread view that jobs working on new products are for 'those who can't cope'\""
+      },
+      {
+       "no": 33,
+       "type": "match",
+       "text": "the target of one large company that has changed its business focus",
+       "answer": 5,
+       "explanation": "Procter & Gamble"
+      }
+     ]
+    },
+    {
+     "instruction": "Do the following statements agree with the information given in Reading Passage 3? Write TRUE, FALSE or NOT GIVEN.",
+     "questions": [
+      {
+       "no": 34,
+       "type": "tfng",
+       "text": "Umagic Systems is an example of a new innovative company.",
+       "answer": "TRUE",
+       "explanation": "\"Umagic Systems is a young firm … new and innovative ideas\""
+      },
+      {
+       "no": 35,
+       "type": "tfng",
+       "text": "Amazon and Wal-Mart have exchanged successful ideas on innovation.",
+       "answer": "NOT GIVEN",
+       "explanation": "Không nói họ trao đổi ý tưởng."
+      },
+      {
+       "no": 36,
+       "type": "tfng",
+       "text": "Using financial rewards to encourage innovation is an outdated practice.",
+       "answer": "FALSE",
+       "explanation": "Bài khuyến nghị dùng \"more generous bonuses\"."
+      },
+      {
+       "no": 37,
+       "type": "tfng",
+       "text": "IBM failed to understand David Post's 'virtual experts' idea.",
+       "answer": "TRUE",
+       "explanation": "\"the looks of total incomprehension\""
+      }
+     ]
+    },
+    {
+     "instruction": "Choose the correct letter, A, B, C or D.",
+     "questions": [
+      {
+       "no": 38,
+       "type": "mcq",
+       "text": "What point does the writer make about intellectual property?",
+       "options": [
+        "It can be lost when firms merge.",
+        "It tends to belong to companies rather than individuals.",
+        "It is valued more than it used to be.",
+        "It is not usually owned by small companies."
+       ],
+       "answer": 2,
+       "explanation": "\"rose from $15 billion in 1990 to $100 billion in 1998\""
+      },
+      {
+       "no": 39,
+       "type": "mcq",
+       "text": "Peter Chernin is an example of someone who has realised that",
+       "options": [
+        "large companies are less innovative than small ones.",
+        "other businesses are more innovative than the film business.",
+        "his employees need more experience of innovation.",
+        "he is the best person to encourage innovation."
+       ],
+       "answer": 0,
+       "explanation": "\"size is your enemy\""
+      },
+      {
+       "no": 40,
+       "type": "mcq",
+       "text": "In conclusion, the writer suggests that",
+       "options": [
+        "computer-based industries cannot be innovative.",
+        "big firms are right to be cautious about innovation.",
+        "small firms should not worry about early failures.",
+        "innovation will always involve some uncertainty."
+       ],
+       "answer": 3,
+       "explanation": "\"innovation … is one area where a computer cannot tell you what to do\""
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "writing": [
+  {
+   "task": 1,
+   "type": "bar",
+   "title": "Factors affecting work performance by age group",
+   "topic": "Work",
+   "prompt": "The bar chart below shows the factors that most affect work performance at a given company, by age group (18–30 and 45–60).\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
+   "chart": {
+    "kind": "bar",
+    "unit": "% of employees",
+    "labels": [
+     "Team spirit",
+     "Chance for personal development",
+     "Relaxed working environment",
+     "Competent boss",
+     "Job security",
+     "Respect from colleagues",
+     "Promotion prospects",
+     "Job satisfaction",
+     "Work environment",
+     "Money"
+    ],
+    "series": [
+     {
+      "name": "Aged 18–30",
+      "values": [
+       60,
+       90,
+       85,
+       50,
+       40,
+       38,
+       80,
+       55,
+       30,
+       73
+      ]
+     },
+     {
+      "name": "Aged 45–60",
+      "values": [
+       60,
+       38,
+       30,
+       50,
+       20,
+       42,
+       48,
+       50,
+       30,
+       70
+      ]
+     }
+    ]
+   },
+   "sample": "The bar chart shows the factors that most affect work performance at a given company by age group.\n\nOverall, it is readily apparent that there is general congruity in terms of the factors, though younger employees value promotion prospects, opportunities for personal development and a relaxed working environment more highly. For both age groups, salary and team spirit were important, and work environment and job security tended to be less impactful.\n\nIn terms of the categories with greater similarity, for both ages 60% consider team spirit important and 30% think the environment impacts their work performance. The reported figures are also similar for job satisfaction (55% for those aged 18–30 and 50% for those aged 45–60), respect from colleagues (38% for younger workers and 42% for their older counterparts), money (73% for younger employees and 70% for older ones), and competent bosses (near 50% for both).\n\nThere is significant contrast in terms of how much chances for personal growth affect work, with 90% for employees aged 18–30 and just 38% for older workers. Similarly, younger people place greater emphasis on a relaxed working environment (85% to 30%), job security (40% to 20%), and advancement prospects (80% to approximately 48%).",
+   "sampleNote": "Bài mẫu trong tài liệu gốc; biểu đồ dựng lại từ số liệu."
+  },
+  {
+   "task": 2,
+   "type": "advantage",
+   "title": "Living in different places during childhood",
+   "topic": "Society",
+   "prompt": "Write about the following topic:\n\nWhat are the advantages and disadvantages of living in a number of different places during your childhood years?\n\nGive reasons for your answer and include any relevant examples from your own knowledge or experience.\n\nWrite at least 250 words.",
+   "sample": "There are many children who live in different places during their childhood years. In this essay, I will examine the benefits and drawbacks of this situation.\n\nLiving in numerous places during childhood can bring many benefits. In my opinion, this movement can be good for children's development if the places they live are good enough. For example, if they move to the US from Vietnam, this could be a wonderful and enlightening experience for them, since they have opportunities to learn another language and to cultivate their knowledge by learning about a foreign culture and making friends with people from that culture. As a result, these children are likely to have a head start in life over children without such experiences and abilities.\n\nHowever, in other scenarios, if the countries or the areas they move to are in poorer condition, then this can be a disadvantage. For instance, it would be a problem if their parents took them to a war-torn country or one with exceptionally high crime rates. Another point worth considering is that poor standards of living, as well as the quality of public services, can negatively affect their studies and social lives. An example is that if the quality of education is lower than that of their previous home, they would feel bored and even lose motivation to study.\n\nIn conclusion, due to globalisation, many parents have to move to different places to work, and as a result they often bring their children to different places in their childhood, which can exert both beneficial and detrimental effects.",
+   "sampleNote": "Bài mẫu band 8 trong tài liệu gốc, đã sửa lỗi nhỏ."
+  }
+ ]
+}

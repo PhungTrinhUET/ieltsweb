@@ -1,0 +1,23 @@
+{
+ "vol": 3,
+ "test": 0,
+ "id": "vol3-wbank",
+ "prefix": "VOL 3 Writing bank",
+ "source": "ORIGINAL IELTS PAPERS – VOL 3 writing.pdf",
+ "tags": [
+  "VOL 3",
+  "Writing bank"
+ ],
+ "writing": [
+  {
+   "id": "b1",
+   "task": 2,
+   "type": "discussion",
+   "title": "Taxing industries to reduce pollution",
+   "topic": "Environment",
+   "prompt": "Write about the following topic:\n\nSome people believe that increasing tax on various industries will reduce pollution, whereas others believe that there are better alternative ways.\n\nDiscuss both views and give your opinion.\n\nGive reasons for your answer and include any relevant examples from your own knowledge or experience.\n\nWrite at least 250 words.",
+   "sample": "Many today argue that the environment can be best protected by heavily taxing various industries. In my opinion, though this has worked in certain cases, taxation is not as effective as more positive reforms.\n\nThe case for taxing industry is that it will discourage the worst practices of companies. This has been evidenced in the European Union, where enterprises are taxed at higher rates, oftentimes depending on their relative carbon footprints. The result is that businesses are incentivised to adopt cleaner energy practices. The companies that are greener can therefore enjoy both the benefits of reduced taxes and the public-opinion boost concomitant with eco-friendly initiatives. The caveat to this approach is that many multinationals are able to simply move their production facilities and waste to nearby nations.\n\nMoreover, there are more positive policies that can encourage, rather than discourage, the corporate world. Taxation is a fundamentally reactive measure that supposes companies would not wish to inherently protect the planet. A more proactive approach would involve funding green industries. For example, companies such as Tesla have received billions in government subsidies to build stability for a green industry. Over time, more companies will be able to establish themselves and turn profits, and there will be less of a need to use taxes to discourage industries from polluting. This solution will be longer lasting, as it rewards good behaviour instead of punishing bad behaviour.\n\nIn conclusion, despite taxing industries having an immediate effect, a greater impact would result from subsidies for various companies. Governments should pursue this more positive strategy.",
+   "sampleNote": "Bài mẫu trong tài liệu gốc."
+  }
+ ]
+}

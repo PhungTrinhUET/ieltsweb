@@ -1,0 +1,920 @@
+{
+ "vol": 3,
+ "test": 9,
+ "source": "ORIGINAL IELTS PAPERS – VOL 3, Test 9 (audio: 09 section 01–04.mp3; transcript gộp → offset)",
+ "listening": {
+  "audioDir": "audio/vol3/test9",
+  "timingNote": "Transcript ASR là file gộp; audio tách từng section nên offset ước lượng (±15 s).",
+  "sections": [
+   {
+    "section": 1,
+    "title": "Party reservation at Shaw's restaurant",
+    "topic": "Services",
+    "offset": 0,
+    "transcript": "[00:08] Narrator: Section one. You will hear a woman phoning a restaurant to book a room for a party. First, you have some time to look at questions one to five. You will see that there is an example that has been done for you.\n[00:56] Receptionist: Good morning, Shaw's Restaurant.\n[00:58] Maria: Hi, I'd like to book one of your function rooms for a party, please.\n[01:02] Receptionist: Okay, fine. How many people are you expecting for the party?\n[01:06] Maria: Well, I'm not quite sure yet, but about 60.\n[01:14] Narrator: There are about 60 people expected, so 60 has been written in the space. Now we shall begin. Listen carefully and answer questions one to five.\n[01:36] Receptionist: Good morning, Shaw's Restaurant.\n[01:38] Maria: Hi, I'd like to book one of your function rooms for a party, please.\n[01:42] Receptionist: Okay, fine. How many people are you expecting for the party?\n[01:46] Maria: Well, I'm not quite sure yet, but about 60.\n[01:49] Receptionist: Fine, so you will need a big room. And what day were you thinking of?\n[01:54] Maria: The party's for my daughter's birthday – it's her 21st. Her birthday is actually on the 17th of November, but that's a Friday, so we thought we'd have her party on the 18th, as that's a Saturday. There'll be lots of her friends there as well as all the family.\n[02:10] Receptionist: And what time would you like the room for?\n[02:13] Maria: Oh, I'm not sure. 7.45? Not too late.\n[02:17] Receptionist: Okay.\n[02:18] Maria: And people will probably be leaving about 11.\n[02:21] Receptionist: Fine. We're open until 11.30.\n[02:24] Maria: Excellent. And what about the menu?\n[02:27] Receptionist: So do you want a sit-down meal with waiter service?\n[02:30] Maria: Yes, not a buffet.\n[02:32] Receptionist: Right. Well, there are several options, including different menus at various prices. So there's the standard menu – that's 25 pounds per person.\n[02:41] Maria: Okay.\n[02:42] Receptionist: Or the celebration menu, which is three courses. It's very popular. That's 35 pounds.\n[02:48] Maria: Okay, I think I'd rather go with that.\n[02:51] Receptionist: And there's also our gold menu. That's a five-course menu at 50 pounds.\n[02:56] Maria: No, that's definitely too expensive. Okay, now, not all the guests eat meat. Will there be something for them?\n[03:04] Receptionist: Of course. We'll make sure there's a vegetarian option for each course.\n[03:08] Maria: Great.\n[03:09] Receptionist: And do you know if any of the guests have food allergies – anything like shellfish, for example?\n[03:15] Maria: I'll need to check, but I do know that one of my daughter's friends is very allergic to strawberries. Even just being near them can be a problem.\n[03:24] Receptionist: Okay, I'll make a note to our chef to avoid those completely. Do you have any other requests for desserts?\n[03:32] Maria: Well, I'd like a choice if possible. And could we have cheese as well?\n[03:37] Receptionist: Of course, no problem. We can provide that.\n[03:54] Narrator: Before you hear the rest of the conversation, you have some time to look at questions six to ten. Now listen and answer questions six to ten.\n[04:33] Receptionist: Now, do you have any other requests I could help with? What about after-dinner entertainment? You can book a band if you'd like live music.\n[04:43] Maria: Actually, I think a disco would be best, if you can arrange that.\n[04:47] Receptionist: No problem.\n[04:48] Maria: And I heard you might be able to put on a fireworks display. Is that possible?\n[04:53] Receptionist: We aren't offering that service any more, I'm afraid. It was just too expensive.\n[04:58] Maria: Oh, I see.\n[05:00] Receptionist: Now, the menu package you've chosen includes a few other nice things.\n[05:04] Maria: Oh, like what?\n[05:05] Receptionist: We'll decorate the room for you, which creates a nice party atmosphere. We can use different colours for the balloons – silver, gold…\n[05:13] Maria: She loves pink. But actually, I think she'd prefer flowers to balloons. So let's go for them instead, in the same colour.\n[05:21] Receptionist: No problem. Now, you mentioned that the party is for your daughter. We make birthday cakes, if you'd like one.\n[05:28] Maria: Okay, yes, we'll definitely want a cake.\n[05:31] Receptionist: And we can put a special message on top. What would you like?\n[05:35] Maria: Um, 'Congratulations', and then her name – that's Susie.\n[05:40] Receptionist: Fine.\n[05:41] Maria: Now, one or two of the guests are coming by train, but they stop running quite early, so they'll need a taxi to take them to the Forest Hotel after the party. Is that something you can sort out?\n[05:52] Receptionist: Absolutely. Anything else?\n[05:54] Maria: I think that's all for now.\n[05:56] Receptionist: Okay, well, just get in touch if you think of anything else. Now, if I can just take some contact details. I just need your name and phone number.\n[06:05] Maria: Maria Nelson. And my number's 07749 132760.\n[06:17] Receptionist: Excellent. We look forward to seeing you soon.\n[06:25] Narrator: That is the end of section one. You now have half a minute to check your answers.",
+    "groups": [
+     {
+      "instruction": "Complete the form below. Write ONLY ONE WORD AND/OR A NUMBER for each answer.",
+      "wordLimit": "ONE WORD AND/OR A NUMBER",
+      "context": "Party Reservation. Example – Number of guests for the party: 60 people",
+      "questions": [
+       {
+        "no": 1,
+        "type": "fill",
+        "text": "Starting time of the party: ___ pm",
+        "answer": [
+         "7.45",
+         "7:45"
+        ],
+        "explanation": "\"7.45? Not too late.\""
+       },
+       {
+        "no": 2,
+        "type": "fill",
+        "text": "Menu options: the standard ($25); the ___ ($35); the gold ($50)",
+        "answer": [
+         "celebration",
+         "3 courses",
+         "three courses"
+        ],
+        "explanation": "\"the celebration menu, which is three courses … 35 pounds\""
+       },
+       {
+        "no": 3,
+        "type": "fill",
+        "text": "each course has some ___ option",
+        "answer": [
+         "vegetarian"
+        ],
+        "explanation": "\"a vegetarian option for each course\""
+       },
+       {
+        "no": 4,
+        "type": "fill",
+        "text": "one guest is allergic to ___",
+        "answer": [
+         "strawberries"
+        ],
+        "explanation": "\"very allergic to strawberries\""
+       },
+       {
+        "no": 5,
+        "type": "fill",
+        "text": "other requests: desserts and ___",
+        "answer": [
+         "cheese"
+        ],
+        "explanation": "\"could we have cheese as well?\""
+       },
+       {
+        "no": 6,
+        "type": "fill",
+        "text": "Entertainment: book a ___ after dinner",
+        "answer": [
+         "disco"
+        ],
+        "explanation": "\"I think a disco would be best\""
+       },
+       {
+        "no": 7,
+        "type": "fill",
+        "text": "Room decoration: pink ___",
+        "answer": [
+         "flowers"
+        ],
+        "explanation": "\"she'd prefer flowers to balloons\""
+       },
+       {
+        "no": 8,
+        "type": "fill",
+        "text": "Special request: write '___ Susie' on the birthday cake",
+        "answer": [
+         "congratulations",
+         "Congratulations"
+        ],
+        "explanation": "\"'Congratulations', and then her name\""
+       },
+       {
+        "no": 9,
+        "type": "fill",
+        "text": "Book a ___ to take guests to the Forest Hotel",
+        "answer": [
+         "taxi"
+        ],
+        "explanation": "\"they'll need a taxi to take them to the Forest Hotel\""
+       },
+       {
+        "no": 10,
+        "type": "fill",
+        "text": "Phone number: ___",
+        "answer": [
+         "07749 132760",
+         "07749132760"
+        ],
+        "explanation": "\"07749 132760\""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "section": 2,
+    "title": "The vacuum cleaner museum",
+    "topic": "Culture",
+    "offset": 395,
+    "transcript": "[06:40] Narrator: Section two. You will hear a radio broadcast about a new museum which specialises in vacuum cleaners. First, you have some time to look at questions 11 to 15. Now listen carefully and answer questions 11 to 15.\n[07:20] Presenter: A new museum has just opened dedicated to vacuum cleaners. Yes, that's right – vacuum cleaners, the machines powered by electricity that suck up the dust and dirt from the floor. The museum's opened in a town called Eastwood in central England. Until now, Eastwood used to be an industrial town where people used to be employed as coal miners. But then a local resident called James Brown became frustrated with the nation's failure to recognise the importance of vacuum cleaners, and he decided to set up his own museum.\n[07:55] Presenter: James first fell in love with vacuum cleaners when he was only four years old. At the time, his mother was unwell, so he used to help her out by vacuuming the house. And it was to be the start of a lifelong love affair with this humble household appliance. However, it wasn't until James was eight years old that he first acquired his own vacuum cleaner, after it had been thrown away on the streets. He took it home, cleaned it up and plugged it in. Amazingly, it still worked. And that was the beginning of his collection. By the time he was in his teens, his collection had grown to 30. The collection continued to grow until it reached the final count of 126, which is where it stands today.\n[08:40] Presenter: James is delighted to share his enthusiasm for vacuum cleaners with visitors. One of his favourite party tricks is to blindfold his eyes so he can't see, and ask someone to switch on one of the machines. When I tested him out on five different machines, switching them on and pushing them across the floor, he had no problem telling me the manufacturer of each one. And he could even tell its age.\n[09:05] Presenter: Although now a common household appliance, it wasn't until the 1950s that most people could afford to buy a vacuum cleaner, as before that they were very expensive. In today's money, you would have had to pay around a third of the price of an average car, which is around three months' wages for most people. Like most modern appliances, the invention of a production line halved the price almost immediately.\n[09:32] Presenter: But James is not the only vacuum cleaner aficionado out there. A few years ago, he made a special trip to the USA to the factory of his favourite, the Kirby vacuum cleaner. There is also an American website called Vacuumland that's dedicated to vacuum cleaner collectors. This year, they're even holding a convention in Texas, with competition awards and lectures on the subject. So James might want to pop back to the United States to meet some vacuum lovers. So if you've been inspired and want to visit James's vacuum cleaner museum, what days could you go to visit? Well, they're open all year round from 9.30 a.m. to 5.30 p.m., from Tuesdays to Saturdays, except Thursdays, when they're open until 7 p.m., and Mondays, when the museum is closed.\n[10:40] Narrator: Before you hear the rest of the broadcast, you have some time to look at questions 16 to 20. Now listen carefully and answer questions 16 to 20.\n[11:24] Presenter: The history of the vacuum cleaner is an interesting one. The first commercially available powered vacuum cleaner was invented in 1901 and was called the Puffing Billy. It was so large it had to be pulled by horses, and parked outside the house where the cleaning was being done. It was initially driven by an oil engine, although it was later adapted to be powered by electricity, and it was used to clean the carpets in the palace of King Edward VII in London. One of the most famous electric vacuum cleaners is known as the Hoover. This was developed in the USA in 1908. It's often thought that it was created by Mr Hoover, but in fact it was created by James Spangler, who worked as a cleaner in a department store. Mr Hoover was a businessman who bought the idea and then developed and marketed it in the USA and other countries.\n[12:20] Presenter: The Electrolux Model V was developed in 1925. Up until that time, vacuum cleaners had been heavy devices which were not easily moved around. This was a lighter model which lay on the floor and could be pulled along on two strips of metal, and this was an idea that was copied by many other manufacturers. Then there's the Electrolux 30, or Triple X, which was developed in 1937 in the USA, and is perhaps the most visually elegant vacuum cleaner of all, with its sleek lines inspired by the Art Deco architecture popular in the 1930s. The most prized model in James's museum is the Kirby model, which is actually gold-plated. Kirby made it as a trophy, but they also manufacture vacuum cleaners for everyday use, which are sold only by salesmen who demonstrate them in the customer's home. But even the everyday model might eventually become a collector's item. Now, if you want to visit the museum…\n[13:36] Narrator: That is the end of section two. You now have half a minute to check your answers.",
+    "groups": [
+     {
+      "instruction": "Choose the correct letter, A, B or C.",
+      "questions": [
+       {
+        "no": 11,
+        "type": "mcq",
+        "text": "When did James Brown start collecting vacuum cleaners?",
+        "options": [
+         "at 4 years old",
+         "at 8 years old",
+         "at 30 years old"
+        ],
+        "answer": 1,
+        "explanation": "\"it wasn't until James was eight years old that he first acquired his own vacuum cleaner … the beginning of his collection\" (đáp án gốc ghi A – 4 tuổi là lúc bắt đầu yêu thích)"
+       },
+       {
+        "no": 12,
+        "type": "mcq",
+        "text": "James can listen to a vacuum cleaner and identify",
+        "options": [
+         "which company made it.",
+         "what problem it might have.",
+         "the age of the battery."
+        ],
+        "answer": 0,
+        "explanation": "\"no problem telling me the manufacturer of each one\""
+       },
+       {
+        "no": 13,
+        "type": "mcq",
+        "text": "Before the 1950s, vacuum cleaners cost",
+        "options": [
+         "the same price as an average car.",
+         "almost a whole year's salary.",
+         "about three months' wages."
+        ],
+        "answer": 2,
+        "explanation": "\"around three months' wages for most people\""
+       },
+       {
+        "no": 14,
+        "type": "mcq",
+        "text": "Why did James make a trip to the USA a few years ago?",
+        "options": [
+         "to win an award in Texas",
+         "to visit the Kirby factory",
+         "to meet some vacuum collectors"
+        ],
+        "answer": 1,
+        "explanation": "\"a special trip to the USA to the factory of his favourite, the Kirby\""
+       },
+       {
+        "no": 15,
+        "type": "mcq",
+        "text": "On what day is the vacuum cleaner museum open late?",
+        "options": [
+         "Tuesday to Saturday",
+         "Monday",
+         "Thursday"
+        ],
+        "answer": 2,
+        "explanation": "\"except Thursdays, when they're open until 7 p.m.\""
+       }
+      ]
+     },
+     {
+      "instruction": "Which characteristic does each of the following vacuum cleaners have? Choose FIVE answers from the box and write the correct letter, A–G, next to questions 16–20.",
+      "bank": [
+       "not available in shops",
+       "specially designed to be easy to move",
+       "as large as a horse",
+       "used two different sources of power",
+       "designed by a businessman",
+       "named after a person other than the inventor",
+       "associated with a style of building"
+      ],
+      "questions": [
+       {
+        "no": 16,
+        "type": "match",
+        "text": "Puffing Billy",
+        "answer": 3,
+        "explanation": "\"initially driven by an oil engine … later adapted to be powered by electricity\""
+       },
+       {
+        "no": 17,
+        "type": "match",
+        "text": "Hoover",
+        "answer": 5,
+        "explanation": "\"it was created by James Spangler … Mr Hoover was a businessman who bought the idea\""
+       },
+       {
+        "no": 18,
+        "type": "match",
+        "text": "Electrolux Model V",
+        "answer": 1,
+        "explanation": "\"a lighter model … could be pulled along on two strips of metal\""
+       },
+       {
+        "no": 19,
+        "type": "match",
+        "text": "Electrolux Triple X",
+        "answer": 6,
+        "explanation": "\"inspired by the Art Deco architecture\""
+       },
+       {
+        "no": 20,
+        "type": "match",
+        "text": "Kirby",
+        "answer": 0,
+        "explanation": "\"sold only by salesmen who demonstrate them in the customer's home\""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "section": 3,
+    "title": "The role of health visitors – Lisa and Dr Harris",
+    "topic": "Health",
+    "offset": 820,
+    "transcript": "[13:45] Narrator: Section three. You will hear a tutor called Dr Harris and a student called Lisa discussing Lisa's postgraduate research project on the role of health visitors. First, you have some time to look at questions 21 to 25. Now listen carefully and answer questions 21 to 25.\n[14:10] Dr Harris: Hi, Lisa. Good to see you again, especially since you've chosen to do your master's with us.\n[14:16] Lisa: Well, I enjoyed my first degree in nursing, and I decided I want to become a health visitor – you know, someone who promotes health and well-being, and is part of a team within a community, getting out and meeting people of all ages. So that's why I chose this research project.\n[14:33] Dr Harris: Excellent. And your focus, the role of a health visitor in the community, is spot on. But at this stage you need to keep an open mind, so you can respond to initial findings once you get under way.\n[14:46] Lisa: From what I've read, the role seems to vary quite considerably.\n[14:50] Dr Harris: Yes. Some health visitors tend to focus on liaising with family doctors; others work independently with new patients. The work of health visitors in future is most likely to rely on the relationship between these roles, and I think that would be an interesting angle for you to pursue at some stage.\n[15:08] Lisa: Yes. What I really want to unpack is the problem of physical development checks, which start with babies when they are only a few days old.\n[15:17] Dr Harris: Right.\n[15:18] Lisa: Another area which I am thinking of investigating is the monitoring of nurseries, which is currently under review. And there is the issue of pre-schools – at what age they should take very young children. I thought I'd also include childminders, the individuals in the area of Haynes that might not be qualified but look after young children.\n[15:40] Dr Harris: That's an area I'd stay clear of, as it's very complex.\n[15:44] Lisa: Okay, will do. Anyway, I'd also like to make a short film about a few children.\n[15:50] Dr Harris: A good idea, but it will depend on building up a relationship with one or two health visitors willing to introduce you to a family. An opportunity like that would allow you to look at how young children begin to form words, for example, and peer relationships between children, as well as the ways in which they relate and play with each other, especially when they are around two to three years old.\n[16:14] Lisa: Although early use of language is my main interest.\n[16:17] Dr Harris: Okay. But there are other topic areas I'd like you to consider before we finalise the content and structure of your research. An equally important area is the child's home environment and the effect of a newborn baby.\n[16:31] Lisa: Right.\n[16:32] Dr Harris: You need to consider the impact of this on the parents, particularly if the family lives in poor economic circumstances.\n[16:40] Lisa: Of course. The additional expense could be a worry, especially if there are other children.\n[16:46] Dr Harris: Certainly. All those matters are very sensitive and not necessarily easy to detect. There's plenty of help available, but many people often feel too proud to ask for it.\n[16:58] Lisa: This is the area where I will need to be familiar with family law, isn't it?\n[17:03] Dr Harris: Very much so. By all means be aware of the medical conditions, and you also need to consider social practice. But you'll find that in most circumstances you will have to refer to the law to understand how far a health visitor can intervene.\n[17:20] Lisa: Yes, I appreciate that.\n[17:41] Narrator: Before you hear the rest of the discussion, you have some time to look at questions 26 to 30. Now listen and answer questions 26 to 30.\n[17:55] Dr Harris: Now, your book list. I'm glad to see Worldwide Healthcare Policies tops your list.\n[18:01] Lisa: Well, I wasn't sure how relevant it would be, but it's a new edition, so the information is current.\n[18:07] Dr Harris: Yes. Some of it may not be relevant, but it's important to keep abreast of developments in other countries, which may inform our own government's legislation.\n[18:17] Lisa: I understand. What about Supporting Vulnerable Families? It's not as costly as some of the other books on my list.\n[18:24] Dr Harris: It's an excellent buy, considering the price, even though it does leave a few things out.\n[18:30] Lisa: I've already ordered Health Visitors and Child Protection. I hope that was right.\n[18:35] Dr Harris: Well, it's very expensive, but it's a sound investment, and there aren't many textbooks which cover as much detail as this. It will be a valuable reference, even if the style is occasionally boring.\n[18:47] Lisa: And what about The Future of Health Visiting? I'm unsure how useful it will be.\n[18:52] Dr Harris: Useful in a utilitarian sense? Probably not. But it's stimulating in the way the writer considers what health visiting could be like in a perfect world. I'd suggest dipping into it to discover the improvements which could be made if money were no object.\n[19:08] Lisa: And Resources for Health Visitors?\n[19:10] Dr Harris: Strangely enough, it's not as helpful as the title suggests. It offers a huge variety of activities and strategies which are great when working with young children, but they're presented in a rather haphazard way, and the index isn't much use either. Be very careful when using it.\n[19:28] Lisa: Okay.\n[19:32] Narrator: That is the end of section three. You now have half a minute to check your answers.",
+    "groups": [
+     {
+      "instruction": "Choose the correct letter, A, B or C.",
+      "context": "The Role of Health Visitors",
+      "questions": [
+       {
+        "no": 21,
+        "type": "mcq",
+        "text": "In the context of Lisa's research project, Dr Harris suggests she should",
+        "options": [
+         "re-think the focus of her research.",
+         "be prepared to be flexible.",
+         "narrow the scope."
+        ],
+        "answer": 1,
+        "explanation": "\"you need to keep an open mind, so you can respond to initial findings\""
+       },
+       {
+        "no": 22,
+        "type": "mcq",
+        "text": "Which topic area does Dr Harris advise Lisa to avoid investigating?",
+        "options": [
+         "pre-schools",
+         "nurseries",
+         "childminders"
+        ],
+        "answer": 2,
+        "explanation": "\"That's an area I'd stay clear of, as it's very complex\" (sau khi nhắc đến childminders)"
+       },
+       {
+        "no": 23,
+        "type": "mcq",
+        "text": "The main reason why Lisa wants to film very young children is",
+        "options": [
+         "to watch how they play.",
+         "to look at their relationships.",
+         "to study their language."
+        ],
+        "answer": 2,
+        "explanation": "\"early use of language is my main interest\""
+       },
+       {
+        "no": 24,
+        "type": "mcq",
+        "text": "According to Dr Harris, how might the arrival of a new baby affect a family?",
+        "options": [
+         "Other children may feel jealous.",
+         "Parents may be put under pressure.",
+         "Sufficient support may not be available."
+        ],
+        "answer": 1,
+        "explanation": "\"consider the impact of this on the parents, particularly if the family lives in poor economic circumstances\""
+       },
+       {
+        "no": 25,
+        "type": "mcq",
+        "text": "Dr Harris agrees with Lisa that she needs to find out about",
+        "options": [
+         "legal constraints.",
+         "family considerations.",
+         "medical circumstances."
+        ],
+        "answer": 0,
+        "explanation": "\"you will have to refer to the law to understand how far a health visitor can intervene\""
+       }
+      ]
+     },
+     {
+      "instruction": "What feature does Dr Harris identify for each of the following textbooks? Choose FIVE answers from the box and write the correct letter, A–G, next to questions 26–30.",
+      "bank": [
+       "global coverage but sometimes inaccurate",
+       "interesting but rather unrealistic",
+       "practical and full of thoughtful tips",
+       "up-to-date with an international approach",
+       "wide-ranging but poorly organised",
+       "good value despite some omissions",
+       "extremely costly but comprehensive"
+      ],
+      "questions": [
+       {
+        "no": 26,
+        "type": "match",
+        "text": "Worldwide Healthcare Policies",
+        "answer": 3,
+        "explanation": "\"a new edition … developments in other countries\""
+       },
+       {
+        "no": 27,
+        "type": "match",
+        "text": "Supporting Vulnerable Families",
+        "answer": 5,
+        "explanation": "\"an excellent buy, considering the price, even though it does leave a few things out\""
+       },
+       {
+        "no": 28,
+        "type": "match",
+        "text": "Health Visitors and Child Protection",
+        "answer": 6,
+        "explanation": "\"very expensive … there aren't many textbooks which cover as much detail\""
+       },
+       {
+        "no": 29,
+        "type": "match",
+        "text": "The Future of Health Visiting",
+        "answer": 1,
+        "explanation": "\"stimulating … what health visiting could be like in a perfect world\""
+       },
+       {
+        "no": 30,
+        "type": "match",
+        "text": "Resources for Health Visitors",
+        "answer": 4,
+        "explanation": "\"a huge variety of activities … presented in a rather haphazard way\""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "section": 4,
+    "title": "The sense of smell",
+    "topic": "Science",
+    "offset": 1197,
+    "transcript": "[19:57] Narrator: Section four. You will hear a lecturer giving a talk to psychology students about people's sense of smell. First, you have some time to look at questions 31 to 40. Now listen carefully and answer questions 31 to 40.\n[21:06] Lecturer: Good afternoon. So far in this course on perception we have focused on sight. Today, we're going to move on to consider a sense that has received rather less attention in the literature on human perception – that is, our sense of smell. It's often said that our ability to sense smells is much less developed than that of animals such as the dog, or a fish such as the shark, or of course the creature which is believed to have the most acute sense of smell of all, the bear. Yet it seems that this belief that the human sense of smell is weak might actually be a misconception. According to a number of recent studies, our noses are sensitive instruments that influence us in surprising ways. Subtle smells can change your mood. Smell can even influence what you go for when you have to make choices, perhaps about whether to buy something or not. Yet the power that smell has over us is, by and large, not something that we are aware of. So the big mystery is why it is subconscious. One possible reason is that our noses aren't well equipped to detect the source of an odour, and so we dismiss it.\n[22:25] Lecturer: Let's look at some practical examples of how smell can influence us. The power of smell will be no news to estate agents. They often suggest that people who want to sell a house arrange things so that there is a smell of newly baked bread in the property, to encourage viewers to want to buy it. But there are more subtle and surprising effects too. For instance, Dutch researchers carried out a study into the impact of smell in a nightclub. They discovered, rather to their surprise, that when the aroma of oranges was pumped into the venue, the guests partied harder, they danced more, rated their night as more enjoyable, and even thought the music was better than when there was no added scent. Another study found that the hint of a smell wafting out of a hidden bucket of lemon-scented detergent was enough to persuade students to clean the communal kitchen after using it, even though the vast majority of them hadn't actually registered the smell. Other workers found that scent can influence our cognitive skills. A study this year gave participants a task to test their decision-making abilities. It found that subjecting people to a new smell, either good or bad, led people to rely on their emotions to make a decision, rather than relying on logic. As a result, these people performed significantly worse than normal when doing the task.\n[24:02] Lecturer: Our sense of smell may even help us to pick up on how those around us are feeling. It has been shown that certain animals can smell each other's fear. Is it possible that humans can do the same thing? To test the idea, one team of scientists took sweat samples from people doing a skydive for the first time. They also took sweat samples from the same people after they had worked up a sweat in a gym, a situation where no fear is involved. They presented the different samples in turn to a series of subjects who did not know the reason for the experiment. As they did this, the scientists observed the subjects' brain activity by means of a scanner, and they saw a much stronger reaction to the skydive sweat. The team of scientists next tested whether the smell of fear sweat – that is, the sweat of the skydivers – affected people's responses to various facial expressions. Normally, people pay more attention to angry faces, because they pose a threat. However, after smelling the fear sweat, the participants gave the same amount of attention to neutral facial expressions.\n[25:20] Lecturer: Despite the impact of smell, most people seem totally unaware of how they are being affected by scents. However, some psychologists have been trying to train people's noses. They persuaded 32 students to wear blindfolds and ear defenders and see whether they could sniff out a trail of chocolate. They found that after three days of practice, the students were all much more accurate in following the trail. Further evidence of our ability to train our noses comes from a chef who lost her sense of smell after an illness. Knowing that her job depended on her having a good nose, she trained herself gradually by sniffing spices for 10 minutes a day. Gradually, her ability to smell returned. Now let's talk about the…\n[26:12] Narrator: That is the end of section four. You now have half a minute to check your answers.",
+    "groups": [
+     {
+      "instruction": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+      "wordLimit": "ONE WORD ONLY",
+      "context": "Course on the Sense of Smell – Background: people's sense of smell is not as developed as that of some animals",
+      "questions": [
+       {
+        "no": 31,
+        "type": "fill",
+        "text": "Animal with the most accurate sense of smell is the ___",
+        "answer": [
+         "bear"
+        ],
+        "explanation": "\"the most acute sense of smell of all, the bear\""
+       },
+       {
+        "no": 32,
+        "type": "fill",
+        "text": "There is a misconception that people's sense of smell is weak; in fact subtle smells have great impacts on people's mood. People's noses cannot detect the ___ of the odour.",
+        "answer": [
+         "source"
+        ],
+        "explanation": "\"aren't well equipped to detect the source of an odour\""
+       },
+       {
+        "no": 33,
+        "type": "fill",
+        "text": "Practical examples: estate agents arrange the smell of newly made ___ to encourage clients to buy the property quickly",
+        "answer": [
+         "bread"
+        ],
+        "explanation": "\"a smell of newly baked bread\""
+       },
+       {
+        "no": 34,
+        "type": "fill",
+        "text": "Dutch researchers found out that the odour of ___ makes people like to go to clubs",
+        "answer": [
+         "oranges"
+        ],
+        "explanation": "\"when the aroma of oranges was pumped into the venue\""
+       },
+       {
+        "no": 35,
+        "type": "fill",
+        "text": "the smell of detergent makes students ___ the kitchen after using it",
+        "answer": [
+         "clean"
+        ],
+        "explanation": "\"persuade students to clean the communal kitchen\""
+       },
+       {
+        "no": 36,
+        "type": "fill",
+        "text": "A recent study showed that people make decisions depending on ___",
+        "answer": [
+         "emotions"
+        ],
+        "explanation": "\"rely on their emotions to make a decision\""
+       },
+       {
+        "no": 37,
+        "type": "fill",
+        "text": "Experiments on how smells tell us people's feelings: a group of scientists chose some sweat samples from skydivers; then they picked up the same subjects who worked out in a ___",
+        "answer": [
+         "gym"
+        ],
+        "explanation": "\"after they had worked up a sweat in a gym\""
+       },
+       {
+        "no": 38,
+        "type": "fill",
+        "text": "The result showed people reacted more strongly to the skydive sweat. Some scientists also found out that angry faces pose a ___",
+        "answer": [
+         "threat"
+        ],
+        "explanation": "\"angry faces, because they pose a threat\""
+       },
+       {
+        "no": 39,
+        "type": "fill",
+        "text": "Some psychologists tried to test some students whether they can smell ___",
+        "answer": [
+         "chocolate"
+        ],
+        "explanation": "\"sniff out a trail of chocolate\""
+       },
+       {
+        "no": 40,
+        "type": "fill",
+        "text": "A chef lost her sense of smell, but regained the ability by smelling ___ on a daily basis",
+        "answer": [
+         "spices"
+        ],
+        "explanation": "\"sniffing spices for 10 minutes a day\""
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "reading": [
+  {
+   "passage": 1,
+   "title": "How to find your way out of a food desert",
+   "topic": "Society",
+   "level": "easy",
+   "passage_text": "Ordinary citizens have been using the internet to draw attention to the lack of healthy eating options in inner cities\n\nOver the last few months, a survey has been carried out of over 200 greengrocers and convenience stores in Crown Heights, a neighbourhood in Brooklyn, New York. As researchers from the Brooklyn Food Association enter the details, colourful dots appear on their online map, which display the specific location of each of the food stores in a handful of central Brooklyn neighbourhoods. Clicking on a dot will show you the store's name and whether it carries fresh fruit and vegetables, wholegrain bread, low-fat dairy and other healthy options.\n\nThe researchers plan eventually to survey the entire borough of Brooklyn. 'We want to get to a more specific and detailed description of what that looks like,' says Jeffrey Heehs, who leads the project. He hopes it will help residents find fresh food in urban areas where the stores sell mostly packaged snacks or fast food – areas otherwise known as food deserts. The aim of the project is also to assist government officials in assessing food availability, and in forming future policies about what kind of food should be sold and where.\n\nIn fact, the Brooklyn project represents the intersection of two growing trends: mapping fresh food markets in US cities, and private citizens creating online maps of local neighbourhood features. According to Michael Goodchild, a geographer at the University of California at Santa Barbara, citizen map makers may make maps because there is no good government map, or to record problems such as burned-out traffic lights.\n\nAccording to recent studies, people at higher risk of chronic disease and who receive minimal incomes for the work they do frequently live in neighbourhoods located in food deserts. But how did these food deserts arise? Linda Alwitt and Thomas Donley, marketing researchers at DePaul University in Chicago, found that supermarkets often can't afford the amount of land required for their stores in cities. City planning researcher Cliff Guy and colleagues at the University of Leeds in the UK found in 2004 that smaller urban groceries tend to close due to competition from suburban supermarkets.\n\nAs fresh food stores leave a neighbourhood, residents find it harder to eat well and stay healthy. Food deserts are linked with lower local health outcomes, and they may be a driving force in the health disparities between lower-income and affluent people in the US. Until recently, the issue attracted little national attention, and received no ongoing funding for research.\n\nNow, more US cities are becoming aware of their food landscapes. Last year, the United States Department of Agriculture launched a map of where food stores are located in all the US counties. Mari Gallagher, who runs a private consulting firm, says her researchers have mapped food stores and related them to health statistics for the cities of Detroit, Chicago, Cincinnati and Washington, D.C. These maps help cities identify where food deserts are and, occasionally, have documented that people living in food deserts have higher rates of diet-related diseases.\n\nThe Brooklyn project differs in that it's run by a local core of five volunteers who have worked on the project for the past year, rather than trained, academic researchers. To gather data, they simply go to individual stores with pre-printed surveys in hand and, once the storekeeper's permission has been obtained, check off boxes on their list against the products for sale in the store. Their approach to data collection and research has been made possible by technologies such as mapping software and GPS-enabled smartphones, Google Maps and OpenStreetMap, an open-source online map with a history of involvement in social issues. Like Brooklyn Food Association volunteers, many citizen online map makers use maps to bring local problems to official attention, Goodchild says. Heehs, the mapping project leader, says that after his group gathers more data, it will compare neighbourhoods, come up with solutions to address local needs, and then present them to New York City officials. Their website hasn't caught much local or official attention yet, however. It was launched only recently, but its creators haven't yet set up systems to see who's looking at it.\n\nExperts who visited the Brooklyn group's site were optimistic but cautious. 'This kind of detailed information could be very useful,' says Michele Ver Ploeg, an economist for the Department of Agriculture. To make the map more helpful to both residents and policy makers, she would like to see price data for healthy products, too. Karen Ansel, a registered dietician and a spokesperson for the American Dietetic Association, found the site confusing to navigate. 'That said, with this information in place the group has the tools to build a more user-friendly site that could be … very helpful to consumers,' she says. 'The group also should ensure their map is available to those who don't have internet access at home,' she adds. In fact, a significant proportion of Brooklyn residents don't have internet access at home and 8 percent rely on dial-up service, instead of high-speed internet access, according to Gretchen Maneval, director of Brooklyn College's Center for the Study of Brooklyn. 'It's still very much a work in progress,' Heehs says of the online map. They'll start advertising it online and by email to other community groups, such as urban food garden associations, next month. He also hopes warmer days in the spring will draw out fresh volunteers to spread awareness and to finish surveying, as they have about two-thirds of Brooklyn left to cover.",
+   "groups": [
+    {
+     "instruction": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer.",
+     "wordLimit": "ONE WORD ONLY",
+     "context": "Data on food deserts and their effects on health",
+     "questions": [
+      {
+       "no": 1,
+       "type": "fill",
+       "text": "The Brooklyn Food Association: the online map provides users with a store's name, ___ and details of its produce",
+       "answer": [
+        "location"
+       ],
+       "explanation": "\"display the specific location of each of the food stores\""
+      },
+      {
+       "no": 2,
+       "type": "fill",
+       "text": "One goal of the mapping project is to help develop new ___ on food.",
+       "answer": [
+        "policies"
+       ],
+       "explanation": "\"forming future policies about what kind of food should be sold\""
+      },
+      {
+       "no": 3,
+       "type": "fill",
+       "text": "Citizen maps are sometimes made when ___ maps are unsatisfactory.",
+       "answer": [
+        "government"
+       ],
+       "explanation": "\"because there is no good government map\""
+      },
+      {
+       "no": 4,
+       "type": "fill",
+       "text": "Reasons for the development of food deserts: new research suggests that people living in food deserts often have low ___.",
+       "answer": [
+        "incomes"
+       ],
+       "explanation": "\"receive minimal incomes for the work they do\""
+      },
+      {
+       "no": 5,
+       "type": "fill",
+       "text": "Some supermarkets are unable to buy enough ___ inside cities for their stores.",
+       "answer": [
+        "land"
+       ],
+       "explanation": "\"can't afford the amount of land required\""
+      },
+      {
+       "no": 6,
+       "type": "fill",
+       "text": "Small grocery stores in cities often cannot cope with supermarket ___.",
+       "answer": [
+        "competition",
+        "suburban"
+       ],
+       "explanation": "\"close due to competition from suburban supermarkets\""
+      }
+     ]
+    },
+    {
+     "instruction": "Do the following statements agree with the information given in Reading Passage 1? Write TRUE, FALSE or NOT GIVEN.",
+     "questions": [
+      {
+       "no": 7,
+       "type": "tfng",
+       "text": "A group of professional researchers are in charge of the Brooklyn project.",
+       "answer": "FALSE",
+       "explanation": "\"run by a local core of five volunteers … rather than trained, academic researchers\""
+      },
+      {
+       "no": 8,
+       "type": "tfng",
+       "text": "The Brooklyn project team carries out their assessment of stores without the owner's knowledge.",
+       "answer": "FALSE",
+       "explanation": "\"once the storekeeper's permission has been obtained\" (đáp án gốc ghi TRUE – sai)"
+      },
+      {
+       "no": 9,
+       "type": "tfng",
+       "text": "The Brooklyn project has experienced technical difficulties setting up the website.",
+       "answer": "NOT GIVEN",
+       "explanation": "Không nói về khó khăn kỹ thuật."
+      },
+      {
+       "no": 10,
+       "type": "tfng",
+       "text": "The city government has taken a considerable interest in the Brooklyn project website.",
+       "answer": "FALSE",
+       "explanation": "\"hasn't caught much local or official attention yet\""
+      },
+      {
+       "no": 11,
+       "type": "tfng",
+       "text": "Michele Ver Ploeg believes the Brooklyn project website should contain additional information.",
+       "answer": "TRUE",
+       "explanation": "\"she would like to see price data for healthy products, too\""
+      },
+      {
+       "no": 12,
+       "type": "tfng",
+       "text": "The rate of internet use in Brooklyn is unlikely to increase in the near future.",
+       "answer": "NOT GIVEN",
+       "explanation": "Không dự đoán xu hướng."
+      },
+      {
+       "no": 13,
+       "type": "tfng",
+       "text": "Jeffrey Heehs would like more people to assist with the Brooklyn project research.",
+       "answer": "TRUE",
+       "explanation": "\"will draw out fresh volunteers\""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage": 2,
+   "title": "The dingo debate",
+   "topic": "Nature",
+   "level": "medium",
+   "passage_text": "Graziers see them as pests, and poisoning is common, but some biologists think Australia's dingoes are the best weapon in a war against imported cats and foxes.\n\nA\nA plane flies a slow pattern over Carlton Hill station, a 3,600 square kilometre ranch in the Kimberley region in northwest Australia. As the plane circles, those aboard drop 1,000 small pieces of meat, one by one, onto the scrubland below, each piece laced with poison; this practice is known as baiting.\n\nBesides 50,000 head of cattle, Carlton Hill is home to the dingo, Australia's largest mammalian predator and the bane of a grazier's (cattle farmer's) life. Stuart McKechnie, manager of Carlton Hill, complains that graziers' livelihoods are threatened when dingoes prey on cattle. But one man wants the baiting to end, and for dingoes to once again roam Australia's wide-open spaces. According to Chris Johnson of James Cook University, 'Australia needs more dingoes to protect our biodiversity.'\n\nB\nAbout 4,000 years ago, Asian sailors introduced dingoes to Australia. Throughout the ensuing millennia, these descendants of the wolf spread across the continent and, as the Tasmanian tiger disappeared completely from Australia, dingoes became Australia's top predators. As agricultural development took place, the European settlers found that they could not safely keep their livestock where dingoes roamed. So began one of the most sustained efforts at pest control in Australia's history. Over the last 150 years, dingoes have been shot and poisoned, and fences have been used in an attempt to keep them away from livestock. But at the same time as the European settlers tried to eliminate one native pest from Australia, they introduced more of their own.\n\nC\nIn 1860, the rabbit was unleashed on Australia by a wealthy landowner, and by 1980 rabbits had covered most of the mainland. Rabbits provide a huge prey base for two other introduced species: the feral (wild) cat and the red fox.\n\nThe interaction between foxes, cats and rabbits is a huge problem for native mammals. In good years, rabbit numbers increase dramatically, and fox and cat populations grow quickly in response to the abundance of this prey. When bad seasons follow, rabbit numbers are significantly reduced – and the dwindling but still large fox and cat populations are left with little to eat besides native mammals.\n\nD\nAustralian mammals generally reproduce much more slowly than rabbits, cats and foxes – an adaptation to prevent overpopulation in the arid environment, where food can be scarce and unreliable – and populations decline because they can't grow fast enough to replace animals killed by the predators. Johnson says dingoes are the solution to this problem because they keep cat and fox populations under control. Besides regularly eating the smaller predators, dingoes will kill them simply to lessen competition.\n\nDingo packs live in large, stable territories and generally have only one fertile female, which limits their rate of increase. In the 4,000 years that dingoes have been in Australia, they have contributed to few, if any, extinctions, Johnson says.\n\nE\nReaching out from a desolate spot where three states meet, for 2,500 km in either direction, is the world's longest fence, two metres high and stretching from the coast in Queensland to the Great Australian Bight in South Australia; it is there to keep dingoes out of the southeast. The fence separates the main types of livestock found in Australia. To the northwest of the fence, cattle predominate; to the southeast, sheep fill the landscape. In fact, Australia is a land dominated by these animals – 25 million cattle, 100 million sheep and just over 20 million people.\n\nF\nWhile there is no argument that dingoes will prey on sheep if given the chance, they don't hunt cattle once the calves are much past two or three weeks old, according to McKechnie. And a study in Queensland suggests that dingoes don't even prey heavily on the newborn calves unless their staple prey disappears due to deteriorating conditions like drought.\n\nThis study, co-authored by Lee Allen of the Robert Wicks Research Centre in Queensland, suggests that the aggressive baiting programs used against dingoes may actually be counter-productive for graziers. When dingoes are removed from an area by baiting, the area is recolonised by younger, more solitary dingoes. These animals aren't capable of going after large prey like kangaroos, so they turn to calves. In their study, some of the highest rates of calf predation occurred in areas that had been baited.\n\nG\nMark Clifford, general manager of a firm that manages over 200,000 head of cattle, is not convinced by Allen's assertion. Clifford says, 'It's obvious if we drop or loosen control on dingoes, we are going to lose more calves.' He doesn't believe that dingoes will go after kangaroos when calves are around. Nor is he persuaded of dingoes' supposed ecological benefits, saying he is not convinced that they manage to catch cats that often, believing they are more likely to catch small native animals instead.\n\nH\nMcKechnie agrees that dingoes kill the wallabies (small native animals) that compete with his cattle for food, but points out that in parts of Western Australia there are no foxes, and not very many cats. He doesn't see how relaxing controls on dingoes in his area will improve the ecological balance.\n\nJohnson sees a need for a change in philosophy on the part of graziers. 'There might be a number of different ways of thinking through dingo management in cattle country,' he says. 'At the moment, though, that hasn't got through to graziers. There's still just one prescription, and that is to bait as widely as possible.'",
+   "groups": [
+    {
+     "instruction": "Reading Passage 2 has eight sections, A–H. Which section contains the following information? NB You may use any letter more than once.",
+     "bank": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H"
+     ],
+     "questions": [
+      {
+       "no": 14,
+       "type": "match",
+       "text": "a description of a barrier designed to stop dingoes, which also divides two kinds of non-native animals",
+       "answer": 4,
+       "explanation": "\"the world's longest fence … separates the main types of livestock\""
+      },
+      {
+       "no": 15,
+       "type": "match",
+       "text": "how dingoes ensure that rival species do not dominate",
+       "answer": 3,
+       "explanation": "\"dingoes will kill them simply to lessen competition\""
+      },
+      {
+       "no": 16,
+       "type": "match",
+       "text": "a reference to a widespread non-native species that other animals feed on",
+       "answer": 2,
+       "explanation": "\"Rabbits provide a huge prey base\""
+      },
+      {
+       "no": 17,
+       "type": "match",
+       "text": "a mention of the dingo's arrival in Australia",
+       "answer": 1,
+       "explanation": "\"About 4,000 years ago, Asian sailors introduced dingoes\""
+      },
+      {
+       "no": 18,
+       "type": "match",
+       "text": "research which has proved that dingoes have resorted to eating young livestock",
+       "answer": 5,
+       "explanation": "\"some of the highest rates of calf predation occurred in areas that had been baited\""
+      },
+      {
+       "no": 19,
+       "type": "match",
+       "text": "a description of a method used to kill dingoes",
+       "answer": 0,
+       "explanation": "baiting from a plane"
+      },
+      {
+       "no": 20,
+       "type": "match",
+       "text": "the way that the structure of dingo groups affects how quickly their numbers grow",
+       "answer": 3,
+       "explanation": "\"generally have only one fertile female, which limits their rate of increase\""
+      }
+     ]
+    },
+    {
+     "instruction": "Look at the following statements and the list of people below. Match each statement with the correct person, A–D.",
+     "bank": [
+      "Stuart McKechnie",
+      "Chris Johnson",
+      "Lee Allen",
+      "Mark Clifford"
+     ],
+     "questions": [
+      {
+       "no": 21,
+       "type": "match",
+       "text": "Dingoes tend to hunt native animals rather than hunting other non-native predators.",
+       "answer": 3,
+       "explanation": "Clifford: \"more likely to catch small native animals instead\""
+      },
+      {
+       "no": 22,
+       "type": "match",
+       "text": "The presence of dingoes puts the income of some people at risk.",
+       "answer": 0,
+       "explanation": "McKechnie: \"graziers' livelihoods are threatened\""
+      },
+      {
+       "no": 23,
+       "type": "match",
+       "text": "Dingoes have had little impact on the dying out of animal species in Australia.",
+       "answer": 1,
+       "explanation": "Johnson: \"contributed to few, if any, extinctions\""
+      }
+     ]
+    },
+    {
+     "instruction": "Complete the sentences below. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+     "wordLimit": "NO MORE THAN TWO WORDS",
+     "questions": [
+      {
+       "no": 24,
+       "type": "fill",
+       "text": "The dingo replaced the ___ as the main predatory animal in Australia.",
+       "answer": [
+        "Tasmanian tiger"
+       ],
+       "explanation": "\"as the Tasmanian tiger disappeared completely … dingoes became Australia's top predators\""
+      },
+      {
+       "no": 25,
+       "type": "fill",
+       "text": "Foxes and cats are more likely to hunt native animals when there are fewer ___.",
+       "answer": [
+        "rabbits"
+       ],
+       "explanation": "\"rabbit numbers are significantly reduced – … left with little to eat besides native mammals\""
+      },
+      {
+       "no": 26,
+       "type": "fill",
+       "text": "Australian animals reproduce at a slow rate as a natural way of avoiding ___.",
+       "answer": [
+        "overpopulation"
+       ],
+       "explanation": "\"an adaptation to prevent overpopulation\""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage": 3,
+   "title": "Pacific navigation and voyaging",
+   "topic": "History",
+   "level": "hard",
+   "passage_text": "How people migrated to the Pacific islands\n\nThe many tiny islands of the Pacific Ocean had no human population until ancestors of today's islanders sailed from Southeast Asia in ocean-going canoes approximately 2,000 years ago. At the present time, the debate continues about exactly how they migrated such vast distances across the ocean, without any of the modern technologies we take for granted.\n\nAlthough the romantic vision of some early twentieth-century writers of fleets of heroic navigators simultaneously setting sail had come to be considered by later investigators to be exaggerated, no considered assessment of Pacific voyaging was forthcoming until 1956, when the American historian Andrew Sharp published his research. Sharp challenged the 'heroic vision' by asserting that the expertise of the navigators was limited, and that the settlement of the islands was not systematic, being more dependent on good fortune by drifting canoes. Sharp's theory was widely challenged, and deservedly so. If nothing else, however, it did spark renewed interest in the topic and precipitated valuable new research.\n\nSince the 1960s a wealth of investigations has been conducted, and most of them, thankfully, have been of the 'non-armchair' variety. While it would be wrong to denigrate all 'armchair' research – that based on an examination of available published materials – it has turned out that so little progress had been made in the area of Pacific voyaging because most writers relied on the same old sources – travellers' journals or missionary narratives compiled by unskilled observers. After Sharp, this began to change, and researchers conducted most of their investigations not in libraries, but in the field.\n\nIn 1965, David Lewis, a physician and experienced yachtsman, set to work using his own unique philosophy: he took the yacht he had owned for many years and navigated through the islands in order to contact those men who still find their way at sea using traditional methods. He then accompanied these men, in their traditional canoes, on test voyages from which all modern instruments were banished from sight, though Lewis secretly used them to confirm the navigators' calculations. His most famous such voyage was a return trip of around 1,000 nautical miles between two islands in mid-ocean. Far from drifting, as proposed by Sharp, Lewis found that ancient navigators would have known which course to steer by memorising which stars rose and set in certain positions along the horizon, and this gave them fixed directions by which to steer their boats.\n\nThe geographer Edwin Doran followed a quite different approach. He was interested in obtaining exact data on canoe sailing performance, and to that end employed the latest electronic instrumentation. Doran travelled on board traditional sailing canoes in some of the most remote parts of the Pacific, all the while using his instruments to record canoe speeds in different wind strengths – from gales to calms – and the angle canoes could sail relative to the wind. In the process, he provided the first really precise attributes of traditional sailing canoes.\n\nA further contribution was made by Steven Horvath. As a physiologist, Horvath's interest was not in navigation techniques or in canoes, but in the physical capabilities of the men themselves. By adapting standard physiological techniques, Horvath was able to calculate the energy expenditure required to paddle canoes of this sort at times when there was no wind to fill the sails, or when the wind was contrary. He concluded that paddles, or perhaps long oars, could indeed have propelled for long distances what were primarily sailing vessels.\n\nFinally, a team led by P. Wall Garrard conducted important research, in this case by making investigations while remaining safely in the laboratory. Wall Garrard's unusual method was to use the findings of linguists who had studied the languages of the Pacific islands, many of which are remarkably similar although the islands where they are spoken are sometimes thousands of kilometres apart. Clever adaptation of computer simulation techniques pioneered in other disciplines allowed him to produce convincing models suggesting the migrations were indeed systematic, but not simultaneous. Wall Garrard proposed the migrations should be seen not as a single journey made by a massed fleet of canoes, but as a series of ever more ambitious voyages, each pushing further into the unknown ocean.\n\nWhat do we learn about Pacific navigation and voyaging from this research? Quite correctly, none of the researchers tried to use their findings to prove one theory or another; experiments such as these cannot categorically confirm or negate a hypothesis. The strength of this research lay in the range of methodologies employed. When we splice together these findings we can propose that traditional navigators used a variety of canoe types, sources of water and navigation techniques, and it was this adaptability which was their greatest accomplishment. These navigators observed the conditions prevailing at sea at the time a voyage was made and altered their techniques accordingly. Furthermore, the canoes of the navigators were not drifting helplessly at sea but were most likely part of a systematic migration; as such, the Pacific peoples were able to view the ocean as an avenue, not a barrier, to communication before any other race on Earth. Finally, one unexpected but most welcome consequence of this research has been a renaissance in the practice of traditional voyaging. In some groups of islands in the Pacific today young people are resurrecting the skills of their ancestors, when a few decades ago it seemed they would be lost forever.",
+   "groups": [
+    {
+     "instruction": "Do the following statements agree with the claims of the writer in Reading Passage 3? Write YES, NO or NOT GIVEN.",
+     "questions": [
+      {
+       "no": 27,
+       "type": "ynng",
+       "text": "The Pacific islands were uninhabited when migrants arrived by sea from Southeast Asia.",
+       "answer": "YES",
+       "explanation": "\"had no human population until ancestors of today's islanders sailed from Southeast Asia\""
+      },
+      {
+       "no": 28,
+       "type": "ynng",
+       "text": "Andrew Sharp was the first person to write about the migrants to the islands.",
+       "answer": "NO",
+       "explanation": "\"early twentieth-century writers\" đã viết trước đó."
+      },
+      {
+       "no": 29,
+       "type": "ynng",
+       "text": "Andrew Sharp believed migratory voyages were based more on luck than skill.",
+       "answer": "YES",
+       "explanation": "\"more dependent on good fortune by drifting canoes\""
+      },
+      {
+       "no": 30,
+       "type": "ynng",
+       "text": "Despite being controversial, Andrew Sharp's research had positive results.",
+       "answer": "YES",
+       "explanation": "\"it did spark renewed interest in the topic and precipitated valuable new research\""
+      },
+      {
+       "no": 31,
+       "type": "ynng",
+       "text": "Edwin Doran disagreed with the findings of Lewis's research.",
+       "answer": "NOT GIVEN",
+       "explanation": "Chỉ nói cách tiếp cận khác."
+      }
+     ]
+    },
+    {
+     "instruction": "Choose the correct letter, A, B, C or D.",
+     "questions": [
+      {
+       "no": 32,
+       "type": "mcq",
+       "text": "David Lewis's research was different because",
+       "options": [
+        "he observed traditional navigators at work.",
+        "he conducted test voyages using his own yacht.",
+        "he carried no modern instruments on test voyages.",
+        "he spoke the same language as the islanders he sailed with."
+       ],
+       "answer": 0,
+       "explanation": "\"accompanied these men, in their traditional canoes, on test voyages\""
+      },
+      {
+       "no": 33,
+       "type": "mcq",
+       "text": "What did David Lewis's research discover about traditional navigators?",
+       "options": [
+        "They used the sun and moon to find their position.",
+        "They could not sail further than about 1,000 nautical miles.",
+        "They knew which direction they were sailing in.",
+        "They were able to drift for long distances."
+       ],
+       "answer": 2,
+       "explanation": "\"this gave them fixed directions by which to steer their boats\""
+      },
+      {
+       "no": 34,
+       "type": "mcq",
+       "text": "What are we told about Edwin Doran's research?",
+       "options": [
+        "Data were collected after the canoes had returned to land.",
+        "Canoe characteristics were recorded using modern instruments.",
+        "Research was conducted in the most densely populated regions.",
+        "Navigators were not allowed to see the instruments Doran used."
+       ],
+       "answer": 1,
+       "explanation": "\"employed the latest electronic instrumentation\""
+      },
+      {
+       "no": 35,
+       "type": "mcq",
+       "text": "Which of the following did Steven Horvath discover during his research?",
+       "options": [
+        "Canoe design was less important than human strength.",
+        "New research methods had to be developed for use in canoes.",
+        "Navigators became very tired on the longest voyages.",
+        "Human energy may have been used to assist sailing canoes."
+       ],
+       "answer": 3,
+       "explanation": "\"paddles, or perhaps long oars, could indeed have propelled … sailing vessels\""
+      },
+      {
+       "no": 36,
+       "type": "mcq",
+       "text": "What is the writer's opinion of P. Wall Garrard's research?",
+       "options": [
+        "He is disappointed it was conducted in the laboratory.",
+        "He is impressed by the originality of the techniques used.",
+        "He is surprised it was used to help linguists with their research.",
+        "He is concerned that the islands studied are long distances apart."
+       ],
+       "answer": 1,
+       "explanation": "\"unusual method … Clever adaptation of computer simulation techniques\""
+      }
+     ]
+    },
+    {
+     "instruction": "Complete each sentence with the correct ending, A–F, below.",
+     "bank": [
+      "was the variety of experimental techniques used.",
+      "was not of interest to young islanders today.",
+      "was not conclusive evidence in support of a single theory.",
+      "was being able to change their practices when necessary.",
+      "was the first time humans intentionally crossed an ocean.",
+      "was the speed with which it was conducted."
+     ],
+     "questions": [
+      {
+       "no": 37,
+       "type": "match",
+       "text": "One limitation in the information produced by all of this research is that it",
+       "answer": 2,
+       "explanation": "\"cannot categorically confirm or negate a hypothesis\""
+      },
+      {
+       "no": 38,
+       "type": "match",
+       "text": "The best thing about this type of research",
+       "answer": 0,
+       "explanation": "\"The strength of this research lay in the range of methodologies employed\""
+      },
+      {
+       "no": 39,
+       "type": "match",
+       "text": "The most important achievement of traditional navigators",
+       "answer": 3,
+       "explanation": "\"it was this adaptability which was their greatest accomplishment\""
+      },
+      {
+       "no": 40,
+       "type": "match",
+       "text": "The migration of people from Asia to the Pacific",
+       "answer": 4,
+       "explanation": "\"view the ocean as an avenue … before any other race on Earth\""
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "writing": [
+  {
+   "task": 1,
+   "type": "process",
+   "title": "The process of making Pu-erh raw tea and ripe tea",
+   "topic": "Food",
+   "prompt": "The diagram below shows the process of producing Pu-erh raw tea and ripe tea.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.\n\n[Mô tả sơ đồ – bản gốc là hình ảnh: Pan frying (inactivation of enzymes) → Rolling → Drying under the sun → Loose raw tea. Nhánh ripe tea: Loose raw tea → Fermentation by mould → Loose ripe tea → Compression → Ripe tea. Nhánh raw tea: Loose raw tea → Compression → Aging by storage → Vintage Pu-erh raw tea.]",
+   "sample": "The diagram featured above details the steps by which Pu-erh raw and ripened tea are produced.\n\nOverall, it is readily apparent that there are three main stages, beginning with initial activation and drying, followed by either ageing or fermentation, and finally storage in the case of the raw tea and compression for the ripe tea.\n\nThe process for both varieties of tea commences when the leaves are fried in pans in order to inactivate specific enzymes. This is followed by rolling of the fried leaves and drying in the sun. In the next stage, the two kinds of tea are treated in different ways.\n\nFor the ripe tea, the loose raw tea is fermented with mould and then compressed to form the final product. In terms of the raw tea, the leaves are first compressed. Subsequent to this step, the tea is aged, rather than fermented, and the vintage Pu-erh raw tea is then available for use.",
+   "sampleNote": "Bài mẫu trong tài liệu gốc (hình gốc không có trong bản số hóa)."
+  },
+  {
+   "task": 2,
+   "type": "discussion",
+   "title": "Childhood vs teenage experiences",
+   "topic": "Society",
+   "prompt": "Write about the following topic:\n\nSome people believe that the experiences children have before they go to school will have the greatest effect on their future life. Others argue that experiences gained when they are teenagers have a bigger influence.\n\nDiscuss both views and give your own opinion.\n\nGive reasons for your answer and include any relevant examples from your own knowledge or experience.\n\nWrite at least 250 words.",
+   "sample": "Many would argue that the experiences with the greatest impact occur before one becomes a teenager. In my opinion, the most pivotal stages of development in fact take place during one's teenage years.\n\nThe argument for the primacy of childhood experiences is supported by years of psychological research. In the early 20th century, researchers such as Jean Piaget began to analyse and perform experiments on young children in order to verify theories about how the human mind develops. Over the last century, these studies have evolved, and it is now commonly accepted in the field of psychology that very early experiences definitively shape one's later personality and identity. This is particularly the case when a child undergoes trauma such as abuse or neglect at home. These children are then more likely to have mental health disorders later in life and suffer generally from low self-esteem.\n\nHowever, decisions made as a teenager are more directly impactful on the future. The arguments made above are compelling but also difficult to verify beyond the purely theoretical. The choices a teenager makes have tangible effects. Most teenagers begin to settle into distinct social groups that will help inform their future identity, take up potentially lasting hobbies, choose the sports they will play later in life, and may even decide on a future career. The experiences a teenager gains through these activities will in turn allow them to shift their focus in life, such as by pursuing a scientific rather than artistic field in higher education.\n\nIn conclusion, despite the research showing the impact of childhood development, there are more important practical life choices made as a late adolescent. Therefore, it is key that teenagers are supported fully by both parents and teachers.",
+   "sampleNote": "Bài mẫu band 8 trong tài liệu gốc, đã sửa lỗi nhỏ."
+  }
+ ]
+}

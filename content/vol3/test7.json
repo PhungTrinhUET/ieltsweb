@@ -1,0 +1,967 @@
+{
+ "vol": 3,
+ "test": 7,
+ "source": "ORIGINAL IELTS PAPERS – VOL 3, Test 7 (audio: section 1–4.mp3; transcript gộp → offset từng section)",
+ "listening": {
+  "audioDir": "audio/vol3/test7",
+  "timingNote": "Transcript ASR là file gộp; audio tách từng section nên offset ước lượng (±15 s).",
+  "sections": [
+   {
+    "section": 1,
+    "title": "Newspaper photo reprint request",
+    "topic": "Services",
+    "offset": 0,
+    "transcript": "[00:08] Narrator: Section one. You will hear a woman telephoning a member of staff at a local newspaper. First, you have some time to look at questions one to five. You will see that there is an example that has been done for you.\n[00:56] Steven: Subscriber services, this is Steven. May I help you?\n[01:00] Woman: Good morning, Steven. I'm calling because I'd like to get a copy of a photo of my son that came out in the newspaper last week.\n[01:08] Steven: Sure, I can help you with that. Do you have the exact date?\n[01:12] Woman: Yes, it was last Monday. That was March the 10th. Yes, that's the date.\n[01:23] Narrator: The date of the newspaper is March the 10th, so '10' has been written in the space. Now we shall begin. Listen carefully and answer questions one to five.\n[01:43] Steven: Subscriber services, this is Steven. May I help you?\n[01:47] Woman: Good morning, Steven. I'm calling because I'd like to get a copy of a photo of my son that came out in the newspaper last week.\n[01:55] Steven: Sure, I can help you with that. Do you have the exact date?\n[01:59] Woman: Yes, it was last Monday. That was March the 10th. Yes, that's the date.\n[02:07] Steven: Okay, sure. Just one moment, please. Okay, I have the newspaper from that date on my computer screen now. What section was it in?\n[02:17] Woman: It was a feature story on local high school athletes.\n[02:21] Steven: Okay. So local athletes are always on the back page.\n[02:25] Woman: No, I don't remember it being at the back. I clearly remember it being on the front.\n[02:32] Steven: Oh, you're right. We just started doing those features there in the last several editions. Which story was it?\n[02:39] Woman: Student Athlete of the Month. Oops, no, excuse me, I'm sorry. I mean Week.\n[02:45] Steven: And that's your son, you said? You must be very proud of him. That's quite an accomplishment. Ah yes, here it is: Chase Packers, baseball player.\n[02:56] Woman: That's him. But actually the reporter got his surname wrong. It should be Parkhurst. That's P-A-R-K-H-U-R-S-T.\n[03:08] Steven: Okay, I'll make a note of that. Now, I'm assuming this photo is just for your own use, not for additional reprinting? With copyright laws, you need to fill out an extra form if you're going to reprint the photo in another publication.\n[03:25] Woman: Oh, I see. No, it's not for business or commercial purposes or anything. It's just for personal use. I want everyone who visits our home to see it. I'm so proud of him.\n[03:37] Steven: Of course. Now, I don't know if you knew this, but even though the photo is in black and white in the paper, you can choose to get your reprint in colour.\n[03:47] Woman: Oh, that's interesting. He does look so distinguished in the black and white, I like that. Okay, but you know what, I'll actually take the colour. That way his uniform will really stand out.\n[04:01] Steven: Sure thing.\n[04:05] Narrator: Before you hear the rest of the conversation, you have some time to look at questions six to ten. Now listen and answer questions six to ten.\n[04:44] Steven: Okay, let's see here. What else? Oh yes, of course, size. What size would you like? You can have the standard size or the wallet size.\n[04:54] Woman: Um, no, not the small one. These wallet-sized ones aren't helpful, as I'd like to frame it.\n[05:00] Steven: Just one?\n[05:02] Woman: Well, can I get more than one?\n[05:04] Steven: Yes, extra copies of the same print are discounted 50% if you order them at the same time.\n[05:11] Woman: Wow, they are quite expensive to begin with. So while I'd love a couple for the grandparents, I think I'll just stick with one. No, no, no – I'd better get three. It is a once-in-a-lifetime thing, you know. What's a few extra dollars when it comes to memories?\n[05:30] Steven: Okay, so let me see here. The total on that will be $80. Would you like to add rush processing, if you'd like them really fast? Rush processing will add $15 to your order.\n[05:45] Woman: Oh, really? Huh, that's quite expensive. I do want to get them quickly, but I guess I can be patient too. So yeah, I'll just do normal processing. Is it still pretty fast?\n[06:00] Steven: Usually about four to five business days.\n[06:03] Woman: Oh, that's not bad at all.\n[06:06] Steven: So let's see, is there anything else?\n[06:08] Woman: Just the payment? Can I pay you with a credit card?\n[06:13] Steven: Yes, sure. We also take cheques.\n[06:16] Woman: Oh, that's convenient. I'll do that then. I really prefer to pay by cheque rather than use my credit card.\n[06:24] Steven: Now, when they arrive, would you like to pick them up in our office, or would you like us to send them to you?\n[06:31] Woman: Ah, it's rather inconvenient for me to stop by.\n[06:35] Steven: I'll go ahead and mail them then, and that's no extra charge. One last question, if you don't mind. We routinely survey all our callers just to see how often they read the newspaper.\n[06:49] Woman: For years and years we read the entire paper on a daily basis. But now we're so busy, it seems we don't have time to read like we used to, except on weekends. But still, yes, you can say we read it each day. My husband still does, for sure.\n[07:06] Steven: Okay, thanks. Now, ma'am, let's get your address.\n[07:14] Narrator: That is the end of section one. You now have half a minute to check your answers.",
+    "groups": [
+     {
+      "instruction": "Complete the form below. Write ONE WORD AND/OR A NUMBER for each answer.",
+      "wordLimit": "ONE WORD AND/OR A NUMBER",
+      "context": "Newspaper Photo Reprint Request Form. Example – Newspaper date: March 10th. Size: Regular. Quantity: Three.",
+      "questions": [
+       {
+        "no": 1,
+        "type": "fill",
+        "text": "Newspaper page: the ___ page",
+        "answer": [
+         "front"
+        ],
+        "explanation": "\"I clearly remember it being on the front\""
+       },
+       {
+        "no": 2,
+        "type": "fill",
+        "text": "Newspaper story: Student Athlete of the ___",
+        "answer": [
+         "week",
+         "Week"
+        ],
+        "explanation": "\"I mean Week\""
+       },
+       {
+        "no": 3,
+        "type": "fill",
+        "text": "Photo subject: James ___",
+        "answer": [
+         "Parkhurst"
+        ],
+        "explanation": "P-A-R-K-H-U-R-S-T"
+       },
+       {
+        "no": 4,
+        "type": "fill",
+        "text": "Photo use: ___",
+        "answer": [
+         "personal"
+        ],
+        "explanation": "\"It's just for personal use\""
+       },
+       {
+        "no": 5,
+        "type": "fill",
+        "text": "Image type: ___",
+        "answer": [
+         "colour",
+         "color"
+        ],
+        "explanation": "\"I'll actually take the colour\""
+       },
+       {
+        "no": 6,
+        "type": "fill",
+        "text": "Price: $ ___",
+        "answer": [
+         "80"
+        ],
+        "explanation": "\"The total on that will be $80\""
+       },
+       {
+        "no": 7,
+        "type": "fill",
+        "text": "Processing option: ___",
+        "answer": [
+         "normal",
+         "regular"
+        ],
+        "explanation": "\"I'll just do normal processing\""
+       },
+       {
+        "no": 8,
+        "type": "fill",
+        "text": "Payment type: ___",
+        "answer": [
+         "cheque",
+         "check"
+        ],
+        "explanation": "\"I really prefer to pay by cheque\""
+       },
+       {
+        "no": 9,
+        "type": "fill",
+        "text": "Delivery method: ___",
+        "answer": [
+         "mail",
+         "post"
+        ],
+        "explanation": "\"I'll go ahead and mail them\""
+       },
+       {
+        "no": 10,
+        "type": "fill",
+        "text": "Reading frequency: every ___",
+        "answer": [
+         "day"
+        ],
+        "explanation": "\"you can say we read it each day\""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "section": 2,
+    "title": "Hospitality training information day",
+    "topic": "Work",
+    "offset": 439,
+    "transcript": "[07:26] Narrator: Section two. You will hear a talk by the organiser of an information day about training courses for workers in hotels, restaurants and other parts of the hospitality industry. First, you have some time to look at questions 11 to 15. Now listen carefully and answer questions 11 to 15.\n[08:22] John: Good morning, everyone. My name is John. I've worked in the hospitality industry for 20 years, here and all around the world. I've done it all: washing dishes in cafés, waiting tables, hotel work. I've been better at some of these roles than others, to be honest. But what I've always loved is the incredible variety of workmates I've had over the years. Today I want to introduce some of the training courses available here at the college. So, today's programme: this morning there'll be short presentations about different hospitality jobs, then this afternoon there'll be workshops where you can explore these ideas in more detail.\n[09:05] John: So your first presentation is on restaurant service. Another session focuses on kitchen assistants, who help the cooks in the kitchen. This is a great way to learn cooking skills. There's an amazing number of traditional techniques to learn. You'd be surprised how many top chefs in expensive restaurants started out as a kitchen assistant. But be warned, kitchen assistants arrive at work first and leave last, so think hard about whether you can cope with the commitment.\n[09:35] John: The session about porters, cleaners and dishwashers is a popular one. These positions are good for students, especially because they require no experience. Dishwashers have to work late into the evening – there's no surprises there. A porter's role is more important than many people realise, because guests' first impressions are formed by the staff they meet on arrival. Cleaners will usually be doing shift work, which may or may not suit you, depending on your situation.\n[10:05] John: Another popular session looks at the role of the receptionist. This is a key role; you have to deal with every part of the hotel. So having reception work on your CV or résumé is often a good way of moving your career forward in the long run. But having said that, they can be challenging – you know, dealing with people from all around the world. You have to already be good at working under a lot of pressure; you can't work out how to do it on the job.\n[10:35] John: For any of these jobs, you will usually have an interview, so there's also a session on interview skills. Now frankly, for the less skilled roles, the interview will be pretty quick. But for some of the jobs I've mentioned, the interview is just as important as it is in other types of employment. Basically, the key to coming across well is the same today as it was when I started 20 years ago. And the good thing is, it's not too difficult to develop these skills with a little training and rehearsal.\n[11:33] Narrator: Before you hear the rest of the talk, you have some time to look at questions 16 to 20. Now listen and answer questions 16 to 20.\n[12:11] John: Okay, then this afternoon we'll have the workshops. They will be held in various classrooms around the college, so if you have a look at your college plan, I'll tell you where they're going to be. Now, at the moment we're in the hall – you'll see it at the bottom of your plan. So if you want to go to the workshop on restaurant service, go out of the hall and turn right, walk along to the office, and it's the classroom immediately next door to that. For kitchen hands, when you come out of the hall you'll see the square in front of you. Cross to the other side of the square and you'll see a block of two classrooms. You want the one on the left. Now, porters, cleaners and dishwashers: you want to find a block of classrooms on the northern side of the college. There's a long block of classrooms, and you want the one at the eastern end. For the receptionist workshop, turn right out of the hall and go past the office, then head up north between the two sets of classrooms. You'll come to the first-aid room on your left, and it's the classroom directly opposite that. For those of you who are wanting to brush up on your interview skills, there's an interview skills workshop. You see that on the western side of the square there's a single large classroom – that's in there. Okay, now let's move on to look at…\n[13:55] Narrator: That is the end of section two. You now have half a minute to check your answers.",
+    "groups": [
+     {
+      "instruction": "Choose the correct letter, A, B or C.",
+      "context": "Information day: training courses for workers in the hospitality industry",
+      "questions": [
+       {
+        "no": 11,
+        "type": "mcq",
+        "text": "What has the speaker enjoyed most about working in hospitality?",
+        "options": [
+         "the range of jobs available",
+         "the range of countries he has visited",
+         "the range of people he has worked with"
+        ],
+        "answer": 2,
+        "explanation": "\"the incredible variety of workmates I've had\""
+       },
+       {
+        "no": 12,
+        "type": "mcq",
+        "text": "What point does the speaker make about kitchen assistants?",
+        "options": [
+         "The long hours will not suit everyone.",
+         "Their work is sometimes quite boring.",
+         "The pay is not particularly good."
+        ],
+        "answer": 0,
+        "explanation": "\"arrive at work first and leave last … whether you can cope with the commitment\""
+       },
+       {
+        "no": 13,
+        "type": "mcq",
+        "text": "According to the speaker, which job is sometimes undervalued?",
+        "options": [
+         "porter",
+         "cleaner",
+         "dishwasher"
+        ],
+        "answer": 0,
+        "explanation": "\"A porter's role is more important than many people realise\""
+       },
+       {
+        "no": 14,
+        "type": "mcq",
+        "text": "Experience in reception may help employees",
+        "options": [
+         "to learn foreign languages.",
+         "to manage stressful situations.",
+         "to get a better job eventually."
+        ],
+        "answer": 2,
+        "explanation": "\"a good way of moving your career forward in the long run\""
+       },
+       {
+        "no": 15,
+        "type": "mcq",
+        "text": "The speaker says that interview skills",
+        "options": [
+         "are particularly important in hospitality.",
+         "are easy to learn if you have some practice.",
+         "are understood better now than in the past."
+        ],
+        "answer": 1,
+        "explanation": "\"not too difficult to develop these skills with a little training and rehearsal\""
+       }
+      ]
+     },
+     {
+      "instruction": "Label the plan of the college. Write the correct letter, A–J, next to questions 16–20.",
+      "bank": [
+       "A – classroom at the western end of the northern block",
+       "B – classroom at the eastern end of the northern block",
+       "C – left-hand classroom of the pair across the square from the hall",
+       "D – right-hand classroom of the pair across the square",
+       "E – classroom opposite the First Aid room",
+       "F – single large classroom on the western side of the square",
+       "G – classroom next to the library",
+       "H – classroom beside the gym",
+       "I – classroom next to the workshops",
+       "J – classroom immediately next to the office"
+      ],
+      "context": "Sơ đồ gốc không có trong bản số hóa; vị trí A–J mô tả bằng lời (Hall ở dưới cùng; Office bên phải Hall; First Aid Room; Gym; Library; Workshops).",
+      "questions": [
+       {
+        "no": 16,
+        "type": "match",
+        "text": "Restaurant Service",
+        "answer": 9,
+        "explanation": "\"the classroom immediately next door to [the office]\""
+       },
+       {
+        "no": 17,
+        "type": "match",
+        "text": "Kitchen Hands",
+        "answer": 2,
+        "explanation": "\"a block of two classrooms. You want the one on the left\""
+       },
+       {
+        "no": 18,
+        "type": "match",
+        "text": "Porters, Cleaners, Dishwashers",
+        "answer": 1,
+        "explanation": "\"northern side … the one at the eastern end\""
+       },
+       {
+        "no": 19,
+        "type": "match",
+        "text": "Receptionists",
+        "answer": 4,
+        "explanation": "\"the classroom directly opposite [the first-aid room]\""
+       },
+       {
+        "no": 20,
+        "type": "match",
+        "text": "Interview Skills",
+        "answer": 5,
+        "explanation": "\"on the western side of the square there's a single large classroom\""
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "section": 3,
+    "title": "Battery-powered motorbike presentation",
+    "topic": "Education",
+    "offset": 840,
+    "transcript": "[14:07] Narrator: Section three. You will hear two engineering students discussing a presentation they are preparing about a battery-powered motorbike. First, you have some time to look at questions 21 to 26. Now listen carefully and answer questions 21 to 26.\n[15:13] Tom: Hi, Sarah. Shall we make a start on that presentation about our battery-powered motorbike project?\n[15:20] Sarah: Yes, let's. It'd be nice to do a good job for the university open day. I hope the lecturer's right that it'll interest people thinking about coming here to study.\n[15:31] Tom: Well, it certainly should. And at least we won't be assessed.\n[15:36] Sarah: Yes. And I guess we should be proud our project was chosen rather than anything done by others in our class. And our project's unusual, because people usually think of environmentally friendly vehicles as being relatively slow, but our battery-powered motorbike can get up to 165 kilometres an hour, the same as lots of petrol-driven bikes.\n[16:00] Tom: And it has an efficiency of 90%, whereas ordinary bikes are far less; they waste a huge amount of energy.\n[16:09] Sarah: And our bike doesn't need a petrol tank or an exhaust system either, so mechanically the design is more straightforward, and it's also lighter.\n[16:19] Tom: Anyway, it's going to be quite a challenge to prepare something interesting and appropriate for all the people who might come.\n[16:27] Sarah: Well, time is certainly going to be an issue.\n[16:30] Tom: You mean in terms of how much we have to deal with in only 15 minutes?\n[16:35] Sarah: Well, I was thinking more about the fact that the talk's next week, and we have a lot of other stuff on just now.\n[16:43] Tom: Absolutely. So how shall we organise things? We could just do a short talk and allow most of the time for questions.\n[16:51] Sarah: Well, it'd be good to allow plenty of time for those, but I think we need to present quite a lot too. We could start by showing a couple of minutes from the film of the race it took part in.\n[17:03] Tom: Brilliant, I'm sure they'd love that. Then we can talk about how we built and tested the motorbike and so on. For example, one of us could talk through the project from the initial brief to prototype stage, and then the other take it on to testing and development.\n[17:21] Sarah: Well, let's deal with that later. It might be better to have just you or me doing the talking. But we don't need to decide just yet.\n[17:31] Tom: Okay. So what about the slides for our presentation? Shall we work on the text for those now? We could just use keywords that'll help structure our talk.\n[17:42] Sarah: How about using mainly visuals? I took lots of photos as we went along, so it'd be easy to illustrate the progress of the project that way. More interesting than diagrams, and slides with lots of text can be boring.\n[17:58] Tom: Okay, right you are. So do you think we should discuss things with the lecturer before going much further? We could do that this afternoon.\n[18:08] Sarah: Wouldn't it be better to get a first draft done? Then we've got something more concrete to discuss with him.\n[18:15] Tom: Sure, but I'd quite like a bit more input before we spend a lot of time preparing something that might not be what's needed.\n[18:23] Sarah: Okay. Why don't we have a word with Amish in the fourth year? His tutor had him doing something similar last summer, so I'm sure he'd give us some useful pointers.\n[18:34] Tom: Great. Let's do that after lunch.\n[18:39] Narrator: Before you hear the rest of the discussion, you have some time to look at questions 27 to 30. Now listen and answer questions 27 to 30.\n[19:13] Tom: Let's think a bit more about how the project went. That might give us some ideas. Okay. Well, first I'd say that writing the report was hard.\n[19:23] Sarah: Yes, I was dreading having to write 80 pages in just a month. But actually, it was harder making sure we didn't go over length. Anyway, I never imagined we'd do it with a day to spare.\n[19:38] Tom: No. It was lucky your sister had time to proofread it. She picked up on several careless mistakes, especially in the bibliography.\n[19:46] Sarah: Yes, well, she works in publishing, so she's used to checking things. I suppose it helped that we kept detailed notebooks throughout the year. That was a chore, but worth it.\n[19:58] Tom: Yes. I didn't enjoy keeping mine up to date. I actually found it really time-consuming, noting down all the adaptations we made to the design as we went along. I hadn't anticipated that.\n[20:11] Sarah: Me too. And I thought the tutor could have given us a bit more advice at the beginning of the process.\n[20:18] Tom: That's right. I liked doing the concept sketches. For me, that was one of the best bits. I've always enjoyed those initial stages of the design process.\n[20:29] Sarah: I was relieved that the tutor picked up on that mistake we made in our aerodynamic sketches. It would have been disastrous if that hadn't been picked up at an early stage.\n[20:40] Tom: Exactly. Finding sponsors took quite some time, of course.\n[20:45] Sarah: Yes, but we knew that'd be an issue, and I never expected it to be enjoyable – not like the actual hands-on project work. The tutor certainly came into his own at that stage.\n[20:57] Tom: Yes, I never expected him to have such useful contacts in industry. Good thing for us he did, though.\n[21:09] Narrator: That is the end of section three. You now have half a minute to check your answers.",
+    "groups": [
+     {
+      "instruction": "Choose the correct letter, A, B or C.",
+      "context": "Battery-powered motorbikes",
+      "questions": [
+       {
+        "no": 21,
+        "type": "mcq",
+        "text": "The students are preparing the presentation",
+        "options": [
+         "as part of their final assessment.",
+         "to attract potential future students.",
+         "to share their work with their classmates."
+        ],
+        "answer": 1,
+        "explanation": "\"for the university open day … people thinking about coming here to study\""
+       },
+       {
+        "no": 22,
+        "type": "mcq",
+        "text": "What do the students say about the battery-powered motorbike in their project?",
+        "options": [
+         "It is more efficient than ordinary motorbikes.",
+         "It is faster than ordinary motorbikes.",
+         "It is more complex than ordinary motorbikes."
+        ],
+        "answer": 0,
+        "explanation": "\"an efficiency of 90%, whereas ordinary bikes are far less\""
+       },
+       {
+        "no": 23,
+        "type": "mcq",
+        "text": "The students agree the presentation will be difficult because",
+        "options": [
+         "they have a lot to cover in 15 minutes.",
+         "several different people are involved.",
+         "they do not have long to prepare it."
+        ],
+        "answer": 2,
+        "explanation": "\"the talk's next week, and we have a lot of other stuff on\""
+       },
+       {
+        "no": 24,
+        "type": "mcq",
+        "text": "The students decide to deal with the presentation by",
+        "options": [
+         "each giving part of the talk.",
+         "opening with a short video clip.",
+         "allowing most of the time for questions."
+        ],
+        "answer": 1,
+        "explanation": "\"start by showing a couple of minutes from the film of the race\""
+       },
+       {
+        "no": 25,
+        "type": "mcq",
+        "text": "What do the students agree to use in their slides?",
+        "options": [
+         "photos of their project at its different stages",
+         "keywords reflecting the characteristics of the project",
+         "diagrams illustrating the process of the project"
+        ],
+        "answer": 0,
+        "explanation": "\"I took lots of photos … Okay, right you are\""
+       },
+       {
+        "no": 26,
+        "type": "mcq",
+        "text": "What do the students decide to do that afternoon?",
+        "options": [
+         "talk to a student in a different year",
+         "prepare a first draft of their slides",
+         "discuss their outline with a tutor"
+        ],
+        "answer": 0,
+        "explanation": "\"have a word with Amish in the fourth year\""
+       }
+      ]
+     },
+     {
+      "instruction": "Which opinion is expressed by the students about each of the following aspects of the project? Choose FOUR answers from the box and write the correct letter, A–F, next to questions 27–30.",
+      "bank": [
+       "It took longer than expected.",
+       "It was unexpectedly enjoyable.",
+       "A member of staff was surprisingly helpful.",
+       "They benefited from a relative's help.",
+       "A member of staff identified one serious problem.",
+       "A different student made a careless mistake."
+      ],
+      "questions": [
+       {
+        "no": 27,
+        "type": "match",
+        "text": "writing the report",
+        "answer": 3,
+        "explanation": "\"lucky your sister had time to proofread it\""
+       },
+       {
+        "no": 28,
+        "type": "match",
+        "text": "keeping a log book",
+        "answer": 0,
+        "explanation": "\"really time-consuming … I hadn't anticipated that\""
+       },
+       {
+        "no": 29,
+        "type": "match",
+        "text": "doing the sketches",
+        "answer": 4,
+        "explanation": "\"the tutor picked up on that mistake … would have been disastrous\""
+       },
+       {
+        "no": 30,
+        "type": "match",
+        "text": "finding sponsors",
+        "answer": 2,
+        "explanation": "\"never expected him to have such useful contacts in industry\" (đáp án gốc ghi B – không khớp transcript)"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "section": 4,
+    "title": "The development of the telescope",
+    "topic": "Science",
+    "offset": 1275,
+    "transcript": "[21:21] Narrator: Section four. You will hear a university lecture on the early development of the telescope. First, you have some time to look at questions 31 to 40. Now listen carefully and answer questions 31 to 40.\n[22:30] Lecturer: Good morning. Today's lecture is about the development of the telescope up until the end of the 17th century. We can trace the telescope's earliest form back to the 1200s. History records Roger Bacon as possibly the first to invent a magnifying glass. The principal use of his invention was for reading. This proved to be a benefit mostly for researchers, who until then had been forced to give up working while still relatively young because of impaired vision.\n[23:05] Lecturer: In 1608, a Dutch astronomer called Lipperhey discovered that if convex and concave lenses were put together, they created a magnifying glass through which things at a distance could be seen. He created a miniature telescope. It was so small that initially people took it to the theatre for a better view of the stage.\n[23:30] Lecturer: Galileo found out about Lipperhey's invention in the spring of 1609, and immediately set about improving it. Galileo experimented with different lenses. Combining a weak convex lens with a strong concave lens, he discovered that this intensified the strength of the instrument. Unfortunately, the lenses the opticians were making for glasses were unsatisfactory for what Galileo wanted to do, as they did not have powerful enough magnification. Galileo therefore decided that, to solve his problem, he would have to start the production of his own lenses. Eventually, he achieved a magnification about nine times more than you could see with the naked eye – an enormous improvement over everything else on the market.\n[24:15] Lecturer: Galileo then decided to approach the Senate of Venice to demonstrate the improved instrument. Many senators were eager to try the new telescope and climbed the highest bell towers in Venice to look through the glass at ships far out to sea. The government of Venice were impressed by his invention's obvious potential, and envisioned the advantages this eyeglass could have for the army.\n[24:40] Lecturer: His first major astronomical discovery with the telescope was that the moon's surface was mountainous and not a perfect sphere, as it had always been assumed. During the lunar cycle of 28 days, he found the shadows seemed to vary with the light. Galileo also figured out how to estimate the altitude of the mountains on the moon by looking for bright spots in the dark areas. Galileo looked for the spots when it was a half moon, and with geometry was able to calculate the elevation of the mountains. From these calculations, he was able to draw charts of the terrain and show the altitudes of the mountains.\n[25:33] Lecturer: In 1610, Galileo's next major discovery was regarding Jupiter. Using a telescope with a magnification 20 times the strength of his previous ones, he looked at Jupiter on successive nights. His main observation was a trio of what initially seemed to be small stars close to Jupiter. However, by the 15th night he realised that they were going around the planet in a daily orbit, and that in fact they were moons, not stars. And three days later, he saw a fourth one. This discovery showed how important a telescope was for astronomers: they would now be able to see celestial objects that could not previously be seen by the naked eye.\n[26:20] Lecturer: In the later 1600s, scientists started to make a stronger telescope, revealing the galaxy. Scientists realised that when they increased the length of the telescope, the intensity of magnification improved significantly. One such telescope was created in 1656 and magnified over 100 times. It had the incredible length of four metres. Telescopes continued to become longer over the next few years, and in fact the astronomer Hevelius built one in 1670 that was 43 metres long. However, these telescopes were soon to prove useless for accurate observation, because the slightest wind caused the instrument to shift. Finally, in 1675, astronomers abandoned the tube telescope and instead mounted the telescope on a building. Telescopes like this were called aerial telescopes. Scientists hoped that the stability of the mount would decrease the frustration when observing stars. Well, that's about it for today, and so I…\n[27:41] Narrator: That is the end of section four. You now have half a minute to check your answers.",
+    "groups": [
+     {
+      "instruction": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+      "wordLimit": "ONE WORD ONLY",
+      "context": "The development of the telescope",
+      "questions": [
+       {
+        "no": 31,
+        "type": "fill",
+        "text": "Roger Bacon (1200s): his invention assisted ___ with sight problems when they were reading",
+        "answer": [
+         "researchers"
+        ],
+        "explanation": "\"a benefit mostly for researchers\""
+       },
+       {
+        "no": 32,
+        "type": "fill",
+        "text": "Lipperhey – 1608: he put concave and convex lenses together to create the telescope. The small telescope was first used in the ___",
+        "answer": [
+         "theatre",
+         "theater"
+        ],
+        "explanation": "\"people took it to the theatre for a better view of the stage\""
+       },
+       {
+        "no": 33,
+        "type": "fill",
+        "text": "Galileo – 1609: he tried out different lenses to improve the telescope. He started ___ of the lenses he needed",
+        "answer": [
+         "production"
+        ],
+        "explanation": "\"start the production of his own lenses\""
+       },
+       {
+        "no": 34,
+        "type": "fill",
+        "text": "The Venetian government hoped to use this instrument for the ___",
+        "answer": [
+         "army"
+        ],
+        "explanation": "\"the advantages this eyeglass could have for the army\""
+       },
+       {
+        "no": 35,
+        "type": "fill",
+        "text": "The Moon: he discovered its surface was mountainous; he worked out the height of the mountains by identifying spots that were ___",
+        "answer": [
+         "bright"
+        ],
+        "explanation": "\"looking for bright spots in the dark areas\""
+       },
+       {
+        "no": 36,
+        "type": "fill",
+        "text": "he created ___ of the moon's surface",
+        "answer": [
+         "charts"
+        ],
+        "explanation": "\"draw charts of the terrain\""
+       },
+       {
+        "no": 37,
+        "type": "fill",
+        "text": "Jupiter: he realised that the bodies orbiting Jupiter were not ___ but moons",
+        "answer": [
+         "stars"
+        ],
+        "explanation": "\"they were moons, not stars\""
+       },
+       {
+        "no": 38,
+        "type": "fill",
+        "text": "Further development: scientists discovered that increasing the telescope's ___ improved its power",
+        "answer": [
+         "length"
+        ],
+        "explanation": "\"when they increased the length of the telescope\""
+       },
+       {
+        "no": 39,
+        "type": "fill",
+        "text": "1670: Hevelius built a telescope 43 metres long – poor results: the telescope would move with the ___",
+        "answer": [
+         "wind"
+        ],
+        "explanation": "\"the slightest wind caused the instrument to shift\""
+       },
+       {
+        "no": 40,
+        "type": "fill",
+        "text": "the problem was solved by attaching it to a ___",
+        "answer": [
+         "building"
+        ],
+        "explanation": "\"mounted the telescope on a building\""
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "reading": [
+  {
+   "passage": 1,
+   "title": "Answers Underground – burying greenhouse gases",
+   "topic": "Environment",
+   "level": "easy",
+   "passage_text": "Burying greenhouse gases to slow global warming\n\nA\nOne way to slow global warming is to take the greenhouse gases that cause it and bury them. That is the idea behind projects now under way to capture emissions from power plants and factories and force them underground or deep into the ocean. There, proponents argue, they could be trapped for thousands of years.\n\nB\nThis concept, known as carbon sequestration, is already being used by oil companies to improve the efficiency of oil wells, and now engineers have begun exploring ways to capture carbon dioxide emissions from power plants to reduce their impact on the environment. At a recent conference, delegates from fourteen industrialised and developing countries agreed to engage in cooperative research into capturing and storing carbon dioxide.\n\nC\nThe goal is to stabilise emissions of greenhouse gases that trap heat in the atmosphere. Over the past century, airborne carbon dioxide concentrations have risen by nearly a third, according to Scott Klara, sequestration manager at the US National Energy Technology Laboratory. Unless emissions are slashed by two thirds worldwide, the Intergovernmental Panel on Climate Change predicts that concentrations will rise to double the levels of the early 1700s, before the Industrial Revolution. These increased levels of carbon-based compounds in the atmosphere are believed to be the cause of rising temperatures and sea levels around the world. Ignoring the problem is therefore not an option.\n\nD\nLimiting emissions, however, is not an easy undertaking, since increased energy consumption is a key to economic growth. Two thirds of the world's power-generating capacity, expected to come into use by 2030, has not been constructed yet, according to the International Energy Agency. The developing world will be particularly important. China and India alone are expected to account for two thirds of the global increase in coal usage over the next fifteen years.\n\nE\nSolutions are being sought. Work is being undertaken with alternatives to fossil fuels such as wind and solar energy, but it will be a long time before these alternative sources play a major role in fulfilling the world's energy needs. Geophysicist Klaus Lackner points out that around 85% of the world's energy is derived from fossil fuels, the cheapest and most plentiful energy source available, and the developing world in particular is unlikely to give them up. That is why many scientists support sequestration.\n\nF\nHowever, several problems must be resolved before sequestration plays a key role in a low-carbon future. One is the cost of capturing carbon dioxide. A second is storing the gas safely once it's been captured. Today, it costs about US$50 to extract and store a tonne of carbon dioxide from a power plant, which raises the cost of producing electricity by 30–80%. Lackner argues that it is too expensive to adapt existing plants to capture carbon dioxide. Instead, he recommends that carbon-capturing capacity be built into future plants. Economic incentives are needed to encourage companies to identify low-cost carbon-sequestration solutions. A government-supported programme in the US has enabled some factories to partially capture carbon emissions, which they then sell for various uses, including carbonating soft drinks. However, there are no power plants ready for full carbon capture.\n\nG\nOnce the carbon has been captured it must be stored. Natural carbon sinks, such as forests and wetlands, can remove some carbon dioxide from the atmosphere, but not nearly enough. Carbon dioxide could be pumped to the bottom of the ocean, where the pressure would keep it pinned to the seabed in liquid form for decades, but that has serious long-term environmental risks. David Hawkins, from the Natural Resources Defense Council in Washington, warns that the carbon dioxide could radically alter the chemical balance in the ocean, with potentially harmful consequences for marine life. Others worry that the carbon dioxide could escape back into the atmosphere.\n\nH\nA few promising attempts at underground carbon sequestration are currently under way. In western Canada, an oil company is pumping liquefied carbon dioxide into oil wells to force more oil to the surface and boost recovery by 10–15%. The company gets the carbon dioxide via a pipeline from North Dakota in the US, where the gas is captured from a synthetic-fuel plant. In another instance, in the North Sea, a Norwegian energy firm is injecting carbon dioxide waste from its natural-gas operations into a saline aquifer 1,000 metres beneath the ocean floor.\n\nI\nClearly, storing large amounts of gas underground raises environmental fears. Environmentalists argue that more research is needed on potential storage sites, such as oil and gas reservoirs and coal seams unsuitable for mining, to ensure that they offer long-term solutions. The World Wide Fund for Nature Australia has argued that the primary risk of underground storage is that dangerously large volumes of carbon dioxide might escape and people become asphyxiated.\n\nJ\nLittle progress in slashing global greenhouse gases can be achieved without involving developing countries, but for now carbon sequestration is not their priority because of the increased costs this would add to energy production. Hawkins argues that, to encourage developing nations to use sequestration, developed nations will have to provide assistance. He suggests a multilateral initiative in which developed nations, perhaps by purchasing carbon credits from poorer countries, finance the difference between the cost of a regular coal-fired power plant and one that captures carbon emissions. That is, the rich – who will remain the world's biggest polluters for years to come – would buy the right to emit carbon from the poor, who would use the proceeds to build better plants.",
+   "groups": [
+    {
+     "instruction": "Look at the following issues and the list of people and organisations below. Match each issue with the correct person or organisation, A–F. NB You may use any letter more than once.",
+     "bank": [
+      "Scott Klara",
+      "Intergovernmental Panel on Climate Change",
+      "International Energy Agency",
+      "Klaus Lackner",
+      "David Hawkins",
+      "World Wide Fund for Nature Australia"
+     ],
+     "questions": [
+      {
+       "no": 1,
+       "type": "match",
+       "text": "the cost implications of fitting plants with the necessary equipment",
+       "answer": 3,
+       "explanation": "Lackner: \"too expensive to adapt existing plants\""
+      },
+      {
+       "no": 2,
+       "type": "match",
+       "text": "the effects sequestration could have on sea creatures",
+       "answer": 4,
+       "explanation": "Hawkins: \"harmful consequences for marine life\""
+      },
+      {
+       "no": 3,
+       "type": "match",
+       "text": "the reasons why products such as oil and gas continue to be popular energy sources",
+       "answer": 3,
+       "explanation": "Lackner: \"the cheapest and most plentiful energy source\""
+      },
+      {
+       "no": 4,
+       "type": "match",
+       "text": "the need for industrialised countries to give aid to less wealthy countries",
+       "answer": 4,
+       "explanation": "Hawkins: \"developed nations will have to provide assistance\""
+      },
+      {
+       "no": 5,
+       "type": "match",
+       "text": "the significant increase in carbon dioxide concentrations in the air over the last 100 years",
+       "answer": 0,
+       "explanation": "Klara: \"risen by nearly a third\""
+      },
+      {
+       "no": 6,
+       "type": "match",
+       "text": "the potential for sequestration to harm human life",
+       "answer": 5,
+       "explanation": "WWF: \"people become asphyxiated\""
+      }
+     ]
+    },
+    {
+     "instruction": "Reading Passage 1 has ten paragraphs, A–J. Which paragraph contains the following information?",
+     "bank": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G",
+      "H",
+      "I",
+      "J"
+     ],
+     "questions": [
+      {
+       "no": 7,
+       "type": "match",
+       "text": "examples of sequestration already in use in several parts of the world",
+       "answer": 7,
+       "explanation": "Canada, North Sea"
+      },
+      {
+       "no": 8,
+       "type": "match",
+       "text": "an example of putting carbon dioxide emissions to use in the food and beverage industry",
+       "answer": 5,
+       "explanation": "\"carbonating soft drinks\""
+      },
+      {
+       "no": 9,
+       "type": "match",
+       "text": "current examples of the environmental harm attributed to carbon dioxide in the air",
+       "answer": 2,
+       "explanation": "\"rising temperatures and sea levels\""
+      }
+     ]
+    },
+    {
+     "instruction": "Do the following statements agree with the information given in Reading Passage 1? Write TRUE, FALSE or NOT GIVEN.",
+     "questions": [
+      {
+       "no": 10,
+       "type": "tfng",
+       "text": "Both developing and developed nations have decided to investigate carbon dioxide sequestration.",
+       "answer": "TRUE",
+       "explanation": "\"delegates from fourteen industrialised and developing countries agreed to engage in cooperative research\""
+      },
+      {
+       "no": 11,
+       "type": "tfng",
+       "text": "A growing economy will use more power.",
+       "answer": "TRUE",
+       "explanation": "\"increased energy consumption is a key to economic growth\""
+      },
+      {
+       "no": 12,
+       "type": "tfng",
+       "text": "Capturing carbon dioxide has become financially attractive.",
+       "answer": "FALSE",
+       "explanation": "\"raises the cost of producing electricity by 30–80%\""
+      },
+      {
+       "no": 13,
+       "type": "tfng",
+       "text": "More forests need to be planted to improve the atmosphere.",
+       "answer": "NOT GIVEN",
+       "explanation": "Chỉ nói rừng hấp thụ không đủ."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage": 2,
+   "title": "Science and the Stradivarius",
+   "topic": "Arts",
+   "level": "medium",
+   "passage_text": "Uncovering the secret of quality\n\nA\nViolins made by long-dead Italian craftsmen from the Cremona region are beautiful works of art, coveted by collectors as well as players. Particularly outstanding violins have reputedly changed hands for over a million pounds. In contrast, fine modern instruments can be bought for under £100. Do such figures really reflect such large differences in quality? After more than a hundred years of vigorous debate, this question remains highly contentious, provoking strongly held but divergent views among musicians, violin makers and scientists alike.\n\nB\nEvery violin, whether a Stradivarius or the cheapest factory-made copy, has a distinctive 'voice' of its own. Just as any musician can immediately recognise the difference between Domingo and Pavarotti singing the same operatic aria, so a skilled violinist can distinguish between different qualities in the sound produced by individual Stradivari or Guarneri violins. Individual notes on a single instrument sound different each time they are played, which suggests that the perceived tone of a violin must be related to the overall design of the instrument, rather than the frequencies of particular resonances on it. But although various attempts have been made to analyse such global properties, it is extremely difficult to distinguish between a fine Stradivarius instrument and an indifferent modern copy on the basis of the measured response alone. The ear is a supreme detection device, and a system has yet to be developed which can match the brain's sophisticated ability to assess complex sounds.\n\nC\nSo how do skilled violin makers optimise the tone of an instrument during the construction process? They begin by selecting a wood of the highest possible quality for the front and back plates (or parts of the violin), which they test by tapping with a hammer and judging how well it 'rings'. The next important step is to skilfully carve the plates out of the solid wood, taking great care to get the right degree of arching and variations in thickness. Traditional makers optimise the thickness by testing the feel of the plates when they are flexed, and by the sounds produced when they are tapped at different positions with the knuckles.\n\nD\nHowever, in the last 50 years or so a group of violin makers has emerged who have tried to take a more overtly scientific approach to violin making. One common practice they have adopted is to replace the traditional flexing and tapping of plates by controlled measurements. During the carving process, the thinned plates are sprinkled with flakes of glitter and suspended horizontally above a loudspeaker. The glitter forms a pattern each time the loudspeaker excites a resonance. The aim is to interactively 'tune' these first few free plate resonances to specified patterns.\n\nE\nUnfortunately, there are very few examples of such measurements for really fine Italian instruments, because their owners are naturally reluctant to allow their violins to be taken apart for the sake of science. The few tests that have been performed suggest that the first Italian makers may have tuned the resonant modes of the individual plates – which they could identify as they tapped them – to exact musical intervals. This would be consistent with the prevailing Renaissance view of 'perfection', which was measured in terms of numbers and exact ratios. However, there is no historical data to support this case.\n\nF\nAnother factor that affects sound quality is the presence of moisture. To achieve the quality of 'vibrancy' in a violin requires high-quality wood with low internal damping. By measuring the pattern of growth-rings in the wood of a Stradivarius, we know that the Italian violin makers sometimes used planks of wood that had only been seasoned for five years. However, such wood is now 300 years old, and the intrinsic internal damping will almost certainly have decreased with time. The age of the wood may therefore automatically contribute to the improved quality of older instruments. This may also explain why the quality of a modern instrument appears to improve in its first few years.\n\nG\nAnother factor thought to account for sound quality is the nature of the varnish used to protect the instrument. One of the most popular theories for well over a century to account for the Stradivarius secret has been that the varnish had some sort of 'magic' composition. However, historical research has shown that it was very similar to the varnish used today. So apart from the possibility that the Italian varnish was contaminated with the wings of passing insects and debris from the workshop floor, there is no convincing evidence to support the idea of a secret formula.\n\nH\nOther researchers, meanwhile, have claimed that Stradivarius's secret was to soak the timber in water, to leach out supposedly harmful chemicals, before it was seasoned. Although this would be consistent with the idea that the masts and oars of recently sunken Venetian war galleys might have been used to make violins, other scientific and historical evidence to support this view is unconvincing.\n\nI\nIn conclusion, science has not provided any convincing evidence to set Cremonese instruments apart from the finest violins made by skilled craftsmen today. Indeed, some leading soloists do occasionally play on modern instruments. However, the foremost soloists – and, not surprisingly, violin dealers, who have a vested interest in maintaining the Cremonese legend of intrinsic superiority – remain utterly unconvinced.",
+   "groups": [
+    {
+     "instruction": "Reading Passage 2 has nine paragraphs, A–I. Choose the correct heading for paragraphs A and C–I from the list of headings below. Example: Paragraph B – xii.",
+     "bank": [
+      "i – An analysis of protective coatings",
+      "ii – Applying technology to violin production",
+      "iii – Location – a key factor",
+      "iv – A controversial range of prices",
+      "v – Techniques of mass production",
+      "vi – The advantages of older wood",
+      "vii – A re-evaluation of documentary evidence",
+      "viii – The mathematical basis of earlier design",
+      "ix – Manual woodworking techniques",
+      "x – Preferences of top musicians",
+      "xi – The use of saturated wood",
+      "xii – The challenge for scientists"
+     ],
+     "questions": [
+      {
+       "no": 14,
+       "type": "match",
+       "text": "Paragraph A",
+       "answer": 3,
+       "explanation": "\"over a million pounds … under £100 … highly contentious\""
+      },
+      {
+       "no": 15,
+       "type": "match",
+       "text": "Paragraph C",
+       "answer": 8,
+       "explanation": "tapping, carving, flexing"
+      },
+      {
+       "no": 16,
+       "type": "match",
+       "text": "Paragraph D",
+       "answer": 1,
+       "explanation": "\"a more overtly scientific approach\""
+      },
+      {
+       "no": 17,
+       "type": "match",
+       "text": "Paragraph E",
+       "answer": 7,
+       "explanation": "\"measured in terms of numbers and exact ratios\""
+      },
+      {
+       "no": 18,
+       "type": "match",
+       "text": "Paragraph F",
+       "answer": 5,
+       "explanation": "\"The age of the wood may therefore automatically contribute\""
+      },
+      {
+       "no": 19,
+       "type": "match",
+       "text": "Paragraph G",
+       "answer": 0,
+       "explanation": "varnish"
+      },
+      {
+       "no": 20,
+       "type": "match",
+       "text": "Paragraph H",
+       "answer": 10,
+       "explanation": "\"soak the timber in water\""
+      },
+      {
+       "no": 21,
+       "type": "match",
+       "text": "Paragraph I",
+       "answer": 9,
+       "explanation": "\"the foremost soloists … remain utterly unconvinced\""
+      }
+     ]
+    },
+    {
+     "instruction": "Do the following statements agree with the information given in Reading Passage 2? Write TRUE, FALSE or NOT GIVEN.",
+     "questions": [
+      {
+       "no": 22,
+       "type": "tfng",
+       "text": "The quality of any particular note played on the same violin varies.",
+       "answer": "TRUE",
+       "explanation": "\"Individual notes on a single instrument sound different each time they are played\""
+      },
+      {
+       "no": 23,
+       "type": "tfng",
+       "text": "Scientific instruments analyse complex sound more accurately than humans.",
+       "answer": "FALSE",
+       "explanation": "\"a system has yet to be developed which can match the brain's sophisticated ability\""
+      },
+      {
+       "no": 24,
+       "type": "tfng",
+       "text": "The quality of handmade violins varies according to the musical ability of the craftsman.",
+       "answer": "NOT GIVEN",
+       "explanation": "Không đề cập khả năng âm nhạc của thợ."
+      },
+      {
+       "no": 25,
+       "type": "tfng",
+       "text": "Modern violins seem to improve in their early years.",
+       "answer": "TRUE",
+       "explanation": "\"the quality of a modern instrument appears to improve in its first few years\""
+      },
+      {
+       "no": 26,
+       "type": "tfng",
+       "text": "Modern violins are gaining in popularity amongst the top violinists.",
+       "answer": "FALSE",
+       "explanation": "\"the foremost soloists … remain utterly unconvinced\""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage": 3,
+   "title": "When people are deaf to music",
+   "topic": "Psychology",
+   "level": "hard",
+   "passage_text": "Music has long been considered a uniquely human concept. In fact, most psychologists agree that music is a universal human instinct. Like any ability, however, there is great variation in people's musical competence. For every brilliant pianist in the world, there are several people we refer to as 'tone deaf'. It is not simply that people with tone deafness (or 'amusia') are unable to sing in tune; they are also unable to discriminate between tones or recognise familiar melodies. Such a 'disorder' can occur after some sort of brain damage, but recently research has been undertaken in an attempt to discover the cause of congenital amusia (when people are born with the condition), which is not associated with any brain damage, hearing problems, or lack of exposure to music.\n\nAccording to the research of Dr Isabelle Peretz of the University of Montreal, amusia is more complicated than the inability to distinguish pitches. An amusic (a person who has the condition of amusia) can distinguish between two pitches that are far apart, but cannot tell the difference between intervals smaller than a half step on the Western diatonic scale, while most people can easily distinguish differences smaller than that. When listening to melodies which have had a single note altered so that it is out of key with the rest of the melody, amusics do not notice a problem. As would be expected, amusics perform significantly worse at singing and tapping a rhythm along with a melody than do non-amusics.\n\nThe most fascinating aspect of amusia is how specific to music it is. Because of music's close ties to language, it might be expected that a musical impairment may be caused by a language impairment. Studies suggest, however, that language and music ability are independent of one another. People with brain damage in areas critical to language are often still able to sing, despite being unable to communicate through speech. Moreover, while amusics show deficiencies in their recognition of pitch differences in melodies, they show no such deficiencies in speech; speakers of tonal languages, such as Chinese, do not report having any difficulty discriminating between words that differ only in their intonation. The linguistic cues inherent in speech make discrimination of meaning much easier for amusics. Amusics are also successful most of the time at detecting the mood of a melody, can identify a speaker based on his or her voice, and can discriminate and identify environmental sounds.\n\nRecent work has been focused on locating the part of the brain that is responsible for amusia. The temporal lobes of the brain, the location of the primary auditory cortex, have been considered. It has long been believed that the temporal lobes, especially the right temporal lobe, are most active when engaged in musical activity, so any musical disability should logically stem from here as well. Because it has been shown that there is no hearing deficit in amusia, researchers moved on to the temporal neocortex, which is where more sophisticated processing of musical cues was thought to take place. New studies, however, have suggested that the deficits in amusics are located outside the auditory cortex. Brain scans of amusics do not show any reaction at all to differences smaller than a half step. When changes in tones are large, their brains overreact, showing twice as much activity on the right side of the brain as a normal brain hearing the same thing. These differences do not occur in the auditory cortex, indicating again that the deficits of amusia lie not in hearing impairment, but in higher processing of melodies.\n\nSo what does this all mean? Looking only at the research of Peretz in the field of neuropsychology of music, it would appear that amusia is some sort of disorder. As a student of neurobiology, however, I am sceptical. Certainly the studies by Peretz that have found significant differences between the brains of so-called amusics and normal brains are legitimate. The more important question now becomes one of normality. Every trait from skin colour to intelligence to mood exists on a continuum – there is a great deal of variation from one extreme to the other. Just because we recognise that basic musical ability is something that the vast majority of people have, this doesn't mean that the lack of it is abnormal.\n\nWhat makes an amusic worse off than a musical prodigy? Musical ability is culturally valued, and may have been a factor in survival at one point in human history, but it does not seem likely that it is being selected for on an evolutionary scale any longer. Darwin believed that music was adaptive as a way of finding a mate, but who needs to be able to sing to find a partner in an age when it is possible to express your emotions through a song on your iPod?\n\nWhile the idea of amusia is interesting, it seems to be just one end of the continuum of innate musical ability. Comparing this 'disorder' to learning disorders like a specific language impairment seems to be going too far. Before amusia can be declared a disability, further research must be done to determine whether lack of musical ability is actually detrimental in any way. If no disadvantages can be found of having amusia, then it is no more a disability than having poor fashion sense or bad handwriting.",
+   "groups": [
+    {
+     "instruction": "Choose the correct letter, A, B, C or D.",
+     "questions": [
+      {
+       "no": 27,
+       "type": "mcq",
+       "text": "What does the writer tell us about people with tone deafness (amusia) in the first paragraph?",
+       "options": [
+        "They usually have hearing problems.",
+        "Some can play a musical instrument very well.",
+        "Some may be able to sing well-known melodies.",
+        "They have several inabilities in regard to music."
+       ],
+       "answer": 3,
+       "explanation": "\"unable to sing in tune … unable to discriminate between tones or recognise familiar melodies\""
+      },
+      {
+       "no": 28,
+       "type": "mcq",
+       "text": "What is the writer doing in the second paragraph?",
+       "options": [
+        "outlining some of the factors that cause amusia",
+        "summarising some findings about people with amusia",
+        "suggesting that people with amusia are disadvantaged",
+        "comparing the singing ability of amusics with their sense of rhythm"
+       ],
+       "answer": 1,
+       "explanation": "\"According to the research of Dr Isabelle Peretz…\""
+      },
+      {
+       "no": 29,
+       "type": "mcq",
+       "text": "What does the writer say about the relationship between language ability and musical ability?",
+       "options": [
+        "People who are unable to speak can sometimes sing.",
+        "People with amusia usually have language problems too.",
+        "Speakers of tonal languages like Chinese rarely have amusia.",
+        "People with amusia have difficulty recognising people by their voices."
+       ],
+       "answer": 0,
+       "explanation": "\"often still able to sing, despite being unable to communicate through speech\""
+      },
+      {
+       "no": 30,
+       "type": "mcq",
+       "text": "In the third paragraph, the writer notes that most amusics are able to",
+       "options": [
+        "learn how to sing in tune.",
+        "identify a song by its tune.",
+        "distinguish a sad tune from a happy tune.",
+        "recognise when a singer is not singing in tune."
+       ],
+       "answer": 2,
+       "explanation": "\"successful most of the time at detecting the mood of a melody\""
+      },
+      {
+       "no": 31,
+       "type": "mcq",
+       "text": "What is the writer doing in the fourth paragraph?",
+       "options": [
+        "claiming that amusics have problems in the auditory cortex",
+        "outlining progress in understanding the brains of amusics",
+        "proving that amusia is located in the temporal lobes",
+        "explaining why studies of hearing are difficult"
+       ],
+       "answer": 1,
+       "explanation": "\"Recent work has been focused on locating the part of the brain…\""
+      }
+     ]
+    },
+    {
+     "instruction": "Do the following statements agree with the views of the writer in Reading Passage 3? Write YES, NO or NOT GIVEN.",
+     "questions": [
+      {
+       "no": 32,
+       "type": "ynng",
+       "text": "Peretz's research suggesting that amusia is a disorder is convincing.",
+       "answer": "NO",
+       "explanation": "\"As a student of neurobiology, however, I am sceptical\""
+      },
+      {
+       "no": 33,
+       "type": "ynng",
+       "text": "People with musical ability are happier than those without this ability.",
+       "answer": "NOT GIVEN",
+       "explanation": "Không đề cập hạnh phúc."
+      },
+      {
+       "no": 34,
+       "type": "ynng",
+       "text": "It is inappropriate to consider amusia as a real disorder.",
+       "answer": "YES",
+       "explanation": "\"Comparing this 'disorder' to learning disorders … seems to be going too far\""
+      },
+      {
+       "no": 35,
+       "type": "ynng",
+       "text": "People with amusia often have bad handwriting.",
+       "answer": "NOT GIVEN",
+       "explanation": "Chỉ là phép so sánh."
+      }
+     ]
+    },
+    {
+     "instruction": "Complete each sentence with the correct ending, A–H, below.",
+     "bank": [
+      "an inability to hear when spoken language rises and falls.",
+      "considered to be desirable.",
+      "an inability to follow the beat of music.",
+      "not a problem.",
+      "not yet well understood.",
+      "a result of injury to the mother.",
+      "more marked than with other people.",
+      "associated with intelligence."
+     ],
+     "questions": [
+      {
+       "no": 36,
+       "type": "match",
+       "text": "The reason why some people are born with amusia is",
+       "answer": 4,
+       "explanation": "\"research has been undertaken in an attempt to discover the cause of congenital amusia\""
+      },
+      {
+       "no": 37,
+       "type": "match",
+       "text": "One of the difficulties amusics experience is",
+       "answer": 2,
+       "explanation": "\"perform significantly worse at … tapping a rhythm along with a melody\""
+      },
+      {
+       "no": 38,
+       "type": "match",
+       "text": "For amusics, discrimination of meaning in speech is",
+       "answer": 3,
+       "explanation": "\"make discrimination of meaning much easier for amusics\""
+      },
+      {
+       "no": 39,
+       "type": "match",
+       "text": "Certain reactions in the brain of an amusic are",
+       "answer": 6,
+       "explanation": "\"their brains overreact, showing twice as much activity\""
+      },
+      {
+       "no": 40,
+       "type": "match",
+       "text": "In most cultures, musical ability is",
+       "answer": 1,
+       "explanation": "\"Musical ability is culturally valued\""
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "writing": [
+  {
+   "task": 1,
+   "type": "table",
+   "title": "Poverty in three US states",
+   "topic": "Society",
+   "prompt": "The table below gives information about poverty in three states in the USA.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
+   "chart": {
+    "kind": "table",
+    "unit": "",
+    "labels": [
+     "Population below poverty line (%)",
+     "Of the poor: aged under 18 (%)",
+     "Of the poor: aged over 60 (%)",
+     "Average income per person ($)"
+    ],
+    "series": [
+     {
+      "name": "California",
+      "values": [
+       16,
+       17,
+       13,
+       23000
+      ]
+     },
+     {
+      "name": "Utah",
+      "values": [
+       9,
+       28,
+       8,
+       17000
+      ]
+     },
+     {
+      "name": "Florida",
+      "values": [
+       12,
+       16,
+       23,
+       22000
+      ]
+     }
+    ]
+   },
+   "sample": "The table details age demographics as they relate to poverty in three states in the United States of America.\n\nOverall, it is readily apparent that there are more young individuals in poverty in Utah, while those over 60 in poverty are more common in California and especially Florida. Average incomes are generally highest in California and Florida, and the largest proportion of total residents in poverty is in California, followed by Florida, and lastly Utah.\n\nIn California, 16% of all residents are under the official poverty line, with 17% of all poor residents under 18 years old and 13% over 60. These figures are broadly similar to Florida, where 12% of the population is in poverty (16% under the age of 18 and a notable 23% over 60). In terms of average income, California was recorded at $23,000 and Florida slightly lower at $22,000.\n\nThe figures in Utah are markedly different, as only 9% of residents are considered poor. Of that total, 28% are under the age of 18 but just 8% are elderly individuals. Additionally, average earnings are lower than in the other two states, at just $17,000.",
+   "sampleNote": "Bài mẫu trong tài liệu gốc; biểu đồ dựng lại từ số liệu."
+  },
+  {
+   "task": 2,
+   "type": "opinion",
+   "title": "Enjoyable activities vs reading for children",
+   "topic": "Education",
+   "prompt": "Write about the following topic:\n\nDoing an enjoyable activity with a child is better for their overall skills development and creativity than reading.\n\nTo what extent do you agree or disagree?\n\nGive reasons for your answer and include any relevant examples from your own knowledge or experience.\n\nWrite at least 250 words.",
+   "sample": "Some today have argued that in order to best facilitate a child's skills and imagination, they should participate in engaging activities instead of spending time reading. In my opinion, though reading is beneficial to imagination to an extent, it is better to take part in a more active pastime.\n\nThose who argue in favour of reading maintain that it stimulates creativity. For generations, parents have read stories to children not only to impart moral lessons but also to inspire. One of the most famous children's authors, Dr Seuss, is well known for his imaginative drawings, creative rhymes and socially conscious plotlines. Children who read his stories are then likely to imitate this example in their own writing and artwork. As kids grow older, they can discover other creative writers and use reading as a way to imagine diverse worlds and characters. By doing so, they will implicitly have more examples to creatively rely on in their studies and future work.\n\nHowever, a fun activity requires greater levels of engagement. This is broadly true for a number of pastimes, ranging from playing sports and making art to socialising and going on holiday. For instance, if a parent decides to teach painting, then their children will have to learn how to employ different kinds of paints and papers, choose subjects to portray, and learn the techniques to achieve any given effect. They will also have to develop resilience and dedication, as their first paintings are unlikely to be successes. If this activity is done in a group, then they can develop social skills at the same time. Depending on the activity, a child will have to push themselves outside their comfort zone far beyond what is required when passively reading a book alone.\n\nIn conclusion, despite the legitimate benefits of reading for imagination, I would argue that a more active undertaking has more concrete and memorable advantages. Parents should encourage a balance but prioritise active engagement over passivity.",
+   "sampleNote": "Bài mẫu band 8 trong tài liệu gốc, đã sửa lỗi nhỏ."
+  }
+ ]
+}

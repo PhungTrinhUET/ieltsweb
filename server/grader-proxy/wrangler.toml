@@ -1,0 +1,10 @@
+name = "ielts-grader"
+main = "worker.js"
+compatibility_date = "2026-10-01"
+
+[vars]
+# Chỉ cho phép model chấm bài của app.
+ALLOWED_MODELS = "claude-opus-5-5,claude-sonnet-5-5,claude-haiku-5-5"
+# Origin được phép gọi: app Android là https://localhost; thêm domain web nếu deploy bản web.
+# "*" = mọi nơi (vẫn được bảo vệ bởi ACCESS_CODE).
+ALLOWED_ORIGINS = "*"

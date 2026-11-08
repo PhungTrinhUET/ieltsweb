@@ -1,0 +1,173 @@
+// Speaking: Part 1 / 2 / 3 – máy đọc câu hỏi, ghi âm + nhận dạng giọng nói, nghe lại, so với mẫu, AI chấm theo band descriptors.
+import { useEffect, useRef, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { ArrowLeft, Bot, BookmarkPlus, Check, Loader2, Sparkles, Timer as TimerIcon, Volume2 } from 'lucide-react';
+import type { SpeakingMaterial } from '../types';
+import { addAttempt, findCard, saveCard, useDb } from '../db';
+import { aiReady, getAiConfig, touchStreak } from '../store';
+import Recorder, { speechRecognitionAvailable, type Recording } from '../components/Recorder';
+import { speak, stopSpeak } from '../lib/tts';
+import { Collapse } from '../components/ui';
+import { AiGate, BandPill, CriteriaBars } from '../components/misc';
+import type { SpeakingGrade, SpeakingTurn } from '../ai/speaking';
+import { newCard } from '../lib/srs';
+import { fmtTime } from '../lib/text';
+import { SKILL_META } from './SkillList';
+
+type Part = 1 | 2 | 3;
+interface Turn { question: string; rec?: Recording; transcript: string; sample?: string }
+
+export default function Speaking() {
+  const { id } = useParams();
+  const db = useDb();
+  const nav = useNavigate();
+  const m = db.materials[id!] as SpeakingMaterial | undefined;
+  const [part, setPart] = useState<Part>(m?.part1?.length ? 1 : m?.part2 ? 2 : 3);
+  const [turns, setTurns] = useState<Record<Part, Turn[]>>({ 1: [], 2: [], 3: [] });
+  const [grade, setGrade] = useState<Record<Part, SpeakingGrade | null>>({ 1: null, 2: null, 3: null });
+  const [busy, setBusy] = useState(false);
+  const [err, setErr] = useState('');
+  const [prep, setPrep] = useState<number | null>(null);
+  const [notes, setNotes] = useState('');
+  const [pron, setPron] = useState(0);
+  const prepTimer = useRef(0);
+
+  useEffect(() => {
+    if (!m) return;
+    const p1 = (m.part1 ?? []).flatMap((t) => t.questions.map((q, i) => ({ question: q, transcript: '', sample: t.samples?.[i] })));
+    const p2 = m.part2 ? [{ question: `${m.part2.cue} You should say: ${m.part2.points.join('; ')}.`, transcript: '', sample: m.part2.sample }, ...(m.part2.followUp ?? []).map((q) => ({ question: q, transcript: '' }))] : [];
+    const p3 = (m.part3?.questions ?? []).map((q, i) => ({ question: q, transcript: '', sample: m.part3?.samples?.[i] }));
+    setTurns({ 1: p1, 2: p2, 3: p3 });
+    setGrade({ 1: null, 2: null, 3: null });
+    touchStreak();
+    return () => { stopSpeak(); window.clearInterval(prepTimer.current); };
+  }, [id]); // eslint-disable-line
+
+  if (!m) return <div className="page"><p className="empty">Không tìm thấy bài.</p></div>;
+  const list = turns[part];
+  const update = (i: number, patch: Partial<Turn>) => setTurns((t) => ({ ...t, [part]: t[part].map((x, k) => (k === i ? { ...x, ...patch } : x)) }));
+  const startPrep = () => {
+    setPrep(60);
+    window.clearInterval(prepTimer.current);
+    prepTimer.current = window.setInterval(() => setPrep((p) => { if (p === null || p <= 1) { window.clearInterval(prepTimer.current); return 0; } return p - 1; }), 1000);
+  };
+  const doGrade = async () => {
+    const answered: SpeakingTurn[] = list.filter((t) => t.transcript.trim()).map((t) => ({ question: t.question, answer: t.transcript, seconds: t.rec?.seconds }));
+    if (!answered.length) return setErr('Chưa có câu trả lời nào (ghi âm hoặc gõ transcript).');
+    setBusy(true); setErr('');
+    try {
+      const { gradeSpeaking } = await import('../ai/speaking');
+      const g = await gradeSpeaking(part, m.topic ?? m.title, answered, getAiConfig(), pron || undefined);
+      setGrade((x) => ({ ...x, [part]: g }));
+      await addAttempt({ materialId: m.id, skill: 'speaking', title: `${m.title} – Part ${part}`, mode: 'ai', band: g.overall, detail: { part, turns: answered, grade: g } });
+    } catch (e) { setErr(e instanceof Error ? e.message : String(e)); } finally { setBusy(false); }
+  };
+  const g = grade[part];
+  const parts: Part[] = ([1, 2, 3] as Part[]).filter((p) => (p === 1 ? m.part1?.length : p === 2 ? m.part2 : m.part3));
+
+  return (
+    <div className="page page--practice" style={{ ['--skill' as string]: SKILL_META.speaking.color }}>
+      <div className="topbar topbar--sticky">
+        <button className="icon-btn" onClick={() => nav('/speaking')} aria-label="Quay lại"><ArrowLeft size={20} /></button>
+        <div className="topbar__title"><small>Speaking</small><strong>{m.title}</strong></div>
+      </div>
+      <div className="tabs">
+        {parts.map((p) => <button key={p} className={`tabs__btn${part === p ? ' is-on' : ''}`} onClick={() => setPart(p)}>Part {p}{grade[p] && ` · ${grade[p]!.overall}`}</button>)}
+        {m.vocab?.length ? <button className={`tabs__btn${part === 0 as unknown as Part ? ' is-on' : ''}`} onClick={() => setPart(0 as Part)}>Từ vựng</button> : null}
+      </div>
+
+      {(part as number) === 0 && (
+        <ul className="vlist card">{m.vocab!.map((v, i) => { const saved = !!findCard(v[0]); return (
+          <li key={i} className="vlist__row"><div className="vlist__body"><strong className="vocab__w">{v[0]}</strong> <em className="vocab__pos">{v[1]}</em><div className="vocab__vi">{v[2]}</div>{v[3] && <div className="vocab__ex">{v[3]}</div>}</div>
+            <button className="icon-btn" disabled={saved} onClick={() => saveCard(newCard({ id: `v-${v[0]}-${Date.now().toString(36)}`, word: v[0], pos: v[1], meaning: v[2], example: v[3], from: m.id }))}>{saved ? <Check size={16} /> : <BookmarkPlus size={16} />}</button></li>); })}</ul>
+      )}
+
+      {part === 2 && m.part2 && (
+        <div className="cue card">
+          <div className="cue__head"><span className="badge">Part 2 · Cue card</span>
+            <div className="row">
+              {prep === null ? <button className="btn btn--ghost btn--sm" onClick={startPrep}><TimerIcon size={15} /> Chuẩn bị 1 phút</button> : <span className={`timer${prep === 0 ? ' is-out' : ' is-run'}`}>{prep === 0 ? 'Hết giờ chuẩn bị – nói 2 phút' : fmtTime(prep)}</span>}
+            </div>
+          </div>
+          <h2 className="cue__title">{m.part2.cue}</h2>
+          <p>You should say:</p>
+          <ul className="cue__points">{m.part2.points.map((p, i) => <li key={i}>{p}</li>)}</ul>
+          <textarea className="textarea" rows={3} placeholder="Ghi chú nhanh trong 1 phút chuẩn bị (từ khoá, ý chính)…" value={notes} onChange={(e) => setNotes(e.target.value)} />
+        </div>
+      )}
+      {part === 1 && <p className="muted small">Part 1 (4–5 phút): trả lời 2–4 câu mỗi câu hỏi, mở rộng bằng lý do / ví dụ. Bấm 🔊 để nghe giám khảo đọc câu hỏi, rồi ghi âm.</p>}
+      {part === 3 && <p className="muted small">Part 3 (4–5 phút): câu hỏi trừu tượng, cần quan điểm + lý do + ví dụ + mặt khác. Dùng cấu trúc: "It depends on… / On the one hand… / The main reason is…".</p>}
+      {!speechRecognitionAvailable() && <div className="banner"><Bot size={18} /><span>Trình duyệt này không có nhận dạng giọng nói (hãy dùng Chrome/Edge). Bạn vẫn ghi âm được; để AI chấm, gõ lại transcript vào ô bên dưới mỗi câu.</span></div>}
+
+      <div className="turns">
+        {list.map((t, i) => (
+          <TurnView key={i} t={t} i={i} part={part} onRec={(r) => update(i, { rec: r, transcript: r.transcript || t.transcript })} onTranscript={(v) => update(i, { transcript: v })} fb={g?.perQuestion.find((q) => q.question === t.question) ?? (g ? g.perQuestion[list.filter((x) => x.transcript.trim()).indexOf(t)] : undefined)} />
+        ))}
+      </div>
+
+      <section className="card pad ai">
+        <div className="ai__head"><Sparkles size={18} /> <strong>AI chấm Part {part}</strong></div>
+        <AiGate feature="Chấm Speaking">
+          <div className="row wrap">
+            <label className="small muted">Tự đánh giá phát âm (tuỳ chọn):
+              <select className="select" value={pron} onChange={(e) => setPron(+e.target.value)}><option value={0}>Không chấm</option>{[5, 5.5, 6, 6.5, 7, 7.5, 8].map((b) => <option key={b} value={b}>{b}</option>)}</select>
+            </label>
+            <span style={{ flex: 1 }} />
+            <button className="btn btn--primary" onClick={doGrade} disabled={busy}>{busy ? <><Loader2 size={16} className="spin" /> Đang chấm…</> : <><Bot size={16} /> Chấm {list.filter((t) => t.transcript.trim()).length} câu đã trả lời</>}</button>
+          </div>
+          {err && <p className="no-text small">{err}</p>}
+          {g && (
+            <div className="ai__result">
+              <div className="ai__top"><BandPill band={g.overall} label="Band" /><p>{g.summary}</p></div>
+              <CriteriaBars items={[
+                { label: 'Fluency & Coherence', band: g.scores.fluency, reason: g.reasons.fluency },
+                { label: 'Lexical Resource', band: g.scores.lexical, reason: g.reasons.lexical },
+                { label: 'Grammatical Range & Accuracy', band: g.scores.grammar, reason: g.reasons.grammar },
+                { label: 'Pronunciation', band: g.scores.pronunciation, reason: g.scores.pronunciation ? 'Theo tự đánh giá của bạn' : 'Không chấm được từ transcript – hãy nghe lại bản ghi và so với bài mẫu.' },
+              ]} />
+              <div className="ai__lists">
+                <div><h4>Cần cải thiện</h4><ul>{g.improvements.map((x, i) => <li key={i}>{x}</li>)}</ul></div>
+                <div><h4>Cụm từ nên học</h4><ul className="vlist">{g.vocabulary.map((v, i) => { const saved = !!findCard(v.phrase); return <li key={i} className="vlist__row"><div className="vlist__body"><strong>{v.phrase}</strong> – {v.meaning}<div className="vocab__ex">{v.example}</div></div><button className="icon-btn" disabled={saved} onClick={() => saveCard(newCard({ id: `v-${v.phrase}-${Date.now().toString(36)}`, word: v.phrase, meaning: v.meaning, example: v.example, from: m.id }))}>{saved ? <Check size={16} /> : <BookmarkPlus size={16} />}</button></li>; })}</ul></div>
+              </div>
+            </div>
+          )}
+        </AiGate>
+      </section>
+    </div>
+  );
+}
+
+function TurnView({ t, i, part, onRec, onTranscript, fb }: { t: Turn; i: number; part: Part; onRec: (r: Recording) => void; onTranscript: (v: string) => void; fb?: SpeakingGrade['perQuestion'][number] }) {
+  const [edit, setEdit] = useState(false);
+  return (
+    <div className="turn card">
+      <div className="turn__q">
+        <span className="turn__no">{part === 2 && i === 0 ? '2' : `${part}.${i + 1}`}</span>
+        <p>{part === 2 && i === 0 ? 'Nói 1–2 phút theo cue card' : t.question}</p>
+        {!(part === 2 && i === 0) && <button className="icon-btn" onClick={() => speak(t.question, { voice: 'en-GB', rate: 0.95 })} aria-label="Nghe câu hỏi"><Volume2 size={18} /></button>}
+      </div>
+      <Recorder onDone={onRec} maxSeconds={part === 2 && i === 0 ? 120 : 60} label={part === 2 && i === 0 ? 'Ghi âm bài nói 2 phút' : 'Ghi âm câu trả lời (tối đa 1 phút)'} />
+      {t.rec && (
+        <div className="turn__rec">
+          <audio src={t.rec.url} controls className="audio-native" />
+          <span className="small muted">{t.rec.seconds}s{t.transcript && ` · ${t.transcript.split(/\s+/).length} từ`}</span>
+        </div>
+      )}
+      {(t.rec || edit || t.transcript) && (
+        <div className="turn__tr">
+          <div className="row-between"><span className="small muted">Transcript (sửa được nếu máy nghe sai):</span>{!edit && <button className="btn btn--text btn--sm" onClick={() => setEdit(true)}>Sửa</button>}</div>
+          {edit ? <textarea className="textarea" rows={3} value={t.transcript} onChange={(e) => onTranscript(e.target.value)} onBlur={() => setEdit(false)} autoFocus /> : <p className="turn__text" onClick={() => setEdit(true)}>{t.transcript || <em className="muted">Chưa có transcript – bấm để gõ</em>}</p>}
+        </div>
+      )}
+      {!t.rec && !t.transcript && <button className="btn btn--text btn--sm" onClick={() => setEdit(true)}>Hoặc gõ câu trả lời</button>}
+      {fb && (
+        <div className="turn__fb">
+          <p><strong>Nhận xét:</strong> {fb.comment}</p>
+          {fb.corrections.length > 0 && <ul className="fb-fixes">{fb.corrections.map((c, k) => <li key={k}><span className="fb-from">{c.original}</span> → <span className="fb-to">{c.corrected}</span> <span className="fb-why">{c.explanation}</span></li>)}</ul>}
+          <Collapse title="Câu trả lời mẫu AI (band 7–8, giữ ý của bạn)" tone="tip"><p className="sample">{fb.improved}</p></Collapse>
+        </div>
+      )}
+      {t.sample && <Collapse title="Bài mẫu tham khảo" tone="info"><p className="sample">{t.sample}</p></Collapse>}
+    </div>
+  );
+}
