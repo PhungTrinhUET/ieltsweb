@@ -61,7 +61,9 @@ Claude dùng structured output của Anthropic SDK. Các nhà cung cấp khác �
 ### Tài liệu (nạp hàng loạt)
 - Kéo thả nhiều file: **JSON** (một hoặc nhiều bài, mọi kỹ năng), **Markdown** bài Reading viết tay nhanh, **audio + transcript/SRT cùng tên** → bài Listening, ảnh biểu đồ cho Writing. Định dạng: [public/CONTENT.md](public/CONTENT.md) (có nút tải JSON mẫu trong app).
 - **AI soạn đề**: dán bài báo → đề Reading đủ dạng câu hỏi + dịch + từ vựng; dán transcript → đề Listening; chủ đề → kịch bản Listening theo section, bộ Speaking 3 part có mẫu, đề Writing có bài mẫu band 8 / dữ liệu biểu đồ.
+- Danh sách tài liệu hiện 60 bài mỗi lần, có ô tìm theo tên hoặc mã bài (vd. `vol5-t6`).
 - Xuất/nhập, sao lưu toàn bộ (Cài đặt).
+- Bộ đề có sẵn được cache trong IndexedDB: mở lại app chỉ hỏi `data/index.json`, file nào đổi `hash` mới tải lại; mất mạng vẫn dùng được bản đã cache.
 
 ### Khác
 - Lịch sử & xu hướng band từng kỹ năng, overall; streak; cẩm nang chiến lược từng dạng câu hỏi, khung bài, bảng quy đổi band; sáng/tối; responsive (sidebar desktop, tab bar mobile).
@@ -139,7 +141,7 @@ Lưu ý về chất lượng dữ liệu:
 
 ```
 src/types.ts            schema Material / Question
-src/db.ts               IndexedDB + state (materials, attempts, vocab, notes, drafts, blobs)
+src/db.ts               IndexedDB + state (materials, attempts, vocab, notes, drafts, blobs, bundle = cache bộ đề theo hash trong index.json)
 src/content/samples.ts  nội dung mẫu
 src/lib/                band.ts (quy đổi), text.ts (tách câu, diff từ, so đáp án), tts.ts, srs.ts, importers.ts (JSON/MD/SRT)
 src/ai/                 client.ts (Claude SDK + backend OpenAI-compatible), models.ts (nhà cung cấp, model, giá), writing.ts, speaking.ts, assist.ts (dịch, tra từ, sinh đề)

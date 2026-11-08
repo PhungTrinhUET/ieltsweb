@@ -16,14 +16,15 @@ Web app luyện IELTS 4 kỹ năng: Reading, Listening, Speaking, Writing.
 | `npm run audio -- "<thư mục>"` | chép/nén audio đề gốc vào `public/audio/vol<N>/test<M>/s1..s4.mp3`. ffmpeg bắt buộc với `.wma`; whisper tạo `.srt` (tuỳ chọn) |
 | `npx tsc -b` | kiểm tra kiểu |
 | `npm run build` | data + tsc + vite build → `dist/` |
+| `npm run smoke [lọc]` | sau `npm run build`: mở `dist/` bằng Chrome headless (desktop + iPhone), đi qua mọi trang và các kiểm tra theo mục audit (A1–C16). `BASE_URL=… npm run smoke` để kiểm tra bản đang chạy |
 | `npm run deploy` | build rồi đẩy `dist/` lên nhánh `gh-pages` → https://phungtrinhuet.github.io/ieltsweb/ (Actions bị khoá do billing nên deploy từ máy) |
 
-Dự án chưa có test tự động. Sau khi sửa, chạy `npm run data` (không được còn `⚠`) và `npx tsc -b`, rồi mở vài trang để xem, ví dụ `#/listening/vol5-t6-l2`, `#/reading/vol5-t6-r2`.
+Chưa có unit test; có `scripts/smoke.mjs` (trình duyệt thật). Sau khi sửa, chạy `npm run data` (không được còn `⚠`), `npx tsc -b`, `npm run build && npm run smoke`, rồi mở vài trang để xem, ví dụ `#/listening/vol5-t6-l2`, `#/reading/vol5-t6-r2`.
 
 ## Bản đồ mã
 
 - `src/types.ts`: schema `Material` / `Question`. Đây là nguồn chuẩn cho các dạng câu hỏi.
-- `src/db.ts`: IndexedDB. Khi app mở, file này nạp `public/data/index.json`.
+- `src/db.ts`: IndexedDB (DB v2). Khi app mở, file này hỏi `public/data/index.json` rồi chỉ tải file có `hash` khác bản đã cache trong store `bundle`.
 - `src/components/Questions.tsx`: hiển thị và chấm mọi dạng câu hỏi.
 - `src/pages/`: các màn hình. Gồm SkillList, ReadingTest/ReadingStudy, ListeningTest, Dictation, GapFill, MockTest, Speaking, Writing, Vocab, Library, History, Guide, Settings.
 - `src/ai/`: gọi Claude (structured output) để chấm Writing/Speaking, dịch, tra từ, sinh đề.
@@ -59,6 +60,7 @@ Dự án chưa có test tự động. Sau khi sửa, chạy `npm run data` (khô
 
 - **Đã xong 64 file / 707 bài luyện**: VOL 1–4 đủ 40 đề; VOL 5 đủ 10 đề + 19 đề Writing lẻ; VOL 6 đủ 6 đề (chưa có Writing); 240 bộ Speaking (forecast 2023 Q1, Q2, "gộp đề ver 1", 2024 Q1: 87, Sep 2024–Apr 2025: 74, 2025 Q2: 35).
 - **TẠM DỪNG 08/11/2026 theo yêu cầu người dùng**; chờ người dùng bảo chạy tiếp (dự kiến tuần sau). Khi tiếp tục: làm VOL 6 Writing, rồi VOL 7 từ Test 1.
+- Đợt audit 08/11/2026 (nhánh `fix/audit-1108`, đã merge vào `master`): A1–A7, B8–B12, C13–C16 xong; smoke 100/100. Audio (A4) tải từ Drive bằng `../ieltsweb-src/tools/dlaudio.py` (gdown), Drive hay chặn tạm ("Cannot retrieve the public link") → chạy lại sau, rồi `npm run audio`.
 - VOL 4 có vài chỗ thiếu: Test 5 không có audio; Test 7 (Q15–20) và Test 9 (Section 1) thiếu transcript; Writing trùng VOL 3 nên bỏ qua.
 
 ## Tiến độ phiên chuyển đổi (cập nhật liên tục)
