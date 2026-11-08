@@ -5,8 +5,9 @@ import type { Attempt, Material, Note, Skill, VocabCard } from './types';
 import { SAMPLE_MATERIALS } from './content/samples';
 
 const DB = 'ielts-practice';
-const VERSION = 1;
-const STORES = ['materials', 'blobs', 'attempts', 'vocab', 'notes', 'drafts'] as const;
+const VERSION = 2;
+// `bundle`: cache các file public/data/*.json theo hash trong index.json (v2).
+const STORES = ['materials', 'blobs', 'attempts', 'vocab', 'notes', 'drafts', 'bundle'] as const;
 type StoreName = (typeof STORES)[number];
 
 let dbp: Promise<IDBDatabase> | null = null;
@@ -83,14 +84,36 @@ export async function init() {
   }
 }
 
-/** Bộ đề đóng gói sẵn trong public/data (sinh bởi scripts/build-data.mjs). */
+/**
+ * Bộ đề đóng gói sẵn trong public/data (sinh bởi scripts/build-data.mjs).
+ * index.json luôn được hỏi lại; từng file chỉ tải khi `hash` khác bản đã cache trong IndexedDB
+ * (index cũ không có hash thì so `generatedAt`). Mất mạng → dùng cache.
+ */
+type BundleEntry = { hash: string; items: Material[] };
 async function loadBundled(): Promise<Material[]> {
+  let cached: Record<string, BundleEntry> = {};
+  try { cached = await all<BundleEntry>('bundle'); } catch { /* IndexedDB lỗi → tải hết */ }
   try {
-    const idx = await fetch('./data/index.json').then((r) => (r.ok ? r.json() : null));
-    if (!idx?.files) return [];
-    const lists = await Promise.all((idx.files as { file: string }[]).map((f) => fetch(`./data/${f.file}`).then((r) => (r.ok ? r.json() : [])).catch(() => [])));
+    const idx = await fetch('./data/index.json', { cache: 'no-cache' }).then((r) => (r.ok ? r.json() : null));
+    if (!idx?.files) return Object.values(cached).flatMap((e) => e.items);
+    const files = idx.files as { file: string; hash?: string }[];
+    const lists = await Promise.all(files.map(async (f) => {
+      const key = f.hash ?? String(idx.generatedAt);
+      const hit = cached[f.file];
+      if (hit && hit.hash === key) return hit.items;
+      try {
+        const r = await fetch(`./data/${f.file}`);
+        if (!r.ok) return hit?.items ?? [];
+        const items = await r.json() as Material[];
+        put('bundle', f.file, { hash: key, items }).catch(() => {});
+        return items;
+      } catch { return hit?.items ?? []; }
+    }));
+    // File đã bỏ khỏi index → xoá cache.
+    const keep = new Set(files.map((f) => f.file));
+    for (const k of Object.keys(cached)) if (!keep.has(k)) del('bundle', k).catch(() => {});
     return lists.flat();
-  } catch { return []; }
+  } catch { return Object.values(cached).flatMap((e) => e.items); }
 }
 export const bundledCount = async () => (await loadBundled()).length;
 

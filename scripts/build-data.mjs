@@ -3,6 +3,7 @@
 // Audio: đặt mp3 vào public/<audioDir>/s1.mp3 … s4.mp3 (xem scripts/copy-audio.mjs). Thiếu file → bài dùng giọng máy.
 import { readdirSync, readFileSync, writeFileSync, mkdirSync, existsSync, statSync } from 'node:fs';
 import { join, basename } from 'node:path';
+import { createHash } from 'node:crypto';
 
 const ROOT = new URL('..', import.meta.url).pathname;
 const CONTENT = join(ROOT, 'content');
@@ -130,8 +131,10 @@ for (const vol of readdirSync(CONTENT).filter((d) => statSync(join(CONTENT, d)).
       if (miss.length) console.warn(`⚠ ${id} ${skill}: thiếu câu ${miss.join(',')} (thêm câu hoặc ghi vào "gaps")`);
     }
     const name = `${id}.json`;
-    writeFileSync(join(OUT, name), JSON.stringify(out));
-    index.push({ file: name, vol: t.vol ?? 0, test: t.test ?? 0, count: out.length, ...(gaps.length ? { gaps: gaps.map((g) => ({ skill: g.skill, nos: g.nos })) } : {}) });
+    const body = JSON.stringify(out);
+    writeFileSync(join(OUT, name), body);
+    // `hash`: app chỉ tải lại file có hash đổi (cache trong IndexedDB).
+    index.push({ file: name, hash: createHash('sha1').update(body).digest('hex').slice(0, 12), vol: t.vol ?? 0, test: t.test ?? 0, count: out.length, ...(gaps.length ? { gaps: gaps.map((g) => ({ skill: g.skill, nos: g.nos })) } : {}) });
     total += out.length;
   }
 }
