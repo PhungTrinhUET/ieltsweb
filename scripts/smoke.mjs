@@ -213,13 +213,20 @@ for (const profile of Object.keys(PROFILES)) {
       for (const f of idx.files.filter((x) => x.vol > 0)) {
         const ms = await (await fetch(`${BASE}data/${f.file}`)).json();
         for (const skill of ['reading', 'listening']) {
-          const nos = ms.filter((m) => m.skill === skill).flatMap((m) => m.groups.flatMap((g) => g.questions.map((q) => q.no))).sort((a, b) => a - b);
+          const nos = ms.filter((m) => m.skill === skill).flatMap((m) => m.groups.flatMap((g) => g.questions.flatMap((q) => Array.from({ length: q.type === 'multi' ? Math.max(1, q.answer.length) : 1 }, (_, i) => q.no + i)))).sort((a, b) => a - b);
           if (!nos.length) continue;
-          const miss = Array.from({ length: 40 }, (_, i) => i + 1).filter((n) => !nos.includes(n));
+          // Câu thiếu ngay trong đề gốc được ghi ở `gaps` (content) → không tính là lỗi.
+          const known = (f.gaps ?? []).filter((g) => g.skill === skill).flatMap((g) => g.nos);
+          const miss = Array.from({ length: 40 }, (_, i) => i + 1).filter((n) => !nos.includes(n) && !known.includes(n));
           if (miss.length) bad.push(`${f.file} ${skill} thiếu ${miss.join(',')}`);
         }
       }
       return { ok: !bad.length, info: bad.join(' | ') };
+    });
+    await check('A6 đề thiếu câu trong đề gốc có ghi chú', async () => {
+      await go(page, '/reading/vol4-t9-r3');
+      const t = await page.locator('.qnote').first().textContent({ timeout: 10000 }).catch(() => '');
+      return { ok: /27–29/.test(t ?? ''), info: (t ?? '').slice(0, 60) };
     });
     // ---------- C13: lần mở thứ hai không tải lại toàn bộ dữ liệu ----------
     await check('C13 mở lại app không tải lại 65 file data', async () => {

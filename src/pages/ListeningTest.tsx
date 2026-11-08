@@ -110,7 +110,7 @@ export default function ListeningTest() {
         </div>
       )}
 
-      <GroupsView groups={m.groups} answers={answers} onChange={(no, a) => setAnswers((s) => ({ ...s, [no]: a }))} checked={checked} />
+      <GroupsView groups={m.groups} note={m.note} answers={answers} onChange={(no, a) => setAnswers((s) => ({ ...s, [no]: a }))} checked={checked} />
 
       {!checked && (
         <div className="actionbar"><div className="actionbar__inner">

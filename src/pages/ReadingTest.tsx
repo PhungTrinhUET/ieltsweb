@@ -90,7 +90,7 @@ export default function ReadingTest() {
           </article>
         </section>
         <section className={`split__pane split__pane--questions${tab !== 'questions' ? ' hide-sm' : ''}`}>
-          <GroupsView groups={m.groups} answers={answers} onChange={(no, a) => setAnswers((s) => ({ ...s, [no]: a }))} checked={checked} />
+          <GroupsView groups={m.groups} note={m.note} answers={answers} onChange={(no, a) => setAnswers((s) => ({ ...s, [no]: a }))} checked={checked} />
         </section>
       </div>
 

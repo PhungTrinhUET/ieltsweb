@@ -109,7 +109,7 @@ function ReadingPart({ m, answers, onChange, checked }: { m: ReadingMaterial; an
         <section className={`split__pane split__pane--passage${tab !== 'passage' ? ' hide-sm' : ''}`}>
           <article className="passage passage--reading"><h2>{m.title}</h2>{paras.map((p, i) => { const { label, text } = paraLabel(p); return <p key={i} className="passage__p">{label && <span className="passage__label">{label}</span>}{text}</p>; })}</article>
         </section>
-        <section className={`split__pane${tab !== 'questions' ? ' hide-sm' : ''}`}><GroupsView groups={m.groups} answers={answers} onChange={onChange} checked={checked} /></section>
+        <section className={`split__pane${tab !== 'questions' ? ' hide-sm' : ''}`}><GroupsView groups={m.groups} note={m.note} answers={answers} onChange={onChange} checked={checked} /></section>
       </div>
     </>
   );
@@ -128,7 +128,7 @@ function ListeningPart({ m, answers, onChange, checked }: { m: ListeningMaterial
           <div className="audio__body"><div className="audio__label">Giọng đọc máy – như thi thật, nên chỉ nghe một lần</div><div className="audio__meta"><span>{sp.line === null ? (once.current ? 'Đã phát' : 'Bấm để nghe') : `Dòng ${sp.line + 1}/${sp.lines.length}`}</span></div></div>
         </div>
       )}
-      <GroupsView groups={m.groups} answers={answers} onChange={onChange} checked={checked} />
+      <GroupsView groups={m.groups} note={m.note} answers={answers} onChange={onChange} checked={checked} />
     </>
   );
 }

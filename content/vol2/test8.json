@@ -1,5 +1,6 @@
 {
   "vol": 2, "test": 8, "source": "ORIGINAL IELTS PAPERS – VOL 2, Test 8 (audio: part 1–4; transcript chỉ có Section 4)",
+  "gaps": [{"skill": "reading", "passage": 3, "nos": [14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26], "note": "Tài liệu gốc VOL 2 Test 8 chỉ có 2 bài đọc (\"book review\" – Passage 1 và \"whale culture\" – Passage 3, câu 27–40); Passage 2 (câu 14–26) không có trong bộ đề nên không dựng lại."}],
   "listening": {
     "audioDir": "audio/vol2/test8",
     "sections": [

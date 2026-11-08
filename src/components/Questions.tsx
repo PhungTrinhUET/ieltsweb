@@ -119,13 +119,16 @@ export function QuestionView({ q, group, value, onChange, checked, onFocus, comp
   );
 }
 
-export function GroupsView({ groups, answers, onChange, checked, onFocus, revealed, onReveal }: {
+export function GroupsView({ groups, answers, onChange, checked, onFocus, revealed, onReveal, note }: {
   groups: QuestionGroup[]; answers: Answers; onChange: (no: number, a: Answer) => void; checked: boolean; onFocus?: (no: number) => void;
   /** Chế độ luyện tập: các câu đã kiểm tra riêng. */
   revealed?: Record<number, boolean>; onReveal?: (no: number) => void;
+  /** Ghi chú của đề (Material.note), vd. câu thiếu trong đề gốc. */
+  note?: string;
 }) {
   return (
     <div className="qgroups">
+      {note && <p className="qnote" role="note">{note}</p>}
       {groups.map((g, gi) => {
         const nos = g.questions.map((q) => q.no);
         const range = nos.length > 1 ? `Questions ${nos[0]}–${nos[nos.length - 1]}` : `Question ${nos[0]}`;

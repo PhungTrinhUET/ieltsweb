@@ -54,6 +54,8 @@ export interface MaterialBase {
   addedAt: number;
   /** true = nội dung mẫu đi kèm app. */
   builtin?: boolean;
+  /** Ghi chú về đề (vd. câu bị thiếu trong đề gốc) – hiện phía trên câu hỏi. */
+  note?: string;
 }
 
 export interface ReadingMaterial extends MaterialBase {

@@ -119,7 +119,7 @@ export default function Practice() {
 
   const questionsPane = (
     <>
-      <GroupsView groups={m.groups} answers={answers} onChange={(no, a) => setAnswers((s) => ({ ...s, [no]: a }))} checked={all}
+      <GroupsView groups={m.groups} note={m.note} answers={answers} onChange={(no, a) => setAnswers((s) => ({ ...s, [no]: a }))} checked={all}
         revealed={revealed} onReveal={(no) => setRevealed((r) => ({ ...r, [no]: true }))} />
       <section className="card pad">
         <h3 className="h3"><StickyNote size={16} /> Ghi chú của bạn</h3>

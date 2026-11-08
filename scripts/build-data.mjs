@@ -63,6 +63,8 @@ function parseSrt(text) {
   }).filter(Boolean);
 }
 
+// Số câu một câu hỏi chiếm: multi "Choose TWO" có no = số đầu, tính cho answer.length số.
+const span = (q) => Array.from({ length: q.type === 'multi' ? Math.max(1, q.answer.length) : 1 }, (_, i) => q.no + i);
 const index = [];
 let total = 0;
 for (const vol of readdirSync(CONTENT).filter((d) => statSync(join(CONTENT, d)).isDirectory())) {
@@ -101,9 +103,23 @@ for (const vol of readdirSync(CONTENT).filter((d) => statSync(join(CONTENT, d)).
       out.push({ ...base, id: `${id}-s${sp.id ?? i + 1}`, skill: 'speaking', title: `${prefix} · ${sp.title}`, topic: sp.topic, level: sp.level ?? 'medium',
         part1: sp.part1, part2: sp.part2, part3: sp.part3, vocab: sp.vocab, tags: [...base.tags, ...(sp.tags ?? [])] });
     });
+    // `gaps`: câu thiếu ngay trong đề gốc (đã ghi rõ lý do) → gắn ghi chú vào bài, và không báo ⚠.
+    const gaps = t.gaps ?? [];
+    for (const g of gaps) {
+      const m = out.find((x) => x.id === `${id}-${g.skill === 'reading' ? 'r' : 'l'}${g.passage ?? g.section}`);
+      if (m) m.note = [m.note, g.note].filter(Boolean).join(' ');
+      else console.warn(`⚠ ${id}: gaps trỏ tới bài không tồn tại (${g.skill} ${g.passage ?? g.section})`);
+    }
+    if (t.vol) for (const skill of ['reading', 'listening']) {
+      const nos = new Set(out.filter((m) => m.skill === skill).flatMap((m) => m.groups.flatMap((g) => g.questions.flatMap(span))));
+      if (!nos.size) continue;
+      const known = new Set(gaps.filter((g) => g.skill === skill).flatMap((g) => g.nos));
+      const miss = Array.from({ length: 40 }, (_, i) => i + 1).filter((n) => !nos.has(n) && !known.has(n));
+      if (miss.length) console.warn(`⚠ ${id} ${skill}: thiếu câu ${miss.join(',')} (thêm câu hoặc ghi vào "gaps")`);
+    }
     const name = `${id}.json`;
     writeFileSync(join(OUT, name), JSON.stringify(out));
-    index.push({ file: name, vol: t.vol ?? 0, test: t.test ?? 0, count: out.length });
+    index.push({ file: name, vol: t.vol ?? 0, test: t.test ?? 0, count: out.length, ...(gaps.length ? { gaps: gaps.map((g) => ({ skill: g.skill, nos: g.nos })) } : {}) });
     total += out.length;
   }
 }

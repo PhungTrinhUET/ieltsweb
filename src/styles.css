@@ -1558,3 +1558,6 @@ mark { background: #fde68a; color: #1a1a1a; border-radius: 3px; padding: 0 1px; 
 .voice-list li { display: flex; align-items: center; gap: 6px; min-width: 0; border-radius: 10px; padding: 2px 6px; }
 .voice-list li.is-on { background: var(--primary-soft); }
 .voice-list__name { background: none; border: 0; padding: 4px 0; color: var(--text); text-align: left; cursor: pointer; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; min-width: 0; font: inherit; font-size: .9rem; }
+
+/* Ghi chú đề (câu thiếu trong đề gốc…) */
+.qnote { margin: 0 0 12px; padding: 8px 12px; border-left: 3px solid var(--warn, #d97706); background: color-mix(in srgb, var(--warn, #d97706) 10%, transparent); border-radius: 6px; font-size: .9rem; }

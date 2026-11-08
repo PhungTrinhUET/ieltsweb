@@ -1,5 +1,6 @@
 {
   "vol": 1, "test": 7, "source": "ORIGINAL IELTS PAPERS – VOL 1, Test 7",
+  "gaps": [{"skill": "reading", "passage": 3, "nos": [27], "note": "Đề gốc không có câu 27: Passage 3 ghi \"Questions 27-32\" nhưng phần tóm tắt chỉ đánh số 28–32 (key có ghi \"27 D\" nhưng không có câu hỏi tương ứng). Bài này tính trên 39 câu."}],
   "listening": {
     "audioDir": "audio/vol1/test7",
     "sections": [

@@ -51,6 +51,7 @@ Dự án chưa có test tự động. Sau khi sửa, chạy `npm run data` (khô
   - Khi key gốc sai hoặc mâu thuẫn với bài: chọn đáp án đúng theo bài và ghi "(key trong file giải thích ghi X)".
   - Khi bộ đề không có key: ghi rằng đáp án được suy từ transcript.
 - Câu điền bản đồ/sơ đồ không có hình: `bank` là các vị trí mô tả bằng chữ, lấy từ lời chỉ đường. Xáo thứ tự, thêm 1–2 vị trí nhiễu, và ghi chú trong `instruction` rằng không có hình.
+- Câu thiếu ngay trong đề gốc (không tìm được bản đủ): không bịa. Ghi vào `"gaps": [{ "skill": "reading", "passage": 3, "nos": [27], "note": "…" }]` ở đầu file test (listening dùng `"section"`). `note` hiện trên trang bài đó; `npm run data` báo `⚠` nếu một số 1–40 vừa không có câu vừa không nằm trong `gaps` (câu `multi` tính đủ số theo `answer.length`).
 - Lỗi OCR: sửa chính tả, sắp lại đoạn bị đảo, không bịa thêm nội dung. Nếu buộc phải dựng lại câu hay phương án bị mất, ghi rõ trong `source` hoặc `explanation`.
 
 ## Tình trạng (08/11/2026)
