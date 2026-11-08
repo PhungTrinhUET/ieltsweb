@@ -1,6 +1,6 @@
 // Tra từ khi bấm vào một từ trong bài.
 // Nghĩa tiếng Việt: từ vựng kèm bài → AI (nếu đã cấu hình) → dịch miễn phí (MyMemory).
-// Phiên âm, loại từ, định nghĩa Anh: từ điển miễn phí dictionaryapi.dev. Không cần API key.
+// Phiên âm, loại từ, định nghĩa Anh: Datamuse (dictionaryapi.dev làm dự phòng). Không cần API key.
 import { useEffect, useState } from 'react';
 import { BookmarkPlus, Check, Languages, Loader2, Sparkles, Volume2, X } from 'lucide-react';
 import type { Vocab } from '../types';
@@ -15,13 +15,45 @@ import type { Lookup } from '../ai/assist';
 export interface WordSel { word: string; sentence: string; x: number; y: number }
 
 interface DictEntry { phonetic?: string; phonetics?: { text?: string }[]; meanings: { partOfSpeech: string; definitions: { definition: string; example?: string }[] }[] }
-async function freeDict(word: string): Promise<DictEntry | null> {
-  try {
-    const r = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`);
-    if (!r.ok) return null;
-    const d = await r.json();
-    return Array.isArray(d) ? d[0] : null;
-  } catch { return null; }
+const DM_POS: Record<string, string> = { n: 'noun', v: 'verb', adj: 'adjective', adv: 'adverb' };
+const dictCache = new Map<string, Promise<DictEntry | null>>();
+const getJson = async (url: string, ms = 5000) => {
+  const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), ms);
+  try { const r = await fetch(url, { signal: ctl.signal }); return r.ok ? await r.json() : null; } finally { clearTimeout(t); }
+};
+/** Datamuse (CORS mở, có IPA; từ biến thể như "worms" trả định nghĩa của "worm"). */
+async function datamuse(word: string): Promise<DictEntry | null> {
+  const d = await getJson(`https://api.datamuse.com/words?sp=${encodeURIComponent(word)}&md=dpr&ipa=1&max=1`);
+  const e = Array.isArray(d) ? d[0] : null;
+  if (!e || String(e.word).toLowerCase() !== word.toLowerCase()) return null;
+  const ipa = (e.tags as string[] | undefined)?.find((t) => t.startsWith('ipa_pron:'))?.slice(9).replace(/ɫ/g, 'l');
+  const byPos = new Map<string, string[]>();
+  for (const raw of (e.defs as string[] | undefined) ?? []) {
+    const [p, def] = raw.split('\t'); const pos = DM_POS[p] ?? p;
+    if (def) byPos.set(pos, [...(byPos.get(pos) ?? []), def.trim()]);
+  }
+  if (!byPos.size && !ipa) return null;
+  return { phonetic: ipa ? `/${ipa}/` : undefined, meanings: [...byPos].map(([partOfSpeech, ds]) => ({ partOfSpeech, definitions: ds.map((definition) => ({ definition })) })) };
+}
+async function dictApi(word: string): Promise<DictEntry | null> {
+  const d = await getJson(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`, 4000);
+  return Array.isArray(d) ? d[0] : null;
+}
+/** Phiên âm + định nghĩa Anh: Datamuse, thiếu thì thử dictionaryapi.dev. Lỗi mạng → null (popover vẫn hiện nghĩa Việt). */
+function freeDict(word: string): Promise<DictEntry | null> {
+  let p = dictCache.get(word);
+  if (!p) {
+    p = (async () => {
+      const a = await datamuse(word).catch(() => null);
+      if (a?.meanings.length && a.phonetic) return a;
+      const b = await dictApi(word).catch(() => null);
+      if (!b) return a;
+      return a ? { ...b, phonetic: a.phonetic ?? b.phonetic, meanings: a.meanings.length ? a.meanings : b.meanings } : b;
+    })();
+    dictCache.set(word, p);
+    p.then((r) => { if (!r) dictCache.delete(word); });
+  }
+  return p;
 }
 const POS_VI: Record<string, string> = { noun: 'n', verb: 'v', adjective: 'adj', adverb: 'adv', preposition: 'prep', conjunction: 'conj', pronoun: 'pron', interjection: 'interj' };
 

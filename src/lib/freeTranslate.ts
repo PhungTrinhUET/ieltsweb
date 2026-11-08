@@ -23,7 +23,7 @@ export class QuotaError extends Error {}
 async function one(text: string): Promise<string> {
   const key = text.trim();
   const hit = load()[key];
-  if (hit) return hit;
+  if (hit) return hit.replace(/\s+([,;:.!?])/g, '$1').replace(/([,;])(?=[^\s\d])/g, '$1 ');
   const r = await fetch(`https://api.mymemory.translated.net/get?langpair=en|vi&q=${encodeURIComponent(key)}`);
   if (!r.ok) throw new Error(`Dịch miễn phí lỗi (${r.status})`);
   const d = await r.json();
@@ -32,6 +32,8 @@ async function one(text: string): Promise<string> {
   let out: string = d.responseData?.translatedText ?? '';
   // Với từ đơn, MyMemory hay trả chữ HOA hoặc viết hoa đầu → đưa về chữ thường như từ điển.
   if (!/\s/.test(key) && key === key.toLowerCase()) out = out.toLowerCase();
+  // MyMemory hay trả "tơ ,lụa" → chuẩn hoá dấu câu.
+  out = out.replace(/\s+([,;:.!?])/g, '$1').replace(/([,;])(?=[^\s\d])/g, '$1 ').replace(/\s{2,}/g, ' ').trim();
   if (!/\p{L}/u.test(out)) out = '';
   store(key, out);
   return out;
