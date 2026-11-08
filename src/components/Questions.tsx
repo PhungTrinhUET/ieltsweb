@@ -1,11 +1,15 @@
 // Render & chấm mọi dạng câu hỏi Reading / Listening.
+import ZoomImage, { publicUrl } from './ZoomImage';
 import { Fragment, type ReactNode } from 'react';
 import { Check, X } from 'lucide-react';
 import type { Question, QuestionGroup } from '../types';
 import { answerMatches } from '../lib/text';
 import { Options, PickMenu, RichText, Segmented } from './ui';
 
-export type Answer = number | number[] | string | null;
+const LETTERS = 'ABCDEFGHIJKLMNOP';
+const ROMAN = ['i', 'ii', 'iii', 'iv', 'v', 'vi', 'vii', 'viii', 'ix', 'x', 'xi', 'xii', 'xiii', 'xiv', 'xv'];
+
+export type Answer =number | number[] | string | null;
 export type Answers = Record<number, Answer>;
 
 export function isCorrect(q: Question, a: Answer): boolean {
@@ -137,8 +141,9 @@ export function GroupsView({ groups, answers, onChange, checked, onFocus, reveal
             <h3>{range}</h3>
             <p className="instruction"><Instruction text={g.instruction} limit={g.wordLimit} /></p>
             {g.bank && g.questions.some((q) => q.type === 'match') && !g.bank.every((b) => b.length <= 2) && (
-              <ol className="qbank">{g.bank.map((b, i) => <li key={i}><span>{g.bank!.length > 8 || /heading/i.test(g.instruction) ? ['i', 'ii', 'iii', 'iv', 'v', 'vi', 'vii', 'viii', 'ix', 'x', 'xi', 'xii'][i] : 'ABCDEFGH'[i]}</span>{b}</li>)}</ol>
+              <ol className="qbank">{g.bank.map((b, i) => <li key={i}><span>{/heading/i.test(g.instruction) || (g.bank!.length > 8 && !/letter/i.test(g.instruction)) ? ROMAN[i] : LETTERS[i]}</span>{b}</li>)}</ol>
             )}
+            {g.image && <figure className="qgroup__img"><ZoomImage src={publicUrl(g.image)} alt={g.imageAlt ?? 'Hình cho nhóm câu hỏi'} /></figure>}
             {g.context && <div className="qcontext">{g.context}</div>}
             {g.questions.map((q) => (
               <QuestionView key={q.no} q={q} group={g} value={answers[q.no] ?? null} onChange={(a) => onChange(q.no, a)} checked={checked || !!revealed?.[q.no]} onFocus={() => onFocus?.(q.no)} onReveal={onReveal ? () => onReveal(q.no) : undefined} />

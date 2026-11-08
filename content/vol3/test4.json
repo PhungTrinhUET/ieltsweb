@@ -897,11 +897,11 @@
   {
    "task": 1,
    "type": "map",
-   "title": "A museum and its surroundings, 1990 and 2010",
+   "image": "img/vol3/w1-t4.png", "imageAlt": "1990: bên trong bảo tàng có store room (góc trên trái), các exhibition rooms xung quanh, shop nhỏ (góc dưới phải); bên ngoài: entrance phía dưới, car park bên phải với một garden phía dưới car park và một garden phía trên; cottage ở góc dưới trái, đối diện bảo tàng, cạnh main road. 2010: shop mở rộng sang trái lấn một phần exhibition room; car park mở rộng xuống chiếm chỗ garden phía dưới; cottage trở thành café; đường đi và garden phía trên không đổi.", "title": "A museum and its surroundings, 1990 and 2010",
    "topic": "Buildings",
-   "prompt": "The diagrams below show a museum and its surroundings in 1990 and 2010.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.\n\n[Mô tả sơ đồ – bản gốc là hình ảnh: 1990: bên trong bảo tàng có store room (góc trên trái), các exhibition rooms xung quanh, shop nhỏ (góc dưới phải); bên ngoài: entrance phía dưới, car park bên phải với một garden phía dưới car park và một garden phía trên; cottage ở góc dưới trái, đối diện bảo tàng, cạnh main road. 2010: shop mở rộng sang trái lấn một phần exhibition room; car park mở rộng xuống chiếm chỗ garden phía dưới; cottage trở thành café; đường đi và garden phía trên không đổi.]",
+   "prompt": "The diagrams below show a museum and its surroundings in 1990 and 2010.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
    "sample": "The map details renovations to a museum and the surrounding grounds from 1990 to 2010.\n\nLooking from an overall perspective, it is readily apparent that the museum itself decreased the square footage for exhibitions, and outside there were significant alterations to the surrounding area to allow greater access and leisure.\n\nInternally, the museum in 1990 contained a store room in the top left corner, various exhibition spaces on all sides, and a small shop in the bottom right. By 2010, the only modification was that the shop was extended towards the left at the expense of the adjacent exhibition room.\n\nOutside the main structure, the largest single change was the expansion of the car park on the right side, which subsumed a garden beneath it. The paths and roads, as well as the garden above the car park, were unchanged. The final difference was that the cottage in the bottom left corner across from the museum was renovated to become a café.",
-   "sampleNote": "Bài mẫu trong tài liệu gốc (hình gốc không có trong bản số hóa)."
+   "sampleNote": "Bài mẫu trong tài liệu gốc."
   },
   {
    "task": 2,

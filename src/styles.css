@@ -1561,3 +1561,15 @@ mark { background: #fde68a; color: #1a1a1a; border-radius: 3px; padding: 0 1px; 
 
 /* Ghi chú đề (câu thiếu trong đề gốc…) */
 .qnote { margin: 0 0 12px; padding: 8px 12px; border-left: 3px solid var(--warn, #d97706); background: color-mix(in srgb, var(--warn, #d97706) 10%, transparent); border-radius: 6px; font-size: .9rem; }
+
+/* Ảnh bấm phóng to (bản đồ / sơ đồ / biểu đồ) */
+.zoomimg { position: relative; display: block; padding: 0; border: 1px solid var(--border); border-radius: 10px; background: #fff; cursor: zoom-in; overflow: hidden; max-width: 100%; }
+.zoomimg img { display: block; max-width: 100%; height: auto; }
+.zoomimg__hint { position: absolute; right: 6px; bottom: 6px; display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; border-radius: 999px; font-size: .75rem; background: rgba(0,0,0,.6); color: #fff; }
+.qgroup__img { margin: 8px 0 12px; }
+.qgroup__img .zoomimg { max-height: 420px; }
+.qgroup__img .zoomimg img { max-height: 418px; object-fit: contain; margin: 0 auto; }
+.zoombox { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 16px; background: rgba(0,0,0,.85); cursor: zoom-out; overflow: auto; }
+.zoombox img { max-width: 100%; max-height: 100%; object-fit: contain; background: #fff; border-radius: 6px; cursor: default; }
+.zoombox__close { position: absolute; top: 12px; right: 12px; width: 40px; height: 40px; border-radius: 50%; border: 0; background: rgba(255,255,255,.9); color: #111; display: grid; place-items: center; cursor: pointer; }
+.wtask__alt { margin-top: 8px; white-space: pre-line; }

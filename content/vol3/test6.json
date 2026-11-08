@@ -876,11 +876,11 @@
   {
    "task": 1,
    "type": "process",
-   "title": "The process of making smoked fish",
+   "image": "img/vol3/w1-t6.png", "imageAlt": "cá được đánh bắt bằng lưới → chở bằng thuyền về cảng → cấp đông → rã đông trong nước ngọt → mổ cá → ngâm nước muối pha màu vàng → hun khói → đóng hộp → đông lạnh ở 0 °C trong container lớn → kho lạnh → xe tải phân phối tới cửa hàng cá.", "title": "The process of making smoked fish",
    "topic": "Food",
-   "prompt": "The diagram below details the process of making smoked fish.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.\n\n[Mô tả sơ đồ – bản gốc là hình ảnh: cá được đánh bắt bằng lưới → chở bằng thuyền về cảng → cấp đông → rã đông trong nước ngọt → mổ cá → ngâm nước muối pha màu vàng → hun khói → đóng hộp → đông lạnh ở 0 °C trong container lớn → kho lạnh → xe tải phân phối tới cửa hàng cá.]",
+   "prompt": "The diagram below details the process of making smoked fish.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
    "sample": "The process details the steps by which smoked fish is produced.\n\nLooking from an overall perspective, it is readily apparent that smoking fish can be divided into three main stages, beginning with catching and transportation, followed by storage and processing, and finally further storage and transportation to fish shops for retail.\n\nThe process commences when fish are caught in nets and then transported by boat to a port. From this point, they are frozen and then later undergo a thawing process in fresh water. The next stage is to slice open the fish and put them in a salt-water solution that also contains some amount of yellow colouring. Following this, the actual smoking takes place.\n\nAfter smoking, the fish are packaged in boxes and frozen at zero degrees centigrade in larger containers. They are finally grouped into cold storage bins and distributed by truck to shops to sell to consumers.",
-   "sampleNote": "Bài mẫu trong tài liệu gốc (hình gốc không có trong bản số hóa)."
+   "sampleNote": "Bài mẫu trong tài liệu gốc."
   },
   {
    "task": 2,

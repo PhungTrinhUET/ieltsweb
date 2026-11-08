@@ -191,20 +191,8 @@
       ]
      },
      {
-      "instruction": "Label the plan of the college. Write the correct letter, A–J, next to questions 16–20.",
-      "bank": [
-       "A – classroom at the western end of the northern block",
-       "B – classroom at the eastern end of the northern block",
-       "C – left-hand classroom of the pair across the square from the hall",
-       "D – right-hand classroom of the pair across the square",
-       "E – classroom opposite the First Aid room",
-       "F – single large classroom on the western side of the square",
-       "G – classroom next to the library",
-       "H – classroom beside the gym",
-       "I – classroom next to the workshops",
-       "J – classroom immediately next to the office"
-      ],
-      "context": "Sơ đồ gốc không có trong bản số hóa; vị trí A–J mô tả bằng lời (Hall ở dưới cùng; Office bên phải Hall; First Aid Room; Gym; Library; Workshops).",
+      "instruction": "Label the plan below. Write the correct letter, A–J, next to questions 16–20.", "image": "img/vol2/t9-l2-plan.png", "imageAlt": "College plan: Gym góc tây bắc; Square ở giữa; Hall phía nam; First Aid Room, Library và Office phía đông. Vị trí theo lời chỉ đường: A – classroom at the western end of the northern block; B – classroom at the eastern end of the northern block; C – left-hand classroom of the pair across the square from the hall; D – right-hand classroom of the pair across the square; E – classroom opposite the First Aid room; F – single large classroom on the western side of the square; G – classroom next to the library; H – classroom beside the gym; I – classroom next to the workshops; J – classroom immediately next to the office.",
+      "bank": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
       "questions": [
        {
         "no": 16,

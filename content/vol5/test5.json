@@ -123,48 +123,50 @@
     "transcript": "[07:04] Narrator: Section two. You will hear a talk by a counsellor from the University of New South Wales, who will introduce some useful facilities and services on the campus. First, you have some time to look at questions 11 to 15.\n[07:44] Narrator: Now listen carefully and answer questions 11 to 15.\n[07:51] Counsellor: Hello, everyone, and welcome to the University of New South Wales. The first thing I'd like to do at today's orientation session is get you oriented. That means tell you the location of some useful facilities and services. So first of all, take out the maps we gave you all as you came in the door. The map is the big yellow sheet of paper. As you can see on the map, north is at the top, south at the bottom, etcetera. Which way is north? Well, look through that window on my left, your right. See the rising sun? That would have to be east. So north must be directly behind me. Now, we're at the campus main gate. The recreational facilities are on my right hand, and opposite is the Student Centre. No questions? Good, pretty easy, right? Okay. Did everyone eat breakfast at the student food service this morning? Was the food good? Yes, yes, I am joking. I've eaten there too. So after a meal like that, you must be eager to go to a doctor, right? Well, I have good news for you. The Student Health Centre is located about half a kilometre straight north of here. Look on your maps. You see the street on the east side of this building, Ned Kelly Avenue? Just follow that about 500 metres and the Health Centre will be on your left at the third cross street. Now, I know you all just got here, so you must be wondering how to tell your folks you've arrived safely, how much you miss the dog, and how you already need more money. If you don't have an iPhone, you're probably wondering where to find a computer. Well, I have good news. If you go straight out of the door and walk down Garden Street, you'll see the Internet Unit on your left side, just next to the gym. The hours are posted on the door and the computers are free, but you must bring your student ID card with you. Like I tell everyone, if you need help with anything, you can probably find it right here in the Student Centre. Do you see the four buildings there between the Student Centre and the library? Those are the dormitories. The men's dorms are the two on the south, the women's the two on the north. Okay, now I'm sorry to have to tell you, but the university has been doing a lot of repairs and remodelling, and it's not all done yet. So there may be some small problems with your dorm rooms – maybe the window doesn't open, maybe an air conditioner is missing or does not work. If there are any problems, you can go to the Complaint Office, which is right beside the Teaching Building, between Parker Street and Crammer Street. Just tell them your problem, and they should have it fixed by the time you graduate in four years. I'm joking. But please be patient; there are a lot of little things they need to take care of. Tired of the school food? No? Give it a week. Or maybe you just need a place to get coffee in the wee hours of the night during one of those marathon study sessions. Either way, you definitely have to check out the little café just past the women's dormitories. They've got free Wi-Fi, so a lot of students settle in with coffee and a bagel for hours on end to get work done.\n[11:17] Narrator: Before you hear the rest of the talk, you have some time to look at questions 16 to 20.\n[11:49] Narrator: Now listen and answer questions 16 to 20.\n[11:55] Counsellor: As for the dorm rooms, I have some bad news and some good news. The bad news is the rooms are small, and you'll probably be sharing space with at least three other students. The good news is that each room has its own bathroom. What's good about sharing a bathroom with three strangers? Hmm, good question. Okay, call it bad news and worse news. Hey, maybe try this good news: each dorm has a kitchen. If you want to make snacks or meals, you can do it there. You can buy food containers at any campus convenience store so you can store your food in the kitchen. But a word of warning: you should definitely write your name on your food containers. Sad to say, there are food thieves among your fellow students. Speaking of thieves – are you worried about security? I mean, this is Australia, and we do get drunken bushrangers wandering onto campus. Each of you will be given a key for your dorm room. Don't lose it. You have to pay for any replacement and fill out a bunch of papers. Your key does not work for the front door of your dorm, however. To the right of each door there's a keypad with numbers. When you move in, they will tell you the code you use to enter the door. Please do not tell the code to people who do not live in the dorm. Let's see, have I forgotten anything? Oh yes, most of you are not rich, correct? So when your clothes get dirty, you can't just throw them away and buy new ones. That means you have to learn to do laundry – or, men, that means you have to hurry up and get married. If you decide to wash those clothes and not get married, there are laundries in each dorm. Where? Oh, I almost forgot to tell you: the laundry for each dorm is in the basement. Some real good news this time: if you're a student, it is free. You do have to buy your own soap, however. The laundry closes at 11:30. And now that I've mentioned 11:30, please remember the dorm doors are locked at 11:30 pm. Your code will not work. If you want to get in, you'll have to call the night watchman. Don't worry, you can get that number at the dorm office. Yes, the dorm office and the Complaint Office are the same office. All right then, before we continue, are there any questions?\n[14:48] Narrator: That is the end of section two. You now have half a minute to check your answers.",
     "groups": [
      {
-      "instruction": "Listen to the directions and match the places in questions 11–15 to the appropriate place among A–E on the map. (Không có hình bản đồ: mỗi vị trí A–E được mô tả bằng chữ.)",
+      "instruction": "Listen to the directions and match the places in questions 11–15 to the appropriate place among A–E on the map.",
+      "image": "img/vol5/t5-l2-map.png",
+      "imageAlt": "Bản đồ trường (hướng bắc ở trên). Ned Kelly Avenue chạy từ cổng chính (Main Gate, phía nam) lên phía bắc; từ nam lên bắc có ba phố rẽ sang phía đông: Crammer Street, Parker Street, Garden Street. Phía tây đại lộ, từ bắc xuống nam: Student Food Service (A ở góc dưới toà này, ngang Garden Street), Library, C ở góc dưới Library sát Dormitories, Dormitories, rồi E ở khối cuối cạnh cổng chính. Phía đông, từ bắc xuống nam: Gym (B ở phần trái toà Gym), Teaching Building, D ở phần trái Teaching Building thứ hai (giữa Parker Street và Crammer Street), Recreational Facilities.",
       "bank": [
-       "A – on Garden Street, next to the gym",
-       "B – beside the Teaching Building, between Parker Street and Crammer Street",
-       "C – opposite the Recreational Facilities, by the main gate",
-       "D – just past the women's dormitories",
-       "E – on Ned Kelly Avenue, on the left at the third cross street"
+       "A",
+       "B",
+       "C",
+       "D",
+       "E"
       ],
       "questions": [
        {
         "no": 11,
         "type": "match",
         "text": "Student Centre",
-        "answer": 2,
+        "answer": 4,
         "explanation": "\"The recreational facilities are on my right hand, and opposite is the Student Centre\""
        },
        {
         "no": 12,
         "type": "match",
         "text": "Health Centre",
-        "answer": 4,
+        "answer": 0,
         "explanation": "\"Ned Kelly Avenue … the Health Centre will be on your left at the third cross street\""
        },
        {
         "no": 13,
         "type": "match",
         "text": "Internet Unit",
-        "answer": 0,
+        "answer": 1,
         "explanation": "\"walk down Garden Street, you'll see the Internet Unit on your left side, just next to the gym\""
        },
        {
         "no": 14,
         "type": "match",
         "text": "Complaint Office",
-        "answer": 1,
+        "answer": 3,
         "explanation": "\"right beside the Teaching Building, between Parker Street and Crammer Street\""
        },
        {
         "no": 15,
         "type": "match",
         "text": "Café",
-        "answer": 3,
+        "answer": 2,
         "explanation": "\"the little café just past the women's dormitories\""
        }
       ]

@@ -7,6 +7,7 @@ import { addAttempt, findCard, updateAttempt, resolveUrl, saveCard, saveDraft, u
 import { aiReady, getAiConfig, setLastOpen, touchStreak, useAiConfig } from '../store';
 import SelfCheck from '../components/SelfCheck';
 import Timer from '../components/Timer';
+import ZoomImage from '../components/ZoomImage';
 import { Collapse } from '../components/ui';
 import { BandPill, ChartView, CriteriaBars, WordDiff } from '../components/misc';
 import type { WritingGrade } from '../ai/writing';
@@ -104,8 +105,11 @@ export default function Writing() {
         <section className="split__pane">
           <div className="wtask card pad">
             <div className="wtask__prompt">{m.prompt.split('\n').map((l, i) => <p key={i}>{l}</p>)}</div>
-            {img && <img src={img} alt="Biểu đồ / bản đồ" className="wtask__img" />}
+            {img && <ZoomImage src={img} alt={m.imageAlt ?? 'Biểu đồ / bản đồ của đề'} className="wtask__img" />}
             {m.chart && !img && <ChartView chart={m.chart} />}
+            {m.imageAlt && (img || m.chart
+              ? <Collapse title="Mô tả hình bằng chữ" defaultOpen={false}><p className="small wtask__alt">{m.imageAlt}</p></Collapse>
+              : <div className="qcontext wtask__alt"><strong className="small">Hình của đề (mô tả bằng chữ – tài liệu gốc chỉ có hình):</strong>{'\n'}{m.imageAlt}</div>)}
           </div>
           <Collapse title="Cấu trúc bài gợi ý" tone="tip" defaultOpen={false}>
             <ol className="plan">{(m.outline ?? STRUCTURE[m.type] ?? []).map((o, i) => <li key={i}>{o}</li>)}</ol>

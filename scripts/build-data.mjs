@@ -97,7 +97,7 @@ for (const vol of readdirSync(CONTENT).filter((d) => statSync(join(CONTENT, d)).
       out.push({ ...base, id: `${id}-r${r.passage}`, skill: 'reading', module: 'academic', title: `${prefix} · Passage ${r.passage} – ${r.title}`, topic: r.topic, level: r.level ?? 'medium', passage: r.passage_text, groups: r.groups, minutes: 20 });
     }
     for (const w of t.writing ?? []) {
-      out.push({ ...base, id: `${id}-w${w.id ?? w.task}`, skill: 'writing', module: w.module ?? 'academic', task: w.task, type: w.type, title: `${prefix} · Task ${w.task} – ${w.title}`, topic: w.topic, prompt: w.prompt, chart: w.chart, image: w.image, sample: w.sample, outline: w.outline });
+      out.push({ ...base, id: `${id}-w${w.id ?? w.task}`, skill: 'writing', module: w.module ?? 'academic', task: w.task, type: w.type, title: `${prefix} · Task ${w.task} – ${w.title}`, topic: w.topic, prompt: w.prompt, chart: w.chart, image: w.image, imageAlt: w.imageAlt, sample: w.sample, outline: w.outline });
     }
     (t.speaking ?? []).forEach((sp, i) => {
       out.push({ ...base, id: `${id}-s${sp.id ?? i + 1}`, skill: 'speaking', title: `${prefix} · ${sp.title}`, topic: sp.topic, level: sp.level ?? 'medium',

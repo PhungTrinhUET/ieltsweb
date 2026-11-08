@@ -38,6 +38,10 @@ export interface QuestionGroup {
   wordLimit?: string;
   /** Đoạn tóm tắt / bảng / form cho dạng completion: hiển thị trước danh sách câu. */
   context?: string;
+  /** Ảnh bản đồ / sơ đồ (đường dẫn trong public/, vd. "img/vol1/t4-l2-map.png") – hiện trên các câu, bấm để phóng to. */
+  image?: string;
+  /** Mô tả ảnh bằng chữ (alt; cũng dùng khi ảnh không tải được). */
+  imageAlt?: string;
   questions: Question[];
 }
 
@@ -112,6 +116,8 @@ export interface WritingMaterial extends MaterialBase {
   prompt: string;
   /** Ảnh biểu đồ/bản đồ (URL hoặc idb:<key>). */
   image?: string;
+  /** Mô tả chi tiết ảnh bằng chữ (alt + hiện dưới ảnh / thay ảnh khi chưa có ảnh). */
+  imageAlt?: string;
   /** Dữ liệu biểu đồ để app tự vẽ khi không có ảnh: { labels, series:[{name, values}], unit }. */
   chart?: { labels: string[]; series: { name: string; values: number[] }[]; unit?: string; kind?: 'line' | 'bar' | 'pie' | 'table' };
   /** Dàn ý gợi ý. */

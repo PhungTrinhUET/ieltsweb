@@ -54,7 +54,7 @@ export function Collapse({ title, icon, children, defaultOpen = false, tone }: {
   );
 }
 
-const LETTERS = 'ABCDEFGH';
+const LETTERS = 'ABCDEFGHIJKL';
 
 export function Options({ options, value, onChange, checked, correct, name }: {
   options: string[]; value: number | null; onChange: (i: number) => void;

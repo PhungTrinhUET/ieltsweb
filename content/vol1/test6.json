@@ -34,7 +34,7 @@
             "questions": [
               { "no": 13, "type": "multi", "text": "Activities on the first afternoon/evening (choose TWO)", "options": ["costume making", "a musical show", "an informal dance", "a talk on dance history", "a dance test"], "answer": [2, 3], "explanation": "\"an introduction to the development of dance … then we'll warm up with an informal dance\". Costume ngày mai, test cuối khoá. (Q13–14)" }
             ] },
-          { "instruction": "Label the map below. Write the correct letter, A–J, next to questions 15–20. (Sơ đồ gốc là hình – chưa có trong bản số hoá; đã biết vị trí: Gym = J? Cloakroom góc trên phải, Music room, Bike racks ở góc. Luyện nghe chỉ dẫn: 'You are here' ở lối vào.)", "bank": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+          { "instruction": "Label the map below. Write the correct letter, A–J, next to questions 15–20.", "image": "img/vol1/t6-l2-map.png", "imageAlt": "Plan of Community Centre: lối vào (You are here) ở góc tây nam; dọc bên trái là C và E (cạnh lối vào), A ở góc tây bắc; hàng trên: J, Gym, B, Cloakroom; giữa: D, Music room, F, G; hàng dưới: H, I, Bike racks.", "bank": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
             "questions": [
               { "no": 15, "type": "match", "text": "shower room", "answer": 2, "explanation": "Đáp án gốc: C – đi thẳng, rẽ trái, bên tay trái." },
               { "no": 16, "type": "match", "text": "bunkroom", "answer": 4, "explanation": "Đáp án gốc: E – ngay bên trái chỗ đứng, trước shower room." },

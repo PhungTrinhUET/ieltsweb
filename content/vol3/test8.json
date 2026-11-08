@@ -458,11 +458,11 @@
   {
    "task": 1,
    "type": "map",
-   "title": "Changes in the town of Willington, 1780–2000",
+   "image": "img/vol3/w1-t8.png", "imageAlt": "1780: 100 ngôi nhà, sông chảy bắc–nam cạnh thị trấn, phía đông và nam là nông trại và rừng. 1860: 200 ngôi nhà ở đông bắc, một con đường từ sông vào khu dân cư, cầu bắc qua sông, một phần nông trại/rừng bị xoá. 2000: 500 ngôi nhà, nông trại và rừng biến mất hoàn toàn, thêm 2 trường học, 3 sân thể thao, dãy cửa hàng dọc bờ nam sông, một hồ lớn ở cuối phía nam của sông.", "title": "Changes in the town of Willington, 1780–2000",
    "topic": "Buildings",
-   "prompt": "The maps below show the changes that occurred to a town named Willington in 1780, 1860 and 2000.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.\n\n[Mô tả bản đồ – bản gốc là hình ảnh: 1780: 100 ngôi nhà, sông chảy bắc–nam cạnh thị trấn, phía đông và nam là nông trại và rừng. 1860: 200 ngôi nhà ở đông bắc, một con đường từ sông vào khu dân cư, cầu bắc qua sông, một phần nông trại/rừng bị xoá. 2000: 500 ngôi nhà, nông trại và rừng biến mất hoàn toàn, thêm 2 trường học, 3 sân thể thao, dãy cửa hàng dọc bờ nam sông, một hồ lớn ở cuối phía nam của sông.]",
+   "prompt": "The maps below show the changes that occurred to a town named Willington in 1780, 1860 and 2000.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.",
    "sample": "The map details changes that occurred in the town of Willington in the years 1780, 1860 and 2000.\n\nLooking from an overall perspective, it is readily apparent that the village became more residential and commercial, including new homes, access roads, a bridge, shops, and areas for recreation and sports, at the expense of natural forests and farms. Only the river remained unchanged.\n\nIn 1780, there were only 100 homes in Willington, and a considerable region to the east and south was occupied by farms and woods. The river ran from north to south alongside the town, a feature that was unaltered by 2000. By 1860, some farms and forestry had been removed to allow for a road leading from the river to a residential area that had doubled in size (200 homes) in the northeast. There was also the appearance of a bridge over the river.\n\nIn 2000, the number of homes rose to 500 and the farms and forests were entirely cleared. This enabled the construction of two schools, three sports fields and numerous shops lining the southern side of the river. The final addition was a large lake at the south end of the river.",
-   "sampleNote": "Bài mẫu trong tài liệu gốc (hình gốc không có trong bản số hóa)."
+   "sampleNote": "Bài mẫu trong tài liệu gốc."
   },
   {
    "task": 2,
