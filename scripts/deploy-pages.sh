@@ -13,7 +13,10 @@ cd "$TMP"
 git init -q -b gh-pages
 git add -A
 git commit -q -m "Deploy $(date '+%F %T')"
-git -c credential.helper= -c 'credential.helper=!gh auth git-credential' \
-  push -f https://github.com/PhungTrinhUET/ieltsweb.git gh-pages
+# Token gh còn hạn → HTTPS qua gh; không thì SSH (key ~/.ssh). DEPLOY_REMOTE=… để chỉ định.
+if [ -n "${DEPLOY_REMOTE:-}" ]; then git push -f "$DEPLOY_REMOTE" gh-pages
+elif gh auth status >/dev/null 2>&1; then
+  git -c credential.helper= -c 'credential.helper=!gh auth git-credential' push -f https://github.com/PhungTrinhUET/ieltsweb.git gh-pages
+else git push -f git@github.com:PhungTrinhUET/ieltsweb.git gh-pages; fi
 rm -rf "$TMP"
 echo "Đã deploy: https://phungtrinhuet.github.io/ieltsweb/ (GitHub cần ~1 phút để cập nhật)"
