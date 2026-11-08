@@ -3,7 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, BookOpenCheck, Check, GraduationCap, Keyboard, Pause, PenLine, Play, RotateCcw, Volume2 } from 'lucide-react';
 import type { ListeningMaterial } from '../types';
 import { addAttempt, resolveUrl, useDb } from '../db';
-import { touchStreak } from '../store';
+import { setLastOpen, touchStreak } from '../store';
 import AudioPlayer, { stopAudio, type AudioHandle } from '../components/AudioPlayer';
 import { GroupsView, scoreGroups, type Answers } from '../components/Questions';
 import { rawToBand, fmtBand } from '../lib/band';
@@ -49,7 +49,7 @@ export default function ListeningTest() {
   const [showScript, setShowScript] = useState(false);
   const audio = useRef<AudioHandle>(null);
   const sp = useScriptSpeaker(m);
-  useEffect(() => { setAnswers({}); setChecked(false); setShowScript(false); if (m?.audio) resolveUrl(m.audio).then(setSrc); else setSrc(null); return () => stopAudio(); }, [id]); // eslint-disable-line
+  useEffect(() => { if (m) setLastOpen(m.id, `/listening/${m.id}`, 'test'); setAnswers({}); setChecked(false); setShowScript(false); if (m?.audio) resolveUrl(m.audio).then(setSrc); else setSrc(null); return () => stopAudio(); }, [id]); // eslint-disable-line
 
   if (!m) return <div className="page"><p className="empty">Không tìm thấy bài.</p></div>;
   const hasScript = !!m.transcript.trim();

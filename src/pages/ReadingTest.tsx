@@ -4,7 +4,7 @@ import { ArrowLeft, Check, Highlighter, RotateCcw, GraduationCap } from 'lucide-
 import { HighlightBar, HlText, colorMap, useHighlights } from '../components/Highlight';
 import type { ReadingMaterial } from '../types';
 import { addAttempt, useDb } from '../db';
-import { touchStreak } from '../store';
+import { touchStreak, setLastOpen } from '../store';
 import Timer from '../components/Timer';
 import { GroupsView, scoreGroups, type Answers } from '../components/Questions';
 import { paragraphs, paraLabel } from '../lib/text';
@@ -24,7 +24,7 @@ export default function ReadingTest() {
   const hl = useHighlights(id);
   const startedAt = useMemo(() => Date.now(), []);
   const paras = useMemo(() => (m ? paragraphs(m.passage) : []), [m]);
-  useEffect(() => { setAnswers({}); setChecked(false); }, [id]);
+  useEffect(() => { setAnswers({}); setChecked(false); if (id && m) setLastOpen(id, `/reading/${id}`, 'test'); }, [id]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!m) return <div className="page"><p className="empty">Không tìm thấy bài.</p></div>;
   const total = m.groups.reduce((n, g) => n + g.questions.length, 0);

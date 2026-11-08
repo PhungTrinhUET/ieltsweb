@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, Bot, BookmarkPlus, Check, Loader2, Sparkles } from 'lucide-react';
 import type { WritingMaterial } from '../types';
 import { addAttempt, findCard, resolveUrl, saveCard, saveDraft, useDb } from '../db';
-import { getAiConfig, touchStreak } from '../store';
+import { getAiConfig, setLastOpen, touchStreak } from '../store';
 import Timer from '../components/Timer';
 import { Collapse } from '../components/ui';
 import { AiGate, BandPill, ChartView, CriteriaBars, WordDiff } from '../components/misc';
@@ -51,6 +51,7 @@ export default function Writing() {
   const started = useRef(Date.now());
   const saveT = useRef(0);
   useEffect(() => {
+    if (id && db.materials[id]) setLastOpen(id, `/writing/${id}`, 'practice');
     setText(db.drafts[key] ?? '');
     const last = db.attempts.find((a) => a.materialId === id && a.mode === 'ai');
     setGrade((last?.detail as { grade?: WritingGrade } | undefined)?.grade ?? null);

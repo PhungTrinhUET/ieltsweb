@@ -6,7 +6,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, Check, Eye, EyeOff, Languages, Loader2, Pause, Play, RotateCcw, StickyNote, Volume2 } from 'lucide-react';
 import type { ListeningMaterial, ReadingMaterial } from '../types';
 import { getState, resolveUrl, saveNote, useDb } from '../db';
-import { touchStreak } from '../store';
+import { setLastOpen, touchStreak } from '../store';
 import { GroupsView, scoreGroups, type Answers } from '../components/Questions';
 import AudioPlayer, { stopAudio } from '../components/AudioPlayer';
 import WordPopover, { type WordSel } from '../components/WordPopover';
@@ -42,6 +42,7 @@ export default function Practice() {
 
   useEffect(() => {
     touchStreak();
+    if (m) setLastOpen(m.id, `/${m.skill}/${m.id}/practice`, 'practice');
     setAnswers({}); setRevealed({}); setAll(false); setTr({}); setShowScript(false); setNote(db.notes[id!]?.text ?? '');
     if (isL && (m as ListeningMaterial).audio) resolveUrl((m as ListeningMaterial).audio!).then(setSrc); else setSrc(null);
     return () => stopAudio();

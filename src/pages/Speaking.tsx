@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, Bot, BookmarkPlus, Check, Loader2, Sparkles, Timer as TimerIcon, Volume2 } from 'lucide-react';
 import type { SpeakingMaterial } from '../types';
 import { addAttempt, findCard, saveCard, useDb } from '../db';
-import { aiReady, getAiConfig, touchStreak } from '../store';
+import { aiReady, getAiConfig, setLastOpen, touchStreak } from '../store';
 import Recorder, { speechRecognitionAvailable, type Recording } from '../components/Recorder';
 import { speak, stopSpeak } from '../lib/tts';
 import { Collapse } from '../components/ui';
@@ -34,6 +34,7 @@ export default function Speaking() {
 
   useEffect(() => {
     if (!m) return;
+    setLastOpen(m.id, `/speaking/${m.id}`, 'practice');
     const p1 = (m.part1 ?? []).flatMap((t) => t.questions.map((q, i) => ({ question: q, transcript: '', sample: t.samples?.[i] })));
     const p2 = m.part2 ? [{ question: `${m.part2.cue} You should say: ${m.part2.points.join('; ')}.`, transcript: '', sample: m.part2.sample }, ...(m.part2.followUp ?? []).map((q) => ({ question: q, transcript: '' }))] : [];
     const p3 = (m.part3?.questions ?? []).map((q, i) => ({ question: q, transcript: '', sample: m.part3?.samples?.[i] }));

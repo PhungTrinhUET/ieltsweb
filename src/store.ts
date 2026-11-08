@@ -77,3 +77,8 @@ export function touchStreak() {
   return next;
 }
 export const getStreak = () => read<{ last: string; count: number; days: string[] }>('ielts:streak', { last: '', count: 0, days: [] });
+
+// ---------- Bài đang học dở (cho nút "Tiếp tục" ở trang chủ) ----------
+export interface LastOpen { id: string; path: string; mode: 'practice' | 'test'; at: number }
+export const setLastOpen = (id: string, path: string, mode: LastOpen['mode']) => write('ielts:last', { id, path, mode, at: Date.now() });
+export const getLastOpen = () => read<LastOpen | null>('ielts:last', null);
