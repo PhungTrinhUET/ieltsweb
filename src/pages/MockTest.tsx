@@ -1,7 +1,7 @@
 // Thi thử / làm cả đề (route /test/:skill/:tid/full): ghép nhiều bài Reading (3 bài / 60 phút) hoặc Listening (4 section / ~30 phút) thành một đề, một đồng hồ, chấm chung → band.
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft, Check, Pause, Play, Shuffle } from 'lucide-react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { ArrowLeft, Check, GraduationCap, Pause, Play, Shuffle } from 'lucide-react';
 import type { ListeningMaterial, ReadingMaterial } from '../types';
 import { addAttempt, resolveUrl, useDb } from '../db';
 import { touchStreak, useSettings } from '../store';
@@ -89,7 +89,7 @@ export default function MockTest() {
       <div className="topbar topbar--sticky">
         <button className="icon-btn" onClick={() => (checked || confirm('Thoát? Bài làm sẽ mất.')) && nav(back)} aria-label="Quay lại"><ArrowLeft size={20} /></button>
         <div className="topbar__title"><small>{full ? testName(full) : `Thi thử ${SKILL_META[skill].label}`} · {isR ? 'Passage' : 'Section'} {cur + 1}/{sel.length}</small><strong>{m.title}</strong></div>
-        <div className="topbar__actions">{!checked && <Timer key={picked.join()} minutes={minutes} onEnd={submit} autoStart />}</div>
+        <div className="topbar__actions">{(full || checked) && <Link to={`/${skill}/${m.id}/practice`} className="btn btn--ghost btn--sm mode-switch" title="Luyện tập phần này: không tính giờ, xem đáp án từng câu" onClick={(e) => { if (!checked && done > 0 && !confirm('Chuyển sang Luyện tập? Bài thi đang làm sẽ không được lưu.')) e.preventDefault(); }}><GraduationCap size={15} /> <span>Luyện tập</span></Link>}{!checked && <Timer key={picked.join()} minutes={minutes} onEnd={submit} autoStart />}</div>
         <div className="topbar__progress" style={{ width: `${(done / total) * 100}%` }} />
       </div>
       {checked && res && (

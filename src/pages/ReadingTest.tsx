@@ -10,6 +10,7 @@ import { GroupsView, scoreGroups, type Answers } from '../components/Questions';
 import { paragraphs, paraLabel } from '../lib/text';
 import { rawToBand, fmtBand } from '../lib/band';
 import { SKILL_META } from './SkillList';
+import { parseId, saveMode } from '../lib/tests';
 import WordPopover, { type WordSel } from '../components/WordPopover';
 
 export default function ReadingTest() {
@@ -24,7 +25,7 @@ export default function ReadingTest() {
   const hl = useHighlights(id);
   const startedAt = useMemo(() => Date.now(), []);
   const paras = useMemo(() => (m ? paragraphs(m.passage) : []), [m]);
-  useEffect(() => { setAnswers({}); setChecked(false); if (id && m) setLastOpen(id, `/reading/${id}`, 'test'); }, [id]); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { setAnswers({}); setChecked(false); if (m) saveMode('reading', 'test'); if (id && m) setLastOpen(id, `/reading/${id}`, 'test'); }, [id]); // eslint-disable-line react-hooks/exhaustive-deps
 
   if (!m) return <div className="page"><p className="empty">Không tìm thấy bài.</p></div>;
   const total = m.groups.reduce((n, g) => n + g.questions.length, 0);
@@ -43,9 +44,10 @@ export default function ReadingTest() {
   return (
     <div className="page page--wide page--practice" style={{ ['--skill' as string]: SKILL_META.reading.color }}>
       <div className="topbar topbar--sticky">
-        <button className="icon-btn" onClick={() => nav('/reading')} aria-label="Quay lại"><ArrowLeft size={20} /></button>
+        <button className="icon-btn" onClick={() => nav(parseId(m.id) ? `/test/reading/${parseId(m.id)!.key}` : '/reading')} aria-label="Quay lại"><ArrowLeft size={20} /></button>
         <div className="topbar__title"><small>Thi thử · Reading · {m.module === 'general' ? 'General Training' : 'Academic'}</small><strong>{m.title}</strong></div>
         <div className="topbar__actions">
+          {!checked && <Link to={`/reading/${m.id}/practice`} className="btn btn--ghost btn--sm mode-switch" title="Chuyển sang Luyện tập: không tính giờ, xem đáp án từng câu" onClick={(e) => { if (done > 0 && !confirm('Chuyển sang Luyện tập? Các câu đã làm ở bài thi này sẽ không được lưu.')) e.preventDefault(); }}><GraduationCap size={15} /> <span>Luyện tập</span></Link>}
           {!checked && <Timer key={m.id} minutes={m.minutes ?? 20} onEnd={submit} autoStart />}
           {checked ? <Link to={`/reading/${m.id}/practice`} className="btn btn--primary btn--sm"><GraduationCap size={16} /> Luyện tập bài này</Link> : null}
         </div>

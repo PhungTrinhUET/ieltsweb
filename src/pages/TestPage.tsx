@@ -1,11 +1,11 @@
 // Trang một đề (VOL N · Test M): chọn từng phần (Section / Passage / Task) hoặc làm cả đề một lần.
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ArrowLeft, Check, ChevronRight, GraduationCap, Play, Timer } from 'lucide-react';
 import type { Material, Skill } from '../types';
 import { useDb } from '../db';
 import { fmtBand, rawToBand } from '../lib/band';
-import { BANK_TEST, SECTION_DESC, bestResults, groupByTest, partLabel, shortTitle, testName } from '../lib/tests';
+import { BANK_TEST, SECTION_DESC, bestResults, groupByTest, partLabel, saveMode, savedMode, shortTitle, testName } from '../lib/tests';
 import { SKILL_META, subtitle } from './SkillList';
 import { useSettings } from '../store';
 import { QKIND_LABEL, materialKinds } from '../lib/qtypes';
@@ -18,6 +18,8 @@ export default function TestPage() {
   const s = useSettings();
   const t = useMemo(() => groupByTest(Object.values(db.materials), skill!).tests.get(tid!), [db.materials, skill, tid]);
   const results = useMemo(() => bestResults(db.attempts), [db.attempts]);
+  const [mode, setModeState] = useState(() => savedMode(skill!));
+  const setMode = (v: 'practice' | 'test') => { setModeState(v); saveMode(skill!, v); };
   if (!skill || !SKILL_META[skill]) return null;
   const meta = SKILL_META[skill];
   if (!t) return <div className="page"><p className="empty">Không tìm thấy đề.</p></div>;
@@ -37,15 +39,24 @@ export default function TestPage() {
       </div>
 
       {dual && (
-        <div className="fulltest card">
-          <div className="fulltest__body">
-            <strong>Làm cả đề</strong>
-            <span className="muted small">
-              {skill === 'listening' ? `${t.parts.length} section liên tiếp, một đồng hồ ~30 phút + 2 phút kiểm tra` : `${t.parts.length} passage, một đồng hồ ${minutes} phút`} · {total} câu · nộp một lần, chấm band
-            </span>
-            {allDone && <span className="small">Tổng điểm tốt nhất các phần: <strong>{sum}/{total}</strong> · Band {fmtBand(rawToBand(skill, sum, total, s.module))}</span>}
+        <div className="fullmodes">
+          <div className={`fulltest card${mode === 'practice' ? ' is-on' : ''}`}>
+            <div className="fulltest__body">
+              <strong><GraduationCap size={17} /> Luyện tập cả đề</strong>
+              <span className="muted small">Không tính giờ · đi lần lượt {t.parts.length} {skill === 'listening' ? 'section' : 'passage'} · tra từ, dịch, xem đáp án và giải thích từng câu</span>
+            </div>
+            <Link to={`/${skill}/${t.parts[0].id}/practice`} onClick={() => setMode('practice')} className={`btn ${mode === 'practice' ? 'btn--primary' : 'btn--ghost'}`}><GraduationCap size={17} /> Luyện tập</Link>
           </div>
-          <Link to={`/test/${skill}/${t.key}/full`} className="btn btn--primary"><Timer size={17} /> Làm cả đề</Link>
+          <div className={`fulltest card${mode === 'test' ? ' is-on' : ''}`}>
+            <div className="fulltest__body">
+              <strong><Timer size={17} /> Thi thử cả đề</strong>
+              <span className="muted small">
+                {skill === 'listening' ? `${t.parts.length} section liên tiếp, một đồng hồ ~30 phút + 2 phút kiểm tra` : `${t.parts.length} passage, một đồng hồ ${minutes} phút`} · {total} câu · nộp một lần, chấm band
+              </span>
+              {allDone && <span className="small">Tổng điểm tốt nhất các phần: <strong>{sum}/{total}</strong> · Band {fmtBand(rawToBand(skill, sum, total, s.module))}</span>}
+            </div>
+            <Link to={`/test/${skill}/${t.key}/full`} onClick={() => setMode('test')} className={`btn ${mode === 'test' ? 'btn--primary' : 'btn--ghost'}`}><Timer size={17} /> Thi thử</Link>
+          </div>
         </div>
       )}
 
@@ -63,8 +74,8 @@ export default function TestPage() {
               </div>
               <div className="item__actions">
                 {dual ? <>
-                  <Link to={`/${skill}/${m.id}/practice`} className="btn btn--ghost btn--sm" title="Không tính giờ, xem đáp án từng câu"><GraduationCap size={15} /> Luyện</Link>
-                  <Link to={`/${skill}/${m.id}`} className="btn btn--primary btn--sm" title="Bấm giờ, nộp bài mới xem đáp án"><Play size={15} /> Thi</Link>
+                  <Link to={`/${skill}/${m.id}/practice`} onClick={() => setMode('practice')} className={`btn btn--sm ${mode === 'practice' ? 'btn--primary' : 'btn--ghost'}`} title="Không tính giờ, xem đáp án từng câu"><GraduationCap size={15} /> Luyện tập</Link>
+                  <Link to={`/${skill}/${m.id}`} onClick={() => setMode('test')} className={`btn btn--sm ${mode === 'test' ? 'btn--primary' : 'btn--ghost'}`} title="Bấm giờ, nộp bài mới xem đáp án"><Play size={15} /> Thi thử</Link>
                 </> : <Link to={`/${skill}/${m.id}`} className="btn btn--primary btn--sm">Làm <ChevronRight size={15} /></Link>}
               </div>
             </li>

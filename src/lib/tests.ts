@@ -47,6 +47,21 @@ export function groupByTest(materials: Material[], skill: Skill) {
   return { vols, tests, others: others.sort((a, b) => b.addedAt - a.addedAt) };
 }
 
+/** Đề chứa bài `id` (các phần cùng VOL/Test, đã sắp thứ tự). */
+export function testOf(materials: Record<string, Material>, id: string): TestRef | undefined {
+  const m = materials[id]; const p = parseId(id);
+  if (!m || !p) return undefined;
+  return groupByTest(Object.values(materials).filter((x) => parseId(x.id)?.key === p.key), m.skill).tests.get(p.key);
+}
+
+/** Chế độ đã chọn ở trang kỹ năng (Luyện tập / Thi thử), nhớ trong localStorage. */
+export function savedMode(skill: string): 'practice' | 'test' {
+  try { return localStorage.getItem(`ielts-mode-${skill}`) === 'test' ? 'test' : 'practice'; } catch { return 'practice'; }
+}
+export function saveMode(skill: string, v: 'practice' | 'test') {
+  try { localStorage.setItem(`ielts-mode-${skill}`, v); } catch { /* bỏ qua */ }
+}
+
 export interface PartResult { score: number; max: number; band?: number }
 
 /** Kết quả tốt nhất của từng bài (mode test), gồm cả các phần nằm trong một lần làm cả đề / thi thử. */

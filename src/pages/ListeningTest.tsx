@@ -9,6 +9,7 @@ import { GroupsView, scoreGroups, type Answers } from '../components/Questions';
 import { rawToBand, fmtBand } from '../lib/band';
 import { speak, stopSpeak, ttsAvailable, speakerVoices } from '../lib/tts';
 import { SKILL_META } from './SkillList';
+import { parseId, saveMode } from '../lib/tests';
 import Timer from '../components/Timer';
 
 /** Một section: ~7–8 phút audio + thời gian kiểm tra. */
@@ -56,7 +57,7 @@ export default function ListeningTest() {
   const [showScript, setShowScript] = useState(false);
   const audio = useRef<AudioHandle>(null);
   const sp = useScriptSpeaker(m);
-  useEffect(() => { if (m) setLastOpen(m.id, `/listening/${m.id}`, 'test'); setAnswers({}); setChecked(false); setShowScript(false); if (m?.audio) resolveUrl(m.audio).then(setSrc); else setSrc(null); return () => stopAudio(); }, [id]); // eslint-disable-line
+  useEffect(() => { if (m) { setLastOpen(m.id, `/listening/${m.id}`, 'test'); saveMode('listening', 'test'); } setAnswers({}); setChecked(false); setShowScript(false); if (m?.audio) resolveUrl(m.audio).then(setSrc); else setSrc(null); return () => stopAudio(); }, [id]); // eslint-disable-line
 
   if (!m) return <div className="page"><p className="empty">Không tìm thấy bài.</p></div>;
   const hasScript = !!m.transcript.trim();
@@ -74,9 +75,9 @@ export default function ListeningTest() {
   return (
     <div className="page page--practice" style={{ ['--skill' as string]: SKILL_META.listening.color }}>
       <div className="topbar topbar--sticky">
-        <button className="icon-btn" onClick={() => nav('/listening')} aria-label="Quay lại"><ArrowLeft size={20} /></button>
+        <button className="icon-btn" onClick={() => nav(parseId(m.id) ? `/test/listening/${parseId(m.id)!.key}` : '/listening')} aria-label="Quay lại"><ArrowLeft size={20} /></button>
         <div className="topbar__title"><small>Thi thử · Listening · Section {m.section ?? '?'}</small><strong>{m.title}</strong></div>
-        <div className="topbar__actions">{!checked && <Timer key={m.id} minutes={SECTION_MINUTES} warnAt={120} onEnd={submit} autoStart />}</div>
+        <div className="topbar__actions">{!checked && <Link to={`/listening/${m.id}/practice`} className="btn btn--ghost btn--sm mode-switch" title="Chuyển sang Luyện tập: không tính giờ, xem đáp án từng câu" onClick={(e) => { if (done > 0 && !confirm('Chuyển sang Luyện tập? Các câu đã làm ở bài thi này sẽ không được lưu.')) e.preventDefault(); }}><GraduationCap size={15} /> <span>Luyện tập</span></Link>}{!checked && <Timer key={m.id} minutes={SECTION_MINUTES} warnAt={120} onEnd={submit} autoStart />}</div>
         <div className="topbar__progress" style={{ width: `${(done / total) * 100}%` }} />
       </div>
 

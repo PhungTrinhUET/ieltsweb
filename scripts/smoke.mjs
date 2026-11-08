@@ -123,7 +123,7 @@ for (const profile of Object.keys(PROFILES)) {
     await page.locator('a.item--test', { hasText: 'VOL 1 · Test 2' }).first().click();
     await page.waitForTimeout(400);
     if (!/#\/test\/reading\/vol1-t2$/.test(page.url())) return { ok: false, info: `url ${page.url()}` };
-    await page.getByRole('link', { name: /Làm cả đề/ }).click();
+    await page.locator('.fullmodes a[href$="/full"]').click();
     await page.getByRole('button', { name: /Bắt đầu/ }).click();
     page.once('dialog', (d) => d.accept());
     await page.getByRole('button', { name: /Nộp bài/ }).click();
@@ -157,6 +157,39 @@ for (const profile of Object.keys(PROFILES)) {
     await fills.first().locator('.q__peek').click();
     const shown = await page.locator('#q-31.q--no, #q-31.q--ok').count();
     return { ok: n >= 5 && rows === 0 && shown === 1 && h < 80, info: `fill=${n} dòng nút=${rows} cao=${Math.round(h)}px hiện=${shown}` };
+  });
+
+  await check(`[${profile}] D1 Luyện tập cả đề bên cạnh Thi thử, chuyển Passage trong lúc luyện`, async () => {
+    await go(page, '/test/reading/vol5-t6');
+    const both = (await page.locator('.fullmodes a[href$="/practice"]').count()) === 1 && (await page.locator('.fullmodes a[href$="/full"]').count()) === 1;
+    await page.locator('.fullmodes a[href$="/practice"]').click(); await page.waitForTimeout(400);
+    const u1 = page.url();
+    const tabs = await page.locator('.parttabs a').count();
+    await page.locator('.parttabs a').nth(1).click(); await page.waitForTimeout(400);
+    const u2 = page.url();
+    await page.locator('.topbar .icon-btn').first().click(); await page.waitForTimeout(400);
+    const u3 = page.url();
+    await go(page, '/reading/vol5-t6-r2');
+    const sw = await page.locator('.topbar .mode-switch').count();
+    await go(page, '/listening/vol5-t6-l2');
+    const swL = await page.locator('.topbar .mode-switch').count();
+    return { ok: both && u1.endsWith('vol5-t6-r1/practice') && tabs === 3 && u2.endsWith('vol5-t6-r2/practice') && u3.endsWith('/test/reading/vol5-t6') && sw === 1 && swL === 1,
+      info: `2 nút=${both} tabs=${tabs} ${u1.split('#')[1]} → ${u2.split('#')[1]} → ${u3.split('#')[1]} switch R/L=${sw}/${swL}` };
+  });
+  await check(`[${profile}] D2 tra từ: phiên âm + nghĩa Anh (Datamuse), nghĩa Việt đúng dấu phẩy`, async () => {
+    await page.route(/api\.datamuse\.com/, (r) => r.fulfill({ contentType: 'application/json', headers: { 'access-control-allow-origin': '*' },
+      body: JSON.stringify([{ word: new URL(r.request().url()).searchParams.get('sp'), tags: ['ipa_pron:tˈɛst'], defs: ['n\ta procedure for testing'] }]) }));
+    await page.route(/api\.mymemory\.translated\.net/, (r) => r.fulfill({ contentType: 'application/json', headers: { 'access-control-allow-origin': '*' },
+      body: JSON.stringify({ responseStatus: 200, responseData: { translatedText: 'tơ ,lụa' }, matches: [] }) }));
+    await go(page, '/reading/vol1-t1-r1/practice');
+    if (profile === 'iphone') await page.locator('.tabs--mobile .tabs__btn').first().click();
+    await page.locator('.passage .w, .passage [data-w]').nth(5).click();
+    await page.waitForSelector('.wpop', { timeout: 5000 });
+    await page.waitForTimeout(800);
+    const head = await page.locator('.wpop__head').innerText();
+    const body = await page.locator('.wpop').innerText();
+    await page.unrouteAll({ behavior: 'ignoreErrors' });
+    return { ok: /\/tˈɛst\//.test(head) && /procedure for testing/.test(body) && /tơ, lụa/.test(body), info: `${head.replace(/\s+/g, ' ')} | ${body.replace(/\s+/g, ' ').slice(0, 120)}` };
   });
 
   await check(`[${profile}] B10 bảng/form/flowchart gọn như đề giấy`, async () => {

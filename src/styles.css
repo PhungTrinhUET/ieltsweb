@@ -1427,6 +1427,9 @@ mark { background: #fde68a; color: #1a1a1a; border-radius: 3px; padding: 0 1px; 
 
 /* Chế độ Luyện tập */
 .practice-tip { margin: 0 0 10px; }
+.parttabs { margin: 0 0 10px; }
+@media (max-width: 520px) { .mode-switch span { display: none; } }
+.parttabs .tabs__btn { text-decoration: none; text-align: center; }
 .passage--practice .pp { padding: 4px 6px; border-radius: 8px; margin: 0 -6px 12px; }
 .passage--practice .pp.is-reading { background: var(--primary-soft); }
 .pp__en { line-height: 1.75; }
@@ -1599,7 +1602,10 @@ a.item:focus-visible { outline: 2px solid var(--skill, var(--primary)); outline-
 .partpill.is-no { background: var(--no-soft); color: var(--no); }
 .fulltest { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; padding: 16px; margin-bottom: 18px; border-left: 4px solid var(--skill); }
 .fulltest__body { flex: 1; min-width: 200px; display: flex; flex-direction: column; gap: 3px; }
-.fulltest__body > strong { font-size: 16px; }
+.fulltest__body > strong { font-size: 16px; display: inline-flex; align-items: center; gap: 6px; }
+.fullmodes { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-bottom: 18px; }
+.fullmodes .fulltest { margin-bottom: 0; border-left-color: var(--border); }
+.fullmodes .fulltest.is-on { border-left-color: var(--skill); box-shadow: 0 0 0 1px color-mix(in srgb, var(--skill) 35%, transparent); }
 .item--part { cursor: default; flex-wrap: wrap; }
 .item--part .item__title { -webkit-line-clamp: 3; }
 .item__actions { display: flex; gap: 6px; flex-shrink: 0; }

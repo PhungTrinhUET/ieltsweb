@@ -2,8 +2,8 @@
 // không bấm giờ, bấm từ để tra nghĩa tiếng Việt và lưu sổ từ, dịch từng đoạn/câu,
 // kiểm tra từng câu và xem giải thích ngay, ghi chú riêng cho bài.
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft, Check, Eye, EyeOff, Languages, Loader2, Pause, Play, RotateCcw, StickyNote, Volume2 } from 'lucide-react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { ArrowLeft, Check, ChevronRight, Eye, EyeOff, Languages, Loader2, Pause, Play, RotateCcw, StickyNote, Volume2 } from 'lucide-react';
 import type { ListeningMaterial, ReadingMaterial } from '../types';
 import { getState, resolveUrl, saveNote, useDb } from '../db';
 import { setLastOpen, touchStreak } from '../store';
@@ -15,6 +15,7 @@ import { paragraphs, paraLabel, sentences } from '../lib/text';
 import { ttsAvailable } from '../lib/tts';
 import { translateText } from '../lib/freeTranslate';
 import { SKILL_META } from './SkillList';
+import { partLabel, saveMode, testName, testOf } from '../lib/tests';
 import { useScriptSpeaker } from './ListeningTest';
 
 type Tr = Record<number, string | 'busy'>;
@@ -39,12 +40,19 @@ export default function Practice() {
   const noteTimer = useRef(0);
   const hl = useHighlights(id);
   const sp = useScriptSpeaker(isL ? (m as ListeningMaterial) : undefined);
+  // Các phần cùng đề (Passage 1–3 / Section 1–4) để chuyển qua lại khi luyện cả đề.
+  const test = useMemo(() => (id ? testOf(db.materials, id) : undefined), [db.materials, id]);
+  const multi = test && test.parts.length > 1 ? test : undefined;
+  const idx = multi ? multi.parts.findIndex((x) => x.id === id) : -1;
+  const next = multi && idx >= 0 ? multi.parts[idx + 1] : undefined;
 
   useEffect(() => {
     touchStreak();
+    if (m) saveMode(m.skill, 'practice');
     if (m) setLastOpen(m.id, `/${m.skill}/${m.id}/practice`, 'practice');
     setAnswers({}); setRevealed({}); setAll(false); setTr({}); setShowScript(false); setNote(db.notes[id!]?.text ?? '');
     if (isL && (m as ListeningMaterial).audio) resolveUrl((m as ListeningMaterial).audio!).then(setSrc); else setSrc(null);
+    window.scrollTo(0, 0);
     return () => stopAudio();
   }, [id]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -131,13 +139,21 @@ export default function Practice() {
   return (
     <div className="page page--wide page--practice" style={{ ['--skill' as string]: meta.color }}>
       <div className="topbar topbar--sticky">
-        <button className="icon-btn" onClick={() => nav(`/${m.skill}`)} aria-label="Quay lại"><ArrowLeft size={20} /></button>
-        <div className="topbar__title"><small>Luyện tập · {meta.label}{isL ? ` · Section ${(m as ListeningMaterial).section ?? '?'}` : ''}</small><strong>{m.title}</strong></div>
+        <button className="icon-btn" onClick={() => nav(test ? `/test/${m.skill}/${test.key}` : `/${m.skill}`)} aria-label="Quay lại"><ArrowLeft size={20} /></button>
+        <div className="topbar__title"><small>Luyện tập · {meta.label}{test ? ` · ${testName(test)} · ${partLabel(m)}` : isL ? ` · Section ${(m as ListeningMaterial).section ?? '?'}` : ''}</small><strong>{m.title}</strong></div>
         <div className="topbar__actions">
           {stored.length > 0 && (!isL || hasScript) && <button className={`btn btn--sm ${showAllVi ? 'btn--primary' : 'btn--ghost'}`} onClick={() => setShowAllVi(!showAllVi)}><Languages size={15} /> Dịch cả bài</button>}
         </div>
         <div className="topbar__progress" style={{ width: `${(done / total) * 100}%` }} />
       </div>
+
+      {multi && (
+        <nav className="tabs parttabs" aria-label="Các phần trong đề">
+          {multi.parts.map((x) => (
+            <Link key={x.id} to={`/${x.skill}/${x.id}/practice`} className={`tabs__btn${x.id === id ? ' is-on' : ''}`} aria-current={x.id === id ? 'page' : undefined}>{partLabel(x)}</Link>
+          ))}
+        </nav>
+      )}
 
       <p className="muted small practice-tip">
         Không tính giờ. <strong>Bấm vào một từ</strong> để xem nghĩa tiếng Việt, phiên âm và lưu vào sổ từ ·
@@ -198,6 +214,7 @@ export default function Practice() {
         <span className="result">{done}/{total} đã làm{checkedNos.length > 0 && <> · đúng <strong>{res.score}/{res.max}</strong> câu đã kiểm tra</>}</span>
         {all || checkedNos.length > 0 ? <button className="btn btn--ghost" onClick={reset}><RotateCcw size={16} /> Làm lại</button> : null}
         {!all && <button className="btn btn--primary" onClick={() => setAll(true)}><Check size={18} /> Kiểm tra tất cả</button>}
+        {all && next && <Link className="btn btn--primary practice-next" to={`/${next.skill}/${next.id}/practice`}>{partLabel(next)} <ChevronRight size={17} /></Link>}
       </div></div>
       <HighlightBar scopeClass="passage" onAdd={hl.add} onRemove={hl.remove} />
       {sel && <WordPopover sel={sel} vocab={m.vocab} from={m.id} onClose={() => setSel(null)} />}
