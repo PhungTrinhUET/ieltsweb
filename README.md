@@ -93,6 +93,21 @@ public/audio/vol<N>/test<M>/s1..s4.mp3 (+ .srt)   ← npm run audio
    - Với file gộp cả bài (tên file không có số section), script cắt theo mốc `cut` trong file content (cần ffmpeg).
 3. Chạy `npm run data` (hoặc `npm run dev`). Section nào chưa có audio thì app dùng giọng máy đọc transcript.
 
+### Audio trên MinIO / S3
+
+Bản deploy không chở audio theo: file nằm ở bucket `ieltsweb-audio` trên MinIO `https://s3.hairbui76.id.vn` (đọc công khai).
+
+1. Sau bước `npm run audio`, đặt khoá vào `.env.local` (không commit):
+   ```
+   S3_ENDPOINT=https://s3.hairbui76.id.vn
+   S3_ACCESS_KEY=…
+   S3_SECRET_KEY=…
+   S3_BUCKET=ieltsweb-audio
+   ```
+2. `npm run audio:upload` (thêm `-- --force` để ghi đè): tạo bucket nếu chưa có, đặt quyền đọc công khai, đẩy `public/audio/**` (mp3, srt) với key `vol<N>/test<M>/s<K>.mp3`, rồi ghi `content/audio-manifest.json`.
+3. `content/audio-manifest.json` được commit: `npm run data` gắn audio cho mọi section có trong manifest, kể cả khi máy không có `public/audio`.
+4. `.env` đặt `VITE_AUDIO_BASE=https://s3.hairbui76.id.vn/ieltsweb-audio/`; `src/db.ts` đổi `audio/…` thành URL đó. `npm run deploy` thấy biến này thì bỏ `dist/audio`.
+
 ### Định dạng `content/vol<N>/test<M>.json`
 
 ```json

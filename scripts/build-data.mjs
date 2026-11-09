@@ -7,6 +7,8 @@ import { createHash } from 'node:crypto';
 
 const ROOT = new URL('..', import.meta.url).pathname;
 const CONTENT = join(ROOT, 'content');
+// Audio đã đẩy lên S3/MinIO (npm run audio:upload): máy build không cần có file mp3 trong public/audio.
+const AUDIO_MANIFEST = new Set(existsSync(join(CONTENT, 'audio-manifest.json')) ? JSON.parse(readFileSync(join(CONTENT, 'audio-manifest.json'), 'utf8')).files : []);
 const OUT = join(ROOT, 'public', 'data');
 mkdirSync(OUT, { recursive: true });
 
@@ -94,7 +96,7 @@ for (const vol of readdirSync(CONTENT).filter((d) => statSync(join(CONTENT, d)).
       const offset = s.cut != null ? toSec(s.cut) : (s.offset ?? 0);
       let { transcript, segments } = parseTimed(s.transcript ?? '', offset);
       const audioRel = `${t.listening.audioDir}/s${s.section}.mp3`;
-      const hasAudio = existsSync(join(ROOT, 'public', audioRel));
+      const hasAudio = existsSync(join(ROOT, 'public', audioRel)) || AUDIO_MANIFEST.has(audioRel);
       const srtPath = join(ROOT, 'public', audioRel.replace(/\.mp3$/, '.srt'));
       const segs = existsSync(srtPath) ? parseSrt(readFileSync(srtPath, 'utf8')) : segments;
       if (!transcript.trim()) {
