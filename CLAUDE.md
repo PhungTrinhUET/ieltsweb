@@ -61,7 +61,7 @@ Chưa có unit test; có `scripts/smoke.mjs` (trình duyệt thật). Sau khi s�
 - **Đã xong 64 file / 707 bài luyện**: VOL 1–4 đủ 40 đề; VOL 5 đủ 10 đề + 19 đề Writing lẻ; VOL 6 đủ 6 đề (chưa có Writing); 240 bộ Speaking (forecast 2023 Q1, Q2, "gộp đề ver 1", 2024 Q1: 87, Sep 2024–Apr 2025: 74, 2025 Q2: 35).
 - **TẠM DỪNG 08/11/2026 theo yêu cầu người dùng**; chờ người dùng bảo chạy tiếp (dự kiến tuần sau). Khi tiếp tục: làm VOL 6 Writing, rồi VOL 7 từ Test 1.
 - Đợt audit 08/11/2026 (nhánh `fix/audit-1108`, đã merge vào `master`): A1–A7, B8–B12, C13–C16 xong; smoke 100/100. Audio (A4) tải từ Drive bằng `../ieltsweb-src/tools/dlaudio.py` (gdown), Drive hay chặn tạm ("Cannot retrieve the public link") → chạy lại sau, rồi `npm run audio`.
-- VOL 4 có vài chỗ thiếu: Test 5 không có audio; Test 7 (Q15–20) và Test 9 (Section 1) thiếu transcript; Writing trùng VOL 3 nên bỏ qua.
+- VOL 4 có vài chỗ thiếu: Test 7 (Q15–20) và Test 9 (Section 1) thiếu transcript; Writing trùng VOL 3 nên bỏ qua.
 
 ## Tiến độ phiên chuyển đổi (cập nhật liên tục)
 
@@ -71,10 +71,11 @@ Task list (đánh dấu `[x]` khi xong; dòng `→` là đang làm):
 - [x] 3. Speaking quý 1.2024 → `content/speaking/forecast-2024q1.json` (87 bộ; "50 đề mới update.pdf" là scan không đọc được; "CÁC GÓI DỰ ĐOÁN…" chỉ là tờ quảng cáo)
 - → 4a. VOL 6: [x] Test 2 · [x] Test 3 · [x] Test 4 · [x] Test 1 · [x] Test 5 · [x] Test 6 · [x] Speaking (`forecast-2024sep-2025apr.json` 74 bộ, `forecast-2025q2.json` 35 bộ có bài mẫu) · [ ] Writing (đã dừng giữa chừng, làm lại từ đầu). ID thêm: `L-TEST 5.pdf` `1BTzFTv7mUd2dqRKYkO42vznYdP9OBzFN`, `expl 1-4.pdf` `1Fr6tiPAWmwHXFPv57gRco95fCPZIit0e`; Audio Lis: Test 1 `1dP2C3xIe67DyEHbVxzhoLVW3y3v_sxni`, Test 2 `1jf9BOusktTVs8BqyblInKa-9aQwukCnH`, Test 3 `13s3vKn6oiAXwVeWZNvLiGRGeK_d7_td_`, Test 4 `10S_zJ20o5wAJaKOtJXJ9LrwD3I9LbTEG`, Test 6 `1tWYBG7t4FxwDDYlgc3pZVvlusBlb78W3` Test 5 `1N5aWYH9DQxzsS8_3657lv6jQu4EMsKQP`.
 - [ ] 4b. VOL 7 (bản nháp Test 1 do subagent bị dừng, chưa soát, để ở scratchpad phiên cũ; không dùng được ở phiên sau → làm lại) · [ ] 4c. VOL 8
-- [ ] 5. Audio: máy chưa có audio đề tải về → bỏ qua cho tới khi có thư mục tải về
+- [x] 5. Audio (09/11/2026): 214 file Drive VOL 1–6 → `npm run audio` → 222 file s<N>.mp3 → MinIO bucket `ieltsweb-audio` (`npm run audio:upload`, ghi `content/audio-manifest.json`). 214/216 section Listening có audio; thiếu VOL1 T5 Part 1 và VOL1 T8 Part 2 (Drive không có; `VOL 7/Reading/các đề update web…/Test 5 vol 1 audio.mp3` 29 phút có thể là cả đề VOL1 T5, chưa cắt). VOL 7 có audio gộp T3, T7, T11 (chưa có content).
 - [ ] 6. `npm run build` + báo cáo cuối
 
 Quyết định đã ghi:
+- 09/11/2026: audio đề host ở MinIO `https://s3.hairbui76.id.vn/ieltsweb-audio/` (`.env` → `VITE_AUDIO_BASE`); khoá S3 chỉ ở `.env.local`. Node trong máy cloud cần `NODE_USE_ENV_PROXY=1` để `fetch` đi qua proxy. Tải cả cây Drive: gdown `_download_and_parse_google_drive_link` (embedded folder view) rồi `gdown.download(id=…)`.
 - 08/11/2026: repo ban đầu chỉ có `ielts-practice.zip`; đã giải nén nội dung ra gốc repo, commit "baseline: 50 đề"; zip để trong `.gitignore`.
 - Máy không có `node`/`npm` trong PATH: đã tải Node v22 LTS vào `~/.local/opt/node` → trước khi chạy lệnh: `export PATH=$HOME/.local/opt/node/bin:$PATH`.
 - Không có tesseract/whisper; nguồn đề lấy qua Google Drive connector (`read_file_content` tự OCR PDF).

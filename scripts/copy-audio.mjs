@@ -20,8 +20,9 @@ for (const p of walk(src)) {
   if (!/\.(mp3|m4a|wav|wma|aac|ogg|flac)$/i.test(p)) continue;
   const vol = p.match(/VOL\s*(\d+)/i)?.[1];
   const test = [...p.matchAll(/test\s*(\d+)/gi)].pop()?.[1];
-  const sec = basename(p).match(/(?:track|part|sec\w*|audio|p|s)[\s_-]*0?(\d)\b/i)?.[1]
-    ?? basename(p).match(/^0?([1-4])(?:\D|$)/)?.[1]; // "01(1).MP3", "02.MP3"
+  const name = basename(p).replace(/\.[^.]+$/, ''); // bỏ đuôi: ".mp3" chứa "p3" từng bị nhận nhầm là section 3
+  const sec = name.match(/(?:track|part|sec\w*|audio|p|s)[\s_-]*0?(\d)\b/i)?.[1]
+    ?? name.match(/^0?([1-4])(?:\D|$)/)?.[1]; // "01(1).MP3", "02.MP3"
   if (!vol || !test) { console.log('bỏ qua (không nhận dạng được):', p); continue; }
   const outDir = join(ROOT, 'public', 'audio', `vol${vol}`, `test${test}`);
   mkdirSync(outDir, { recursive: true });
