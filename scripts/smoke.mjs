@@ -269,6 +269,19 @@ for (const profile of Object.keys(PROFILES)) {
     return { ok: /0:5\d/.test(a) && /1:5\d/.test(b), info: `${a} → ${b}` };
   });
 
+  // ---------- E1: Từ vựng – hộp Leitner ----------
+  await check(`[${profile}] E1 Từ vựng: bộ từ có sẵn, học từ mới → hộp 1, hỏi lại cuối buổi`, async () => {
+    await go(page, '/vocab');
+    await page.waitForSelector('.lt-topic', { timeout: 8000 });
+    const topics = await page.locator('.lt-topic').count();
+    await page.getByRole('button', { name: 'Ôn hôm nay' }).click();
+    const w1 = await page.locator('.lt-word strong').innerText();
+    await page.getByRole('button', { name: /Đã xem/ }).click();
+    await page.locator('.lt-review .icon-btn[aria-label="Thoát"]').click();
+    const box1 = +(await page.locator('.lt-box--1 strong').innerText());
+    return { ok: topics >= 10 && !!w1 && box1 >= 1, info: `chủ đề=${topics} từ đầu="${w1}" hộp 1=${box1}` };
+  });
+
   // ---------- A3: Writing nộp được khi chưa cấu hình AI ----------
   await check(`[${profile}] A3 Writing: Nộp bài không cần AI`, async () => {
     await go(page, '/writing/vol1-t3-w2');

@@ -174,7 +174,12 @@ export interface VocabCard {
   /** Nguồn: id tài liệu. */
   from?: string;
   addedAt: number;
-  // SRS (SM-2)
+  // Ôn tập: hộp Leitner 1–5 (src/lib/srs.ts). interval/ease/reps/lapses giữ từ bản SM-2 cũ.
+  box?: number;
+  /** Lần ôn gần nhất. */
+  lastReview?: number;
+  /** Lần đầu học (đưa vào hộp 1). */
+  learnedAt?: number;
   due: number;
   interval: number;
   ease: number;

@@ -82,7 +82,7 @@ function parseSrt(text) {
 const span = (q) => Array.from({ length: q.type === 'multi' ? Math.max(1, q.answer.length) : 1 }, (_, i) => q.no + i);
 const index = [];
 let total = 0;
-for (const vol of readdirSync(CONTENT).filter((d) => statSync(join(CONTENT, d)).isDirectory())) {
+for (const vol of readdirSync(CONTENT).filter((d) => d !== 'vocab' && statSync(join(CONTENT, d)).isDirectory())) {
   for (const f of readdirSync(join(CONTENT, vol)).filter((x) => x.endsWith('.json'))) {
     const t = JSON.parse(readFileSync(join(CONTENT, vol, f), 'utf8'));
     const id = t.id ?? `${vol}-t${t.test}`;
@@ -141,5 +141,28 @@ for (const vol of readdirSync(CONTENT).filter((d) => statSync(join(CONTENT, d)).
   }
 }
 index.sort((a, b) => a.vol - b.vol || a.test - b.test);
-writeFileSync(join(OUT, 'index.json'), JSON.stringify({ generatedAt: new Date().toISOString(), files: index }));
-console.log(`build-data: ${index.length} test(s), ${total} materials → public/data/`);
+// Bộ từ vựng có sẵn: content/vocab/*.json → public/data/vocab-deck.json (trang Từ vựng tải khi cần).
+let vocab;
+{
+  const dir = join(CONTENT, 'vocab');
+  const topics = [];
+  const seen = new Map();
+  if (existsSync(dir)) for (const f of readdirSync(dir).filter((x) => x.endsWith('.json')).sort()) {
+    for (const t of JSON.parse(readFileSync(join(dir, f), 'utf8')).topics ?? []) {
+      for (const w of t.words) {
+        if (!Array.isArray(w) || w.length < 3 || w.slice(0, 3).some((x) => typeof x !== 'string' || !x.trim())) console.warn(`⚠ vocab ${t.id}: từ lỗi ${JSON.stringify(w)}`);
+        const k = String(w[0]).toLowerCase();
+        if (seen.has(k)) console.warn(`⚠ vocab: "${w[0]}" trùng ở ${seen.get(k)} và ${t.id}`);
+        seen.set(k, t.id);
+      }
+      topics.push({ id: t.id, name: t.name, vi: t.vi, words: t.words });
+    }
+  }
+  if (topics.length) {
+    const body = JSON.stringify({ topics });
+    writeFileSync(join(OUT, 'vocab-deck.json'), body);
+    vocab = { file: 'vocab-deck.json', hash: createHash('sha1').update(body).digest('hex').slice(0, 12), topics: topics.length, words: seen.size };
+  }
+}
+writeFileSync(join(OUT, 'index.json'), JSON.stringify({ generatedAt: new Date().toISOString(), files: index, ...(vocab ? { vocab } : {}) }));
+console.log(`build-data: ${index.length} test(s), ${total} materials${vocab ? `, ${vocab.words} từ vựng / ${vocab.topics} chủ đề` : ''} → public/data/`);
