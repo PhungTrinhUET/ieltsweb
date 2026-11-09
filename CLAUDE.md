@@ -26,6 +26,7 @@ Chưa có unit test; có `scripts/smoke.mjs` (trình duyệt thật). Sau khi s�
 - `src/types.ts`: schema `Material` / `Question`. Đây là nguồn chuẩn cho các dạng câu hỏi.
 - `src/db.ts`: IndexedDB (DB v2). Khi app mở, file này hỏi `public/data/index.json` rồi chỉ tải file có `hash` khác bản đã cache trong store `bundle`.
 - `src/components/Questions.tsx`: hiển thị và chấm mọi dạng câu hỏi.
+- `src/components/Exam.tsx` + `src/exam.css`: khung **mô phỏng máy thi IELTS** (thanh trên: số báo danh, "N minutes left", Help/Hide/Options; khung "Part N"; 2 cột kéo được; thanh dưới: Part + số câu, Review, ← →, ✓ nộp). Trong khung (`ExamCtx`), MCQ/TFNG thành radio, multi thành checkbox, matching kéo-thả. Dùng cho Thi thử (`MockTest.tsx` → `ExamRunner`, cả `/reading/:id`, `/listening/:id`), Luyện tập (`Practice.tsx`) và Writing. Listening thi thử: audio phát liền 1 lần, không dừng/tua, hết audio còn 2 phút rồi tự nộp. Chữ trên khung tiếng Anh như máy thi; công cụ riêng của app tiếng Việt.
 - `src/pages/`: các màn hình. Gồm SkillList, ReadingTest/ReadingStudy, ListeningTest, Dictation, GapFill, MockTest, Speaking, Writing, Vocab, Library, History, Guide, Settings.
 - `src/ai/`: gọi Claude (structured output) để chấm Writing/Speaking, dịch, tra từ, sinh đề.
 - `scripts/build-data.mjs`: chuyển content → material. Script tự xử lý `offset`/`cut`, `.srt`, và kiểm tra đáp án.

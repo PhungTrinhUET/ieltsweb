@@ -54,7 +54,13 @@ async function go(page, hash) {
   await page.waitForSelector('.main', { timeout: 20000 });
   await page.waitForTimeout(500);
 }
-const timerText = (page, sel = '.timer') => page.locator(sel).first().innerText().catch(() => '');
+// Đồng hồ khung thi chỉ hiện phút ("59 minutes left") → đọc số giây ở data-left.
+const timerText = (page, sel = '.timer') => page.locator(sel).first().evaluate((e) => e.dataset.left ?? e.innerText).catch(() => '');
+/** Điện thoại: ô viết Writing nằm ở tab thứ hai của khung thi. */
+async function answerTab(page) {
+  const t = page.locator('.xtabs .tabs__btn').nth(1);
+  if (await t.isVisible().catch(() => false)) await t.click();
+}
 async function timerRuns(page, sel = '.timer') {
   const a = await timerText(page, sel);
   await page.waitForTimeout(2300);
@@ -110,11 +116,12 @@ for (const profile of Object.keys(PROFILES)) {
   await check(`[${profile}] A2 đồng hồ Thi thử ghép đề chạy sau Bắt đầu`, async () => {
     await go(page, '/mock/reading');
     await page.getByRole('button', { name: /Bắt đầu/ }).click();
+    await page.getByRole('button', { name: 'Start test' }).click();
     return timerRuns(page);
   });
   await check(`[${profile}] A2 đồng hồ làm cả đề Listening`, async () => {
     await go(page, '/test/listening/vol5-t7/full');
-    await page.getByRole('button', { name: /Bắt đầu/ }).click();
+    await page.getByRole('button', { name: 'Start test' }).click();
     return timerRuns(page);
   });
   await check(`[${profile}] B8 duyệt VOL → Test, làm cả đề lưu một lần, hiện điểm từng phần`, async () => {
@@ -124,9 +131,9 @@ for (const profile of Object.keys(PROFILES)) {
     await page.waitForTimeout(400);
     if (!/#\/test\/reading\/vol1-t2$/.test(page.url())) return { ok: false, info: `url ${page.url()}` };
     await page.locator('.fullmodes a[href$="/full"]').click();
-    await page.getByRole('button', { name: /Bắt đầu/ }).click();
+    await page.getByRole('button', { name: 'Start test' }).click();
     page.once('dialog', (d) => d.accept());
-    await page.getByRole('button', { name: /Nộp bài/ }).click();
+    await page.getByRole('button', { name: 'Nộp bài' }).click();
     await page.waitForSelector('.final');
     await go(page, '/history');
     const hist = await page.getByText(/VOL 1 · Test 2 – cả đề/).count();
@@ -164,15 +171,15 @@ for (const profile of Object.keys(PROFILES)) {
     const both = (await page.locator('.fullmodes a[href$="/practice"]').count()) === 1 && (await page.locator('.fullmodes a[href$="/full"]').count()) === 1;
     await page.locator('.fullmodes a[href$="/practice"]').click(); await page.waitForTimeout(400);
     const u1 = page.url();
-    const tabs = await page.locator('.parttabs a').count();
-    await page.locator('.parttabs a').nth(1).click(); await page.waitForTimeout(400);
+    const tabs = await page.locator('.parttabs .xnav__part').count();
+    await page.locator('.parttabs .xnav__part:not(.is-on)').first().click(); await page.waitForTimeout(400);
     const u2 = page.url();
-    await page.locator('.topbar .icon-btn').first().click(); await page.waitForTimeout(400);
+    await page.locator('.xhead .xbtn--exit').click(); await page.waitForTimeout(400);
     const u3 = page.url();
     await go(page, '/reading/vol5-t6-r2');
-    const sw = await page.locator('.topbar .mode-switch').count();
+    const sw = await page.locator('.xhead .mode-switch').count();
     await go(page, '/listening/vol5-t6-l2');
-    const swL = await page.locator('.topbar .mode-switch').count();
+    const swL = await page.locator('.xhead .mode-switch').count();
     return { ok: both && u1.endsWith('vol5-t6-r1/practice') && tabs === 3 && u2.endsWith('vol5-t6-r2/practice') && u3.endsWith('/test/reading/vol5-t6') && sw === 1 && swL === 1,
       info: `2 nút=${both} tabs=${tabs} ${u1.split('#')[1]} → ${u2.split('#')[1]} → ${u3.split('#')[1]} switch R/L=${sw}/${swL}` };
   });
@@ -226,12 +233,12 @@ for (const profile of Object.keys(PROFILES)) {
     await go(page, '/writing/vol1-t2-w2');
     const before = await timerRuns(page);
     if (before.ok) return { ok: false, info: `chạy trước khi gõ: ${before.info}` };
-    await page.locator('.wbox__input').fill('Some people');
+    await answerTab(page); await page.locator('.wbox__input').fill('Some people');
     const run = await timerRuns(page);
     if (!run.ok) return run;
     await go(page, '/writing/vol1-t3-w2');
     const t = await timerText(page);
-    return { ok: /40:00/.test(t), info: `sang bài khác: ${t}` };
+    return { ok: t === '2400', info: `sang bài khác: còn ${t} giây` };
   });
   await check(`[${profile}] A2 cảnh báo 5 phút + hết giờ tự nộp (Reading)`, async () => {
     const p = await newPage(profile);
@@ -265,9 +272,10 @@ for (const profile of Object.keys(PROFILES)) {
   // ---------- A3: Writing nộp được khi chưa cấu hình AI ----------
   await check(`[${profile}] A3 Writing: Nộp bài không cần AI`, async () => {
     await go(page, '/writing/vol1-t3-w2');
-    await page.locator('.wbox__input').fill(Array.from({ length: 60 }, (_, i) => `word${i}`).join(' '));
+    await answerTab(page); await page.locator('.wbox__input').fill(Array.from({ length: 60 }, (_, i) => `word${i}`).join(' '));
     const btn = page.getByRole('button', { name: /^Nộp bài/ });
     if (!(await btn.count())) return { ok: false, info: 'không có nút Nộp bài' };
+    page.once('dialog', (d) => d.accept());
     await btn.first().click();
     await page.waitForTimeout(500);
     const checklist = await page.locator('.selfcheck').count();
@@ -364,7 +372,7 @@ for (const profile of Object.keys(PROFILES)) {
       await p.getByRole('button', { name: /Kiểm tra kết nối/ }).click();
       const okText = await p.locator('.ok-text, .no-text').first().innerText({ timeout: 10000 });
       await go(p, '/writing/vol1-t2-w2');
-      await p.locator('.wbox__input').fill(Array.from({ length: 60 }, () => 'word').join(' '));
+      await answerTab(p); await p.locator('.wbox__input').fill(Array.from({ length: 60 }, () => 'word').join(' '));
       await p.getByRole('button', { name: /Chấm bằng AI/ }).click();
       await p.waitForFunction(() => !document.querySelector('.spin'), null, { timeout: 15000 });
       await p.waitForTimeout(500);

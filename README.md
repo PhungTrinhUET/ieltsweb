@@ -80,6 +80,14 @@ public/data/*.json + index.json   app tự nạp khi mở
 public/audio/vol<N>/test<M>/s1..s4.mp3 (+ .srt)   ← npm run audio
 ```
 
+### Giao diện thi
+
+Reading, Listening và Writing (cả Thi thử lẫn Luyện tập) chạy trong khung mô phỏng màn hình thi IELTS trên máy tính:
+số báo danh và đồng hồ "N minutes left" (báo khi còn 10 và 5 phút), khung "Part N – Read the text and answer questions …",
+bài đọc / câu hỏi chia 2 cột kéo được, thanh dưới có Part, số câu (gạch chân = đã làm, viền = đang ở, viền tròn trên = Review), ← → và nút ✓ nộp bài.
+Options (☰): cỡ chữ Standard / Large / Extra large, nền Black on white / White on black / Yellow on black. Hide che màn hình.
+Thi thử cả đề có màn hướng dẫn (Listening thêm kiểm tra âm thanh); Listening phát audio liền 4 phần một lần, không dừng/tua, hết audio còn 2 phút rồi tự nộp.
+
 ### Thêm audio thật
 
 1. Tải thư mục đề trên Google Drive về máy, **giữ nguyên cấu trúc thư mục** (ví dụ `VOL 5- ORIGINAL EXAMS/…/Listening/Test 3/P2.mp3`).

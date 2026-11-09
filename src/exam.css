@@ -1,0 +1,206 @@
+/* Khung máy thi IELTS (src/components/Exam.tsx). Phẳng, trắng, Arial như màn hình thi trên máy. */
+html.exam-open, html.exam-open body { overflow: hidden; }
+
+.exam {
+  --xbg: #fff; --xfg: #1a1a1a; --xmuted: #5f6368; --xline: #c7c7c7; --xsoft: #f2f2f2; --xpanel: #f7f7f7;
+  --xsel: #dbe8fb; --xacc: #1f5fbf; --xbtn: #3a3a3a; --xbtn-fg: #fff; --xok: #1e7d32; --xno: #c62828; --xfs: 15px;
+  position: fixed; inset: 0; z-index: 70; display: flex; flex-direction: column;
+  background: var(--xbg); color: var(--xfg);
+  font-family: Arial, Helvetica, sans-serif; font-size: var(--xfs); line-height: 1.5;
+  /* Biến của app dùng trong các thành phần câu hỏi */
+  --text: var(--xfg); --text-2: var(--xfg); --text-3: var(--xmuted); --surface: var(--xbg); --surface-2: var(--xsoft); --border: var(--xline);
+  --primary: var(--xacc); --primary-soft: var(--xsel); --skill: var(--xfg); --bg: var(--xbg);
+}
+.exam[data-size='large'] { --xfs: 18px; }
+.exam[data-size='xlarge'] { --xfs: 21px; }
+.exam[data-contrast='wb'] { --xbg: #000; --xfg: #fff; --xmuted: #ddd; --xline: #777; --xsoft: #1c1c1c; --xpanel: #111; --xsel: #333; --xacc: #fff; --xbtn: #fff; --xbtn-fg: #000; --xok: #7ee08a; --xno: #ff8a80; }
+.exam[data-contrast='yb'] { --xbg: #000; --xfg: #ffeb3b; --xmuted: #e6d64a; --xline: #8a7f1f; --xsoft: #1c1a00; --xpanel: #111; --xsel: #3a3500; --xacc: #ffeb3b; --xbtn: #ffeb3b; --xbtn-fg: #000; --xok: #a5ff8a; --xno: #ff8a80; }
+.exam button, .exam input, .exam select, .exam textarea { font-family: inherit; }
+.exam :focus-visible { outline: 2px solid var(--xacc); outline-offset: 2px; }
+
+/* Thanh trên */
+.xhead { position: relative; flex: 0 0 auto; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px; height: 56px; padding: 0 12px; border-bottom: 1px solid var(--xline); background: var(--xbg); }
+.xhead__left, .xhead__right { display: flex; align-items: center; gap: 6px; min-width: 0; }
+.xhead__right { justify-content: flex-end; }
+.xhead__cand { font-weight: 700; font-size: 14px; letter-spacing: .02em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.xhead__mid { display: flex; align-items: center; gap: 10px; justify-content: center; white-space: nowrap; }
+.xhead__status { font-size: 14px; color: var(--xmuted); }
+.xhead__wifi { color: var(--xmuted); margin: 0 4px; }
+.xbtn { display: inline-flex; align-items: center; gap: 6px; height: 36px; min-width: 36px; padding: 0 8px; justify-content: center; border: 0; border-radius: 4px; background: transparent; color: var(--xfg); cursor: pointer; font-size: 14px; text-decoration: none; }
+.xbtn:hover { background: var(--xsoft); }
+.xbtn.is-on { background: var(--xsel); }
+.xbtn--exit { color: var(--xmuted); }
+.xbtn-text { border: 0; background: none; color: var(--xacc); cursor: pointer; padding: 6px 0; font-size: 14px; text-decoration: underline; }
+.xbtn-solid { display: inline-flex; align-items: center; gap: 6px; padding: 8px 18px; border: 0; border-radius: 3px; background: var(--xbtn); color: var(--xbtn-fg); font-weight: 700; font-size: 15px; cursor: pointer; }
+.xbtn-solid:disabled { opacity: .4; cursor: not-allowed; }
+.xbtn-solid--big { padding: 12px 34px; font-size: 16px; }
+
+.xclock { all: unset; font-weight: 700; font-size: 16px; color: var(--xfg); }
+.xclock .timer__num { font-variant-numeric: tabular-nums; }
+.xclock.is-low { color: var(--xno); animation: xblink 1s steps(2, start) 6; }
+.xclock.is-out { color: var(--xno); }
+@keyframes xblink { 50% { opacity: .25; } }
+.xtoast { position: fixed; top: 64px; left: 50%; transform: translateX(-50%); z-index: 80; padding: 10px 20px; border: 2px solid var(--xfg); background: var(--xbg); color: var(--xfg); font-weight: 700; box-shadow: 0 4px 16px rgba(0,0,0,.18); }
+
+.xpop { position: absolute; top: 54px; right: 10px; z-index: 85; min-width: 240px; max-width: min(380px, calc(100vw - 20px)); padding: 12px 16px; border: 1px solid var(--xline); background: var(--xbg); box-shadow: 0 6px 24px rgba(0,0,0,.2); font-size: 14px; display: flex; flex-direction: column; gap: 4px; }
+.xpop__h { font-weight: 700; font-size: 16px; margin-bottom: 4px; }
+.xpop__sec { font-weight: 700; margin-top: 8px; }
+.xpop ul { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; }
+.xpop--vol { min-width: 0; }
+.xpop--vol label, .xvol { display: flex; align-items: center; gap: 8px; }
+.exam input[type="range"] { accent-color: var(--xfg); }
+.xradio { display: flex; align-items: center; gap: 8px; padding: 3px 0; cursor: pointer; }
+.xradio input, .xopt input { accent-color: var(--xacc); width: 17px; height: 17px; margin: 0; flex-shrink: 0; }
+
+/* Khung Part */
+.xbanner { flex: 0 0 auto; margin: 10px 14px 0; padding: 10px 16px; background: var(--xpanel); border: 1px solid var(--xline); display: flex; flex-direction: column; gap: 2px; }
+.xbanner strong { font-size: calc(var(--xfs) + 1px); }
+
+.xbody { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; padding: 10px 14px 0; }
+.xsingle { flex: 1; min-height: 0; overflow: auto; padding: 4px 4px 24px; }
+.xsingle > * { max-width: 920px; margin-left: auto; margin-right: auto; }
+.xsplit { flex: 1; min-height: 0; display: grid; grid-template-columns: var(--xl, 50%) 14px 1fr; }
+.xsplit__pane { min-width: 0; min-height: 0; overflow: auto; padding: 6px 14px 24px 4px; }
+.xsplit__pane--right { padding-left: 10px; }
+.xsplit__bar { cursor: col-resize; display: flex; align-items: center; justify-content: center; position: relative; touch-action: none; }
+.xsplit__bar::before { content: ''; position: absolute; top: 0; bottom: 0; left: 6px; width: 2px; background: var(--xline); }
+.xsplit__bar span { position: relative; z-index: 1; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--xbg); border: 1px solid var(--xline); font-size: 12px; color: var(--xmuted); }
+.xtabs { display: none; }
+
+/* Thanh điều hướng dưới */
+.xnav { flex: 0 0 auto; display: flex; align-items: stretch; gap: 10px; min-height: 62px; padding: 0 10px; border-top: 1px solid var(--xline); background: var(--xbg); }
+.xnav__review { display: flex; align-items: center; gap: 6px; font-size: 14px; white-space: nowrap; cursor: pointer; }
+.xnav__review input { accent-color: var(--xacc); width: 16px; height: 16px; }
+.xnav__review.is-off { opacity: .45; cursor: default; }
+.xnav__parts { flex: 1; min-width: 0; display: flex; align-items: stretch; overflow-x: auto; scrollbar-width: thin; }
+.xnav__part { display: flex; align-items: center; gap: 8px; padding: 0 14px; border: 0; border-right: 1px solid var(--xline); background: none; color: var(--xfg); font-size: 14px; white-space: nowrap; cursor: pointer; text-decoration: none; }
+.xnav__part:first-child { border-left: 1px solid var(--xline); }
+.xnav__part:not(.is-on):hover { background: var(--xsoft); }
+.xnav__part span { color: var(--xmuted); }
+.xnav__part.is-on { cursor: default; background: var(--xpanel); }
+.xnav__nos { display: flex; gap: 2px; }
+.xnav__no { position: relative; width: 28px; height: 30px; border: 1px solid transparent; border-radius: 2px; background: none; color: var(--xfg); font-size: 13.5px; cursor: pointer; padding: 0; }
+.xnav__no:hover { border-color: var(--xline); }
+.xnav__no.is-ans::after { content: ''; position: absolute; left: 4px; right: 4px; bottom: 2px; height: 3px; background: var(--xfg); }
+.xnav__no.is-cur { border: 2px solid var(--xacc); font-weight: 700; }
+.xnav__no.is-flag { border-radius: 50% 50% 2px 2px; border-top: 3px solid var(--xacc); }
+.xnav__no.is-right { color: var(--xok); font-weight: 700; }
+.xnav__no.is-right::after { background: var(--xok); }
+.xnav__no.is-wrong { color: var(--xno); font-weight: 700; }
+.xnav__no.is-wrong::after { content: ''; position: absolute; left: 4px; right: 4px; bottom: 2px; height: 3px; background: var(--xno); }
+.xnav__right { display: flex; align-items: center; gap: 6px; }
+.xnav__arrow, .xnav__submit { width: 46px; height: 46px; display: grid; place-items: center; border: 0; border-radius: 3px; background: var(--xbtn); color: var(--xbtn-fg); cursor: pointer; }
+.xnav__arrow:hover, .xnav__submit:hover { filter: brightness(1.25); }
+.xnav__submit { margin-left: 8px; }
+.xnav__submit:disabled { opacity: .4; }
+
+/* Câu hỏi trong khung thi: phẳng, số câu in đậm, không thẻ bo tròn */
+.exam .qgroups { gap: 26px; }
+.exam .qgroup { padding: 0; border: 0; background: none; border-radius: 0; gap: 8px; }
+.exam .qgroup h3 { font-size: calc(var(--xfs) + 1px); color: var(--xfg); font-weight: 700; }
+.exam .instruction { color: var(--xfg); font-size: var(--xfs); }
+.exam .qtext { font-size: var(--xfs); }
+.exam .q { border-top: 0; padding: 8px 0; gap: 10px; }
+.exam .q__no { width: auto; min-width: 22px; height: auto; background: none; border-radius: 0; font-size: var(--xfs); font-weight: 700; color: var(--xfg); place-items: start; padding-top: 1px; }
+.exam .q--compact .q__no { width: auto; height: auto; font-size: var(--xfs); margin-top: 3px; }
+.exam .blank { background: var(--xbg); color: var(--xfg); border: 1px solid #555; border-radius: 2px; padding: 3px 8px; font-weight: 400; min-width: 130px; }
+.exam .blank::placeholder { color: var(--xfg); font-weight: 700; opacity: .9; }
+.exam .blank:focus { border-color: var(--xacc); box-shadow: 0 0 0 1px var(--xacc); }
+.exam .blank:focus::placeholder { opacity: 0; }
+.exam .blank.is-correct { border-color: var(--xok); color: var(--xok); }
+.exam .blank.is-wrong { border-color: var(--xno); color: var(--xno); }
+.exam .paper { border: 1px solid var(--xline); border-radius: 0; box-shadow: none; background: var(--xbg); }
+.exam .qtable th, .exam .qtable td { border-color: var(--xline); }
+.exam .qtable-wrap { border-radius: 0; border-color: var(--xline); }
+.exam .qbank { border: 1px solid var(--xline); border-radius: 0; background: var(--xbg); }
+.exam .qbank li { padding: 3px 6px; border: 1px solid transparent; }
+.exam .qbank li[draggable='true'] { cursor: grab; }
+.exam .qbank li[draggable='true']:hover { border-color: var(--xline); background: var(--xsoft); }
+.exam .qcontext, .exam .qnote { border-radius: 0; }
+.exam .pmenu__btn { border-radius: 2px; border: 1px solid #555; background: var(--xbg); color: var(--xfg); }
+.exam .pmenu__list { border-radius: 2px; background: var(--xbg); color: var(--xfg); }
+.xdrop { display: inline-block; border-radius: 3px; }
+.xdrop.is-over { outline: 2px dashed var(--xacc); outline-offset: 2px; }
+.exam .q__explain { border-radius: 0; }
+
+.xopts { display: flex; flex-direction: column; gap: 2px; margin-top: 4px; }
+.xopt { display: flex; align-items: flex-start; gap: 10px; padding: 6px 8px; border: 1px solid transparent; cursor: pointer; }
+.xopt input { margin-top: 3px; }
+.xopt:hover { background: var(--xsoft); }
+.xopt.is-selected { background: var(--xsel); }
+.xopt__l { font-weight: 700; min-width: 14px; }
+.xopt__t { flex: 1; }
+.xopt__i { flex-shrink: 0; margin-top: 3px; }
+.xopt.is-correct { border-color: var(--xok); color: var(--xok); font-weight: 700; }
+.xopt.is-wrong { border-color: var(--xno); color: var(--xno); text-decoration: line-through; }
+.xopt:has(input:disabled) { cursor: default; }
+
+/* Bài đọc */
+.exam .passage { border: 0; border-radius: 0; background: none; padding: 0 4px; font-size: var(--xfs); line-height: 1.7; }
+.exam .passage h2 { font-size: calc(var(--xfs) + 5px); text-align: center; margin-bottom: 4px; }
+.exam .passage__label { background: none; color: var(--xfg); font-size: var(--xfs); width: auto; min-width: 18px; height: auto; margin-top: 0; }
+.exam .hlbar { border-radius: 4px; }
+
+/* Màn hướng dẫn */
+.xintro { flex: 1; overflow: auto; max-width: 820px; width: 100%; margin: 0 auto; padding: 20px 8px 40px; display: flex; flex-direction: column; gap: 18px; }
+.xintro h1 { font-size: 26px; }
+.xintro__time { font-weight: 700; }
+.xintro__box { border: 1px solid var(--xline); padding: 16px 20px; display: flex; flex-direction: column; gap: 10px; }
+.xintro__box h2 { font-size: 15px; letter-spacing: .03em; }
+.xintro__box ul { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 4px; }
+.xintro .xbtn-solid--big { align-self: flex-start; }
+
+/* Che màn hình, bảng kết quả */
+.xhide { position: absolute; inset: 0; z-index: 90; background: var(--xbg); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; font-size: 18px; }
+.xsheet { position: absolute; inset: 0; z-index: 88; background: rgba(0,0,0,.45); display: grid; place-items: center; padding: 16px; }
+.xsheet__card { position: relative; width: min(760px, 100%); max-height: calc(100% - 32px); overflow: auto; background: var(--xbg); color: var(--xfg); border: 1px solid var(--xline); padding: 22px 24px; box-shadow: 0 10px 40px rgba(0,0,0,.3); }
+.xsheet__x { position: absolute; top: 8px; right: 8px; }
+.xsheet .final { border: 0; padding: 0; background: none; box-shadow: none; display: flex; flex-direction: column; gap: 14px; }
+.xsheet .final h2 { font-size: 20px; }
+.final__big { font-size: 28px; }
+
+/* Công cụ luyện tập trong khung */
+.xtool { display: inline-flex; align-items: center; gap: 5px; height: 34px; padding: 0 10px; border: 1px solid var(--xline); border-radius: 3px; background: var(--xbg); color: var(--xfg); font-size: 13.5px; cursor: pointer; white-space: nowrap; text-decoration: none; }
+.xtool:hover { background: var(--xsoft); }
+.xtool.is-on { background: var(--xsel); border-color: var(--xacc); }
+.xtool--primary { background: var(--xbtn); color: var(--xbtn-fg); border-color: var(--xbtn); }
+.xpractice-audio { margin: 8px 0 0; }
+.xpractice-audio .audio { border-radius: 0; box-shadow: none; border: 1px solid var(--xline); background: var(--xbg); }
+.xnotes { margin-top: 24px; border-top: 1px solid var(--xline); padding-top: 12px; display: flex; flex-direction: column; gap: 6px; }
+.xnotes textarea { width: 100%; min-height: 90px; border: 1px solid var(--xline); padding: 8px; background: var(--xbg); color: var(--xfg); font-size: var(--xfs); }
+
+/* Writing */
+.xwrite { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 6px; height: 100%; }
+.xwrite textarea { flex: 1; min-height: 260px; resize: none; border: 1px solid #555; border-radius: 0; padding: 10px 12px; background: var(--xbg); color: var(--xfg); font-size: var(--xfs); line-height: 1.6; }
+.xwrite textarea:focus { outline: none; border-color: var(--xacc); box-shadow: 0 0 0 1px var(--xacc); }
+.xwrite__count { text-align: right; font-size: 14px; }
+.xprompt { display: flex; flex-direction: column; gap: 12px; }
+.xprompt p { margin: 0; }
+.xprompt .collapse { border-radius: 0; }
+
+/* Điện thoại / máy tính bảng hẹp: tab Bài đọc / Câu hỏi, thanh dưới cuộn ngang */
+@media (max-width: 959px) {
+  .xhead { grid-template-columns: auto 1fr auto; height: 50px; padding: 0 6px; gap: 6px; }
+  .xhead__cand, .xhead__wifi { display: none; }
+  .xhead__mid { justify-content: center; overflow: hidden; }
+  .xhead__status { font-size: 12.5px; overflow: hidden; text-overflow: ellipsis; }
+  .xhead .xbtn span { display: none; }
+  .xbanner { margin: 6px 8px 0; padding: 6px 10px; font-size: 13.5px; }
+  .xbody { padding: 6px 8px 0; }
+  .xtabs { display: flex; gap: 0; margin-bottom: 6px; border-bottom: 1px solid var(--xline); }
+  .xtabs .tabs__btn { flex: 1; border: 0; border-radius: 0; background: none; color: var(--xmuted); padding: 8px; font-weight: 700; min-height: 0; }
+  .xtabs .tabs__btn.is-on { color: var(--xfg); box-shadow: inset 0 -3px 0 var(--xfg); }
+  .xsplit { display: block; overflow: hidden; }
+  .xsplit__bar { display: none; }
+  .xsplit__pane { height: 100%; padding: 4px 4px 24px; }
+  .xnav { gap: 6px; padding: 0 6px; min-height: 56px; }
+  .xnav__review { font-size: 0; gap: 0; }
+  .xnav__review input { width: 20px; height: 20px; }
+  .xnav__arrow, .xnav__submit { width: 40px; height: 40px; }
+  .xnav__part { padding: 0 8px; }
+  .xnav__part:not(.is-on) span { display: none; }
+}
+.exam .xclock.timer, .exam .xclock.timer.is-run, .exam .xclock.timer.is-low { background: none; box-shadow: none; padding: 0; border: 0; min-height: 0; }
+.exam .passage__p { align-items: flex-start; }
+.exam .passage__label { font-weight: 700; padding-top: 0; }
+.xtip { color: var(--xmuted); margin: 0 0 12px; }
