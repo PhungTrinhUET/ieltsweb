@@ -46,7 +46,12 @@ export default function GapFill() {
   if (!m) return <div className="page"><p className="empty">Không tìm thấy bài.</p></div>;
   const submit = async () => {
     setChecked(true); sp.halt(); stopAudio();
-    await addAttempt({ materialId: m.id, skill: 'listening', title: m.title, mode: 'gapfill', score: correct, max: gaps.length, detail: { density } });
+    await addAttempt({ materialId: m.id, skill: 'listening', title: m.title, mode: 'gapfill', score: correct, max: gaps.length, detail: { density,
+      items: tokens.filter((l) => l.toks.some((t) => t.gap !== null)).map((l) => {
+        const ok = (t: { t: string; gap: number | null }) => normAnswer(vals[t.gap!] ?? '') === normAnswer(cleanWord(t.t));
+        const gs = l.toks.filter((t) => t.gap !== null);
+        return { text: l.toks.map((t) => t.t).join('').trim(), typed: l.toks.map((t) => (t.gap === null ? t.t : `[${vals[t.gap] ?? '…'}]`)).join('').trim(), score: gs.filter(ok).length / gs.length, wrongWords: gs.filter((t) => !ok(t)).map((t) => cleanWord(t.t)) };
+      }) } });
   };
   const reset = () => { setVals({}); setChecked(false); setSeed((s) => s + 1); };
 

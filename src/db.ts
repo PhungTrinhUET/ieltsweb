@@ -201,6 +201,14 @@ export async function updateAttempt(id: string, patch: Partial<Attempt>) {
   set({ attempts: state.attempts.map((a) => (a.id === id ? full : a)) });
   await put('attempts', id, full);
 }
+/** Xoá một lượt; bản ghi âm Speaking (idb:) của lượt đó cũng bị xoá. */
+export async function deleteAttempt(id: string) {
+  const a = state.attempts.find((x) => x.id === id);
+  set({ attempts: state.attempts.filter((x) => x.id !== id) });
+  await del('attempts', id);
+  const turns = (a?.detail as { turns?: { audio?: string }[] } | undefined)?.turns ?? [];
+  for (const t of turns) if (t.audio?.startsWith('idb:')) await del('blobs', t.audio.slice(4)).catch(() => {});
+}
 export async function clearAttempts() {
   set({ attempts: [] });
   for (const a of Object.keys(await all('attempts'))) await del('attempts', a);

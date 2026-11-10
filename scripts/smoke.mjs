@@ -141,6 +141,26 @@ for (const profile of Object.keys(PROFILES)) {
     const marked = await page.locator('.item--part.item--wrong, .item--part.item--done').count();
     return { ok: vols >= 5 && hist === 1 && marked === 3, info: `vol=${vols} lịch sử=${hist} phần có điểm=${marked}` };
   });
+  await check(`[${profile}] H1 nộp Reading → Lịch sử → xem lại câu trả lời + đáp án`, async () => {
+    await go(page, '/reading/vol5-t6-r2');
+    const start = page.getByRole('button', { name: 'Start test' });
+    if (await start.count()) await start.click();
+    await page.waitForTimeout(300);
+    const radio = page.locator('.exam input[type=radio]').first();
+    await radio.evaluate((e) => e.closest('label')?.click() ?? e.click());
+    const picked = await radio.isChecked();
+    page.once('dialog', (d) => d.accept());
+    await page.getByRole('button', { name: 'Nộp bài' }).click();
+    await page.waitForTimeout(600);
+    await go(page, '/history');
+    await page.locator('[data-testid="hlist"] a.item').first().click();
+    await page.waitForSelector('[data-testid="hdetail"]');
+    const rows = await page.locator('[data-testid="hd-table"] tbody tr').count();
+    const answered = await page.locator('[data-testid="hd-table"] .hd-you:not(:has(.muted))').count();
+    const keys = (await page.locator('[data-testid="hd-table"] .hd-key').allInnerTexts()).filter((t) => t.trim()).length;
+    const redo = await page.locator('[data-testid="hd-redo"]').getAttribute('href');
+    return { ok: rows >= 10 && keys === rows && picked && answered === 1 && /vol5-t6-r2/.test(redo ?? ''), info: `câu=${rows} đáp án=${keys} đã chọn=${picked} hiện câu trả lời=${answered} làm lại=${redo}` };
+  });
   await check(`[${profile}] B9 lọc theo dạng bài + VOL, chip dạng trên trang đề`, async () => {
     await go(page, '/listening');
     await page.locator('.fchip', { hasText: /^3$/ }).click();
@@ -470,6 +490,49 @@ for (const profile of Object.keys(PROFILES)) {
     await btn.first().click();
     await page.waitForTimeout(400);
     return { ok: (await page.locator('.selfcheck').count()) > 0 };
+  });
+
+  // ---------- Đợt 4 · Phần 1: kho đề Writing ----------
+  const imgsOk = (p) => p.evaluate(async () => { const im = [...document.querySelectorAll('.wtask__img img')]; im.forEach((i) => { i.loading = 'eager'; i.scrollIntoView(); }); await Promise.all(im.map((i) => (i.complete && i.naturalWidth ? 0 : Promise.race([new Promise((r) => { i.addEventListener('load', r); i.addEventListener('error', r); }), new Promise((r) => setTimeout(r, 5000))])))); return im.length > 0 && im.every((i) => i.naturalWidth > 0); });
+  await check(`[${profile}] W1 wr-t1-wx1: 1 ảnh + Bảng số liệu 2 bảng`, async () => {
+    await go(page, '/writing/wr-t1-wx1');
+    const n = await page.locator('.wtask__img').count();
+    const ok1 = await imgsOk(page);
+    await page.locator('.collapse__head', { hasText: 'Bảng số liệu' }).click();
+    const tables = await page.locator('[data-testid="w-datatables"] table').count();
+    const sw = await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1);
+    return { ok: n === 1 && ok1 && tables === 2 && sw, info: `img=${n} loaded=${ok1} tables=${tables} noHScroll=${sw}` };
+  });
+  await check(`[${profile}] W2 process/map/projected/GT/development`, async () => {
+    const bad = [];
+    await go(page, '/writing/wr-t1-wpr3'); if (!/turtle/i.test(await page.locator('.wtask__prompt').innerText()) || !(await imgsOk(page))) bad.push('pr3');
+    await go(page, '/writing/wr-t1-wm8'); if (!/library/i.test(await page.locator('.wtask__prompt').innerText()) || !(await imgsOk(page))) bad.push('m8');
+    await go(page, '/writing/wr-t1-wl12'); await page.locator('.collapse__head', { hasText: 'Bảng số liệu' }).click();
+    if (!/Projected/i.test(await page.locator('[data-testid="w-datatables"]').innerText())) bad.push('l12');
+    await go(page, '/writing/wr-gt-wf1'); const gt = (await page.locator('.xnav__part').first().innerText()).replace(/\s+/g, ' ');
+    if (!/Part 1 Formal letter · GT/.test(gt)) bad.push(`gt="${gt}"`);
+    await go(page, '/writing/wr-t2-wdv1'); if (!/Positive\/Negative development/.test(await page.locator('[data-testid="w-typelabel"]').innerText())) bad.push('dv1');
+    const sample = await page.locator('.sample').count();
+    return { ok: !bad.length && sample === 0, info: bad.join(', ') || 'ok' };
+  });
+  await check(`[${profile}] W3 danh sách Writing: 3 tab, đếm dạng đề tự soạn`, async () => {
+    await go(page, '/writing');
+    const tabs = await page.locator('.wtabs__btn').count();
+    const want = { t1a: { line: 14, bar: 13, pie: 11, table: 11, mixed: 6, process: 9, map: 8 }, t2: { opinion: 10, discussion: 10, advantage: 10, problem: 10, double: 10, development: 10 }, t1g: { 'letter-formal': 8, 'letter-semi': 8, 'letter-informal': 8 } };
+    const bad = [];
+    await page.locator('[data-testid="wsrc-bank"]').click();
+    for (const [t, types] of Object.entries(want)) {
+      await page.locator(`[data-testid="wtab-${t}"]`).click();
+      if (!(await page.locator('[data-testid="wsrc-bank"]').getAttribute('aria-pressed') === 'true')) await page.locator('[data-testid="wsrc-bank"]').click();
+      for (const [ty, n] of Object.entries(types)) {
+        const got = await page.locator(`[data-testid="wtypes"] [data-type="${ty}"] small`).innerText().catch(() => '0');
+        if (+got !== n) bad.push(`${ty}=${got}/${n}`);
+      }
+    }
+    const vol0 = await page.locator('.item__sub', { hasText: 'VOL 0' }).count();
+    await page.locator('[data-testid="wtypes"] [data-type="letter-formal"]').click();
+    const tips = await page.locator('[data-testid="wtips"]').count();
+    return { ok: tabs === 3 && !bad.length && !vol0 && tips === 1, info: `tabs=${tabs} ${bad.join(' ') || 'đếm khớp'} vol0=${vol0} tips=${tips}` };
   });
 
   // ---------- A4: giọng đọc ----------

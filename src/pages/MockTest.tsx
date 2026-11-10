@@ -161,7 +161,7 @@ export function ExamRunner({ skill, ids, name, back, intro, full }: {
       const x = sel[0];
       await addAttempt({ materialId: x.id, skill, title: x.title, mode: 'test', score: sc, max: total, band: rawToBand(skill, sc, total, (x as ReadingMaterial).module ?? s.module), detail: { answers: answers[x.id] ?? {}, minutes: Math.round((Date.now() - startedAt.current) / 60000), wrong: rs[0].wrong } });
     } else {
-      await addAttempt({ materialId: ids.join('+'), skill, title: `${SKILL_META[skill].label} · ${name}`, mode: 'test', score: sc, max: total, band: rawToBand(skill, sc, total, s.module), detail: { parts: sel.map((x, i) => ({ id: x.id, title: x.title, ...rs[i] })) } });
+      await addAttempt({ materialId: ids.join('+'), skill, title: `${SKILL_META[skill].label} · ${name}`, mode: 'test', score: sc, max: total, band: rawToBand(skill, sc, total, s.module), detail: { minutes: Math.round((Date.now() - startedAt.current) / 60000), parts: sel.map((x, i) => ({ id: x.id, title: x.title, answers: answers[x.id] ?? {}, ...rs[i] })) } });
     }
   };
   const exit = () => { if (checked || phase === 'intro' || confirm('Thoát bài thi? Bài làm sẽ mất.')) { audio.halt(); nav(back); } };

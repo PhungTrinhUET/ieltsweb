@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, BarChart3, BookMarked, CheckCircle2, Circle, Flame, Sparkles, GraduationCap, Keyboard, Layers, PlayCircle, Target, Timer } from 'lucide-react';
 import { useDb } from '../db';
 import { getLastOpen, getStreak, useSettings } from '../store';
+import { MODE_LABEL, countsForBand } from '../lib/attempts';
 import { SKILL_META } from './SkillList';
 import type { Attempt, Skill } from '../types';
 import { dueCards, startOfDay } from '../lib/srs';
@@ -12,7 +13,6 @@ import { Ring } from '../components/ui';
 import { Logo } from '../App';
 
 const SKILLS: Skill[] = ['reading', 'listening', 'speaking', 'writing'];
-const MODE_VI: Record<Attempt['mode'], string> = { test: 'Làm đề', dictation: 'Chép chính tả', gapfill: 'Điền từ', ai: 'AI chấm', self: 'Tự chấm' };
 
 function greeting() {
   const h = new Date().getHours();
@@ -27,7 +27,7 @@ export default function Home() {
   const xpToday = xpSum(logsSince(db.logs, startOfDay()));
   const cards = Object.values(db.vocab);
   const due = dueCards(cards).length;
-  const latest = (skill: Skill) => db.attempts.find((a) => a.skill === skill && a.band);
+  const latest = (skill: Skill) => db.attempts.find((a) => a.skill === skill && countsForBand(a));
   const bands = SKILLS.map((k) => latest(k)?.band).filter((b): b is number => !!b);
   const overall = bands.length ? overallBand(bands) : null;
   const all = Object.values(db.materials);
@@ -211,8 +211,10 @@ export default function Home() {
             <ul className="recent">
               {recent.map((a) => (
                 <li key={a.id} style={{ ['--skill' as string]: SKILL_META[a.skill].color }}>
+                  <Link to={`/history/${a.id}`} className="recent__link">
                   <span className="recent__score">{a.band ? fmtBand(a.band) : a.max ? `${a.score}/${a.max}` : '✓'}</span>
-                  <span className="recent__body"><span className="recent__title">{a.title}</span><small className="muted">{SKILL_META[a.skill].label} · {MODE_VI[a.mode]} · {new Date(a.at).toLocaleDateString('vi-VN')}</small></span>
+                  <span className="recent__body"><span className="recent__title">{a.title}</span><small className="muted">{SKILL_META[a.skill].label} · {MODE_LABEL[a.mode]} · {new Date(a.at).toLocaleDateString('vi-VN')}</small></span>
+                  </Link>
                 </li>
               ))}
             </ul>

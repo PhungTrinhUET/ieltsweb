@@ -222,7 +222,8 @@ function Runner({ lesson, onNew }: { lesson: Lesson; onNew: () => void }) {
     commit(done);
     const score = lessonScore(done);
     const wrong = done.res.map((r, k) => (!r || r.shown || r.score < 0.9 ? k : -1)).filter((k) => k >= 0);
-    await addAttempt({ materialId: lesson.materialId ?? lesson.id, skill: 'listening', title: `Nghe-chép · ${done.title ?? lesson.title}`, mode: 'dictation', score: Math.round(score * 100), max: 100, detail: { lesson: lesson.id, level: lesson.level, sentences: S.length, wrong, plays: done.plays, hints: done.hints, ms: done.ms } });
+    await addAttempt({ materialId: lesson.materialId ?? lesson.id, skill: 'listening', title: `Nghe-chép · ${done.title ?? lesson.title}`, mode: 'dictation', score: Math.round(score * 100), max: 100, detail: { lesson: lesson.id, level: lesson.level, sentences: S.length, wrong, plays: done.plays, hints: done.hints, ms: done.ms,
+      items: S.map((x, k) => { const r = done.res[k]; const t = done.typed[k] ?? ''; return { text: x.say ?? x.text, typed: t, score: r?.score ?? 0, shown: !!r?.shown, wrongWords: r ? check(x.text, t).wrongWords : [] }; }) } });
   };
   const hint = () => {
     if (!u) return;

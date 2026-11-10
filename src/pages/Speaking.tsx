@@ -4,13 +4,13 @@ import Timer from '../components/Timer';
 import { useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, Bot, BookmarkPlus, Check, FileCheck2, Loader2, Sparkles, Timer as TimerIcon, Volume2 } from 'lucide-react';
 import type { SpeakingMaterial } from '../types';
-import { addAttempt, findCard, saveBlob, saveCard, updateAttempt, useDb } from '../db';
+import { addAttempt, findCard, getState, saveBlob, saveCard, updateAttempt, useDb } from '../db';
 import { aiReady, getAiConfig, setLastOpen, touchStreak, useAiConfig } from '../store';
 import SelfCheck from '../components/SelfCheck';
 import Recorder, { speechRecognitionAvailable, type Recording } from '../components/Recorder';
 import { speak, stopSpeak } from '../lib/tts';
 import { Collapse } from '../components/ui';
-import { BandPill, CriteriaBars } from '../components/misc';
+import { SpeakingGradeView } from '../components/GradeViews';
 import type { SpeakingGrade, SpeakingTurn } from '../ai/speaking';
 import { newCard } from '../lib/srs';
 import { SKILL_META } from './SkillList';
@@ -61,8 +61,16 @@ export default function Speaking() {
       const g = await gradeSpeaking(part, m.topic ?? m.title, answered, getAiConfig(), pron || undefined);
       setGrade((x) => ({ ...x, [part]: g }));
       const h = handed[part];
-      if (h) await updateAttempt(h, { mode: 'ai', band: g.overall, detail: { part, turns: answered, grade: g } });
-      else await addAttempt({ materialId: m.id, skill: 'speaking', title: `${m.title} – Part ${part}`, mode: 'ai', band: g.overall, detail: { part, turns: answered, grade: g } });
+      // Giữ bản ghi âm: đã nộp → lấy lại khoá blob đã lưu; chưa nộp → lưu blob bây giờ.
+      const prev = h ? ((getState().attempts.find((a) => a.id === h)?.detail as { turns?: { question: string; audio?: string }[] } | undefined)?.turns ?? []) : [];
+      const withAudio = [];
+      for (const t of list.filter((x) => x.transcript.trim())) {
+        let audio = prev.find((p) => p.question === t.question)?.audio;
+        if (!audio && t.rec?.blob) { try { audio = await saveBlob(t.rec.blob); } catch { /* hết chỗ */ } }
+        withAudio.push({ question: t.question, answer: t.transcript, seconds: t.rec?.seconds, audio });
+      }
+      if (h) await updateAttempt(h, { mode: 'ai', band: g.overall, detail: { part, turns: withAudio, grade: g } });
+      else await addAttempt({ materialId: m.id, skill: 'speaking', title: `${m.title} – Part ${part}`, mode: 'ai', band: g.overall, detail: { part, turns: withAudio, grade: g } });
     } catch (e) { setErr(e instanceof Error ? e.message : String(e)); } finally { setBusy(false); }
   };
   const handIn = async () => {
@@ -143,24 +151,7 @@ export default function Speaking() {
       )}
       {handedId && (part as number) !== 0 && <div id="self-result"><SelfCheck key={handedId} kind="speaking" attemptId={handedId} extra="Nghe lại bản ghi của bạn rồi so với bài mẫu dưới mỗi câu." /></div>}
 
-      {g && (
-      <section className="card pad ai">
-        <div className="ai__head"><Sparkles size={18} /> <strong>AI chấm Part {part}</strong></div>
-            <div className="ai__result">
-              <div className="ai__top"><BandPill band={g.overall} label="Band" /><p>{g.summary}</p></div>
-              <CriteriaBars items={[
-                { label: 'Fluency & Coherence', band: g.scores.fluency, reason: g.reasons.fluency },
-                { label: 'Lexical Resource', band: g.scores.lexical, reason: g.reasons.lexical },
-                { label: 'Grammatical Range & Accuracy', band: g.scores.grammar, reason: g.reasons.grammar },
-                { label: 'Pronunciation', band: g.scores.pronunciation, reason: g.scores.pronunciation ? 'Theo tự đánh giá của bạn' : 'Không chấm được từ transcript – hãy nghe lại bản ghi và so với bài mẫu.' },
-              ]} />
-              <div className="ai__lists">
-                <div><h4>Cần cải thiện</h4><ul>{g.improvements.map((x, i) => <li key={i}>{x}</li>)}</ul></div>
-                <div><h4>Cụm từ nên học</h4><ul className="vlist">{g.vocabulary.map((v, i) => { const saved = !!findCard(v.phrase); return <li key={i} className="vlist__row"><div className="vlist__body"><strong>{v.phrase}</strong> – {v.meaning}<div className="vocab__ex">{v.example}</div></div><button className="icon-btn" disabled={saved} onClick={() => saveCard(newCard({ id: `v-${v.phrase}-${Date.now().toString(36)}`, word: v.phrase, meaning: v.meaning, example: v.example, from: m.id }))}>{saved ? <Check size={16} /> : <BookmarkPlus size={16} />}</button></li>; })}</ul></div>
-              </div>
-            </div>
-      </section>
-      )}
+      {g && <SpeakingGradeView g={g} part={part} from={m.id} />}
     </div>
   );
 }

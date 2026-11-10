@@ -5,8 +5,9 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Eraser, Eye, EyeOff, Languages, Loader2, Pause, Play, RotateCcw, StickyNote, Timer, Volume2 } from 'lucide-react';
 import type { ListeningMaterial, ReadingMaterial } from '../types';
-import { getState, resolveUrl, saveNote, useDb } from '../db';
-import { setLastOpen, touchStreak } from '../store';
+import { addAttempt, getState, resolveUrl, saveNote, useDb } from '../db';
+import { rawToBand } from '../lib/band';
+import { getSettings, setLastOpen, touchStreak } from '../store';
 import { GroupsView, isCorrect, scoreGroups, type Answers } from '../components/Questions';
 import { ExamFrame, ExamNav, ExamSplit, answeredNos, focusQuestion, groupNos, qNos } from '../components/Exam';
 import AudioPlayer, { stopAudio } from '../components/AudioPlayer';
@@ -42,6 +43,7 @@ export default function Practice() {
   const [curNo, setCurNo] = useState<number | null>(null);
   const [flags, setFlags] = useState<Set<number>>(new Set());
   const noteTimer = useRef(0);
+  const openedAt = useRef(Date.now());
   const hl = useHighlights(id);
   const sp = useScriptSpeaker(isL ? (m as ListeningMaterial) : undefined);
   // Các phần cùng đề (Passage 1–3 / Section 1–4) để chuyển qua lại khi luyện cả đề.
@@ -54,7 +56,7 @@ export default function Practice() {
     touchStreak();
     if (m) saveMode(m.skill, 'practice');
     if (m) setLastOpen(m.id, `/${m.skill}/${m.id}/practice`, 'practice');
-    setAnswers({}); setRevealed({}); setAll(false); setTr({}); setShowScript(false); setCurNo(null); setFlags(new Set()); setNote(db.notes[id!]?.text ?? '');
+    setAnswers({}); setRevealed({}); setAll(false); setTr({}); setShowScript(false); setCurNo(null); setFlags(new Set()); setNote(db.notes[id!]?.text ?? ''); openedAt.current = Date.now();
     if (isL && (m as ListeningMaterial).audio) resolveUrl((m as ListeningMaterial).audio!).then(setSrc); else setSrc(null);
     window.scrollTo(0, 0);
     return () => stopAudio();
@@ -89,6 +91,13 @@ export default function Practice() {
     noteTimer.current = window.setTimeout(() => saveNote({ materialId: m.id, text: t, highlights: getState().notes[m.id]?.highlights ?? [], updatedAt: Date.now() }), 600);
   };
   const reset = () => { setAnswers({}); setRevealed({}); setAll(false); };
+  /** Kiểm tra tất cả → lưu một lượt "Luyện tập" (không tính vào band trang chủ). */
+  const checkAll = () => {
+    setAll(true);
+    const r = scoreGroups(m.groups, answers);
+    addAttempt({ materialId: m.id, skill: m.skill, title: m.title, mode: 'practice', score: r.score, max: r.max, band: rawToBand(m.skill, r.score, r.max, (m as ReadingMaterial).module ?? getSettings().module),
+      detail: { answers, wrong: r.wrong, minutes: Math.max(1, Math.round((Date.now() - openedAt.current) / 60000)) } });
+  };
 
   const textPane = (
     <article className={`passage ${isL ? 'passage--script' : 'passage--reading'} passage--practice`}>
@@ -188,7 +197,7 @@ export default function Practice() {
         onPart={(i) => multi && nav(`/${multi.parts[i].skill}/${multi.parts[i].id}/practice`)}
         onGo={(no, pi) => { if (pi !== curPart && multi) nav(`/${multi.parts[pi].skill}/${multi.parts[pi].id}/practice`); else { setCurNo(no); focusQuestion(no); } }}
         onFlag={(no) => setFlags((f) => { const x = new Set(f); if (x.has(no)) x.delete(no); else x.add(no); return x; })}
-        onSubmit={all ? (next ? () => nav(`/${next.skill}/${next.id}/practice`) : undefined) : () => setAll(true)}
+        onSubmit={all ? (next ? () => nav(`/${next.skill}/${next.id}/practice`) : undefined) : checkAll}
         submitLabel={all ? (next ? `Sang ${partLabel(next)}` : 'Đã kiểm tra') : 'Kiểm tra tất cả'} />}>
       {isL ? (
         <>
