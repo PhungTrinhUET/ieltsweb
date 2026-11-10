@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Download, Moon, Play, Sun, SunMoon, Upload, Volume2 } from 'lucide-react';
-import { updateSettings, useSettings } from '../store';
+import { EX_NAMES, updateSettings, useSettings } from '../store';
+import type { ExKind } from '../types';
 import { exportAll, importBackup } from '../db';
 import AiSettings from '../components/AiSettings';
 import { englishVoices, speak, ttsAvailable, voiceGender } from '../lib/tts';
@@ -36,10 +37,6 @@ export default function Settings() {
           <div className="setting__title"><strong>Module Reading mặc định</strong></div>
           <div className="seg">{(['academic', 'general'] as const).map((m) => <button key={m} className={`seg__btn${s.module === m ? ' is-selected' : ''}`} onClick={() => updateSettings({ module: m })}>{m === 'academic' ? 'Academic' : 'General Training'}</button>)}</div>
         </div>
-        <div className="setting">
-          <div className="setting__title"><strong>Từ mới mỗi ngày</strong></div>
-          <div className="seg">{[5, 10, 15, 20, 30].map((n) => <button key={n} className={`seg__btn${s.newCardsPerDay === n ? ' is-selected' : ''}`} onClick={() => updateSettings({ newCardsPerDay: n })}>{n}</button>)}</div>
-        </div>
         <div className="setting setting--col">
           <div className="setting__title"><Volume2 size={18} /> <strong>Giọng đọc máy (TTS)</strong></div>
           <p className="small muted">Dùng cho Listening không có audio, chép chính tả, đọc bài Reading, đọc câu hỏi Speaking. Giọng phụ thuộc trình duyệt/hệ điều hành – Chrome có giọng "Google UK English" chất lượng tốt; Edge có giọng "Natural".</p>
@@ -72,6 +69,37 @@ export default function Settings() {
               </div>
             </>
           )}
+        </div>
+      </section>
+
+      <section className="card settings" id="vocab-settings">
+        <div className="setting setting--col">
+          <div className="setting__title"><strong>Từ vựng & ôn tập (FSRS)</strong></div>
+          <p className="small muted">Lịch ôn tính bằng thuật toán FSRS: từ càng nhớ chắc thì càng lâu mới hỏi lại. Tỉ lệ nhớ mong muốn càng cao thì ôn càng nhiều.</p>
+          <label className="row wrap small">Tỉ lệ nhớ mong muốn: <strong>{Math.round(s.retention * 100)}%</strong>
+            <input type="range" min={85} max={95} step={1} value={Math.round(s.retention * 100)} onChange={(e) => updateSettings({ retention: +e.target.value / 100 })} aria-label="Tỉ lệ nhớ mong muốn" />
+          </label>
+        </div>
+        <div className="setting">
+          <div className="setting__title"><strong>Từ mới mỗi ngày</strong></div>
+          <div className="seg">{[5, 10, 15, 20, 30].map((n) => <button key={n} className={`seg__btn${s.newCardsPerDay === n ? ' is-selected' : ''}`} onClick={() => updateSettings({ newCardsPerDay: n })}>{n}</button>)}</div>
+        </div>
+        <div className="setting">
+          <div className="setting__title"><strong>Giới hạn ôn mỗi ngày</strong></div>
+          <div className="seg">{[50, 100, 200, 500].map((n) => <button key={n} className={`seg__btn${s.reviewLimit === n ? ' is-selected' : ''}`} onClick={() => updateSettings({ reviewLimit: n })}>{n}</button>)}</div>
+        </div>
+        <div className="setting setting--col">
+          <div className="setting__title"><strong>Dạng bài tập</strong></div>
+          <div className="row wrap">{(Object.keys(EX_NAMES) as ExKind[]).map((k) => (
+            <label key={k} className="chip-check"><input type="checkbox" checked={s.exercises[k] !== false} onChange={(e) => updateSettings({ exercises: { ...s.exercises, [k]: e.target.checked } })} /> {EX_NAMES[k]}</label>
+          ))}</div>
+          <p className="small muted">Tắt hết thì vẫn giữ "chọn nghĩa".</p>
+        </div>
+        <div className="setting setting--col">
+          <div className="setting__title"><strong>Nghe & chép</strong></div>
+          <label className="row small"><input type="checkbox" checked={s.dictSupport} onChange={(e) => updateSettings({ dictSupport: e.target.checked })} /> Hỗ trợ người mới ở cấp 1–2 (khung chữ cái đầu, chỉ điền từ khoá)</label>
+          <div className="row wrap"><span className="small muted">Tự phát lại mỗi câu:</span>{[0, 1, 2, 3].map((n) => <button key={n} className={`chip${s.dictAutoReplay === n ? ' is-on' : ''}`} onClick={() => updateSettings({ dictAutoReplay: n })}>{n ? `${n} lần` : 'Không'}</button>)}</div>
+          <div className="row wrap"><span className="small muted">Tốc độ giọng máy (cấp 1):</span>{[0.7, 0.85, 1].map((r) => <button key={r} className={`chip${s.dictRate === r ? ' is-on' : ''}`} onClick={() => updateSettings({ dictRate: r })}>{r}×</button>)}</div>
         </div>
       </section>
 

@@ -174,17 +174,68 @@ export interface VocabCard {
   /** Nguồn: id tài liệu. */
   from?: string;
   addedAt: number;
-  // Ôn tập: hộp Leitner 1–5 (src/lib/srs.ts). interval/ease/reps/lapses giữ từ bản SM-2 cũ.
+  /** 'sentence' = câu nghe-chép hay sai (C): `word` là cả câu, `clip` là đoạn audio của câu. */
+  kind?: 'word' | 'sentence';
+  /** Bộ từ: 'deck:<topic>' (bộ có sẵn), 'test:vol5-t7' (bộ theo đề), 'custom:<id>', 'saved' (lưu từ bài). */
+  decks?: string[];
+  /** Câu thật trong đề chứa từ này (khi lưu từ bài hoặc từ nghe-chép). */
+  context?: CardContext;
+  /** Collocation đi kèm. */
+  colloc?: string[];
+  /** Học từ mới (A2): số bước đã qua; undefined = chưa bắt đầu. */
+  stage?: number;
+  // ---- FSRS (src/lib/srs.ts). Thẻ cũ Leitner: box 1..5 → stability 1/2/4/8/16 ngày khi mở app. ----
+  stability?: number;
+  difficulty?: number;
+  /** 0 New · 1 Learning · 2 Review · 3 Relearning (ts-fsrs State). */
+  fsrsState?: number;
+  learningSteps?: number;
+  scheduledDays?: number;
+  /** Hộp Leitner cũ – chỉ đọc khi chuyển đổi. */
   box?: number;
   /** Lần ôn gần nhất. */
   lastReview?: number;
-  /** Lần đầu học (đưa vào hộp 1). */
+  /** Lần đầu học xong (vào lịch ôn). */
   learnedAt?: number;
   due: number;
   interval: number;
   ease: number;
   reps: number;
   lapses: number;
+}
+
+export interface CardContext {
+  text: string;
+  /** Nhãn nguồn, vd "VOL 3 · Test 2 · Listening S1". */
+  label?: string;
+  /** id material để mở bài. */
+  ref?: string;
+  /** Đoạn audio thật của câu: đường dẫn audio + giây. */
+  audio?: string;
+  start?: number;
+  end?: number;
+}
+
+/** Dạng bài tập từ vựng. */
+export type ExKind = 'meaning' | 'word' | 'listen' | 'fill' | 'type' | 'dictate';
+
+/** Nhật ký mỗi câu trả lời (từ vựng + nghe-chép) – dùng cho thống kê, XP, retention. */
+export interface RevLog {
+  id: string;
+  at: number;
+  cardId?: string;
+  /** Dạng bài: ExKind, 'learn' (bước học từ mới), 'dictation' (một câu nghe-chép), 'skip' (Tôi biết từ này). */
+  kind: ExKind | 'learn' | 'dictation' | 'skip' | 'context';
+  /** Đúng / sai; nghe-chép là tỉ lệ 0–1. */
+  ok: boolean;
+  score?: number;
+  ms?: number;
+  hint?: boolean;
+  /** Điểm FSRS đã chấm (1 Again · 2 Hard · 3 Good · 4 Easy) – chỉ có khi là lượt ôn theo lịch. */
+  rating?: number;
+  /** Độ ổn định trước lượt ôn (ngày) – để tính retention thật. */
+  stab?: number;
+  xp: number;
 }
 
 export interface Note { materialId: string; text: string; highlights: string[]; updatedAt: number }

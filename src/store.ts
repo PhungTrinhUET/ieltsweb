@@ -1,4 +1,5 @@
 import { useSyncExternalStore } from 'react';
+import type { ExKind } from './types';
 import { DEFAULT_EFFORT, DEFAULT_MODEL, providerOf, type Effort, type ProviderId } from './ai/models';
 
 export interface Settings {
@@ -16,7 +17,20 @@ export interface Settings {
   newCardsPerDay: number;
   /** Module Reading mặc định. */
   module: 'academic' | 'general';
+  /** FSRS: tỉ lệ nhớ mong muốn 0.85–0.95. */
+  retention: number;
+  /** Số thẻ ôn tối đa mỗi ngày. */
+  reviewLimit: number;
+  /** Bật/tắt từng dạng bài tập từ vựng. */
+  exercises: Record<ExKind, boolean>;
+  /** Nghe-chép: hỗ trợ người mới (khung chữ cái đầu, chỉ điền từ khoá) ở cấp 1–2. */
+  dictSupport: boolean;
+  /** Nghe-chép: tự phát lại mỗi câu 0–3 lần. */
+  dictAutoReplay: number;
+  /** Nghe-chép cấp 1 (giọng máy): tốc độ. */
+  dictRate: number;
 }
+export const EX_NAMES: Record<ExKind, string> = { meaning: 'Nhìn từ → chọn nghĩa', word: 'Nhìn nghĩa → chọn từ', listen: 'Nghe → chọn từ', fill: 'Điền từ vào câu', type: 'Gõ từ (nghe / nhìn nghĩa)', dictate: 'Chép câu ví dụ' };
 
 function read<T>(key: string, fallback: T): T {
   try {
@@ -36,7 +50,8 @@ export function createStore<T>(key: string, initial: T) {
   };
 }
 
-const settingsStore = createStore<Settings>('ielts:settings:v1', { theme: 'system', speed: 1, ttsVoice: 'en-GB', ttsRate: 0.95, targetBand: 7, newCardsPerDay: 15, module: 'academic' });
+const settingsStore = createStore<Settings>('ielts:settings:v1', { theme: 'system', speed: 1, ttsVoice: 'en-GB', ttsRate: 0.95, targetBand: 7, newCardsPerDay: 10, module: 'academic',
+  retention: 0.9, reviewLimit: 200, exercises: { meaning: true, word: true, listen: true, fill: true, type: true, dictate: true }, dictSupport: true, dictAutoReplay: 0, dictRate: 0.85 });
 export const useSettings = () => useSyncExternalStore(settingsStore.subscribe, settingsStore.get);
 export const getSettings = settingsStore.get;
 export function updateSettings(patch: Partial<Settings>) {

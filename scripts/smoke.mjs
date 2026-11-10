@@ -278,8 +278,9 @@ for (const profile of Object.keys(PROFILES)) {
     const w1 = await page.locator('.lt-word strong').innerText();
     await page.getByRole('button', { name: /Đã xem/ }).click();
     await page.locator('.lt-review .icon-btn[aria-label="Thoát"]').click();
-    const box1 = +(await page.locator('.lt-box--1 strong').innerText());
-    return { ok: topics >= 10 && !!w1 && box1 >= 1, info: `chủ đề=${topics} từ đầu="${w1}" hộp 1=${box1}` };
+    const n = async (s) => +((await page.locator(`.lt-box.st--${s} strong`).first().innerText().catch(() => '0')) || 0);
+    const started = (await n('learning')) + (await n('review'));
+    return { ok: topics >= 10 && !!w1 && started >= 1, info: `chủ đề=${topics} từ đầu="${w1}" đang học+ôn tập=${started}` };
   });
 
   // ---------- A3: Writing nộp được khi chưa cấu hình AI ----------

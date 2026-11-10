@@ -1,13 +1,15 @@
 // Lưu trữ trên trình duyệt bằng IndexedDB: tài liệu, file audio/ảnh, kết quả, từ vựng, ghi chú.
 // Toàn bộ được nạp vào bộ nhớ khi mở app (useSyncExternalStore) – ghi xuống IndexedDB ở nền.
 import { useSyncExternalStore } from 'react';
-import type { Attempt, Material, Note, Skill, VocabCard } from './types';
+import type { Attempt, Material, Note, RevLog, Skill, VocabCard } from './types';
+import { migrate } from './lib/srs';
 import { SAMPLE_MATERIALS } from './content/samples';
 
 const DB = 'ielts-practice';
-const VERSION = 2;
+const VERSION = 3;
 // `bundle`: cache các file public/data/*.json theo hash trong index.json (v2).
-const STORES = ['materials', 'blobs', 'attempts', 'vocab', 'notes', 'drafts', 'bundle'] as const;
+// v3: `revlog` nhật ký trả lời (từ vựng + nghe-chép), `dict` tiến độ bài nghe-chép, `kv` dữ liệu linh tinh (bộ từ tự tạo, đoạn ngữ cảnh AI…).
+const STORES = ['materials', 'blobs', 'attempts', 'vocab', 'notes', 'drafts', 'bundle', 'revlog', 'dict', 'kv'] as const;
 type StoreName = (typeof STORES)[number];
 
 let dbp: Promise<IDBDatabase> | null = null;
@@ -58,8 +60,12 @@ export interface State {
   vocab: Record<string, VocabCard>;
   notes: Record<string, Note>;
   drafts: Record<string, string>;
+  /** Nhật ký trả lời, mới nhất cuối. */
+  logs: RevLog[];
+  /** Dữ liệu linh tinh (bộ từ tự tạo, đoạn ngữ cảnh AI, tiến độ nghe-chép…). */
+  kv: Record<string, unknown>;
 }
-let state: State = { ready: false, materials: {}, attempts: [], vocab: {}, notes: {}, drafts: {} };
+let state: State = { ready: false, materials: {}, attempts: [], vocab: {}, notes: {}, drafts: {}, logs: [], kv: {} };
 const subs = new Set<() => void>();
 const emit = () => subs.forEach((f) => f());
 const set = (patch: Partial<State>) => { state = { ...state, ...patch }; emit(); };
@@ -69,13 +75,17 @@ export const getState = () => state;
 export async function init() {
   if (state.ready) return;
   try {
-    const [materials, attempts, vocab, notes, drafts] = await Promise.all([
+    const [materials, attempts, vocab, notes, drafts, logs, kv, dict] = await Promise.all([
       all<Material>('materials'), all<Attempt>('attempts'), all<VocabCard>('vocab'), all<Note>('notes'), all<string>('drafts'),
+      all<RevLog>('revlog'), all<unknown>('kv'), all<unknown>('dict'),
     ]);
+    // Thẻ Leitner cũ → FSRS (một lần, ghi lại ngay để không mất tiến độ).
+    for (const c of Object.values(vocab)) { const m = migrate(c); if (m) { vocab[c.id] = m; put('vocab', c.id, m).catch(() => {}); } }
+    for (const [k, v] of Object.entries(dict)) kv[`dict:${k}`] = v;
     // Nội dung mẫu + bộ đề đóng gói sẵn (public/data) luôn có mặt (có thể ẩn) – không ghi đè bản người dùng đã sửa.
     const hidden = new Set<string>(JSON.parse(localStorage.getItem('ielts:hidden-samples') || '[]'));
     for (const m of [...SAMPLE_MATERIALS, ...(await loadBundled())]) if (!materials[m.id] && !hidden.has(m.id)) materials[m.id] = m;
-    set({ ready: true, materials, attempts: Object.values(attempts).sort((a, b) => b.at - a.at), vocab, notes, drafts });
+    set({ ready: true, materials, attempts: Object.values(attempts).sort((a, b) => b.at - a.at), vocab, notes, drafts, logs: Object.values(logs).sort((a, b) => a.at - b.at), kv });
   } catch (e) {
     console.error('IndexedDB không khả dụng', e);
     const materials: Record<string, Material> = {};
@@ -206,10 +216,34 @@ export async function deleteCard(id: string) {
   set({ vocab: next });
   await del('vocab', id);
 }
+export async function saveCards(cs: VocabCard[]) {
+  const next = { ...state.vocab };
+  for (const c of cs) next[c.id] = c;
+  set({ vocab: next });
+  for (const c of cs) await put('vocab', c.id, c);
+}
 export function findCard(word: string) {
   const w = word.trim().toLowerCase();
   return Object.values(state.vocab).find((c) => c.word.toLowerCase() === w);
 }
+
+// ---------- Nhật ký trả lời ----------
+export async function addLog(l: Omit<RevLog, 'id' | 'at'> & { at?: number }) {
+  const full: RevLog = { ...l, id: uid(), at: l.at ?? Date.now() };
+  set({ logs: [...state.logs, full] });
+  await put('revlog', full.id, full).catch(() => {});
+  return full;
+}
+
+// ---------- Key-value (bộ từ tự tạo, đoạn ngữ cảnh, tiến độ nghe-chép `dict:<lesson>`) ----------
+export async function setKv(key: string, v: unknown) {
+  const next = { ...state.kv };
+  if (v === undefined) delete next[key]; else next[key] = v;
+  set({ kv: next });
+  const [store, k] = key.startsWith('dict:') ? ['dict' as const, key.slice(5)] : ['kv' as const, key];
+  await (v === undefined ? del(store, k) : put(store, k, v)).catch(() => {});
+}
+export const getKv = <T,>(key: string) => state.kv[key] as T | undefined;
 
 // ---------- Notes & drafts ----------
 export async function saveNote(n: Note) {
@@ -224,13 +258,20 @@ export async function saveDraft(key: string, text: string) {
 // ---------- Sao lưu ----------
 export async function exportAll() {
   const materials = Object.values(state.materials).filter((m) => !m.builtin);
-  return JSON.stringify({ app: 'ielts-practice', version: 1, exportedAt: new Date().toISOString(), materials, attempts: state.attempts, vocab: Object.values(state.vocab), notes: Object.values(state.notes) }, null, 1);
+  return JSON.stringify({ app: 'ielts-practice', version: 1, exportedAt: new Date().toISOString(), materials, attempts: state.attempts, vocab: Object.values(state.vocab), notes: Object.values(state.notes), logs: state.logs, kv: state.kv }, null, 1);
 }
 export async function importBackup(json: string) {
   const d = JSON.parse(json);
   if (d.app !== 'ielts-practice') throw new Error('File không phải bản sao lưu của IELTS Practice');
   if (Array.isArray(d.materials)) await saveMaterials(d.materials);
-  if (Array.isArray(d.vocab)) for (const c of d.vocab) await saveCard(c);
+  if (Array.isArray(d.vocab)) await saveCards((d.vocab as VocabCard[]).map((c) => migrate(c) ?? c));
+  if (Array.isArray(d.logs)) {
+    const ids = new Set(state.logs.map((l) => l.id));
+    const extra = (d.logs as RevLog[]).filter((l) => !ids.has(l.id));
+    set({ logs: [...state.logs, ...extra].sort((a, b) => a.at - b.at) });
+    for (const l of extra) await put('revlog', l.id, l);
+  }
+  if (d.kv && typeof d.kv === 'object') for (const [k, v] of Object.entries(d.kv)) await setKv(k, v);
   if (Array.isArray(d.notes)) for (const n of d.notes) await saveNote(n);
   if (Array.isArray(d.attempts)) {
     const ids = new Set(state.attempts.map((a) => a.id));

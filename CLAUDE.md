@@ -65,6 +65,19 @@ Chưa có unit test; có `scripts/smoke.mjs` (trình duyệt thật). Sau khi s�
 - Đợt audit 08/11/2026 (nhánh `fix/audit-1108`, đã merge vào `master`): A1–A7, B8–B12, C13–C16 xong; smoke 100/100. Audio (A4) tải từ Drive bằng `../ieltsweb-src/tools/dlaudio.py` (gdown), Drive hay chặn tạm ("Cannot retrieve the public link") → chạy lại sau, rồi `npm run audio`.
 - VOL 4 có vài chỗ thiếu: Test 7 (Q15–20) và Test 9 (Section 1) thiếu transcript; Writing trùng VOL 3 nên bỏ qua.
 
+## Nhánh `feat/vocab-dictation` (10/11/2026): Từ vựng kiểu MemCab + Nghe-chép kiểu DailyDictation
+
+Không chuyển thêm đề trong đợt này. Mỗi mục: data 0 ⚠, tsc, build + smoke, commit riêng.
+- [x] A1. FSRS (ts-fsrs) thay Leitner: 4 trạng thái Sẽ học/Đang học/Ôn tập/Đã thuộc (S ≥ 60 ngày); thẻ cũ hộp 1–5 → S 1/2/4/8/16 ngày; nhật ký `revlog`; DB v3 (`revlog`, `dict`, `kv`); Cài đặt retention/từ mới/giới hạn ôn/dạng bài.
+- [ ] B3+B6. `src/lib/dictation.ts`: tách câu, bỏ lời dẫn + ví dụ, ghép/tách câu, chấm khớp có quy đổi
+- [ ] B4/B5/B7. Màn hình bài nghe-chép, hỗ trợ người mới, lưu tiến độ + tổng kết
+- [ ] B1/B2. Hub `#/dictation`, 4 cấp, cấp 1 sinh số/đánh vần, chuyển route cũ, lối vào
+- [ ] A4. Chỉ mục ngữ cảnh (build-data) + đoạn AI / gap-fill
+- [ ] A2/A3. Học nhóm từ mới (các bước xen kẽ) + ôn theo stability, tự chấm FSRS
+- [ ] A5. Làm giàu 300 từ, bộ theo đề, từ đã lưu, bộ tự tạo, nhập/xuất
+- [ ] C. Thẻ câu hay sai, gợi ý từ từ nghe-chép, kế hoạch "Hôm nay", XP, trang Thống kê
+- [ ] Smoke các luồng mới, README, merge, deploy, kiểm tra bản live
+
 ## Tiến độ phiên chuyển đổi (cập nhật liên tục)
 
 Task list (đánh dấu `[x]` khi xong; dòng `→` là đang làm):

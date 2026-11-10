@@ -1,0 +1,6 @@
+/* Từ vựng (FSRS) + Nghe & chép + Thống kê. Màu trạng thái từ: Sẽ học → Đang học → Ôn tập → Đã thuộc. */
+.st--new { --c: #64748b; } .st--learning { --c: #f97316; } .st--review { --c: #0284c7; } .st--known { --c: #16a34a; }
+.lt-boxes:has(.st--new) { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.lt-tag[class*='st--'] { color: var(--c); background: color-mix(in srgb, var(--c) 14%, transparent); }
+.chip-check { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: 99px; font-size: 13px; background: var(--surface-2); border: 1px solid var(--border); cursor: pointer; }
+.chip-check:has(input:checked) { background: var(--primary-soft); border-color: var(--primary); }

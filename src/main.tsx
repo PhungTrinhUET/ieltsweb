@@ -10,6 +10,7 @@ import '@fontsource/be-vietnam-pro/vietnamese-600.css';
 import '@fontsource/be-vietnam-pro/vietnamese-700.css';
 import './styles.css';
 import './exam.css';
+import './learn.css';
 import App from './App';
 import { applyTheme, getSettings } from './store';
 

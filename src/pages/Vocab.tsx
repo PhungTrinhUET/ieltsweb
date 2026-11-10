@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { Check, ChevronDown, Eye, Layers, Pencil, Plus, Trash2, Volume2, X } from 'lucide-react';
 import { deleteCard, saveCard, useDb } from '../db';
 import type { VocabCard } from '../types';
-import { BOX_HINT, BOX_NAMES, boxOf, dueCards, dueText, isLearned, learn, learnedToday, newCard, review, type Box } from '../lib/srs';
+import { STATE_NAMES, STATE_ORDER, cardState, dueCards, dueText, finishLearning, grade, isLearned, learnedToday, newCard, Rating, type WordState } from '../lib/srs';
 import { speak, ttsAvailable } from '../lib/tts';
 import { normAnswer, shuffle } from '../lib/text';
 import { touchStreak, useSettings } from '../store';
@@ -39,7 +39,7 @@ export default function Vocab() {
   const [extra, setExtra] = useState(0);
   const [session, setSession] = useState<Session | null>(null);
   const [done, setDone] = useState<Session['stats'] | null>(null);
-  const [filter, setFilter] = useState<Box | 0>(0);
+  const [filter, setFilter] = useState<WordState | ''>('');
   const [q, setQ] = useState('');
   const [adding, setAdding] = useState(false);
   const [form, setForm] = useState({ word: '', pos: '', meaning: '', example: '' });
@@ -63,13 +63,13 @@ export default function Vocab() {
     return [...own, ...fromDeck];
   }, [cards, deck, chosen, byWord]);
   const todayNew = fresh.slice(0, newLeft);
-  const boxes = useMemo(() => { const n = [0, 0, 0, 0, 0, 0]; for (const c of cards) if (isLearned(c)) n[boxOf(c)]++; return n; }, [cards]);
+  const boxes = useMemo(() => { const n: Record<WordState, number> = { new: 0, learning: 0, review: 0, known: 0 }; for (const c of cards) n[cardState(c)]++; return n; }, [cards]);
 
   const start = (more = 0) => {
     const news = more ? fresh.slice(0, more) : todayNew;
     if (more) setExtra((e) => e + more);
     const steps: Step[] = [
-      ...shuffle(due).map((c) => ({ card: c, kind: boxOf(c) >= 3 ? 'type' as const : 'recall' as const })),
+      ...shuffle(due).map((c) => ({ card: c, kind: (c.stability ?? 0) >= 3 ? 'type' as const : 'recall' as const })),
       ...news.map((c) => ({ card: c, kind: 'learn' as const })),
     ];
     if (!steps.length) return;
@@ -86,13 +86,13 @@ export default function Vocab() {
     const graded = new Set(session.graded);
     let card = st.card;
     if (st.kind === 'learn') {
-      card = learn(card);
+      card = finishLearning(card);
       await saveCard(card);
       steps.push({ card, kind: 'recall', repeat: true }); // hỏi lại cuối buổi
     } else {
       if (!graded.has(card.id) && !st.repeat) {
         graded.add(card.id); stats.first++; if (remembered) stats.right++;
-        card = review(card, !!remembered);
+        card = grade(card, remembered ? Rating.Good : Rating.Again);
         await saveCard(card);
       }
       if (!remembered) steps.push({ card, kind: 'recall', repeat: true }); // chưa nhớ → hỏi lại tới khi nhớ
@@ -104,7 +104,7 @@ export default function Vocab() {
 
   if (session) return <Review session={session} setSession={setSession} next={next} onExit={() => setSession(null)} />;
 
-  const shown = cards.filter((c) => (!filter || (isLearned(c) && boxOf(c) === filter)) && (!q || c.word.toLowerCase().includes(q.toLowerCase()) || c.meaning.toLowerCase().includes(q.toLowerCase())))
+  const shown = cards.filter((c) => (!filter || cardState(c) === filter) && (!q || c.word.toLowerCase().includes(q.toLowerCase()) || c.meaning.toLowerCase().includes(q.toLowerCase())))
     .sort((a, b) => b.addedAt - a.addedAt);
   const total = due.length + todayNew.length;
 
@@ -123,11 +123,10 @@ export default function Vocab() {
       )}
 
       <div className="lt-boxes" role="group" aria-label="Các hộp">
-        {([1, 2, 3, 4, 5] as Box[]).map((b) => (
-          <button key={b} className={`lt-box lt-box--${b}${filter === b ? ' is-on' : ''}`} onClick={() => { setFilter(filter === b ? 0 : b); setShowList(true); }} title={`${BOX_NAMES[b]} – ${BOX_HINT[b]}`}>
+        {STATE_ORDER.map((b) => (
+          <button key={b} className={`lt-box st--${b}${filter === b ? ' is-on' : ''}`} onClick={() => { setFilter(filter === b ? '' : b); setShowList(true); }}>
             <strong>{boxes[b]}</strong>
-            <span>{BOX_NAMES[b]}</span>
-            <small>{BOX_HINT[b]}</small>
+            <span>{STATE_NAMES[b]}</span>
           </button>
         ))}
       </div>
@@ -174,7 +173,7 @@ export default function Vocab() {
 
       <section className="stack">
         <button className="lt-listhead" onClick={() => setShowList(!showList)} aria-expanded={showList}>
-          <h2 className="h3">Sổ từ của bạn <span className="muted small">({cards.length}{filter ? ` · ${BOX_NAMES[filter]}: ${shown.length}` : ''})</span></h2>
+          <h2 className="h3">Sổ từ của bạn <span className="muted small">({cards.length}{filter ? ` · ${STATE_NAMES[filter]}: ${shown.length}` : ''})</span></h2>
           <ChevronDown size={18} className={showList ? 'is-up' : ''} />
         </button>
         {showList && <>
@@ -182,7 +181,7 @@ export default function Vocab() {
             <input className="input" placeholder="Tìm từ…" value={q} onChange={(e) => setQ(e.target.value)} />
             <button className="btn btn--ghost" onClick={() => setAdding(!adding)}><Plus size={16} /> Thêm từ</button>
           </div>
-          {filter ? <p className="small">Đang lọc: <strong>{BOX_NAMES[filter]}</strong> <button className="btn btn--text btn--sm" onClick={() => setFilter(0)}>Bỏ lọc</button></p> : null}
+          {filter ? <p className="small">Đang lọc: <strong>{STATE_NAMES[filter]}</strong> <button className="btn btn--text btn--sm" onClick={() => setFilter('')}>Bỏ lọc</button></p> : null}
           {adding && (
             <form className="card pad form-grid" onSubmit={async (e) => { e.preventDefault(); if (!form.word.trim()) return; await saveCard(newCard({ id: `v-${form.word}-${Date.now().toString(36)}`, word: form.word.trim(), pos: form.pos, meaning: form.meaning, example: form.example })); setForm({ word: '', pos: '', meaning: '', example: '' }); setAdding(false); }}>
               <input className="input" placeholder="Từ / cụm" value={form.word} onChange={(e) => setForm({ ...form, word: e.target.value })} autoFocus />
@@ -198,7 +197,7 @@ export default function Vocab() {
                 <li key={c.id} className="vlist__row">
                   <div className="vlist__body">
                     <strong className="vocab__w">{c.word}</strong> {c.ipa && <span className="small muted">{c.ipa}</span>} <em className="vocab__pos">{c.pos}</em>
-                    {isLearned(c) && <span className={`lt-tag lt-box--${boxOf(c)}`}>{BOX_NAMES[boxOf(c)]}</span>}
+                    <span className={`lt-tag st--${cardState(c)}`}>{STATE_NAMES[cardState(c)]}</span>
                     {edit?.id === c.id ? (
                       <div className="wpop__form">
                         <label className="small">Nghĩa tiếng Việt<input className="input" value={edit.meaning} onChange={(e) => setEdit({ ...edit, meaning: e.target.value })} /></label>
@@ -271,7 +270,7 @@ function Review({ session, setSession, next, onExit }: { session: Session; setSe
         <div className="lt-card__tag">
           {st.kind === 'learn' ? <span className="lt-tag lt-tag--new">Từ mới</span>
             : st.repeat ? <span className="lt-tag">Nhắc lại</span>
-              : <span className={`lt-tag lt-box--${boxOf(c)}`}>{BOX_NAMES[boxOf(c)]}</span>}
+              : <span className={`lt-tag st--${cardState(c)}`}>{STATE_NAMES[cardState(c)]}</span>}
           {c.pos && <em className="vocab__pos">{c.pos}</em>}
         </div>
 
