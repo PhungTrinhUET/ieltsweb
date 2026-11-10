@@ -123,7 +123,7 @@ export default function Guide() {
           </section>
         </div>
       )}
-      <p className="small muted">Ứng dụng do nhóm học viên cao học Khoa CNTT, Trường ĐH Công nghệ – ĐHQG Hà Nội phát triển · <Link to="/about">Giới thiệu nhóm tác giả</Link></p>
+      <p className="small muted">Ứng dụng do nhóm thạc sĩ Khoa CNTT, Trường ĐH Công nghệ – ĐHQG Hà Nội phát triển · <Link to="/about">Giới thiệu nhóm tác giả</Link></p>
     </div>
   );
 }
