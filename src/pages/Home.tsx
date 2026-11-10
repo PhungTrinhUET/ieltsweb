@@ -1,18 +1,18 @@
 // Trang chủ dạng bảng điều khiển: tiếp tục bài dở, nhiệm vụ hôm nay, tiến độ band, 4 kỹ năng, từ vựng.
 import { Link } from 'react-router-dom';
-import { ArrowRight, BookMarked, CheckCircle2, Circle, Flame, GraduationCap, Keyboard, Layers, PlayCircle, Target, Timer } from 'lucide-react';
+import { ArrowRight, BarChart3, BookMarked, CheckCircle2, Circle, Flame, Sparkles, GraduationCap, Keyboard, Layers, PlayCircle, Target, Timer } from 'lucide-react';
 import { useDb } from '../db';
 import { getLastOpen, getStreak, useSettings } from '../store';
 import { SKILL_META } from './SkillList';
 import type { Attempt, Skill } from '../types';
-import { dueCards, reviewedToday as reviewedOn } from '../lib/srs';
+import { dueCards, startOfDay } from '../lib/srs';
+import { activeDays, dayKey as localDay, logsSince, streakOf, todayPlan, xpSum } from '../lib/stats';
 import { fmtBand, overallBand } from '../lib/band';
 import { Ring } from '../components/ui';
 import { Logo } from '../App';
 
 const SKILLS: Skill[] = ['reading', 'listening', 'speaking', 'writing'];
 const MODE_VI: Record<Attempt['mode'], string> = { test: 'Làm đề', dictation: 'Chép chính tả', gapfill: 'Điền từ', ai: 'AI chấm', self: 'Tự chấm' };
-const dayKey = (d: Date) => d.toISOString().slice(0, 10);
 
 function greeting() {
   const h = new Date().getHours();
@@ -22,7 +22,9 @@ function greeting() {
 export default function Home() {
   const db = useDb();
   const s = useSettings();
-  const streak = getStreak();
+  const days = activeDays(db.logs, db.attempts, getStreak().days);
+  const streak = streakOf(days);
+  const xpToday = xpSum(logsSince(db.logs, startOfDay()));
   const cards = Object.values(db.vocab);
   const due = dueCards(cards).length;
   const latest = (skill: Skill) => db.attempts.find((a) => a.skill === skill && a.band);
@@ -39,22 +41,20 @@ export default function Home() {
   const firstReading = all.filter((m) => m.skill === 'reading' && m.id.startsWith('vol')).sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }))[0];
   const resume = lastM ? { m: lastM, path: last!.path, mode: last!.mode } : firstReading ? { m: firstReading, path: `/reading/${firstReading.id}/practice`, mode: 'practice' as const } : null;
 
-  // Nhiệm vụ hôm nay: tự đánh dấu khi đã có lượt làm trong ngày.
-  const today = dayKey(new Date());
-  const todayAt = db.attempts.filter((a) => dayKey(new Date(a.at)) === today);
-  const reviewedToday = reviewedOn(cards);
+  // Kế hoạch hôm nay: Ôn N từ → Học 5 từ mới → Nghe chép 10 câu → Đoạn ngữ cảnh (+ một bài luyện đề).
+  const today = localDay();
+  const plan = todayPlan(cards, db.logs, { newPerDay: s.newCardsPerDay });
+  const examDone = db.attempts.some((a) => localDay(a.at) === today);
   const tasks = [
-    { done: cards.length > 0 && (due === 0 || reviewedToday), label: due ? `Ôn ${due} từ đến hạn` : 'Ôn từ vựng', time: '10 phút', to: '/vocab' },
-    { done: todayAt.some((a) => a.skill === 'reading'), label: 'Một bài Reading', time: '20 phút', to: '/reading' },
-    { done: todayAt.some((a) => a.skill === 'listening'), label: 'Một section Listening', time: '15 phút', to: '/listening' },
-    { done: todayAt.some((a) => a.skill === 'speaking' || a.skill === 'writing'), label: 'Speaking Part 2 hoặc Writing', time: '15–40 phút', to: '/speaking' },
+    ...plan.map((p) => ({ id: p.id, done: p.done, label: p.label, sub: p.sub, to: p.to })),
+    { id: 'exam', done: examDone, label: 'Một bài luyện đề', sub: 'Reading, Listening, Speaking hoặc Writing', to: resume?.path ?? '/reading' },
   ];
   const doneN = tasks.filter((t) => t.done).length;
 
   // 7 ngày gần nhất cho dải chuỗi ngày học.
   const week = Array.from({ length: 7 }, (_, i) => {
     const d = new Date(Date.now() - (6 - i) * 864e5);
-    return { d, on: streak.days.includes(dayKey(d)) || db.attempts.some((a) => dayKey(new Date(a.at)) === dayKey(d)) };
+    return { d, on: days.has(localDay(d)) };
   });
 
   return (
@@ -67,7 +67,8 @@ export default function Home() {
           <h1 className="home__hello">{greeting()} 👋</h1>
         </div>
         <div className="home__pills">
-          <span className="pill pill--fire" title="Số ngày học liên tiếp"><Flame size={16} /> {streak.count} ngày</span>
+          <span className="pill pill--fire" title="Số ngày học liên tiếp"><Flame size={16} /> <span data-testid="home-streak">{streak}</span> ngày</span>
+          <Link to="/stats" className="pill pill--xp" title="XP hôm nay (từ vựng + nghe-chép) – xem Thống kê"><Sparkles size={16} /> <span data-testid="home-xp">{xpToday}</span> XP</Link>
           <Link to="/settings" className="pill" title="Đổi mục tiêu trong Cài đặt"><Target size={16} /> Mục tiêu {fmtBand(s.targetBand)}</Link>
         </div>
       </header>
@@ -105,19 +106,19 @@ export default function Home() {
         </section>
 
         {/* Nhiệm vụ hôm nay */}
-        <section className="hcard">
+        <section className="hcard" data-testid="home-plan">
           <div className="hcard__head">
             <h2 className="hcard__title">Hôm nay</h2>
-            <span className="muted small">{doneN}/{tasks.length} việc</span>
+            <Link to="/stats" className="muted small"><BarChart3 size={13} /> {doneN}/{tasks.length} việc</Link>
           </div>
           <div className="today__bar"><span style={{ width: `${(doneN / tasks.length) * 100}%` }} /></div>
           <ul className="today">
             {tasks.map((t) => (
-              <li key={t.label}>
-                <Link to={t.to} className={`today__item${t.done ? ' is-done' : ''}`}>
+              <li key={t.id}>
+                <Link to={t.to} className={`today__item${t.done ? ' is-done' : ''}`} data-plan={t.id} data-done={t.done ? '' : undefined}>
                   {t.done ? <CheckCircle2 size={20} className="today__ic" /> : <Circle size={20} className="today__ic" />}
-                  <span className="today__label">{t.label}</span>
-                  <span className="today__time">{t.time}</span>
+                  <span className="today__label">{t.label}<span className="today__sub">{t.sub}</span></span>
+                  <ArrowRight size={15} className="today__time" />
                 </Link>
               </li>
             ))}

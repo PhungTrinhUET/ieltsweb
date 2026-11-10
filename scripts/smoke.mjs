@@ -76,7 +76,7 @@ const check = async (name, fn) => {
 const ROUTES = ['/', '/reading', '/listening', '/speaking', '/writing', '/vocab', '/library', '/history', '/guide', '/settings',
   '/reading/vol5-t6-r2', '/reading/vol5-t6-r2/practice', '/reading/vol5-t6-r2/study',
   '/listening/vol5-t6-l2', '/listening/vol5-t6-l2/practice', '/listening/vol1-t1-l1/dictation', '/listening/vol1-t1-l1/gapfill', '/listening/vol5-t6-l2/study',
-  '/dictation', '/dictation?level=3', '/dictation/gen%3Aphone', '/speaking/spk-2023q2-sc1', '/writing/vol1-t2-w2', '/writing/vol1-t2-w1', '/mock/reading', '/mock/listening',
+  '/vocab/learn', '/vocab/review', '/vocab/context', '/stats', '/dictation', '/dictation?level=3', '/dictation/gen%3Aphone', '/speaking/spk-2023q2-sc1', '/writing/vol1-t2-w2', '/writing/vol1-t2-w1', '/mock/reading', '/mock/listening',
   '/test/reading/vol5-t7', '/test/listening/vol5-t7', '/test/listening/vol5-t7/full', '/test/reading/vol5-t7/full'];
 
 for (const profile of Object.keys(PROFILES)) {
@@ -269,18 +269,90 @@ for (const profile of Object.keys(PROFILES)) {
     return { ok: /0:5\d/.test(a) && /1:5\d/.test(b), info: `${a} → ${b}` };
   });
 
-  // ---------- E1: Từ vựng – hộp Leitner ----------
-  await check(`[${profile}] E1 Từ vựng: bộ từ có sẵn, học từ mới → hộp 1, hỏi lại cuối buổi`, async () => {
+  // ---------- E: Từ vựng (FSRS, học theo nhóm, ôn tự chấm) ----------
+  await check(`[${profile}] E1 Từ vựng: trang chính có bộ từ, Hôm nay, câu trong đề`, async () => {
     await go(page, '/vocab');
-    await page.waitForSelector('.lt-topic', { timeout: 8000 });
-    const topics = await page.locator('.lt-topic').count();
-    await page.getByRole('button', { name: 'Ôn hôm nay' }).click();
-    const w1 = await page.locator('.lt-word strong').innerText();
-    await page.getByRole('button', { name: /Đã xem/ }).click();
-    await page.locator('.lt-review .icon-btn[aria-label="Thoát"]').click();
-    const n = async (s) => +((await page.locator(`.lt-box.st--${s} strong`).first().innerText().catch(() => '0')) || 0);
-    const started = (await n('learning')) + (await n('review'));
-    return { ok: topics >= 10 && !!w1 && started >= 1, info: `chủ đề=${topics} từ đầu="${w1}" đang học+ôn tập=${started}` };
+    await page.waitForSelector('[data-testid="deck"]', { timeout: 8000 });
+    const decks = await page.locator('[data-testid="deck"]').count();
+    const today = await page.locator('[data-testid="vocab-learn"]').count();
+    return { ok: decks >= 10 && today === 1, info: `bộ=${decks}` };
+  });
+  /** Làm hết một phiên học/ôn: trả lời đúng mọi bước (đúng theo data-right / data-target). */
+  const runSession = async (p, wrongFirst = 0) => {
+    let steps = 0, wrong = wrongFirst; const kinds = new Set();
+    for (; steps < 200; steps++) {
+      if (await p.locator('[data-testid="vx-summary"], [data-testid="ctx-passage"]').count()) break;
+      const vx = p.locator('[data-testid="vx"]');
+      await vx.waitFor({ timeout: 5000 });
+      const step = await vx.getAttribute('data-step'); kinds.add(step);
+      if (step === 'intro') { await p.getByRole('button', { name: /Đã nhớ, tiếp/ }).click(); await p.waitForTimeout(80); continue; }
+      if (await p.locator('.lt-opt').count()) {
+        if (wrong > 0) { wrong--; await p.locator('.lt-opt:not([data-right])').first().click(); await p.getByRole('button', { name: /Tiếp/ }).click(); }
+        else { await p.locator('.lt-opt[data-right]').click(); await p.waitForTimeout(1000); }
+      } else {
+        const target = await p.locator('.lt-type').getAttribute('data-target');
+        const inp = p.locator('.lt-type input, .lt-type textarea');
+        await inp.fill(target); await inp.press('Enter');
+        await p.getByRole('button', { name: /Tiếp/ }).click();
+      }
+      await p.waitForTimeout(80);
+    }
+    return { steps, kinds: [...kinds].join(',') };
+  };
+  await check(`[${profile}] E2 học trọn một nhóm từ mới (các bước xen kẽ, sai → làm lại) → đoạn ngữ cảnh → Ôn tập`, async () => {
+    page.errors.length = 0;
+    await go(page, '/vocab/learn?more=1');
+    const r = await runSession(page, 1);
+    await page.waitForSelector('[data-testid="ctx-passage"]', { timeout: 5000 });
+    const gap = await page.locator('.ctx-gap__sel').count();
+    for (let i = 0; i < gap; i++) { const sel = page.locator('.ctx-gap__sel').nth(i); const opts = await sel.locator('option').allInnerTexts(); await sel.selectOption(opts[1]); }
+    await page.getByRole('button', { name: gap ? 'Kiểm tra' : /Bỏ qua|Xong/ }).first().click();
+    if (gap) await page.getByRole('button', { name: 'Xong' }).click();
+    await page.waitForSelector('[data-testid="vx-summary"]', { timeout: 5000 });
+    const learned = await page.locator('.lt-learned li').count();
+    const inReview = await page.locator('.lt-learned .st--review').count();
+    return { ok: learned === 6 && inReview === 6 && r.kinds.split(',').length >= 5 && !page.errors.length, info: `bước=${r.steps} dạng=${r.kinds} câu ghép=${gap} từ=${learned} ôn tập=${inReview} ${page.errors.join(' | ')}` };
+  });
+  await check(`[${profile}] E3 thẻ Leitner cũ được chuyển sang FSRS + ôn 10 thẻ tự chấm`, async () => {
+    page.errors.length = 0;
+    await go(page, '/vocab');
+    // 12 thẻ kiểu cũ (hộp 1–5, chưa có stability), đến hạn hôm qua.
+    await page.evaluate(() => new Promise((res, rej) => {
+      const words = [['abundant', 'dồi dào'], ['scarce', 'khan hiếm'], ['mitigate', 'giảm nhẹ'], ['deteriorate', 'xấu đi'], ['substantial', 'đáng kể'], ['vulnerable', 'dễ bị tổn thương'],
+        ['sustainable', 'bền vững'], ['inevitable', 'không tránh khỏi'], ['diverse', 'đa dạng'], ['crucial', 'cốt yếu'], ['emission', 'khí thải'], ['habitat', 'môi trường sống']];
+      const r = indexedDB.open('ielts-practice', 3);
+      r.onsuccess = () => {
+        const t = r.result.transaction('vocab', 'readwrite'); const s = t.objectStore('vocab');
+        words.forEach(([w, m], i) => s.put({ id: `old-${w}`, word: w, meaning: m, pos: 'adj', example: `It is ${w}.`, addedAt: Date.now() - 20 * 864e5, due: Date.now() - 864e5, interval: 2, ease: 2.5, reps: 3, lapses: 0, box: 1 + (i % 5), learnedAt: Date.now() - 10 * 864e5 }, `old-${w}`));
+        t.oncomplete = () => { r.result.close(); res(); }; t.onerror = () => rej(t.error);
+      };
+      r.onerror = () => rej(r.error);
+    }));
+    await page.reload(); await page.waitForSelector('[data-testid="vocab-today"]');
+    const migrated = await page.evaluate(() => new Promise((res) => { const r = indexedDB.open('ielts-practice', 3); r.onsuccess = () => { const q = r.result.transaction('vocab').objectStore('vocab').get('old-mitigate'); q.onsuccess = () => res(q.result); }; }));
+    const today = await page.locator('[data-testid="vocab-today"]').innerText();
+    await page.locator('[data-testid="vocab-review"]').click();
+    const r = await runSession(page, 1);
+    const sum = await page.locator('[data-testid="vx-summary"]').innerText();
+    const graded = await page.evaluate(() => new Promise((res) => { const r = indexedDB.open('ielts-practice', 3); r.onsuccess = () => { const q = r.result.transaction('vocab').objectStore('vocab').getAll(); q.onsuccess = () => res(q.result.filter((c) => c.id.startsWith('old-') && c.due > Date.now()).length); }; }));
+    return { ok: migrated?.stability === 4 && /1[02] từ cần ôn|\d+ từ cần ôn/.test(today) && graded >= 10 && /Nhớ ngay \d+\/1[02]/.test(sum) && !page.errors.length,
+      info: `S=${migrated?.stability} ${today.split('\n')[0]} · lượt=${r.steps} dạng=${r.kinds} · đã chấm ${graded} · ${sum.split('\n')[1]} ${page.errors.join(' | ')}` };
+  });
+  await check(`[${profile}] E4 bộ tự tạo: dán danh sách → bộ có tiến độ, Học tiếp`, async () => {
+    await go(page, '/vocab');
+    await page.getByRole('tab', { name: /Tự tạo/ }).click();
+    await page.locator('[data-testid="deck-new"]').click();
+    await page.locator('[data-testid="deck-name"]').fill('Bộ thử');
+    await page.locator('[data-testid="deck-text"]').fill('scarcity | sự khan hiếm\ninfrastructure - cơ sở hạ tầng\nmitigate');
+    await page.locator('form button[type=submit]', { hasText: 'Tạo bộ' }).click();
+    await page.waitForSelector('[data-testid="deck-msg"]', { timeout: 15000 });
+    const deck = page.locator('[data-testid="deck"]', { hasText: 'Bộ thử' });
+    const n = await deck.locator('.deck__n').innerText();
+    const over = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
+    await deck.getByRole('link', { name: 'Học tiếp' }).click();
+    await page.waitForSelector('[data-testid="vx"]', { timeout: 8000 });
+    const w = await page.locator('.lt-word strong').first().innerText();
+    return { ok: /^\d\/3$/.test(n) && over <= 1 && ['scarcity', 'infrastructure', 'mitigate'].includes(w), info: `${n} từ đầu=${w} tràn=${over}` };
   });
 
   // ---------- F: Nghe & chép ----------
@@ -334,6 +406,44 @@ for (const profile of Object.keys(PROFILES)) {
     await page.waitForSelector('.dl-input', { timeout: 8000 });
     const back = await page.locator('.dl-input').inputValue();
     return { ok: has > 0 && !!typed && back === typed, info: `resume=${has} "${typed.trim()}" → "${back.trim()}"` };
+  });
+
+  await check(`[${profile}] F5 câu chép sai → thẻ "Câu hay sai" + từ chép sai vào sổ từ`, async () => {
+    page.errors.length = 0;
+    // tiếp nối F4: đang ở một câu bài vol3-t2-l1; sang câu kế, gõ sai hẳn rồi rời câu
+    await page.getByRole('button', { name: 'Câu sau' }).click();
+    const ans = page.locator('.dl-input');
+    await ans.fill('zzz'); await page.getByRole('button', { name: 'Kiểm tra' }).click();
+    await page.getByRole('button', { name: 'Câu sau' }).click();
+    await page.waitForTimeout(800);
+    const cards = await page.evaluate(() => new Promise((res) => { const r = indexedDB.open('ielts-practice', 3); r.onsuccess = () => { const q = r.result.transaction('vocab').objectStore('vocab').getAll(); q.onsuccess = () => res(q.result.map((c) => ({ id: c.id, word: c.word, kind: c.kind, note: c.note }))); }; }));
+    const sent = cards.filter((c) => c.kind === 'sentence');
+    const words = cards.filter((c) => c.note === 'Từ nghe-chép chưa đúng');
+    await go(page, '/vocab');
+    await page.locator('.lt-listhead').click();
+    await page.waitForSelector('[data-testid="vocab-list"]', { timeout: 8000 });
+    const inList = words.length ? await page.locator(`[data-testid="vocab-list"] li[data-word="${words[0].word}"]`).count() : 0;
+    const sentTag = await page.locator('[data-testid="vocab-list"]').getByText('Câu hay sai').count();
+    return { ok: sent.length > 0 && words.length > 0 && inList > 0 && sentTag > 0 && !page.errors.length,
+      info: `thẻ câu=${sent.length} từ=${words.map((w) => w.word).join(',')} trong sổ=${inList} nhãn câu=${sentTag} ${page.errors.join(' | ')}` };
+  });
+
+  await check(`[${profile}] C1 Trang chủ "Hôm nay" + XP/chuỗi ngày chung; trang Thống kê`, async () => {
+    page.errors.length = 0;
+    await go(page, '/');
+    await page.waitForSelector('[data-testid="home-plan"]', { timeout: 8000 });
+    const plan = await page.locator('[data-testid="home-plan"] [data-plan]').evaluateAll((els) => els.map((e) => `${e.dataset.plan}${e.hasAttribute('data-done') ? '✓' : ''}`));
+    const xp = Number(await page.locator('[data-testid="home-xp"]').innerText());
+    const streak = Number(await page.locator('[data-testid="home-streak"]').innerText());
+    await go(page, '/stats');
+    await page.waitForSelector('[data-testid="st-heat"]', { timeout: 8000 });
+    const cells = await page.locator('[data-testid="st-heat"] .st-heat__c').count();
+    const lit = await page.locator('[data-testid="st-heat"] .st-heat__c.is-today:not(.l0)').count();
+    const dict = Number(await page.locator('[data-testid="st-dict"]').innerText());
+    const over = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
+    const order = plan.map((p) => p.replace('✓', '')).join(',');
+    return { ok: order === 'review,learn,dict,context,exam' && plan.includes('learn✓') && xp > 0 && streak >= 1 && cells === 126 && lit === 1 && over <= 1 && !page.errors.length,
+      info: `kế hoạch=${plan.join(' ')} XP=${xp} chuỗi=${streak} ô=${cells} hôm nay sáng=${lit} câu đúng=${dict} tràn=${over} ${page.errors.join(' | ')}` };
   });
 
   // ---------- A3: Writing nộp được khi chưa cấu hình AI ----------

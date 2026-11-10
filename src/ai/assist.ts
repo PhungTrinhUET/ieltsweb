@@ -148,3 +148,21 @@ export async function generateWriting(task: 1 | 2, type: WritingType, topic: str
     outline: out.outline, sample: out.sample, vocab: toVocab(out.vocab), addedAt: Date.now(), source: 'AI tạo',
   };
 }
+
+// ---------- Đoạn ngữ cảnh cho từ vựng (A4) ----------
+const PassageSchema = z.object({
+  title: z.string().describe('Tiêu đề ngắn, tiếng Anh'),
+  passage: z.string().describe('Đoạn văn 120–180 từ, văn phong IELTS Academic, mỗi từ cần học xuất hiện đúng 1 lần và được bọc **như thế này**'),
+  questions: z.array(z.object({
+    q: z.string().describe('Câu hỏi tiếng Anh kiểm tra hiểu nghĩa từ trong ngữ cảnh'),
+    options: z.array(z.string()).describe('4 lựa chọn'),
+    answer: z.number().describe('Chỉ số lựa chọn đúng, 0–3'),
+    explain: z.string().describe('Giải thích ngắn bằng tiếng Việt'),
+  })).describe('3–5 câu hỏi'),
+});
+export type ContextPassageData = z.infer<typeof PassageSchema>;
+export function contextPassage(words: { word: string; meaning: string }[], cfg: AiConfig) {
+  return callStructured(cfg, PassageSchema, 'Bạn soạn bài đọc ngắn giúp người Việt học từ vựng IELTS (band 5–6.5). Câu rõ ràng, tự nhiên, không quá khó.',
+    `Viết một đoạn 120–180 từ dùng TẤT CẢ các từ sau (có thể chia dạng), mỗi từ bọc **…**:\n${words.map((w) => `- ${w.word} (${w.meaning})`).join('\n')}\n\nSau đó soạn 3–5 câu hỏi trắc nghiệm 4 lựa chọn kiểm tra nghĩa các từ trong ngữ cảnh đoạn văn.`,
+    { light: true, maxTokens: 3000 });
+}

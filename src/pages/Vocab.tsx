@@ -1,175 +1,129 @@
-// Từ vựng: ôn theo hộp Leitner (src/lib/srs.ts) – mỗi ngày một nút "Ôn hôm nay", mỗi thẻ chỉ 2 nút Nhớ / Chưa nhớ.
-// Nguồn từ: bộ từ IELTS theo chủ đề (public/data/vocab-deck.json, từ content/vocab/) + từ người học tự lưu khi đọc bài.
-// Một buổi ôn: từ đến hạn (hộp 1–2: nhìn từ → nhớ nghĩa; hộp 3+: nhìn nghĩa → gõ lại từ) + từ mới (xem thẻ đầy đủ),
-// cuối buổi hỏi lại các từ mới và từ "Chưa nhớ" cho tới khi nhớ hết.
-import { useEffect, useMemo, useState } from 'react';
+// Từ vựng (kiểu MemCab): trang chính.
+//   - 4 trạng thái (Sẽ học / Đang học / Ôn tập / Đã thuộc) theo FSRS (src/lib/srs.ts).
+//   - "Hôm nay": Ôn N từ đến hạn (/vocab/review) + Học nhóm từ mới (/vocab/learn) – xem src/pages/VocabSession.tsx.
+//   - Bộ từ: chủ đề có sẵn, bộ theo đề, từ đã lưu, bộ tự tạo; mỗi bộ có tiến độ theo trạng thái + "Học tiếp" / "Ôn bộ này".
+//   - Sổ từ: tìm, lọc theo trạng thái, sửa/xoá, câu thật trong đề cho từng từ.
+import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Check, ChevronDown, Eye, Layers, Pencil, Plus, Trash2, Volume2, X } from 'lucide-react';
+import { Check, ChevronDown, Layers, Pencil, Plus, Quote, Trash2, Volume2 } from 'lucide-react';
 import { deleteCard, saveCard, useDb } from '../db';
 import type { VocabCard } from '../types';
-import { STATE_NAMES, STATE_ORDER, cardState, dueCards, dueText, finishLearning, grade, isLearned, learnedToday, newCard, Rating, type WordState } from '../lib/srs';
-import { speak, ttsAvailable } from '../lib/tts';
-import { normAnswer, shuffle } from '../lib/text';
-import { touchStreak, useSettings } from '../store';
+import { STATE_NAMES, STATE_ORDER, cardState, dueCards, dueText, isLearned, learnedToday, newCard, type WordState } from '../lib/srs';
+import { type Deck, inDeck, useAllDecks } from '../lib/vocab';
+import { sayWord } from '../components/VocabEx';
+import ContextList from '../components/ContextList';
+import { useSettings } from '../store';
+import { readTopics, TOPIC_KEY } from './VocabSession';
+import DeckTools from '../components/DeckTools';
 
-type DeckTopic = { id: string; name: string; vi: string; words: [string, string, string, string?][] };
-const TOPIC_KEY = 'ielts:vocab-topics';
-const deckId = (w: string) => `d-${w.toLowerCase().replace(/\s+/g, '-')}`;
-
-function useDeck() {
-  const [deck, setDeck] = useState<DeckTopic[] | null>(null);
-  useEffect(() => {
-    fetch('./data/vocab-deck.json').then((r) => (r.ok ? r.json() : null)).then((d) => setDeck(d?.topics ?? [])).catch(() => setDeck([]));
-  }, []);
-  return deck;
-}
-function readTopics(): string[] | null { try { return JSON.parse(localStorage.getItem(TOPIC_KEY) ?? 'null'); } catch { return null; } }
-
-/** Một lượt trong buổi ôn. learn = từ mới (xem thẻ đầy đủ); recall = nhìn từ nhớ nghĩa; type = nhìn nghĩa gõ từ. */
-type Step = { card: VocabCard; kind: 'learn' | 'recall' | 'type'; repeat?: boolean };
-type Session = { steps: Step[]; i: number; shown: boolean; typed: string; checked: boolean; graded: Set<string>; stats: { first: number; right: number; fresh: number } };
+type Counts = Record<WordState, number>;
+const zero = (): Counts => ({ new: 0, learning: 0, review: 0, known: 0 });
 
 export default function Vocab() {
   const db = useDb();
   const s = useSettings();
-  const deck = useDeck();
+  const decks = useAllDecks();
   const cards = useMemo(() => Object.values(db.vocab), [db.vocab]);
-  const byWord = useMemo(() => new Map(cards.map((c) => [c.word.toLowerCase(), c])), [cards]);
+  const words = useMemo(() => cards.filter((c) => c.kind !== 'sentence'), [cards]);
+  const byWord = useMemo(() => new Map(words.map((c) => [c.word.toLowerCase(), c])), [words]);
   const [topics, setTopics] = useState<string[] | null>(readTopics);
-  const [extra, setExtra] = useState(0);
-  const [session, setSession] = useState<Session | null>(null);
-  const [done, setDone] = useState<Session['stats'] | null>(null);
   const [filter, setFilter] = useState<WordState | ''>('');
   const [q, setQ] = useState('');
   const [adding, setAdding] = useState(false);
   const [form, setForm] = useState({ word: '', pos: '', meaning: '', example: '' });
   const [edit, setEdit] = useState<{ id: string; meaning: string; pos: string; note: string } | null>(null);
+  const [open, setOpen] = useState<string | null>(null);
   const [showList, setShowList] = useState(false);
+  const [deckTab, setDeckTab] = useState<Deck['kind']>('topic');
 
-  const chosen = topics ?? deck?.map((t) => t.id) ?? [];
+  const topicDecks = decks?.filter((d) => d.kind === 'topic') ?? [];
+  const chosen = topics ?? topicDecks.map((t) => t.id.slice(5));
   const toggleTopic = (id: string) => {
     const next = chosen.includes(id) ? chosen.filter((x) => x !== id) : [...chosen, id];
     setTopics(next); try { localStorage.setItem(TOPIC_KEY, JSON.stringify(next)); } catch { /* ignore */ }
   };
 
   const due = useMemo(() => dueCards(cards), [cards]);
-  const newLeft = Math.max(0, s.newCardsPerDay + extra - learnedToday(cards));
-  // Từ mới: từ tự lưu chưa học trước, rồi từ trong bộ có sẵn theo thứ tự chủ đề đã chọn.
-  const fresh = useMemo(() => {
-    const own = cards.filter((c) => !isLearned(c)).sort((a, b) => a.addedAt - b.addedAt);
-    const fromDeck = (deck ?? []).filter((t) => chosen.includes(t.id)).flatMap((t) => t.words
-      .filter(([w]) => !byWord.has(w.toLowerCase()))
-      .map(([w, pos, meaning, example]) => newCard({ id: deckId(w), word: w, pos, meaning, example, from: `deck:${t.id}` })));
-    return [...own, ...fromDeck];
-  }, [cards, deck, chosen, byWord]);
-  const todayNew = fresh.slice(0, newLeft);
-  const boxes = useMemo(() => { const n: Record<WordState, number> = { new: 0, learning: 0, review: 0, known: 0 }; for (const c of cards) n[cardState(c)]++; return n; }, [cards]);
+  const doneToday = db.logs.filter((l) => l.rating && l.at >= new Date().setHours(0, 0, 0, 0)).length;
+  const reviewN = Math.min(due.length, Math.max(0, s.reviewLimit - doneToday));
+  const newLeft = Math.max(0, s.newCardsPerDay - learnedToday(cards));
+  const counts = useMemo(() => { const n = zero(); for (const c of words) n[cardState(c)]++; return n; }, [words]);
+  const sentences = cards.length - words.length;
 
-  const start = (more = 0) => {
-    const news = more ? fresh.slice(0, more) : todayNew;
-    if (more) setExtra((e) => e + more);
-    const steps: Step[] = [
-      ...shuffle(due).map((c) => ({ card: c, kind: (c.stability ?? 0) >= 3 ? 'type' as const : 'recall' as const })),
-      ...news.map((c) => ({ card: c, kind: 'learn' as const })),
-    ];
-    if (!steps.length) return;
-    touchStreak(); setDone(null);
-    setSession({ steps, i: 0, shown: false, typed: '', checked: false, graded: new Set(), stats: { first: 0, right: 0, fresh: news.length } });
+  /** Tiến độ một bộ: thẻ đã có + từ chưa thành thẻ (Sẽ học). */
+  const deckStats = (d: Deck) => {
+    const n = zero(); let due = 0;
+    const seen = new Set<string>();
+    for (const w of d.words) { const c = byWord.get(w.word.toLowerCase()); seen.add(w.word.toLowerCase()); if (c) { n[cardState(c)]++; if (isLearned(c) && c.due <= Date.now() + 864e5) due++; } else n.new++; }
+    if (d.kind === 'saved' || d.kind === 'custom') for (const c of words) if (!seen.has(c.word.toLowerCase()) && inDeck(c, d.id)) { n[cardState(c)]++; if (isLearned(c) && c.due <= Date.now()) due++; }
+    return { n, total: n.new + n.learning + n.review + n.known, due };
   };
-
-  /** Xong một lượt. remembered: undefined với thẻ học mới. */
-  const next = async (remembered?: boolean) => {
-    if (!session) return;
-    const st = session.steps[session.i];
-    const steps = [...session.steps];
-    const stats = { ...session.stats };
-    const graded = new Set(session.graded);
-    let card = st.card;
-    if (st.kind === 'learn') {
-      card = finishLearning(card);
-      await saveCard(card);
-      steps.push({ card, kind: 'recall', repeat: true }); // hỏi lại cuối buổi
-    } else {
-      if (!graded.has(card.id) && !st.repeat) {
-        graded.add(card.id); stats.first++; if (remembered) stats.right++;
-        card = grade(card, remembered ? Rating.Good : Rating.Again);
-        await saveCard(card);
-      }
-      if (!remembered) steps.push({ card, kind: 'recall', repeat: true }); // chưa nhớ → hỏi lại tới khi nhớ
-    }
-    const i = session.i + 1;
-    if (i >= steps.length) { setSession(null); setDone(stats); window.scrollTo(0, 0); return; }
-    setSession({ steps, i, shown: false, typed: '', checked: false, graded, stats });
-  };
-
-  if (session) return <Review session={session} setSession={setSession} next={next} onExit={() => setSession(null)} />;
 
   const shown = cards.filter((c) => (!filter || cardState(c) === filter) && (!q || c.word.toLowerCase().includes(q.toLowerCase()) || c.meaning.toLowerCase().includes(q.toLowerCase())))
     .sort((a, b) => b.addedAt - a.addedAt);
-  const total = due.length + todayNew.length;
+  const tabs: [Deck['kind'], string][] = [['topic', 'Chủ đề'], ['test', 'Theo đề'], ['saved', 'Đã lưu'], ['custom', 'Tự tạo']];
+  const list = decks?.filter((d) => d.kind === deckTab) ?? [];
 
   return (
     <div className="page lt" style={{ ['--skill' as string]: 'var(--primary)' }}>
       <div className="page-head">
         <span className="skill__icon skill__icon--lg"><Layers size={26} /></span>
-        <div><h1>Từ vựng</h1><p>Mỗi ngày một buổi ôn ~10 phút. Nhớ thì từ lên hộp, quên thì về hộp 1.</p></div>
+        <div><h1>Từ vựng</h1><p>Học từ mới theo nhóm qua nhiều dạng bài, ôn đúng lúc sắp quên (FSRS). Câu ví dụ lấy từ đề thật.</p></div>
       </div>
 
-      {done && (
-        <div className="lt-done card pad">
-          <strong>Xong buổi ôn 🎉</strong>
-          <span>{done.fresh > 0 && <>{done.fresh} từ mới · </>}{done.first > 0 ? <>nhớ ngay {done.right}/{done.first} từ cũ</> : 'không có từ cũ đến hạn'}</span>
-        </div>
-      )}
-
-      <div className="lt-boxes" role="group" aria-label="Các hộp">
+      <div className="lt-boxes" role="group" aria-label="Trạng thái">
         {STATE_ORDER.map((b) => (
           <button key={b} className={`lt-box st--${b}${filter === b ? ' is-on' : ''}`} onClick={() => { setFilter(filter === b ? '' : b); setShowList(true); }}>
-            <strong>{boxes[b]}</strong>
+            <strong>{counts[b]}</strong>
             <span>{STATE_NAMES[b]}</span>
           </button>
         ))}
       </div>
 
-      <div className="lt-today card">
-        {total > 0 ? (
-          <>
-            <div>
-              <div className="lt-today__n">{total} từ</div>
-              <div className="muted small">{due.length} từ đến hạn ôn · {todayNew.length} từ mới</div>
-            </div>
-            <button className="btn btn--primary btn--lg" onClick={() => start()}>Ôn hôm nay</button>
-          </>
-        ) : (
-          <>
-            <div>
-              <div className="lt-today__n">Hôm nay xong rồi ✓</div>
-              <div className="muted small">{deck === null ? 'Đang tải bộ từ…' : fresh.length ? 'Ngày mai quay lại ôn tiếp nhé.' : 'Đã học hết từ trong các chủ đề đã chọn.'}</div>
-            </div>
-            {fresh.length > 0 && <button className="btn btn--ghost" onClick={() => start(10)}><Plus size={16} /> Học thêm 10 từ mới</button>}
-          </>
-        )}
+      <div className="lt-today card" data-testid="vocab-today">
+        <div className="lt-today__row">
+          <div><div className="lt-today__n">{reviewN} từ cần ôn</div><div className="muted small">{due.length > reviewN ? `${due.length} thẻ đến hạn · giới hạn ${s.reviewLimit}/ngày` : reviewN ? 'yếu nhất trước' : 'không có từ đến hạn'}{sentences ? ` · gồm câu hay sai` : ''}</div></div>
+          {reviewN > 0 ? <Link className="btn btn--primary btn--lg" to="/vocab/review" data-testid="vocab-review">Ôn ngay</Link> : <span className="ok-text"><Check size={18} /></span>}
+        </div>
+        <div className="lt-today__row">
+          <div><div className="lt-today__n">{newLeft ? `${Math.min(newLeft, 6)} từ mới` : 'Đủ từ mới hôm nay ✓'}</div><div className="muted small">{learnedToday(cards)}/{s.newCardsPerDay} từ mới hôm nay · nhóm 6 từ, 5 dạng bài</div></div>
+          <Link className={`btn btn--lg ${newLeft ? 'btn--primary' : 'btn--ghost'}`} to={newLeft ? '/vocab/learn' : '/vocab/learn?more=1'} data-testid="vocab-learn">{newLeft ? 'Học' : <><Plus size={16} /> Học thêm</>}</Link>
+        </div>
       </div>
 
-      {deck && deck.length > 0 && (
-        <section className="stack">
-          <h2 className="h3">Chủ đề <span className="muted small">– chọn chủ đề để lấy từ mới</span></h2>
-          <div className="lt-topics">
-            {deck.map((t) => {
-              const on = chosen.includes(t.id);
-              const learned = t.words.filter(([w]) => { const c = byWord.get(w.toLowerCase()); return c && isLearned(c); }).length;
+      <section className="stack">
+        <div className="tabs" role="tablist">
+          {tabs.map(([k, label]) => <button key={k} role="tab" aria-selected={deckTab === k} className={`tabs__btn${deckTab === k ? ' is-on' : ''}`} onClick={() => setDeckTab(k)}>{label} <small className="muted">{decks?.filter((d) => d.kind === k).length ?? ''}</small></button>)}
+        </div>
+        {deckTab === 'topic' && <p className="small muted">Bấm ô vuông để chọn chủ đề lấy từ cho nút "Học" ở trên.</p>}
+        {deckTab === 'custom' && <DeckTools />}
+        {decks === null ? <p className="muted">Đang tải bộ từ…</p> : !list.length ? <p className="empty">{deckTab === 'saved' ? 'Chưa lưu từ nào. Bấm vào từ khi đọc/nghe bài (Luyện tập) để lưu kèm câu gốc.' : deckTab === 'test' ? 'Chưa có bộ theo đề.' : 'Chưa có bộ tự tạo.'}</p> : (
+          <div className="deck-grid">
+            {list.map((d) => {
+              const st = deckStats(d);
+              const on = d.kind === 'topic' && chosen.includes(d.id.slice(5));
+              const learned = st.n.review + st.n.known;
               return (
-                <button key={t.id} className={`lt-topic${on ? ' is-on' : ''}`} onClick={() => toggleTopic(t.id)} aria-pressed={on}>
-                  <span className="lt-topic__check">{on && <Check size={13} />}</span>
-                  <span className="lt-topic__name">{t.vi}<small>{t.name}</small></span>
-                  <span className="lt-topic__n">{learned}/{t.words.length}</span>
-                  <span className="lt-topic__bar" style={{ width: `${(learned / t.words.length) * 100}%` }} />
-                </button>
+                <div key={d.id} className="deck card" data-testid="deck">
+                  <div className="deck__head">
+                    {d.kind === 'topic' && <button className={`lt-topic__check${on ? ' is-on' : ''}`} onClick={() => toggleTopic(d.id.slice(5))} aria-pressed={on} aria-label={`Chọn chủ đề ${d.name}`}>{on && <Check size={13} />}</button>}
+                    <div className="deck__name"><strong>{d.name}</strong>{d.vi && <small className="muted">{d.vi}</small>}{d.ref && <Link className="small" to={`/reading/${d.ref}`}>{d.ref}</Link>}</div>
+                    <span className="deck__n">{learned}/{st.total}</span>
+                  </div>
+                  <div className="deck__bar" aria-label="Tiến độ">
+                    {(['known', 'review', 'learning'] as WordState[]).map((k) => st.n[k] ? <span key={k} className={`st--${k}`} style={{ width: `${(st.n[k] / Math.max(1, st.total)) * 100}%` }} title={`${STATE_NAMES[k]}: ${st.n[k]}`} /> : null)}
+                  </div>
+                  <div className="deck__meta small muted">{STATE_ORDER.map((k) => `${STATE_NAMES[k]} ${st.n[k]}`).join(' · ')}</div>
+                  <div className="row">
+                    {st.n.new + st.n.learning > 0 && <Link className="btn btn--primary btn--sm" to={`/vocab/learn?more=1&deck=${encodeURIComponent(d.id)}`}>Học tiếp</Link>}
+                    {learned + st.n.learning > 0 && <Link className="btn btn--ghost btn--sm" to={`/vocab/review?deck=${encodeURIComponent(d.id)}`}>Ôn bộ này{st.due ? ` (${st.due})` : ''}</Link>}
+                  </div>
+                </div>
               );
             })}
           </div>
-        </section>
-      )}
+        )}
+      </section>
 
       <section className="stack">
         <button className="lt-listhead" onClick={() => setShowList(!showList)} aria-expanded={showList}>
@@ -183,7 +137,7 @@ export default function Vocab() {
           </div>
           {filter ? <p className="small">Đang lọc: <strong>{STATE_NAMES[filter]}</strong> <button className="btn btn--text btn--sm" onClick={() => setFilter('')}>Bỏ lọc</button></p> : null}
           {adding && (
-            <form className="card pad form-grid" onSubmit={async (e) => { e.preventDefault(); if (!form.word.trim()) return; await saveCard(newCard({ id: `v-${form.word}-${Date.now().toString(36)}`, word: form.word.trim(), pos: form.pos, meaning: form.meaning, example: form.example })); setForm({ word: '', pos: '', meaning: '', example: '' }); setAdding(false); }}>
+            <form className="card pad form-grid" onSubmit={async (e) => { e.preventDefault(); if (!form.word.trim()) return; await saveCard(newCard({ id: `v-${form.word.trim().toLowerCase().replace(/\s+/g, '-')}-${Date.now().toString(36)}`, word: form.word.trim(), pos: form.pos, meaning: form.meaning, example: form.example || undefined, decks: ['saved'] })); setForm({ word: '', pos: '', meaning: '', example: '' }); setAdding(false); }}>
               <input className="input" placeholder="Từ / cụm" value={form.word} onChange={(e) => setForm({ ...form, word: e.target.value })} autoFocus />
               <input className="input" placeholder="Loại từ (n, v, adj…)" value={form.pos} onChange={(e) => setForm({ ...form, pos: e.target.value })} />
               <input className="input" placeholder="Nghĩa" value={form.meaning} onChange={(e) => setForm({ ...form, meaning: e.target.value })} />
@@ -191,36 +145,9 @@ export default function Vocab() {
               <div className="row"><button className="btn btn--primary" type="submit">Lưu</button><button className="btn btn--ghost" type="button" onClick={() => setAdding(false)}>Huỷ</button></div>
             </form>
           )}
-          {shown.length === 0 ? <p className="empty">{cards.length ? 'Không có từ nào khớp.' : 'Chưa có từ nào. Bấm "Ôn hôm nay" để học từ trong bộ có sẵn, hoặc bấm vào từ trong bài Reading/Listening (Luyện tập) để lưu.'}</p> : (
-            <ul className="vlist card">
-              {shown.map((c) => (
-                <li key={c.id} className="vlist__row">
-                  <div className="vlist__body">
-                    <strong className="vocab__w">{c.word}</strong> {c.ipa && <span className="small muted">{c.ipa}</span>} <em className="vocab__pos">{c.pos}</em>
-                    <span className={`lt-tag st--${cardState(c)}`}>{STATE_NAMES[cardState(c)]}</span>
-                    {edit?.id === c.id ? (
-                      <div className="wpop__form">
-                        <label className="small">Nghĩa tiếng Việt<input className="input" value={edit.meaning} onChange={(e) => setEdit({ ...edit, meaning: e.target.value })} /></label>
-                        <label className="small">Loại từ<input className="input" value={edit.pos} onChange={(e) => setEdit({ ...edit, pos: e.target.value })} /></label>
-                        <label className="small">Ghi chú<textarea className="textarea" rows={2} value={edit.note} onChange={(e) => setEdit({ ...edit, note: e.target.value })} /></label>
-                        <div className="wpop__actions">
-                          <button className="btn btn--ghost btn--sm" onClick={() => setEdit(null)}>Huỷ</button>
-                          <button className="btn btn--primary btn--sm" onClick={async () => { await saveCard({ ...c, meaning: edit.meaning, pos: edit.pos || undefined, note: edit.note || undefined }); setEdit(null); }}><Check size={15} /> Lưu</button>
-                        </div>
-                      </div>
-                    ) : <>
-                      <div className="vocab__vi">{c.meaning}</div>
-                      {c.example && <div className="vocab__ex">{c.example}</div>}
-                      {c.note && <div className="small vocab__note">📝 {c.note}</div>}
-                      {c.from && db.materials[c.from] && <div className="small muted">Từ bài: <Link to={`/${db.materials[c.from].skill}/${c.from}/practice`}>{db.materials[c.from].title}</Link></div>}
-                    </>}
-                    <div className="small muted">{dueText(c)}</div>
-                  </div>
-                  <button className="icon-btn" onClick={() => speak(c.word)} aria-label="Phát âm"><Volume2 size={16} /></button>
-                  <button className="icon-btn" onClick={() => setEdit({ id: c.id, meaning: c.meaning, pos: c.pos ?? '', note: c.note ?? '' })} aria-label="Sửa"><Pencil size={16} /></button>
-                  <button className="icon-btn" onClick={() => confirm(`Xoá "${c.word}" khỏi sổ từ?`) && deleteCard(c.id)} aria-label="Xoá"><Trash2 size={16} /></button>
-                </li>
-              ))}
+          {shown.length === 0 ? <p className="empty">{cards.length ? 'Không có từ nào khớp.' : 'Chưa có từ nào. Bấm "Học" để học từ trong bộ có sẵn, hoặc bấm vào từ trong bài Reading/Listening (Luyện tập) để lưu.'}</p> : (
+            <ul className="vlist card" data-testid="vocab-list">
+              {shown.slice(0, 300).map((c) => <Row key={c.id} c={c} open={open === c.id} onOpen={() => setOpen(open === c.id ? null : c.id)} edit={edit?.id === c.id ? edit : null} setEdit={setEdit} />)}
             </ul>
           )}
         </>}
@@ -229,101 +156,38 @@ export default function Vocab() {
   );
 }
 
-/** Màn ôn: một thẻ giữa màn hình. */
-function Review({ session, setSession, next, onExit }: { session: Session; setSession: (s: Session) => void; next: (r?: boolean) => void; onExit: () => void }) {
-  const st = session.steps[session.i];
-  const c = st.card;
-  const typedOk = normAnswer(session.typed) === normAnswer(c.word);
-  const say = () => ttsAvailable() && speak(c.word, { rate: 0.9 });
-  // Đọc từ khi thẻ hiện mặt có chữ tiếng Anh.
-  useEffect(() => { if (st.kind !== 'type') say(); }, [session.i]); // eslint-disable-line react-hooks/exhaustive-deps
-  useEffect(() => {
-    const k = (e: KeyboardEvent) => {
-      if ((e.target as HTMLElement).tagName === 'INPUT') return;
-      if (st.kind === 'learn' && (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowRight')) { e.preventDefault(); next(); }
-      else if (st.kind === 'recall' && !session.shown && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); setSession({ ...session, shown: true }); }
-      else if (st.kind === 'recall' && session.shown && (e.key === 'ArrowLeft' || e.key === '1')) next(false);
-      else if (st.kind === 'recall' && session.shown && (e.key === 'ArrowRight' || e.key === '2')) next(true);
-      else if (st.kind === 'type' && session.checked && e.key === 'Enter') next(typedOk);
-    };
-    document.addEventListener('keydown', k);
-    return () => document.removeEventListener('keydown', k);
-  });
-  const left = new Set(session.steps.slice(session.i).map((x) => x.card.id)).size;
-  const example = c.example && st.kind === 'type' && !session.checked
-    ? c.example.replace(new RegExp(c.word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), '_____') : c.example;
-  const word = (
-    <div className="lt-word">
-      <strong>{c.word}</strong>
-      <button className="icon-btn" onClick={say} aria-label="Phát âm"><Volume2 size={20} /></button>
-    </div>
-  );
+function Row({ c, open, onOpen, edit, setEdit }: { c: VocabCard; open: boolean; onOpen: () => void; edit: { id: string; meaning: string; pos: string; note: string } | null; setEdit: (e: { id: string; meaning: string; pos: string; note: string } | null) => void }) {
+  const db = useDb();
+  const sentence = c.kind === 'sentence';
+  const src = c.from && db.materials[c.from];
   return (
-    <div className="page lt lt-review" style={{ ['--skill' as string]: 'var(--primary)' }}>
-      <div className="topbar">
-        <button className="icon-btn" onClick={onExit} aria-label="Thoát"><X size={20} /></button>
-        <div className="topbar__title"><small>Ôn từ vựng</small><strong>Còn {left} từ</strong></div>
+    <li className="vlist__row" data-word={c.word.toLowerCase()}>
+      <div className="vlist__body">
+        <strong className="vocab__w">{sentence ? 'Câu hay sai' : c.word}</strong> {c.ipa && <span className="small muted">{c.ipa}</span>} {c.pos && <em className="vocab__pos">{c.pos}</em>}
+        <span className={`lt-tag st--${cardState(c)}`}>{STATE_NAMES[cardState(c)]}</span>
+        {edit ? (
+          <div className="wpop__form">
+            <label className="small">Nghĩa tiếng Việt<input className="input" value={edit.meaning} onChange={(e) => setEdit({ ...edit, meaning: e.target.value })} /></label>
+            <label className="small">Loại từ<input className="input" value={edit.pos} onChange={(e) => setEdit({ ...edit, pos: e.target.value })} /></label>
+            <label className="small">Ghi chú<textarea className="textarea" rows={2} value={edit.note} onChange={(e) => setEdit({ ...edit, note: e.target.value })} /></label>
+            <div className="wpop__actions">
+              <button className="btn btn--ghost btn--sm" onClick={() => setEdit(null)}>Huỷ</button>
+              <button className="btn btn--primary btn--sm" onClick={async () => { await saveCard({ ...c, meaning: edit.meaning, pos: edit.pos || undefined, note: edit.note || undefined }); setEdit(null); }}><Check size={15} /> Lưu</button>
+            </div>
+          </div>
+        ) : <>
+          {sentence ? <div className="vocab__ex">{c.word}</div> : <div className="vocab__vi">{c.meaning}</div>}
+          {c.example && !sentence && <div className="vocab__ex">{c.example}</div>}
+          {c.context && <div className="vocab__ex vocab__ctx"><Quote size={12} /> {c.context.text}{c.context.label && <span className="small muted"> – {c.context.label}</span>}</div>}
+          {c.note && <div className="small vocab__note">📝 {c.note}</div>}
+          {src && <div className="small muted">Từ bài: <Link to={`/${src.skill}/${src.id}/practice`}>{src.title}</Link></div>}
+          {open && !sentence && <ContextList word={c.word} max={3} />}
+        </>}
+        <div className="small muted">{dueText(c)}{!sentence && <> · <button className="btn btn--text btn--sm" onClick={onOpen}>{open ? 'Ẩn câu trong đề' : 'Câu trong đề'}</button></>}</div>
       </div>
-      <div className="bar"><div className="bar__fill" style={{ width: `${(session.i / session.steps.length) * 100}%` }} /></div>
-
-      <div className="lt-card card">
-        <div className="lt-card__tag">
-          {st.kind === 'learn' ? <span className="lt-tag lt-tag--new">Từ mới</span>
-            : st.repeat ? <span className="lt-tag">Nhắc lại</span>
-              : <span className={`lt-tag st--${cardState(c)}`}>{STATE_NAMES[cardState(c)]}</span>}
-          {c.pos && <em className="vocab__pos">{c.pos}</em>}
-        </div>
-
-        {st.kind === 'learn' && (
-          <>
-            {word}
-            <p className="lt-mean">{c.meaning}</p>
-            {c.example && <p className="lt-ex">{c.example}</p>}
-            <div className="lt-actions"><button className="btn btn--primary btn--lg" onClick={() => next()} autoFocus>Đã xem, tiếp <small>Enter</small></button></div>
-          </>
-        )}
-
-        {st.kind === 'recall' && (
-          <>
-            {word}
-            {c.example && <p className="lt-ex">{c.example}</p>}
-            {session.shown ? (
-              <>
-                <p className="lt-mean">{c.meaning}</p>
-                {c.note && <p className="small muted">📝 {c.note}</p>}
-                <div className="lt-actions lt-actions--two">
-                  <button className="btn lt-no" onClick={() => next(false)}><X size={18} /> Chưa nhớ <small>←</small></button>
-                  <button className="btn lt-yes" onClick={() => next(true)}><Check size={18} /> Nhớ <small>→</small></button>
-                </div>
-              </>
-            ) : (
-              <>
-                <p className="lt-ask">Bạn có nhớ nghĩa của từ này không?</p>
-                <div className="lt-actions"><button className="btn btn--primary btn--lg" onClick={() => setSession({ ...session, shown: true })}><Eye size={18} /> Xem nghĩa <small>Space</small></button></div>
-              </>
-            )}
-          </>
-        )}
-
-        {st.kind === 'type' && (
-          <>
-            <p className="lt-mean">{c.meaning}</p>
-            {example && <p className="lt-ex">{example}</p>}
-            <form className="lt-type" onSubmit={(e) => { e.preventDefault(); if (!session.checked) { setSession({ ...session, checked: true }); say(); } }}>
-              <input className={`input input--lg${session.checked ? (typedOk ? ' is-correct' : ' is-wrong') : ''}`} autoFocus value={session.typed} disabled={session.checked}
-                onChange={(e) => setSession({ ...session, typed: e.target.value })} placeholder="Gõ từ tiếng Anh…" spellCheck={false} autoComplete="off" autoCapitalize="off" />
-              {!session.checked && <button className="btn btn--primary" type="submit">Kiểm tra</button>}
-            </form>
-            {session.checked && (
-              <>
-                <div className={typedOk ? 'ok-text' : 'no-text'}>{typedOk ? <><Check size={16} /> Chính xác</> : <><X size={16} /> Đáp án: <strong>{c.word}</strong></>}</div>
-                <div className="lt-actions"><button className={`btn btn--lg ${typedOk ? 'lt-yes' : 'lt-no'}`} onClick={() => next(typedOk)} autoFocus>Tiếp <small>Enter</small></button></div>
-              </>
-            )}
-          </>
-        )}
-      </div>
-      <p className="muted small center">{st.kind === 'type' ? 'Hộp 3 trở lên: nhìn nghĩa, gõ lại từ – nhớ cả chính tả.' : st.kind === 'recall' ? 'Tự nhớ nghĩa trước, rồi bấm Xem nghĩa để so.' : 'Đọc to từ và câu ví dụ một lần.'}</p>
-    </div>
+      {!sentence && <button className="icon-btn" onClick={() => sayWord(c.word)} aria-label="Phát âm"><Volume2 size={16} /></button>}
+      <button className="icon-btn" onClick={() => setEdit({ id: c.id, meaning: c.meaning, pos: c.pos ?? '', note: c.note ?? '' })} aria-label="Sửa"><Pencil size={16} /></button>
+      <button className="icon-btn" onClick={() => confirm(`Xoá "${sentence ? 'câu này' : c.word}" khỏi sổ từ?`) && deleteCard(c.id)} aria-label="Xoá"><Trash2 size={16} /></button>
+    </li>
   );
 }

@@ -78,9 +78,65 @@ function parseSrt(text) {
   }).filter(Boolean);
 }
 
+/** Các dạng biến đổi thường gặp của một từ (số nhiều, quá khứ, -ing) để tìm trong câu. */
+function forms(w) {
+  const f = new Set([w]);
+  const cvc = /[^aeiou][aeiou][bdgklmnprt]$/.test(w) && w.length <= 6;
+  f.add(w + 's'); f.add(w + 'es'); f.add(w + 'ed'); f.add(w + 'ing'); f.add(w + 'd');
+  if (/[^aeiou]y$/.test(w)) { const b = w.slice(0, -1); f.add(b + 'ies'); f.add(b + 'ied'); }
+  if (/e$/.test(w)) { const b = w.slice(0, -1); f.add(b + 'ing'); f.add(b + 'ed'); }
+  if (cvc) { const d = w + w.at(-1); f.add(d + 'ed'); f.add(d + 'ing'); }
+  return [...f];
+}
+const tokens = (s) => s.toLowerCase().replace(/[’']/g, "'").match(/[a-z][a-z'-]*/g) ?? [];
+/** Chọn tối đa `max` câu/ từ: câu 7–32 từ, mỗi bài một câu, xen Reading/Listening. */
+function buildContext(mats, words, max = 5) {
+  const S = []; // [mid, text, start?, end?, skill]
+  for (const m of mats) {
+    if (m.skill === 'reading') for (const p of String(m.passage ?? '').split(/\n+/)) for (const x of sentences(p.replace(/^[A-Z]\s+(?=[A-Z])/, ''))) S.push([m.id, x.trim()]);
+    if (m.skill === 'listening') {
+      if (m.segments?.length && m.audio) for (const g of m.segments) S.push([m.id, g.text.trim(), g.start, g.end]);
+      else for (const line of String(m.transcript ?? '').split('\n')) for (const x of sentences(line.replace(/^[^:]{1,30}:\s*/, ''))) S.push([m.id, x.trim()]);
+    }
+  }
+  const single = new Map(); const phrases = [];
+  for (const w of words) {
+    const t = tokens(w);
+    if (t.length === 1) for (const f of forms(t[0])) { if (!single.has(f)) single.set(f, w); }
+    else if (t.length > 1) phrases.push({ w, first: new Set(forms(t[0])), re: new RegExp(`\\b${t.slice(0, -1).join('\\s+')}\\s+(?:${forms(t.at(-1)).join('|')})\\b`, 'i') });
+  }
+  const hits = new Map();
+  S.forEach(([mid, text], i) => {
+    const tk = tokens(text);
+    if (tk.length < 7 || tk.length > 32) return;
+    const found = new Set();
+    for (const x of tk) { const w = single.get(x); if (w) found.add(w); }
+    const ts = new Set(tk);
+    for (const p of phrases) if ([...p.first].some((f) => ts.has(f)) && p.re.test(text)) found.add(p.w);
+    for (const w of found) (hits.get(w) ?? hits.set(w, []).get(w)).push(i);
+  });
+  const used = new Map(); const out = { s: [], w: {} };
+  const keep = (i) => { if (!used.has(i)) { used.set(i, out.s.length); const [mid, text, a, b] = S[i]; out.s.push(a != null ? [mid, text, a, b] : [mid, text]); } return used.get(i); };
+  for (const w of words) {
+    const list = hits.get(w); if (!list) continue;
+    // ưu tiên câu dài vừa (12–22 từ), mỗi bài lấy một câu, xen kẽ hai kỹ năng
+    const score = (i) => Math.abs(tokens(S[i][1]).length - 17);
+    const byMid = new Map();
+    for (const i of [...list].sort((a, b) => score(a) - score(b))) if (!byMid.has(S[i][0])) byMid.set(S[i][0], i);
+    const r = [...byMid.values()].filter((i) => /-r\d+$/.test(S[i][0])); const l = [...byMid.values()].filter((i) => !/-r\d+$/.test(S[i][0]));
+    const pick = [];
+    while (pick.length < max && (r.length || l.length)) { if (r.length) pick.push(r.shift()); if (l.length && pick.length < max) pick.push(l.shift()); }
+    out.w[w] = pick.map(keep);
+  }
+  return { data: out, found: Object.keys(out.w).length, missing: words.filter((w) => !out.w[w]) };
+}
+/** Từ thêm vào chỉ mục ngoài bộ chủ đề (A5: bộ theo đề) – điền ở dưới. */
+const EXTRA_CONTEXT_WORDS = [];
+
 // Số câu một câu hỏi chiếm: multi "Choose TWO" có no = số đầu, tính cho answer.length số.
 const span = (q) => Array.from({ length: q.type === 'multi' ? Math.max(1, q.answer.length) : 1 }, (_, i) => q.no + i);
 const index = [];
+const allMats = [];
 let total = 0;
 for (const vol of readdirSync(CONTENT).filter((d) => d !== 'vocab' && statSync(join(CONTENT, d)).isDirectory())) {
   for (const f of readdirSync(join(CONTENT, vol)).filter((x) => x.endsWith('.json'))) {
@@ -132,6 +188,7 @@ for (const vol of readdirSync(CONTENT).filter((d) => d !== 'vocab' && statSync(j
       const miss = Array.from({ length: 40 }, (_, i) => i + 1).filter((n) => !nos.has(n) && !known.has(n));
       if (miss.length) console.warn(`⚠ ${id} ${skill}: thiếu câu ${miss.join(',')} (thêm câu hoặc ghi vào "gaps")`);
     }
+    allMats.push(...out);
     const name = `${id}.json`;
     const body = JSON.stringify(out);
     writeFileSync(join(OUT, name), body);
@@ -164,5 +221,18 @@ let vocab;
     vocab = { file: 'vocab-deck.json', hash: createHash('sha1').update(body).digest('hex').slice(0, 12), topics: topics.length, words: seen.size };
   }
 }
-writeFileSync(join(OUT, 'index.json'), JSON.stringify({ generatedAt: new Date().toISOString(), files: index, ...(vocab ? { vocab } : {}) }));
-console.log(`build-data: ${index.length} test(s), ${total} materials${vocab ? `, ${vocab.words} từ vựng / ${vocab.topics} chủ đề` : ''} → public/data/`);
+// A4. Chỉ mục ngữ cảnh: từ trong bộ từ → câu thật trong bài đọc / transcript (kèm mốc audio nếu có).
+//   public/data/context.json = { s: [[materialId, câu, start?, end?]], w: { từ: [chỉ số câu…] } }
+let context;
+{
+  const words = new Set();
+  if (vocab) for (const t of JSON.parse(readFileSync(join(OUT, 'vocab-deck.json'), 'utf8')).topics) for (const w of t.words) words.add(String(w[0]).toLowerCase());
+  for (const w of EXTRA_CONTEXT_WORDS) words.add(w);
+  const r = buildContext(allMats, [...words]);
+  const body = JSON.stringify(r.data);
+  writeFileSync(join(OUT, 'context.json'), body);
+  context = { file: 'context.json', hash: createHash('sha1').update(body).digest('hex').slice(0, 12), words: r.found, sentences: r.data.s.length };
+  if (r.missing.length) console.log(`  ngữ cảnh: ${r.missing.length} từ không có câu trong đề (vd. ${r.missing.slice(0, 6).join(', ')})`);
+}
+writeFileSync(join(OUT, 'index.json'), JSON.stringify({ generatedAt: new Date().toISOString(), files: index, ...(vocab ? { vocab } : {}), context }));
+console.log(`build-data: ${index.length} test(s), ${total} materials${vocab ? `, ${vocab.words} từ vựng / ${vocab.topics} chủ đề` : ''}, ngữ cảnh ${context.words} từ / ${context.sentences} câu → public/data/`);

@@ -15,6 +15,7 @@ import { bare, check, displayWords, findLesson, frame, LEVEL_NAMES, type CheckRe
 import WordPopover, { Clickable, type WordSel } from '../components/WordPopover';
 import { stopAudio } from '../components/AudioPlayer';
 import { SKILL_META } from './SkillList';
+import { fromDictation } from '../lib/bridge';
 
 /** Kết quả một câu. */
 export interface SentRes { score: number; hint: number; shown: boolean; plays: number; logged?: boolean }
@@ -122,6 +123,7 @@ function Runner({ lesson, onNew }: { lesson: Lesson; onNew: () => void }) {
     return p && p.res.length === S.length ? p : fresh(lesson);
   });
   const [checked, setChecked] = useState<CheckResult | null>(null);
+  const [added, setAdded] = useState<string[]>([]);
   const [showAns, setShowAns] = useState(false);
   const [sentPlays, setSentPlays] = useState(0);
   const [wide, setWide] = useState(false);
@@ -201,6 +203,7 @@ function Runner({ lesson, onNew }: { lesson: Lesson; onNew: () => void }) {
     const r = p.res[k];
     if (!r || r.logged) return p;
     addLog({ kind: 'dictation', ok: !r.shown && r.score >= 0.9, score: r.shown ? 0 : r.score, hint: r.hint > 0 || r.shown, ms: elapsed(), xp: r.shown ? 0 : r.score >= 0.9 ? 2 : 1 });
+    fromDictation(lesson, S[k], p.typed[k] ?? '', r).then((w) => w.length && setAdded((x) => [...new Set([...x, ...w])])).catch(() => {});
     const res = [...p.res]; res[k] = { ...r, logged: true };
     return { ...p, res };
   };
@@ -277,7 +280,7 @@ function Runner({ lesson, onNew }: { lesson: Lesson; onNew: () => void }) {
   const back = lesson.materialId ? `/dictation?m=${lesson.materialId}` : '/dictation';
   const style = { ['--skill' as string]: SKILL_META.listening.color };
 
-  if (P.done) return <Summary lesson={lesson} P={P} onNew={onNew} onRetry={restart} onShadow={setShadow} shadow={shadow} clip={clip} back={back} attempts={db.attempts} />;
+  if (P.done) return <Summary lesson={lesson} P={P} added={added} onNew={onNew} onRetry={restart} onShadow={setShadow} shadow={shadow} clip={clip} back={back} attempts={db.attempts} />;
   if (!u) return null;
 
   const words = displayWords(u.text);
@@ -365,9 +368,9 @@ function Runner({ lesson, onNew }: { lesson: Lesson; onNew: () => void }) {
   );
 }
 
-function Summary({ lesson, P, onNew, onRetry, onShadow, shadow, clip, back, attempts }: {
+function Summary({ lesson, P, added, onNew, onRetry, onShadow, shadow, clip, back, attempts }: {
   lesson: Lesson; P: DictProgress; onNew: () => void; onRetry: (only?: number[]) => void; onShadow: (k: number | null) => void; shadow: number | null;
-  clip: ReturnType<typeof useClip>; back: string; attempts: ReturnType<typeof useDb>['attempts'];
+  clip: ReturnType<typeof useClip>; back: string; attempts: ReturnType<typeof useDb>['attempts']; added: string[];
 }) {
   const nav = useNavigate();
   const S = lesson.sentences;
@@ -412,6 +415,13 @@ function Summary({ lesson, P, onNew, onRetry, onShadow, shadow, clip, back, atte
         {lesson.level === 1 && <button className="btn btn--ghost" onClick={onNew}><RefreshCw size={16} /> Bộ số mới</button>}
         <button className="btn btn--text" onClick={() => nav(back)}>Bài khác <ArrowRight size={16} /></button>
       </div>
+      {(added.length > 0 || (wrong.length > 0 && lesson.level > 1)) && (
+        <p className="dl-saved card small" data-testid="dl-saved">
+          {wrong.length > 0 && lesson.level > 1 && <>{wrong.length} câu chưa đạt đã thành thẻ <strong>Câu hay sai</strong> để ôn trong Từ vựng. </>}
+          {added.length > 0 && <>Đã thêm vào sổ từ: <strong>{added.join(', ')}</strong>. </>}
+          <Link to="/vocab">Mở Từ vựng →</Link>
+        </p>
+      )}
       {shadow != null && <p className="small muted">Nghe từng câu rồi nói lại theo trong khoảng lặng, bắt chước ngữ điệu và nối âm.</p>}
       <h3 className="section-title">{wrong.length ? `Câu chưa đạt (${wrong.length})` : 'Tất cả các câu đều đạt ≥ 90% 👏'}</h3>
       <ol className="dl-list">

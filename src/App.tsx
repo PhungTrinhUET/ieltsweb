@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { HashRouter, NavLink, Outlet, Route, Routes, useLocation, useParams } from 'react-router-dom';
 import ErrorBoundary from './components/ErrorBoundary';
-import { BookOpen, ChevronLeft, ChevronRight, FolderInput, GraduationCap, Headphones, History as HistoryIcon, House, Keyboard, Layers, Mic, NotebookPen, Settings as SettingsIcon } from 'lucide-react';
+import { BarChart3, BookOpen, ChevronLeft, ChevronRight, FolderInput, GraduationCap, Headphones, History as HistoryIcon, House, Keyboard, Layers, Mic, NotebookPen, Settings as SettingsIcon } from 'lucide-react';
 import { init, useDb } from './db';
 import Home from './pages/Home';
 import SkillList from './pages/SkillList';
@@ -14,6 +14,7 @@ import GapFill from './pages/GapFill';
 import Speaking from './pages/Speaking';
 import Writing from './pages/Writing';
 import Vocab from './pages/Vocab';
+import { VocabContext, VocabLearn, VocabReview } from './pages/VocabSession';
 import Library from './pages/Library';
 import History from './pages/History';
 import Guide from './pages/Guide';
@@ -21,6 +22,7 @@ import Settings from './pages/Settings';
 import MockTest from './pages/MockTest';
 import Practice from './pages/Practice';
 import TestPage from './pages/TestPage';
+import Stats from './pages/Stats';
 
 const NAV: { to: string; label: string; icon: typeof House; end?: boolean }[] = [
   { to: '/', label: 'Trang chủ', icon: House, end: true },
@@ -34,6 +36,7 @@ const NAV: { to: string; label: string; icon: typeof House; end?: boolean }[] = 
 const NAV2: { to: string; label: string; icon: typeof House; end?: boolean }[] = [
   { to: '/library', label: 'Tài liệu', icon: FolderInput },
   { to: '/guide', label: 'Cẩm nang', icon: GraduationCap },
+  { to: '/stats', label: 'Thống kê', icon: BarChart3 },
   { to: '/history', label: 'Lịch sử', icon: HistoryIcon },
   { to: '/settings', label: 'Cài đặt', icon: SettingsIcon },
 ];
@@ -98,6 +101,10 @@ export default function App() {
           <Route path="test/:skill/:tid" element={<TestPage />} />
           <Route path="test/:skill/:tid/full" element={<MockKeyed />} />
           <Route path="vocab" element={<Vocab />} />
+          <Route path="vocab/learn" element={<VocabLearn />} />
+          <Route path="vocab/review" element={<VocabReview />} />
+          <Route path="vocab/context" element={<VocabContext />} />
+          <Route path="stats" element={<Stats />} />
           <Route path="dictation" element={<DictHub />} />
           <Route path="dictation/:lid" element={<DictLesson />} />
           <Route path="library" element={<Library />} />

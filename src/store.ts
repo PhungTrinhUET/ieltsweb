@@ -111,10 +111,11 @@ export const aiReady = (c: AiConfig) => {
 
 // ---------- Streak học tập ----------
 export function touchStreak() {
-  const today = new Date().toISOString().slice(0, 10);
+  const key = (t: number) => { const d = new Date(t); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`; };
+  const today = key(Date.now());
   const s = read<{ last: string; count: number; days: string[] }>('ielts:streak', { last: '', count: 0, days: [] });
   if (s.last === today) return s;
-  const y = new Date(Date.now() - 864e5).toISOString().slice(0, 10);
+  const y = key(Date.now() - 864e5);
   const next = { last: today, count: s.last === y ? s.count + 1 : 1, days: [...s.days.slice(-60), today] };
   write('ielts:streak', next);
   return next;

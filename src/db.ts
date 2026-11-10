@@ -66,6 +66,7 @@ export interface State {
   kv: Record<string, unknown>;
 }
 let state: State = { ready: false, materials: {}, attempts: [], vocab: {}, notes: {}, drafts: {}, logs: [], kv: {} };
+export const getVocab = () => state.vocab;
 const subs = new Set<() => void>();
 const emit = () => subs.forEach((f) => f());
 const set = (patch: Partial<State>) => { state = { ...state, ...patch }; emit(); };

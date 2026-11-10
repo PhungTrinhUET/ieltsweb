@@ -1,6 +1,7 @@
 // Tra từ khi bấm vào một từ trong bài.
 // Nghĩa tiếng Việt: từ vựng kèm bài → AI (nếu đã cấu hình) → dịch miễn phí (MyMemory).
 // Phiên âm, loại từ, định nghĩa Anh: Datamuse (dictionaryapi.dev làm dự phòng). Không cần API key.
+import { srcLabel } from '../lib/context';
 import { useEffect, useState } from 'react';
 import { BookmarkPlus, Check, Languages, Loader2, Sparkles, Volume2, X } from 'lucide-react';
 import type { Vocab } from '../types';
@@ -106,6 +107,7 @@ export default function WordPopover({ sel, vocab, from, onClose }: { sel: WordSe
       id: `v-${w}-${Date.now().toString(36)}`, word: a?.word ?? local?.[0] ?? w, pos: form.pos || undefined, meaning: form.meaning,
       ipa: ipa || undefined, meaningEn: meaningEn || undefined, example: sel.sentence,
       exampleVi: typeof sentVi === 'string' && sentVi !== 'busy' ? sentVi : undefined, note: form.note || undefined, from,
+      decks: ['saved'], context: sel.sentence ? { text: sel.sentence, label: from ? srcLabel(from) : undefined, ref: from } : undefined,
     }));
     setSaved(true); setForm(null);
   };
