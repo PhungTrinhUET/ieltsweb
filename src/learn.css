@@ -257,3 +257,40 @@ a.deck__name:hover strong { color: var(--dk, var(--primary)); }
 .modal__card.dk-create > *, .modal__card.dk-dlg > * { flex-shrink: 0; }
 .dk-page .row > .input:not(.dk-sort) { flex: 1 1 220px; width: auto; min-width: 0; }
 @media (max-width: 560px) { .dk-list li > .icon-btn { grid-column: 3; grid-row: 1; } }
+
+/* ---------- Trình cài AI (Cài đặt → AI, Cẩm nang) ---------- */
+.aiw-h { font-size: 1rem; margin: 14px 0 2px; }
+.aiw-quick { padding: 10px 12px; border-radius: 10px; background: var(--primary-soft); margin: 0; }
+.aiw-methods { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+.aiw-m { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; padding: 10px 12px; border: 1.5px solid var(--border); border-radius: 12px; background: var(--surface); color: var(--text); cursor: pointer; font: inherit; }
+.aiw-m:hover { border-color: var(--primary); }
+.aiw-m.is-on { border-color: var(--primary); background: var(--primary-soft); }
+.aiw-m__t { font-weight: 600; display: inline-flex; align-items: center; gap: 4px; }
+.aiw-tag { font-size: .75rem; padding: 1px 8px; border-radius: 999px; background: var(--surface-2); color: var(--text-2); white-space: nowrap; }
+.aiw-tag.is-free { background: var(--ok-soft); color: var(--ok); }
+.aiw-steps ol { margin: 0 0 6px; padding-left: 22px; display: grid; gap: 4px; }
+.aiw-steps p { margin: 4px 0; }
+.aiw-notes { list-style: none; margin: 8px 0 0; padding: 10px 12px 10px 38px; border-radius: 10px; background: var(--surface-2); position: relative; display: grid; gap: 2px; }
+.aiw-notes > svg { position: absolute; left: 12px; top: 11px; color: var(--text-2); }
+.aiw-notes li::before { content: '• '; }
+.aiw-free { display: grid; gap: 8px; }
+.aiw-free__list { display: flex; flex-wrap: wrap; gap: 6px; max-height: 220px; overflow: auto; }
+.aiw-result { margin: 4px 0 0; padding: 10px 12px; border-radius: 10px; }
+.aiw-result p { margin: 2px 0; }
+.aiw-result.is-ok { background: var(--ok-soft); }
+.aiw-result.is-ok svg { color: var(--ok); vertical-align: -3px; }
+.aiw-result.is-fail { background: var(--no-soft); }
+.aiw-result svg { vertical-align: -3px; }
+.aiw-more { border-top: 1px solid var(--border); padding-top: 10px; margin-top: 6px; }
+.aiw-more > summary, .aiw-guide > summary { cursor: pointer; font-weight: 600; padding: 4px 0; }
+.aiw-more[open] > summary { margin-bottom: 8px; }
+.aiw-guide { border: 1px solid var(--border); border-radius: 12px; padding: 8px 12px; }
+.aiw-guide > summary { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.aiw-compare .table-wrap { overflow-x: auto; }
+.aiw-table { font-size: .85rem; min-width: 560px; }
+.aiw-table td { vertical-align: top; }
+.ai-missing { display: flex; align-items: center; gap: 6px; padding: 10px 12px; border-radius: 10px; background: var(--primary-soft); color: var(--primary); font-weight: 600; text-decoration: none; }
+.ai-missing:hover { text-decoration: underline; }
+#ai-setup > .setting { flex-wrap: nowrap; }
+.aiw-methods { align-content: start; }
+.aiw-steps ol { font-size: 14px; }

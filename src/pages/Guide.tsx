@@ -2,8 +2,9 @@
 import { useState } from 'react';
 import { Collapse } from '../components/ui';
 import { KeepDataTips } from '../components/BackupPanel';
+import { AiSetupGuide } from '../components/AiGuide';
 
-const TABS = ['Tổng quan', 'Reading', 'Listening', 'Speaking', 'Writing', 'Band'] as const;
+const TABS = ['Tổng quan', 'Cài AI', 'Reading', 'Listening', 'Speaking', 'Writing', 'Band'] as const;
 
 export default function Guide() {
   const [tab, setTab] = useState<(typeof TABS)[number]>('Tổng quan');
@@ -33,6 +34,12 @@ export default function Guide() {
             </ol>
           </section>
           <section className="card pad" id="keep-data"><KeepDataTips /><p className="small muted">Sao lưu / khôi phục ở <a href="#/settings">Cài đặt → Sao lưu</a>.</p></section>
+        </div>
+      )}
+
+      {tab === 'Cài AI' && (
+        <div className="guide" data-testid="guide-ai">
+          <section className="card pad"><h3>Cài AI chấm bài (3 phút)</h3><AiSetupGuide /></section>
         </div>
       )}
 

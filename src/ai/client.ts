@@ -76,13 +76,14 @@ export function makeClient(cfg: AiConfig) {
 const authError = (cfg: AiConfig) =>
   cfg.mode === 'proxy' ? 'Proxy từ chối truy cập – kiểm tra mã truy cập.'
   : isClaude(cfg) && isAccessToken(cfg) ? 'Access token không hợp lệ hoặc đã hết hạn.'
-  : 'API key không hợp lệ hoặc không có quyền.';
+  : 'Sai key (hoặc key đã bị xoá / không có quyền) – chép lại key, chú ý không thừa dấu cách.';
 
 function wrap(e: unknown, cfg: AiConfig): never {
   if (e instanceof AiError) throw e;
   if (e instanceof Anthropic.AuthenticationError || e instanceof Anthropic.PermissionDeniedError) throw new AiError(authError(cfg), 'auth');
   if (e instanceof Anthropic.RateLimitError) throw new AiError(cfg.mode === 'proxy' && /daily|ngày/i.test(e.message) ? 'Đã hết lượt dùng hôm nay của mã truy cập này.' : 'Đang bị giới hạn tần suất – thử lại sau ít phút.', 'rate');
-  if (e instanceof Anthropic.APIConnectionError) throw new AiError('Không kết nối được tới máy chủ AI. Kiểm tra mạng hoặc địa chỉ proxy.', 'network');
+  if (e instanceof Anthropic.APIError && (e.status === 402 || /credit balance|insufficient|billing/i.test(e.message))) throw new AiError(TOPUP, 'auth');
+  if (e instanceof Anthropic.APIConnectionError) throw new AiError(corsMsg(cfg), 'network');
   if (e instanceof Anthropic.APIError) throw new AiError(`Lỗi API ${e.status ?? ''}: ${e.message}`, 'api');
   throw new AiError(e instanceof Error ? e.message : String(e), 'api');
 }
@@ -145,14 +146,18 @@ function endpoint(cfg: AiConfig, path: string) {
 
 const corsMsg = (cfg: AiConfig) => cfg.mode === 'proxy'
   ? 'Không kết nối được tới proxy. Kiểm tra mạng và địa chỉ proxy.'
-  : `Không kết nối được tới ${providerOf(cfg.provider).label}. Kiểm tra mạng; nếu dịch vụ chặn gọi từ trình duyệt (CORS), hãy dùng proxy.`;
+  : `Không kết nối được tới ${providerOf(cfg.provider).label} (mất mạng, hoặc dịch vụ chặn gọi từ trình duyệt – CORS). Kiểm tra mạng; nếu vẫn lỗi, chọn nhà cung cấp khác hoặc dùng mã lớp (proxy).`;
+const TOPUP = 'Tài khoản hết tiền / hết hạn mức – nạp thêm ở trang của nhà cung cấp.';
+const quotaMsg = (cfg: AiConfig, msg: string) => cfg.mode !== 'proxy' && cfg.provider === 'gemini'
+  ? 'Đã hết hạn mức Gemini (miễn phí) hôm nay – đặt lại lúc 0h giờ Thái Bình Dương ≈ 14–15h giờ Việt Nam. Hoặc chọn model khác (Flash-Lite) / nhà cung cấp khác.'
+  : /daily|ngày|quota|per day|free-models-per-day/i.test(msg) ? `Đã hết hạn mức: ${msg.slice(0, 160)}` : 'Đang bị giới hạn tần suất – thử lại sau ít phút.';
 
 function httpError(status: number, body: string, cfg: AiConfig): AiError {
   let msg = body;
   try { const j = JSON.parse(body); msg = j.error?.message ?? j.message ?? (Array.isArray(j) ? j[0]?.error?.message : '') ?? body; } catch { /* body thường */ }
   if (status === 401 || status === 403) return new AiError(authError(cfg), 'auth');
-  if (status === 402) return new AiError('Tài khoản hết tiền / hết hạn mức – nạp thêm ở trang của nhà cung cấp.', 'auth');
-  if (status === 429) return new AiError(/daily|ngày|quota/i.test(msg) ? `Đã hết hạn mức: ${msg.slice(0, 160)}` : 'Đang bị giới hạn tần suất – thử lại sau ít phút.', 'rate');
+  if (status === 402 || /insufficient|balance|credit/i.test(String(msg))) return new AiError(TOPUP, 'auth');
+  if (status === 429) return new AiError(quotaMsg(cfg, String(msg)), 'rate');
   if (status === 404) return new AiError(`Không tìm thấy model hoặc địa chỉ (404). ${msg.slice(0, 160)}`, 'config');
   return new AiError(`Lỗi API ${status}: ${String(msg).slice(0, 240)}`, 'api');
 }

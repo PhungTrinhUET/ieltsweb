@@ -11,6 +11,8 @@ export interface ModelInfo {
   /** Claude: hỗ trợ fallbacks: 'default' (chạy lại trên model dự phòng khi bị bộ lọc an toàn từ chối). */
   fallback?: boolean;
   note?: string;
+  /** Giá đổi từ ngày `from` (YYYY-MM-DD), vd hết khuyến mãi. */
+  later?: { from: string; price: [number, number] };
 }
 /** Giữ tên cũ cho chỗ khác còn import. */
 export type GraderModel = ModelInfo;
@@ -64,9 +66,9 @@ export const PROVIDERS: Provider[] = [
     id: 'gemini', label: 'Gemini', baseUrl: 'https://generativelanguage.googleapis.com/v1beta/openai', keyHint: 'AIza…', keyUrl: 'https://aistudio.google.com/apikey', pricingUrl: 'https://ai.google.dev/gemini-api/docs/pricing',
     main: 'gemini-3.8-flash', light: 'gemini-3.5-flash-lite', listModels: true,
     models: [
-      { id: 'gemini-3.8-flash', label: '3.8 Flash', price: [0.75, 3.75], note: 'Nhanh, rẻ; có hạn mức miễn phí ở AI Studio.' },
-      { id: 'gemini-4-argon', label: '4 Argon', price: [2, 10], note: 'Model suy luận mạnh nhất của Google.' },
-      { id: 'gemini-3.5-flash-lite', label: '3.5 Flash-Lite', price: [0.3, 2.5], note: 'Rẻ nhất – cho dịch/tra từ.' },
+      { id: 'gemini-3.8-flash', label: '3.8 Flash', price: [0.75, 3.75], later: { from: '2027-01-01', price: [1.5, 7.5] }, note: 'Nhanh; có hạn mức miễn phí (khoảng 20 lượt/ngày). Giá trả phí $0.75/$3.75 đến 31/12/2026, sau đó $1.50/$7.50.' },
+      { id: 'gemini-4-argon', label: '4 Argon', price: [2, 10], later: { from: '2026-12-01', price: [4, 20] }, note: 'Model suy luận mạnh nhất của Google, không có bậc miễn phí. $2/$10 đến 30/11/2026, sau đó $4/$20.' },
+      { id: 'gemini-3.5-flash-lite', label: '3.5 Flash-Lite', price: [0.3, 2.5], note: 'Rẻ nhất, có bậc miễn phí – nên dùng cho dịch/tra từ để đỡ tốn lượt của Flash.' },
     ],
   },
   {
@@ -105,4 +107,7 @@ export const EFFORT_NOTES: Record<Effort, string> = {
 export const modelOf = (id: string) => GRADER_MODELS.find((m) => m.id === id) ?? GRADER_MODELS[0];
 /** Thông tin model của nhà cung cấp bất kỳ; model gõ tay thì chỉ có id. */
 export const modelInfo = (p: Provider, id: string): ModelInfo => p.models.find((m) => m.id === id) ?? { id, label: id };
+/** Giá đang áp dụng hôm nay (tính cả mốc đổi giá). */
+export const priceNow = (m: ModelInfo, now = new Date()): [number, number] | undefined =>
+  m.later && now.toISOString().slice(0, 10) >= m.later.from ? m.later.price : m.price;
 export const effortOf = (e: string): Effort => ((EFFORTS as readonly string[]).includes(e) ? (e as Effort) : DEFAULT_EFFORT);

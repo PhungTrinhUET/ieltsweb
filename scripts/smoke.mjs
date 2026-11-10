@@ -729,7 +729,7 @@ for (const profile of Object.keys(PROFILES)) {
       });
       await go(p, '/settings');
       await p.getByRole('button', { name: /Kiểm tra kết nối/ }).click();
-      const okText = await p.locator('.ok-text, .no-text').first().innerText({ timeout: 10000 });
+      const okText = await p.locator('[data-testid="aiw-ok"], [data-testid="aiw-fail"]').first().innerText({ timeout: 10000 });
       await go(p, '/writing/vol1-t2-w2');
       await answerTab(p); await p.locator('.wbox__input').fill(Array.from({ length: 60 }, () => 'word').join(' '));
       await p.getByRole('button', { name: /Chấm bằng AI/ }).click();
@@ -739,7 +739,50 @@ for (const profile of Object.keys(PROFILES)) {
       const band = await p.locator('text=/Band|band/').count();
       const jsonCalls = calls.filter((c) => c.response_format).length;
       await p.context().close();
-      return { ok: /Kết nối được \(deepseek-v4-pro\)/.test(okText) && jsonCalls === 2 && band > 0 && !err.join(' ').trim(), info: `${okText} · json calls=${jsonCalls} band=${band} err=${err.join('|').slice(0, 120)}` };
+      return { ok: /Kết nối được[\s\S]*deepseek-v4-pro/.test(okText) && jsonCalls === 2 && band > 0 && !err.join(' ').trim(), info: `${okText} · json calls=${jsonCalls} band=${band} err=${err.join('|').slice(0, 120)}` };
+    });
+    // ---------- Đợt 4 phần 5: trình cài AI ----------
+    await check('AI1 trình cài: Gemini sai key → báo tiếng Việt; đúng → model + chi phí', async () => {
+      const p = await newPage(profile);
+      let n = 0;
+      await p.route('https://generativelanguage.googleapis.com/**', (route) => {
+        n++;
+        const h = { 'access-control-allow-origin': '*', 'content-type': 'application/json' };
+        if (n === 1) return route.fulfill({ status: 401, headers: h, body: JSON.stringify({ error: { code: 401, message: 'API key not valid' } }) });
+        return route.fulfill({ status: 200, headers: h, body: JSON.stringify({ model: 'gemini-3.8-flash', choices: [{ message: { role: 'assistant', content: 'OK' }, finish_reason: 'stop' }] }) });
+      });
+      await go(p, '/settings?ai=1');
+      await p.locator('[data-testid="aiw-m-gemini"]').click();
+      const steps = await p.locator('[data-testid="aiw-steps"]').innerText();
+      await p.locator('[data-testid="aiw-key"]').fill('AIza-test');
+      await p.locator('[data-testid="aiw-test"]').click();
+      const fail = await p.locator('[data-testid="aiw-fail"]').innerText({ timeout: 10000 }).catch(() => '');
+      await p.locator('[data-testid="aiw-test"]').click();
+      const ok = await p.locator('[data-testid="aiw-ok"]').innerText({ timeout: 10000 }).catch(() => '');
+      const wide = await p.evaluate(() => document.documentElement.scrollWidth > innerWidth + 1);
+      await p.context().close();
+      return { ok: /aistudio/.test(steps) && /Sai key/.test(fail) && /Kết nối được/.test(ok) && /\$[\d.]+ \(≈ [\d.]+ đ\)/.test(ok) && !wide, info: `${fail.slice(0, 50)} | ${ok.replace(/\s+/g, ' ').slice(0, 120)} wide=${wide}` };
+    });
+    await check('AI2 chưa cài AI → Writing/Speaking có dòng nhắc hướng dẫn', async () => {
+      const p = await newPage(profile);
+      await go(p, '/speaking');
+      await p.locator('a.item').first().click();
+      const sp = await p.locator('[data-testid="ai-missing"]').count();
+      await go(p, '/writing/vol1-t2-w2');
+      await answerTab(p); await p.locator('.wbox__input').fill('word word word');
+      p.once('dialog', (d) => d.accept());
+      await p.locator('.xnav__submit').click();
+      await p.waitForTimeout(800);
+      const wr = await p.locator('[data-testid="ai-missing"]').count();
+      const href = await p.locator('[data-testid="ai-missing"]').first().getAttribute('href').catch(() => '');
+      await p.context().close();
+      return { ok: sp > 0 && wr > 0 && /settings\?ai=1/.test(href ?? ''), info: `speaking=${sp} writing=${wr} href=${href}` };
+    });
+    await check('AI3 Cẩm nang có tab Cài AI + bảng so sánh có ngày cập nhật', async () => {
+      await go(page, '/guide');
+      await page.getByRole('button', { name: 'Cài AI' }).or(page.getByRole('tab', { name: 'Cài AI' })).first().click();
+      const t = await page.locator('[data-testid="aiw-compare"]').innerText({ timeout: 5000 }).catch(() => '');
+      return { ok: /Cập nhật 10\/11\/2026/.test(t) && /DeepSeek/.test(t), info: t.slice(0, 60) };
     });
     // ---------- C13: lần mở thứ hai không tải lại toàn bộ dữ liệu ----------
     await check('C13 mở lại app không tải lại 65 file data', async () => {

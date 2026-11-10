@@ -11,6 +11,7 @@ import ZoomImage from '../components/ZoomImage';
 import { Collapse } from '../components/ui';
 import { ChartView, DataTable } from '../components/misc';
 import { WritingGradeView } from '../components/GradeViews';
+import { AiMissing } from '../components/AiGuide';
 import { STRUCTURE, TYPE_LABEL, chartsOf, promptParas } from '../lib/writing';
 import type { WritingGrade } from '../ai/writing';
 import { wordCount } from '../lib/text';
@@ -119,7 +120,7 @@ export default function Writing() {
       {(done || grade) && <button className="xtool" onClick={() => setSheet(true)}><FileCheck2 size={15} /> <span>Kết quả</span></button>}
       {aiReady(cfg)
         ? <button className="xtool" onClick={submit} disabled={busy || n < 30} title="Chấm theo 4 tiêu chí IELTS" aria-label="Chấm bằng AI">{busy ? <><Loader2 size={15} className="spin" /> <span>AI đang chấm…</span></> : <><Bot size={15} /> <span>Chấm AI</span></>}</button>
-        : <a className="xtool" href="#/settings" title="Cài đặt → AI để AI chấm bài"><Bot size={15} /> <span>Chấm AI</span></a>}
+        : <a className="xtool" href="#/settings?ai=1" title="Chưa cài AI – xem hướng dẫn"><Bot size={15} /> <span>Chấm AI</span></a>}
     </>
   );
   return (
@@ -145,6 +146,7 @@ export default function Writing() {
             <p className="small">{done.words} từ{done.words < min && <span className="no-text"> (thiếu {min - done.words} từ so với tối thiểu {min} – bị trừ điểm Task {m.task === 1 ? 'Achievement' : 'Response'})</span>} · {done.minutes ? `${done.minutes} phút` : 'không bấm giờ'}{done.minutes > minutes && <span className="no-text"> (quá {done.minutes - minutes} phút)</span>} · đã lưu vào Lịch sử.</p>
             {m.sample ? sampleBox : <p className="small muted">Đề này chưa có bài mẫu.</p>}
           </section>
+          {!aiReady(cfg) && <AiMissing />}
           <SelfCheck kind="writing" task={m.task} attemptId={done.id} />
         </div>
       )}

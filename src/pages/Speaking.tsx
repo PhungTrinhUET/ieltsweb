@@ -5,6 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, Bot, FileCheck2, Loader2, Sparkles, Timer as TimerIcon, Volume2 } from 'lucide-react';
 import type { SpeakingMaterial } from '../types';
 import { addAttempt, getState, saveBlob, updateAttempt, useDb } from '../db';
+import { AiMissing } from '../components/AiGuide';
 import { aiReady, getAiConfig, setLastOpen, touchStreak, useAiConfig } from '../store';
 import SelfCheck from '../components/SelfCheck';
 import Recorder, { speechRecognitionAvailable, type Recording } from '../components/Recorder';
@@ -146,7 +147,7 @@ export default function Speaking() {
               <select className="select" value={pron} onChange={(e) => setPron(+e.target.value)}><option value={0}>Không chấm</option>{[5, 5.5, 6, 6.5, 7, 7.5, 8].map((b) => <option key={b} value={b}>{b}</option>)}</select>
             </label>
           )}
-          {!aiReady(cfg) && <p className="small muted">Nộp bài để lưu bản ghi / câu trả lời vào Lịch sử, mở bài mẫu từng câu và tự chấm. Muốn AI chấm thêm: <a href="#/settings">Cài đặt → AI</a>.</p>}
+          {!aiReady(cfg) && <><p className="small muted">Nộp bài để lưu bản ghi / câu trả lời vào Lịch sử, mở bài mẫu từng câu và tự chấm.</p><AiMissing /></>}
           {err && <p className="no-text small">{err}</p>}
         </section>
       )}
