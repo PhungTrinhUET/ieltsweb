@@ -238,11 +238,12 @@ export function frame(text: string) {
 export const bare = (w: string) => w.replace(/^[^A-Za-z0-9£$]+|[^A-Za-z0-9%]+$/g, '');
 
 // ---------------------------------------------------------------- tách câu & bài
-export interface DSentence { text: string; start?: number; end?: number; speaker?: string }
+/** `say`: lời đọc cho giọng máy (cấp 1: "oh seven…"); không có thì đọc `text`. */
+export interface DSentence { text: string; start?: number; end?: number; speaker?: string; say?: string }
 export interface Lesson {
   id: string;
   level: 1 | 2 | 3 | 4;
-  /** Bài gốc (Listening) – không có với cấp 1. */
+  /** Bài gốc (Listening) – không có với cấp 1. Bài không có audio thì đọc bằng giọng máy. */
   materialId?: string;
   title: string;
   /** "Phần 2/5". */
@@ -360,14 +361,14 @@ const volOf = (id: string) => +(id.match(/^vol(\d+)/)?.[1] ?? 0);
 const lessonCache = new Map<string, Lesson[]>();
 /** Các bài nghe-chép (cấp 2–4) của một section Listening. Chỉ section có audio thật. */
 export function lessonsOf(m: Material): Lesson[] {
-  if (m.skill !== 'listening' || !m.audio || !m.segments?.length) return [];
-  const key = `${m.id}:${m.segments.length}`;
+  if (m.skill !== 'listening' || !(m.segments?.length || m.transcript?.trim())) return [];
+  const key = `${m.id}:${m.segments?.length ?? 0}:${m.audio ? 1 : 0}`;
   const hit = lessonCache.get(key);
   if (hit) return hit;
-  const all = dictationSentences(m);
+  const all = dictationSentences(m).map((x) => (m.audio ? x : { ...x, start: undefined, end: undefined }));
   const sec = m.section ?? 1;
   const title = m.title.replace(/^VOL (\d+) Test (\d+)\s*·\s*/, 'VOL $1 · Test $2 · ');
-  const base = { materialId: m.id, audio: m.audio, vol: volOf(m.id), topic: m.topic };
+  const base = { materialId: m.id, audio: m.audio && m.segments?.length ? m.audio : undefined, vol: volOf(m.id), topic: m.topic };
   const out: Lesson[] = [];
   if (sec <= 2) {
     // cấp 2: câu ngắn ≤ 8 từ
@@ -388,7 +389,7 @@ export function allLessons(materials: Record<string, Material>) {
 }
 /** Tìm bài theo id (gồm bài cấp 1 sinh ngẫu nhiên "gen:<loại>"). */
 export function findLesson(materials: Record<string, Material>, id: string): Lesson | undefined {
-  if (id.startsWith('gen:')) return genLesson(id.slice(4) as GenKind);
+  if (id.startsWith('gen:')) return GEN_NAMES[id.slice(4) as GenKind] ? genLesson(id.slice(4) as GenKind) : undefined;
   const mid = id.split('~')[0];
   const m = materials[mid];
   return m ? lessonsOf(m).find((l) => l.id === id) : undefined;
@@ -483,7 +484,7 @@ export function genItem(kind: GenKind): GenItem {
 /** Bài cấp 1: 10 câu sinh ngẫu nhiên (mỗi lần mở là bộ mới). */
 export function genLesson(kind: GenKind, n = 10): Lesson {
   const items = Array.from({ length: n }, () => genItem(kind));
-  return { id: `gen:${kind}`, level: 1, title: GEN_NAMES[kind] ?? 'Số & đánh vần', part: GEN_HINT[kind], sentences: items.map((x) => ({ text: x.text, speaker: x.say })) };
+  return { id: `gen:${kind}`, level: 1, title: GEN_NAMES[kind] ?? 'Số & đánh vần', part: GEN_HINT[kind], sentences: items.map((x) => ({ text: x.text, say: x.say })) };
 }
 export const LEVEL_NAMES: Record<number, string> = { 1: 'Số & đánh vần', 2: 'Câu ngắn', 3: 'Hội thoại', 4: 'Học thuật' };
 export const LEVEL_DESC: Record<number, string> = {

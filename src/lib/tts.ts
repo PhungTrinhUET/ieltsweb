@@ -78,7 +78,7 @@ export function speak(text: string, opts: { rate?: number; voice?: string; onBou
     const s = getSettings();
     const u = new SpeechSynthesisUtterance(text);
     const v = pickVoice(opts.voice ?? s.ttsVoice);
-    if (v) u.voice = v;
+    if (v) try { u.voice = v; } catch { /* giọng không hợp lệ → dùng mặc định theo lang */ }
     u.lang = v?.lang ?? 'en-GB';
     u.rate = opts.rate ?? s.ttsRate;
     u.onend = () => { if (current === u) current = null; resolve(); };
