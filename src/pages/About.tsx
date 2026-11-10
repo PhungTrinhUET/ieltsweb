@@ -1,11 +1,15 @@
 // Giới thiệu dự án + nhóm tác giả (#/about).
 import { Link } from 'react-router-dom';
 import { ArrowRight, BookOpen, Headphones, Mic, PenLine } from 'lucide-react';
+// Ảnh qua Vite để tên file có mã hash: đổi ảnh là trình duyệt tải ảnh mới ngay.
+import trinh from '../assets/team/trinh.webp';
+import hung from '../assets/team/hung.webp';
+import hai from '../assets/team/hai.webp';
 
 export const AUTHORS = [
-  { name: 'Phùng Trường Trinh', initials: 'PT', photo: 'trinh', grad: 'linear-gradient(135deg, #0f766e, #22c55e)' },
-  { name: 'Hà Quang Hưng', initials: 'HH', photo: 'hung', grad: 'linear-gradient(135deg, #2563eb, #7c3aed)' },
-  { name: 'Bùi Đức Hải', initials: 'BH', photo: 'hai', grad: 'linear-gradient(135deg, #ea580c, #db2777)' },
+  { name: 'Phùng Trường Trinh', initials: 'PT', photo: trinh, grad: 'linear-gradient(135deg, #0f766e, #22c55e)' },
+  { name: 'Hà Quang Hưng', initials: 'HH', photo: hung, grad: 'linear-gradient(135deg, #2563eb, #7c3aed)' },
+  { name: 'Bùi Đức Hải', initials: 'BH', photo: hai, grad: 'linear-gradient(135deg, #ea580c, #db2777)' },
 ];
 export const FOOTER_TEXT = `IELTS Practice · ${AUTHORS.map((a) => a.name).join(' · ')} · Khoa CNTT – Trường ĐH Công nghệ, ĐHQG HN`;
 
@@ -14,7 +18,7 @@ export function Avatar({ a, size = 72 }: { a: (typeof AUTHORS)[number]; size?: n
   return (
     <span className="ab-avatar" style={{ background: a.grad, width: size, height: size, fontSize: size * 0.36 }} aria-hidden>
       {a.initials}
-      <img src={`${import.meta.env.BASE_URL}img/team/${a.photo}.webp`} alt="" loading="lazy" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
+      <img src={a.photo} alt="" loading="lazy" onError={(e) => { e.currentTarget.style.display = 'none'; }} />
     </span>
   );
 }
@@ -43,7 +47,7 @@ export default function About() {
       <div className="ab-team" data-testid="ab-team">
         {AUTHORS.map((a) => (
           <article key={a.name} className="card ab-card">
-            <Avatar a={a} />
+            <Avatar a={a} size={96} />
             <h3 className="ab-name">{a.name}</h3>
             <p className="small">Thạc sĩ · Khoa Công nghệ Thông tin</p>
             <p className="small muted">Trường Đại học Công nghệ – ĐHQG Hà Nội</p>
