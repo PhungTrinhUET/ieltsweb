@@ -1821,3 +1821,34 @@ a.item:focus-visible { outline: 2px solid var(--skill, var(--primary)); outline-
 .bk-remind > span { flex: 1 1 240px; }
 .bk-remind > svg { color: #d97706; flex: none; }
 .bk-warn { color: var(--no); } .bk-ok { color: var(--ok); }
+
+/* ---------- Thi thử 4 kỹ năng ---------- */
+.fm-plan td { vertical-align: top; }
+.fm-plan td:first-child { white-space: nowrap; font-weight: 600; }
+.fm-plan svg { vertical-align: -2px; }
+.fm-rules { margin: 0; padding-left: 1.2em; display: grid; gap: 4px; }
+.fm-stage { display: contents; }
+.fm-trans { text-align: left; }
+.fm-speak { max-width: 760px; margin: 0 auto; padding: 20px 16px; display: grid; gap: 16px; }
+.fm-speak__q { font-size: 1.25rem; line-height: 1.5; font-weight: 600; margin: 0; }
+.fm-bands { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; margin-bottom: 10px; }
+.fm-band { display: grid; gap: 2px; padding: 12px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface-2); text-align: center; }
+.fm-band strong { font-size: 1.7rem; line-height: 1.1; }
+.fm-band--all { background: var(--primary); border-color: var(--primary); color: #fff; }
+.fm-band--all small, .fm-band--all span { color: rgba(255, 255, 255, .85); }
+.fm-times td { padding: 4px 8px; }
+.fm-times td:nth-child(odd) { color: var(--text-2); }
+.fm-backup { justify-content: space-between; align-items: center; gap: 10px; }
+@media (max-width: 640px) {
+  .fm-bands { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .fm-band--all { grid-column: 1 / -1; }
+}
+@media print {
+  .sidebar, .tabbar, .no-print, .back-link, .app-footer, button { display: none !important; }
+  .main { margin: 0 !important; padding: 0 !important; }
+  body { background: #fff !important; color: #000 !important; }
+  .card { break-inside: avoid; box-shadow: none !important; }
+  details > *:not(summary) { display: block; }
+}
+.fm-speak textarea { width: 100%; box-sizing: border-box; }
+.fm-speak .stack { justify-items: stretch; }

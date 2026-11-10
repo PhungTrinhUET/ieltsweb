@@ -75,24 +75,12 @@ export default function Writing() {
     setSheet(true);
   };
 
-  const charts = chartsOf(m);
-  const paras = promptParas(m.prompt);
   const sampleBox = m.sample && (showSample
     ? <div className="sample sample--long"><p className="small muted">{m.id.startsWith('wr-') ? 'Bài mẫu do AI viết – để tham khảo cách triển khai, không học thuộc.' : 'Bài mẫu để tham khảo cách triển khai, không học thuộc.'}</p>{m.sample.split(/\n\s*\n|\n/).map((l, i) => <p key={i}>{l}</p>)}</div>
     : <button className="btn btn--ghost btn--sm" onClick={() => setShowSample(true)}><Eye size={15} /> Xem bài mẫu</button>);
   const prompt = (
     <div className="xprompt">
-      <div className="wtask__prompt">{paras.map((p, i) => <p key={i} className={p.startsWith('•') ? 'wtask__bullets' : undefined}>{p}</p>)}</div>
-      {img && <div className="wtask__frame"><ZoomImage src={img} alt={m.imageAlt ?? 'Biểu đồ / bản đồ của đề'} className="wtask__img" /></div>}
-      {!img && charts.map((c, i) => <ChartView key={i} chart={c} />)}
-      {img && charts.length > 0 && (
-        <Collapse title="Bảng số liệu" defaultOpen={false}>
-          <div className="stack" data-testid="w-datatables">{charts.map((c, i) => <DataTable key={i} chart={c} />)}</div>
-        </Collapse>
-      )}
-      {m.imageAlt && (img || charts.length
-        ? <Collapse title="Mô tả hình bằng chữ" defaultOpen={false}><p className="small wtask__alt">{m.imageAlt}</p></Collapse>
-        : <div className="qcontext wtask__alt"><strong className="small">Hình của đề (mô tả bằng chữ – tài liệu gốc chỉ có hình):</strong>{'\n'}{m.imageAlt}</div>)}
+      <TaskPrompt m={m} img={img} />
       {aids && <>
         <Collapse title="Cấu trúc bài gợi ý" tone="tip" defaultOpen={false}>
           <ol className="plan">{(m.outline ?? STRUCTURE[m.type] ?? []).map((o, i) => <li key={i}>{o}</li>)}</ol>
@@ -156,5 +144,26 @@ export default function Writing() {
         </ExamSheet>
       )}
     </ExamFrame>
+  );
+}
+
+/** Đề Writing: chữ đề, ảnh hoặc biểu đồ vẽ từ số liệu, bảng số liệu, mô tả hình. Dùng cả ở thi thử 4 kỹ năng. */
+export function TaskPrompt({ m, img }: { m: WritingMaterial; img: string | null }) {
+  const charts = chartsOf(m);
+  const paras = promptParas(m.prompt);
+  return (
+    <>
+      <div className="wtask__prompt">{paras.map((p, i) => <p key={i} className={p.startsWith('•') ? 'wtask__bullets' : undefined}>{p}</p>)}</div>
+      {img && <div className="wtask__frame"><ZoomImage src={img} alt={m.imageAlt ?? 'Biểu đồ / bản đồ của đề'} className="wtask__img" /></div>}
+      {!img && charts.map((c, i) => <ChartView key={i} chart={c} />)}
+      {img && charts.length > 0 && (
+        <Collapse title="Bảng số liệu" defaultOpen={false}>
+          <div className="stack" data-testid="w-datatables">{charts.map((c, i) => <DataTable key={i} chart={c} />)}</div>
+        </Collapse>
+      )}
+      {m.imageAlt && (img || charts.length
+        ? <Collapse title="Mô tả hình bằng chữ" defaultOpen={false}><p className="small wtask__alt">{m.imageAlt}</p></Collapse>
+        : <div className="qcontext wtask__alt"><strong className="small">Hình của đề (mô tả bằng chữ – tài liệu gốc chỉ có hình):</strong>{'\n'}{m.imageAlt}</div>)}
+    </>
   );
 }

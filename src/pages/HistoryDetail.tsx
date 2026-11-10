@@ -14,6 +14,7 @@ import { fmtBand } from '../lib/band';
 import { MODE_LABEL } from '../lib/attempts';
 import { parseId, partLabel } from '../lib/tests';
 import { SKILL_META } from './SkillList';
+import { FullMockResult } from './FullMock';
 
 const LET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const OLD = 'Bản ghi cũ – không có câu trả lời chi tiết.';
@@ -75,13 +76,13 @@ export default function HistoryDetail() {
           <p>{meta.label} · {MODE_LABEL[a.mode] ?? a.mode} · {new Date(a.at).toLocaleString('vi-VN', { weekday: 'short', day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' })}</p>
         </div>
       </div>
-      <div className="hdetail__kpis">
+      {a.mode !== 'full-mock' && <div className="hdetail__kpis">
         {a.band ? <div className="st-kpi"><strong data-testid="hd-band">{fmtBand(a.band)}</strong><span>band{a.mode === 'ai' ? ' (AI chấm)' : ' ước tính'}</span></div> : null}
         {!a.band && a.selfBand ? <div className="st-kpi"><strong>{fmtBand(a.selfBand)}</strong><span>band tự ước lượng</span></div> : null}
         {a.max ? <div className="st-kpi"><strong data-testid="hd-score">{a.mode === 'dictation' ? `${a.score}%` : `${a.score}/${a.max}`}</strong><span>{a.mode === 'dictation' ? 'từ đúng' : 'câu đúng'}</span></div> : null}
         {d.words ? <div className="st-kpi"><strong>{d.words}</strong><span>từ</span></div> : null}
         {mins ? <div className="st-kpi"><strong>{mins}′</strong><span>thời gian làm</span></div> : null}
-      </div>
+      </div>}
       <div className="row wrap">
         {redo && <Link to={redo} className="btn btn--primary btn--sm" data-testid="hd-redo"><RotateCcw size={15} /> Làm lại đề này</Link>}
         {open && <Link to={open} className="btn btn--ghost btn--sm"><ExternalLink size={15} /> Mở đề</Link>}
@@ -95,6 +96,7 @@ export default function HistoryDetail() {
 
 function Body({ a, materials }: { a: Attempt; materials: Record<string, Material> }) {
   const d = (a.detail ?? {}) as Record<string, unknown>;
+  if (a.mode === 'full-mock') return <FullMockResult a={a} />;
   if (a.mode === 'dictation' || a.mode === 'gapfill') {
     const items = d.items as Item[] | undefined;
     return items?.length ? <SentenceList items={items} gap={a.mode === 'gapfill'} /> : <p className="banner">{OLD}</p>;
@@ -148,7 +150,7 @@ function Body({ a, materials }: { a: Attempt; materials: Record<string, Material
   return <>{parts.map((p) => <RLPartView key={p.id} p={p} m={materials[p.id] as ReadingMaterial | ListeningMaterial | undefined} multi={parts.length > 1} />)}</>;
 }
 
-function RLPartView({ p, m, multi }: { p: RLPart; m?: ReadingMaterial | ListeningMaterial; multi: boolean }) {
+export function RLPartView({ p, m, multi }: { p: RLPart; m?: ReadingMaterial | ListeningMaterial; multi: boolean }) {
   const [onlyWrong, setOnlyWrong] = useState(false);
   const head = <div className="row-between"><h2 className="h3">{m ? (multi ? `${partLabel(m)} · ${m.title.replace(/^.*?(?:Passage|Section)\s*\d+\s*[–:-]\s*/, '')}` : 'Câu trả lời') : p.title ?? p.id}</h2>{p.max ? <span className="tag">{p.score}/{p.max}</span> : null}</div>;
   if (!m) return <section className="card pad stack">{head}<p className="muted small">Đề này không còn trong thư viện.</p></section>;
@@ -207,7 +209,7 @@ function SelfChecked({ a }: { a: Attempt }) {
   return <section className="card pad stack"><h2 className="h3">Tự chấm theo checklist{a.selfBand ? ` · band ${fmtBand(a.selfBand)}` : ''}</h2><ul className="small">{a.selfCheck.map((x, i) => <li key={i}>{x}</li>)}</ul></section>;
 }
 
-function BlobAudio({ src }: { src: string }) {
+export function BlobAudio({ src }: { src: string }) {
   const [url, setUrl] = useState<string | null>(null);
   const [miss, setMiss] = useState(false);
   useEffect(() => { resolveUrl(src).then((u) => (u ? setUrl(u) : setMiss(true))).catch(() => setMiss(true)); }, [src]);

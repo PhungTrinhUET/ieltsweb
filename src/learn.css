@@ -294,3 +294,4 @@ a.deck__name:hover strong { color: var(--dk, var(--primary)); }
 #ai-setup > .setting { flex-wrap: nowrap; }
 .aiw-methods { align-content: start; }
 .aiw-steps ol { font-size: 14px; }
+.fm-entry .dict-entry__ic { background: var(--primary-soft); color: var(--primary); }

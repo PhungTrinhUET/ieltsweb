@@ -677,6 +677,46 @@ for (const profile of Object.keys(PROFILES)) {
     return { ok: !bad.length, info: bad.slice(0, 2).join(' | ') };
   });
 
+  await check(`[${profile}] M1 thi thử 4 kỹ năng (fast): L → R (tải lại giữa chừng vẫn tiếp) → W → S → 4 band + Overall`, async () => {
+    await go(page, '/mock/full?fast=1');
+    await page.selectOption('[data-testid="fm-test"]', { index: 1 });
+    await page.locator('[data-testid="fm-start"]').click();
+    await page.getByRole('button', { name: 'Start test' }).click();
+    await page.waitForSelector('[data-testid="fm-listening"]', { timeout: 10000 });
+    await page.waitForSelector('[data-testid="fm-reading"]', { timeout: 30000 });
+    await answerTab(page);
+    const radio = page.locator('.exam input[type=radio]').first();
+    await radio.evaluate((e) => e.closest('label')?.click() ?? e.click());
+    await page.waitForTimeout(1500);
+    await page.reload(); await page.waitForSelector('[data-testid="fm-reading"]', { timeout: 15000 });
+    await answerTab(page);
+    const kept = await page.locator('.exam input[type=radio]').first().isChecked();
+    page.once('dialog', (d) => d.accept());
+    await page.getByRole('button', { name: 'Nộp Reading' }).click();
+    await page.waitForSelector('[data-testid="fm-trans"]', { timeout: 5000 });
+    await page.waitForSelector('[data-testid="fm-writing"]', { timeout: 10000 });
+    const essay = (n) => Array.from({ length: n }, (_, i) => `word${i}`).join(' ');
+    await answerTab(page); await page.locator('[data-testid="fm-essay"]').fill(essay(160));
+    await page.locator('[data-testid="fm-task2"]').click();
+    await answerTab(page); await page.locator('[data-testid="fm-essay"]').fill(essay(260));
+    const words = await page.locator('.xnav__parts').textContent();
+    page.once('dialog', (d) => d.accept());
+    await page.getByRole('button', { name: 'Nộp Writing' }).click();
+    await page.locator('[data-testid="fm-speak-now"]:not([disabled])').click({ timeout: 10000 });
+    await page.waitForSelector('[data-testid="fm-speaking"]', { timeout: 10000 });
+    await page.waitForSelector('[data-testid="fm-result"]', { timeout: 60000 });
+    for (const t of ['fm-self-w1', 'fm-self-w2', 'fm-self-s']) {
+      const boxes = page.locator(`[data-testid="${t}"] input[type=checkbox]`);
+      for (let i = 0; i < 6; i++) await boxes.nth(i).check();
+    }
+    await page.waitForTimeout(800);
+    const b = {};
+    for (const k of ['l', 'r', 'w', 's']) b[k] = (await page.locator(`[data-testid="fm-band-${k}"]`).innerText()).trim();
+    const overall = (await page.locator('[data-testid="fm-overall"]').innerText()).trim();
+    const rl = await page.locator('[data-testid="hd-table"]').count();
+    const ok = kept && Object.values(b).every((x) => /^\d/.test(x)) && /^\d/.test(overall) && rl >= 7 && /160 words/.test(words) && /260 words/.test(words);
+    return { ok, info: `giữ đáp án sau tải lại=${kept} band=${JSON.stringify(b)} overall=${overall} bảng L/R=${rl} | ${words.replace(/\s+/g, ' ')}` };
+  });
   if (profile === 'desktop') {
     // ---------- A6: đủ câu 1–40 cho mọi đề ----------
     await check('A6 mọi đề đủ câu 1–40 (Reading, Listening)', async () => {

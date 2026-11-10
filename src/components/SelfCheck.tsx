@@ -29,7 +29,7 @@ const SPEAKING: Crit[] = [
 /** Band thô theo tỉ lệ mục đạt: 0% → 4, 100% → 8. */
 const roughBand = (k: number, n: number) => Math.round((4 + (4 * k) / Math.max(1, n)) * 2) / 2;
 
-export default function SelfCheck({ kind, task, attemptId, extra }: { kind: 'writing' | 'speaking'; task?: 1 | 2; attemptId?: string; extra?: string }) {
+export default function SelfCheck({ kind, task, attemptId, extra, onBand }: { kind: 'writing' | 'speaking'; task?: 1 | 2; attemptId?: string; extra?: string; onBand?: (band: number) => void }) {
   const crits = kind === 'writing' ? WRITING[task ?? 2] : SPEAKING;
   const [on, setOn] = useState<Record<string, boolean>>({});
   const bands = crits.map((c) => roughBand(c.items.filter((it) => on[`${c.name}|${it}`]).length, c.items.length));
@@ -37,10 +37,10 @@ export default function SelfCheck({ kind, task, attemptId, extra }: { kind: 'wri
   const overall = Math.round((bands.reduce((a, b) => a + b, 0) / bands.length) * 2) / 2;
   const toggle = (k: string) => setOn((s) => {
     const next = { ...s, [k]: !s[k] };
-    if (attemptId) {
-      const bs = crits.map((c) => roughBand(c.items.filter((it) => next[`${c.name}|${it}`]).length, c.items.length));
-      updateAttempt(attemptId, { selfBand: Math.round((bs.reduce((a, b) => a + b, 0) / bs.length) * 2) / 2, selfCheck: Object.keys(next).filter((x) => next[x]) });
-    }
+    const bs = crits.map((c) => roughBand(c.items.filter((it) => next[`${c.name}|${it}`]).length, c.items.length));
+    const b = Math.round((bs.reduce((a, b) => a + b, 0) / bs.length) * 2) / 2;
+    if (attemptId) updateAttempt(attemptId, { selfBand: b, selfCheck: Object.keys(next).filter((x) => next[x]) });
+    onBand?.(b);
     return next;
   });
   return (

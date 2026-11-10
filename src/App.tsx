@@ -24,6 +24,7 @@ import HistoryDetail from './pages/HistoryDetail';
 import Guide from './pages/Guide';
 import Settings from './pages/Settings';
 import MockTest from './pages/MockTest';
+import FullMock from './pages/FullMock';
 import Practice from './pages/Practice';
 import TestPage from './pages/TestPage';
 import Stats from './pages/Stats';
@@ -101,6 +102,7 @@ export default function App() {
           <Route path="speaking/:id" element={<Speaking />} />
           <Route path="writing" element={<WritingList />} />
           <Route path="writing/:id" element={<Writing />} />
+          <Route path="mock/full" element={<FullMock />} />
           <Route path="mock/:skill" element={<MockKeyed />} />
           <Route path="test/:skill/:tid" element={<TestPage />} />
           <Route path="test/:skill/:tid/full" element={<MockKeyed />} />

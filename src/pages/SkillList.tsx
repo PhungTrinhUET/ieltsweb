@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, ChevronDown, ChevronRight, Shuffle, FolderInput, GraduationCap, Headphones, Keyboard, Mic, NotebookPen, Sparkles, Timer } from 'lucide-react';
+import { BookOpen, ChevronDown, ChevronRight, Shuffle, FolderInput, GraduationCap, Headphones, Keyboard, Mic, NotebookPen, Sparkles, Timer, Trophy } from 'lucide-react';
 import type { Skill, Material } from '../types';
 import { useDb } from '../db';
 import { fmtBand } from '../lib/band';
@@ -109,6 +109,13 @@ export default function SkillList({ skill }: { skill: Skill }) {
         <Link to="/dictation" className="dict-entry card" data-testid="dict-entry">
           <span className="dict-entry__ic"><Keyboard size={22} /></span>
           <span><strong>Nghe & chép</strong><span className="small muted">4 cấp từ số & đánh vần đến bài giảng Section 4 · tự lưu tiến độ</span></span>
+          <ChevronRight size={18} />
+        </Link>
+      )}
+      {dual && mode === 'test' && (
+        <Link to="/mock/full" className="dict-entry card fm-entry" data-testid="list-fullmock">
+          <span className="dict-entry__ic"><Trophy size={22} /></span>
+          <span><strong>Thi thử đủ 4 kỹ năng</strong><span className="small muted">Listening + Reading + Writing liền nhau, rồi Speaking · band Overall</span></span>
           <ChevronRight size={18} />
         </Link>
       )}

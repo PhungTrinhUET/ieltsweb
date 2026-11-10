@@ -1,6 +1,6 @@
 // Trang chủ dạng bảng điều khiển: tiếp tục bài dở, nhiệm vụ hôm nay, tiến độ band, 4 kỹ năng, từ vựng.
 import { Link } from 'react-router-dom';
-import { ArrowRight, BarChart3, BookMarked, CheckCircle2, Circle, Flame, Sparkles, GraduationCap, Keyboard, Layers, PlayCircle, Target, Timer } from 'lucide-react';
+import { ArrowRight, BarChart3, BookMarked, CheckCircle2, Circle, Flame, Sparkles, GraduationCap, Keyboard, Layers, PlayCircle, Target, Timer, Trophy, ChevronRight } from 'lucide-react';
 import { useDb } from '../db';
 import { getLastOpen, getStreak, useSettings } from '../store';
 import { BackupReminder } from '../components/BackupPanel';
@@ -181,6 +181,11 @@ export default function Home() {
           );
         })}
       </div>
+      <Link to="/mock/full" className="dict-entry card fm-entry" data-testid="home-fullmock">
+        <span className="dict-entry__ic"><Trophy size={22} /></span>
+        <span><strong>Thi thử đủ 4 kỹ năng</strong><span className="small muted">Listening → Reading → Writing liền nhau như ngày thi (~2 giờ 40) + Speaking · ra band Overall</span></span>
+        <ChevronRight size={18} />
+      </Link>
 
       <div className="home__grid home__grid--2">
         {/* Từ vựng */}
