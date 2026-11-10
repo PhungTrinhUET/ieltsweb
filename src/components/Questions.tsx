@@ -6,6 +6,7 @@ import type { Question, QuestionGroup } from '../types';
 import { answerMatches } from '../lib/text';
 import { Options, PickMenu, RichText, Segmented } from './ui';
 import { groupKind } from '../lib/qtypes';
+import { useExamStyle } from './Exam';
 
 const LETTERS = 'ABCDEFGHIJKLMNOP';
 const ROMAN = ['i', 'ii', 'iii', 'iv', 'v', 'vi', 'vii', 'viii', 'ix', 'x', 'xi', 'xii', 'xiii', 'xiv', 'xv'];
@@ -49,6 +50,18 @@ function BlankInput({ no, value, onChange, checked, ok, onFocus }: { no: number;
   );
 }
 
+/** Ô nhận kéo-thả một mục trong bank (matching / headings). */
+function Drop({ children, onDrop, disabled }: { children: ReactNode; onDrop: (i: number) => void; disabled: boolean }) {
+  return (
+    <span className="xdrop"
+      onDragOver={(e) => { if (!disabled && e.dataTransfer.types.includes('text/x-bank')) { e.preventDefault(); e.currentTarget.classList.add('is-over'); } }}
+      onDragLeave={(e) => e.currentTarget.classList.remove('is-over')}
+      onDrop={(e) => { e.currentTarget.classList.remove('is-over'); const v = e.dataTransfer.getData('text/x-bank'); if (!disabled && v !== '') { e.preventDefault(); onDrop(+v); } }}>
+      {children}
+    </span>
+  );
+}
+
 /** Hiển thị câu có ___ thành input. */
 function FillText({ q, value, onChange, checked, ok, onFocus }: { q: Question; value: string; onChange: (v: string) => void; checked: boolean; ok: boolean; onFocus?: () => void }) {
   const parts = q.text.split(/_{3,}/);
@@ -63,6 +76,7 @@ export function QuestionView({ q, group, value, onChange, checked, onFocus, comp
   onReveal?: () => void;
 }) {
   const ok = checked && isCorrect(q, value);
+  const exam = useExamStyle();
   let body: ReactNode;
   switch (q.type) {
     case 'mcq':
@@ -70,6 +84,30 @@ export function QuestionView({ q, group, value, onChange, checked, onFocus, comp
       break;
     case 'multi': {
       const sel = Array.isArray(value) ? value : [];
+      // Chọn đủ số đáp án thì không cho chọn thêm (như máy thi).
+      const toggle = (i: number, on: boolean) => onChange(on ? sel.filter((x) => x !== i) : sel.length >= q.answer.length ? sel : [...sel, i]);
+      if (exam) {
+        body = (
+          <>
+            <div className="qtext">{q.text}</div>
+            <div className="xopts">
+              {q.options.map((o, i) => {
+                const on = sel.includes(i);
+                const st = checked ? (q.answer.includes(i) ? ' is-correct' : on ? ' is-wrong' : '') : on ? ' is-selected' : '';
+                return (
+                  <label key={i} className={`xopt${st}`}>
+                    <input type="checkbox" checked={on} disabled={checked} onChange={() => toggle(i, on)} />
+                    <span className="xopt__l">{'ABCDEFGH'[i]}</span><span className="xopt__t">{o}</span>
+                    {checked && q.answer.includes(i) && <Check size={16} className="xopt__i" />}
+                    {checked && on && !q.answer.includes(i) && <X size={16} className="xopt__i" />}
+                  </label>
+                );
+              })}
+            </div>
+          </>
+        );
+        break;
+      }
       body = (
         <>
           <div className="qtext">{q.text}</div>
@@ -80,7 +118,7 @@ export function QuestionView({ q, group, value, onChange, checked, onFocus, comp
               if (checked) st = q.answer.includes(i) ? ' is-correct' : on ? ' is-wrong' : ' is-dim';
               else if (on) st = ' is-selected';
               return (
-                <button key={i} className={`option${st}`} disabled={checked} onClick={() => onChange(on ? sel.filter((x) => x !== i) : [...sel, i])}>
+                <button key={i} className={`option${st}`} disabled={checked} onClick={() => toggle(i, on)}>
                   <span className="option__letter">{'ABCDEFGH'[i]}</span><span className="option__text">{o}</span>
                   {checked && q.answer.includes(i) && <Check size={18} className="option__icon" />}
                   {checked && on && !q.answer.includes(i) && <X size={18} className="option__icon" />}
@@ -117,7 +155,7 @@ export function QuestionView({ q, group, value, onChange, checked, onFocus, comp
       body = (
         <div className="qmatch">
           <div className="qtext">{q.text}</div>
-          <PickMenu options={bank} value={typeof value === 'number' ? value : null} onChange={(i) => onChange(i)} checked={checked} correct={q.answer} prefer="down" />
+          <Drop disabled={checked} onDrop={(i) => onChange(i)}><PickMenu options={bank} value={typeof value === 'number' ? value : null} onChange={(i) => onChange(i)} checked={checked} correct={q.answer} prefer="down" /></Drop>
         </div>
       );
       break;
@@ -158,7 +196,7 @@ export function GroupsView({ groups, answers, onChange, checked, onFocus, reveal
             <h3>{range}</h3>
             <p className="instruction"><Instruction text={g.instruction} limit={g.wordLimit} /></p>
             {g.bank && g.questions.some((q) => q.type === 'match') && !g.bank.every((b) => b.length <= 2) && (
-              <ol className="qbank">{g.bank.map((b, i) => <li key={i}><span>{/heading/i.test(g.instruction) || (g.bank!.length > 8 && !/letter/i.test(g.instruction)) ? ROMAN[i] : LETTERS[i]}</span>{b}</li>)}</ol>
+              <ol className="qbank">{g.bank.map((b, i) => <li key={i} draggable={!checked} onDragStart={(e) => { e.dataTransfer.setData('text/x-bank', String(i)); e.dataTransfer.effectAllowed = 'copy'; }} title={checked ? undefined : 'Kéo vào ô trả lời'}>{(() => { const k = /heading/i.test(g.instruction) || (g.bank!.length > 8 && !/letter/i.test(g.instruction)) ? ROMAN[i] : LETTERS[i]; return new RegExp(`^${k}\\s*[–.:-]`, 'i').test(b) ? null : <span>{k}</span>; })()}{b}</li>)}</ol>
             )}
             {g.image && <figure className="qgroup__img"><ZoomImage src={publicUrl(g.image)} alt={g.imageAlt ?? 'Hình cho nhóm câu hỏi'} /></figure>}
             <GroupBody g={g} answers={answers} onChange={onChange} checked={checked} onFocus={onFocus} revealed={revealed} onReveal={onReveal} />
@@ -222,7 +260,7 @@ function TableBody({ g, answers, onChange, checked, onFocus, revealed, onReveal,
     return (
       <span key={i} id={`q-${q.no}`} className={`tblank${shown ? (ok ? ' is-ok' : ' is-no') : ''}`}>
         {q.type === 'match'
-          ? <PickMenu options={q.options ?? bank} value={typeof v === 'number' ? v : null} onChange={(a) => onChange(q.no, a)} checked={shown} correct={q.answer} prefer="down" placeholder="…" />
+          ? <Drop disabled={shown} onDrop={(a) => onChange(q.no, a)}><PickMenu options={q.options ?? bank} value={typeof v === 'number' ? v : null} onChange={(a) => onChange(q.no, a)} checked={shown} correct={q.answer} prefer="down" placeholder="…" /></Drop>
           : <BlankInput no={q.no} value={typeof v === 'string' ? v : ''} onChange={(a) => onChange(q.no, a)} checked={shown} ok={ok} onFocus={() => onFocus?.(q.no)} />}
       </span>
     );

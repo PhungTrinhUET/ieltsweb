@@ -5,7 +5,7 @@ import { useDb } from '../db';
 import { getLastOpen, getStreak, useSettings } from '../store';
 import { SKILL_META } from './SkillList';
 import type { Attempt, Skill } from '../types';
-import { dueCards } from '../lib/srs';
+import { dueCards, reviewedToday as reviewedOn } from '../lib/srs';
 import { fmtBand, overallBand } from '../lib/band';
 import { Ring } from '../components/ui';
 import { Logo } from '../App';
@@ -42,7 +42,7 @@ export default function Home() {
   // Nhiệm vụ hôm nay: tự đánh dấu khi đã có lượt làm trong ngày.
   const today = dayKey(new Date());
   const todayAt = db.attempts.filter((a) => dayKey(new Date(a.at)) === today);
-  const reviewedToday = cards.some((c) => c.reps > 0 && c.due > Date.now() && dayKey(new Date(c.due - c.interval * 864e5)) === today);
+  const reviewedToday = reviewedOn(cards);
   const tasks = [
     { done: cards.length > 0 && (due === 0 || reviewedToday), label: due ? `Ôn ${due} từ đến hạn` : 'Ôn từ vựng', time: '10 phút', to: '/vocab' },
     { done: todayAt.some((a) => a.skill === 'reading'), label: 'Một bài Reading', time: '20 phút', to: '/reading' },

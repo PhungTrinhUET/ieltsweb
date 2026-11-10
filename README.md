@@ -80,6 +80,20 @@ public/data/*.json + index.json   app tự nạp khi mở
 public/audio/vol<N>/test<M>/s1..s4.mp3 (+ .srt)   ← npm run audio
 ```
 
+### Ôn từ vựng
+
+Trang **Từ vựng** dùng hộp Leitner 5 hộp, chỉ 2 nút **Nhớ / Chưa nhớ**: nhớ thì từ lên một hộp (ôn lại sau 1 → 2 → 4 → 8 → 16 ngày), quên thì về hộp 1.
+Mỗi ngày bấm **Ôn hôm nay**: từ đến hạn + từ mới (số từ mới/ngày chỉnh ở Cài đặt). Từ mới hiện đủ nghĩa và ví dụ; hộp 1–2 nhìn từ nhớ nghĩa; hộp 3 trở lên nhìn nghĩa gõ lại từ. Cuối buổi hỏi lại từ mới và từ chưa nhớ.
+Nguồn từ: bộ 300 từ IELTS theo 12 chủ đề (`content/vocab/ielts-topics.json`, chọn chủ đề trên trang) và từ tự lưu khi đọc/nghe bài. Phím tắt: Space xem nghĩa, ← chưa nhớ, → nhớ, Enter tiếp.
+
+### Giao diện thi
+
+Reading, Listening và Writing (cả Thi thử lẫn Luyện tập) chạy trong khung mô phỏng màn hình thi IELTS trên máy tính:
+số báo danh và đồng hồ "N minutes left" (báo khi còn 10 và 5 phút), khung "Part N – Read the text and answer questions …",
+bài đọc / câu hỏi chia 2 cột kéo được, thanh dưới có Part, số câu (gạch chân = đã làm, viền = đang ở, viền tròn trên = Review), ← → và nút ✓ nộp bài.
+Options (☰): cỡ chữ Standard / Large / Extra large, nền Black on white / White on black / Yellow on black. Hide che màn hình.
+Thi thử cả đề có màn hướng dẫn (Listening thêm kiểm tra âm thanh); Listening phát audio liền 4 phần một lần, không dừng/tua, hết audio còn 2 phút rồi tự nộp.
+
 ### Thêm audio thật
 
 1. Tải thư mục đề trên Google Drive về máy, **giữ nguyên cấu trúc thư mục** (ví dụ `VOL 5- ORIGINAL EXAMS/…/Listening/Test 3/P2.mp3`).

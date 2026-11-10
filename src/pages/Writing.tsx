@@ -1,19 +1,18 @@
 // Writing: đề + biểu đồ, dàn ý, soạn bài (đếm từ, bấm giờ, tự lưu nháp), AI chấm theo 4 tiêu chí IELTS.
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft, Bot, BookmarkPlus, Check, FileCheck2, Loader2, Sparkles } from 'lucide-react';
+import { Bot, BookmarkPlus, Check, FileCheck2, Lightbulb, Loader2, Sparkles } from 'lucide-react';
 import type { WritingMaterial } from '../types';
 import { addAttempt, findCard, updateAttempt, resolveUrl, saveCard, saveDraft, useDb } from '../db';
 import { aiReady, getAiConfig, setLastOpen, touchStreak, useAiConfig } from '../store';
 import SelfCheck from '../components/SelfCheck';
-import Timer from '../components/Timer';
+import { ExamClock, ExamFrame, ExamSheet, ExamSplit } from '../components/Exam';
 import ZoomImage from '../components/ZoomImage';
 import { Collapse } from '../components/ui';
 import { BandPill, ChartView, CriteriaBars, WordDiff } from '../components/misc';
 import type { WritingGrade } from '../ai/writing';
 import { wordCount } from '../lib/text';
 import { newCard } from '../lib/srs';
-import { SKILL_META } from './SkillList';
 
 const TYPE_LABEL: Record<string, string> = {
   opinion: 'Opinion (agree/disagree)', discussion: 'Discussion (both views + opinion)', advantage: 'Advantages / disadvantages', problem: 'Problem / solution', double: 'Double question',
@@ -51,6 +50,8 @@ export default function Writing() {
   const [img, setImg] = useState<string | null>(null);
   const [tab, setTab] = useState<'fixes' | 'corrected' | 'improved' | 'upgrades'>('fixes');
   const [done, setDone] = useState<{ id: string; words: number; minutes: number } | null>(null);
+  const [aids, setAids] = useState(false);
+  const [sheet, setSheet] = useState(false);
   const cfg = useAiConfig();
   const started = useRef(0); // lúc gõ chữ đầu tiên (đồng hồ bắt đầu)
   const saveT = useRef(0);
@@ -80,7 +81,7 @@ export default function Writing() {
       // Đã "Nộp bài" rồi thì nâng bản ghi đó thành bản AI chấm, không tạo 2 dòng lịch sử.
       if (done) await updateAttempt(done.id, { mode: 'ai', band: g.overall, detail: { text, words: n, minutes: done.minutes, grade: g } });
       else await addAttempt({ materialId: m.id, skill: 'writing', title: m.title, mode: 'ai', band: g.overall, detail: { text, words: n, minutes: usedMin(), grade: g } });
-      window.scrollTo({ top: document.getElementById('ai-result')?.offsetTop ?? 0 });
+      setSheet(true);
     } catch (e) { setErr(e instanceof Error ? e.message : String(e)); } finally { setBusy(false); }
   };
 
@@ -90,53 +91,64 @@ export default function Writing() {
     const minutesUsed = usedMin();
     const a = await addAttempt({ materialId: m.id, skill: 'writing', title: m.title, mode: 'self', score: n, detail: { text, words: n, minutes: minutesUsed } });
     setDone({ id: a.id, words: n, minutes: minutesUsed });
-    window.setTimeout(() => document.getElementById('self-result')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+    setSheet(true);
   };
 
-  return (
-    <div className="page page--wide page--practice" style={{ ['--skill' as string]: SKILL_META.writing.color }}>
-      <div className="topbar topbar--sticky">
-        <button className="icon-btn" onClick={() => nav('/writing')} aria-label="Quay lại"><ArrowLeft size={20} /></button>
-        <div className="topbar__title"><small>Writing Task {m.task} · {TYPE_LABEL[m.type] ?? m.type}{m.module === 'general' && ' · GT'}</small><strong>{m.title}</strong></div>
-        <div className="topbar__actions"><Timer key={m.id} minutes={minutes} start={text.trim().length > 0} overtime stopped={!!done} /></div>
-      </div>
-
-      <div className="split">
-        <section className="split__pane">
-          <div className="wtask card pad">
-            <div className="wtask__prompt">{m.prompt.split('\n').map((l, i) => <p key={i}>{l}</p>)}</div>
-            {img && <ZoomImage src={img} alt={m.imageAlt ?? 'Biểu đồ / bản đồ của đề'} className="wtask__img" />}
-            {m.chart && !img && <ChartView chart={m.chart} />}
-            {m.imageAlt && (img || m.chart
-              ? <Collapse title="Mô tả hình bằng chữ" defaultOpen={false}><p className="small wtask__alt">{m.imageAlt}</p></Collapse>
-              : <div className="qcontext wtask__alt"><strong className="small">Hình của đề (mô tả bằng chữ – tài liệu gốc chỉ có hình):</strong>{'\n'}{m.imageAlt}</div>)}
-          </div>
-          <Collapse title="Cấu trúc bài gợi ý" tone="tip" defaultOpen={false}>
-            <ol className="plan">{(m.outline ?? STRUCTURE[m.type] ?? []).map((o, i) => <li key={i}>{o}</li>)}</ol>
+  const prompt = (
+    <div className="xprompt">
+      <div className="wtask__prompt">{m.prompt.split('\n').map((l, i) => <p key={i}>{l}</p>)}</div>
+      {img && <ZoomImage src={img} alt={m.imageAlt ?? 'Biểu đồ / bản đồ của đề'} className="wtask__img" />}
+      {m.chart && !img && <ChartView chart={m.chart} />}
+      {m.imageAlt && (img || m.chart
+        ? <Collapse title="Mô tả hình bằng chữ" defaultOpen={false}><p className="small wtask__alt">{m.imageAlt}</p></Collapse>
+        : <div className="qcontext wtask__alt"><strong className="small">Hình của đề (mô tả bằng chữ – tài liệu gốc chỉ có hình):</strong>{'\n'}{m.imageAlt}</div>)}
+      {aids && <>
+        <Collapse title="Cấu trúc bài gợi ý" tone="tip" defaultOpen={false}>
+          <ol className="plan">{(m.outline ?? STRUCTURE[m.type] ?? []).map((o, i) => <li key={i}>{o}</li>)}</ol>
+        </Collapse>
+        {m.sample && <Collapse title="Bài mẫu band 8 (xem sau khi viết xong!)" tone="info"><div className="sample sample--long">{m.sample.split('\n').map((l, i) => <p key={i}>{l}</p>)}</div></Collapse>}
+        {m.vocab?.length ? (
+          <Collapse title={`Từ vựng gợi ý (${m.vocab.length})`} tone="info">
+            <ul className="vlist">{m.vocab.map((v, i) => { const saved = !!findCard(v[0]); return <li key={i} className="vlist__row"><div className="vlist__body"><strong className="vocab__w">{v[0]}</strong> <em className="vocab__pos">{v[1]}</em> – {v[2]}</div><button className="icon-btn" disabled={saved} onClick={() => saveCard(newCard({ id: `v-${v[0]}-${Date.now().toString(36)}`, word: v[0], pos: v[1], meaning: v[2], example: v[3], from: m.id }))}>{saved ? <Check size={16} /> : <BookmarkPlus size={16} />}</button></li>; })}</ul>
           </Collapse>
-          {m.sample && <Collapse title="Bài mẫu band 8 (xem sau khi viết xong!)" tone="info"><div className="sample sample--long">{m.sample.split('\n').map((l, i) => <p key={i}>{l}</p>)}</div></Collapse>}
-          {m.vocab?.length ? (
-            <Collapse title={`Từ vựng gợi ý (${m.vocab.length})`} tone="info">
-              <ul className="vlist">{m.vocab.map((v, i) => { const saved = !!findCard(v[0]); return <li key={i} className="vlist__row"><div className="vlist__body"><strong className="vocab__w">{v[0]}</strong> <em className="vocab__pos">{v[1]}</em> – {v[2]}</div><button className="icon-btn" disabled={saved} onClick={() => saveCard(newCard({ id: `v-${v[0]}-${Date.now().toString(36)}`, word: v[0], pos: v[1], meaning: v[2], example: v[3], from: m.id }))}>{saved ? <Check size={16} /> : <BookmarkPlus size={16} />}</button></li>; })}</ul>
-            </Collapse>
-          ) : null}
-        </section>
-        <section className="split__pane">
-          <div className={`wbox${n >= min ? ' wbox--ok' : ''}`}>
-            <textarea className="wbox__input" value={text} onChange={(e) => onText(e.target.value)} placeholder={`Viết bài tại đây (tối thiểu ${min} từ)…`} spellCheck={false} rows={18} />
-            <div className="wbox__meta"><span className="wbox__count">{n} từ</span><span className="muted small">tối thiểu {min} · tự lưu nháp</span></div>
+        ) : null}
+      </>}
+    </div>
+  );
+  const editor = (
+    <div className="xwrite">
+      <textarea className="wbox__input" value={text} onChange={(e) => onText(e.target.value)} placeholder="" aria-label="Bài viết" spellCheck={false} />
+      <div className="xwrite__count">Words: {n}{n < min && <span className="muted"> (tối thiểu {min})</span>}</div>
+      {err && <p className="no-text small">{err}</p>}
+    </div>
+  );
+  const tools = (
+    <>
+      <button className={`xtool${aids ? ' is-on' : ''}`} onClick={() => setAids(!aids)} title="Dàn ý gợi ý, bài mẫu, từ vựng"><Lightbulb size={15} /> <span>Gợi ý</span></button>
+      {(done || grade) && <button className="xtool" onClick={() => setSheet(true)}><FileCheck2 size={15} /> <span>Kết quả</span></button>}
+      {aiReady(cfg)
+        ? <button className="xtool" onClick={submit} disabled={busy || n < 30} title="Chấm theo 4 tiêu chí IELTS" aria-label="Chấm bằng AI">{busy ? <><Loader2 size={15} className="spin" /> <span>AI đang chấm…</span></> : <><Bot size={15} /> <span>Chấm AI</span></>}</button>
+        : <a className="xtool" href="#/settings" title="Cài đặt → AI để AI chấm bài"><Bot size={15} /> <span>Chấm AI</span></a>}
+    </>
+  );
+  return (
+    <ExamFrame onExit={() => nav('/writing')} tools={tools}
+      status={<ExamClock key={m.id} seconds={minutes * 60} running={text.trim().length > 0} overtime stopped={!!done} />}
+      banner={{ title: `Part ${m.task}`, text: `You should spend about ${minutes} minutes on this task. Write at least ${min} words.` }}
+      footer={(
+        <footer className="xnav">
+          <div className="xnav__parts"><div className="xnav__part is-on"><strong>Part {m.task}</strong> <span>{TYPE_LABEL[m.type] ?? m.type}{m.module === 'general' ? ' · GT' : ''}</span></div></div>
+          <div className="xnav__right">
+            <button className="xnav__submit" onClick={() => (done ? setSheet(true) : confirm('Nộp bài?') && handIn())} disabled={!text.trim()} aria-label={done ? 'Xem kết quả' : 'Nộp bài'} title={done ? 'Xem kết quả' : 'Nộp bài'}><Check size={22} /></button>
           </div>
-          <div className="row wrap">
-            <button className="btn btn--primary btn--grow" onClick={handIn} disabled={!!done || !text.trim()}><FileCheck2 size={16} /> {done ? 'Đã nộp' : 'Nộp bài'}</button>
-            {aiReady(cfg) && <button className="btn btn--ghost btn--grow" onClick={submit} disabled={busy || n < 30}>{busy ? <><Loader2 size={16} className="spin" /> AI đang chấm (30–90 giây)…</> : <><Bot size={16} /> Chấm bằng AI</>}</button>}
-          </div>
-          {!aiReady(cfg) && <p className="small muted">Nộp bài để lưu vào Lịch sử, xem bài mẫu và tự chấm. Muốn AI chấm thêm: <a href="#/settings">Cài đặt → AI</a>.</p>}
-          {err && <p className="no-text small">{err}</p>}
-        </section>
-      </div>
-
+        </footer>
+      )}>
+      <ExamSplit left={prompt} right={editor} labels={['Task', `Answer (${n})`]} storeKey="ielts:writing-split" />
+      {sheet && (done || grade) && (
+        <ExamSheet onClose={() => setSheet(false)}>
+          <div className="stack">
       {done && (
-        <div id="self-result" className="stack">
+        <div className="stack">
           <section className="card pad">
             <div className="ai__head"><FileCheck2 size={18} /> <strong>Đã nộp bài</strong></div>
             <p className="small">{done.words} từ{done.words < min && <span className="no-text"> (thiếu {min - done.words} từ so với tối thiểu {min} – bị trừ điểm Task {m.task === 1 ? 'Achievement' : 'Response'})</span>} · {done.minutes ? `${done.minutes} phút` : 'không bấm giờ'}{done.minutes > minutes && <span className="no-text"> (quá {done.minutes - minutes} phút)</span>} · đã lưu vào Lịch sử.</p>
@@ -174,6 +186,9 @@ export default function Writing() {
           )}
         </section>
       )}
-    </div>
+          </div>
+        </ExamSheet>
+      )}
+    </ExamFrame>
   );
 }

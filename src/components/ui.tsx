@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { useEffect, useId, useRef, useState, type ReactNode } from 'react';
+import { useExamStyle } from './Exam';
 import { Check, ChevronDown, X } from 'lucide-react';
 
 /** Hiển thị văn bản giải thích: in đậm **x**, xuống dòng trước "1. ", "Giải thích:", "Dịch:"... */
@@ -60,6 +61,9 @@ export function Options({ options, value, onChange, checked, correct, name }: {
   options: string[]; value: number | null; onChange: (i: number) => void;
   checked: boolean; correct: number; name?: string;
 }) {
+  const exam = useExamStyle();
+  const gid = useId();
+  if (exam) return <XRadios items={options.map((o, i) => ({ key: i, letter: LETTERS[i], label: o === '-' ? '— (không cần từ)' : o }))} value={value} onChange={onChange} checked={checked} correct={correct} name={name ?? gid} />;
   return (
     <div className="options" role="radiogroup" aria-label={name}>
       {options.map((o, i) => {
@@ -108,9 +112,34 @@ export function Pick({ options, value, onChange, checked, correct, placeholder =
   );
 }
 
+/** Nút radio kiểu máy thi (cả dòng bấm được). */
+export function XRadios<K extends string | number>({ items, value, onChange, checked, correct, name }: {
+  items: { key: K; label: string; letter?: string }[]; value: K | null; onChange: (k: K) => void; checked: boolean; correct: K; name: string;
+}) {
+  return (
+    <div className="xopts" role="radiogroup">
+      {items.map((it) => {
+        const st = checked ? (it.key === correct ? ' is-correct' : it.key === value ? ' is-wrong' : '') : it.key === value ? ' is-selected' : '';
+        return (
+          <label key={String(it.key)} className={`xopt${st}`}>
+            <input type="radio" name={name} checked={it.key === value} disabled={checked} onChange={() => onChange(it.key)} />
+            {it.letter && <span className="xopt__l">{it.letter}</span>}
+            <span className="xopt__t">{it.label}</span>
+            {checked && it.key === correct && <Check size={16} className="xopt__i" />}
+            {checked && it.key === value && it.key !== correct && <X size={16} className="xopt__i" />}
+          </label>
+        );
+      })}
+    </div>
+  );
+}
+
 export function Segmented<T extends string>({ options, value, onChange, checked, correct }: {
   options: { value: T; label: string }[]; value: T | null; onChange: (v: T) => void; checked: boolean; correct: T;
 }) {
+  const exam = useExamStyle();
+  const gid = useId();
+  if (exam) return <XRadios items={options.map((o) => ({ key: o.value, label: o.label }))} value={value} onChange={onChange} checked={checked} correct={correct} name={gid} />;
   return (
     <div className="seg">
       {options.map((o) => {
