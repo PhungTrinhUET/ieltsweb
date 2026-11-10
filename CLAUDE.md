@@ -27,7 +27,8 @@ Chưa có unit test; có `scripts/smoke.mjs` (trình duyệt thật). Sau khi s�
 - `src/db.ts`: IndexedDB (DB v2). Khi app mở, file này hỏi `public/data/index.json` rồi chỉ tải file có `hash` khác bản đã cache trong store `bundle`.
 - `src/components/Questions.tsx`: hiển thị và chấm mọi dạng câu hỏi.
 - `src/components/Exam.tsx` + `src/exam.css`: khung **mô phỏng máy thi IELTS** (thanh trên: số báo danh, "N minutes left", Help/Hide/Options; khung "Part N"; 2 cột kéo được; thanh dưới: Part + số câu, Review, ← →, ✓ nộp). Trong khung (`ExamCtx`), MCQ/TFNG thành radio, multi thành checkbox, matching kéo-thả. Dùng cho Thi thử (`MockTest.tsx` → `ExamRunner`, cả `/reading/:id`, `/listening/:id`), Luyện tập (`Practice.tsx`) và Writing. Listening thi thử: audio phát liền 1 lần, không dừng/tua, hết audio còn 2 phút rồi tự nộp. Chữ trên khung tiếng Anh như máy thi; công cụ riêng của app tiếng Việt.
-- Từ vựng (`src/pages/Vocab.tsx`, `src/lib/srs.ts`): hộp **Leitner 5 hộp** (Nhớ → lên hộp; Chưa nhớ → hộp 1; hộp 1/2/3/4/5 = 1/2/4/8/16 ngày). Một nút "Ôn hôm nay" = từ đến hạn + từ mới (Cài đặt: số từ mới/ngày). Hộp 1–2: nhìn từ nhớ nghĩa; hộp 3+: nhìn nghĩa gõ từ. Bộ từ có sẵn ở `content/vocab/*.json` (`topics[].words = [từ, loại, nghĩa Việt, ví dụ]`, 12 chủ đề × 25 từ) → `npm run data` xuất `public/data/vocab-deck.json` (báo `⚠` nếu từ trùng/thiếu). Từ trong bộ chỉ thành thẻ (IndexedDB) khi được học lần đầu.
+- Từ vựng (`src/pages/Vocab.tsx`, `VocabSession.tsx` học/ôn/ngữ cảnh, `src/lib/srs.ts` FSRS qua ts-fsrs, `src/lib/vocab.ts`): 4 trạng thái Sẽ học/Đang học/Ôn tập/Đã thuộc; nhật ký `revlog` (có `xp`); DB v3 (`revlog`, `dict`, `kv`). Bộ từ: `content/vocab/ielts-topics.json` (`topics[].words = [từ, loại, nghĩa Việt, ví dụ, IPA, nghĩa Anh, dịch ví dụ, collocation "a; b"]`, 12 × 25) và `content/vocab/awl.json` (AWL 570 từ; `npm run data` chọn 30 từ/đề từ bài Reading → `tests[]`) → `public/data/vocab-deck.json` + chỉ mục ngữ cảnh. Id bộ: `deck:<id>`, `test:<tid>`, `my:<id>` (kv `udeck:<id>`), `saved`; thẻ câu nghe-chép `decks: ['dict']`. Từ trong bộ chỉ thành thẻ khi được học lần đầu.
+- Nghe-chép (`src/pages/DictHub.tsx`, `DictLesson.tsx`, `src/lib/dictation.ts`); Hôm nay/XP/chuỗi ngày/Thống kê: `src/lib/stats.ts`, `src/pages/Stats.tsx`, `Home.tsx`.
 - `src/pages/`: các màn hình. Gồm SkillList, ReadingTest/ReadingStudy, ListeningTest, Dictation, GapFill, MockTest, Speaking, Writing, Vocab, Library, History, Guide, Settings.
 - `src/ai/`: gọi Claude (structured output) để chấm Writing/Speaking, dịch, tra từ, sinh đề.
 - `scripts/build-data.mjs`: chuyển content → material. Script tự xử lý `offset`/`cut`, `.srt`, và kiểm tra đáp án.
@@ -72,11 +73,11 @@ Không chuyển thêm đề trong đợt này. Mỗi mục: data 0 ⚠, tsc, bui
 - [x] B3+B6. `src/lib/dictation.ts`: tách câu, bỏ lời dẫn + ví dụ, ghép/tách câu, chấm khớp có quy đổi
 - [x] B4/B5/B7. Màn hình bài nghe-chép, hỗ trợ người mới, lưu tiến độ + tổng kết
 - [x] B1/B2. Hub `#/dictation`, 4 cấp, cấp 1 sinh số/đánh vần, chuyển route cũ, lối vào
-- [ ] A4. Chỉ mục ngữ cảnh (build-data) + đoạn AI / gap-fill
-- [ ] A2/A3. Học nhóm từ mới (các bước xen kẽ) + ôn theo stability, tự chấm FSRS
-- [ ] A5. Làm giàu 300 từ, bộ theo đề, từ đã lưu, bộ tự tạo, nhập/xuất
-- [ ] C. Thẻ câu hay sai, gợi ý từ từ nghe-chép, kế hoạch "Hôm nay", XP, trang Thống kê
-- [ ] Smoke các luồng mới, README, merge, deploy, kiểm tra bản live
+- [x] A4. Chỉ mục ngữ cảnh (build-data) + đoạn AI / gap-fill
+- [x] A2/A3. Học nhóm từ mới (các bước xen kẽ) + ôn theo stability, tự chấm FSRS
+- [x] A5. Làm giàu 300 từ, bộ theo đề, từ đã lưu, bộ tự tạo, nhập/xuất
+- [x] C. Thẻ câu hay sai, gợi ý từ từ nghe-chép, kế hoạch "Hôm nay", XP, trang Thống kê
+- [x] Smoke các luồng mới, README, merge, deploy, kiểm tra bản live
 
 ## Tiến độ phiên chuyển đổi (cập nhật liên tục)
 

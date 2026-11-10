@@ -42,7 +42,7 @@ Claude dùng structured output của Anthropic SDK. Các nhà cung cấp khác �
 
 ### Listening
 - Làm đề với audio thật (mp3 + transcript + SRT) hoặc **giọng máy đọc transcript** (đổi giọng theo người nói) khi không có file audio; mọi dạng câu hỏi form/note/table completion, MCQ, matching.
-- **Chép chính tả theo câu** (kiểu DailyDictation): nghe từng câu (theo mốc SRT hoặc TTS), gõ, so sánh từng từ (thiếu / thừa / sai), gợi ý chữ cái, xem đáp án, chỉnh tốc độ, phím tắt (Enter kiểm tra, Ctrl+Enter nghe lại, Ctrl+→ bỏ qua), **shadowing** ghi âm đọc theo.
+- **Nghe & chép** (`#/dictation`, kiểu DailyDictation): 4 cấp – cấp 1 số/đánh vần do máy sinh, cấp 2–4 là các section Listening đã chia thành bài ~10 câu (bỏ lời dẫn và ví dụ). Nghe từng câu, gõ, chấm khớp có quy đổi (số ↔ chữ, viết tắt, dấu câu), sửa ngay sau khi kiểm tra, gợi ý từng từ, khung chữ đầu cho người mới, chế độ chỉ chép từ khoá, chỉnh tốc độ, phím tắt, lưu tiến độ giữa chừng, tổng kết + **shadowing**. Câu chép dưới 90% thành **thẻ "Câu hay sai"** để ôn bằng chép lại; từ chép sai được gợi ý vào sổ từ.
 - **Điền từ transcript**: che 1/N từ khoá (4 mức), nghe và gõ, chấm từng chỗ.
 - **Học transcript**: dịch, tra từ, từ vựng, nghe đọc – giống chế độ học Reading.
 - **Thi thử** 4 section.
@@ -56,8 +56,16 @@ Claude dùng structured output của Anthropic SDK. Các nhà cung cấp khác �
 - Soạn bài với đếm từ, bấm giờ 20'/40', tự lưu nháp, cấu trúc bài gợi ý theo dạng, bài mẫu band 8, từ vựng.
 - **AI chấm theo 4 tiêu chí IELTS** (TA/TR, CC, LR, GRA, half band, overall), lý do từng tiêu chí có trích dẫn, danh sách lỗi, **bản sửa lỗi hiển thị diff từng từ**, bản viết lại lên band, bảng "nâng cấp cụm từ".
 
-### Từ vựng
-- Sổ từ với **lặp lại ngắt quãng (SM-2)**: flashcard 4 mức, gõ lại từ theo nghĩa + câu ví dụ gốc, trắc nghiệm; phát âm; thêm từ tay; số từ mới mỗi ngày.
+### Từ vựng (kiểu MemCab)
+- **FSRS** (ts-fsrs) thay Leitner: 4 trạng thái Sẽ học / Đang học / Ôn tập / Đã thuộc (độ ổn định ≥ 60 ngày); thẻ Leitner cũ được chuyển tự động, không mất tiến độ.
+- **Học từ mới theo nhóm** 5–6 từ qua các bước xen kẽ (giới thiệu → chọn nghĩa → chọn từ → nghe → điền câu → gõ), sai thì làm lại cuối nhóm; xong nhóm có **đoạn ngữ cảnh** chứa các từ vừa học (câu trong đề thật hoặc AI viết).
+- **Ôn tập tự chấm**: thẻ đến hạn, yếu nhất trước; app chấm theo đúng/sai + thời gian để cho điểm FSRS.
+- Bộ từ: 300 từ theo 12 chủ đề (có IPA, nghĩa Anh, dịch ví dụ, collocation), **56 bộ theo đề** (30 từ AWL trong bài Reading của từng đề, câu ví dụ lấy từ bài), **Đã lưu** (từ tra khi đọc/nghe), **Tự tạo** (dán danh sách, tự điền nghĩa; nhập/xuất JSON/CSV). Mỗi bộ có tiến độ, "Học tiếp", "Ôn bộ này".
+- Mỗi thẻ có câu trong đề thật (chỉ mục ngữ cảnh do `npm run data` dựng).
+
+### Hôm nay & Thống kê
+- Trang chủ có kế hoạch **Hôm nay**: Ôn từ đến hạn → Học 5 từ mới → Nghe chép 10 câu → Đoạn ngữ cảnh → Một bài luyện đề.
+- Từ vựng và Nghe-chép dùng chung **XP** và **chuỗi ngày học**. Trang **Thống kê** (`#/stats`): thẻ theo trạng thái, dự báo ôn 7 ngày, tỉ lệ nhớ 30 ngày, câu chép đúng, lịch hoạt động 18 tuần.
 
 ### Tài liệu (nạp hàng loạt)
 - Kéo thả nhiều file: **JSON** (một hoặc nhiều bài, mọi kỹ năng), **Markdown** bài Reading viết tay nhanh, **audio + transcript/SRT cùng tên** → bài Listening, ảnh biểu đồ cho Writing. Định dạng: [public/CONTENT.md](public/CONTENT.md) (có nút tải JSON mẫu trong app).
@@ -83,9 +91,8 @@ public/audio/vol<N>/test<M>/s1..s4.mp3 (+ .srt)   ← npm run audio
 
 ### Ôn từ vựng
 
-Trang **Từ vựng** dùng hộp Leitner 5 hộp, chỉ 2 nút **Nhớ / Chưa nhớ**: nhớ thì từ lên một hộp (ôn lại sau 1 → 2 → 4 → 8 → 16 ngày), quên thì về hộp 1.
-Mỗi ngày bấm **Ôn hôm nay**: từ đến hạn + từ mới (số từ mới/ngày chỉnh ở Cài đặt). Từ mới hiện đủ nghĩa và ví dụ; hộp 1–2 nhìn từ nhớ nghĩa; hộp 3 trở lên nhìn nghĩa gõ lại từ. Cuối buổi hỏi lại từ mới và từ chưa nhớ.
-Nguồn từ: bộ 300 từ IELTS theo 12 chủ đề (`content/vocab/ielts-topics.json`, chọn chủ đề trên trang) và từ tự lưu khi đọc/nghe bài. Phím tắt: Space xem nghĩa, ← chưa nhớ, → nhớ, Enter tiếp.
+Trang **Từ vựng** có 2 nút chính: **Học** (nhóm từ mới từ các bộ đang chọn) và **Ôn** (thẻ đến hạn). Lịch ôn theo FSRS; Cài đặt chỉnh tỉ lệ nhớ mục tiêu, số từ mới/ngày, giới hạn ôn/ngày và các dạng bài.
+Nguồn từ: `content/vocab/ielts-topics.json` (12 chủ đề × 25 từ: `[từ, loại, nghĩa Việt, ví dụ, IPA, nghĩa Anh, dịch ví dụ, collocation "a; b"]`), `content/vocab/awl.json` (Academic Word List → bộ theo đề do `npm run data` chọn), từ tự lưu và bộ tự tạo. Từ trong bộ chỉ thành thẻ khi được học lần đầu.
 
 ### Giao diện thi
 
@@ -173,10 +180,10 @@ Lưu ý về chất lượng dữ liệu:
 src/types.ts            schema Material / Question
 src/db.ts               IndexedDB + state (materials, attempts, vocab, notes, drafts, blobs, bundle = cache bộ đề theo hash trong index.json)
 src/content/samples.ts  nội dung mẫu
-src/lib/                band.ts (quy đổi), text.ts (tách câu, diff từ, so đáp án), tts.ts, srs.ts, importers.ts (JSON/MD/SRT)
+src/lib/                band.ts (quy đổi), text.ts (tách câu, diff từ, so đáp án), tts.ts, srs.ts (FSRS), vocab.ts (bộ từ, bài tập), dictation.ts (chia bài, chấm khớp), context.ts, stats.ts (XP, chuỗi ngày, Hôm nay), importers.ts (JSON/MD/SRT)
 src/ai/                 client.ts (Claude SDK + backend OpenAI-compatible), models.ts (nhà cung cấp, model, giá), writing.ts, speaking.ts, assist.ts (dịch, tra từ, sinh đề)
 src/components/         Questions (mọi dạng câu hỏi), WordPopover, Recorder, AudioPlayer, AiSettings, misc (diff, chart, band)
-src/pages/              SkillList, ReadingTest, ReadingStudy, ListeningTest, Dictation, GapFill, MockTest, Speaking, Writing, Vocab, Library, History, Guide, Settings
+src/pages/              SkillList, ReadingTest, ReadingStudy, ListeningTest, Dictation (hub + bài), GapFill, MockTest, Speaking, Writing, Vocab, VocabSession (học/ôn/ngữ cảnh), Stats, Library, History, Guide, Settings
 server/grader-proxy/    Cloudflare Worker giữ API key, cấp mã truy cập + giới hạn lượt/ngày
 content/                đề gốc đã bóc tách (xem mục trên)
 CLAUDE.md               ghi chú cho Claude Code: lệnh, quy ước dữ liệu, việc còn lại
