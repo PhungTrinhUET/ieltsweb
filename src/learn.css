@@ -295,3 +295,29 @@ a.deck__name:hover strong { color: var(--dk, var(--primary)); }
 .aiw-methods { align-content: start; }
 .aiw-steps ol { font-size: 14px; }
 .fm-entry .dict-entry__ic { background: var(--primary-soft); color: var(--primary); }
+
+/* Học/ôn từ trên màn hình lớn: thẻ to, chữ to cho dễ nhìn. */
+@media (min-width: 761px) {
+  .lt-review .lt-card { min-height: min(64vh, 600px); padding: 44px 48px; gap: 20px; font-size: 17px; }
+  .lt-review .lt-word--big strong { font-size: 60px; }
+  .lt-review .lt-ipa { font-size: 19px; }
+  .lt-review .lt-en { font-size: 17px; max-width: 56ch; }
+  .lt-review .lt-ex--fill { font-size: 21px; }
+  .lt-review .lt-exvi { font-size: 15.5px; }
+  .lt-review .lt-opts, .lt-review .lt-card .lt-type { max-width: 720px; }
+  .lt-review .lt-opt { min-height: 64px; font-size: 17.5px; padding: 14px 18px; }
+  .lt-review .lt-card .btn { font-size: 17px; padding: 12px 22px; }
+  .lt-review .lt-listen { width: 110px; height: 110px; }
+  .lt-review .lt-card .dl-input { font-size: 18px; }
+  .lt-review .lt-know { font-size: 15.5px; }
+  .lt-review .topbar__title strong { font-size: 19px; }
+  .lt-review .lt-mean { font-size: 28px; }
+  .lt-review .lt-ex { font-size: 19px; max-width: 60ch; }
+  .lt-review .lt-ask { font-size: 18px; }
+  .lt-review .lt-tag { font-size: 13.5px; padding: 2px 10px; }
+  .lt-review .lt-colloc .chip { font-size: 15px; padding: 6px 14px; }
+  .lt-review .ctx { padding: 12px 16px; }
+  .lt-review .ctx p { font-size: 16.5px; }
+  .lt-review .ctx__title, .lt-review .ctx__src { font-size: 13.5px; }
+  .lt-review .lt-card .btn .kbd, .lt-review .lt-card .btn kbd { font-size: 12px; }
+}

@@ -70,7 +70,7 @@ export default function WritingList() {
   const tipType = type || null;
 
   return (
-    <div className="page wlist" style={{ ['--skill' as string]: meta.color }} data-testid="wlist">
+    <div className="page" style={{ ['--skill' as string]: meta.color }} data-testid="wlist">
       <div className="page-head">
         <span className="skill__icon skill__icon--lg"><Icon size={26} /></span>
         <div><h1>{meta.label}</h1><p>{meta.desc}</p></div>
