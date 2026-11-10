@@ -2,9 +2,9 @@
 import { useEffect, useState } from 'react';
 import Timer from '../components/Timer';
 import { useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft, Bot, BookmarkPlus, Check, FileCheck2, Loader2, Sparkles, Timer as TimerIcon, Volume2 } from 'lucide-react';
+import { ArrowLeft, Bot, FileCheck2, Loader2, Sparkles, Timer as TimerIcon, Volume2 } from 'lucide-react';
 import type { SpeakingMaterial } from '../types';
-import { addAttempt, findCard, getState, saveBlob, saveCard, updateAttempt, useDb } from '../db';
+import { addAttempt, getState, saveBlob, updateAttempt, useDb } from '../db';
 import { aiReady, getAiConfig, setLastOpen, touchStreak, useAiConfig } from '../store';
 import SelfCheck from '../components/SelfCheck';
 import Recorder, { speechRecognitionAvailable, type Recording } from '../components/Recorder';
@@ -12,7 +12,7 @@ import { speak, stopSpeak } from '../lib/tts';
 import { Collapse } from '../components/ui';
 import { SpeakingGradeView } from '../components/GradeViews';
 import type { SpeakingGrade, SpeakingTurn } from '../ai/speaking';
-import { newCard } from '../lib/srs';
+import { DeckSelect, SaveWordBtn, useDeckChoice } from '../components/DeckPicker';
 import { SKILL_META } from './SkillList';
 
 type Part = 1 | 2 | 3;
@@ -22,6 +22,7 @@ export default function Speaking() {
   const { id } = useParams();
   const db = useDb();
   const nav = useNavigate();
+  const [deck, setDeck] = useDeckChoice(id);
   const m = db.materials[id!] as SpeakingMaterial | undefined;
   const [part, setPart] = useState<Part>(m?.part1?.length ? 1 : m?.part2 ? 2 : 3);
   const [turns, setTurns] = useState<Record<Part, Turn[]>>({ 1: [], 2: [], 3: [] });
@@ -103,9 +104,9 @@ export default function Speaking() {
       </div>
 
       {(part as number) === 0 && (
-        <ul className="vlist card">{m.vocab!.map((v, i) => { const saved = !!findCard(v[0]); return (
+        <div className="stack"><DeckSelect from={m.id} value={deck} onChange={setDeck} /><ul className="vlist card">{m.vocab!.map((v, i) => (
           <li key={i} className="vlist__row"><div className="vlist__body"><strong className="vocab__w">{v[0]}</strong> <em className="vocab__pos">{v[1]}</em><div className="vocab__vi">{v[2]}</div>{v[3] && <div className="vocab__ex">{v[3]}</div>}</div>
-            <button className="icon-btn" disabled={saved} onClick={() => saveCard(newCard({ id: `v-${v[0]}-${Date.now().toString(36)}`, word: v[0], pos: v[1], meaning: v[2], example: v[3], from: m.id }))}>{saved ? <Check size={16} /> : <BookmarkPlus size={16} />}</button></li>); })}</ul>
+            <SaveWordBtn deck={deck} f={{ word: v[0], pos: v[1], meaning: v[2], example: v[3], from: m.id }} /></li>))}</ul></div>
       )}
 
       {part === 2 && m.part2 && (

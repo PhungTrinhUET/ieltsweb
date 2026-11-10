@@ -33,6 +33,8 @@ export default function VocabEx({ ex, onDone, onKnow, label }: { ex: Ex; onDone:
   const [marks, setMarks] = useState<ReturnType<typeof checkDict> | null>(null);
   const input = useRef<HTMLInputElement & HTMLTextAreaElement>(null);
   const timer = useRef<number>(0);
+  // Bước giới thiệu = thẻ lật: mặt trước là từ (+ âm), lật ra nghĩa, ví dụ, câu trong đề.
+  const [flipped, setFlipped] = useState(false);
 
   const playSentence = () => { if (ex.clip) playClip(ex.clip.audio, ex.clip.start, ex.clip.end); else if (ex.sentence) sayWord(ex.sentence, 0.85); };
   const audio = () => (ex.step === 'dictate' ? playSentence() : sayWord(c.word));
@@ -76,7 +78,7 @@ export default function VocabEx({ ex, onDone, onKnow, label }: { ex: Ex; onDone:
   useEffect(() => {
     const k = (e: KeyboardEvent) => {
       const tag = (e.target as HTMLElement).tagName;
-      if (ex.step === 'intro' && (e.key === 'Enter' || e.key === 'ArrowRight') && tag !== 'INPUT') { e.preventDefault(); finish({ ok: true, ms: Date.now() - t0.current }); return; }
+      if (ex.step === 'intro' && (e.key === 'Enter' || e.key === 'ArrowRight' || e.key === ' ') && tag !== 'INPUT') { e.preventDefault(); if (!flipped) setFlipped(true); else finish({ ok: true, ms: Date.now() - t0.current }); return; }
       if (choiceUi && !res && /^[1-4]$/.test(e.key) && tag !== 'INPUT') { e.preventDefault(); pick(+e.key - 1); return; }
       if (res && e.key === 'Enter' && tag !== 'TEXTAREA') { e.preventDefault(); finish(res); }
     };
@@ -102,8 +104,14 @@ export default function VocabEx({ ex, onDone, onKnow, label }: { ex: Ex; onDone:
     <div className="lt-card card" data-step={ex.step} data-testid="vx">
       <div className="lt-card__tag">{label}{c.pos && ex.step !== 'type' && <em className="vocab__pos">{c.pos}</em>}</div>
 
-      {ex.step === 'intro' ? (
-        <>
+      {ex.step === 'intro' && !flipped ? (
+        <div className="lt-flip" role="button" tabIndex={0} onClick={() => setFlipped(true)} data-testid="vx-front">
+          <WordHead c={c} big />
+          <p className="lt-ask">Bạn có nhớ nghĩa? Nghĩ trong đầu rồi lật thẻ.</p>
+          <div className="lt-actions"><button className="btn btn--primary btn--lg" onClick={(e) => { e.stopPropagation(); setFlipped(true); }} autoFocus>Lật thẻ <small>Enter</small></button></div>
+        </div>
+      ) : ex.step === 'intro' ? (
+        <div className="lt-flip is-back">
           <WordHead c={c} big />
           <p className="lt-mean">{c.meaning}</p>
           {c.meaningEn && <p className="lt-en">{c.meaningEn}</p>}
@@ -113,7 +121,7 @@ export default function VocabEx({ ex, onDone, onKnow, label }: { ex: Ex; onDone:
             <div className="ctx"><div className="ctx__title small muted">Câu bạn đã lưu</div><p>{c.context.text}</p>{c.context.label && <span className="small muted">{c.context.label}</span>}</div>
           ) : <ContextList word={c.word} max={1} />}
           <div className="lt-actions"><button className="btn btn--primary btn--lg" onClick={() => finish({ ok: true, ms: Date.now() - t0.current })} autoFocus>Đã nhớ, tiếp <small>Enter</small></button></div>
-        </>
+        </div>
       ) : (
         <>
           {prompt}

@@ -9,6 +9,7 @@ import { addLog, getKv, saveCard, setKv, useDb } from '../db';
 import type { VocabCard } from '../types';
 import { autoRating, cardState, dueCards, finishLearning, grade, isLearned, learnedToday, markKnown, startOfDay, STATE_NAMES } from '../lib/srs';
 import { blankOut, cardFromDeck, enrich, type Ex, inDeck, makeEx, type PoolWord, type Step, useAllDecks, xpFor } from '../lib/vocab';
+import { deckWordsOf } from '../lib/decks';
 import { contextFor, type CtxSent, matAudio, srcLabel } from '../lib/context';
 import { shuffle } from '../lib/text';
 import { speak, ttsAvailable } from '../lib/tts';
@@ -21,15 +22,23 @@ export const TOPIC_KEY = 'ielts:vocab-topics';
 export function readTopics(): string[] | null { try { return JSON.parse(localStorage.getItem(TOPIC_KEY) ?? 'null'); } catch { return null; } }
 const GROUP = 6;
 
-function usePool(): PoolWord[] {
+/** Kho phương án nhiễu: bộ đang học nếu có ≥ 4 từ (nhiễu cùng chủ đề), không thì mọi bộ + vốn từ. */
+function usePool(deck = ''): PoolWord[] {
   const db = useDb();
   const decks = useAllDecks();
   return useMemo(() => {
     const m = new Map<string, PoolWord>();
-    for (const d of decks ?? []) for (const w of d.words) m.set(w.word.toLowerCase(), { word: w.word, pos: w.pos, meaning: w.vi });
+    const d = deck ? decks?.find((x) => x.id === deck) : undefined;
+    if (d) {
+      for (const w of deckWordsOf(d)) if (w.vi) m.set(w.word.toLowerCase(), { word: w.word, pos: w.pos, meaning: w.vi });
+      for (const c of Object.values(db.vocab)) if (c.kind !== 'sentence' && c.meaning && inDeck(c, deck)) m.set(c.word.toLowerCase(), { word: c.word, pos: c.pos, meaning: c.meaning });
+      if (m.size >= 4) return [...m.values()];
+      m.clear();
+    }
+    for (const x of decks ?? []) for (const w of x.words) m.set(w.word.toLowerCase(), { word: w.word, pos: w.pos, meaning: w.vi });
     for (const c of Object.values(db.vocab)) if (c.kind !== 'sentence' && c.meaning) m.set(c.word.toLowerCase(), { word: c.word, pos: c.pos, meaning: c.meaning });
     return [...m.values()];
-  }, [decks, db.vocab]);
+  }, [decks, db.vocab, deck]);
 }
 /** Câu thật cho mỗi thẻ (tải trước để bài điền câu / chép câu có câu mới). */
 function useContexts(cards: VocabCard[] | null) {
@@ -81,7 +90,7 @@ export function VocabLearn() {
   const deckParam = sp.get('deck') ?? '';
   const more = sp.has('more');
   const decks = useAllDecks();
-  const pool = usePool();
+  const pool = usePool(deckParam);
 
   // Chọn nhóm từ một lần khi đủ dữ liệu.
   const [group, setGroup] = useState<VocabCard[] | null>(null);
@@ -95,7 +104,7 @@ export function VocabLearn() {
     const own = cards.filter((c) => !isLearned(c) && !c.stage && !!c.meaning && ok(c)).sort((a, b) => a.addedAt - b.addedAt);
     const chosen = readTopics();
     const fromDeck = decks.filter((d) => (deckParam ? d.id === deckParam : d.kind === 'topic' && (!chosen || chosen.includes(d.id.slice(5)))))
-      .flatMap((d) => d.words.filter((w) => !byWord.has(w.word.toLowerCase())).map((w) => cardFromDeck(w, d.id)));
+      .flatMap((d) => (deckParam ? deckWordsOf(d) : d.words).filter((w) => !byWord.has(w.word.toLowerCase())).map((w) => cardFromDeck(w, d.id)));
     const wordOf = new Map(decks.flatMap((d) => d.words.map((w) => [w.word.toLowerCase(), [w, d.id] as const])));
     const pick = [...doing, ...own, ...fromDeck].slice(0, Math.min(GROUP, left || 0))
       .map((c) => { const e = wordOf.get(c.word.toLowerCase()); return e ? enrich(c, e[0], deckParam || undefined) : c; });
@@ -225,7 +234,7 @@ export function VocabReview() {
   const nav = useNavigate();
   const [sp] = useSearchParams();
   const deckParam = sp.get('deck') ?? '';
-  const pool = usePool();
+  const pool = usePool(deckParam);
   const [list, setList] = useState<VocabCard[] | null>(null);
   useEffect(() => {
     if (list || !db.ready) return;
@@ -324,7 +333,7 @@ export function VocabReview() {
 // =====================================================================================
 // A4. Đoạn ngữ cảnh cuối nhóm: AI (đoạn 120–180 từ + câu hỏi, lưu lại) hoặc điền từ vào 3–5 câu thật.
 // =====================================================================================
-export function ContextPassage({ cards, onDone }: { cards: VocabCard[]; onDone: (correct?: number) => void }) {
+export function ContextPassage({ cards, onDone, gradeCards }: { cards: VocabCard[]; onDone: (correct?: number) => void; gradeCards?: boolean }) {
   const db = useDb();
   const ai = aiReady(getAiConfig());
   // AI: thêm vài từ đang học/ôn tập để đủ 6–10 từ.
@@ -357,7 +366,7 @@ export function ContextPassage({ cards, onDone }: { cards: VocabCard[]; onDone: 
             <div className="row"><button className="btn btn--primary" onClick={gen} disabled={busy}><Sparkles size={16} /> {busy ? 'Đang tạo…' : 'Tạo đoạn văn'}</button><button className="btn btn--ghost" onClick={() => onDone()}>Bỏ qua</button></div>
           </div>
         )
-      ) : <GapFill cards={cards} onDone={onDone} />}
+      ) : <GapFill cards={cards} onDone={onDone} gradeCards={gradeCards} />}
     </div>
   );
 }
@@ -388,7 +397,7 @@ function AiPassage({ d, onDone }: { d: ContextPassageData; onDone: (n?: number) 
   );
 }
 
-function GapFill({ cards, onDone }: { cards: VocabCard[]; onDone: (n?: number) => void }) {
+function GapFill({ cards, onDone, gradeCards }: { cards: VocabCard[]; onDone: (n?: number) => void; gradeCards?: boolean }) {
   const db = useDb();
   const [items, setItems] = useState<{ c: VocabCard; text: string; form: string; mid?: string }[] | null>(null);
   useEffect(() => {
@@ -428,7 +437,17 @@ function GapFill({ cards, onDone }: { cards: VocabCard[]; onDone: (n?: number) =
         })}
       </ol>
       {checked ? <><p><strong>{right}/{items.length}</strong> câu đúng</p><button className="btn btn--primary" onClick={() => onDone(right)}>Xong</button></>
-        : <button className="btn btn--primary" onClick={() => { setChecked(true); addLog({ kind: 'context', ok: right === items.length, score: right / items.length, xp: right * 2 }); }}>Kiểm tra</button>}
+        : <button className="btn btn--primary" data-testid="gap-check" onClick={async () => {
+          setChecked(true); addLog({ kind: 'context', ok: right === items.length, score: right / items.length, xp: right * 2 });
+          // Luyện theo ngữ cảnh của một bộ: kết quả từng câu cập nhật tiến độ ôn của thẻ (đúng → Good, sai → Again).
+          if (gradeCards) for (const [i, x] of items.entries()) {
+            const c = db.vocab[x.c.id];
+            if (!c || !isLearned(c)) continue;
+            const ok = (ans[i] ?? '').toLowerCase() === x.c.word.toLowerCase();
+            await saveCard(grade(c, ok ? 3 : 1));
+            addLog({ cardId: c.id, kind: 'context', ok, rating: ok ? 3 : 1, stab: c.stability, xp: 0 });
+          }
+        }}>Kiểm tra</button>}
     </div>
   );
 }
@@ -439,21 +458,30 @@ function GapFill({ cards, onDone }: { cards: VocabCard[]; onDone: (n?: number) =
 export function VocabContext() {
   const db = useDb();
   const nav = useNavigate();
+  const [sp] = useSearchParams();
+  const deck = sp.get('deck') ?? '';
+  const decks = useAllDecks();
+  const dname = deck ? decks?.find((d) => d.id === deck)?.name : undefined;
   const [done, setDone] = useState<number | null>(null);
-  const cards = useMemo(() => Object.values(db.vocab).filter((c) => c.kind !== 'sentence' && isLearned(c) && c.meaning)
-    .sort((a, b) => (b.lastReview ?? b.learnedAt ?? 0) - (a.lastReview ?? a.learnedAt ?? 0)).slice(0, 8), [db.ready]); // eslint-disable-line react-hooks/exhaustive-deps
-  const exit = () => nav('/');
+  // Theo bộ: 8–10 từ của bộ đã học (yếu nhất trước); không thì 8 từ học gần nhất.
+  const cards = useMemo(() => {
+    const all = Object.values(db.vocab).filter((c) => c.kind !== 'sentence' && isLearned(c) && c.meaning && (!deck || inDeck(c, deck)));
+    return deck ? all.sort((a, b) => (a.stability ?? 0) - (b.stability ?? 0)).slice(0, 10)
+      : all.sort((a, b) => (b.lastReview ?? b.learnedAt ?? 0) - (a.lastReview ?? a.learnedAt ?? 0)).slice(0, 8);
+  }, [db.ready]); // eslint-disable-line react-hooks/exhaustive-deps
+  const back = deck ? `/vocab/deck/${encodeURIComponent(deck)}` : '/';
+  const exit = () => nav(back);
   if (!db.ready) return null;
   if (cards.length < 3) return (
-    <Shell title="Đoạn ngữ cảnh" sub="Từ vựng" progress={0} onExit={exit}>
-      <p className="empty">Cần ít nhất 3 từ đã học. <Link to="/vocab/learn">Học từ mới</Link> trước nhé.</p>
+    <Shell title="Luyện theo ngữ cảnh" sub={dname ?? 'Từ vựng'} progress={0} onExit={exit}>
+      <p className="empty">Cần ít nhất 3 từ đã học{deck ? ' trong bộ này' : ''}. <Link to={`/vocab/learn?more=1${deck ? `&deck=${encodeURIComponent(deck)}` : ''}`}>Học từ mới</Link> trước nhé.</p>
     </Shell>
   );
   return (
-    <Shell title="Đoạn ngữ cảnh" sub={`${cards.length} từ học gần đây`} progress={done == null ? 0 : 1} onExit={exit}>
+    <Shell title="Luyện theo ngữ cảnh" sub={dname ? `${dname} · ${cards.length} từ` : `${cards.length} từ học gần đây`} progress={done == null ? 0 : 1} onExit={exit}>
       {done == null
-        ? <ContextPassage cards={cards} onDone={(ok) => { touchStreak(); setDone(ok ?? 0); }} />
-        : <Summary title="Xong đoạn ngữ cảnh 🎉" lines={[`+${done * 2} XP`]}><div className="row"><Link className="btn btn--primary" to="/">Về Trang chủ</Link><Link className="btn btn--ghost" to="/stats">Thống kê</Link></div></Summary>}
+        ? <ContextPassage cards={cards} gradeCards={!!deck} onDone={(ok) => { touchStreak(); setDone(ok ?? 0); }} />
+        : <Summary title="Xong đoạn ngữ cảnh 🎉" lines={[`+${done * 2} XP`]}><div className="row"><Link className="btn btn--primary" to={back}>{deck ? 'Về bộ từ' : 'Về Trang chủ'}</Link><Link className="btn btn--ghost" to="/stats">Thống kê</Link></div></Summary>}
     </Shell>
   );
 }

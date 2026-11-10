@@ -331,6 +331,7 @@ for (const profile of Object.keys(PROFILES)) {
   // ---------- E: Từ vựng (FSRS, học theo nhóm, ôn tự chấm) ----------
   await check(`[${profile}] E1 Từ vựng: trang chính có bộ từ, Hôm nay, câu trong đề`, async () => {
     await go(page, '/vocab');
+    await page.getByTestId('deck-tab-builtin').click();
     await page.waitForSelector('[data-testid="deck"]', { timeout: 8000 });
     const decks = await page.locator('[data-testid="deck"]').count();
     const today = await page.locator('[data-testid="vocab-learn"]').count();
@@ -344,7 +345,7 @@ for (const profile of Object.keys(PROFILES)) {
       const vx = p.locator('[data-testid="vx"]');
       await vx.waitFor({ timeout: 5000 });
       const step = await vx.getAttribute('data-step'); kinds.add(step);
-      if (step === 'intro') { await p.getByRole('button', { name: /Đã nhớ, tiếp/ }).click(); await p.waitForTimeout(80); continue; }
+      if (step === 'intro') { if (await p.getByTestId('vx-front').count()) await p.locator('.lt-actions button', { hasText: 'Lật thẻ' }).click(); await p.getByRole('button', { name: /Đã nhớ, tiếp/ }).click(); await p.waitForTimeout(80); continue; }
       if (await p.locator('.lt-opt').count()) {
         if (wrong > 0) { wrong--; await p.locator('.lt-opt:not([data-right])').first().click(); await p.getByRole('button', { name: /Tiếp/ }).click(); }
         else { await p.locator('.lt-opt[data-right]').click(); await p.waitForTimeout(1000); }
@@ -397,21 +398,100 @@ for (const profile of Object.keys(PROFILES)) {
     return { ok: migrated?.stability === 4 && /1[02] từ cần ôn|\d+ từ cần ôn/.test(today) && graded >= 10 && /Nhớ ngay \d+\/1[02]/.test(sum) && !page.errors.length,
       info: `S=${migrated?.stability} ${today.split('\n')[0]} · lượt=${r.steps} dạng=${r.kinds} · đã chấm ${graded} · ${sum.split('\n')[1]} ${page.errors.join(' | ')}` };
   });
-  await check(`[${profile}] E4 bộ tự tạo: dán danh sách → bộ có tiến độ, Học tiếp`, async () => {
+  const kvDecks = (p) => p.evaluate(() => new Promise((res) => { const r = indexedDB.open('ielts-practice', 3); r.onsuccess = () => { const q = r.result.transaction('kv').objectStore('kv').getAll(); q.onsuccess = () => res(q.result.filter((v) => v && v.words && v.id && v.name)); }; }));
+  await check(`[${profile}] E4 tra từ Reading → tạo bộ "VOL 1 · Test 1" ngay trong popover; từ thứ 2 mặc định vào bộ đó`, async () => {
+    page.errors.length = 0;
+    await page.route(/api\.datamuse\.com|api\.mymemory\.translated\.net|dictionaryapi\.dev/, (r) => r.fulfill({ status: 404, headers: { 'access-control-allow-origin': '*' }, body: '' }));
+    await go(page, '/reading/vol1-t1-r1/practice');
+    const words = page.locator('.passage .w, .passage [data-w]');
+    const pick = async (i) => {
+      if (profile === 'iphone') await page.locator('.tabs--mobile .tabs__btn').first().click();
+      await words.nth(i).click(); await page.waitForSelector('.wpop', { timeout: 5000 });
+      await page.getByTestId('wpop-savebtn').click();
+      await page.locator('.wpop__form label', { hasText: 'Nghĩa tiếng Việt' }).locator('input').fill('nghĩa thử');
+    };
+    await pick(5);
+    await page.getByTestId('deckpick').selectOption('__new');
+    const pre = await page.locator('[data-testid="deckpick-new"] input').inputValue();
+    await page.getByTestId('deckpick-create').click();
+    await page.getByTestId('wpop-save').click();
+    await page.keyboard.press('Escape'); await page.waitForTimeout(200);
+    await pick(12);
+    const def = await page.getByTestId('deckpick').locator('option:checked').innerText();
+    await page.getByTestId('wpop-save').click();
+    await page.keyboard.press('Escape');
+    const d = (await kvDecks(page)).find((x) => x.name === 'VOL 1 · Test 1');
+    await go(page, '/test/reading/vol1-t1');
+    const line = await page.getByTestId('test-saved-words').innerText().catch(() => '');
+    await page.unrouteAll({ behavior: 'ignoreErrors' });
+    return { ok: pre === 'VOL 1 · Test 1' && /VOL 1 · Test 1/.test(def) && d?.words.length === 2 && /\(2\)/.test(line) && !page.errors.length, info: `gợi ý="${pre}" mặc định="${def}" từ=${d?.words.length} "${line.replace(/\s+/g, ' ')}" ${page.errors.join(' | ')}` };
+  });
+  await check(`[${profile}] E5 tạo bộ: dán 5 dòng (1 trùng) → 4 từ; Học từ mới chỉ có từ trong bộ; tràn ngang`, async () => {
     await go(page, '/vocab');
-    await page.getByRole('tab', { name: /Tự tạo/ }).click();
-    await page.locator('[data-testid="deck-new"]').click();
-    await page.locator('[data-testid="deck-name"]').fill('Bộ thử');
-    await page.locator('[data-testid="deck-text"]').fill('scarcity | sự khan hiếm\ninfrastructure - cơ sở hạ tầng\nmitigate');
-    await page.locator('form button[type=submit]', { hasText: 'Tạo bộ' }).click();
-    await page.waitForSelector('[data-testid="deck-msg"]', { timeout: 15000 });
-    const deck = page.locator('[data-testid="deck"]', { hasText: 'Bộ thử' });
-    const n = await deck.locator('.deck__n').innerText();
+    await page.getByTestId('deck-new').click();
+    await page.getByTestId('dk-name').fill('Bộ thử');
+    await page.getByTestId('dk-tab-paste').click();
+    await page.getByTestId('dk-paste').fill('scarcity - sự khan hiếm\ninfrastructure\tcơ sở hạ tầng\nmitigate\ndeforestation; n; nạn phá rừng\nScarcity - khan hiếm');
+    await page.getByTestId('dk-paste-add').click();
+    const staged = await page.locator('[data-testid="dk-stage"] li').count();
+    await page.getByTestId('dk-finish').click();
+    await page.waitForSelector('[data-testid="deck-page"]', { timeout: 8000 });
+    const n = await page.locator('[data-testid="dk-words"] > li').count();
     const over = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
-    await deck.getByRole('link', { name: 'Học tiếp' }).click();
-    await page.waitForSelector('[data-testid="vx"]', { timeout: 8000 });
-    const w = await page.locator('.lt-word strong').first().innerText();
-    return { ok: /^\d\/3$/.test(n) && over <= 1 && ['scarcity', 'infrastructure', 'mitigate'].includes(w), info: `${n} từ đầu=${w} tràn=${over}` };
+    await page.getByTestId('dk-learn').click();
+    const seen = new Set();
+    for (let i = 0; i < 40 && !(await page.locator('[data-testid="vx-summary"], [data-testid="ctx-passage"]').count()); i++) {
+      await page.locator('[data-testid="vx"]').waitFor({ timeout: 5000 });
+      const w = await page.locator('.lt-word strong').first().innerText().catch(() => '');
+      if (w) seen.add(w.toLowerCase());
+      if ((await page.locator('[data-testid="vx"]').getAttribute('data-step')) !== 'intro') break;
+      if (await page.getByTestId('vx-front').count()) await page.locator('.lt-actions button', { hasText: 'Lật thẻ' }).click();
+      await page.getByRole('button', { name: /Đã nhớ, tiếp/ }).click(); await page.waitForTimeout(80);
+    }
+    const all = ['scarcity', 'infrastructure', 'mitigate', 'deforestation'];
+    return { ok: staged === 4 && n === 4 && over <= 1 && seen.size > 0 && [...seen].every((w) => all.includes(w)), info: `chờ=${staged} bộ=${n} từ học=${[...seen].join(',')} tràn=${over}` };
+  });
+  await check(`[${profile}] E6 chia sẻ link → mở ở trình duyệt khác → thêm bộ`, async () => {
+    await go(page, '/vocab');
+    await page.locator('[data-testid="deck"]', { hasText: 'Bộ thử' }).first().getByRole('link', { name: /Bộ thử|Mở bộ/ }).first().click();
+    await page.getByTestId('dk-share').click();
+    const url = await page.getByTestId('dk-share-url').inputValue();
+    const p = await newPage(profile);
+    await p.goto(url.replace(/^https?:\/\/[^/]+\/[^#]*/, page.url().replace(/#.*$/, '')));
+    await p.getByTestId('share-add').click();
+    await p.waitForSelector('[data-testid="deck-page"]', { timeout: 8000 });
+    const n = await p.locator('[data-testid="dk-words"] > li').count();
+    const src = (await kvDecks(p)).map((x) => x.source).join(',');
+    await p.context().close();
+    return { ok: n === 4 && src === 'shared', info: `link=${url.length} kí tự, nhận ${n} từ, nguồn=${src}` };
+  });
+  await check(`[${profile}] E7 sao chép bộ có sẵn thành bộ của tôi + sửa nghĩa`, async () => {
+    await go(page, '/vocab/deck/' + encodeURIComponent('deck:education'));
+    await page.getByTestId('dk-copy').click();
+    await page.waitForURL(/my%3A|my:/, { timeout: 8000 });
+    const row = page.locator('[data-testid="dk-words"] > li').first();
+    const w = await row.locator('strong').first().innerText();
+    await row.getByRole('button', { name: `Sửa ${w}` }).click();
+    await page.getByTestId('dk-edit-vi').fill('nghĩa đã sửa');
+    await page.getByTestId('dk-edit-save').click();
+    await page.waitForTimeout(300);
+    const txt = await page.locator('[data-testid="dk-words"]').innerText();
+    return { ok: txt.includes('nghĩa đã sửa'), info: `${decodeURIComponent(page.url().split('#')[1])} từ=${w}` };
+  });
+  await check(`[${profile}] E8 Writing: nút lưu từ dùng ô chọn bộ`, async () => {
+    await go(page, '/writing/wr-gt-wf1');
+    await page.locator('.xtool', { hasText: 'Gợi ý' }).first().click();
+    await page.getByText(/Từ vựng gợi ý/).first().click();
+    const sel = page.getByTestId('deckpick');
+    await sel.first().waitFor({ timeout: 8000 });
+    const opt = await sel.first().locator('option', { hasText: 'Bộ thử' }).first().getAttribute('value');
+    await sel.first().selectOption(opt);
+    const li = page.locator('[data-testid="w-vocab"] li').first();
+    const w = await li.locator('strong').innerText();
+    await li.locator('button').click();
+    await page.waitForTimeout(300);
+    const d = (await kvDecks(page)).find((x) => `my:${x.id}` === opt);
+    return { ok: !!d?.words.some((x) => x.word === w), info: `${w} → ${d?.name}` };
   });
 
   // ---------- F: Nghe & chép ----------

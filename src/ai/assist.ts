@@ -166,3 +166,28 @@ export function contextPassage(words: { word: string; meaning: string }[], cfg: 
     `Viết một đoạn 120–180 từ dùng TẤT CẢ các từ sau (có thể chia dạng), mỗi từ bọc **…**:\n${words.map((w) => `- ${w.word} (${w.meaning})`).join('\n')}\n\nSau đó soạn 3–5 câu hỏi trắc nghiệm 4 lựa chọn kiểm tra nghĩa các từ trong ngữ cảnh đoạn văn.`,
     { light: true, maxTokens: 3000 });
 }
+
+// ---------- Bộ từ: tạo bằng AI / chọn từ trong đoạn văn ----------
+const DeckGenSchema = z.object({
+  words: z.array(z.array(z.string())).describe('Mỗi phần tử: [word, pos (n/v/adj/adv/phr), nghĩa tiếng Việt ngắn, câu ví dụ tiếng Anh tự nhiên, IPA dạng /.../]'),
+});
+const DeckWordRow = z.tuple([z.string().min(1), z.string(), z.string().min(1), z.string(), z.string()]);
+/** Sinh bộ từ theo chủ đề + band; mỗi dòng được kiểm bằng zod, dòng hỏng bị bỏ. */
+export async function genDeckWords(topic: string, band: string, count: number, cfg: AiConfig) {
+  const n = Math.max(10, Math.min(50, count));
+  const out = await callStructured(cfg, DeckGenSchema, 'Bạn soạn bộ từ vựng IELTS cho người Việt. Chọn từ/cụm hữu ích cho Writing/Speaking, không trùng, đúng trình độ.',
+    `Chủ đề: ${topic}\nBand mục tiêu: ${band || '6.5'}\nSố từ: đúng ${n}.\nTrả về JSON { "words": [[word, pos, vi, example, ipa], ...] }.`, { light: true, maxTokens: 6000 });
+  const seen = new Set<string>();
+  return out.words.map((r) => DeckWordRow.safeParse([...r, '', '', ''].slice(0, 5))).filter((r) => r.success).map((r) => r.data!)
+    .filter(([w]) => { const k = w.toLowerCase(); if (seen.has(k)) return false; seen.add(k); return true; })
+    .map(([word, pos, vi, ex, ipa]) => ({ word, pos, vi, ex: ex || undefined, ipa: ipa || undefined }));
+}
+const PickSchema = z.object({
+  words: z.array(z.object({ word: z.string().describe('Từ/cụm đúng như trong đoạn (dạng gốc nếu cần)'), pos: z.string(), vi: z.string().describe('Nghĩa tiếng Việt theo ngữ cảnh'), sentence: z.string().describe('Nguyên câu trong đoạn chứa từ') })),
+});
+/** Gợi ý 10–20 từ đáng học trong một đoạn văn, kèm câu gốc làm ví dụ. */
+export async function pickPassageWords(text: string, cfg: AiConfig) {
+  const out = await callStructured(cfg, PickSchema, 'Bạn giúp người Việt học IELTS chọn từ vựng học thuật đáng học (bỏ từ quá dễ).',
+    `Chọn 10–20 từ/cụm đáng học nhất trong đoạn sau, kèm nghĩa Việt theo ngữ cảnh và nguyên câu chứa từ:\n\n${text.slice(0, 6000)}`, { light: true, maxTokens: 4000 });
+  return out.words.filter((w) => w.word.trim()).map((w) => ({ word: w.word.trim(), pos: w.pos, vi: w.vi, ex: w.sentence }));
+}

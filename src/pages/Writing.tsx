@@ -1,9 +1,9 @@
 // Writing: đề + biểu đồ, dàn ý, soạn bài (đếm từ, bấm giờ, tự lưu nháp), AI chấm theo 4 tiêu chí IELTS.
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Bot, BookmarkPlus, Check, Eye, FileCheck2, Lightbulb, Loader2, Sparkles } from 'lucide-react';
+import { Bot, Check, Eye, FileCheck2, Lightbulb, Loader2, Sparkles } from 'lucide-react';
 import type { WritingMaterial } from '../types';
-import { addAttempt, findCard, updateAttempt, resolveUrl, saveCard, saveDraft, useDb } from '../db';
+import { addAttempt, updateAttempt, resolveUrl, saveDraft, useDb } from '../db';
 import { aiReady, getAiConfig, setLastOpen, touchStreak, useAiConfig } from '../store';
 import SelfCheck from '../components/SelfCheck';
 import { ExamClock, ExamFrame, ExamSheet, ExamSplit } from '../components/Exam';
@@ -14,12 +14,13 @@ import { WritingGradeView } from '../components/GradeViews';
 import { STRUCTURE, TYPE_LABEL, chartsOf, promptParas } from '../lib/writing';
 import type { WritingGrade } from '../ai/writing';
 import { wordCount } from '../lib/text';
-import { newCard } from '../lib/srs';
+import { DeckSelect, SaveWordBtn, useDeckChoice } from '../components/DeckPicker';
 
 export default function Writing() {
   const { id } = useParams();
   const db = useDb();
   const nav = useNavigate();
+  const [deck, setDeck] = useDeckChoice(id);
   const m = db.materials[id!] as WritingMaterial | undefined;
   const key = `w-${id}`;
   const [text, setText] = useState(db.drafts[key] ?? '');
@@ -98,7 +99,8 @@ export default function Writing() {
         {m.sample && <Collapse title="Bài mẫu (xem sau khi viết xong!)" tone="info">{sampleBox}</Collapse>}
         {m.vocab?.length ? (
           <Collapse title={`Từ vựng gợi ý (${m.vocab.length})`} tone="info">
-            <ul className="vlist">{m.vocab.map((v, i) => { const saved = !!findCard(v[0]); return <li key={i} className="vlist__row"><div className="vlist__body"><strong className="vocab__w">{v[0]}</strong> <em className="vocab__pos">{v[1]}</em> – {v[2]}{v[3] && <div className="small muted">{v[3]}</div>}</div><button className="icon-btn" disabled={saved} title={saved ? 'Đã có trong Vốn từ' : 'Lưu vào Vốn từ'} onClick={() => saveCard(newCard({ id: `v-${v[0]}-${Date.now().toString(36)}`, word: v[0], pos: v[1], meaning: v[2], example: v[3], from: m.id }))}>{saved ? <Check size={16} /> : <BookmarkPlus size={16} />}</button></li>; })}</ul>
+            <DeckSelect from={m.id} value={deck} onChange={setDeck} />
+            <ul className="vlist" data-testid="w-vocab">{m.vocab.map((v, i) => <li key={i} className="vlist__row"><div className="vlist__body"><strong className="vocab__w">{v[0]}</strong> <em className="vocab__pos">{v[1]}</em> – {v[2]}{v[3] && <div className="small muted">{v[3]}</div>}</div><SaveWordBtn deck={deck} f={{ word: v[0], pos: v[1], meaning: v[2], example: v[3], from: m.id }} /></li>)}</ul>
           </Collapse>
         ) : null}
       </>}

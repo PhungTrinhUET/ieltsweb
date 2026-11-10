@@ -1,7 +1,7 @@
 // Từ vựng (kiểu MemCab): trang chính.
 //   - 4 trạng thái (Sẽ học / Đang học / Ôn tập / Đã thuộc) theo FSRS (src/lib/srs.ts).
 //   - "Hôm nay": Ôn N từ đến hạn (/vocab/review) + Học nhóm từ mới (/vocab/learn) – xem src/pages/VocabSession.tsx.
-//   - Bộ từ: chủ đề có sẵn, bộ theo đề, từ đã lưu, bộ tự tạo; mỗi bộ có tiến độ theo trạng thái + "Học tiếp" / "Ôn bộ này".
+//   - Bộ từ (kiểu MemCab): Bộ của tôi / Có sẵn / Được chia sẻ; "＋ Tạo bộ từ" (DeckCreate); mở bộ → DeckPage.
 //   - Vốn từ: tìm, lọc theo trạng thái, sửa/xoá, câu thật trong đề cho từng từ.
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
@@ -9,14 +9,16 @@ import { Check, ChevronDown, Layers, Pencil, Plus, Quote, Trash2, Volume2 } from
 import { deleteCard, saveCard, useDb } from '../db';
 import type { VocabCard } from '../types';
 import { STATE_NAMES, STATE_ORDER, cardState, dueCards, dueText, isLearned, learnedToday, newCard, type WordState } from '../lib/srs';
-import { type Deck, inDeck, useAllDecks } from '../lib/vocab';
+import { useAllDecks } from '../lib/vocab';
+import { deckProgress } from '../lib/decks';
 import { sayWord } from '../components/VocabEx';
 import ContextList from '../components/ContextList';
 import { useSettings } from '../store';
 import { readTopics, TOPIC_KEY } from './VocabSession';
-import DeckTools from '../components/DeckTools';
+import DeckCreate from '../components/DeckCreate';
 
 type Counts = Record<WordState, number>;
+type DeckTab = 'mine' | 'builtin' | 'shared';
 const zero = (): Counts => ({ new: 0, learning: 0, review: 0, known: 0 });
 
 export default function Vocab() {
@@ -34,7 +36,8 @@ export default function Vocab() {
   const [edit, setEdit] = useState<{ id: string; meaning: string; pos: string; note: string } | null>(null);
   const [open, setOpen] = useState<string | null>(null);
   const [showList, setShowList] = useState(false);
-  const [deckTab, setDeckTab] = useState<Deck['kind']>('topic');
+  const [deckTab, setDeckTab] = useState<DeckTab>('mine');
+  const [creating, setCreating] = useState(false);
 
   const topicDecks = decks?.filter((d) => d.kind === 'topic') ?? [];
   const chosen = topics ?? topicDecks.map((t) => t.id.slice(5));
@@ -50,19 +53,12 @@ export default function Vocab() {
   const counts = useMemo(() => { const n = zero(); for (const c of words) n[cardState(c)]++; return n; }, [words]);
   const sentences = cards.length - words.length;
 
-  /** Tiến độ một bộ: thẻ đã có + từ chưa thành thẻ (Sẽ học). */
-  const deckStats = (d: Deck) => {
-    const n = zero(); let due = 0;
-    const seen = new Set<string>();
-    for (const w of d.words) { const c = byWord.get(w.word.toLowerCase()); seen.add(w.word.toLowerCase()); if (c) { n[cardState(c)]++; if (isLearned(c) && c.due <= Date.now() + 864e5) due++; } else n.new++; }
-    if (d.kind === 'saved' || d.kind === 'custom') for (const c of words) if (!seen.has(c.word.toLowerCase()) && inDeck(c, d.id)) { n[cardState(c)]++; if (isLearned(c) && c.due <= Date.now()) due++; }
-    return { n, total: n.new + n.learning + n.review + n.known, due };
-  };
-
   const shown = cards.filter((c) => (!filter || cardState(c) === filter) && (!q || c.word.toLowerCase().includes(q.toLowerCase()) || c.meaning.toLowerCase().includes(q.toLowerCase())))
     .sort((a, b) => b.addedAt - a.addedAt);
-  const tabs: [Deck['kind'], string][] = [['topic', 'Chủ đề'], ['test', 'Theo đề'], ['saved', 'Đã lưu'], ['custom', 'Tự tạo']];
-  const list = decks?.filter((d) => d.kind === deckTab) ?? [];
+  // Lọc bộ: của tôi (Sổ chung + tự tạo) / có sẵn (chủ đề, theo đề) / được chia sẻ.
+  const tabs: [DeckTab, string][] = [['mine', 'Bộ của tôi'], ['builtin', 'Có sẵn'], ['shared', 'Được chia sẻ']];
+  const group = (k: DeckTab) => (decks ?? []).filter((d) => (k === 'builtin' ? d.kind === 'topic' || d.kind === 'test' : k === 'shared' ? d.kind === 'custom' && d.source === 'shared' : d.kind === 'saved' || (d.kind === 'custom' && d.source !== 'shared')));
+  const list = group(deckTab);
 
   return (
     <div className="page lt" style={{ ['--skill' as string]: 'var(--primary)' }}>
@@ -91,38 +87,44 @@ export default function Vocab() {
         </div>
       </div>
 
-      <section className="stack">
-        <div className="tabs" role="tablist">
-          {tabs.map(([k, label]) => <button key={k} role="tab" aria-selected={deckTab === k} className={`tabs__btn${deckTab === k ? ' is-on' : ''}`} onClick={() => setDeckTab(k)}>{label} <small className="muted">{decks?.filter((d) => d.kind === k).length ?? ''}</small></button>)}
+      <section className="stack" data-testid="decks">
+        <div className="row-between wrap">
+          <h2 className="h3">Bộ từ</h2>
+          <button className="btn btn--primary btn--sm" onClick={() => setCreating(true)} data-testid="deck-new"><Plus size={16} /> Tạo bộ từ</button>
         </div>
-        {deckTab === 'topic' && <p className="small muted">Bấm ô vuông để chọn chủ đề lấy từ cho nút "Học" ở trên.</p>}
-        {deckTab === 'custom' && <DeckTools />}
-        {decks === null ? <p className="muted">Đang tải bộ từ…</p> : !list.length ? <p className="empty">{deckTab === 'saved' ? 'Chưa lưu từ nào. Bấm vào từ khi đọc/nghe bài (Luyện tập) để lưu kèm câu gốc.' : deckTab === 'test' ? 'Chưa có bộ theo đề.' : 'Chưa có bộ tự tạo.'}</p> : (
+        <div className="tabs" role="tablist">
+          {tabs.map(([k, label]) => <button key={k} role="tab" aria-selected={deckTab === k} className={`tabs__btn${deckTab === k ? ' is-on' : ''}`} onClick={() => setDeckTab(k)} data-testid={`deck-tab-${k}`}>{label} <small className="muted">{group(k).length}</small></button>)}
+        </div>
+        {deckTab === 'builtin' && <p className="small muted">Bộ có sẵn chỉ đọc – mở bộ rồi bấm "Sao chép thành bộ của tôi" để sửa. Ô vuông ở bộ chủ đề: chọn chủ đề lấy từ cho nút "Học" ở trên.</p>}
+        {decks === null ? <p className="muted">Đang tải bộ từ…</p> : !list.length ? <p className="empty">{deckTab === 'shared' ? 'Chưa nhận bộ nào. Khi bạn bè gửi link bộ từ, mở link để thêm vào đây.' : 'Chưa có bộ nào.'}</p> : (
           <div className="deck-grid">
             {list.map((d) => {
-              const st = deckStats(d);
+              const st = deckProgress(d, byWord);
               const on = d.kind === 'topic' && chosen.includes(d.id.slice(5));
-              const learned = st.n.review + st.n.known;
+              const enc = encodeURIComponent(d.id);
               return (
-                <div key={d.id} className="deck card" data-testid="deck">
+                <div key={d.id} className="deck card" data-testid="deck" style={{ ['--dk' as string]: d.color ?? 'var(--primary)' }}>
                   <div className="deck__head">
                     {d.kind === 'topic' && <button className={`lt-topic__check${on ? ' is-on' : ''}`} onClick={() => toggleTopic(d.id.slice(5))} aria-pressed={on} aria-label={`Chọn chủ đề ${d.name}`}>{on && <Check size={13} />}</button>}
-                    <div className="deck__name"><strong>{d.name}</strong>{d.vi && <small className="muted">{d.vi}</small>}{d.ref && <Link className="small" to={`/reading/${d.ref}`}>AWL · mở bài Reading →</Link>}</div>
-                    <span className="deck__n">{learned}/{st.total}</span>
+                    <span className="deck__emoji" aria-hidden>{d.emoji ?? '📚'}</span>
+                    <Link className="deck__name" to={`/vocab/deck/${enc}`}><strong>{d.name}</strong><small className="muted">{st.total} từ{d.vi ? ` · ${d.vi}` : ''}</small></Link>
+                    <span className="deck__n" title="Đã thuộc">{st.pct}%</span>
                   </div>
                   <div className="deck__bar" aria-label="Tiến độ">
                     {(['known', 'review', 'learning'] as WordState[]).map((k) => st.n[k] ? <span key={k} className={`st--${k}`} style={{ width: `${(st.n[k] / Math.max(1, st.total)) * 100}%` }} title={`${STATE_NAMES[k]}: ${st.n[k]}`} /> : null)}
                   </div>
-                  <div className="deck__meta small muted">{STATE_ORDER.map((k) => `${STATE_NAMES[k]} ${st.n[k]}`).join(' · ')}</div>
+                  <div className="deck__meta small muted">{st.learned}/{st.total} đã thuộc{st.due ? <> · <strong className="deck__due">{st.due} đến hạn</strong></> : ''}</div>
                   <div className="row">
-                    {st.n.new + st.n.learning > 0 && <Link className="btn btn--primary btn--sm" to={`/vocab/learn?more=1&deck=${encodeURIComponent(d.id)}`}>Học tiếp</Link>}
-                    {learned + st.n.learning > 0 && <Link className="btn btn--ghost btn--sm" to={`/vocab/review?deck=${encodeURIComponent(d.id)}`}>Ôn bộ này{st.due ? ` (${st.due})` : ''}</Link>}
+                    {st.n.new + st.n.learning > 0 && <Link className="btn btn--primary btn--sm" to={`/vocab/learn?more=1&deck=${enc}`}>Học</Link>}
+                    {st.learned + st.n.learning > 0 && <Link className="btn btn--ghost btn--sm" to={`/vocab/review?deck=${enc}`}>Ôn{st.due ? ` (${st.due})` : ''}</Link>}
+                    <Link className="btn btn--text btn--sm" to={`/vocab/deck/${enc}`}>Mở bộ →</Link>
                   </div>
                 </div>
               );
             })}
           </div>
         )}
+        {creating && <DeckCreate onClose={() => setCreating(false)} />}
       </section>
 
       <section className="stack">

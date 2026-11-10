@@ -10,18 +10,23 @@ import { shuffle } from './text';
 import { wordRe } from './context';
 
 export interface DeckWord { word: string; pos: string; vi: string; ex?: string; ipa?: string; en?: string; exVi?: string; colloc?: string[] }
-export interface Deck { id: string; name: string; vi?: string; kind: 'topic' | 'test' | 'custom' | 'saved'; words: DeckWord[]; ref?: string }
+export type DeckSource = 'custom' | 'test' | 'ai' | 'import' | 'shared' | 'builtin';
+export interface DeckMeta { description?: string; emoji?: string; color?: string; topic?: string; level?: string; source?: DeckSource; createdAt?: number; updatedAt?: number }
+export interface Deck extends DeckMeta { id: string; name: string; vi?: string; kind: 'topic' | 'test' | 'custom' | 'saved'; words: DeckWord[]; ref?: string }
 type RawWord = [string, string, string, string?, string?, string?, string?, string?];
 interface DeckFile { topics: { id: string; name: string; vi: string; words: RawWord[] }[]; tests?: { id: string; name: string; ref: string; words: RawWord[] }[] }
 
 export const fromRaw = ([word, pos, vi, ex, ipa, en, exVi, colloc]: RawWord): DeckWord =>
   ({ word, pos, vi, ex: ex || undefined, ipa: ipa || undefined, en: en || undefined, exVi: exVi || undefined, colloc: colloc ? colloc.split(/\s*;\s*/).filter(Boolean) : undefined });
 
+export const COLORS = ['#2563eb', '#16a34a', '#d97706', '#db2777', '#7c3aed', '#0891b2', '#dc2626', '#65a30d'];
+const TOPIC_EMOJI: Record<string, string> = { education: '🎓', environment: '🌿', technology: '💻', health: '🩺', work: '💼', society: '👥', media: '📰', travel: '✈️', science: '🔬', economy: '📈', crime: '⚖️', culture: '🎭', family: '👪', food: '🍲', city: '🏙️', trends: '📊' };
+
 let pending: Promise<Deck[]> | null = null;
 export function loadDecks(): Promise<Deck[]> {
   pending ??= fetch('./data/vocab-deck.json').then((r) => (r.ok ? r.json() : { topics: [] })).then((d: DeckFile) => [
-    ...d.topics.map((t): Deck => ({ id: `deck:${t.id}`, name: t.vi, vi: t.name, kind: 'topic', words: t.words.map(fromRaw) })),
-    ...(d.tests ?? []).map((t): Deck => ({ id: `test:${t.id}`, name: t.name, kind: 'test', ref: t.ref, words: t.words.map(fromRaw) })),
+    ...d.topics.map((t, i): Deck => ({ id: `deck:${t.id}`, name: t.vi, vi: t.name, kind: 'topic', source: 'builtin', emoji: TOPIC_EMOJI[t.id] ?? '📘', color: COLORS[i % COLORS.length], words: t.words.map(fromRaw) })),
+    ...(d.tests ?? []).map((t): Deck => ({ id: `test:${t.id}`, name: t.name, kind: 'test', source: 'builtin', emoji: '📄', color: '#64748b', ref: t.ref, words: t.words.map(fromRaw) })),
   ]).catch(() => { pending = null; return []; });
   return pending;
 }
@@ -47,18 +52,20 @@ const isSaved = (c: VocabCard) => c.kind !== 'sentence' && ((c.decks ?? []).incl
 export const inDeck = (c: VocabCard, deck: string) => (deck === 'saved' ? isSaved(c) : (c.decks ?? []).includes(deck) || c.from === deck);
 
 /** Bộ tự tạo lưu ở kv `udeck:<id>`; id bộ = `my:<id>`. */
-export interface UserDeck { id: string; name: string; words: DeckWord[]; at: number }
+export interface UserDeck extends DeckMeta { id: string; name: string; words: DeckWord[]; at: number; ref?: string }
 export const userDecks = (kv: Record<string, unknown>): Deck[] => Object.entries(kv).filter(([k]) => k.startsWith('udeck:'))
-  .map(([, v]) => v as UserDeck).sort((a, b) => b.at - a.at).map((d) => ({ id: `my:${d.id}`, name: d.name, kind: 'custom', words: d.words }));
+  .map(([, v]) => v as UserDeck).sort((a, b) => (b.updatedAt ?? b.at) - (a.updatedAt ?? a.at))
+  .map(({ id, at, ...d }) => ({ ...d, id: `my:${id}`, kind: 'custom', source: d.source ?? 'custom', createdAt: d.createdAt ?? at }));
+export const GENERAL_NAME = 'Sổ chung';
 /** Mọi bộ: có sẵn (chủ đề, theo đề) + Từ đã lưu + Tự tạo. */
 export function useAllDecks(): Deck[] | null {
   const db = useDb();
   const builtin = useBuiltinDecks();
   return useMemo(() => {
     if (!builtin) return null;
-    const saved: Deck = { id: 'saved', name: 'Từ tôi đã lưu', vi: 'Lưu khi đọc/nghe bài, kèm câu gốc', kind: 'saved', words: [] };
-    const hasSaved = Object.values(db.vocab).some(isSaved);
-    return [...builtin, ...(hasSaved ? [saved] : []), ...userDecks(db.kv)];
+    // "Sổ chung" luôn có: từ lưu không chọn bộ, từ giữ lại khi xoá bộ.
+    const saved: Deck = { id: 'saved', name: GENERAL_NAME, description: 'Từ lưu khi đọc/nghe bài (kèm câu gốc) và từ không thuộc bộ nào', kind: 'saved', source: 'custom', emoji: '📒', color: '#0f766e', words: [] };
+    return [saved, ...userDecks(db.kv), ...builtin];
   }, [builtin, db.vocab, db.kv]);
 }
 

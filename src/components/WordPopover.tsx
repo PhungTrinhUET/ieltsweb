@@ -6,57 +6,17 @@ import { useEffect, useState } from 'react';
 import { BookmarkPlus, Check, Languages, Loader2, Sparkles, Volume2, X } from 'lucide-react';
 import type { Vocab } from '../types';
 import { aiReady, getAiConfig } from '../store';
-import { findCard, saveCard } from '../db';
-import { newCard } from '../lib/srs';
+import { useDb } from '../db';
+import { deckName, decksOfCard, rememberDeck, saveWordTo } from '../lib/decks';
+import { DeckSelect, useDeckChoice } from './DeckPicker';
 import { speak } from '../lib/tts';
 import { cleanWord } from '../lib/text';
 import { freeTranslate, translateText } from '../lib/freeTranslate';
 import type { Lookup } from '../ai/assist';
+import { type DictEntry, freeDict, POS_VI } from '../lib/dict';
 
 export interface WordSel { word: string; sentence: string; x: number; y: number }
 
-interface DictEntry { phonetic?: string; phonetics?: { text?: string }[]; meanings: { partOfSpeech: string; definitions: { definition: string; example?: string }[] }[] }
-const DM_POS: Record<string, string> = { n: 'noun', v: 'verb', adj: 'adjective', adv: 'adverb' };
-const dictCache = new Map<string, Promise<DictEntry | null>>();
-const getJson = async (url: string, ms = 5000) => {
-  const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), ms);
-  try { const r = await fetch(url, { signal: ctl.signal }); return r.ok ? await r.json() : null; } finally { clearTimeout(t); }
-};
-/** Datamuse (CORS mở, có IPA; từ biến thể như "worms" trả định nghĩa của "worm"). */
-async function datamuse(word: string): Promise<DictEntry | null> {
-  const d = await getJson(`https://api.datamuse.com/words?sp=${encodeURIComponent(word)}&md=dpr&ipa=1&max=1`);
-  const e = Array.isArray(d) ? d[0] : null;
-  if (!e || String(e.word).toLowerCase() !== word.toLowerCase()) return null;
-  const ipa = (e.tags as string[] | undefined)?.find((t) => t.startsWith('ipa_pron:'))?.slice(9).replace(/ɫ/g, 'l');
-  const byPos = new Map<string, string[]>();
-  for (const raw of (e.defs as string[] | undefined) ?? []) {
-    const [p, def] = raw.split('\t'); const pos = DM_POS[p] ?? p;
-    if (def) byPos.set(pos, [...(byPos.get(pos) ?? []), def.trim()]);
-  }
-  if (!byPos.size && !ipa) return null;
-  return { phonetic: ipa ? `/${ipa}/` : undefined, meanings: [...byPos].map(([partOfSpeech, ds]) => ({ partOfSpeech, definitions: ds.map((definition) => ({ definition })) })) };
-}
-async function dictApi(word: string): Promise<DictEntry | null> {
-  const d = await getJson(`https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(word)}`, 4000);
-  return Array.isArray(d) ? d[0] : null;
-}
-/** Phiên âm + định nghĩa Anh: Datamuse, thiếu thì thử dictionaryapi.dev. Lỗi mạng → null (popover vẫn hiện nghĩa Việt). */
-function freeDict(word: string): Promise<DictEntry | null> {
-  let p = dictCache.get(word);
-  if (!p) {
-    p = (async () => {
-      const a = await datamuse(word).catch(() => null);
-      if (a?.meanings.length && a.phonetic) return a;
-      const b = await dictApi(word).catch(() => null);
-      if (!b) return a;
-      return a ? { ...b, phonetic: a.phonetic ?? b.phonetic, meanings: a.meanings.length ? a.meanings : b.meanings } : b;
-    })();
-    dictCache.set(word, p);
-    p.then((r) => { if (!r) dictCache.delete(word); });
-  }
-  return p;
-}
-const POS_VI: Record<string, string> = { noun: 'n', verb: 'v', adjective: 'adj', adverb: 'adv', preposition: 'prep', conjunction: 'conj', pronoun: 'pron', interjection: 'interj' };
 
 export default function WordPopover({ sel, vocab, from, onClose }: { sel: WordSel; vocab?: Vocab[]; from?: string; onClose: () => void }) {
   const w = cleanWord(sel.word);
@@ -66,12 +26,16 @@ export default function WordPopover({ sel, vocab, from, onClose }: { sel: WordSe
   const [ai, setAi] = useState<Lookup | null | 'busy' | string>(null);
   const [sentVi, setSentVi] = useState<string | 'busy' | null>(null);
   const [err, setErr] = useState('');
-  const [saved, setSaved] = useState(() => !!findCard(w));
+  const db = useDb();
+  const card = Object.values(db.vocab).find((c) => c.kind !== 'sentence' && c.word.toLowerCase() === w);
+  const inDecks = card ? decksOfCard(card) : [];
+  const [deck, setDeck] = useDeckChoice(from);
+  const [justSaved, setJustSaved] = useState('');
   const [form, setForm] = useState<{ meaning: string; pos: string; note: string } | null>(null);
   const hasAi = aiReady(getAiConfig());
 
   useEffect(() => {
-    setDict('busy'); setAi(null); setSentVi(null); setErr(''); setForm(null); setSaved(!!findCard(w));
+    setDict('busy'); setAi(null); setSentVi(null); setErr(''); setForm(null); setJustSaved('');
     freeDict(w).then(setDict);
     if (local) setVi(local[2]);
     else { setVi('busy'); freeTranslate(w).then(setVi, (e) => { setVi(null); setErr(e instanceof Error ? e.message : String(e)); }); }
@@ -103,14 +67,17 @@ export default function WordPopover({ sel, vocab, from, onClose }: { sel: WordSe
   };
   const save = async () => {
     if (!form) return;
-    await saveCard(newCard({
-      id: `v-${w}-${Date.now().toString(36)}`, word: a?.word ?? local?.[0] ?? w, pos: form.pos || undefined, meaning: form.meaning,
+    rememberDeck(from, deck);
+    await saveWordTo(deck, {
+      word: a?.word ?? local?.[0] ?? w, pos: form.pos || undefined, meaning: form.meaning,
       ipa: ipa || undefined, meaningEn: meaningEn || undefined, example: sel.sentence,
       exampleVi: typeof sentVi === 'string' && sentVi !== 'busy' ? sentVi : undefined, note: form.note || undefined, from,
-      decks: ['saved'], context: sel.sentence ? { text: sel.sentence, label: from ? srcLabel(from) : undefined, ref: from } : undefined,
-    }));
-    setSaved(true); setForm(null);
+      context: sel.sentence ? { text: sel.sentence, label: from ? srcLabel(from) : undefined, ref: from } : undefined,
+    });
+    setJustSaved(deckName(deck)); setForm(null);
   };
+  /** Từ đã có: gắn thêm vào bộ đang chọn. */
+  const addHere = async () => { if (!card) return; rememberDeck(from, deck); await saveWordTo(deck, { word: card.word, meaning: card.meaning }); setJustSaved(deckName(deck)); };
 
   const style = { left: Math.max(8, Math.min(sel.x, window.innerWidth - 372)), top: sel.y + 8 };
   return (
@@ -149,19 +116,26 @@ export default function WordPopover({ sel, vocab, from, onClose }: { sel: WordSe
 
       {form ? (
         <div className="wpop__form">
+          <DeckSelect from={from} value={deck} onChange={setDeck} />
           <label className="small">Nghĩa tiếng Việt<input className="input" value={form.meaning} onChange={(e) => setForm({ ...form, meaning: e.target.value })} autoFocus /></label>
           <label className="small">Loại từ<input className="input" value={form.pos} onChange={(e) => setForm({ ...form, pos: e.target.value })} placeholder="n, v, adj…" /></label>
           <label className="small">Ghi chú của bạn<textarea className="textarea" rows={2} value={form.note} onChange={(e) => setForm({ ...form, note: e.target.value })} placeholder="Cách dùng, từ đồng nghĩa, mẹo nhớ…" /></label>
           <div className="wpop__actions">
             <button className="btn btn--ghost btn--sm" onClick={() => setForm(null)}>Huỷ</button>
-            <button className="btn btn--primary btn--sm" onClick={save} disabled={!form.meaning.trim()}><Check size={15} /> Lưu vào vốn từ</button>
+            <button className="btn btn--primary btn--sm" onClick={save} disabled={!form.meaning.trim()} data-testid="wpop-save"><Check size={15} /> Lưu vào bộ</button>
           </div>
+        </div>
+      ) : card ? (
+        <div className="wpop__form" data-testid="wpop-have">
+          <p className="small">{justSaved ? <span className="ok-text"><Check size={14} /> Đã lưu vào “{justSaved}”</span> : <>Đã có trong bộ: <strong>{inDecks.map(deckName).join(', ') || 'Vốn từ'}</strong></>}</p>
+          {!inDecks.includes(deck) && <div className="wpop__actions"><DeckSelect from={from} value={deck} onChange={setDeck} compact /><button className="btn btn--primary btn--sm" onClick={addHere} data-testid="wpop-addhere"><BookmarkPlus size={15} /> Thêm vào bộ này</button></div>}
+          {hasAi && ai !== 'busy' && !a && <div className="wpop__actions"><button className="btn btn--ghost btn--sm" onClick={askAi}><Sparkles size={15} /> Tra AI</button></div>}
         </div>
       ) : (
         <div className="wpop__actions">
           {hasAi && ai !== 'busy' && !a && <button className="btn btn--ghost btn--sm" onClick={askAi} title="Tra nghĩa theo ngữ cảnh bằng AI"><Sparkles size={15} /> Tra AI</button>}
           {ai === 'busy' && <span className="small muted"><Loader2 size={14} className="spin" /> AI đang tra…</span>}
-          <button className="btn btn--primary btn--sm" onClick={() => setForm({ meaning: meaningVi, pos, note: '' })} disabled={saved}>{saved ? <><Check size={15} /> Đã có trong vốn từ</> : <><BookmarkPlus size={15} /> Lưu từ</>}</button>
+          <button className="btn btn--primary btn--sm" onClick={() => setForm({ meaning: meaningVi, pos, note: '' })} data-testid="wpop-savebtn"><BookmarkPlus size={15} /> Lưu từ</button>
         </div>
       )}
     </div>

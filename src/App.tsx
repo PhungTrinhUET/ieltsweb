@@ -16,6 +16,8 @@ import Speaking from './pages/Speaking';
 import Writing from './pages/Writing';
 import Vocab from './pages/Vocab';
 import { VocabContext, VocabLearn, VocabReview } from './pages/VocabSession';
+import DeckPage from './pages/DeckPage';
+import DeckShare from './pages/DeckShare';
 import Library from './pages/Library';
 import History from './pages/History';
 import HistoryDetail from './pages/HistoryDetail';
@@ -106,6 +108,8 @@ export default function App() {
           <Route path="vocab/learn" element={<VocabLearn />} />
           <Route path="vocab/review" element={<VocabReview />} />
           <Route path="vocab/context" element={<VocabContext />} />
+          <Route path="vocab/deck/:id" element={<DeckPage />} />
+          <Route path="vocab/share" element={<DeckShare />} />
           <Route path="stats" element={<Stats />} />
           <Route path="dictation" element={<DictHub />} />
           <Route path="dictation/:lid" element={<DictLesson />} />

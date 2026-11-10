@@ -1,7 +1,7 @@
 // Trang một đề (VOL N · Test M): chọn từng phần (Section / Passage / Task) hoặc làm cả đề một lần.
 import { useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { ArrowLeft, Check, ChevronRight, GraduationCap, Play, Timer } from 'lucide-react';
+import { ArrowLeft, BookmarkCheck, Check, ChevronRight, GraduationCap, Play, Timer } from 'lucide-react';
 import type { Material, Skill } from '../types';
 import { useDb } from '../db';
 import { fmtBand, rawToBand } from '../lib/band';
@@ -9,6 +9,7 @@ import { BANK_TEST, SECTION_DESC, bestResults, groupByTest, partLabel, saveMode,
 import { SKILL_META, subtitle } from './SkillList';
 import { useSettings } from '../store';
 import { QKIND_LABEL, materialKinds } from '../lib/qtypes';
+import { savedForTest, testOf } from '../lib/decks';
 
 const nQ = (m: Material) => ('groups' in m ? m.groups.reduce((n, g) => n + g.questions.length, 0) : 0);
 
@@ -82,6 +83,21 @@ export default function TestPage() {
           );
         })}
       </ul>
+      <SavedWords from={t.parts[0]?.id} />
     </div>
+  );
+}
+
+/** "Từ đã lưu ở đề này (n)" → mở bộ của đề (hoặc Sổ chung). */
+function SavedWords({ from }: { from?: string }) {
+  useDb();
+  const t = testOf(from);
+  if (!t) return null;
+  const { n, deck } = savedForTest(t.id);
+  if (!n) return null;
+  return (
+    <Link className="saved-words card" to={`/vocab/deck/${encodeURIComponent(deck)}`} data-testid="test-saved-words">
+      <BookmarkCheck size={18} /> <span>Từ đã lưu ở đề này <strong>({n})</strong></span> <ChevronRight size={16} />
+    </Link>
   );
 }
