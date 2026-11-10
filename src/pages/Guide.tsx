@@ -1,5 +1,6 @@
 // Cẩm nang: cấu trúc đề, chiến lược từng dạng câu hỏi, khung bài Writing/Speaking, band descriptors tóm tắt.
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Collapse } from '../components/ui';
 import { KeepDataTips } from '../components/BackupPanel';
 import { AiSetupGuide } from '../components/AiGuide';
@@ -106,6 +107,7 @@ export default function Guide() {
           </section>
         </div>
       )}
+      <p className="small muted">Ứng dụng do nhóm học viên cao học Khoa CNTT, Trường ĐH Công nghệ – ĐHQG Hà Nội phát triển · <Link to="/about">Giới thiệu nhóm tác giả</Link></p>
     </div>
   );
 }

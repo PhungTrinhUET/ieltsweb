@@ -5,6 +5,7 @@ import { useDb } from '../db';
 import { getLastOpen, getStreak, useSettings } from '../store';
 import { BackupReminder } from '../components/BackupPanel';
 import { MODE_LABEL, countsForBand } from '../lib/attempts';
+import { AUTHORS, Avatar } from './About';
 import { SKILL_META } from './SkillList';
 import type { Attempt, Skill } from '../types';
 import { dueCards, startOfDay } from '../lib/srs';
@@ -228,6 +229,12 @@ export default function Home() {
           ) : <p className="muted small">Chưa có bài nào. Kết quả các bài Thi thử và bài được AI chấm sẽ hiện ở đây.</p>}
         </section>
       </div>
+
+      <Link to="/about" className="card home-about" data-testid="home-about">
+        <span className="home-about__av">{AUTHORS.map((a) => <Avatar key={a.initials} a={a} size={40} />)}</span>
+        <span><strong>Về nhóm tác giả</strong><span className="small muted">{AUTHORS.map((a) => a.name).join(' · ')} · Trường ĐH Công nghệ, ĐHQG HN</span></span>
+        <ChevronRight size={18} />
+      </Link>
 
       <p className="home__foot muted small">
         Kho đề: {count('reading')} bài Reading · {count('listening')} section Listening · {count('speaking')} bộ Speaking · {count('writing')} đề Writing ·{' '}

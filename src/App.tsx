@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { HashRouter, NavLink, Outlet, Route, Routes, useLocation, useParams } from 'react-router-dom';
+import { HashRouter, Link, NavLink, Outlet, Route, Routes, useLocation, useParams } from 'react-router-dom';
 import ErrorBoundary from './components/ErrorBoundary';
 import { BarChart3, BookOpen, ChevronLeft, ChevronRight, FolderInput, GraduationCap, Headphones, History as HistoryIcon, House, Keyboard, Layers, Mic, NotebookPen, Settings as SettingsIcon } from 'lucide-react';
 import { init, useDb } from './db';
@@ -25,6 +25,7 @@ import Guide from './pages/Guide';
 import Settings from './pages/Settings';
 import MockTest from './pages/MockTest';
 import FullMock from './pages/FullMock';
+import About, { FOOTER_TEXT } from './pages/About';
 import Practice from './pages/Practice';
 import TestPage from './pages/TestPage';
 import Stats from './pages/Stats';
@@ -67,7 +68,9 @@ function Shell() {
         </nav>
         <p className="sidebar__foot">Reading · Listening · Speaking · Writing – tự nạp tài liệu, AI chấm bài</p>
       </aside>
-      <main className="main"><ErrorBoundary key={loc.pathname}><Outlet /></ErrorBoundary></main>
+      <main className="main"><ErrorBoundary key={loc.pathname}><Outlet /></ErrorBoundary>
+        {!focus && <footer className="app-footer" data-testid="app-footer">{FOOTER_TEXT} · <Link to="/about">Giới thiệu</Link></footer>}
+      </main>
       <nav className="tabbar">
         {[...NAV.slice(0, 5), NAV2[0]].map(({ to, label, icon: Icon, end }) => <NavLink key={to} to={to} end={end} className="tabbar__link"><Icon size={22} /><span>{label}</span></NavLink>)}
       </nav>
@@ -119,6 +122,7 @@ export default function App() {
           <Route path="history" element={<History />} />
           <Route path="history/:aid" element={<HistoryDetail />} />
           <Route path="guide" element={<Guide />} />
+          <Route path="about" element={<About />} />
           <Route path="settings" element={<Settings />} />
           <Route path="*" element={<Home />} />
         </Route>

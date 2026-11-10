@@ -717,6 +717,19 @@ for (const profile of Object.keys(PROFILES)) {
     const ok = kept && Object.values(b).every((x) => /^\d/.test(x)) && /^\d/.test(overall) && rl >= 7 && /160 words/.test(words) && /260 words/.test(words);
     return { ok, info: `giữ đáp án sau tải lại=${kept} band=${JSON.stringify(b)} overall=${overall} bảng L/R=${rl} | ${words.replace(/\s+/g, ' ')}` };
   });
+  await check(`[${profile}] G1 #/about đủ 3 tác giả; footer ở trang chủ, không có trong khung thi`, async () => {
+    await go(page, '/about');
+    const names = ['Phùng Trường Trinh', 'Hà Quang Hưng', 'Bùi Đức Hải'];
+    const team = await page.locator('[data-testid="ab-team"]').innerText();
+    const cards = await page.locator('.ab-card').count();
+    const ov = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
+    await go(page, '/');
+    const foot = await page.locator('[data-testid="app-footer"]').isVisible();
+    const homeCard = await page.locator('[data-testid="home-about"]').count();
+    await go(page, '/test/listening/vol5-t7/full');
+    const inExam = await page.locator('[data-testid="app-footer"]').isVisible().catch(() => false);
+    return { ok: names.every((n) => team.includes(n)) && cards === 3 && ov <= 0 && foot && homeCard === 1 && !inExam, info: `thẻ=${cards} tràn=${ov} footer trang chủ=${foot} thẻ Home=${homeCard} footer trong thi=${inExam}` };
+  });
   if (profile === 'desktop') {
     // ---------- A6: đủ câu 1–40 cho mọi đề ----------
     await check('A6 mọi đề đủ câu 1–40 (Reading, Listening)', async () => {
