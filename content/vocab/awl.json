@@ -1,0 +1,3490 @@
+{
+"title": "Academic Word List (AWL)",
+"source": "Coxhead (2000), 570 họ từ, 10 danh sách con theo tần suất. Một số mục dùng dạng hay gặp hơn của họ từ (vd. legislation, procedure, evidence). Nghĩa tiếng Việt soạn cho app.",
+"note": "[từ, loại, nghĩa Việt, danh sách con 1–10]. `skip`: từ quá thông dụng / từ nối, không đưa vào bộ theo đề.",
+"skip": [
+"area",
+"data",
+"percent",
+"section",
+"chapter",
+"text",
+"item",
+"site",
+"final",
+"normal",
+"major",
+"minor",
+"job",
+"team",
+"sex",
+"tape",
+"file",
+"couple",
+"odd",
+"adult",
+"image",
+"energy",
+"chart",
+"paragraph",
+"drama",
+"plus",
+"via",
+"behalf",
+"hence",
+"whereas",
+"furthermore",
+"nevertheless",
+"despite",
+"albeit",
+"likewise",
+"nonetheless",
+"notwithstanding",
+"thereby",
+"whereby",
+"somewhat",
+"so-called",
+"computer",
+"topic",
+"label",
+"author",
+"found",
+"project",
+"design",
+"create",
+"link",
+"sum",
+"grade",
+"code",
+"style",
+"version",
+"route",
+"focus",
+"range",
+"series",
+"role",
+"period"
+],
+"words": [
+[
+"analyse",
+"v",
+"phân tích",
+1
+],
+[
+"approach",
+"n",
+"cách tiếp cận",
+1
+],
+[
+"area",
+"n",
+"khu vực; lĩnh vực",
+1
+],
+[
+"assess",
+"v",
+"đánh giá",
+1
+],
+[
+"assume",
+"v",
+"cho rằng, giả định",
+1
+],
+[
+"authority",
+"n",
+"chính quyền; thẩm quyền",
+1
+],
+[
+"available",
+"adj",
+"có sẵn",
+1
+],
+[
+"benefit",
+"n",
+"lợi ích",
+1
+],
+[
+"concept",
+"n",
+"khái niệm",
+1
+],
+[
+"consist",
+"v",
+"bao gồm (consist of)",
+1
+],
+[
+"constitute",
+"v",
+"cấu thành",
+1
+],
+[
+"context",
+"n",
+"bối cảnh",
+1
+],
+[
+"contract",
+"n",
+"hợp đồng",
+1
+],
+[
+"create",
+"v",
+"tạo ra",
+1
+],
+[
+"data",
+"n",
+"dữ liệu",
+1
+],
+[
+"define",
+"v",
+"định nghĩa",
+1
+],
+[
+"derive",
+"v",
+"bắt nguồn, thu được",
+1
+],
+[
+"distribution",
+"n",
+"sự phân bố, phân phối",
+1
+],
+[
+"economy",
+"n",
+"nền kinh tế",
+1
+],
+[
+"environment",
+"n",
+"môi trường",
+1
+],
+[
+"establish",
+"v",
+"thành lập; xác lập",
+1
+],
+[
+"estimate",
+"v",
+"ước tính",
+1
+],
+[
+"evidence",
+"n",
+"bằng chứng",
+1
+],
+[
+"export",
+"v",
+"xuất khẩu",
+1
+],
+[
+"factor",
+"n",
+"yếu tố",
+1
+],
+[
+"finance",
+"n",
+"tài chính",
+1
+],
+[
+"formula",
+"n",
+"công thức",
+1
+],
+[
+"function",
+"n",
+"chức năng",
+1
+],
+[
+"identify",
+"v",
+"xác định, nhận ra",
+1
+],
+[
+"income",
+"n",
+"thu nhập",
+1
+],
+[
+"indicate",
+"v",
+"cho thấy, chỉ ra",
+1
+],
+[
+"individual",
+"n",
+"cá nhân",
+1
+],
+[
+"interpret",
+"v",
+"diễn giải",
+1
+],
+[
+"involve",
+"v",
+"liên quan, bao gồm",
+1
+],
+[
+"issue",
+"n",
+"vấn đề",
+1
+],
+[
+"labour",
+"n",
+"lao động",
+1
+],
+[
+"legal",
+"adj",
+"hợp pháp; thuộc pháp luật",
+1
+],
+[
+"legislation",
+"n",
+"luật pháp, sự lập pháp",
+1
+],
+[
+"major",
+"adj",
+"chính, lớn",
+1
+],
+[
+"method",
+"n",
+"phương pháp",
+1
+],
+[
+"occur",
+"v",
+"xảy ra",
+1
+],
+[
+"percent",
+"n",
+"phần trăm",
+1
+],
+[
+"period",
+"n",
+"giai đoạn, thời kỳ",
+1
+],
+[
+"policy",
+"n",
+"chính sách",
+1
+],
+[
+"principle",
+"n",
+"nguyên tắc",
+1
+],
+[
+"procedure",
+"n",
+"quy trình, thủ tục",
+1
+],
+[
+"process",
+"n",
+"quá trình",
+1
+],
+[
+"require",
+"v",
+"đòi hỏi, yêu cầu",
+1
+],
+[
+"research",
+"n",
+"nghiên cứu",
+1
+],
+[
+"respond",
+"v",
+"phản hồi, đáp lại",
+1
+],
+[
+"role",
+"n",
+"vai trò",
+1
+],
+[
+"section",
+"n",
+"phần, mục",
+1
+],
+[
+"sector",
+"n",
+"khu vực, ngành",
+1
+],
+[
+"significant",
+"adj",
+"đáng kể, quan trọng",
+1
+],
+[
+"similar",
+"adj",
+"tương tự",
+1
+],
+[
+"source",
+"n",
+"nguồn",
+1
+],
+[
+"specific",
+"adj",
+"cụ thể",
+1
+],
+[
+"structure",
+"n",
+"cấu trúc",
+1
+],
+[
+"theory",
+"n",
+"lý thuyết",
+1
+],
+[
+"vary",
+"v",
+"thay đổi, khác nhau",
+1
+],
+[
+"achieve",
+"v",
+"đạt được",
+2
+],
+[
+"acquire",
+"v",
+"thu được, tiếp thu",
+2
+],
+[
+"administration",
+"n",
+"sự quản lý, chính quyền",
+2
+],
+[
+"affect",
+"v",
+"ảnh hưởng",
+2
+],
+[
+"appropriate",
+"adj",
+"phù hợp",
+2
+],
+[
+"aspect",
+"n",
+"khía cạnh",
+2
+],
+[
+"assist",
+"v",
+"hỗ trợ",
+2
+],
+[
+"category",
+"n",
+"hạng mục, loại",
+2
+],
+[
+"chapter",
+"n",
+"chương",
+2
+],
+[
+"commission",
+"n",
+"uỷ ban; sự uỷ thác",
+2
+],
+[
+"community",
+"n",
+"cộng đồng",
+2
+],
+[
+"complex",
+"adj",
+"phức tạp",
+2
+],
+[
+"computer",
+"n",
+"máy tính",
+2
+],
+[
+"conclude",
+"v",
+"kết luận",
+2
+],
+[
+"conduct",
+"v",
+"tiến hành",
+2
+],
+[
+"consequence",
+"n",
+"hậu quả",
+2
+],
+[
+"construct",
+"v",
+"xây dựng",
+2
+],
+[
+"consume",
+"v",
+"tiêu thụ",
+2
+],
+[
+"credit",
+"n",
+"tín dụng; sự công nhận",
+2
+],
+[
+"culture",
+"n",
+"văn hoá",
+2
+],
+[
+"design",
+"v",
+"thiết kế",
+2
+],
+[
+"distinct",
+"adj",
+"riêng biệt, khác biệt",
+2
+],
+[
+"element",
+"n",
+"yếu tố, thành phần",
+2
+],
+[
+"equation",
+"n",
+"phương trình; sự cân bằng",
+2
+],
+[
+"evaluate",
+"v",
+"đánh giá",
+2
+],
+[
+"feature",
+"n",
+"đặc điểm",
+2
+],
+[
+"final",
+"adj",
+"cuối cùng",
+2
+],
+[
+"focus",
+"v",
+"tập trung",
+2
+],
+[
+"impact",
+"n",
+"tác động",
+2
+],
+[
+"injury",
+"n",
+"chấn thương",
+2
+],
+[
+"institution",
+"n",
+"tổ chức, cơ sở",
+2
+],
+[
+"invest",
+"v",
+"đầu tư",
+2
+],
+[
+"item",
+"n",
+"món, mục",
+2
+],
+[
+"journal",
+"n",
+"tạp chí khoa học",
+2
+],
+[
+"maintain",
+"v",
+"duy trì",
+2
+],
+[
+"normal",
+"adj",
+"bình thường",
+2
+],
+[
+"obtain",
+"v",
+"thu được, đạt được",
+2
+],
+[
+"participate",
+"v",
+"tham gia",
+2
+],
+[
+"perceive",
+"v",
+"nhận thức, cảm nhận",
+2
+],
+[
+"positive",
+"adj",
+"tích cực",
+2
+],
+[
+"potential",
+"adj",
+"tiềm năng",
+2
+],
+[
+"previous",
+"adj",
+"trước đó",
+2
+],
+[
+"primary",
+"adj",
+"chính; sơ cấp",
+2
+],
+[
+"purchase",
+"v",
+"mua",
+2
+],
+[
+"range",
+"n",
+"phạm vi, loạt",
+2
+],
+[
+"region",
+"n",
+"vùng",
+2
+],
+[
+"regulate",
+"v",
+"điều chỉnh, quản lý",
+2
+],
+[
+"relevant",
+"adj",
+"liên quan",
+2
+],
+[
+"resident",
+"n",
+"cư dân",
+2
+],
+[
+"resource",
+"n",
+"tài nguyên, nguồn lực",
+2
+],
+[
+"restrict",
+"v",
+"hạn chế",
+2
+],
+[
+"secure",
+"adj",
+"an toàn",
+2
+],
+[
+"seek",
+"v",
+"tìm kiếm",
+2
+],
+[
+"select",
+"v",
+"lựa chọn",
+2
+],
+[
+"site",
+"n",
+"địa điểm",
+2
+],
+[
+"strategy",
+"n",
+"chiến lược",
+2
+],
+[
+"survey",
+"n",
+"khảo sát",
+2
+],
+[
+"text",
+"n",
+"văn bản",
+2
+],
+[
+"tradition",
+"n",
+"truyền thống",
+2
+],
+[
+"transfer",
+"v",
+"chuyển giao",
+2
+],
+[
+"alternative",
+"n",
+"sự thay thế, lựa chọn khác",
+3
+],
+[
+"circumstance",
+"n",
+"hoàn cảnh",
+3
+],
+[
+"comment",
+"n",
+"bình luận",
+3
+],
+[
+"compensate",
+"v",
+"bù đắp, đền bù",
+3
+],
+[
+"component",
+"n",
+"thành phần",
+3
+],
+[
+"consent",
+"n",
+"sự đồng ý",
+3
+],
+[
+"considerable",
+"adj",
+"đáng kể",
+3
+],
+[
+"constant",
+"adj",
+"không đổi, liên tục",
+3
+],
+[
+"constraint",
+"n",
+"sự ràng buộc, hạn chế",
+3
+],
+[
+"contribute",
+"v",
+"đóng góp",
+3
+],
+[
+"convention",
+"n",
+"quy ước; hội nghị",
+3
+],
+[
+"coordinate",
+"v",
+"phối hợp",
+3
+],
+[
+"core",
+"n",
+"cốt lõi",
+3
+],
+[
+"corporate",
+"adj",
+"thuộc doanh nghiệp",
+3
+],
+[
+"correspond",
+"v",
+"tương ứng",
+3
+],
+[
+"criteria",
+"n",
+"tiêu chí",
+3
+],
+[
+"deduce",
+"v",
+"suy ra",
+3
+],
+[
+"demonstrate",
+"v",
+"chứng minh, cho thấy",
+3
+],
+[
+"document",
+"n",
+"tài liệu",
+3
+],
+[
+"dominate",
+"v",
+"chiếm ưu thế",
+3
+],
+[
+"emphasis",
+"n",
+"sự nhấn mạnh",
+3
+],
+[
+"ensure",
+"v",
+"đảm bảo",
+3
+],
+[
+"exclude",
+"v",
+"loại trừ",
+3
+],
+[
+"framework",
+"n",
+"khuôn khổ",
+3
+],
+[
+"fund",
+"n",
+"quỹ",
+3
+],
+[
+"illustrate",
+"v",
+"minh hoạ",
+3
+],
+[
+"immigration",
+"n",
+"sự nhập cư",
+3
+],
+[
+"imply",
+"v",
+"ngụ ý",
+3
+],
+[
+"initial",
+"adj",
+"ban đầu",
+3
+],
+[
+"instance",
+"n",
+"ví dụ, trường hợp",
+3
+],
+[
+"interact",
+"v",
+"tương tác",
+3
+],
+[
+"justify",
+"v",
+"biện minh",
+3
+],
+[
+"layer",
+"n",
+"lớp, tầng",
+3
+],
+[
+"link",
+"n",
+"mối liên hệ",
+3
+],
+[
+"locate",
+"v",
+"định vị, đặt ở",
+3
+],
+[
+"maximum",
+"n",
+"mức tối đa",
+3
+],
+[
+"minor",
+"adj",
+"nhỏ, thứ yếu",
+3
+],
+[
+"negative",
+"adj",
+"tiêu cực",
+3
+],
+[
+"outcome",
+"n",
+"kết quả",
+3
+],
+[
+"partner",
+"n",
+"đối tác",
+3
+],
+[
+"philosophy",
+"n",
+"triết lý",
+3
+],
+[
+"physical",
+"adj",
+"thể chất; vật lý",
+3
+],
+[
+"proportion",
+"n",
+"tỉ lệ",
+3
+],
+[
+"publish",
+"v",
+"xuất bản",
+3
+],
+[
+"react",
+"v",
+"phản ứng",
+3
+],
+[
+"register",
+"v",
+"đăng ký",
+3
+],
+[
+"rely",
+"v",
+"dựa vào",
+3
+],
+[
+"remove",
+"v",
+"loại bỏ",
+3
+],
+[
+"scheme",
+"n",
+"kế hoạch, chương trình",
+3
+],
+[
+"sequence",
+"n",
+"trình tự",
+3
+],
+[
+"sex",
+"n",
+"giới tính",
+3
+],
+[
+"shift",
+"n",
+"sự chuyển dịch",
+3
+],
+[
+"specify",
+"v",
+"chỉ rõ",
+3
+],
+[
+"sufficient",
+"adj",
+"đủ",
+3
+],
+[
+"task",
+"n",
+"nhiệm vụ",
+3
+],
+[
+"technical",
+"adj",
+"thuộc kỹ thuật",
+3
+],
+[
+"technique",
+"n",
+"kỹ thuật",
+3
+],
+[
+"technology",
+"n",
+"công nghệ",
+3
+],
+[
+"valid",
+"adj",
+"có giá trị, hợp lệ",
+3
+],
+[
+"volume",
+"n",
+"khối lượng, thể tích",
+3
+],
+[
+"access",
+"n",
+"sự tiếp cận",
+4
+],
+[
+"adequate",
+"adj",
+"đầy đủ, thoả đáng",
+4
+],
+[
+"annual",
+"adj",
+"hằng năm",
+4
+],
+[
+"apparent",
+"adj",
+"rõ ràng; bề ngoài",
+4
+],
+[
+"approximately",
+"adv",
+"xấp xỉ",
+4
+],
+[
+"attitude",
+"n",
+"thái độ",
+4
+],
+[
+"attribute",
+"v",
+"quy cho",
+4
+],
+[
+"civil",
+"adj",
+"dân sự",
+4
+],
+[
+"code",
+"n",
+"mã; bộ quy tắc",
+4
+],
+[
+"commit",
+"v",
+"cam kết; phạm (tội)",
+4
+],
+[
+"communicate",
+"v",
+"giao tiếp",
+4
+],
+[
+"concentrate",
+"v",
+"tập trung",
+4
+],
+[
+"conference",
+"n",
+"hội nghị",
+4
+],
+[
+"contrast",
+"n",
+"sự tương phản",
+4
+],
+[
+"cycle",
+"n",
+"chu kỳ",
+4
+],
+[
+"debate",
+"n",
+"cuộc tranh luận",
+4
+],
+[
+"despite",
+"prep",
+"mặc dù",
+4
+],
+[
+"dimension",
+"n",
+"chiều, khía cạnh",
+4
+],
+[
+"domestic",
+"adj",
+"trong nước; gia đình",
+4
+],
+[
+"emerge",
+"v",
+"xuất hiện, nổi lên",
+4
+],
+[
+"error",
+"n",
+"lỗi",
+4
+],
+[
+"ethnic",
+"adj",
+"thuộc dân tộc",
+4
+],
+[
+"goal",
+"n",
+"mục tiêu",
+4
+],
+[
+"grant",
+"n",
+"khoản trợ cấp",
+4
+],
+[
+"hence",
+"adv",
+"do đó",
+4
+],
+[
+"hypothesis",
+"n",
+"giả thuyết",
+4
+],
+[
+"implement",
+"v",
+"thực hiện, triển khai",
+4
+],
+[
+"implication",
+"n",
+"hàm ý, hệ quả",
+4
+],
+[
+"impose",
+"v",
+"áp đặt",
+4
+],
+[
+"integrate",
+"v",
+"hội nhập, tích hợp",
+4
+],
+[
+"internal",
+"adj",
+"bên trong",
+4
+],
+[
+"investigate",
+"v",
+"điều tra, nghiên cứu",
+4
+],
+[
+"job",
+"n",
+"công việc",
+4
+],
+[
+"label",
+"n",
+"nhãn",
+4
+],
+[
+"mechanism",
+"n",
+"cơ chế",
+4
+],
+[
+"obvious",
+"adj",
+"hiển nhiên",
+4
+],
+[
+"occupy",
+"v",
+"chiếm giữ",
+4
+],
+[
+"option",
+"n",
+"lựa chọn",
+4
+],
+[
+"output",
+"n",
+"sản lượng",
+4
+],
+[
+"overall",
+"adj",
+"tổng thể",
+4
+],
+[
+"parallel",
+"adj",
+"song song",
+4
+],
+[
+"parameter",
+"n",
+"tham số, giới hạn",
+4
+],
+[
+"phase",
+"n",
+"giai đoạn",
+4
+],
+[
+"predict",
+"v",
+"dự đoán",
+4
+],
+[
+"principal",
+"adj",
+"chính",
+4
+],
+[
+"prior",
+"adj",
+"trước",
+4
+],
+[
+"professional",
+"adj",
+"chuyên nghiệp",
+4
+],
+[
+"project",
+"n",
+"dự án",
+4
+],
+[
+"promote",
+"v",
+"thúc đẩy, quảng bá",
+4
+],
+[
+"regime",
+"n",
+"chế độ",
+4
+],
+[
+"resolve",
+"v",
+"giải quyết",
+4
+],
+[
+"retain",
+"v",
+"giữ lại",
+4
+],
+[
+"series",
+"n",
+"chuỗi, loạt",
+4
+],
+[
+"statistic",
+"n",
+"số liệu thống kê",
+4
+],
+[
+"status",
+"n",
+"địa vị, tình trạng",
+4
+],
+[
+"stress",
+"n",
+"căng thẳng; sự nhấn mạnh",
+4
+],
+[
+"subsequent",
+"adj",
+"tiếp theo",
+4
+],
+[
+"sum",
+"n",
+"tổng; khoản tiền",
+4
+],
+[
+"summary",
+"n",
+"bản tóm tắt",
+4
+],
+[
+"undertake",
+"v",
+"đảm nhận, tiến hành",
+4
+],
+[
+"academic",
+"adj",
+"học thuật",
+5
+],
+[
+"adjust",
+"v",
+"điều chỉnh",
+5
+],
+[
+"alter",
+"v",
+"thay đổi",
+5
+],
+[
+"amend",
+"v",
+"sửa đổi",
+5
+],
+[
+"aware",
+"adj",
+"nhận thức được",
+5
+],
+[
+"capacity",
+"n",
+"sức chứa; năng lực",
+5
+],
+[
+"challenge",
+"n",
+"thách thức",
+5
+],
+[
+"clause",
+"n",
+"điều khoản; mệnh đề",
+5
+],
+[
+"compound",
+"n",
+"hợp chất",
+5
+],
+[
+"conflict",
+"n",
+"xung đột",
+5
+],
+[
+"consult",
+"v",
+"tham khảo, hỏi ý kiến",
+5
+],
+[
+"contact",
+"n",
+"sự liên lạc, tiếp xúc",
+5
+],
+[
+"decline",
+"v",
+"suy giảm",
+5
+],
+[
+"discrete",
+"adj",
+"riêng rẽ",
+5
+],
+[
+"draft",
+"n",
+"bản nháp",
+5
+],
+[
+"enable",
+"v",
+"cho phép, giúp",
+5
+],
+[
+"energy",
+"n",
+"năng lượng",
+5
+],
+[
+"enforce",
+"v",
+"thi hành",
+5
+],
+[
+"entity",
+"n",
+"thực thể",
+5
+],
+[
+"equivalent",
+"adj",
+"tương đương",
+5
+],
+[
+"evolve",
+"v",
+"tiến hoá, phát triển",
+5
+],
+[
+"expand",
+"v",
+"mở rộng",
+5
+],
+[
+"expose",
+"v",
+"phơi nhiễm, phơi bày",
+5
+],
+[
+"external",
+"adj",
+"bên ngoài",
+5
+],
+[
+"facilitate",
+"v",
+"tạo điều kiện",
+5
+],
+[
+"fundamental",
+"adj",
+"cơ bản",
+5
+],
+[
+"generate",
+"v",
+"tạo ra",
+5
+],
+[
+"generation",
+"n",
+"thế hệ",
+5
+],
+[
+"image",
+"n",
+"hình ảnh",
+5
+],
+[
+"liberal",
+"adj",
+"tự do, phóng khoáng",
+5
+],
+[
+"licence",
+"n",
+"giấy phép",
+5
+],
+[
+"logic",
+"n",
+"lô-gic",
+5
+],
+[
+"margin",
+"n",
+"lề; biên độ",
+5
+],
+[
+"medical",
+"adj",
+"thuộc y tế",
+5
+],
+[
+"mental",
+"adj",
+"thuộc tinh thần",
+5
+],
+[
+"modify",
+"v",
+"sửa đổi",
+5
+],
+[
+"monitor",
+"v",
+"theo dõi, giám sát",
+5
+],
+[
+"network",
+"n",
+"mạng lưới",
+5
+],
+[
+"notion",
+"n",
+"khái niệm, ý niệm",
+5
+],
+[
+"objective",
+"n",
+"mục tiêu",
+5
+],
+[
+"orientation",
+"n",
+"định hướng",
+5
+],
+[
+"perspective",
+"n",
+"góc nhìn",
+5
+],
+[
+"precise",
+"adj",
+"chính xác",
+5
+],
+[
+"prime",
+"adj",
+"chính, hàng đầu",
+5
+],
+[
+"psychology",
+"n",
+"tâm lý học",
+5
+],
+[
+"pursue",
+"v",
+"theo đuổi",
+5
+],
+[
+"ratio",
+"n",
+"tỉ số",
+5
+],
+[
+"reject",
+"v",
+"từ chối, bác bỏ",
+5
+],
+[
+"revenue",
+"n",
+"doanh thu",
+5
+],
+[
+"stable",
+"adj",
+"ổn định",
+5
+],
+[
+"style",
+"n",
+"phong cách",
+5
+],
+[
+"substitute",
+"n",
+"vật thay thế",
+5
+],
+[
+"sustain",
+"v",
+"duy trì",
+5
+],
+[
+"symbol",
+"n",
+"biểu tượng",
+5
+],
+[
+"target",
+"n",
+"mục tiêu",
+5
+],
+[
+"transition",
+"n",
+"sự chuyển tiếp",
+5
+],
+[
+"trend",
+"n",
+"xu hướng",
+5
+],
+[
+"version",
+"n",
+"phiên bản",
+5
+],
+[
+"welfare",
+"n",
+"phúc lợi",
+5
+],
+[
+"whereas",
+"conj",
+"trong khi",
+5
+],
+[
+"abstract",
+"adj",
+"trừu tượng",
+6
+],
+[
+"accurate",
+"adj",
+"chính xác",
+6
+],
+[
+"acknowledge",
+"v",
+"thừa nhận",
+6
+],
+[
+"aggregate",
+"n",
+"tổng hợp",
+6
+],
+[
+"allocate",
+"v",
+"phân bổ",
+6
+],
+[
+"assign",
+"v",
+"giao, phân công",
+6
+],
+[
+"attach",
+"v",
+"gắn, đính kèm",
+6
+],
+[
+"author",
+"n",
+"tác giả",
+6
+],
+[
+"bond",
+"n",
+"mối liên kết",
+6
+],
+[
+"brief",
+"adj",
+"ngắn gọn",
+6
+],
+[
+"capable",
+"adj",
+"có khả năng",
+6
+],
+[
+"cite",
+"v",
+"trích dẫn",
+6
+],
+[
+"cooperate",
+"v",
+"hợp tác",
+6
+],
+[
+"discrimination",
+"n",
+"sự phân biệt đối xử",
+6
+],
+[
+"display",
+"v",
+"trưng bày, thể hiện",
+6
+],
+[
+"diverse",
+"adj",
+"đa dạng",
+6
+],
+[
+"domain",
+"n",
+"lĩnh vực",
+6
+],
+[
+"edit",
+"v",
+"biên tập",
+6
+],
+[
+"enhance",
+"v",
+"nâng cao",
+6
+],
+[
+"estate",
+"n",
+"bất động sản; điền trang",
+6
+],
+[
+"exceed",
+"v",
+"vượt quá",
+6
+],
+[
+"expert",
+"n",
+"chuyên gia",
+6
+],
+[
+"explicit",
+"adj",
+"rõ ràng, tường minh",
+6
+],
+[
+"federal",
+"adj",
+"thuộc liên bang",
+6
+],
+[
+"fee",
+"n",
+"phí",
+6
+],
+[
+"flexible",
+"adj",
+"linh hoạt",
+6
+],
+[
+"furthermore",
+"adv",
+"hơn nữa",
+6
+],
+[
+"gender",
+"n",
+"giới tính",
+6
+],
+[
+"ignore",
+"v",
+"phớt lờ",
+6
+],
+[
+"incentive",
+"n",
+"động lực, ưu đãi",
+6
+],
+[
+"incidence",
+"n",
+"tỉ lệ mắc, tần suất",
+6
+],
+[
+"incorporate",
+"v",
+"kết hợp, đưa vào",
+6
+],
+[
+"index",
+"n",
+"chỉ số",
+6
+],
+[
+"inhibit",
+"v",
+"kìm hãm",
+6
+],
+[
+"initiate",
+"v",
+"khởi xướng",
+6
+],
+[
+"input",
+"n",
+"đầu vào",
+6
+],
+[
+"instruction",
+"n",
+"hướng dẫn",
+6
+],
+[
+"intelligence",
+"n",
+"trí thông minh",
+6
+],
+[
+"interval",
+"n",
+"khoảng (thời gian)",
+6
+],
+[
+"lecture",
+"n",
+"bài giảng",
+6
+],
+[
+"migrate",
+"v",
+"di cư",
+6
+],
+[
+"minimum",
+"n",
+"mức tối thiểu",
+6
+],
+[
+"ministry",
+"n",
+"bộ (chính phủ)",
+6
+],
+[
+"motive",
+"n",
+"động cơ",
+6
+],
+[
+"neutral",
+"adj",
+"trung lập",
+6
+],
+[
+"nevertheless",
+"adv",
+"tuy nhiên",
+6
+],
+[
+"overseas",
+"adj",
+"ở nước ngoài",
+6
+],
+[
+"precede",
+"v",
+"đi trước",
+6
+],
+[
+"presume",
+"v",
+"cho là",
+6
+],
+[
+"rational",
+"adj",
+"hợp lý, lý trí",
+6
+],
+[
+"recover",
+"v",
+"hồi phục",
+6
+],
+[
+"reveal",
+"v",
+"tiết lộ",
+6
+],
+[
+"scope",
+"n",
+"phạm vi",
+6
+],
+[
+"subsidy",
+"n",
+"trợ cấp",
+6
+],
+[
+"tape",
+"n",
+"băng",
+6
+],
+[
+"trace",
+"n",
+"dấu vết",
+6
+],
+[
+"transform",
+"v",
+"biến đổi",
+6
+],
+[
+"transport",
+"n",
+"giao thông, vận tải",
+6
+],
+[
+"underlie",
+"v",
+"làm nền tảng cho",
+6
+],
+[
+"utilise",
+"v",
+"tận dụng",
+6
+],
+[
+"adapt",
+"v",
+"thích nghi",
+7
+],
+[
+"adult",
+"n",
+"người lớn",
+7
+],
+[
+"advocate",
+"v",
+"ủng hộ",
+7
+],
+[
+"aid",
+"n",
+"sự trợ giúp",
+7
+],
+[
+"channel",
+"n",
+"kênh",
+7
+],
+[
+"chemical",
+"n",
+"hoá chất",
+7
+],
+[
+"classic",
+"adj",
+"kinh điển",
+7
+],
+[
+"comprehensive",
+"adj",
+"toàn diện",
+7
+],
+[
+"comprise",
+"v",
+"bao gồm",
+7
+],
+[
+"confirm",
+"v",
+"xác nhận",
+7
+],
+[
+"contrary",
+"adj",
+"trái ngược",
+7
+],
+[
+"convert",
+"v",
+"chuyển đổi",
+7
+],
+[
+"couple",
+"n",
+"cặp, đôi",
+7
+],
+[
+"decade",
+"n",
+"thập kỷ",
+7
+],
+[
+"definite",
+"adj",
+"xác định, rõ ràng",
+7
+],
+[
+"deny",
+"v",
+"phủ nhận",
+7
+],
+[
+"differentiate",
+"v",
+"phân biệt",
+7
+],
+[
+"dispose",
+"v",
+"vứt bỏ (dispose of)",
+7
+],
+[
+"dynamic",
+"adj",
+"năng động",
+7
+],
+[
+"eliminate",
+"v",
+"loại bỏ",
+7
+],
+[
+"empirical",
+"adj",
+"thực nghiệm",
+7
+],
+[
+"equipment",
+"n",
+"thiết bị",
+7
+],
+[
+"extract",
+"v",
+"chiết xuất",
+7
+],
+[
+"file",
+"n",
+"tập tin, hồ sơ",
+7
+],
+[
+"finite",
+"adj",
+"hữu hạn",
+7
+],
+[
+"foundation",
+"n",
+"nền tảng",
+7
+],
+[
+"global",
+"adj",
+"toàn cầu",
+7
+],
+[
+"grade",
+"n",
+"điểm; cấp bậc",
+7
+],
+[
+"guarantee",
+"v",
+"bảo đảm",
+7
+],
+[
+"hierarchy",
+"n",
+"hệ thống thứ bậc",
+7
+],
+[
+"identical",
+"adj",
+"giống hệt",
+7
+],
+[
+"ideology",
+"n",
+"hệ tư tưởng",
+7
+],
+[
+"infer",
+"v",
+"suy luận",
+7
+],
+[
+"innovation",
+"n",
+"sự đổi mới",
+7
+],
+[
+"insert",
+"v",
+"chèn vào",
+7
+],
+[
+"intervene",
+"v",
+"can thiệp",
+7
+],
+[
+"isolate",
+"v",
+"cô lập",
+7
+],
+[
+"media",
+"n",
+"truyền thông",
+7
+],
+[
+"mode",
+"n",
+"phương thức",
+7
+],
+[
+"paradigm",
+"n",
+"mô hình",
+7
+],
+[
+"phenomenon",
+"n",
+"hiện tượng",
+7
+],
+[
+"priority",
+"n",
+"sự ưu tiên",
+7
+],
+[
+"prohibit",
+"v",
+"cấm",
+7
+],
+[
+"publication",
+"n",
+"ấn phẩm, sự xuất bản",
+7
+],
+[
+"quote",
+"v",
+"trích dẫn",
+7
+],
+[
+"release",
+"v",
+"giải phóng, phát hành",
+7
+],
+[
+"reverse",
+"v",
+"đảo ngược",
+7
+],
+[
+"simulate",
+"v",
+"mô phỏng",
+7
+],
+[
+"sole",
+"adj",
+"duy nhất",
+7
+],
+[
+"somewhat",
+"adv",
+"phần nào",
+7
+],
+[
+"submit",
+"v",
+"nộp",
+7
+],
+[
+"successor",
+"n",
+"người kế nhiệm",
+7
+],
+[
+"survive",
+"v",
+"sống sót",
+7
+],
+[
+"thesis",
+"n",
+"luận văn, luận điểm",
+7
+],
+[
+"topic",
+"n",
+"chủ đề",
+7
+],
+[
+"transmit",
+"v",
+"truyền",
+7
+],
+[
+"ultimate",
+"adj",
+"cuối cùng, tối thượng",
+7
+],
+[
+"unique",
+"adj",
+"độc nhất",
+7
+],
+[
+"visible",
+"adj",
+"nhìn thấy được",
+7
+],
+[
+"voluntary",
+"adj",
+"tự nguyện",
+7
+],
+[
+"abandon",
+"v",
+"từ bỏ",
+8
+],
+[
+"accompany",
+"v",
+"đi kèm",
+8
+],
+[
+"accumulate",
+"v",
+"tích luỹ",
+8
+],
+[
+"ambiguous",
+"adj",
+"mơ hồ",
+8
+],
+[
+"append",
+"v",
+"nối thêm",
+8
+],
+[
+"appreciate",
+"v",
+"đánh giá cao",
+8
+],
+[
+"arbitrary",
+"adj",
+"tuỳ tiện",
+8
+],
+[
+"automatic",
+"adj",
+"tự động",
+8
+],
+[
+"bias",
+"n",
+"thiên kiến",
+8
+],
+[
+"chart",
+"n",
+"biểu đồ",
+8
+],
+[
+"clarify",
+"v",
+"làm rõ",
+8
+],
+[
+"commodity",
+"n",
+"hàng hoá",
+8
+],
+[
+"complement",
+"v",
+"bổ sung",
+8
+],
+[
+"conform",
+"v",
+"tuân theo",
+8
+],
+[
+"contemporary",
+"adj",
+"đương đại",
+8
+],
+[
+"contradict",
+"v",
+"mâu thuẫn",
+8
+],
+[
+"crucial",
+"adj",
+"then chốt",
+8
+],
+[
+"currency",
+"n",
+"tiền tệ",
+8
+],
+[
+"denote",
+"v",
+"biểu thị",
+8
+],
+[
+"detect",
+"v",
+"phát hiện",
+8
+],
+[
+"deviate",
+"v",
+"đi chệch",
+8
+],
+[
+"displace",
+"v",
+"thay thế; di dời",
+8
+],
+[
+"drama",
+"n",
+"kịch",
+8
+],
+[
+"eventually",
+"adv",
+"cuối cùng",
+8
+],
+[
+"exhibit",
+"v",
+"trưng bày; thể hiện",
+8
+],
+[
+"exploit",
+"v",
+"khai thác",
+8
+],
+[
+"fluctuate",
+"v",
+"dao động",
+8
+],
+[
+"guideline",
+"n",
+"hướng dẫn",
+8
+],
+[
+"highlight",
+"v",
+"làm nổi bật",
+8
+],
+[
+"implicit",
+"adj",
+"ngầm",
+8
+],
+[
+"induce",
+"v",
+"gây ra",
+8
+],
+[
+"inevitable",
+"adj",
+"không thể tránh khỏi",
+8
+],
+[
+"infrastructure",
+"n",
+"cơ sở hạ tầng",
+8
+],
+[
+"inspect",
+"v",
+"kiểm tra",
+8
+],
+[
+"intense",
+"adj",
+"mãnh liệt",
+8
+],
+[
+"manipulate",
+"v",
+"thao túng, điều khiển",
+8
+],
+[
+"minimise",
+"v",
+"giảm thiểu",
+8
+],
+[
+"nuclear",
+"adj",
+"hạt nhân",
+8
+],
+[
+"offset",
+"v",
+"bù lại",
+8
+],
+[
+"paragraph",
+"n",
+"đoạn văn",
+8
+],
+[
+"plus",
+"prep",
+"cộng thêm",
+8
+],
+[
+"practitioner",
+"n",
+"người hành nghề",
+8
+],
+[
+"predominantly",
+"adv",
+"chủ yếu",
+8
+],
+[
+"prospect",
+"n",
+"triển vọng",
+8
+],
+[
+"radical",
+"adj",
+"triệt để",
+8
+],
+[
+"random",
+"adj",
+"ngẫu nhiên",
+8
+],
+[
+"reinforce",
+"v",
+"củng cố",
+8
+],
+[
+"restore",
+"v",
+"khôi phục",
+8
+],
+[
+"revise",
+"v",
+"sửa đổi; ôn lại",
+8
+],
+[
+"schedule",
+"n",
+"lịch trình",
+8
+],
+[
+"tension",
+"n",
+"căng thẳng",
+8
+],
+[
+"terminate",
+"v",
+"chấm dứt",
+8
+],
+[
+"theme",
+"n",
+"chủ đề",
+8
+],
+[
+"thereby",
+"adv",
+"nhờ đó",
+8
+],
+[
+"uniform",
+"adj",
+"đồng nhất",
+8
+],
+[
+"vehicle",
+"n",
+"phương tiện",
+8
+],
+[
+"via",
+"prep",
+"qua",
+8
+],
+[
+"virtually",
+"adv",
+"hầu như",
+8
+],
+[
+"visual",
+"adj",
+"thuộc thị giác",
+8
+],
+[
+"widespread",
+"adj",
+"lan rộng",
+8
+],
+[
+"accommodate",
+"v",
+"cung cấp chỗ ở; đáp ứng",
+9
+],
+[
+"analogy",
+"n",
+"sự tương tự",
+9
+],
+[
+"anticipate",
+"v",
+"dự đoán trước",
+9
+],
+[
+"assure",
+"v",
+"cam đoan",
+9
+],
+[
+"attain",
+"v",
+"đạt được",
+9
+],
+[
+"behalf",
+"n",
+"thay mặt (on behalf of)",
+9
+],
+[
+"bulk",
+"n",
+"phần lớn",
+9
+],
+[
+"cease",
+"v",
+"ngừng",
+9
+],
+[
+"coherent",
+"adj",
+"mạch lạc",
+9
+],
+[
+"coincide",
+"v",
+"trùng khớp",
+9
+],
+[
+"commence",
+"v",
+"bắt đầu",
+9
+],
+[
+"compatible",
+"adj",
+"tương thích",
+9
+],
+[
+"concurrent",
+"adj",
+"đồng thời",
+9
+],
+[
+"confine",
+"v",
+"giới hạn",
+9
+],
+[
+"controversy",
+"n",
+"sự tranh cãi",
+9
+],
+[
+"converse",
+"n",
+"điều ngược lại",
+9
+],
+[
+"device",
+"n",
+"thiết bị",
+9
+],
+[
+"devote",
+"v",
+"cống hiến",
+9
+],
+[
+"diminish",
+"v",
+"giảm bớt",
+9
+],
+[
+"distort",
+"v",
+"bóp méo",
+9
+],
+[
+"duration",
+"n",
+"khoảng thời gian",
+9
+],
+[
+"erode",
+"v",
+"xói mòn",
+9
+],
+[
+"ethical",
+"adj",
+"thuộc đạo đức",
+9
+],
+[
+"format",
+"n",
+"định dạng",
+9
+],
+[
+"found",
+"v",
+"thành lập",
+9
+],
+[
+"inherent",
+"adj",
+"vốn có",
+9
+],
+[
+"insight",
+"n",
+"sự hiểu biết sâu sắc",
+9
+],
+[
+"integral",
+"adj",
+"không thể thiếu",
+9
+],
+[
+"intermediate",
+"adj",
+"trung cấp, trung gian",
+9
+],
+[
+"manual",
+"adj",
+"thủ công",
+9
+],
+[
+"mature",
+"adj",
+"trưởng thành",
+9
+],
+[
+"mediate",
+"v",
+"hoà giải",
+9
+],
+[
+"medium",
+"n",
+"phương tiện, môi trường",
+9
+],
+[
+"military",
+"adj",
+"quân sự",
+9
+],
+[
+"minimal",
+"adj",
+"tối thiểu",
+9
+],
+[
+"mutual",
+"adj",
+"lẫn nhau",
+9
+],
+[
+"norm",
+"n",
+"chuẩn mực",
+9
+],
+[
+"overlap",
+"v",
+"chồng chéo",
+9
+],
+[
+"passive",
+"adj",
+"bị động",
+9
+],
+[
+"portion",
+"n",
+"phần",
+9
+],
+[
+"preliminary",
+"adj",
+"sơ bộ",
+9
+],
+[
+"protocol",
+"n",
+"giao thức, quy trình",
+9
+],
+[
+"qualitative",
+"adj",
+"định tính",
+9
+],
+[
+"refine",
+"v",
+"tinh chỉnh",
+9
+],
+[
+"relax",
+"v",
+"thư giãn; nới lỏng",
+9
+],
+[
+"restrain",
+"v",
+"kiềm chế",
+9
+],
+[
+"revolution",
+"n",
+"cuộc cách mạng",
+9
+],
+[
+"rigid",
+"adj",
+"cứng nhắc",
+9
+],
+[
+"route",
+"n",
+"tuyến đường",
+9
+],
+[
+"scenario",
+"n",
+"kịch bản",
+9
+],
+[
+"sphere",
+"n",
+"lĩnh vực; hình cầu",
+9
+],
+[
+"subordinate",
+"adj",
+"cấp dưới, phụ",
+9
+],
+[
+"supplement",
+"n",
+"chất bổ sung",
+9
+],
+[
+"suspend",
+"v",
+"đình chỉ",
+9
+],
+[
+"team",
+"n",
+"đội",
+9
+],
+[
+"temporary",
+"adj",
+"tạm thời",
+9
+],
+[
+"trigger",
+"v",
+"kích hoạt",
+9
+],
+[
+"unify",
+"v",
+"thống nhất",
+9
+],
+[
+"violate",
+"v",
+"vi phạm",
+9
+],
+[
+"vision",
+"n",
+"tầm nhìn; thị lực",
+9
+],
+[
+"adjacent",
+"adj",
+"liền kề",
+10
+],
+[
+"albeit",
+"conj",
+"mặc dù",
+10
+],
+[
+"assemble",
+"v",
+"lắp ráp; tập hợp",
+10
+],
+[
+"collapse",
+"v",
+"sụp đổ",
+10
+],
+[
+"colleague",
+"n",
+"đồng nghiệp",
+10
+],
+[
+"compile",
+"v",
+"biên soạn",
+10
+],
+[
+"conceive",
+"v",
+"hình thành (ý tưởng)",
+10
+],
+[
+"convince",
+"v",
+"thuyết phục",
+10
+],
+[
+"depression",
+"n",
+"sự trầm cảm; suy thoái",
+10
+],
+[
+"encounter",
+"v",
+"gặp phải",
+10
+],
+[
+"enormous",
+"adj",
+"khổng lồ",
+10
+],
+[
+"forthcoming",
+"adj",
+"sắp tới",
+10
+],
+[
+"inclined",
+"adj",
+"có xu hướng",
+10
+],
+[
+"integrity",
+"n",
+"sự chính trực; toàn vẹn",
+10
+],
+[
+"intrinsic",
+"adj",
+"nội tại",
+10
+],
+[
+"invoke",
+"v",
+"viện dẫn",
+10
+],
+[
+"levy",
+"n",
+"thuế, khoản thu",
+10
+],
+[
+"likewise",
+"adv",
+"tương tự",
+10
+],
+[
+"nonetheless",
+"adv",
+"tuy nhiên",
+10
+],
+[
+"notwithstanding",
+"prep",
+"bất chấp",
+10
+],
+[
+"odd",
+"adj",
+"kỳ lạ; lẻ",
+10
+],
+[
+"ongoing",
+"adj",
+"đang diễn ra",
+10
+],
+[
+"panel",
+"n",
+"hội đồng; tấm",
+10
+],
+[
+"persist",
+"v",
+"kéo dài, kiên trì",
+10
+],
+[
+"pose",
+"v",
+"đặt ra (vấn đề)",
+10
+],
+[
+"reluctant",
+"adj",
+"miễn cưỡng",
+10
+],
+[
+"so-called",
+"adj",
+"cái gọi là",
+10
+],
+[
+"straightforward",
+"adj",
+"đơn giản, dễ hiểu",
+10
+],
+[
+"undergo",
+"v",
+"trải qua",
+10
+],
+[
+"whereby",
+"adv",
+"nhờ đó",
+10
+]
+]
+}

@@ -107,7 +107,7 @@ export default function Vocab() {
                 <div key={d.id} className="deck card" data-testid="deck">
                   <div className="deck__head">
                     {d.kind === 'topic' && <button className={`lt-topic__check${on ? ' is-on' : ''}`} onClick={() => toggleTopic(d.id.slice(5))} aria-pressed={on} aria-label={`Chọn chủ đề ${d.name}`}>{on && <Check size={13} />}</button>}
-                    <div className="deck__name"><strong>{d.name}</strong>{d.vi && <small className="muted">{d.vi}</small>}{d.ref && <Link className="small" to={`/reading/${d.ref}`}>{d.ref}</Link>}</div>
+                    <div className="deck__name"><strong>{d.name}</strong>{d.vi && <small className="muted">{d.vi}</small>}{d.ref && <Link className="small" to={`/reading/${d.ref}`}>AWL · mở bài Reading →</Link>}</div>
                     <span className="deck__n">{learned}/{st.total}</span>
                   </div>
                   <div className="deck__bar" aria-label="Tiến độ">

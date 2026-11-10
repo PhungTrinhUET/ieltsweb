@@ -215,10 +215,43 @@ let vocab;
       topics.push({ id: t.id, name: t.name, vi: t.vi, words: t.words });
     }
   }
+  // A5. Bộ theo đề: 20–30 từ AWL xuất hiện nhiều nhất trong 3 bài Reading của mỗi đề; ví dụ là câu thật trong bài.
+  const tests = [];
+  const awlPath = join(dir, 'awl.json');
+  if (existsSync(awlPath)) {
+    const awl = JSON.parse(readFileSync(awlPath, 'utf8'));
+    const skip = new Set(awl.skip ?? []);
+    const list = awl.words.filter((w) => !skip.has(w[0]));
+    // biến thể chính tả Anh–Mỹ: -ise/-ize, -our/-or, licence/license, analyse/analyze
+    const variants = (w) => [w, w.replace(/ise$/, 'ize'), w.replace(/our$/, 'or'), w.replace(/ence$/, 'ense'), w.replace(/yse$/, 'yze')];
+    const formOf = new Map();
+    for (const w of list) for (const v of new Set(variants(w[0]))) for (const f of forms(v)) if (!formOf.has(f)) formOf.set(f, w);
+    const byTest = new Map();
+    for (const m of allMats) if (m.skill === 'reading' && /-r\d+$/.test(m.id)) { const k = m.id.replace(/-r\d+$/, ''); (byTest.get(k) ?? byTest.set(k, []).get(k)).push(m); }
+    for (const [tid, mats] of [...byTest].sort((a, b) => a[0].localeCompare(b[0], undefined, { numeric: true }))) {
+      mats.sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));
+      const sents = mats.flatMap((m) => String(m.passage ?? '').split(/\n+/).flatMap((p) => sentences(p.replace(/^[A-Z]\s+(?=[A-Z])/, ''))).map((x) => x.trim()));
+      const hit = new Map(); // từ → { w, n, ex, score }
+      for (const x of sents) {
+        const tk = tokens(x);
+        const fit = tk.length >= 7 && tk.length <= 32 ? Math.abs(tk.length - 17) : 99;
+        for (const t of tk) {
+          const w = formOf.get(t); if (!w) continue;
+          const h = hit.get(w[0]) ?? hit.set(w[0], { w, n: 0, ex: '', score: 100 }).get(w[0]);
+          h.n++;
+          if (fit < 99 && fit < h.score) { h.score = fit; h.ex = x; }
+        }
+      }
+      const ranked = [...hit.values()].filter((h) => h.ex).sort((a, b) => b.n - a.n || a.w[3] - b.w[3]).slice(0, 30);
+      if (ranked.length < 12) { console.warn(`⚠ bộ theo đề ${tid}: chỉ ${ranked.length} từ AWL`); continue; }
+      const [, v, tn] = tid.match(/^vol(\d+)-t(\d+)$/) ?? [];
+      tests.push({ id: tid, name: v ? `VOL ${v} · Test ${tn}` : tid, ref: mats[0].id, words: ranked.sort((a, b) => a.w[3] - b.w[3] || b.n - a.n).map((h) => [h.w[0], h.w[1], h.w[2], h.ex]) });
+    }
+  }
   if (topics.length) {
-    const body = JSON.stringify({ topics });
+    const body = JSON.stringify({ topics, tests });
     writeFileSync(join(OUT, 'vocab-deck.json'), body);
-    vocab = { file: 'vocab-deck.json', hash: createHash('sha1').update(body).digest('hex').slice(0, 12), topics: topics.length, words: seen.size };
+    vocab = { file: 'vocab-deck.json', hash: createHash('sha1').update(body).digest('hex').slice(0, 12), topics: topics.length, words: seen.size, tests: tests.length };
   }
 }
 // A4. Chỉ mục ngữ cảnh: từ trong bộ từ → câu thật trong bài đọc / transcript (kèm mốc audio nếu có).
@@ -226,7 +259,7 @@ let vocab;
 let context;
 {
   const words = new Set();
-  if (vocab) for (const t of JSON.parse(readFileSync(join(OUT, 'vocab-deck.json'), 'utf8')).topics) for (const w of t.words) words.add(String(w[0]).toLowerCase());
+  if (vocab) { const d = JSON.parse(readFileSync(join(OUT, 'vocab-deck.json'), 'utf8')); for (const t of [...d.topics, ...(d.tests ?? [])]) for (const w of t.words) words.add(String(w[0]).toLowerCase()); }
   for (const w of EXTRA_CONTEXT_WORDS) words.add(w);
   const r = buildContext(allMats, [...words]);
   const body = JSON.stringify(r.data);
@@ -235,4 +268,4 @@ let context;
   if (r.missing.length) console.log(`  ngữ cảnh: ${r.missing.length} từ không có câu trong đề (vd. ${r.missing.slice(0, 6).join(', ')})`);
 }
 writeFileSync(join(OUT, 'index.json'), JSON.stringify({ generatedAt: new Date().toISOString(), files: index, ...(vocab ? { vocab } : {}), context }));
-console.log(`build-data: ${index.length} test(s), ${total} materials${vocab ? `, ${vocab.words} từ vựng / ${vocab.topics} chủ đề` : ''}, ngữ cảnh ${context.words} từ / ${context.sentences} câu → public/data/`);
+console.log(`build-data: ${index.length} test(s), ${total} materials${vocab ? `, ${vocab.words} từ vựng / ${vocab.topics} chủ đề, ${vocab.tests} bộ theo đề` : ''}, ngữ cảnh ${context.words} từ / ${context.sentences} câu → public/data/`);
