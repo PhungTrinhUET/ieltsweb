@@ -114,7 +114,7 @@ export default function Practice() {
           if (s2) { speaker = s2[1]; body = body.slice(s2[0].length); }
         } else if (sm) { speaker = sm[1]; body = t.slice(sm[0].length); }
         body = body.replace(/\s+/g, ' ').trim();
-        const map = colorMap(body, hl.list);
+        const map = colorMap(body, hl.list, String(i));
         let cur = 0;
         const vi = viOf(i);
         return (
@@ -125,7 +125,7 @@ export default function Practice() {
               {speaker && <strong className="pp__speaker">{speaker}:</strong>}{' '}
               {sentences(body).map((s, si) => {
                 const off = body.indexOf(s, cur); cur = off + s.length;
-                return <span key={si}><HlText text={s} map={map} offset={off} onWord={setSel} />{' '}</span>;
+                return <span key={si}><HlText text={s} map={map} offset={off} onWord={setSel} para={String(i)} />{' '}</span>;
               })}
               <button className={`pp__tr${vi ? ' is-on' : ''}`} onClick={() => translatePara(i)} title={vi ? 'Ẩn bản dịch' : 'Dịch đoạn này'} aria-label="Dịch đoạn">
                 {tr[i] === 'busy' ? <Loader2 size={13} className="spin" /> : <Languages size={13} />}

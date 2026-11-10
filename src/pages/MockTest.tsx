@@ -12,7 +12,7 @@ import { touchStreak, useSettings } from '../store';
 import { stopAudio } from '../components/AudioPlayer';
 import { GroupsView, isCorrect, scoreGroups, type Answers } from '../components/Questions';
 import { ExamClock, ExamFrame, ExamIntro, ExamNav, ExamSheet, ExamSplit, answeredNos, focusQuestion, groupNos, qNos, useExamPrefs } from '../components/Exam';
-import { HighlightBar, HlText, colorMap, type Hl, type HlColor } from '../components/Highlight';
+import { HighlightBar, HlText, addHls, colorMap, removeHls, type Hl, type HlColor, type HlSel } from '../components/Highlight';
 import WordPopover, { type WordSel } from '../components/WordPopover';
 import { RichText } from '../components/ui';
 import { paragraphs, paraLabel, shuffle } from '../lib/text';
@@ -206,12 +206,12 @@ export function ExamRunner({ skill, ids, name, back, intro, full }: {
       <h2>{bareTitle(m)}</h2>
       {paragraphs((m as ReadingMaterial).passage).map((p, i) => {
         const { label, text } = paraLabel(p);
-        return <p key={i} className="passage__p">{label && <span className="passage__label">{label}</span>}<span><HlText text={text} map={colorMap(text, list)} onWord={checked ? setWord : undefined} /></span></p>;
+        return <p key={i} className="passage__p">{label && <span className="passage__label">{label}</span>}<span><HlText text={text} map={colorMap(text, list, String(i))} onWord={checked ? setWord : undefined} para={String(i)} /></span></p>;
       })}
     </article>
   ) : null;
-  const addHl = (text: string, color: HlColor) => setHls((h) => ({ ...h, [m.id]: [...(h[m.id] ?? []).filter((x) => x.text !== text), { text: text.replace(/\s+/g, ' ').trim(), color }] }));
-  const rmHl = (text: string) => setHls((h) => ({ ...h, [m.id]: (h[m.id] ?? []).filter((x) => !x.text.includes(text) && !text.includes(x.text)) }));
+  const addHl = (sel: HlSel[], color: HlColor) => setHls((h) => ({ ...h, [m.id]: addHls(h[m.id] ?? [], sel, color) }));
+  const rmHl = (sel: HlSel[]) => setHls((h) => ({ ...h, [m.id]: removeHls(h[m.id] ?? [], sel) }));
   const lm = m as ListeningMaterial;
 
   return (

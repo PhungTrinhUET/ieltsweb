@@ -11,7 +11,7 @@ import { addAttempt, getKv, getState, resolveUrl, saveBlob, setKv, updateAttempt
 import { aiReady, getAiConfig, touchStreak, useAiConfig, useSettings } from '../store';
 import { GroupsView, scoreGroups, type Answers } from '../components/Questions';
 import { ExamClock, ExamFrame, ExamIntro, ExamNav, ExamSplit, answeredNos, focusQuestion, groupNos, useExamPrefs } from '../components/Exam';
-import { HighlightBar, HlText, colorMap, type Hl, type HlColor } from '../components/Highlight';
+import { HighlightBar, HlText, addHls, colorMap, removeHls, type Hl, type HlColor, type HlSel } from '../components/Highlight';
 import Recorder, { type Recording } from '../components/Recorder';
 import SelfCheck from '../components/SelfCheck';
 import { AiMissing } from '../components/AiGuide';
@@ -354,12 +354,12 @@ function QStage({ cur, materials, tools, onExit, setAnswer, onLis, onReview, onD
         {isR ? <ExamSplit left={(
           <article className="passage passage--reading xpassage">
             <h2>{bareTitle(m)}</h2>
-            {paragraphs((m as ReadingMaterial).passage).map((x, i) => { const { label, text } = paraLabel(x); return <p key={i} className="passage__p">{label && <span className="passage__label">{label}</span>}<span><HlText text={text} map={colorMap(text, list)} /></span></p>; })}
+            {paragraphs((m as ReadingMaterial).passage).map((x, i) => { const { label, text } = paraLabel(x); return <p key={i} className="passage__p">{label && <span className="passage__label">{label}</span>}<span><HlText text={text} map={colorMap(text, list, String(i))} para={String(i)} /></span></p>; })}
           </article>
         )} right={qs} labels={['Passage', 'Questions']} /> : <div className="xsingle">{qs}</div>}
       </div>
-      {isR && <HighlightBar scopeClass="xpassage" onAdd={(text: string, color: HlColor) => setHls((h) => ({ ...h, [m.id]: [...(h[m.id] ?? []).filter((x) => x.text !== text), { text: text.replace(/\s+/g, ' ').trim(), color }] }))}
-        onRemove={(text: string) => setHls((h) => ({ ...h, [m.id]: (h[m.id] ?? []).filter((x) => !x.text.includes(text) && !text.includes(x.text)) }))} />}
+      {isR && <HighlightBar scopeClass="xpassage" onAdd={(sel: HlSel[], color: HlColor) => setHls((h) => ({ ...h, [m.id]: addHls(h[m.id] ?? [], sel, color) }))}
+        onRemove={(sel: HlSel[]) => setHls((h) => ({ ...h, [m.id]: removeHls(h[m.id] ?? [], sel) }))} />}
     </ExamFrame>
   );
 }
