@@ -1,6 +1,6 @@
 // Smoke test bằng Playwright trên bản build (vite preview).
 //   npm run build && npm run smoke            (tự bật vite preview ở cổng 4317)
-//   BASE_URL=https://phungtrinhuet.github.io/ieltsweb/ npm run smoke   (kiểm tra bản đang chạy)
+//   BASE_URL=https://ielts.lionelphung.id.vn/ npm run smoke   (kiểm tra bản đang chạy)
 //   CHROME=/đường/dẫn/chrome npm run smoke    (mặc định: /usr/bin/google-chrome, rồi Chromium của Playwright)
 // Fail nếu: trang có pageerror / console error, đồng hồ không chạy, hoặc tái hiện được lỗi đã sửa (A1–A7).
 import { spawn } from 'node:child_process';

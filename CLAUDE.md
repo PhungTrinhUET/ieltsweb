@@ -17,7 +17,7 @@ Web app luyện IELTS 4 kỹ năng: Reading, Listening, Speaking, Writing.
 | `npx tsc -b` | kiểm tra kiểu |
 | `npm run build` | data + tsc + vite build → `dist/` |
 | `npm run smoke [lọc]` | sau `npm run build`: mở `dist/` bằng Chrome headless (desktop + iPhone), đi qua mọi trang và các kiểm tra theo mục audit (A1–C16). `BASE_URL=… npm run smoke` để kiểm tra bản đang chạy |
-| `npm run deploy` | build rồi đẩy `dist/` lên nhánh `gh-pages` → https://phungtrinhuet.github.io/ieltsweb/ (Actions bị khoá do billing nên deploy từ máy) |
+| `npm run deploy` | build thử rồi push `master` → GitHub Actions (`.github/workflows/pages.yml`) deploy lên https://ielts.lionelphung.id.vn/ (tên miền riêng; `phungtrinhuet.github.io/ieltsweb/` chuyển hướng 301 về đây). Nhánh `gh-pages` không còn dùng |
 
 Chưa có unit test; có `scripts/smoke.mjs` (trình duyệt thật). Sau khi sửa, chạy `npm run data` (không được còn `⚠`), `npx tsc -b`, `npm run build && npm run smoke`, rồi mở vài trang để xem, ví dụ `#/listening/vol5-t6-l2`, `#/reading/vol5-t6-r2`.
 

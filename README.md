@@ -8,6 +8,7 @@ Web luyện **Reading · Listening · Speaking · Writing** IELTS, xây trên n�
 npm install
 npm run dev       # http://localhost:5173
 npm run build     # bản tĩnh trong dist/ – deploy lên GitHub Pages / Cloudflare Pages / Netlify…
+npm run deploy    # build thử rồi push master → GitHub Actions deploy lên https://ielts.lionelphung.id.vn/
 ```
 
 Cấu hình AI (tuỳ chọn, nhưng cần cho chấm Writing/Speaking, dịch, tra từ, sinh đề), trong *Cài đặt → AI*:
@@ -120,7 +121,7 @@ Bản deploy không chở audio theo: file nằm ở bucket `ieltsweb-audio` tr�
    ```
 2. `npm run audio:upload` (thêm `-- --force` để ghi đè): tạo bucket nếu chưa có, đặt quyền đọc công khai, đẩy `public/audio/**` (mp3, srt) với key `vol<N>/test<M>/s<K>.mp3`, rồi ghi `content/audio-manifest.json`.
 3. `content/audio-manifest.json` được commit: `npm run data` gắn audio cho mọi section có trong manifest, kể cả khi máy không có `public/audio`.
-4. `.env` đặt `VITE_AUDIO_BASE=https://s3.hairbui76.id.vn/ieltsweb-audio/`; `src/db.ts` đổi `audio/…` thành URL đó. `npm run deploy` thấy biến này thì bỏ `dist/audio`.
+4. `.env` đặt `VITE_AUDIO_BASE=https://s3.hairbui76.id.vn/ieltsweb-audio/`; `src/db.ts` đổi `audio/…` thành URL đó. Bản build không chở `public/audio` (thư mục này nằm trong `.gitignore`).
 
 ### Định dạng `content/vol<N>/test<M>.json`
 
