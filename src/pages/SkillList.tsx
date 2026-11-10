@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, ChevronDown, ChevronRight, Shuffle, FolderInput, GraduationCap, Headphones, Mic, NotebookPen, Sparkles, Timer } from 'lucide-react';
+import { BookOpen, ChevronDown, ChevronRight, Shuffle, FolderInput, GraduationCap, Headphones, Keyboard, Mic, NotebookPen, Sparkles, Timer } from 'lucide-react';
 import type { Skill, Material } from '../types';
 import { useDb } from '../db';
 import { fmtBand } from '../lib/band';
@@ -104,6 +104,13 @@ export default function SkillList({ skill }: { skill: Skill }) {
             <span className="mode__body"><strong>Thi thử</strong><span>Bấm giờ như thi thật · nộp bài mới xem đáp án · chấm band</span></span>
           </button>
         </div>
+      )}
+      {skill === 'listening' && (
+        <Link to="/dictation" className="dict-entry card" data-testid="dict-entry">
+          <span className="dict-entry__ic"><Keyboard size={22} /></span>
+          <span><strong>Nghe & chép</strong><span className="small muted">4 cấp từ số & đánh vần đến bài giảng Section 4 · tự lưu tiến độ</span></span>
+          <ChevronRight size={18} />
+        </Link>
       )}
       <div className="toolbar">
         <input className="input" placeholder="Tìm bài…" value={q} onChange={(e) => setQ(e.target.value)} />

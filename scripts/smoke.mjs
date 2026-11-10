@@ -76,7 +76,7 @@ const check = async (name, fn) => {
 const ROUTES = ['/', '/reading', '/listening', '/speaking', '/writing', '/vocab', '/library', '/history', '/guide', '/settings',
   '/reading/vol5-t6-r2', '/reading/vol5-t6-r2/practice', '/reading/vol5-t6-r2/study',
   '/listening/vol5-t6-l2', '/listening/vol5-t6-l2/practice', '/listening/vol1-t1-l1/dictation', '/listening/vol1-t1-l1/gapfill', '/listening/vol5-t6-l2/study',
-  '/speaking/spk-2023q2-sc1', '/writing/vol1-t2-w2', '/writing/vol1-t2-w1', '/mock/reading', '/mock/listening',
+  '/dictation', '/dictation?level=3', '/dictation/gen%3Aphone', '/speaking/spk-2023q2-sc1', '/writing/vol1-t2-w2', '/writing/vol1-t2-w1', '/mock/reading', '/mock/listening',
   '/test/reading/vol5-t7', '/test/listening/vol5-t7', '/test/listening/vol5-t7/full', '/test/reading/vol5-t7/full'];
 
 for (const profile of Object.keys(PROFILES)) {
@@ -281,6 +281,59 @@ for (const profile of Object.keys(PROFILES)) {
     const n = async (s) => +((await page.locator(`.lt-box.st--${s} strong`).first().innerText().catch(() => '0')) || 0);
     const started = (await n('learning')) + (await n('review'));
     return { ok: topics >= 10 && !!w1 && started >= 1, info: `chủ đề=${topics} từ đầu="${w1}" đang học+ôn tập=${started}` };
+  });
+
+  // ---------- F: Nghe & chép ----------
+  await check(`[${profile}] F1 lối vào Nghe & chép: Trang chủ, Listening, menu`, async () => {
+    await go(page, '/');
+    const home = await page.locator('[data-testid="home-dict"]').count();
+    await go(page, '/listening');
+    const lis = await page.locator('[data-testid="dict-entry"]').count();
+    const nav = await page.locator('a[href="#/dictation"]').count();
+    return { ok: home > 0 && lis > 0 && nav > 0, info: `home=${home} listening=${lis} nav=${nav}` };
+  });
+  await check(`[${profile}] F2 bài số (cấp 1): xem đáp án (tính 0 điểm), gõ khớp → tự sang câu`, async () => {
+    await go(page, '/dictation?level=1');
+    await page.locator('.dh-gen__item').first().click();
+    await page.waitForSelector('.dl-input', { timeout: 8000 });
+    const acc0 = await page.locator('[data-testid="dl-acc"]').innerText();
+    await page.getByRole('button', { name: /Xem đáp án/ }).click();
+    const ans = await page.locator('[data-testid="dl-answer"]').innerText();
+    await page.locator('.dl-input').fill(ans);
+    await page.locator('.dl-input').press('Enter');
+    const acc1 = await page.locator('[data-testid="dl-acc"]').innerText();
+    await page.waitForTimeout(1400);
+    const head = await page.locator('.topbar').first().innerText();
+    return { ok: /—/.test(acc0) && /0%/.test(acc1) && /câu 2\//.test(head), info: `"${ans}" ${acc0} → ${acc1}; ${head.match(/câu \d+\/\d+/)?.[0]}` };
+  });
+  await check(`[${profile}] F3 bài audio thật: route cũ chuyển hướng, sửa sau khi kiểm tra, gợi ý`, async () => {
+    await go(page, '/listening/vol3-t2-l1/dictation');
+    await page.waitForSelector('.dl-input', { timeout: 8000 });
+    const url = page.url();
+    await page.locator('.dl-input').fill('good morning how');
+    await page.getByRole('button', { name: 'Kiểm tra' }).click();
+    const r1 = await page.locator('[data-testid="dl-result"]').count();
+    const boxes = await page.locator('.dl-w--miss').count();
+    const editable = await page.locator('.dl-input').isEditable();
+    const before = await page.locator('.dl-input').inputValue();
+    await page.getByRole('button', { name: /Gợi ý/ }).click();
+    const after = await page.locator('.dl-input').inputValue();
+    await page.locator('.dl-input').press('Enter');
+    const acc = await page.locator('[data-testid="dl-acc"]').innerText();
+    return { ok: /dictation\/vol3-t2-l1~/.test(decodeURIComponent(url)) && r1 > 0 && boxes > 0 && editable && after.length > before.length,
+      info: `${decodeURIComponent(url).split('#')[1]} ô▢=${boxes} sửa được=${editable} gợi ý "${before}" → "${after.trim()}" ${acc}` };
+  });
+  await check(`[${profile}] F4 rời bài rồi quay lại tiếp tục đúng chỗ`, async () => {
+    // tiếp nối F3: đang ở câu 1 bài vol3-t2-l1 với chữ đã gõ
+    const typed = await page.locator('.dl-input').inputValue().catch(() => '');
+    await page.waitForTimeout(900); // lưu có debounce
+    await go(page, '/dictation');
+    const card = page.locator('[data-testid="dh-resume"]');
+    const has = await card.count();
+    await card.click();
+    await page.waitForSelector('.dl-input', { timeout: 8000 });
+    const back = await page.locator('.dl-input').inputValue();
+    return { ok: has > 0 && !!typed && back === typed, info: `resume=${has} "${typed.trim()}" → "${back.trim()}"` };
   });
 
   // ---------- A3: Writing nộp được khi chưa cấu hình AI ----------

@@ -243,7 +243,7 @@ export function ExamRunner({ skill, ids, name, back, intro, full }: {
               <button className="btn btn--primary btn--sm" onClick={() => setSheet(false)}>Xem lại bài làm</button>
               <Link to={practiceHref} className="btn btn--ghost btn--sm"><GraduationCap size={15} /> Luyện tập {single ? 'bài này' : partLabel(m)}</Link>
               {!isR && single && lm.transcript.trim() && <>
-                <Link to={`/listening/${m.id}/dictation`} className="btn btn--ghost btn--sm"><Keyboard size={15} /> Chép chính tả</Link>
+                <Link to={`/listening/${m.id}/dictation`} className="btn btn--ghost btn--sm"><Keyboard size={15} /> Nghe & chép</Link>
                 <Link to={`/listening/${m.id}/gapfill`} className="btn btn--ghost btn--sm"><PenLine size={15} /> Điền từ transcript</Link>
                 <Link to={`/listening/${m.id}/study`} className="btn btn--ghost btn--sm"><BookOpenCheck size={15} /> Học transcript</Link>
               </>}

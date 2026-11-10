@@ -70,8 +70,8 @@ Chưa có unit test; có `scripts/smoke.mjs` (trình duyệt thật). Sau khi s�
 Không chuyển thêm đề trong đợt này. Mỗi mục: data 0 ⚠, tsc, build + smoke, commit riêng.
 - [x] A1. FSRS (ts-fsrs) thay Leitner: 4 trạng thái Sẽ học/Đang học/Ôn tập/Đã thuộc (S ≥ 60 ngày); thẻ cũ hộp 1–5 → S 1/2/4/8/16 ngày; nhật ký `revlog`; DB v3 (`revlog`, `dict`, `kv`); Cài đặt retention/từ mới/giới hạn ôn/dạng bài.
 - [x] B3+B6. `src/lib/dictation.ts`: tách câu, bỏ lời dẫn + ví dụ, ghép/tách câu, chấm khớp có quy đổi
-- [ ] B4/B5/B7. Màn hình bài nghe-chép, hỗ trợ người mới, lưu tiến độ + tổng kết
-- [ ] B1/B2. Hub `#/dictation`, 4 cấp, cấp 1 sinh số/đánh vần, chuyển route cũ, lối vào
+- [x] B4/B5/B7. Màn hình bài nghe-chép, hỗ trợ người mới, lưu tiến độ + tổng kết
+- [x] B1/B2. Hub `#/dictation`, 4 cấp, cấp 1 sinh số/đánh vần, chuyển route cũ, lối vào
 - [ ] A4. Chỉ mục ngữ cảnh (build-data) + đoạn AI / gap-fill
 - [ ] A2/A3. Học nhóm từ mới (các bước xen kẽ) + ôn theo stability, tự chấm FSRS
 - [ ] A5. Làm giàu 300 từ, bộ theo đề, từ đã lưu, bộ tự tạo, nhập/xuất

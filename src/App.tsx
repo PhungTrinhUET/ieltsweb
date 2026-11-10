@@ -1,14 +1,15 @@
 import { useEffect, useState } from 'react';
 import { HashRouter, NavLink, Outlet, Route, Routes, useLocation, useParams } from 'react-router-dom';
 import ErrorBoundary from './components/ErrorBoundary';
-import { BookOpen, ChevronLeft, ChevronRight, FolderInput, GraduationCap, Headphones, History as HistoryIcon, House, Layers, Mic, NotebookPen, Settings as SettingsIcon } from 'lucide-react';
+import { BookOpen, ChevronLeft, ChevronRight, FolderInput, GraduationCap, Headphones, History as HistoryIcon, House, Keyboard, Layers, Mic, NotebookPen, Settings as SettingsIcon } from 'lucide-react';
 import { init, useDb } from './db';
 import Home from './pages/Home';
 import SkillList from './pages/SkillList';
 import ReadingTest from './pages/ReadingTest';
 import ReadingStudy from './pages/ReadingStudy';
 import ListeningTest from './pages/ListeningTest';
-import Dictation from './pages/Dictation';
+import DictLesson, { DictRedirect } from './pages/DictLesson';
+import DictHub from './pages/DictHub';
 import GapFill from './pages/GapFill';
 import Speaking from './pages/Speaking';
 import Writing from './pages/Writing';
@@ -28,6 +29,7 @@ const NAV: { to: string; label: string; icon: typeof House; end?: boolean }[] = 
   { to: '/speaking', label: 'Speaking', icon: Mic },
   { to: '/writing', label: 'Writing', icon: NotebookPen },
   { to: '/vocab', label: 'Từ vựng', icon: Layers },
+  { to: '/dictation', label: 'Nghe & chép', icon: Keyboard },
 ];
 const NAV2: { to: string; label: string; icon: typeof House; end?: boolean }[] = [
   { to: '/library', label: 'Tài liệu', icon: FolderInput },
@@ -39,7 +41,7 @@ const NAV2: { to: string; label: string; icon: typeof House; end?: boolean }[] =
 function Shell() {
   const loc = useLocation();
   const db = useDb();
-  const focus = /^\/(reading|listening|speaking|writing|mock)\/[^/]+|^\/test\/[^/]+\/[^/]+\/full/.test(loc.pathname);
+  const focus = /^\/(reading|listening|speaking|writing|mock|dictation)\/[^/]+|^\/test\/[^/]+\/[^/]+\/full/.test(loc.pathname);
   const [collapsed, setCollapsed] = useState(() => { try { return localStorage.getItem('ielts:nav-collapsed') === '1'; } catch { return false; } });
   const toggle = () => setCollapsed((c) => { try { localStorage.setItem('ielts:nav-collapsed', c ? '0' : '1'); } catch { /* ignore */ } return !c; });
   useEffect(() => { window.scrollTo({ top: 0 }); }, [loc.pathname]);
@@ -84,7 +86,7 @@ export default function App() {
           <Route path="reading/:id/practice" element={<Practice />} />
           <Route path="listening" element={<SkillList skill="listening" />} />
           <Route path="listening/:id" element={<ListeningTest />} />
-          <Route path="listening/:id/dictation" element={<Dictation />} />
+          <Route path="listening/:id/dictation" element={<DictRedirect />} />
           <Route path="listening/:id/gapfill" element={<GapFill />} />
           <Route path="listening/:id/study" element={<ReadingStudy />} />
           <Route path="listening/:id/practice" element={<Practice />} />
@@ -96,6 +98,8 @@ export default function App() {
           <Route path="test/:skill/:tid" element={<TestPage />} />
           <Route path="test/:skill/:tid/full" element={<MockKeyed />} />
           <Route path="vocab" element={<Vocab />} />
+          <Route path="dictation" element={<DictHub />} />
+          <Route path="dictation/:lid" element={<DictLesson />} />
           <Route path="library" element={<Library />} />
           <Route path="history" element={<History />} />
           <Route path="guide" element={<Guide />} />

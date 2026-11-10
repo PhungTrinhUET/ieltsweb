@@ -1,6 +1,6 @@
 // Trang chủ dạng bảng điều khiển: tiếp tục bài dở, nhiệm vụ hôm nay, tiến độ band, 4 kỹ năng, từ vựng.
 import { Link } from 'react-router-dom';
-import { ArrowRight, BookMarked, CheckCircle2, Circle, Flame, GraduationCap, Layers, PlayCircle, Target, Timer } from 'lucide-react';
+import { ArrowRight, BookMarked, CheckCircle2, Circle, Flame, GraduationCap, Keyboard, Layers, PlayCircle, Target, Timer } from 'lucide-react';
 import { useDb } from '../db';
 import { getLastOpen, getStreak, useSettings } from '../store';
 import { SKILL_META } from './SkillList';
@@ -188,6 +188,16 @@ export default function Home() {
             <p className="muted small">{cards.length ? <>{cards.length} từ đã lưu · <strong>{due}</strong> từ đến hạn ôn</> : 'Bấm vào từ bất kỳ trong bài ở chế độ Luyện tập để lưu kèm nghĩa, phiên âm và câu ví dụ.'}</p>
           </div>
           <Link to="/vocab" className={`btn ${due ? 'btn--primary' : 'btn--ghost'} btn--sm`}><Layers size={16} /> {due ? 'Ôn ngay' : 'Mở sổ từ'}</Link>
+        </section>
+
+        {/* Nghe & chép */}
+        <section className="hcard hcard--vocab">
+          <span className="vocab__ic"><Keyboard size={22} /></span>
+          <div className="vocab__body">
+            <h2 className="hcard__title">Nghe & chép</h2>
+            <p className="muted small">Nghe từng câu rồi gõ lại: số, tên, đánh vần (cấp 1) đến bài giảng Section 4 (cấp 4).</p>
+          </div>
+          <Link to="/dictation" className="btn btn--ghost btn--sm" data-testid="home-dict"><Keyboard size={16} /> Luyện</Link>
         </section>
 
         {/* Hoạt động gần đây */}
