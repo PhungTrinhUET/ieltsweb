@@ -34,6 +34,22 @@ export default function Guide() {
               <li><strong>Nạp tài liệu:</strong> bạn có thể nạp cả bộ Cambridge của mình (JSON/Markdown + audio + SRT) hoặc dán bài báo cho AI soạn đề.</li>
             </ol>
           </section>
+          <section className="card pad" id="full-mock" data-testid="guide-fullmock"><h3>Thi thử đủ 4 kỹ năng</h3>
+            <ul className="plan">
+              <li>Vào <Link to="/mock/full">Thi thử 4 kỹ năng</Link> (Trang chủ hoặc danh sách Reading/Listening ở chế độ Thi thử), chọn Academic/GT và đề (hoặc ngẫu nhiên).</li>
+              <li>Listening → Reading → Writing liền nhau như ngày thi (~2 giờ 40), không có từ điển/gợi ý/AI, không tạm dừng; màn chuyển phần tự bắt đầu sau 60 giây.</li>
+              <li>Lỡ tắt trình duyệt: mở lại trang này là làm tiếp đúng phần – đồng hồ vẫn tính theo giờ thật.</li>
+              <li>Speaking làm ngay sau Writing hoặc trong 7 ngày (nút "Làm Speaking" ở trang kết quả). Cần micro + tai nghe.</li>
+              <li>Kết quả nằm ở Lịch sử: 4 band + Overall. Writing/Speaking chấm bằng AI nếu đã cài, không thì tự chấm theo checklist – đều là ước tính.</li>
+            </ul>
+          </section>
+          <section className="card pad"><h3>Bộ từ vựng</h3>
+            <ul className="plan">
+              <li>Bấm vào từ trong bài (chế độ Luyện tập) → lưu thẳng vào bộ đang chọn; có thể tạo bộ "VOL N · Test M" ngay trong ô tra từ.</li>
+              <li><Link to="/vocab">Từ vựng</Link> → <em>Tạo bộ</em>: dán danh sách, nhập CSV/JSON, chọn từ bộ có sẵn hoặc từ đã lưu; app tự điền nghĩa.</li>
+              <li>Mỗi bộ có Học từ mới / Ôn tập / Thẻ lật; sửa, chuyển, gộp, xuất file, hoặc <strong>chia sẻ link</strong> cho bạn học.</li>
+            </ul>
+          </section>
           <section className="card pad" id="keep-data"><KeepDataTips /><p className="small muted">Sao lưu / khôi phục ở <a href="#/settings">Cài đặt → Sao lưu</a>.</p></section>
         </div>
       )}

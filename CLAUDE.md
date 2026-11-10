@@ -28,6 +28,8 @@ Chưa có unit test; có `scripts/smoke.mjs` (trình duyệt thật). Sau khi s�
 - `src/components/Questions.tsx`: hiển thị và chấm mọi dạng câu hỏi.
 - `src/components/Exam.tsx` + `src/exam.css`: khung **mô phỏng máy thi IELTS** (thanh trên: số báo danh, "N minutes left", Help/Hide/Options; khung "Part N"; 2 cột kéo được; thanh dưới: Part + số câu, Review, ← →, ✓ nộp). Trong khung (`ExamCtx`), MCQ/TFNG thành radio, multi thành checkbox, matching kéo-thả. Dùng cho Thi thử (`MockTest.tsx` → `ExamRunner`, cả `/reading/:id`, `/listening/:id`), Luyện tập (`Practice.tsx`) và Writing. Listening thi thử: audio phát liền 1 lần, không dừng/tua, hết audio còn 2 phút rồi tự nộp. Chữ trên khung tiếng Anh như máy thi; công cụ riêng của app tiếng Việt.
 - Từ vựng (`src/pages/Vocab.tsx`, `VocabSession.tsx` học/ôn/ngữ cảnh, `src/lib/srs.ts` FSRS qua ts-fsrs, `src/lib/vocab.ts`): 4 trạng thái Sẽ học/Đang học/Ôn tập/Đã thuộc; nhật ký `revlog` (có `xp`); DB v3 (`revlog`, `dict`, `kv`). Bộ từ: `content/vocab/ielts-topics.json` (`topics[].words = [từ, loại, nghĩa Việt, ví dụ, IPA, nghĩa Anh, dịch ví dụ, collocation "a; b"]`, 12 × 25) và `content/vocab/awl.json` (AWL 570 từ; `npm run data` chọn 30 từ/đề từ bài Reading → `tests[]`) → `public/data/vocab-deck.json` + chỉ mục ngữ cảnh. Id bộ: `deck:<id>`, `test:<tid>`, `my:<id>` (kv `udeck:<id>`), `saved`; thẻ câu nghe-chép `decks: ['dict']`. Từ trong bộ chỉ thành thẻ khi được học lần đầu.
+- Thi thử 4 kỹ năng: `src/pages/FullMock.tsx` (`#/mock/full`; bài đang làm ở kv `fullmock:cur`, `catchUp` chuyển phần theo giờ thật; hết Writing tạo 1 attempt `mode: 'full-mock'`, Speaking cập nhật vào đó; `FullMockResult` hiện trong `HistoryDetail`; `?fast=1` cho smoke). `full-mock` không tính vào band trang chủ (`countsForBand`).
+- Lịch sử `src/pages/History.tsx` + `HistoryDetail.tsx` (`#/history/:id`); sao lưu v2 `src/lib/backup.ts` + `components/BackupPanel.tsx`; cài AI `src/ai/setup.ts` + `components/AiGuide.tsx`, `AiSettings`; bộ từ `components/DeckPicker.tsx`; trang Giới thiệu + footer `src/pages/About.tsx`.
 - Nghe-chép (`src/pages/DictHub.tsx`, `DictLesson.tsx`, `src/lib/dictation.ts`); Hôm nay/XP/chuỗi ngày/Thống kê: `src/lib/stats.ts`, `src/pages/Stats.tsx`, `Home.tsx`.
 - `src/pages/`: các màn hình. Gồm SkillList, ReadingTest/ReadingStudy, ListeningTest, Dictation, GapFill, MockTest, Speaking, Writing, Vocab, Library, History, Guide, Settings.
 - `src/ai/`: gọi Claude (structured output) để chấm Writing/Speaking, dịch, tra từ, sinh đề.
@@ -61,10 +63,13 @@ Chưa có unit test; có `scripts/smoke.mjs` (trình duyệt thật). Sau khi s�
 
 ## Tình trạng (08/11/2026)
 
-- **Đã xong 64 file / 707 bài luyện**: VOL 1–4 đủ 40 đề; VOL 5 đủ 10 đề + 19 đề Writing lẻ; VOL 6 đủ 6 đề (chưa có Writing); 240 bộ Speaking (forecast 2023 Q1, Q2, "gộp đề ver 1", 2024 Q1: 87, Sep 2024–Apr 2025: 74, 2025 Q2: 35).
+- **Đã xong 67 file / 863 bài luyện** (10/11/2026, gồm 156 đề Writing tự soạn `content/writing/`): VOL 1–4 đủ 40 đề; VOL 5 đủ 10 đề + 19 đề Writing lẻ; VOL 6 đủ 6 đề (chưa có Writing); 240 bộ Speaking (forecast 2023 Q1, Q2, "gộp đề ver 1", 2024 Q1: 87, Sep 2024–Apr 2025: 74, 2025 Q2: 35).
 - **TẠM DỪNG 08/11/2026 theo yêu cầu người dùng**; chờ người dùng bảo chạy tiếp (dự kiến tuần sau). Khi tiếp tục: làm VOL 6 Writing, rồi VOL 7 từ Test 1.
 - Đợt audit 08/11/2026 (nhánh `fix/audit-1108`, đã merge vào `master`): A1–A7, B8–B12, C13–C16 xong; smoke 100/100. Audio (A4) tải từ Drive bằng `../ieltsweb-src/tools/dlaudio.py` (gdown), Drive hay chặn tạm ("Cannot retrieve the public link") → chạy lại sau, rồi `npm run audio`.
 - VOL 4 có vài chỗ thiếu: Test 7 (Q15–20) và Test 9 (Section 1) thiếu transcript; Writing trùng VOL 3 nên bỏ qua.
+
+## Nhánh `feat/dot4` (10/11/2026): đợt 4
+Writing kho 156 đề + 3 tab · Lịch sử xem lại từng lượt · Sao lưu v2 · Bộ từ kiểu MemCab · Trình cài AI 3 bước · Thi thử 4 kỹ năng · Trang Giới thiệu + footer. Smoke M1 (thi 4 kỹ năng fast), G1 (about/footer).
 
 ## Nhánh `feat/vocab-dictation` (10/11/2026): Từ vựng kiểu MemCab + Nghe-chép kiểu DailyDictation
 

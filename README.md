@@ -54,18 +54,35 @@ Claude dùng structured output của Anthropic SDK. Các nhà cung cấp khác �
 ### Writing
 - Task 1 Academic (line/bar/pie/table – app tự vẽ biểu đồ từ dữ liệu, process, map, mixed), Task 1 General (3 loại thư), Task 2 (opinion, discussion, advantage, problem, double question).
 - Soạn bài với đếm từ, bấm giờ 20'/40', tự lưu nháp, cấu trúc bài gợi ý theo dạng, bài mẫu band 8, từ vựng.
+- Trang Writing chia 3 tab (Task 1 Academic / Task 1 General / Task 2), lọc theo dạng. Ngoài đề gốc có **kho 156 đề tự soạn** (`wr-t1-*`, `wr-gt-*`, `wr-t2-*`): biểu đồ vẽ từ số liệu (ChartView), bảng số liệu, process/map mô tả bằng chữ, bài mẫu AI viết (ghi rõ).
+- **Nộp bài không cần AI**: lưu vào Lịch sử + checklist tự chấm 4 tiêu chí → band thô.
 - **AI chấm theo 4 tiêu chí IELTS** (TA/TR, CC, LR, GRA, half band, overall), lý do từng tiêu chí có trích dẫn, danh sách lỗi, **bản sửa lỗi hiển thị diff từng từ**, bản viết lại lên band, bảng "nâng cấp cụm từ".
 
 ### Từ vựng (kiểu MemCab)
 - **FSRS** (ts-fsrs) thay Leitner: 4 trạng thái Sẽ học / Đang học / Ôn tập / Đã thuộc (độ ổn định ≥ 60 ngày); thẻ Leitner cũ được chuyển tự động, không mất tiến độ.
 - **Học từ mới theo nhóm** 5–6 từ qua các bước xen kẽ (giới thiệu → chọn nghĩa → chọn từ → nghe → điền câu → gõ), sai thì làm lại cuối nhóm; xong nhóm có **đoạn ngữ cảnh** chứa các từ vừa học (câu trong đề thật hoặc AI viết).
 - **Ôn tập tự chấm**: thẻ đến hạn, yếu nhất trước; app chấm theo đúng/sai + thời gian để cho điểm FSRS.
+- **Bộ từ kiểu MemCab** (`#/vocab`): lưới bộ *Của tôi / Có sẵn / Được chia sẻ*; tra từ trong đề là lưu được ngay vào bộ đang chọn (tạo bộ "VOL N · Test M" ngay trong popover); tạo bộ 5 cách (dán danh sách, nhập CSV/JSON, chọn từ bộ có sẵn, từ đã lưu, từ trong một đề) + tự điền nghĩa; trang bộ: sửa từ, chuyển/chép sang bộ khác, gộp, xoá, xuất CSV/JSON, **chia sẻ bằng link** (người nhận bấm "Thêm bộ"); học/ôn theo bộ, thẻ lật; trang đề có "Từ đã lưu ở đề này".
 - Bộ từ: 300 từ theo 12 chủ đề (có IPA, nghĩa Anh, dịch ví dụ, collocation), **56 bộ theo đề** (30 từ AWL trong bài Reading của từng đề, câu ví dụ lấy từ bài), **Đã lưu** (từ tra khi đọc/nghe), **Tự tạo** (dán danh sách, tự điền nghĩa; nhập/xuất JSON/CSV). Mỗi bộ có tiến độ, "Học tiếp", "Ôn bộ này".
 - Mỗi thẻ có câu trong đề thật (chỉ mục ngữ cảnh do `npm run data` dựng).
 
 ### Hôm nay & Thống kê
 - Trang chủ có kế hoạch **Hôm nay**: Ôn từ đến hạn → Học 5 từ mới → Nghe chép 10 câu → Đoạn ngữ cảnh → Một bài luyện đề.
 - Từ vựng và Nghe-chép dùng chung **XP** và **chuỗi ngày học**. Trang **Thống kê** (`#/stats`): thẻ theo trạng thái, dự báo ôn 7 ngày, tỉ lệ nhớ 30 ngày, câu chép đúng, lịch hoạt động 18 tuần.
+
+### Thi thử đủ 4 kỹ năng (`#/mock/full`)
+- Chọn Academic / General Training (Reading GT chưa có đề → dùng đề Academic, ghi trên màn hình), chọn VOL/Test hoặc ngẫu nhiên.
+- Listening (audio phát một lần + 2 phút kiểm tra) → Reading 60' → Writing 60' (Task 1 + 2 chung đồng hồ, chuyển task ở thanh dưới) liền nhau; màn chuyển tự bắt đầu sau 60 giây; không có từ điển/gợi ý/AI/tạm dừng.
+- Writing lấy Task 1/2 của chính đề đó, thiếu thì lấy từ kho (GT Task 1 = viết thư). Speaking: một bộ dự đoán, giám khảo giọng máy + ghi âm; Part 1 ~9 câu (tối đa 5'), Part 2 1' chuẩn bị (ghi chú) + tối đa 2' nói + câu hỏi thêm, Part 3 ≤ 6 câu. Làm ngay sau Writing hoặc **làm sau trong 7 ngày**.
+- Lưu liên tục (kv `fullmock:cur`): tắt trình duyệt rồi mở lại vào đúng phần đang làm, đồng hồ tính theo giờ thật.
+- Kết quả là **một** lượt trong Lịch sử: 4 band + Overall, thời gian từng phần, xem lại từng câu L/R, bài viết, bản ghi nói; Writing = (T1 + 2·T2)/3 làm tròn 0.5 (AI chấm hoặc tự chấm, ghi "ước tính"); nút In kết quả; nhắc sao lưu.
+
+### Lịch sử & sao lưu
+- Lịch sử (`#/history`): lọc theo kỹ năng / hình thức / ngày, biểu đồ band, xoá từng lượt; xem lại từng lượt (`#/history/:id`): câu trả lời + đáp án, bài viết, bản ghi âm, kết quả AI.
+- **Sao lưu v2** (Cài đặt → Dữ liệu): một file JSON gồm lịch sử, vốn từ + nhật ký ôn, bộ từ, bản nháp, ghi chú, cài đặt; tuỳ chọn kèm audio ghi âm/ảnh; API key **không** kèm trừ khi tự bật (có cảnh báo). Nhập kiểu *Gộp* (không nhân đôi) hoặc *Thay thế*. Xin quyền lưu lâu dài của trình duyệt; nhắc sao lưu khi lâu chưa sao lưu.
+
+### Cài AI chấm bài
+- Cài đặt → AI có trình hướng dẫn 3 bước: chọn cách (proxy có mã truy cập / DeepSeek / Gemini / OpenAI / Claude / OpenRouter model miễn phí / tuỳ chỉnh) → lấy key theo từng bước → dán và **kiểm tra** (lỗi báo bằng tiếng Việt: sai key, chưa nạp tiền, hết lượt, CORS). Ước tính chi phí mỗi bài (USD/VND), bảng so sánh có ngày cập nhật. Key chỉ lưu trong trình duyệt – giữ như mật khẩu.
 
 ### Tài liệu (nạp hàng loạt)
 - Kéo thả nhiều file: **JSON** (một hoặc nhiều bài, mọi kỹ năng), **Markdown** bài Reading viết tay nhanh, **audio + transcript/SRT cùng tên** → bài Listening, ảnh biểu đồ cho Writing. Định dạng: [public/CONTENT.md](public/CONTENT.md) (có nút tải JSON mẫu trong app).
@@ -75,7 +92,8 @@ Claude dùng structured output của Anthropic SDK. Các nhà cung cấp khác �
 - Bộ đề có sẵn được cache trong IndexedDB: mở lại app chỉ hỏi `data/index.json`, file nào đổi `hash` mới tải lại; mất mạng vẫn dùng được bản đã cache.
 
 ### Khác
-- Lịch sử & xu hướng band từng kỹ năng, overall; streak; cẩm nang chiến lược từng dạng câu hỏi, khung bài, bảng quy đổi band; sáng/tối; responsive (sidebar desktop, tab bar mobile).
+- Trang **Giới thiệu** (`#/about`): dự án + nhóm tác giả; footer ở mọi trang (ẩn trong khung thi).
+- Xu hướng band từng kỹ năng, overall; streak; cẩm nang chiến lược từng dạng câu hỏi, khung bài, bảng quy đổi band; sáng/tối; responsive (sidebar desktop, tab bar mobile).
 
 ## Đề gốc (VOL 1–8 ORIGINAL EXAMS) → đề có sẵn trong app
 
@@ -158,7 +176,7 @@ Bản deploy không chở audio theo: file nằm ở bucket `ieltsweb-audio` tr�
   - Với `form`/`notes`, `rows` là các dòng: một ô = một dòng (bắt đầu `•` là gạch đầu dòng), `"# Tiêu đề"` = tiêu đề nhỏ, hai ô = nhãn | giá trị.
 - `npm run data` cảnh báo khi có câu trùng số, đáp án nằm ngoài options/bank, câu fill thiếu `___`, hoặc bảng thiếu/thừa `{{n}}`, sai số ô.
 
-### Tình trạng chuyển đổi (08/11/2026)
+### Tình trạng dữ liệu (10/11/2026): 67 file, 863 bài
 
 | Bộ | Trạng thái |
 |---|---|
@@ -166,6 +184,7 @@ Bản deploy không chở audio theo: file nằm ở bucket `ieltsweb-audio` tr�
 | VOL 5 | Xong 10 đề + 19 đề Writing lẻ (`writing-bank.json`) |
 | VOL 6 | 6 đề (chưa có Writing). Listening VOL 6 không có transcript (Test 1 dựng bằng Whisper), đáp án theo L-key |
 | VOL 7–8 | Chưa làm |
+| Writing tự soạn | 156 đề (Task 1 Academic, Task 1 GT, Task 2) |
 | Speaking | 240 bộ (forecast 2023 Q1, Q2, "gộp đề ver 1", 2024 Q1, Sep 2024–Apr 2025, 2025 Q2) |
 
 Lưu ý về chất lượng dữ liệu:
@@ -183,7 +202,8 @@ src/content/samples.ts  nội dung mẫu
 src/lib/                band.ts (quy đổi), text.ts (tách câu, diff từ, so đáp án), tts.ts, srs.ts (FSRS), vocab.ts (bộ từ, bài tập), dictation.ts (chia bài, chấm khớp), context.ts, stats.ts (XP, chuỗi ngày, Hôm nay), importers.ts (JSON/MD/SRT)
 src/ai/                 client.ts (Claude SDK + backend OpenAI-compatible), models.ts (nhà cung cấp, model, giá), writing.ts, speaking.ts, assist.ts (dịch, tra từ, sinh đề)
 src/components/         Questions (mọi dạng câu hỏi), WordPopover, Recorder, AudioPlayer, AiSettings, misc (diff, chart, band)
-src/pages/              SkillList, ReadingTest, ReadingStudy, ListeningTest, Dictation (hub + bài), GapFill, MockTest, Speaking, Writing, Vocab, VocabSession (học/ôn/ngữ cảnh), Stats, Library, History, Guide, Settings
+src/pages/              SkillList, ReadingTest, ReadingStudy, ListeningTest, Dictation (hub + bài), GapFill, MockTest, FullMock (thi 4 kỹ năng + kết quả), Speaking, Writing, Vocab, VocabSession (học/ôn/ngữ cảnh), Stats, Library, History, HistoryDetail, Guide, Settings, About
+src/lib/backup.ts       sao lưu v2 (xuất/nhập Gộp/Thay thế)
 server/grader-proxy/    Cloudflare Worker giữ API key, cấp mã truy cập + giới hạn lượt/ngày
 content/                đề gốc đã bóc tách (xem mục trên)
 CLAUDE.md               ghi chú cho Claude Code: lệnh, quy ước dữ liệu, việc còn lại
