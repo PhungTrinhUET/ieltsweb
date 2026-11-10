@@ -72,6 +72,13 @@ const emit = () => subs.forEach((f) => f());
 const set = (patch: Partial<State>) => { state = { ...state, ...patch }; emit(); };
 export const useDb = () => useSyncExternalStore((f) => { subs.add(f); return () => subs.delete(f); }, () => state);
 export const getState = () => state;
+/** Truy cập cấp thấp cho lib/backup.ts (sao lưu / khôi phục). */
+export const _low = {
+  put, del, all,
+  clear: (store: StoreName) => tx(store, 'readwrite', (s) => { s.clear(); }),
+  set: (patch: Partial<State>) => set(patch),
+  getBlob: (key: string) => tx<Blob>('blobs', 'readonly', (s) => s.get(key)),
+};
 
 export async function init() {
   if (state.ready) return;
@@ -188,7 +195,15 @@ export async function resolveUrl(src: string | undefined): Promise<string | null
 }
 
 // ---------- Attempts ----------
+// Lần đầu có dữ liệu (nộp bài / lưu từ) → xin trình duyệt "lưu lâu dài" để không tự xoá khi thiếu dung lượng.
+let askedPersist = false;
+export function requestPersist() {
+  if (askedPersist) return; askedPersist = true;
+  try { navigator.storage?.persist?.().catch(() => {}); } catch { /* trình duyệt cũ */ }
+}
+
 export async function addAttempt(a: Omit<Attempt, 'id' | 'at'>) {
+  requestPersist();
   const full: Attempt = { ...a, id: uid(), at: Date.now() };
   set({ attempts: [full, ...state.attempts] });
   await put('attempts', full.id, full);
@@ -215,7 +230,9 @@ export async function clearAttempts() {
 }
 
 // ---------- Vocab ----------
-export async function saveCard(c: VocabCard) {
+export async function saveCard(c0: VocabCard) {
+  requestPersist();
+  const c = { ...c0, updatedAt: Date.now() };
   set({ vocab: { ...state.vocab, [c.id]: c } });
   await put('vocab', c.id, c);
 }
@@ -225,7 +242,9 @@ export async function deleteCard(id: string) {
   set({ vocab: next });
   await del('vocab', id);
 }
-export async function saveCards(cs: VocabCard[]) {
+export async function saveCards(cs0: VocabCard[], keepTime = false) {
+  const now = Date.now();
+  const cs = keepTime ? cs0 : cs0.map((c) => ({ ...c, updatedAt: now }));
   const next = { ...state.vocab };
   for (const c of cs) next[c.id] = c;
   set({ vocab: next });
@@ -259,33 +278,13 @@ export async function saveNote(n: Note) {
   set({ notes: { ...state.notes, [n.materialId]: n } });
   await put('notes', n.materialId, n);
 }
+/** Bản nháp lưu chuỗi; thời điểm sửa cuối nằm ở kv `meta:draftAt` (để gộp sao lưu giữ bản mới hơn). */
 export async function saveDraft(key: string, text: string) {
-  set({ drafts: { ...state.drafts, [key]: text } });
+  const at = { ...(state.kv['meta:draftAt'] as Record<string, number> | undefined), [key]: Date.now() };
+  set({ drafts: { ...state.drafts, [key]: text }, kv: { ...state.kv, 'meta:draftAt': at } });
   await put('drafts', key, text);
+  await put('kv', 'meta:draftAt', at).catch(() => {});
 }
 
-// ---------- Sao lưu ----------
-export async function exportAll() {
-  const materials = Object.values(state.materials).filter((m) => !m.builtin);
-  return JSON.stringify({ app: 'ielts-practice', version: 1, exportedAt: new Date().toISOString(), materials, attempts: state.attempts, vocab: Object.values(state.vocab), notes: Object.values(state.notes), logs: state.logs, kv: state.kv }, null, 1);
-}
-export async function importBackup(json: string) {
-  const d = JSON.parse(json);
-  if (d.app !== 'ielts-practice') throw new Error('File không phải bản sao lưu của IELTS Practice');
-  if (Array.isArray(d.materials)) await saveMaterials(d.materials);
-  if (Array.isArray(d.vocab)) await saveCards((d.vocab as VocabCard[]).map((c) => migrate(c) ?? c));
-  if (Array.isArray(d.logs)) {
-    const ids = new Set(state.logs.map((l) => l.id));
-    const extra = (d.logs as RevLog[]).filter((l) => !ids.has(l.id));
-    set({ logs: [...state.logs, ...extra].sort((a, b) => a.at - b.at) });
-    for (const l of extra) await put('revlog', l.id, l);
-  }
-  if (d.kv && typeof d.kv === 'object') for (const [k, v] of Object.entries(d.kv)) await setKv(k, v);
-  if (Array.isArray(d.notes)) for (const n of d.notes) await saveNote(n);
-  if (Array.isArray(d.attempts)) {
-    const ids = new Set(state.attempts.map((a) => a.id));
-    const extra = (d.attempts as Attempt[]).filter((a) => !ids.has(a.id));
-    set({ attempts: [...extra, ...state.attempts].sort((a, b) => b.at - a.at) });
-    for (const a of extra) await put('attempts', a.id, a);
-  }
-}
+// ---------- Sao lưu: xem src/lib/backup.ts ----------
+export { exportAll, importBackup } from './lib/backup';

@@ -141,6 +141,45 @@ for (const profile of Object.keys(PROFILES)) {
     const marked = await page.locator('.item--part.item--wrong, .item--part.item--done').count();
     return { ok: vols >= 5 && hist === 1 && marked === 3, info: `vol=${vols} lịch sử=${hist} phần có điểm=${marked}` };
   });
+  await check(`[${profile}] K1 sao lưu → xoá IndexedDB → nhập (Gộp) đủ số, nhập lần 2 không nhân đôi`, async () => {
+    const ctx = await browser.newContext({ ...PROFILES[profile], acceptDownloads: true });
+    const p = await ctx.newPage();
+    const idb = (fn, arg) => p.evaluate(([src, a]) => new Promise((res, rej) => {
+      const r = indexedDB.open('ielts-practice', 3);
+      r.onsuccess = () => { const d = r.result; Promise.resolve(new Function('d', 'a', src)(d, a)).then((v) => { d.close(); res(v); }, rej); };
+      r.onerror = () => rej(r.error);
+    }), [fn, arg]);
+    const putAll = `const t = d.transaction(['attempts','vocab','drafts','kv'], 'readwrite');
+      t.objectStore('attempts').put({ id: 'bk1', at: Date.now(), skill: 'reading', mode: 'test', materialId: 'vol5-t6-r2', title: 'Backup test', score: 5, max: 13 }, 'bk1');
+      t.objectStore('vocab').put({ id: 'c-bk', word: 'resilient', meaning: 'kiên cường', addedAt: Date.now(), due: Date.now(), interval: 0, ease: 2.5, reps: 0, lapses: 0 }, 'c-bk');
+      t.objectStore('drafts').put('My draft essay text', 'writing:wr-t2-op1');
+      t.objectStore('kv').put({ id: 'bk', name: 'Bộ sao lưu', words: [{ word: 'resilient', pos: 'adj', vi: 'kiên cường' }], at: Date.now() }, 'udeck:bk');
+      return new Promise((r) => { t.oncomplete = () => r(1); });`;
+    const count = `const st = ['attempts','vocab','drafts','kv']; return Promise.all(st.map((s) => new Promise((r) => { const q = d.transaction(s).objectStore(s).getAllKeys(); q.onsuccess = () => r(q.result.filter((k) => !String(k).startsWith('meta:')).length); })));`;
+    await p.goto(`${BASE}#/`); await p.waitForSelector('.main', { timeout: 20000 });
+    await idb(putAll);
+    await p.goto(`${BASE}#/settings`); await p.reload(); await p.waitForSelector('[data-testid="bk-export"]');
+    const before = await idb(count);
+    const [dl] = await Promise.all([p.waitForEvent('download'), p.locator('[data-testid="bk-export"]').click()]);
+    const file = await dl.path();
+    await p.evaluate(() => new Promise((r) => { const q = indexedDB.deleteDatabase('ielts-practice'); q.onsuccess = q.onerror = q.onblocked = () => r(0); }));
+    await p.reload(); await p.waitForSelector('[data-testid="bk-file"]', { state: 'attached' });
+    const cleared = await idb(count);
+    const imp = async () => {
+      await p.locator('[data-testid="bk-file"]').setInputFiles(file);
+      await p.waitForSelector('[data-testid="bk-sum"]');
+      await p.locator('[data-testid="bk-merge"]').click();
+      await p.waitForSelector('[data-testid="bk-msg"]');
+      await p.waitForTimeout(300);
+      return idb(count);
+    };
+    const after1 = await imp();
+    const after2 = await imp();
+    const hist = await (async () => { await p.goto(`${BASE}#/history`); await p.waitForTimeout(600); return p.locator('[data-testid="hlist"] a.item').count(); })();
+    await ctx.close();
+    const same = (a, b) => a.join() === b.join();
+    return { ok: before.every((n) => n >= 1) && cleared.every((n) => n === 0) && same(before, after1) && same(after1, after2) && hist === before[0], info: `trước=${before} sau xoá=${cleared} nhập1=${after1} nhập2=${after2} lịch sử=${hist} (attempts,vocab,drafts,kv)` };
+  });
   await check(`[${profile}] H1 nộp Reading → Lịch sử → xem lại câu trả lời + đáp án`, async () => {
     await go(page, '/reading/vol5-t6-r2');
     const start = page.getByRole('button', { name: 'Start test' });

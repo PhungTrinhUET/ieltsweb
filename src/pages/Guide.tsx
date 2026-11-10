@@ -1,6 +1,7 @@
 // Cẩm nang: cấu trúc đề, chiến lược từng dạng câu hỏi, khung bài Writing/Speaking, band descriptors tóm tắt.
 import { useState } from 'react';
 import { Collapse } from '../components/ui';
+import { KeepDataTips } from '../components/BackupPanel';
 
 const TABS = ['Tổng quan', 'Reading', 'Listening', 'Speaking', 'Writing', 'Band'] as const;
 
@@ -31,6 +32,7 @@ export default function Guide() {
               <li><strong>Nạp tài liệu:</strong> bạn có thể nạp cả bộ Cambridge của mình (JSON/Markdown + audio + SRT) hoặc dán bài báo cho AI soạn đề.</li>
             </ol>
           </section>
+          <section className="card pad" id="keep-data"><KeepDataTips /><p className="small muted">Sao lưu / khôi phục ở <a href="#/settings">Cài đặt → Sao lưu</a>.</p></section>
         </div>
       )}
 

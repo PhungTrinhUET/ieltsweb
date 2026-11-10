@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, BarChart3, BookMarked, CheckCircle2, Circle, Flame, Sparkles, GraduationCap, Keyboard, Layers, PlayCircle, Target, Timer } from 'lucide-react';
 import { useDb } from '../db';
 import { getLastOpen, getStreak, useSettings } from '../store';
+import { BackupReminder } from '../components/BackupPanel';
 import { MODE_LABEL, countsForBand } from '../lib/attempts';
 import { SKILL_META } from './SkillList';
 import type { Attempt, Skill } from '../types';
@@ -72,6 +73,7 @@ export default function Home() {
           <Link to="/settings" className="pill" title="Đổi mục tiêu trong Cài đặt"><Target size={16} /> Mục tiêu {fmtBand(s.targetBand)}</Link>
         </div>
       </header>
+      <BackupReminder />
 
       <div className="home__grid">
         {/* Tiếp tục học */}

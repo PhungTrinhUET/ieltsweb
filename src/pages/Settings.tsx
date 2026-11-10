@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Download, Moon, Play, Sun, SunMoon, Upload, Volume2 } from 'lucide-react';
+import { Moon, Play, Sun, SunMoon, Volume2 } from 'lucide-react';
 import { EX_NAMES, updateSettings, useSettings } from '../store';
 import type { ExKind } from '../types';
-import { exportAll, importBackup } from '../db';
+import { BackupPanel } from '../components/BackupPanel';
 import AiSettings from '../components/AiSettings';
 import { englishVoices, speak, ttsAvailable, voiceGender } from '../lib/tts';
 
@@ -11,7 +11,6 @@ const SAMPLE = 'Good morning. This is a test of the reading voice for IELTS prac
 export default function Settings() {
   const s = useSettings();
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
-  const [msg, setMsg] = useState('');
   useEffect(() => {
     const load = () => setVoices(englishVoices());
     load();
@@ -106,15 +105,7 @@ export default function Settings() {
       <AiSettings />
 
       <section className="card settings">
-        <div className="setting setting--col">
-          <div className="setting__title"><strong>Sao lưu</strong></div>
-          <p className="small muted">Toàn bộ tài liệu bạn nạp, kết quả, từ vựng, ghi chú nằm trong trình duyệt này (IndexedDB). Xuất file để chuyển máy hoặc đề phòng xoá dữ liệu trình duyệt. File audio/ảnh đã nạp không nằm trong bản sao lưu.</p>
-          <div className="row wrap">
-            <button className="btn btn--ghost btn--sm" onClick={async () => { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([await exportAll()], { type: 'application/json' })); a.download = `ielts-backup-${new Date().toISOString().slice(0, 10)}.json`; a.click(); }}><Download size={15} /> Xuất sao lưu</button>
-            <label className="btn btn--ghost btn--sm"><Upload size={15} /> Nhập sao lưu<input type="file" accept=".json" hidden onChange={async (e) => { const f = e.target.files?.[0]; if (!f) return; try { await importBackup(await f.text()); setMsg('Đã nhập sao lưu.'); } catch (err) { setMsg(err instanceof Error ? err.message : String(err)); } }} /></label>
-            {msg && <span className="small">{msg}</span>}
-          </div>
-        </div>
+        <BackupPanel />
       </section>
     </div>
   );

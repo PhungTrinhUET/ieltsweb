@@ -220,6 +220,8 @@ export interface VocabCard {
   box?: number;
   /** Lần ôn gần nhất. */
   lastReview?: number;
+  /** Lần sửa cuối (lưu, đổi nghĩa, đổi bộ…) – dùng khi gộp sao lưu. */
+  updatedAt?: number;
   /** Lần đầu học xong (vào lịch ôn). */
   learnedAt?: number;
   due: number;
