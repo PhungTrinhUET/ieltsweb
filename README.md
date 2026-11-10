@@ -37,19 +37,19 @@ Claude dùng structured output của Anthropic SDK. Các nhà cung cấp khác �
 
 ### Reading
 - Làm đề giống CBT: bài đọc bên trái, câu hỏi bên phải, bấm giờ 20', highlight, **mọi dạng câu hỏi** (matching headings/information/features, T/F/NG, Y/N/NG, MCQ, multi-select, sentence/summary/note/table completion, short answer), chấm tức thì → band ước tính, giải thích từng câu.
-- **Chế độ học**: đọc lại từng đoạn, bản dịch tiếng Việt (đi kèm bài hoặc AI dịch một lần rồi lưu), nhấp đúp dịch riêng một câu, **bấm từ để tra** (từ vựng kèm bài → từ điển miễn phí → AI tra theo ngữ cảnh: IPA, nghĩa, collocation, đồng nghĩa) và **lưu vào sổ từ**, **nghe đọc bài bằng giọng máy** theo đoạn, ghi chú riêng.
+- **Chế độ học**: đọc lại từng đoạn, bản dịch tiếng Việt (đi kèm bài hoặc AI dịch một lần rồi lưu), nhấp đúp dịch riêng một câu, **bấm từ để tra** (từ vựng kèm bài → từ điển miễn phí → AI tra theo ngữ cảnh: IPA, nghĩa, collocation, đồng nghĩa) và **lưu vào vốn từ**, **nghe đọc bài bằng giọng máy** theo đoạn, ghi chú riêng.
 - **Thi thử** 3 bài / 60 phút, chấm chung → band.
 
 ### Listening
 - Làm đề với audio thật (mp3 + transcript + SRT) hoặc **giọng máy đọc transcript** (đổi giọng theo người nói) khi không có file audio; mọi dạng câu hỏi form/note/table completion, MCQ, matching.
-- **Nghe & chép** (`#/dictation`, kiểu DailyDictation): 4 cấp – cấp 1 số/đánh vần do máy sinh, cấp 2–4 là các section Listening đã chia thành bài ~10 câu (bỏ lời dẫn và ví dụ). Nghe từng câu, gõ, chấm khớp có quy đổi (số ↔ chữ, viết tắt, dấu câu), sửa ngay sau khi kiểm tra, gợi ý từng từ, khung chữ đầu cho người mới, chế độ chỉ chép từ khoá, chỉnh tốc độ, phím tắt, lưu tiến độ giữa chừng, tổng kết + **shadowing**. Câu chép dưới 90% thành **thẻ "Câu hay sai"** để ôn bằng chép lại; từ chép sai được gợi ý vào sổ từ.
+- **Nghe & chép** (`#/dictation`, kiểu DailyDictation): 4 cấp – cấp 1 số/đánh vần do máy sinh, cấp 2–4 là các section Listening đã chia thành bài ~10 câu (bỏ lời dẫn và ví dụ). Nghe từng câu, gõ, chấm khớp có quy đổi (số ↔ chữ, viết tắt, dấu câu), sửa ngay sau khi kiểm tra, gợi ý từng từ, khung chữ đầu cho người mới, chế độ chỉ chép từ khoá, chỉnh tốc độ, phím tắt, lưu tiến độ giữa chừng, tổng kết + **shadowing**. Câu chép dưới 90% thành **thẻ "Câu hay sai"** để ôn bằng chép lại; từ chép sai được gợi ý vào vốn từ.
 - **Điền từ transcript**: che 1/N từ khoá (4 mức), nghe và gõ, chấm từng chỗ.
 - **Học transcript**: dịch, tra từ, từ vựng, nghe đọc – giống chế độ học Reading.
 - **Thi thử** 4 section.
 
 ### Speaking
 - Bộ đề Part 1 – 2 – 3 cùng chủ đề; máy đọc câu hỏi (giọng Anh), **ghi âm + nhận dạng giọng nói trực tiếp** (Chrome/Edge), Part 2 có đồng hồ 1' chuẩn bị + 2' nói và ô ghi chú; nghe lại, sửa transcript, so với bài mẫu.
-- **AI chấm** theo Fluency & Coherence / Lexical Resource / Grammar (band descriptors), nhận xét + sửa lỗi từng câu, câu trả lời mẫu band 7–8 **giữ ý của bạn**, cụm từ nên học (lưu vào sổ từ).
+- **AI chấm** theo Fluency & Coherence / Lexical Resource / Grammar (band descriptors), nhận xét + sửa lỗi từng câu, câu trả lời mẫu band 7–8 **giữ ý của bạn**, cụm từ nên học (lưu vào vốn từ).
 
 ### Writing
 - Task 1 Academic (line/bar/pie/table – app tự vẽ biểu đồ từ dữ liệu, process, map, mixed), Task 1 General (3 loại thư), Task 2 (opinion, discussion, advantage, problem, double question).

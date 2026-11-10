@@ -418,7 +418,7 @@ function Summary({ lesson, P, added, onNew, onRetry, onShadow, shadow, clip, bac
       {(added.length > 0 || (wrong.length > 0 && lesson.level > 1)) && (
         <p className="dl-saved card small" data-testid="dl-saved">
           {wrong.length > 0 && lesson.level > 1 && <>{wrong.length} câu chưa đạt đã thành thẻ <strong>Câu hay sai</strong> để ôn trong Từ vựng. </>}
-          {added.length > 0 && <>Đã thêm vào sổ từ: <strong>{added.join(', ')}</strong>. </>}
+          {added.length > 0 && <>Đã thêm vào vốn từ: <strong>{added.join(', ')}</strong>. </>}
           <Link to="/vocab">Mở Từ vựng →</Link>
         </p>
       )}

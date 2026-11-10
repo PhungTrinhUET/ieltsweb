@@ -154,14 +154,14 @@ export default function WordPopover({ sel, vocab, from, onClose }: { sel: WordSe
           <label className="small">Ghi chú của bạn<textarea className="textarea" rows={2} value={form.note} onChange={(e) => setForm({ ...form, note: e.target.value })} placeholder="Cách dùng, từ đồng nghĩa, mẹo nhớ…" /></label>
           <div className="wpop__actions">
             <button className="btn btn--ghost btn--sm" onClick={() => setForm(null)}>Huỷ</button>
-            <button className="btn btn--primary btn--sm" onClick={save} disabled={!form.meaning.trim()}><Check size={15} /> Lưu vào sổ từ</button>
+            <button className="btn btn--primary btn--sm" onClick={save} disabled={!form.meaning.trim()}><Check size={15} /> Lưu vào vốn từ</button>
           </div>
         </div>
       ) : (
         <div className="wpop__actions">
           {hasAi && ai !== 'busy' && !a && <button className="btn btn--ghost btn--sm" onClick={askAi} title="Tra nghĩa theo ngữ cảnh bằng AI"><Sparkles size={15} /> Tra AI</button>}
           {ai === 'busy' && <span className="small muted"><Loader2 size={14} className="spin" /> AI đang tra…</span>}
-          <button className="btn btn--primary btn--sm" onClick={() => setForm({ meaning: meaningVi, pos, note: '' })} disabled={saved}>{saved ? <><Check size={15} /> Đã có trong sổ</> : <><BookmarkPlus size={15} /> Lưu từ</>}</button>
+          <button className="btn btn--primary btn--sm" onClick={() => setForm({ meaning: meaningVi, pos, note: '' })} disabled={saved}>{saved ? <><Check size={15} /> Đã có trong vốn từ</> : <><BookmarkPlus size={15} /> Lưu từ</>}</button>
         </div>
       )}
     </div>

@@ -2,7 +2,7 @@
 //   - 4 trạng thái (Sẽ học / Đang học / Ôn tập / Đã thuộc) theo FSRS (src/lib/srs.ts).
 //   - "Hôm nay": Ôn N từ đến hạn (/vocab/review) + Học nhóm từ mới (/vocab/learn) – xem src/pages/VocabSession.tsx.
 //   - Bộ từ: chủ đề có sẵn, bộ theo đề, từ đã lưu, bộ tự tạo; mỗi bộ có tiến độ theo trạng thái + "Học tiếp" / "Ôn bộ này".
-//   - Sổ từ: tìm, lọc theo trạng thái, sửa/xoá, câu thật trong đề cho từng từ.
+//   - Vốn từ: tìm, lọc theo trạng thái, sửa/xoá, câu thật trong đề cho từng từ.
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Check, ChevronDown, Layers, Pencil, Plus, Quote, Trash2, Volume2 } from 'lucide-react';
@@ -127,7 +127,7 @@ export default function Vocab() {
 
       <section className="stack">
         <button className="lt-listhead" onClick={() => setShowList(!showList)} aria-expanded={showList}>
-          <h2 className="h3">Sổ từ của bạn <span className="muted small">({cards.length}{filter ? ` · ${STATE_NAMES[filter]}: ${shown.length}` : ''})</span></h2>
+          <h2 className="h3">Vốn từ của bạn <span className="muted small">({cards.length}{filter ? ` · ${STATE_NAMES[filter]}: ${shown.length}` : ''})</span></h2>
           <ChevronDown size={18} className={showList ? 'is-up' : ''} />
         </button>
         {showList && <>
@@ -187,7 +187,7 @@ function Row({ c, open, onOpen, edit, setEdit }: { c: VocabCard; open: boolean; 
       </div>
       {!sentence && <button className="icon-btn" onClick={() => sayWord(c.word)} aria-label="Phát âm"><Volume2 size={16} /></button>}
       <button className="icon-btn" onClick={() => setEdit({ id: c.id, meaning: c.meaning, pos: c.pos ?? '', note: c.note ?? '' })} aria-label="Sửa"><Pencil size={16} /></button>
-      <button className="icon-btn" onClick={() => confirm(`Xoá "${sentence ? 'câu này' : c.word}" khỏi sổ từ?`) && deleteCard(c.id)} aria-label="Xoá"><Trash2 size={16} /></button>
+      <button className="icon-btn" onClick={() => confirm(`Xoá "${sentence ? 'câu này' : c.word}" khỏi vốn từ?`) && deleteCard(c.id)} aria-label="Xoá"><Trash2 size={16} /></button>
     </li>
   );
 }

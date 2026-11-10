@@ -185,10 +185,10 @@ export default function Home() {
         <section className="hcard hcard--vocab">
           <span className="vocab__ic"><BookMarked size={22} /></span>
           <div className="vocab__body">
-            <h2 className="hcard__title">Sổ từ vựng</h2>
+            <h2 className="hcard__title">Vốn từ của bạn</h2>
             <p className="muted small">{cards.length ? <>{cards.length} từ đã lưu · <strong>{due}</strong> từ đến hạn ôn</> : 'Bấm vào từ bất kỳ trong bài ở chế độ Luyện tập để lưu kèm nghĩa, phiên âm và câu ví dụ.'}</p>
           </div>
-          <Link to="/vocab" className={`btn ${due ? 'btn--primary' : 'btn--ghost'} btn--sm`}><Layers size={16} /> {due ? 'Ôn ngay' : 'Mở sổ từ'}</Link>
+          <Link to="/vocab" className={`btn ${due ? 'btn--primary' : 'btn--ghost'} btn--sm`}><Layers size={16} /> {due ? 'Ôn ngay' : 'Xem vốn từ'}</Link>
         </section>
 
         {/* Nghe & chép */}

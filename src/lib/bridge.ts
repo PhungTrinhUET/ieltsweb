@@ -1,6 +1,6 @@
 // C. Nối Nghe-chép ↔ Từ vựng.
 //   - Câu chép < 90% (hoặc phải xem đáp án) → thẻ "Câu hay sai" (kind 'sentence') trong cùng lịch FSRS, ôn bằng chép lại câu.
-//   - Từ gõ sai / phải gợi ý → thêm vào sổ từ ("Sẽ học", bộ Đã lưu) kèm câu gốc + đoạn audio.
+//   - Từ gõ sai / phải gợi ý → thêm vào vốn từ ("Sẽ học", bộ Đã lưu) kèm câu gốc + đoạn audio.
 import { findCard, getVocab, saveCard } from '../db';
 import type { VocabCard } from '../types';
 import { finishLearning, newCard } from './srs';
@@ -12,7 +12,7 @@ import { freeTranslate } from './freeTranslate';
 
 const sentId = (lessonId: string, s: DSentence) => `s-${lessonId.replace(/~.*$/, '')}-${Math.round((s.start ?? 0) * 10)}-${s.text.length}`;
 
-/** Gọi khi rời một câu đã chép. Trả về các từ được gợi ý vào sổ. */
+/** Gọi khi rời một câu đã chép. Trả về các từ được gợi ý vào vốn từ. */
 export async function fromDictation(lesson: Lesson, s: DSentence, typed: string, r: { score: number; hint: number; shown: boolean }): Promise<string[]> {
   if (lesson.level < 2) return []; // cấp 1 (số, đánh vần) không tạo thẻ
   const bad = r.shown || r.score < 0.9;

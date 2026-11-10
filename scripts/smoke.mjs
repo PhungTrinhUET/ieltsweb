@@ -408,7 +408,7 @@ for (const profile of Object.keys(PROFILES)) {
     return { ok: has > 0 && !!typed && back === typed, info: `resume=${has} "${typed.trim()}" → "${back.trim()}"` };
   });
 
-  await check(`[${profile}] F5 câu chép sai → thẻ "Câu hay sai" + từ chép sai vào sổ từ`, async () => {
+  await check(`[${profile}] F5 câu chép sai → thẻ "Câu hay sai" + từ chép sai vào vốn từ`, async () => {
     page.errors.length = 0;
     // tiếp nối F4: đang ở một câu bài vol3-t2-l1; sang câu kế, gõ sai hẳn rồi rời câu
     await page.getByRole('button', { name: 'Câu sau' }).click();

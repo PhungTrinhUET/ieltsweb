@@ -97,7 +97,7 @@ export default function SkillList({ skill }: { skill: Skill }) {
         <div className="modes" role="tablist" aria-label="Chế độ">
           <button role="tab" aria-selected={mode === 'practice'} className={`mode${mode === 'practice' ? ' is-on' : ''}`} onClick={() => setMode('practice')}>
             <span className="mode__icon"><GraduationCap size={22} /></span>
-            <span className="mode__body"><strong>Luyện tập</strong><span>Không tính giờ · bấm từ tra nghĩa tiếng Việt, lưu sổ từ · dịch từng đoạn · highlight · xem đáp án và giải thích từng câu</span></span>
+            <span className="mode__body"><strong>Luyện tập</strong><span>Không tính giờ · bấm từ tra nghĩa tiếng Việt, lưu vào vốn từ · dịch từng đoạn · highlight · xem đáp án và giải thích từng câu</span></span>
           </button>
           <button role="tab" aria-selected={mode === 'test'} className={`mode${mode === 'test' ? ' is-on' : ''}`} onClick={() => setMode('test')}>
             <span className="mode__icon"><Timer size={22} /></span>

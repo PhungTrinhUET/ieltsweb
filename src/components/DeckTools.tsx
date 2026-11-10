@@ -103,7 +103,7 @@ export default function DeckTools() {
         <button className="btn btn--primary btn--sm" onClick={() => setOpen(!open)} data-testid="deck-new"><Plus size={15} /> Tạo bộ</button>
         <button className="btn btn--ghost btn--sm" onClick={() => file.current?.click()}><Upload size={15} /> Nhập JSON/CSV</button>
         {decks.length > 0 && <button className="btn btn--ghost btn--sm" onClick={exportAll}><Download size={15} /> Xuất bộ (JSON)</button>}
-        <button className="btn btn--ghost btn--sm" onClick={exportNotebook}><Download size={15} /> Xuất sổ từ (CSV)</button>
+        <button className="btn btn--ghost btn--sm" onClick={exportNotebook}><Download size={15} /> Xuất vốn từ (CSV)</button>
         <input ref={file} type="file" accept=".json,.csv,.txt" hidden onChange={(e) => { const f = e.target.files?.[0]; if (f) onFile(f); e.target.value = ''; }} />
       </div>
       {open && (
@@ -118,7 +118,7 @@ export default function DeckTools() {
       {msg && <p className="small" data-testid="deck-msg">{msg}</p>}
       {decks.length > 0 && (
         <details className="small"><summary>Xoá bộ tự tạo</summary>
-          <ul className="deck-del">{decks.map((d) => <li key={d.id}>{d.name} ({d.words.length}) <button className="icon-btn icon-btn--sm" aria-label={`Xoá bộ ${d.name}`} onClick={() => confirm(`Xoá bộ "${d.name}"? Thẻ đã học vẫn giữ trong sổ từ.`) && setKv(`udeck:${d.id.slice(3)}`, undefined)}><Trash2 size={14} /></button></li>)}</ul>
+          <ul className="deck-del">{decks.map((d) => <li key={d.id}>{d.name} ({d.words.length}) <button className="icon-btn icon-btn--sm" aria-label={`Xoá bộ ${d.name}`} onClick={() => confirm(`Xoá bộ "${d.name}"? Thẻ đã học vẫn giữ trong vốn từ.`) && setKv(`udeck:${d.id.slice(3)}`, undefined)}><Trash2 size={14} /></button></li>)}</ul>
         </details>
       )}
     </div>

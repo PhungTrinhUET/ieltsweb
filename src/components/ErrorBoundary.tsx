@@ -13,7 +13,7 @@ export default class ErrorBoundary extends Component<{ children: ReactNode }, { 
       <div className="page crash" role="alert">
         <AlertTriangle size={36} className="crash__icon" />
         <h1>Trang này gặp lỗi</h1>
-        <p className="muted">Bài làm đang dở ở trang này có thể chưa được lưu. Dữ liệu khác (lịch sử, sổ từ, nháp Writing) vẫn còn nguyên.</p>
+        <p className="muted">Bài làm đang dở ở trang này có thể chưa được lưu. Dữ liệu khác (lịch sử, vốn từ, nháp Writing) vẫn còn nguyên.</p>
         <pre className="crash__msg">{error.message}</pre>
         <div className="row wrap">
           <button className="btn btn--primary" onClick={() => location.reload()}><RotateCcw size={16} /> Tải lại</button>

@@ -41,7 +41,7 @@ export default function Stats() {
       </div>
 
       <section className="card pad stack">
-        <div className="row-between"><h2 className="h3">Thẻ theo trạng thái</h2><Link to="/vocab" className="small">Sổ từ →</Link></div>
+        <div className="row-between"><h2 className="h3">Thẻ theo trạng thái</h2><Link to="/vocab" className="small">Vốn từ →</Link></div>
         <div className="lt-boxes">
           {STATE_ORDER.map((s) => <Link key={s} to="/vocab" className={`lt-box st--${s}`}><strong>{counts[s]}</strong><span>{STATE_NAMES[s]}</span></Link>)}
         </div>

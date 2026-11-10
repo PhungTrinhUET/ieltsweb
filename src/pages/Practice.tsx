@@ -1,5 +1,5 @@
 // Chế độ LUYỆN TẬP cho Reading / Listening (khác chế độ Thi thử):
-// không bấm giờ, bấm từ để tra nghĩa tiếng Việt và lưu sổ từ, dịch từng đoạn/câu,
+// không bấm giờ, bấm từ để tra nghĩa tiếng Việt và lưu vào vốn từ, dịch từng đoạn/câu,
 // kiểm tra từng câu và xem giải thích ngay, ghi chú riêng cho bài.
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
