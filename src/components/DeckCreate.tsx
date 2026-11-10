@@ -51,7 +51,15 @@ export default function DeckCreate({ deckId, existing = [], onClose, initial }: 
   };
 
   const finish = async () => {
-    const words = chosen.map(({ on: _on, ...w }) => w); // eslint-disable-line @typescript-eslint/no-unused-vars
+    let words = chosen.map(({ on: _on, ...w }) => w); // eslint-disable-line @typescript-eslint/no-unused-vars
+    // Từ chưa có nghĩa → tự điền trước khi lưu (học bắt buộc phải có nghĩa Việt).
+    const noVi = words.map((w, i) => [w, i] as const).filter(([w]) => !w.vi.trim()).slice(0, FILL_MAX);
+    if (noVi.length) {
+      setFill([0, noVi.length]);
+      const out = await fillMissing(noVi.map(([w]) => w), (n, t) => setFill([n, t]), FILL_MAX).catch(() => noVi.map(([w]) => w));
+      words = [...words]; noVi.forEach(([, i], k) => { words[i] = out[k]; });
+      setFill(null);
+    }
     if (deckId) { const r = await addWords(deckId, words); onClose(); setMsg(`Đã thêm ${r.added} từ.`); return; }
     const src = tab === 'ai' ? 'ai' : tab === 'file' ? 'import' : 'custom';
     const id = await createDeck({ ...meta, source: src, description: meta.description || undefined, topic: meta.topic || undefined, level: meta.level || undefined }, words);
@@ -101,6 +109,7 @@ export default function DeckCreate({ deckId, existing = [], onClose, initial }: 
                 <button className="btn btn--text btn--sm" onClick={() => setStaged([])}>Xoá hết</button>
               </div>
             </div>
+            {chosen.some((w) => !w.vi.trim()) && !fill && <p className="small muted">Từ chưa có nghĩa sẽ được tự điền nghĩa tiếng Việt khi bấm {deckId ? '"Thêm"' : '"Tạo bộ"'} – sửa lại được sau.</p>}
             {fill && <div className="dk-prog"><div className="bar"><div className="bar__fill" style={{ width: `${(fill[0] / Math.max(1, fill[1])) * 100}%` }} /></div><span className="small muted">Đang điền {fill[0]}/{fill[1]}…</span></div>}
             <ul className="dk-list">
               {staged.map((w, i) => {

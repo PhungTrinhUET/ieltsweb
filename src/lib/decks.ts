@@ -286,6 +286,37 @@ export async function fillMissing(words: DeckWord[], onProgress: (n: number, tot
   return out;
 }
 
+/**
+ * Điền nghĩa còn trống cho từ trong bộ của tôi và thẻ đã học (từ dán/gõ mà chưa bấm "Tự điền").
+ * `deckId` có → chỉ bộ đó; không → mọi bộ của tôi + mọi thẻ. Trả số từ điền được nghĩa.
+ */
+export async function fillMeanings(deckId?: string, onProgress: (n: number, total: number) => void = () => {}, max = 100): Promise<number> {
+  const st = getState();
+  const inScope = (c: VocabCard) => !deckId || (deckId === GENERAL ? isGeneral(c) : (c.decks ?? []).includes(deckId) || c.from === deckId);
+  const cards = Object.values(st.vocab).filter((c) => c.kind !== 'sentence' && !c.meaning?.trim() && inScope(c));
+  const deckKeys = Object.keys(st.kv).filter((k) => k.startsWith('udeck:') && (!deckId || k === key(deckId)));
+  const todo = new Map<string, DeckWord>();
+  for (const c of cards) todo.set(lc(c.word), wordOfCard(c));
+  for (const k of deckKeys) for (const w of (st.kv[k] as UserDeck).words ?? []) if (!w.vi?.trim() && !todo.has(lc(w.word))) todo.set(lc(w.word), w);
+  if (!todo.size) return 0;
+  const filled = new Map((await fillMissing([...todo.values()], onProgress, max)).filter((w) => w.vi?.trim()).map((w) => [lc(w.word), w]));
+  if (!filled.size) return 0;
+  const merge = (w: DeckWord): DeckWord => { const f = filled.get(lc(w.word)); return f && !w.vi?.trim() ? { ...w, vi: f.vi, pos: w.pos || f.pos, ipa: w.ipa || f.ipa, en: w.en || f.en, ex: w.ex || f.ex } : w; };
+  const now = getState();
+  const fix = cards.map((c) => now.vocab[c.id] ?? c).filter((c) => !c.meaning?.trim() && filled.has(lc(c.word))).map((c) => {
+    const f = filled.get(lc(c.word))!;
+    return { ...c, meaning: f.vi, pos: c.pos || f.pos || undefined, ipa: c.ipa || f.ipa, meaningEn: c.meaningEn || f.en, example: c.example || f.ex };
+  });
+  if (fix.length) await saveCards(fix);
+  for (const k of deckKeys) {
+    const d = getState().kv[k] as UserDeck | undefined;
+    if (d?.words?.some((w) => !w.vi?.trim() && filled.has(lc(w.word)))) await setKv(k, { ...d, words: d.words.map(merge) });
+  }
+  return filled.size;
+}
+/** Số từ còn trống nghĩa trong một bộ (danh sách + thẻ). */
+export const missingMeanings = (d: Deck) => deckWordsOf(d).filter((w) => !(findCard(w.word)?.meaning?.trim() || w.vi?.trim())).length;
+
 // ---------- Link chia sẻ ----------
 // JSON gọn → deflate (CompressionStream) → base64url. Không kèm tiến độ học.
 // TODO (sau này): thư viện bộ từ cộng đồng – đăng bộ lên máy chủ chung thay vì gửi link/file.

@@ -5,11 +5,11 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { Sparkles, Volume2, X } from 'lucide-react';
-import { addLog, getKv, saveCard, setKv, useDb } from '../db';
+import { addLog, getKv, getState, saveCard, setKv, useDb } from '../db';
 import type { VocabCard } from '../types';
 import { autoRating, cardState, dueCards, finishLearning, grade, isLearned, learnedToday, markKnown, startOfDay, STATE_NAMES } from '../lib/srs';
 import { blankOut, cardFromDeck, enrich, type Ex, inDeck, makeEx, type PoolWord, type Step, useAllDecks, xpFor } from '../lib/vocab';
-import { deckWordsOf } from '../lib/decks';
+import { deckWordsOf, fillMeanings } from '../lib/decks';
 import { contextFor, type CtxSent, matAudio, srcLabel } from '../lib/context';
 import { shuffle } from '../lib/text';
 import { speak, ttsAvailable } from '../lib/tts';
@@ -82,6 +82,18 @@ function Summary({ title, lines, children }: { title: string; lines: React.React
 // =====================================================================================
 type Item = { id: string; step: Step; ex: Ex };
 
+/** Trước khi học/ôn: điền nghĩa còn trống (bộ đang mở, hoặc mọi bộ/thẻ). Tối đa 40 từ để không chờ lâu. */
+function usePrepMeanings(deck: string, ready: boolean) {
+  const [done, setDone] = useState(false);
+  useEffect(() => {
+    if (!ready || done) return;
+    let on = true;
+    fillMeanings(deck || undefined, undefined, 40).catch(() => 0).finally(() => on && setDone(true));
+    return () => { on = false; };
+  }, [ready]); // eslint-disable-line react-hooks/exhaustive-deps
+  return done;
+}
+
 export function VocabLearn() {
   const db = useDb();
   const s = useSettings();
@@ -94,8 +106,10 @@ export function VocabLearn() {
 
   // Chọn nhóm từ một lần khi đủ dữ liệu.
   const [group, setGroup] = useState<VocabCard[] | null>(null);
+  const prepped = usePrepMeanings(deckParam, db.ready);
+  const [noVi, setNoVi] = useState(0);
   useEffect(() => {
-    if (group || !decks || !db.ready) return;
+    if (group || !decks || !db.ready || !prepped) return;
     const cards = Object.values(db.vocab).filter((c) => c.kind !== 'sentence');
     const left = more ? GROUP : Math.max(0, s.newCardsPerDay - learnedToday(cards));
     const byWord = new Map(cards.map((c) => [c.word.toLowerCase(), c]));
@@ -105,11 +119,13 @@ export function VocabLearn() {
     const chosen = readTopics();
     const fromDeck = decks.filter((d) => (deckParam ? d.id === deckParam : d.kind === 'topic' && (!chosen || chosen.includes(d.id.slice(5)))))
       .flatMap((d) => (deckParam ? deckWordsOf(d) : d.words).filter((w) => !byWord.has(w.word.toLowerCase())).map((w) => cardFromDeck(w, d.id)));
+    // Học phải có nghĩa Việt: từ vẫn trống nghĩa (tra không được) thì để lại, báo người học.
+    setNoVi(fromDeck.filter((c) => !c.meaning?.trim()).length + cards.filter((c) => !isLearned(c) && !c.stage && !c.meaning?.trim() && ok(c)).length);
     const wordOf = new Map(decks.flatMap((d) => d.words.map((w) => [w.word.toLowerCase(), [w, d.id] as const])));
-    const pick = [...doing, ...own, ...fromDeck].slice(0, Math.min(GROUP, left || 0))
+    const pick = [...doing, ...own, ...fromDeck].filter((c) => c.meaning?.trim()).slice(0, Math.min(GROUP, left || 0))
       .map((c) => { const e = wordOf.get(c.word.toLowerCase()); return e ? enrich(c, e[0], deckParam || undefined) : c; });
     setGroup(pick);
-  }, [decks, db.ready]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [decks, db.ready, prepped]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const ctx = useContexts(group);
   const steps = useMemo<Step[]>(() => {
@@ -176,9 +192,9 @@ export function VocabLearn() {
   };
 
   const exit = () => nav('/vocab');
-  if (!group || (group.length && !queue)) return <div className="page"><p className="muted">Đang chuẩn bị nhóm từ…</p></div>;
+  if (!group || (group.length && !queue)) return <div className="page"><p className="muted">{prepped ? 'Đang chuẩn bị nhóm từ…' : 'Đang điền nghĩa tiếng Việt cho từ còn trống…'}</p></div>;
   if (!group.length) return (
-    <div className="page lt"><Summary title="Không còn từ mới" lines={[more || deckParam ? 'Bộ này đã học hết từ.' : `Hôm nay đã học đủ ${s.newCardsPerDay} từ mới (đổi trong Cài đặt).`]}>
+    <div className="page lt"><Summary title="Không còn từ mới" lines={[noVi ? `Còn ${noVi} từ chưa có nghĩa tiếng Việt (chưa tra được) – mở bộ, bấm ✎ để thêm nghĩa rồi học.` : more || deckParam ? 'Bộ này đã học hết từ.' : `Hôm nay đã học đủ ${s.newCardsPerDay} từ mới (đổi trong Cài đặt).`]}>
       <div className="row"><Link className="btn btn--primary" to="/vocab">Về Từ vựng</Link>{!more && <Link className="btn btn--ghost" to={`/vocab/learn?more=1${deckParam ? `&deck=${encodeURIComponent(deckParam)}` : ''}`}>Học thêm {GROUP} từ</Link>}</div>
     </Summary></div>
   );
@@ -236,15 +252,16 @@ export function VocabReview() {
   const deckParam = sp.get('deck') ?? '';
   const pool = usePool(deckParam);
   const [list, setList] = useState<VocabCard[] | null>(null);
+  const prepped = usePrepMeanings(deckParam, db.ready);
   useEffect(() => {
-    if (list || !db.ready) return;
-    const cards = Object.values(db.vocab).filter((c) => !deckParam || inDeck(c, deckParam));
+    if (list || !db.ready || !prepped) return;
+    const cards = Object.values(getState().vocab).filter((c) => !deckParam || inDeck(c, deckParam));
     const done = db.logs.filter((l) => l.rating && l.at >= startOfDay()).length;
     let due = dueCards(cards);
     // "Ôn bộ này" khi bộ chưa có thẻ đến hạn: ôn sớm các thẻ yếu nhất của bộ.
     if (!due.length && deckParam) due = dueCards(cards, Date.now() + 3650 * 864e5);
     setList(due.slice(0, deckParam ? 20 : Math.max(0, s.reviewLimit - done)));
-  }, [db.ready]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [db.ready, prepped]); // eslint-disable-line react-hooks/exhaustive-deps
   const ctx = useContexts(list);
 
   const build = (c: VocabCard, step = reviewStep(c, s.exercises)): Ex => {

@@ -8,7 +8,7 @@ import { useDb } from '../db';
 import { STATE_NAMES, STATE_ORDER, cardState, type WordState } from '../lib/srs';
 import { type Deck, type DeckWord, inDeck, useAllDecks } from '../lib/vocab';
 import { GENERAL, SHARE_MAX_URL, SHARE_MAX_WORDS, copyBuiltin, copyWords, deckFileName, deckJson, deckProgress, deckWordsOf, deleteDeck, download, editWord, encodeShare,
-  mergeDecks, removeWords, shareSupported, shareUrl, toCsv, updateDeck } from '../lib/decks';
+  fillMeanings, mergeDecks, missingMeanings, removeWords, shareSupported, shareUrl, toCsv, updateDeck } from '../lib/decks';
 import { sayWord } from '../components/VocabEx';
 import DeckCreate from '../components/DeckCreate';
 
@@ -48,6 +48,11 @@ function DeckView({ d, decks }: { d: Deck; decks: Deck[] }) {
   const [msg, setMsg] = useState('');
   const others = decks.filter((x) => (x.kind === 'custom' || x.kind === 'saved') && x.id !== d.id);
   const enc = encodeURIComponent(d.id);
+  // Từ chưa có nghĩa (dán/gõ mà chưa tự điền) → điền tự động khi mở bộ.
+  const noVi = mine ? missingMeanings(d) : 0;
+  const [filling, setFilling] = useState<[number, number] | null>(null);
+  const runFill = async () => { setFilling([0, noVi]); const n = await fillMeanings(d.id, (a, b) => setFilling([a, b])).catch(() => 0); setFilling(null); setMsg(n ? `Đã điền nghĩa cho ${n} từ.` : 'Chưa tra được nghĩa (kiểm tra mạng) – bấm ✎ để tự gõ nghĩa.'); };
+  useEffect(() => { if (noVi) runFill(); }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const stateOf = (w: DeckWord): WordState => { const c = byWord.get(lc(w.word)); return c ? cardState(c) : 'new'; };
   const shown = useMemo(() => {
@@ -166,6 +171,8 @@ function DeckView({ d, decks }: { d: Deck; decks: Deck[] }) {
         {!mine && sel.size > 0 && (
           <div className="dk-bulk card"><span className="small"><strong>{sel.size}</strong> từ đã chọn</span><BulkTo decks={others} label="Chép sang" onPick={(to) => bulk(to, false)} /><button className="btn btn--text btn--sm" onClick={() => setSel(new Set())}>Bỏ chọn</button></div>
         )}
+        {filling && <p className="small muted" data-testid="dk-filling">Đang điền nghĩa tiếng Việt {filling[0]}/{filling[1]}…</p>}
+        {!filling && noVi > 0 && mine && <p className="small"><button className="btn btn--ghost btn--sm" onClick={runFill} data-testid="dk-fillvi"><Sparkles size={14} /> Tự điền nghĩa cho {noVi} từ còn trống</button></p>}
         {msg && <p className="small" data-testid="dk-pmsg">{msg}</p>}
         {!words.length ? <p className="empty">Bộ chưa có từ nào. {mine && <button className="btn btn--text" onClick={() => setAdding(true)}>＋ Thêm từ</button>}</p> : (
           <ul className="vlist card dk-words" data-testid="dk-words">
@@ -188,7 +195,7 @@ function DeckView({ d, decks }: { d: Deck; decks: Deck[] }) {
                   <div className="vlist__body">
                     <strong className="vocab__w">{w.word}</strong> {w.ipa && <span className="small muted">{w.ipa}</span>} {w.pos && <em className="vocab__pos">{w.pos}</em>}
                     <span className={`lt-tag st--${s}`}>{STATE_NAMES[s]}</span>
-                    <div className="vocab__vi">{c?.meaning || w.vi}</div>
+                    <div className="vocab__vi">{c?.meaning || w.vi || <span className="muted">chưa có nghĩa{mine ? ' – bấm ✎ để thêm' : ''}</span>}</div>
                     {(c?.example ?? w.ex) && <div className="vocab__ex">{c?.example ?? w.ex}</div>}
                   </div>
                   <button className="icon-btn" onClick={() => sayWord(w.word)} aria-label={`Phát âm ${w.word}`}><Volume2 size={16} /></button>

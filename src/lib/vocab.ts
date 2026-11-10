@@ -120,6 +120,9 @@ export function blankOut(sentence: string, word: string): { text: string; form: 
 
 /** Dựng một bài tập. `sentence` (fill/dictate) do nơi gọi chọn (ví dụ hoặc câu thật trong đề). */
 export function makeEx(step: Step, card: VocabCard, pool: PoolWord[], o: { sentence?: string; choose?: boolean; mode?: 'audio' | 'meaning'; clip?: Ex['clip'] } = {}): Ex {
+  // Thẻ chưa có nghĩa (tra không được): bỏ dạng cần nghĩa, chuyển sang nghe/gõ.
+  if (!card.meaning?.trim() && (step === 'meaning' || step === 'word')) return makeEx('listen', card, pool, o);
+  if (!card.meaning?.trim() && step === 'type') return { step, card, target: card.word, mode: 'audio' };
   switch (step) {
     case 'meaning': return { step, card, ...choice(card, pool, 'meaning') };
     case 'word': case 'listen': return { step, card, ...choice(card, pool, 'word') };
