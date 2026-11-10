@@ -820,6 +820,7 @@ for (const profile of Object.keys(PROFILES)) {
       const p = await newPage(profile);
       await go(p, '/speaking');
       await p.locator('a.item').first().click();
+      await p.waitForSelector('[data-testid="ai-missing"]', { timeout: 5000 }).catch(() => {});
       const sp = await p.locator('[data-testid="ai-missing"]').count();
       await go(p, '/writing/vol1-t2-w2');
       await answerTab(p); await p.locator('.wbox__input').fill('word word word');
