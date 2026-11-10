@@ -204,3 +204,7 @@ html.exam-open, html.exam-open body { overflow: hidden; }
 .exam .passage__p { align-items: flex-start; }
 .exam .passage__label { font-weight: 700; padding-top: 0; }
 .xtip { color: var(--xmuted); margin: 0 0 12px; }
+
+/* Điện thoại: đồng hồ gọn ("20 min") để không bị cắt chữ */
+.xclock__short { display: none; }
+@media (max-width: 560px) { .xclock__long { display: none; } .xclock__short { display: inline; } }

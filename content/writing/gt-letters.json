@@ -1,0 +1,1172 @@
+{
+ "vol": 0,
+ "test": 0,
+ "id": "wr-gt",
+ "prefix": "Đề tự soạn",
+ "source": "Đề luyện tập tự soạn (số liệu trong biểu đồ là số liệu minh hoạ) – bài mẫu band 8 do AI viết, dùng để tham khảo",
+ "tags": [
+  "Đề tự soạn",
+  "Task 1",
+  "General Training"
+ ],
+ "writing": [
+  {
+   "id": "f1",
+   "task": 1,
+   "module": "general",
+   "type": "letter-formal",
+   "title": "A damaged online order",
+   "topic": "Business",
+   "prompt": "You recently ordered an item from an online shop, but when it arrived it was damaged.\n\nWrite a letter to the customer services manager. In your letter\n\n• give details of what you ordered and when\n• describe the damage\n• say what you would like the company to do\n\nWrite at least 150 words.\n\nYou do NOT need to write any addresses.\n\nBegin your letter as follows:\n\nDear Sir or Madam,",
+   "outline": [
+    "Mở thư: nêu mục đích – phàn nàn về đơn hàng bị hỏng",
+    "Đoạn 1: món hàng, ngày đặt, mã đơn, ngày nhận",
+    "Đoạn 2: mô tả hư hỏng (kèm ảnh), không dùng được",
+    "Đoạn 3: yêu cầu đổi hàng mới hoặc hoàn tiền + thời hạn",
+    "Kết: Yours faithfully + họ tên"
+   ],
+   "vocab": [
+    [
+     "I am writing to complain about",
+     "phr",
+     "Tôi viết thư để phàn nàn về",
+     "I am writing to complain about an order I received."
+    ],
+    [
+     "order number",
+     "n phr",
+     "mã đơn hàng",
+     "My order number is BK-20431."
+    ],
+    [
+     "a replacement",
+     "n",
+     "hàng thay thế (đổi mới)",
+     "I would like a replacement to be sent."
+    ],
+    [
+     "a full refund",
+     "n phr",
+     "hoàn tiền toàn bộ",
+     "Alternatively, I would accept a full refund."
+    ],
+    [
+     "at your earliest convenience",
+     "prep phr",
+     "sớm nhất có thể",
+     "Please reply at your earliest convenience."
+    ]
+   ],
+   "sample": "Dear Sir or Madam,\n\nI am writing to complain about an item I ordered from your website, which arrived in a damaged condition.\n\nOn 3 March, I ordered a white ceramic table lamp (order number BK-20431), which was delivered five days later. Although the outer box appeared to be in good condition, when I unpacked the lamp I discovered that its base was badly cracked and that one side of the lampshade was torn. As a result, the lamp cannot be used safely. I have taken several photographs of the damage, which I have attached to this letter.\n\nI was very disappointed, as I had chosen the lamp as a gift for a friend's new flat. I would therefore be grateful if you could send me a replacement as soon as possible, and arrange for the damaged lamp to be collected from my address at no extra cost. If a replacement is not available, I would like a full refund to be paid to my credit card.\n\nI look forward to hearing from you at your earliest convenience.\n\nYours faithfully,\nMinh Tran",
+   "purpose": "Phàn nàn",
+   "tags": [
+    "Formal letter",
+    "Phàn nàn"
+   ]
+  },
+  {
+   "id": "f2",
+   "task": 1,
+   "module": "general",
+   "type": "letter-formal",
+   "title": "Broken street lights in your area",
+   "topic": "Urban life",
+   "prompt": "Several street lights in the road where you live have not been working for some time.\n\nWrite a letter to your local council. In your letter\n\n• describe the problem\n• explain how it is affecting local residents\n• suggest what the council should do\n\nWrite at least 150 words.\n\nYou do NOT need to write any addresses.\n\nBegin your letter as follows:\n\nDear Sir or Madam,",
+   "outline": [
+    "Mở thư: báo cáo đèn đường hỏng ở phố mình",
+    "Đoạn 1: số đèn hỏng, vị trí, bao lâu",
+    "Đoạn 2: ảnh hưởng – nguy hiểm cho người đi bộ, trẻ em, trộm cắp, tai nạn",
+    "Đoạn 3: đề nghị sửa ngay + kiểm tra định kỳ, kênh báo hỏng online",
+    "Kết: Yours faithfully"
+   ],
+   "vocab": [
+    [
+     "draw your attention to",
+     "v phr",
+     "lưu ý quý vị về",
+     "I would like to draw your attention to a problem in our street."
+    ],
+    [
+     "residents",
+     "n",
+     "cư dân",
+     "Residents feel unsafe walking home."
+    ],
+    [
+     "pose a risk to",
+     "v phr",
+     "gây nguy hiểm cho",
+     "The darkness poses a risk to pedestrians."
+    ],
+    [
+     "carry out repairs",
+     "v phr",
+     "tiến hành sửa chữa",
+     "The council should carry out repairs urgently."
+    ]
+   ],
+   "sample": "Dear Sir or Madam,\n\nI am writing to draw your attention to a problem with the street lighting in Willow Road, where I have lived for the past six years.\n\nFor almost two months, five of the eight street lights between the post office and the primary school have not been working. Despite the fact that several neighbours have reported the problem by telephone, no repairs have been carried out so far.\n\nThis situation is causing considerable concern among local residents. Since it now gets dark before six o'clock, many people, including children returning from after-school activities, have to walk along a section of road that is almost completely dark. Last week an elderly neighbour tripped over an uneven paving stone and injured her wrist, and two cars parked in the street have recently been broken into.\n\nI would therefore urge the council to repair the lights as soon as possible. It would also be helpful if the street lighting in the area could be inspected regularly, and if residents could report faults online so that they are dealt with more quickly.\n\nThank you for your attention to this matter.\n\nYours faithfully,\nMinh Tran",
+   "purpose": "Phàn nàn – đề xuất",
+   "tags": [
+    "Formal letter",
+    "Phàn nàn – đề xuất"
+   ]
+  },
+  {
+   "id": "f3",
+   "task": 1,
+   "module": "general",
+   "type": "letter-formal",
+   "title": "Applying for a part-time job at a museum",
+   "topic": "Work",
+   "prompt": "You have seen an advertisement for a part-time job at a museum in your city.\n\nWrite a letter to the museum manager. In your letter\n\n• say which job you are applying for and where you saw the advertisement\n• describe your relevant experience and skills\n• explain when you are available for an interview\n\nWrite at least 150 words.\n\nYou do NOT need to write any addresses.\n\nBegin your letter as follows:\n\nDear Sir or Madam,",
+   "outline": [
+    "Mở thư: ứng tuyển vị trí nào, thấy quảng cáo ở đâu",
+    "Đoạn 1: kinh nghiệm liên quan (hướng dẫn khách, bán hàng), kỹ năng (ngoại ngữ, giao tiếp)",
+    "Đoạn 2: lý do phù hợp/quan tâm đến bảo tàng",
+    "Đoạn 3: thời gian có thể phỏng vấn, đính kèm CV",
+    "Kết: Yours faithfully"
+   ],
+   "vocab": [
+    [
+     "apply for the position of",
+     "v phr",
+     "ứng tuyển vị trí",
+     "I would like to apply for the position of weekend guide."
+    ],
+    [
+     "relevant experience",
+     "n phr",
+     "kinh nghiệm liên quan",
+     "I have relevant experience in customer service."
+    ],
+    [
+     "be fluent in",
+     "adj phr",
+     "thông thạo (ngôn ngữ)",
+     "I am fluent in English and Korean."
+    ],
+    [
+     "enclose / attach",
+     "v",
+     "đính kèm",
+     "I have attached a copy of my CV."
+    ]
+   ],
+   "sample": "Dear Sir or Madam,\n\nI am writing to apply for the position of part-time weekend guide at the City History Museum, which I saw advertised on your website last week.\n\nI am currently in my final year at university, where I am studying history, so I have a strong interest in the period covered by your main exhibition. For the past two summers, I have worked as a tour guide for a local travel company, leading groups of up to twenty visitors around the old town. This experience has taught me how to present information in an engaging way and how to deal politely with questions and complaints. In addition, I speak English fluently and have a good working knowledge of Korean, which I believe would be useful given the number of international visitors to the museum.\n\nI have attached a copy of my CV, together with a reference from my previous employer. I would be available for an interview on any weekday afternoon after 2 pm, and I could start work at the beginning of next month.\n\nThank you for considering my application.\n\nYours faithfully,\nMinh Tran",
+   "purpose": "Xin việc",
+   "tags": [
+    "Formal letter",
+    "Xin việc"
+   ]
+  },
+  {
+   "id": "f4",
+   "task": 1,
+   "module": "general",
+   "type": "letter-formal",
+   "title": "Enquiring about an evening course",
+   "topic": "Education",
+   "prompt": "You would like to join an evening course at a local college.\n\nWrite a letter to the course administrator. In your letter\n\n• say which course you are interested in and why\n• ask for some information about the course\n• explain a special requirement you have\n\nWrite at least 150 words.\n\nYou do NOT need to write any addresses.\n\nBegin your letter as follows:\n\nDear Sir or Madam,",
+   "outline": [
+    "Mở thư: quan tâm khoá học buổi tối nào",
+    "Đoạn 1: lý do (công việc cần kỹ năng)",
+    "Đoạn 2: câu hỏi – lịch học, học phí, trả góp, chứng chỉ, trình độ đầu vào",
+    "Đoạn 3: yêu cầu đặc biệt – vắng 2 buổi vì công tác, có thể học bù/tài liệu online?",
+    "Kết: Yours faithfully"
+   ],
+   "vocab": [
+    [
+     "I am interested in",
+     "phr",
+     "Tôi quan tâm đến",
+     "I am interested in your evening course in graphic design."
+    ],
+    [
+     "I would be grateful if you could",
+     "phr",
+     "Tôi sẽ rất biết ơn nếu quý vị có thể",
+     "I would be grateful if you could send me the timetable."
+    ],
+    [
+     "tuition fees",
+     "n phr",
+     "học phí",
+     "Could you tell me the tuition fees?"
+    ],
+    [
+     "in instalments",
+     "prep phr",
+     "trả góp, trả nhiều đợt",
+     "Is it possible to pay in instalments?"
+    ]
+   ],
+   "sample": "Dear Sir or Madam,\n\nI am writing to enquire about the evening course in graphic design that your college is offering from next January.\n\nI work in the marketing department of a small company, and I am increasingly expected to design leaflets and social media posts myself. Although I have taught myself some basic skills, I feel that a structured course would help me to work more professionally and confidently.\n\nI would be grateful if you could provide some further information. Firstly, could you tell me how many evenings a week the classes take place and at what time they finish? Secondly, I would like to know the total cost of the course and whether it is possible to pay the tuition fees in instalments. I would also like to know whether students receive a certificate at the end of the course.\n\nFinally, I should mention that my job requires me to travel abroad for one week in February, so I would have to miss two classes. Could you let me know whether recordings or materials from missed lessons would be available online?\n\nI look forward to your reply.\n\nYours faithfully,\nMinh Tran",
+   "purpose": "Hỏi thông tin",
+   "tags": [
+    "Formal letter",
+    "Hỏi thông tin"
+   ]
+  },
+  {
+   "id": "f5",
+   "task": 1,
+   "module": "general",
+   "type": "letter-formal",
+   "title": "Luggage lost on a flight",
+   "topic": "Travel",
+   "prompt": "You recently travelled by plane, but your suitcase did not arrive at your destination.\n\nWrite a letter to the airline. In your letter\n\n• give details of your flight\n• describe your suitcase and its contents\n• say what you want the airline to do\n\nWrite at least 150 words.\n\nYou do NOT need to write any addresses.\n\nBegin your letter as follows:\n\nDear Sir or Madam,",
+   "outline": [
+    "Mở thư: báo mất hành lý",
+    "Đoạn 1: chuyến bay (số hiệu, ngày, chặng), đã báo tại sân bay, mã hồ sơ",
+    "Đoạn 2: mô tả vali (màu, cỡ, đặc điểm) và đồ bên trong",
+    "Đoạn 3: yêu cầu tìm và giao tận nhà; bồi thường chi phí mua đồ thiết yếu",
+    "Kết: Yours faithfully"
+   ],
+   "vocab": [
+    [
+     "reference number",
+     "n phr",
+     "mã hồ sơ",
+     "The reference number for my report is HAN-2287."
+    ],
+    [
+     "baggage claim",
+     "n phr",
+     "khu nhận hành lý",
+     "My suitcase did not appear at baggage claim."
+    ],
+    [
+     "essential items",
+     "n phr",
+     "đồ dùng thiết yếu",
+     "I had to buy some essential items."
+    ],
+    [
+     "reimburse",
+     "v",
+     "hoàn trả (chi phí)",
+     "I would like you to reimburse these costs."
+    ]
+   ],
+   "sample": "Dear Sir or Madam,\n\nI am writing regarding my suitcase, which failed to arrive at my destination after a recent flight with your airline.\n\nOn 14 June, I flew from Hanoi to Singapore on flight SA 512, which landed at 3.40 pm. After waiting at baggage claim for more than an hour, I reported the missing suitcase at your service desk, where I was given the reference number HAN-2287. Unfortunately, I have not received any news since then.\n\nThe suitcase is a large dark-blue hard case with four wheels and a yellow strap around the middle. My name and phone number are on a label attached to the handle. Inside were most of my clothes for the trip, a pair of black leather shoes, a hairdryer and several gifts for my colleagues.\n\nI would be grateful if you could trace the suitcase as a matter of urgency and deliver it to my hotel, the address of which is given below. In the meantime, I have had to buy some essential items, such as clothes and toiletries, and I would like you to reimburse these costs. I have kept all the receipts.\n\nYours faithfully,\nMinh Tran",
+   "purpose": "Phàn nàn – yêu cầu",
+   "tags": [
+    "Formal letter",
+    "Phàn nàn – yêu cầu"
+   ]
+  },
+  {
+   "id": "f6",
+   "task": 1,
+   "module": "general",
+   "type": "letter-formal",
+   "title": "Plans to close a local library",
+   "topic": "Culture",
+   "prompt": "The local newspaper has reported that the council plans to close the public library in your area.\n\nWrite a letter to the editor of the newspaper. In your letter\n\n• explain how you use the library\n• say why you disagree with the plan\n• suggest an alternative to closing the library\n\nWrite at least 150 words.\n\nYou do NOT need to write any addresses.\n\nBegin your letter as follows:\n\nDear Sir or Madam,",
+   "outline": [
+    "Mở thư: phản hồi bài báo về kế hoạch đóng cửa thư viện",
+    "Đoạn 1: bản thân dùng thư viện thế nào",
+    "Đoạn 2: vì sao phản đối – nơi học tập yên tĩnh, internet miễn phí, người già, trẻ em",
+    "Đoạn 3: giải pháp thay thế – mở cửa ít giờ hơn, tình nguyện viên, cho thuê phòng, quán cà phê",
+    "Kết: Yours faithfully"
+   ],
+   "vocab": [
+    [
+     "in response to",
+     "prep phr",
+     "để phản hồi",
+     "I am writing in response to your article."
+    ],
+    [
+     "strongly oppose",
+     "v phr",
+     "phản đối mạnh mẽ",
+     "I strongly oppose the council's plan."
+    ],
+    [
+     "a lifeline for",
+     "n phr",
+     "chỗ dựa thiết yếu cho",
+     "The library is a lifeline for elderly residents."
+    ],
+    [
+     "generate income",
+     "v phr",
+     "tạo ra thu nhập",
+     "The library could generate income by renting out rooms."
+    ]
+   ],
+   "sample": "Dear Sir or Madam,\n\nI am writing in response to your article of 2 May, which reported that the council intends to close Greenhill Library next year in order to save money.\n\nI have been a member of the library for over ten years. I borrow books there almost every week, and when I was preparing for my university entrance exams, I studied in its quiet reading room every evening, as my home was too noisy.\n\nI strongly oppose the council's plan. The library is not simply a place to borrow books; it is one of the few free public spaces left in our neighbourhood. Many elderly residents rely on it to read newspapers and meet other people, while families who cannot afford computers use its free internet to apply for jobs or complete homework. For these people, the library is a lifeline.\n\nRather than closing the library, the council could reduce its opening hours, involve volunteers in running it, or generate income by renting out its meeting rooms to local groups and opening a small café.\n\nI hope the council will reconsider its decision.\n\nYours faithfully,\nMinh Tran",
+   "purpose": "Bày tỏ quan điểm",
+   "tags": [
+    "Formal letter",
+    "Bày tỏ quan điểm"
+   ]
+  },
+  {
+   "id": "f7",
+   "task": 1,
+   "module": "general",
+   "type": "letter-formal",
+   "title": "Cancelling a gym membership",
+   "topic": "Sport",
+   "prompt": "You have a one-year membership at a sports centre, but you are moving to another city for work.\n\nWrite a letter to the manager of the sports centre. In your letter\n\n• give details of your membership\n• explain why you need to cancel it\n• ask for a refund and explain how it should be paid\n\nWrite at least 150 words.\n\nYou do NOT need to write any addresses.\n\nBegin your letter as follows:\n\nDear Sir or Madam,",
+   "outline": [
+    "Mở thư: yêu cầu huỷ hội viên",
+    "Đoạn 1: loại thẻ, số hội viên, ngày bắt đầu, đã trả trước 12 tháng",
+    "Đoạn 2: lý do – chuyển công tác, không còn trung tâm gần nơi ở mới",
+    "Đoạn 3: đề nghị hoàn tiền phần còn lại, chuyển khoản; sẵn sàng nộp giấy tờ chứng minh",
+    "Kết: Yours faithfully"
+   ],
+   "vocab": [
+    [
+     "membership number",
+     "n phr",
+     "số thẻ hội viên",
+     "My membership number is 40217."
+    ],
+    [
+     "in advance",
+     "prep phr",
+     "trả trước",
+     "I paid the full annual fee in advance."
+    ],
+    [
+     "be transferred",
+     "v (passive)",
+     "được điều chuyển công tác",
+     "I have been transferred to our office in Da Nang."
+    ],
+    [
+     "the remaining months",
+     "n phr",
+     "những tháng còn lại",
+     "I would like a refund for the remaining months."
+    ]
+   ],
+   "sample": "Dear Sir or Madam,\n\nI am writing to request the cancellation of my membership at Riverside Sports Centre and a refund of the unused part of my fee.\n\nI joined the centre on 1 February this year on a one-year membership (number 40217), which includes use of the gym, the swimming pool and all group classes. At the time of joining, I paid the full annual fee of 6,000,000 dong in advance.\n\nUnfortunately, my company has recently transferred me to its office in Da Nang, and I will be moving there at the end of this month. As your centre does not have any branches in that city, I will no longer be able to use my membership.\n\nI would therefore be grateful if you could cancel my membership from 30 June and refund the fee for the remaining seven months. I would prefer the money to be transferred to the bank account from which I made the original payment. If you require any proof of my relocation, I would be happy to provide a letter from my employer.\n\nThank you for your understanding.\n\nYours faithfully,\nMinh Tran",
+   "purpose": "Yêu cầu huỷ – hoàn tiền",
+   "tags": [
+    "Formal letter",
+    "Yêu cầu huỷ – hoàn tiền"
+   ]
+  },
+  {
+   "id": "f8",
+   "task": 1,
+   "module": "general",
+   "type": "letter-formal",
+   "title": "An item left at a conference",
+   "topic": "Business",
+   "prompt": "You recently attended a conference at a hotel, and you think you left something behind there.\n\nWrite a letter to the hotel manager. In your letter\n\n• give details of the conference you attended\n• describe the item you lost\n• explain how the hotel can contact you and return the item\n\nWrite at least 150 words.\n\nYou do NOT need to write any addresses.\n\nBegin your letter as follows:\n\nDear Sir or Madam,",
+   "outline": [
+    "Mở thư: nhờ tìm đồ để quên",
+    "Đoạn 1: hội nghị nào, ngày, phòng hội trường, chỗ ngồi",
+    "Đoạn 2: mô tả đồ (túi laptop màu, nhãn hiệu, đồ bên trong) + vì sao quan trọng",
+    "Đoạn 3: cách liên lạc, sẵn sàng trả phí gửi hoặc đến lấy",
+    "Kết: Yours faithfully"
+   ],
+   "vocab": [
+    [
+     "leave something behind",
+     "v phr",
+     "để quên đồ",
+     "I think I left my bag behind."
+    ],
+    [
+     "contain",
+     "v",
+     "chứa, đựng",
+     "The bag contains important documents."
+    ],
+    [
+     "get in touch",
+     "v phr",
+     "liên lạc",
+     "Please get in touch with me by phone."
+    ],
+    [
+     "courier",
+     "n",
+     "dịch vụ chuyển phát",
+     "I will pay for a courier to return it."
+    ]
+   ],
+   "sample": "Dear Sir or Madam,\n\nI am writing to ask for your help in finding an item which I believe I left behind at your hotel last week.\n\nOn Thursday 12 October, I attended the Asia Education Technology Conference, which was held in the Lotus Hall on the second floor of your hotel. I sat near the front of the room during the afternoon sessions, and I think I left my bag under my chair when I hurried out to catch a taxi at about 5.30 pm.\n\nIt is a black laptop bag with a grey shoulder strap and a small silver logo on the front pocket. Inside are a laptop, a charger and a red notebook containing notes for a report that I have to submit next week. As a result, the bag is extremely important to me.\n\nIf the bag has been found, I would be very grateful if you could contact me on 0912 345 678 or by email. I would be happy to collect it in person or to pay for a courier to deliver it to my office.\n\nThank you in advance for your help.\n\nYours faithfully,\nMinh Tran",
+   "purpose": "Nhờ tìm đồ thất lạc",
+   "tags": [
+    "Formal letter",
+    "Nhờ tìm đồ thất lạc"
+   ]
+  },
+  {
+   "id": "s1",
+   "task": 1,
+   "module": "general",
+   "type": "letter-semi",
+   "title": "Asking your manager for flexible hours",
+   "topic": "Work",
+   "prompt": "You would like to take a course which will help you in your job, but the classes take place during working hours.\n\nWrite a letter to your manager. In your letter\n\n• describe the course you want to take\n• explain how it would benefit your work\n• suggest how you could make up the time\n\nWrite at least 150 words.\n\nYou do NOT need to write any addresses.\n\nBegin your letter as follows:\n\nDear Ms Hoang,",
+   "outline": [
+    "Mở thư: xin điều chỉnh giờ làm để đi học",
+    "Đoạn 1: khoá học gì, thời gian (chiều thứ Ba, 10 tuần)",
+    "Đoạn 2: lợi ích cho công việc (phân tích dữ liệu, báo cáo nhanh hơn, chia sẻ lại cho nhóm)",
+    "Đoạn 3: đề xuất bù giờ (làm sớm, làm thêm thứ Năm), đảm bảo không ảnh hưởng hạn chót",
+    "Kết: Yours sincerely / Best regards"
+   ],
+   "vocab": [
+    [
+     "make up the time",
+     "v phr",
+     "làm bù giờ",
+     "I could make up the time by starting earlier."
+    ],
+    [
+     "benefit",
+     "v",
+     "có lợi cho",
+     "The course would benefit the whole team."
+    ],
+    [
+     "share what I learn",
+     "v phr",
+     "chia sẻ những gì học được",
+     "I would be happy to share what I learn with colleagues."
+    ],
+    [
+     "affect deadlines",
+     "v phr",
+     "ảnh hưởng đến hạn chót",
+     "This arrangement would not affect any deadlines."
+    ]
+   ],
+   "sample": "Dear Ms Hoang,\n\nI am writing to ask whether it would be possible for me to adjust my working hours for a short period so that I can attend a course in data analysis.\n\nThe course is run by the City Business School and consists of ten weekly classes, which take place on Tuesday afternoons from 2 pm to 5 pm, starting on 6 March. It covers the use of spreadsheets and data visualisation tools, with practical projects based on real company data.\n\nI believe the course would be of real benefit to our department. At present, I spend many hours each month preparing sales reports manually, and the skills I would learn should allow me to produce them much more quickly and present the results more clearly. I would also be happy to share what I learn with the rest of the team.\n\nTo make up the time, I could start work at 7.30 am on Tuesdays and stay an extra two hours on Thursday evenings. I will make sure that this arrangement does not affect any deadlines.\n\nI would be grateful if we could discuss this at your convenience.\n\nYours sincerely,\nMinh Tran",
+   "purpose": "Xin phép – đề xuất",
+   "tags": [
+    "Semi-formal letter",
+    "Xin phép – đề xuất"
+   ]
+  },
+  {
+   "id": "s2",
+   "task": 1,
+   "module": "general",
+   "type": "letter-semi",
+   "title": "A problem in your rented flat",
+   "topic": "Housing",
+   "prompt": "Something in the flat you are renting is not working properly.\n\nWrite a letter to your landlord. In your letter\n\n• describe the problem\n• explain how it is affecting you\n• say what you would like your landlord to do\n\nWrite at least 150 words.\n\nYou do NOT need to write any addresses.\n\nBegin your letter as follows:\n\nDear Mr Lam,",
+   "outline": [
+    "Mở thư: báo máy nước nóng hỏng",
+    "Đoạn 1: mô tả sự cố, từ khi nào, đã thử gì",
+    "Đoạn 2: ảnh hưởng – tắm nước lạnh, con nhỏ bị cảm, phải sang nhà bạn",
+    "Đoạn 3: đề nghị gửi thợ trong tuần, thời gian có mặt ở nhà; hỏi có trừ tiền thuê không",
+    "Kết: Best regards / Yours sincerely"
+   ],
+   "vocab": [
+    [
+     "stop working",
+     "v phr",
+     "ngừng hoạt động",
+     "The water heater stopped working last week."
+    ],
+    [
+     "a qualified technician",
+     "n phr",
+     "thợ có chuyên môn",
+     "Please send a qualified technician."
+    ],
+    [
+     "inconvenience",
+     "n",
+     "sự bất tiện",
+     "This has caused us considerable inconvenience."
+    ],
+    [
+     "arrange a time",
+     "v phr",
+     "sắp xếp thời gian",
+     "Could you arrange a time for the repair?"
+    ]
+   ],
+   "sample": "Dear Mr Lam,\n\nI am writing to let you know about a problem with the water heater in the flat at 25 Hoa Binh Street, which I have been renting from you since January.\n\nLast Monday, the heater suddenly stopped producing hot water. The power light still comes on, but the water stays cold however long we wait. I have checked the switch and the fuse box, but this has not solved the problem, and I am worried that there may be an electrical fault.\n\nAs you can imagine, this has caused us considerable inconvenience, especially as the weather has turned cold. My family has had to heat water on the stove for washing, and my young son has caught a cold. On some evenings, we have even had to go to my sister's house to have a shower.\n\nI would be very grateful if you could arrange for a qualified technician to repair or replace the heater as soon as possible, ideally within the next few days. I am usually at home after 5 pm on weekdays and all day on Saturday, so please let me know which time suits you.\n\nBest regards,\nMinh Tran",
+   "purpose": "Báo hỏng – yêu cầu sửa",
+   "tags": [
+    "Semi-formal letter",
+    "Báo hỏng – yêu cầu sửa"
+   ]
+  },
+  {
+   "id": "s3",
+   "task": 1,
+   "module": "general",
+   "type": "letter-semi",
+   "title": "Noise from your neighbour's renovation",
+   "topic": "Housing",
+   "prompt": "Your neighbour, whom you do not know well, is renovating their flat, and the noise is causing you problems.\n\nWrite a letter to your neighbour. In your letter\n\n• explain the problem\n• describe how it is affecting you\n• suggest a solution\n\nWrite at least 150 words.\n\nYou do NOT need to write any addresses.\n\nBegin your letter as follows:\n\nDear Mrs Pham,",
+   "outline": [
+    "Mở thư: tự giới thiệu, thông cảm việc sửa nhà nhưng tiếng ồn là vấn đề",
+    "Đoạn 1: tiếng khoan, đập từ 7h sáng đến tối, cả cuối tuần",
+    "Đoạn 2: ảnh hưởng – làm ca đêm cần ngủ ban ngày / mẹ già, em bé",
+    "Đoạn 3: đề xuất giờ làm (9h–17h, nghỉ trưa, nghỉ Chủ nhật), báo trước ngày ồn nhất",
+    "Kết: Kind regards"
+   ],
+   "vocab": [
+    [
+     "I appreciate that",
+     "phr",
+     "Tôi hiểu/thông cảm rằng",
+     "I appreciate that renovations are necessary."
+    ],
+    [
+     "drilling and hammering",
+     "n phr",
+     "tiếng khoan và đập",
+     "There is loud drilling and hammering every morning."
+    ],
+    [
+     "night shifts",
+     "n phr",
+     "ca đêm",
+     "I work night shifts at the hospital."
+    ],
+    [
+     "give advance notice",
+     "v phr",
+     "báo trước",
+     "Could your builders give advance notice of noisy work?"
+    ]
+   ],
+   "sample": "Dear Mrs Pham,\n\nI live in flat 804, directly below yours, and I am writing about the renovation work that is currently taking place in your apartment. I appreciate that renovations are sometimes necessary, but I hope we can find a way to reduce the disturbance.\n\nFor the past two weeks, there has been loud drilling and hammering from about 7 am until late in the evening, including on Saturdays and Sundays. At times, the noise is so loud that the windows in my living room shake.\n\nThis has been particularly difficult for me because I am a nurse and currently work night shifts at the hospital, so I need to sleep during the day. Recently, I have been getting only three or four hours of sleep, and I am finding it hard to concentrate at work. My elderly mother, who lives with me, has also been suffering from headaches.\n\nWould it be possible to ask your builders to work only between 9 am and 5 pm, with a break at lunchtime, and not at all on Sundays? It would also help if they could let me know in advance which days will be the noisiest.\n\nThank you for your understanding.\n\nKind regards,\nMinh Tran",
+   "purpose": "Phàn nàn nhẹ nhàng – đề xuất",
+   "tags": [
+    "Semi-formal letter",
+    "Phàn nàn nhẹ nhàng – đề xuất"
+   ]
+  },
+  {
+   "id": "s4",
+   "task": 1,
+   "module": "general",
+   "type": "letter-semi",
+   "title": "Your child will miss a week of school",
+   "topic": "Education",
+   "prompt": "Your child will have to miss a week of school because of a family event.\n\nWrite a letter to your child's teacher. In your letter\n\n• explain why your child will be absent\n• say what you will do to help your child keep up\n• ask for information about the work your child will miss\n\nWrite at least 150 words.\n\nYou do NOT need to write any addresses.\n\nBegin your letter as follows:\n\nDear Mr Andrews,",
+   "outline": [
+    "Mở thư: xin phép cho con nghỉ học 1 tuần, ngày nào",
+    "Đoạn 1: lý do – đám cưới chú ruột ở nước ngoài, cả gia đình phải đi",
+    "Đoạn 2: phụ huynh sẽ kèm con đọc sách, làm bài mỗi ngày",
+    "Đoạn 3: hỏi bài tập, nội dung sẽ học, có bài kiểm tra không",
+    "Kết: Yours sincerely"
+   ],
+   "vocab": [
+    [
+     "be absent from school",
+     "adj phr",
+     "nghỉ học",
+     "My daughter will be absent from school next week."
+    ],
+    [
+     "keep up with",
+     "v phr",
+     "theo kịp",
+     "I want to help her keep up with her classmates."
+    ],
+    [
+     "fall behind",
+     "v phr",
+     "bị tụt lại",
+     "I do not want her to fall behind."
+    ],
+    [
+     "I would appreciate it if",
+     "phr",
+     "Tôi sẽ rất cảm kích nếu",
+     "I would appreciate it if you could send the homework."
+    ]
+   ],
+   "sample": "Dear Mr Andrews,\n\nI am writing to let you know that my daughter, Lan, who is in your Year 5 class, will be absent from school from Monday 9 to Friday 13 December.\n\nMy husband's younger brother is getting married in Australia, where he has lived for several years, and the whole family has been invited to the wedding. As this is a very important occasion for our family, and his grandparents are also travelling with us, we have decided to take Lan with us. I am sorry that the trip falls during term time, but the date of the wedding was not something we could change.\n\nI do not want Lan to fall behind while she is away, so I will make sure that she reads every day and practises her maths. She will also keep a diary of the trip in English, which she could share with the class when she returns.\n\nI would appreciate it if you could let me know which topics the class will be covering that week, and whether there is any homework or reading she could do while she is away. I would also like to know whether any tests are planned.\n\nThank you very much for your help.\n\nYours sincerely,\nMinh Tran",
+   "purpose": "Xin phép – thông báo",
+   "tags": [
+    "Semi-formal letter",
+    "Xin phép – thông báo"
+   ]
+  },
+  {
+   "id": "s5",
+   "task": 1,
+   "module": "general",
+   "type": "letter-semi",
+   "title": "Asking a former teacher for a reference",
+   "topic": "Education",
+   "prompt": "You are applying for a scholarship to study abroad, and you need a reference.\n\nWrite a letter to a teacher who taught you in the past. In your letter\n\n• remind the teacher who you are\n• give details of the scholarship\n• explain what you would like the teacher to do\n\nWrite at least 150 words.\n\nYou do NOT need to write any addresses.\n\nBegin your letter as follows:\n\nDear Dr Nguyen,",
+   "outline": [
+    "Mở thư: nhắc lại mình là ai (lớp, năm, môn), cập nhật hiện tại",
+    "Đoạn 1: học bổng gì, ở đâu, ngành gì, hạn nộp",
+    "Đoạn 2: nhờ viết thư giới thiệu – nhấn mạnh dự án nghiên cứu đã làm cùng thầy/cô",
+    "Đoạn 3: thủ tục (gửi qua email cho tổ chức), hạn; gửi kèm CV, cảm ơn",
+    "Kết: Yours sincerely"
+   ],
+   "vocab": [
+    [
+     "you may remember me",
+     "phr",
+     "có lẽ thầy/cô còn nhớ em",
+     "You may remember me from your economics class."
+    ],
+    [
+     "a letter of reference",
+     "n phr",
+     "thư giới thiệu",
+     "I need a letter of reference for my application."
+    ],
+    [
+     "deadline",
+     "n",
+     "hạn chót",
+     "The deadline for applications is 15 January."
+    ],
+    [
+     "I fully understand if",
+     "phr",
+     "Em hoàn toàn hiểu nếu",
+     "I fully understand if you are too busy."
+    ]
+   ],
+   "sample": "Dear Dr Nguyen,\n\nYou may remember me from your Environmental Economics class at Hanoi University, which I attended in 2022. I was the student who wrote the final project on plastic recycling in craft villages. Since graduating, I have been working as a research assistant at a non-profit organisation.\n\nI am now applying for the Green Future Scholarship, which would allow me to study for a master's degree in environmental policy at a university in the Netherlands. The scholarship covers tuition fees and living costs for two years, and the deadline for applications is 15 January.\n\nAs part of the application, I need two letters of reference, and I would be extremely grateful if you could write one of them. I believe that you know my academic work well, especially the research project I completed under your supervision, which is closely related to the course I hope to study.\n\nIf you agree, the scholarship committee will send you an email with a link to an online form. I have attached my CV and a short description of the programme to help you. I fully understand if you are too busy at the moment, so please let me know either way.\n\nYours sincerely,\nMinh Tran",
+   "purpose": "Nhờ viết thư giới thiệu",
+   "tags": [
+    "Semi-formal letter",
+    "Nhờ viết thư giới thiệu"
+   ]
+  },
+  {
+   "id": "s6",
+   "task": 1,
+   "module": "general",
+   "type": "letter-semi",
+   "title": "Suggesting a trip for your photography club",
+   "topic": "Culture",
+   "prompt": "You are a member of a photography club, and you have an idea for a club trip.\n\nWrite a letter to the club organiser. In your letter\n\n• describe the trip you would like to suggest\n• explain why it would be good for club members\n• offer to help with the arrangements\n\nWrite at least 150 words.\n\nYou do NOT need to write any addresses.\n\nBegin your letter as follows:\n\nDear Mr Duc,",
+   "outline": [
+    "Mở thư: đề xuất chuyến đi chụp ảnh cho CLB",
+    "Đoạn 1: đi đâu (Mộc Châu mùa hoa mận), khi nào, bao lâu, di chuyển thế nào",
+    "Đoạn 2: lợi ích – chụp phong cảnh, bình minh, đời sống bản làng; thành viên mới làm quen; triển lãm sau chuyến đi",
+    "Đoạn 3: đề nghị giúp – liên hệ homestay, xe; khảo sát thành viên",
+    "Kết: Best regards"
+   ],
+   "vocab": [
+    [
+     "put forward an idea",
+     "v phr",
+     "đưa ra ý tưởng",
+     "I would like to put forward an idea for a club trip."
+    ],
+    [
+     "landscape photography",
+     "n phr",
+     "nhiếp ảnh phong cảnh",
+     "The area is ideal for landscape photography."
+    ],
+    [
+     "get to know each other",
+     "v phr",
+     "làm quen với nhau",
+     "New members could get to know each other."
+    ],
+    [
+     "take care of",
+     "v phr",
+     "lo liệu, phụ trách",
+     "I would be happy to take care of the bookings."
+    ]
+   ],
+   "sample": "Dear Mr Duc,\n\nI hope you are well. I am writing to put forward an idea for a club trip, which I think many members would enjoy.\n\nI would like to suggest a weekend trip to Moc Chau in late January, when the plum trees are in blossom. We could hire a minibus and leave Hanoi early on Saturday morning, spend one night at a homestay in a local village, and return on Sunday evening. I estimate that the total cost, including transport, food and accommodation, would be around 1,200,000 dong per person.\n\nI believe the trip would be valuable for several reasons. The hills, the tea plantations and the early-morning mist would give us excellent opportunities for landscape photography, while the village would allow members to practise portrait and street photography. It would also help our newer members to get to know everyone, as at present we rarely meet outside our monthly meetings. Afterwards, we could hold a small exhibition of the best photos.\n\nIf you like the idea, I would be happy to take care of the arrangements, such as contacting the homestay and the bus company, and sending a short survey to members to find out who would like to join.\n\nBest regards,\nMinh Tran",
+   "purpose": "Đề xuất hoạt động",
+   "tags": [
+    "Semi-formal letter",
+    "Đề xuất hoạt động"
+   ]
+  },
+  {
+   "id": "s7",
+   "task": 1,
+   "module": "general",
+   "type": "letter-semi",
+   "title": "Suggesting an improvement at work",
+   "topic": "Work",
+   "prompt": "You have an idea for improving the place where you work.\n\nWrite a letter to your manager. In your letter\n\n• describe a problem at your workplace\n• explain your idea for improving the situation\n• say how your colleagues would benefit\n\nWrite at least 150 words.\n\nYou do NOT need to write any addresses.\n\nBegin your letter as follows:\n\nDear Mr Clarke,",
+   "outline": [
+    "Mở thư: có đề xuất cải thiện văn phòng",
+    "Đoạn 1: vấn đề – văn phòng mở ồn ào, khó tập trung, gọi điện khách hàng",
+    "Đoạn 2: ý tưởng – biến phòng kho thành phòng yên tĩnh/phòng gọi điện, đặt lịch online, chi phí thấp",
+    "Đoạn 3: lợi ích – năng suất, ít căng thẳng, cuộc gọi chuyên nghiệp hơn; đề nghị thử 1 tháng",
+    "Kết: Best regards"
+   ],
+   "vocab": [
+    [
+     "open-plan office",
+     "n phr",
+     "văn phòng không gian mở",
+     "Our open-plan office is often noisy."
+    ],
+    [
+     "concentrate on",
+     "v phr",
+     "tập trung vào",
+     "It is hard to concentrate on detailed work."
+    ],
+    [
+     "a trial period",
+     "n phr",
+     "giai đoạn thử nghiệm",
+     "We could try this for a trial period of one month."
+    ],
+    [
+     "productivity",
+     "n",
+     "năng suất",
+     "A quiet room would improve productivity."
+    ]
+   ],
+   "sample": "Dear Mr Clarke,\n\nI am writing to suggest a small change to our office which I believe would make a real difference to the way our team works.\n\nAs you know, our department moved into an open-plan office last spring. While this has improved communication, the noise level is often very high, especially in the mornings when several colleagues are on the phone at the same time. Many of us find it difficult to concentrate on detailed tasks, such as checking contracts, and customers have sometimes complained that they cannot hear us clearly during calls.\n\nMy suggestion is to turn the small storage room next to the kitchen into a quiet room. Most of the boxes stored there are old files that could be moved to the basement. The room could be furnished with two desks and a phone, and staff could book it online for an hour at a time, either for focused work or for important calls. The cost would be minimal.\n\nI am confident that this would increase productivity and reduce stress, and it would also make our calls with clients sound more professional. Perhaps we could try the idea for a trial period of one month and then ask the team for feedback.\n\nBest regards,\nMinh Tran",
+   "purpose": "Đề xuất cải thiện",
+   "tags": [
+    "Semi-formal letter",
+    "Đề xuất cải thiện"
+   ]
+  },
+  {
+   "id": "s8",
+   "task": 1,
+   "module": "general",
+   "type": "letter-semi",
+   "title": "Something broken in a holiday rental",
+   "topic": "Travel",
+   "prompt": "You recently stayed in a holiday house, and you accidentally broke something during your stay.\n\nWrite a letter to the owner of the house. In your letter\n\n• thank the owner and say what you enjoyed about the stay\n• explain what you broke and how it happened\n• offer to pay for the damage\n\nWrite at least 150 words.\n\nYou do NOT need to write any addresses.\n\nBegin your letter as follows:\n\nDear Mrs Wilson,",
+   "outline": [
+    "Mở thư: cảm ơn chủ nhà, khen ngôi nhà và khu vực",
+    "Đoạn 1: điều thích nhất (view biển, bếp đầy đủ, lời khuyên của chủ nhà)",
+    "Đoạn 2: xin lỗi – làm vỡ bình gốm khi lau dọn/trẻ chơi bóng; mô tả cụ thể",
+    "Đoạn 3: đề nghị trả tiền/mua cái mới; xin thông tin tài khoản",
+    "Kết: Kind regards"
+   ],
+   "vocab": [
+    [
+     "thoroughly enjoy",
+     "v phr",
+     "rất tận hưởng",
+     "We thoroughly enjoyed our stay."
+    ],
+    [
+     "accidentally",
+     "adv",
+     "vô tình",
+     "I accidentally knocked the vase off the shelf."
+    ],
+    [
+     "I feel terrible about",
+     "phr",
+     "Tôi cảm thấy rất áy náy về",
+     "I feel terrible about the damage."
+    ],
+    [
+     "cover the cost of",
+     "v phr",
+     "chi trả chi phí",
+     "I would like to cover the cost of a replacement."
+    ]
+   ],
+   "sample": "Dear Mrs Wilson,\n\nI would like to thank you for allowing my family to stay in your beautiful house in Brighton last week. We thoroughly enjoyed our holiday there.\n\nThe house was even better than it looked in the photographs. The children loved waking up to the view of the sea, and the kitchen was so well equipped that we were able to cook most of our meals ourselves. We also followed your advice and visited the small fish restaurant at the end of the pier, which was excellent.\n\nUnfortunately, I must also apologise for an accident that happened on our last evening. While I was cleaning the living room, I accidentally knocked the blue ceramic vase off the shelf by the window, and it broke into several pieces. I have kept the pieces in a box in the cupboard under the stairs. I feel terrible about this, especially as the vase looked as if it might have been special to you.\n\nI would like to cover the cost of a replacement or a repair. Please let me know how much it would cost and how you would like me to pay, and I will send the money immediately.\n\nKind regards,\nMinh Tran",
+   "purpose": "Xin lỗi – đề nghị bồi thường",
+   "tags": [
+    "Semi-formal letter",
+    "Xin lỗi – đề nghị bồi thường"
+   ]
+  },
+  {
+   "id": "i1",
+   "task": 1,
+   "module": "general",
+   "type": "letter-informal",
+   "title": "Inviting a friend to stay",
+   "topic": "Travel",
+   "prompt": "A friend from another country has said that they would like to visit your country.\n\nWrite a letter to your friend. In your letter\n\n• suggest a good time for your friend to visit and explain why\n• describe what you could do together\n• give your friend some advice about travelling to your city\n\nWrite at least 150 words.\n\nYou do NOT need to write any addresses.\n\nBegin your letter as follows:\n\nDear Anna,",
+   "outline": [
+    "Mở thư: vui khi bạn muốn sang chơi",
+    "Đoạn 1: thời điểm tốt nhất (tháng 3–4, thời tiết dễ chịu, lễ hội) và vì sao",
+    "Đoạn 2: kế hoạch cùng nhau (phố cổ, ẩm thực đường phố, vịnh Hạ Long)",
+    "Đoạn 3: lời khuyên (visa, taxi app, mang áo mưa, đổi tiền)",
+    "Kết: Love / Best wishes"
+   ],
+   "vocab": [
+    [
+     "I was thrilled to hear",
+     "phr",
+     "Mình rất vui khi nghe",
+     "I was thrilled to hear that you're coming."
+    ],
+    [
+     "the best time to",
+     "n phr",
+     "thời điểm tốt nhất để",
+     "The best time to visit is in spring."
+    ],
+    [
+     "street food",
+     "n phr",
+     "đồ ăn đường phố",
+     "We could go on a street food tour."
+    ],
+    [
+     "can't wait to",
+     "phr",
+     "rất mong được",
+     "I can't wait to see you!"
+    ]
+   ],
+   "sample": "Dear Anna,\n\nThanks so much for your email. I was thrilled to hear that you're finally thinking of coming to Vietnam!\n\nI think the best time for you to visit would be in late March or April. At that time of year, the weather in Hanoi is warm but not too hot, and it hardly ever rains. You'd also avoid the Tet holiday, when lots of shops and restaurants close and transport is very crowded.\n\nThere are so many things we could do together. We could spend a day wandering around the Old Quarter and the lake, and I'd love to take you on an evening street food tour – you have to try bun cha and egg coffee! If you have a week, we could also take a two-day trip to Ha Long Bay and sleep on a boat.\n\nA couple of tips: check the visa rules before you book your flight, and download a ride-hailing app, as it's much cheaper and easier than taking taxis from the street. Bring comfortable shoes too, because we'll be doing a lot of walking.\n\nLet me know your dates as soon as you can. I can't wait to see you!\n\nLove,\nLinh",
+   "purpose": "Mời",
+   "tags": [
+    "Informal letter",
+    "Mời"
+   ]
+  },
+  {
+   "id": "i2",
+   "task": 1,
+   "module": "general",
+   "type": "letter-informal",
+   "title": "Thanking a friend for looking after your pet",
+   "topic": "Family",
+   "prompt": "A friend looked after your pet while you were away on holiday.\n\nWrite a letter to your friend. In your letter\n\n• thank your friend for their help\n• tell them about your holiday\n• offer to do something for your friend in return\n\nWrite at least 150 words.\n\nYou do NOT need to write any addresses.\n\nBegin your letter as follows:\n\nDear Tom,",
+   "outline": [
+    "Mở thư: cảm ơn đã chăm mèo",
+    "Đoạn 1: mèo khoẻ, vui; biết ơn vì bạn bận mà vẫn giúp",
+    "Đoạn 2: kể chuyến đi (Đà Lạt – đồi thông, cà phê, mưa)",
+    "Đoạn 3: đề nghị đáp lễ – mời ăn tối, trông nhà khi bạn đi công tác",
+    "Kết: Best wishes / Cheers"
+   ],
+   "vocab": [
+    [
+     "I can't thank you enough",
+     "phr",
+     "Mình cảm ơn bạn nhiều lắm",
+     "I can't thank you enough for looking after Miu."
+    ],
+    [
+     "in good hands",
+     "prep phr",
+     "được chăm sóc chu đáo",
+     "I knew she was in good hands."
+    ],
+    [
+     "return the favour",
+     "v phr",
+     "đáp lại ân tình",
+     "I'd love to return the favour."
+    ],
+    [
+     "treat you to",
+     "v phr",
+     "khao, mời (ăn uống)",
+     "Let me treat you to dinner."
+    ]
+   ],
+   "sample": "Dear Tom,\n\nI just wanted to say a huge thank you for looking after Miu while I was away. I really can't thank you enough!\n\nWhen I got home, she was happy and healthy, and the flat was spotless. I know how busy you've been at work recently, so it was really kind of you to come round twice a day to feed her and play with her. It meant I could relax on holiday, because I knew she was in good hands.\n\nThe trip to Da Lat was wonderful. The weather was cool and fresh, which was a nice change from the heat here, and we spent most of our time walking through the pine forests and visiting little coffee farms. It rained heavily one afternoon, but we just sat in a café by the lake and watched the storm. I've brought you back a bag of local coffee beans – I hope you like them.\n\nI'd love to return the favour. Let me treat you to dinner next weekend at that new Korean restaurant you mentioned. And if you ever need someone to water your plants while you're away, just let me know.\n\nBest wishes,\nLinh",
+   "purpose": "Cảm ơn",
+   "tags": [
+    "Informal letter",
+    "Cảm ơn"
+   ]
+  },
+  {
+   "id": "i3",
+   "task": 1,
+   "module": "general",
+   "type": "letter-informal",
+   "title": "Apologising for missing a friend's party",
+   "topic": "Family",
+   "prompt": "You were unable to go to a friend's birthday party, which you had promised to attend.\n\nWrite a letter to your friend. In your letter\n\n• apologise for missing the party\n• explain why you could not go\n• suggest a way of making it up to your friend\n\nWrite at least 150 words.\n\nYou do NOT need to write any addresses.\n\nBegin your letter as follows:\n\nDear Mai,",
+   "outline": [
+    "Mở thư: xin lỗi chân thành vì vắng mặt sinh nhật",
+    "Đoạn 1: thừa nhận đã hứa, biết bạn buồn",
+    "Đoạn 2: lý do – mẹ nhập viện đột ngột chiều hôm đó, điện thoại hết pin",
+    "Đoạn 3: đề nghị bù – mời đi ăn, xem phim cuối tuần; quà tặng",
+    "Kết: Lots of love"
+   ],
+   "vocab": [
+    [
+     "I'm so sorry I missed",
+     "phr",
+     "Mình rất xin lỗi vì đã vắng",
+     "I'm so sorry I missed your party."
+    ],
+    [
+     "let you down",
+     "v phr",
+     "làm bạn thất vọng",
+     "I feel awful that I let you down."
+    ],
+    [
+     "out of the blue",
+     "idiom",
+     "bất ngờ, đột ngột",
+     "Out of the blue, my mum fell ill."
+    ],
+    [
+     "make it up to you",
+     "v phr",
+     "bù đắp cho bạn",
+     "Let me make it up to you this weekend."
+    ]
+   ],
+   "sample": "Dear Mai,\n\nI'm so sorry I missed your birthday party on Saturday. I know I'd promised to be there, and I feel awful that I let you down, especially as it was your 25th.\n\nI really want to explain what happened. Out of the blue, my mum started having terrible stomach pains on Saturday afternoon, and we had to rush her to hospital. The doctors said it was appendicitis, so she had an operation that evening. I spent the whole night at the hospital with her, and in all the panic, I forgot to charge my phone, so I couldn't even call you. She's recovering well now, thank goodness, and should be home in a few days.\n\nI've seen the photos online, and it looks like everyone had a fantastic time. The cake looked amazing!\n\nPlease let me make it up to you. How about I take you out for dinner next Friday at that Italian place you love, and then we could go and see a film? I've also got a small present for you, which I'll bring along.\n\nI hope you can forgive me.\n\nLots of love,\nLinh",
+   "purpose": "Xin lỗi",
+   "tags": [
+    "Informal letter",
+    "Xin lỗi"
+   ]
+  },
+  {
+   "id": "i4",
+   "task": 1,
+   "module": "general",
+   "type": "letter-informal",
+   "title": "Advice for a friend coming to study in your city",
+   "topic": "Education",
+   "prompt": "A friend is going to come to your city to study at a university for one year.\n\nWrite a letter to your friend. In your letter\n\n• give your friend advice about finding accommodation\n• suggest what they should bring with them\n• offer to help them when they arrive\n\nWrite at least 150 words.\n\nYou do NOT need to write any addresses.\n\nBegin your letter as follows:\n\nDear Ben,",
+   "outline": [
+    "Mở thư: chúc mừng được nhận vào trường",
+    "Đoạn 1: chỗ ở – ở ký túc xá học kỳ đầu hoặc thuê phòng chung gần trường, tránh khu trung tâm đắt đỏ",
+    "Đoạn 2: nên mang gì – laptop, giấy tờ, thuốc cá nhân, quần áo mỏng + áo khoác cho mùa đông",
+    "Đoạn 3: đề nghị đón ở sân bay, giúp mua SIM, mở tài khoản",
+    "Kết: See you soon"
+   ],
+   "vocab": [
+    [
+     "congratulations on",
+     "phr",
+     "chúc mừng về",
+     "Congratulations on getting a place at the university!"
+    ],
+    [
+     "share a flat",
+     "v phr",
+     "ở chung căn hộ",
+     "Many students share a flat near the campus."
+    ],
+    [
+     "it's worth + V-ing",
+     "phr",
+     "đáng để làm gì",
+     "It's worth bringing a warm jacket."
+    ],
+    [
+     "show you around",
+     "v phr",
+     "dẫn bạn đi tham quan",
+     "I'll show you around when you arrive."
+    ]
+   ],
+   "sample": "Dear Ben,\n\nCongratulations on getting a place at Hanoi University! I'm so excited that you'll be living in my city for a whole year.\n\nYou asked about accommodation. My advice would be to stay in the university dormitory for your first term. It's cheap and safe, and it's the easiest way to make friends. After that, you could share a flat with some classmates near the campus. Try to avoid renting in the city centre, though, as it's much more expensive and the traffic is terrible.\n\nAs for what to bring, it's worth bringing your own laptop, as electronics aren't much cheaper here, and don't forget copies of your passport and university documents. If you take any regular medicine, bring enough for a few months. Lots of people think Hanoi is hot all year round, but it can get quite cold in January, so pack a warm jacket too.\n\nWhen you arrive, I'll pick you up from the airport and help you buy a local SIM card and open a bank account. Then, once you've settled in, I'll show you around my favourite places.\n\nSee you soon!\n\nLinh",
+   "purpose": "Khuyên",
+   "tags": [
+    "Informal letter",
+    "Khuyên"
+   ]
+  },
+  {
+   "id": "i5",
+   "task": 1,
+   "module": "general",
+   "type": "letter-informal",
+   "title": "Telling a friend about your new job",
+   "topic": "Work",
+   "prompt": "You have recently started a new job.\n\nWrite a letter to a friend. In your letter\n\n• describe your new job\n• explain why you like it\n• invite your friend to visit you at your new workplace or new city\n\nWrite at least 150 words.\n\nYou do NOT need to write any addresses.\n\nBegin your letter as follows:\n\nDear Sarah,",
+   "outline": [
+    "Mở thư: xin lỗi lâu không viết, báo tin có việc mới",
+    "Đoạn 1: công việc gì, ở đâu, làm gì hằng ngày",
+    "Đoạn 2: vì sao thích – đồng nghiệp thân thiện, được học hỏi, công việc ý nghĩa, đi làm gần",
+    "Đoạn 3: mời bạn đến chơi Đà Nẵng, đi biển, ở nhà mình",
+    "Kết: Take care"
+   ],
+   "vocab": [
+    [
+     "sorry I haven't written for ages",
+     "phr",
+     "xin lỗi lâu rồi không viết thư",
+     "Sorry I haven't written for ages – I've been so busy!"
+    ],
+    [
+     "be in charge of",
+     "adj phr",
+     "phụ trách",
+     "I'm in charge of the hotel's social media."
+    ],
+    [
+     "rewarding",
+     "adj",
+     "đáng giá, mang lại cảm giác ý nghĩa",
+     "The job is really rewarding."
+    ],
+    [
+     "there's plenty of room",
+     "phr",
+     "có nhiều chỗ",
+     "There's plenty of room in my new flat."
+    ]
+   ],
+   "sample": "Dear Sarah,\n\nSorry I haven't written for ages – things have been so busy here! I've got some exciting news: I've just started a new job as a marketing assistant at a beach resort in Da Nang.\n\nI'm mainly in charge of the resort's website and social media accounts, so I spend a lot of my time taking photos, writing posts and replying to messages from guests. I also help to organise special events, such as weddings and music nights on the beach. Last weekend, we had a concert for over three hundred people, which was exhausting but great fun.\n\nWhat I love most about the job is that every day is different. My colleagues are really friendly, and my manager is giving me lots of opportunities to learn new skills, like video editing. It's also very rewarding to read the lovely comments that guests leave after their stay. And of course, I can see the sea from my office window!\n\nWhy don't you come and visit me during your summer holiday? There's plenty of room in my new flat, and I could show you the best beaches and seafood restaurants in the city.\n\nTake care, and write back soon!\n\nLinh",
+   "purpose": "Báo tin",
+   "tags": [
+    "Informal letter",
+    "Báo tin"
+   ]
+  },
+  {
+   "id": "i6",
+   "task": 1,
+   "module": "general",
+   "type": "letter-informal",
+   "title": "Asking a friend for help with moving house",
+   "topic": "Family",
+   "prompt": "You are moving to a new flat next month, and you need some help.\n\nWrite a letter to a friend. In your letter\n\n• tell your friend about your new flat\n• explain what help you need and when\n• say how you will thank your friend\n\nWrite at least 150 words.\n\nYou do NOT need to write any addresses.\n\nBegin your letter as follows:\n\nDear Hung,",
+   "outline": [
+    "Mở thư: báo tin sắp chuyển nhà",
+    "Đoạn 1: căn hộ mới – gần chỗ làm, có ban công, rộng hơn",
+    "Đoạn 2: nhờ gì – mượn xe tải nhỏ/xe ô tô, khiêng tủ, lắp giường; ngày giờ cụ thể",
+    "Đoạn 3: cảm ơn – nấu bữa tối, mời tiệc tân gia, giúp lại khi bạn cần",
+    "Kết: Cheers"
+   ],
+   "vocab": [
+    [
+     "I was wondering if",
+     "phr",
+     "Mình đang tự hỏi liệu (nhờ vả lịch sự)",
+     "I was wondering if you could help me move."
+    ],
+    [
+     "give me a hand",
+     "v phr",
+     "giúp mình một tay",
+     "Could you give me a hand on Saturday?"
+    ],
+    [
+     "heavy furniture",
+     "n phr",
+     "đồ nội thất nặng",
+     "I need help carrying the heavy furniture."
+    ],
+    [
+     "housewarming party",
+     "n phr",
+     "tiệc tân gia",
+     "You'll be the guest of honour at my housewarming party."
+    ]
+   ],
+   "sample": "Dear Hung,\n\nHow are you? I hope your new job is going well. I've got some news – I'm finally moving out of my tiny studio! I've rented a two-bedroom flat in Cau Giay, just ten minutes from my office.\n\nThe new place is much bigger and brighter than my current one, and it has a balcony where I can grow some plants. The only problem is that it's on the fifth floor, and there's no lift, which brings me to the reason I'm writing.\n\nI was wondering if you could give me a hand on moving day, which will be Saturday 15 March. I've booked a small van for the morning, but I really need someone strong to help me carry the heavy furniture, especially my wardrobe and the washing machine, up the stairs. If you're free, we could start at about 8 am, and we should be finished by lunchtime. You're also much better at putting furniture together than I am, so your help with my new bed would be very welcome!\n\nTo say thank you, I'll cook you a big dinner that evening, and of course you'll be the guest of honour at my housewarming party.\n\nCheers,\nLinh",
+   "purpose": "Nhờ giúp đỡ",
+   "tags": [
+    "Informal letter",
+    "Nhờ giúp đỡ"
+   ]
+  },
+  {
+   "id": "i7",
+   "task": 1,
+   "module": "general",
+   "type": "letter-informal",
+   "title": "Recommending a book to a friend",
+   "topic": "Media",
+   "prompt": "You have recently read a book that you think a friend would enjoy.\n\nWrite a letter to your friend. In your letter\n\n• tell your friend about the book\n• explain why you enjoyed it\n• say why you think your friend would like it\n\nWrite at least 150 words.\n\nYou do NOT need to write any addresses.\n\nBegin your letter as follows:\n\nDear Lucy,",
+   "outline": [
+    "Mở thư: hỏi thăm + muốn giới thiệu một cuốn sách",
+    "Đoạn 1: sách gì, tác giả, nội dung chính (không tiết lộ kết)",
+    "Đoạn 2: vì sao thích – nhân vật, cách viết, đọc một mạch",
+    "Đoạn 3: vì sao hợp với bạn – bạn thích du lịch/ẩm thực, vừa chuyển nhà; có thể cho mượn",
+    "Kết: Love"
+   ],
+   "vocab": [
+    [
+     "a page-turner",
+     "n",
+     "cuốn sách cuốn hút, đọc không dừng được",
+     "It's a real page-turner."
+    ],
+    [
+     "the plot",
+     "n",
+     "cốt truyện",
+     "I won't tell you too much about the plot."
+    ],
+    [
+     "I couldn't put it down",
+     "phr",
+     "Mình không thể dừng đọc",
+     "I couldn't put it down until 2 am."
+    ],
+    [
+     "right up your street",
+     "idiom",
+     "đúng sở thích của bạn",
+     "This book is right up your street."
+    ]
+   ],
+   "sample": "Dear Lucy,\n\nHow are things with you? I hope you're settling into your new flat. I'm writing because I've just finished a book that I think you'd really enjoy, and I couldn't wait to tell you about it.\n\nIt's called The Night Market, and it's a novel about a young woman who gives up her office job in London and opens a small food stall at a night market in Taipei. I won't tell you too much about the plot, but it's about her struggle to make the business work, the unusual friends she makes along the way, and a family secret that she discovers.\n\nI loved it because the characters feel completely real, and the writer describes the food so vividly that you can almost smell it. It's funny in places and quite moving in others, and the chapters are short, so it's a real page-turner. I honestly couldn't put it down until two o'clock in the morning!\n\nI think it would be right up your street, since you love travelling and cooking, and like the main character, you've just made a big change in your life. If you like, I can lend you my copy when we meet next week.\n\nLove,\nLinh",
+   "purpose": "Giới thiệu – gợi ý",
+   "tags": [
+    "Informal letter",
+    "Giới thiệu – gợi ý"
+   ]
+  },
+  {
+   "id": "i8",
+   "task": 1,
+   "module": "general",
+   "type": "letter-informal",
+   "title": "Helping a friend choose between two jobs",
+   "topic": "Work",
+   "prompt": "A friend has written to you asking for advice because they have been offered two different jobs.\n\nWrite a letter to your friend. In your letter\n\n• say how you feel about your friend's news\n• give your advice on which job to choose\n• explain the reasons for your advice\n\nWrite at least 150 words.\n\nYou do NOT need to write any addresses.\n\nBegin your letter as follows:\n\nDear David,",
+   "outline": [
+    "Mở thư: chúc mừng có 2 lời mời làm việc",
+    "Đoạn 1: nhắc lại 2 lựa chọn (công ty lớn lương cao nhưng xa, ít linh hoạt vs startup lương thấp hơn nhưng học nhiều)",
+    "Đoạn 2: lời khuyên – chọn startup",
+    "Đoạn 3: lý do – bạn thích thử thách, còn trẻ, cơ hội học nhanh; nhưng hỏi kỹ hợp đồng; đề nghị gọi điện nói chuyện",
+    "Kết: Good luck"
+   ],
+   "vocab": [
+    [
+     "what great news",
+     "phr",
+     "tin tuyệt quá",
+     "What great news about the job offers!"
+    ],
+    [
+     "a dilemma",
+     "n",
+     "tình huống khó xử",
+     "I can see why you're in a dilemma."
+    ],
+    [
+     "if I were you",
+     "phr",
+     "nếu mình là bạn",
+     "If I were you, I'd take the job at the start-up."
+    ],
+    [
+     "in the long run",
+     "prep phr",
+     "về lâu dài",
+     "It would be better for your career in the long run."
+    ]
+   ],
+   "sample": "Dear David,\n\nWhat great news about the job offers! You must be really proud of yourself – it shows how much employers value your skills.\n\nI can see why you're in a dilemma. On the one hand, the bank is offering you a higher salary, a pension and a lot of security, but it would mean a ninety-minute commute every day and a fairly strict routine. On the other hand, the start-up pays less, but the office is near your home, the hours are flexible, and you'd be working on new apps from day one.\n\nIf I were you, I'd take the job at the start-up. You've always told me how much you enjoy solving problems and trying new things, and in a small company you'd get much more responsibility and learn far more quickly. You're young and don't have a family to support yet, so this is the perfect time to take a risk. Experience like that would probably be better for your career in the long run, even if it isn't as well paid at first.\n\nThat said, do ask them some questions about their funding and your contract before you sign anything. Why don't we have a chat on the phone this weekend?\n\nGood luck!\n\nLinh",
+   "purpose": "Khuyên",
+   "tags": [
+    "Informal letter",
+    "Khuyên"
+   ]
+  }
+ ]
+}

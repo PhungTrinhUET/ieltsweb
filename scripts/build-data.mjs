@@ -168,7 +168,18 @@ for (const vol of readdirSync(CONTENT).filter((d) => d !== 'vocab' && statSync(j
       out.push({ ...base, id: `${id}-r${r.passage}`, skill: 'reading', module: 'academic', title: `${prefix} · Passage ${r.passage} – ${r.title}`, topic: r.topic, level: r.level ?? 'medium', passage: r.passage_text, groups: r.groups, minutes: 20 });
     }
     for (const w of t.writing ?? []) {
-      out.push({ ...base, id: `${id}-w${w.id ?? w.task}`, skill: 'writing', module: w.module ?? 'academic', task: w.task, type: w.type, title: `${prefix} · Task ${w.task} – ${w.title}`, topic: w.topic, prompt: w.prompt, chart: w.chart, image: w.image, imageAlt: w.imageAlt, sample: w.sample, outline: w.outline });
+      const wid = `${id}-w${w.id ?? w.task}`;
+      // Kiểm tra đề Writing: số liệu khớp nhãn, pie tổng 100, ảnh có thật, có đề + bài mẫu.
+      for (const [ci, c] of [w.chart, ...(w.charts ?? [])].filter(Boolean).entries()) {
+        for (const s of c.series ?? []) {
+          if (s.values?.length !== c.labels?.length) console.warn(`⚠ ${wid}: biểu đồ ${ci} series "${s.name}" có ${s.values?.length} số, ${c.labels?.length} nhãn`);
+          if (c.kind === 'pie') { const sum = s.values.reduce((a, b) => a + (b ?? 0), 0); if (Math.abs(sum - 100) > 0.51) console.warn(`⚠ ${wid}: pie "${s.name}" tổng ${sum} ≠ 100`); }
+        }
+      }
+      if (w.image && !/^(https?:|idb:|data:)/.test(w.image) && !existsSync(join(ROOT, 'public', w.image))) console.warn(`⚠ ${wid}: thiếu ảnh public/${w.image}`);
+      if (!w.prompt?.trim()) console.warn(`⚠ ${wid}: thiếu prompt`);
+      if (!w.sample?.trim() && t.vol === 0) console.warn(`⚠ ${wid}: thiếu sample`);
+      out.push({ ...base, id: wid, skill: 'writing', module: w.module ?? 'academic', task: w.task, type: w.type, title: `${prefix} · Task ${w.task} – ${w.title}`, topic: w.topic, prompt: w.prompt, chart: w.chart, charts: w.charts, image: w.image, imageAlt: w.imageAlt, sample: w.sample, outline: w.outline, vocab: w.vocab, purpose: w.purpose, tags: [...base.tags, ...(w.tags ?? [])] });
     }
     (t.speaking ?? []).forEach((sp, i) => {
       out.push({ ...base, id: `${id}-s${sp.id ?? i + 1}`, skill: 'speaking', title: `${prefix} · ${sp.title}`, topic: sp.topic, level: sp.level ?? 'medium',

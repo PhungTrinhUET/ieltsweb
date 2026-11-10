@@ -79,9 +79,14 @@ For "corrected": fix every error (grammar, vocabulary, spelling, punctuation) bu
 export function buildWritingPrompt(m: WritingMaterial, answer: string, minutes?: number) {
   const n = answer.trim().split(/\s+/).filter(Boolean).length;
   const min = m.task === 1 ? 150 : 250;
+  const letter = m.type.startsWith('letter');
+  const tone = m.type === 'letter-formal' ? 'formal (Dear Sir or Madam → Yours faithfully)' : m.type === 'letter-semi' ? 'semi-formal (Dear Mr/Ms + surname → Yours sincerely / Kind regards)' : 'informal (Dear + first name → Best wishes / Love)';
+  const charts = [...(m.chart ? [m.chart] : []), ...(m.charts ?? [])];
   return `IELTS ${m.module === 'general' ? 'General Training' : 'Academic'} Writing Task ${m.task} (${m.type})
 Prompt: ${m.prompt}
-${m.chart ? `Chart data: ${JSON.stringify(m.chart)}` : ''}
+${charts.length ? `Chart data${charts.length > 1 ? ` (${charts.length} charts)` : ''}: ${charts.map((c) => JSON.stringify(c)).join('\n')}` : ''}
+${m.imageAlt ? `Diagram description: ${m.imageAlt}` : ''}
+${letter ? `Letter type: ${tone}.${m.purpose ? ` Purpose: ${m.purpose}.` : ''} Check that ALL THREE bullet points are covered and adequately extended, and that the tone, greeting and sign-off suit this letter type (penalise in Task Achievement if not).` : ''}
 Minimum words: ${min}. Candidate wrote ${n} words${minutes ? ` in about ${minutes} minutes` : ''}.
 
 Candidate's answer:

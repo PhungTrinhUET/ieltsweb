@@ -113,9 +113,29 @@ export interface SpeakingMaterial extends MaterialBase {
 }
 
 export type WritingType =
-  | 'opinion' | 'discussion' | 'advantage' | 'problem' | 'double'   // Task 2
+  | 'opinion' | 'discussion' | 'advantage' | 'problem' | 'double' | 'development' // Task 2
   | 'line' | 'bar' | 'pie' | 'table' | 'process' | 'map' | 'mixed'  // Task 1 Academic
   | 'letter-formal' | 'letter-semi' | 'letter-informal';            // Task 1 General
+
+/**
+ * Số liệu biểu đồ. line/bar: labels = trục x; mỗi series = một đường/màu cột.
+ * pie: mỗi series = một biểu đồ tròn (tổng 100), labels = các phần. table: labels = cột, series = hàng.
+ */
+export interface Chart {
+  kind?: 'line' | 'bar' | 'pie' | 'table';
+  labels: string[];
+  series: { name: string; values: (number | null)[] }[];
+  title?: string;
+  unit?: string;
+  horizontal?: boolean;
+  stacked?: boolean;
+  percent?: boolean;
+  /** Nhãn mốc cuối của số liệu thật (vd. "2020"): sau đó là dự báo → nét đứt, ghi "Projected". */
+  projectedFrom?: string;
+  decimals?: number;
+  /** false = không ghi số trên cột. */
+  values?: boolean;
+}
 
 export interface WritingMaterial extends MaterialBase {
   skill: 'writing';
@@ -127,8 +147,12 @@ export interface WritingMaterial extends MaterialBase {
   image?: string;
   /** Mô tả chi tiết ảnh bằng chữ (alt + hiện dưới ảnh / thay ảnh khi chưa có ảnh). */
   imageAlt?: string;
-  /** Dữ liệu biểu đồ để app tự vẽ khi không có ảnh: { labels, series:[{name, values}], unit }. */
-  chart?: { labels: string[]; series: { name: string; values: number[] }[]; unit?: string; kind?: 'line' | 'bar' | 'pie' | 'table' };
+  /** Dữ liệu biểu đồ: app tự vẽ khi không có ảnh, hiện "Bảng số liệu", gửi cho AI chấm. */
+  chart?: Chart;
+  /** Dạng `mixed`: 2 biểu đồ (vd. bar + line). */
+  charts?: Chart[];
+  /** Thư GT: mục đích (Phàn nàn, Xin việc, Cảm ơn…). */
+  purpose?: string;
   /** Dàn ý gợi ý. */
   outline?: string[];
   /** Bài mẫu band 7–8+. */
@@ -146,7 +170,8 @@ export interface Attempt {
   title: string;
   at: number;
   /** self = nộp bài không AI (tự chấm theo checklist). */
-  mode: 'test' | 'dictation' | 'gapfill' | 'ai' | 'self';
+  /** practice = Luyện tập (không tính vào band trang chủ); full-mock = thi thử 4 kỹ năng (một bản ghi). */
+  mode: 'test' | 'dictation' | 'gapfill' | 'ai' | 'self' | 'practice' | 'full-mock';
   score?: number;
   max?: number;
   band?: number;

@@ -102,7 +102,8 @@ export function ExamClock({ seconds, onEnd, stopped, running = true, overtime }:
   return (
     <>
       <span className={`timer xclock${low ? ' is-low' : ''}${left === 0 ? ' is-out' : ''}${startRef.current && !stopped ? ' is-run' : ''}`} role="timer" aria-live="off" data-left={Math.ceil(left)}>
-        <span className="timer__num">{text}</span>
+        <span className="timer__num xclock__long">{text}</span>
+        <span className="timer__num xclock__short" aria-hidden="true">{text.replace(/ minutes left$/, ' min').replace(/ left$/, '')}</span>
       </span>
       {toast && <div className="xtoast" role="status">{toast}</div>}
     </>

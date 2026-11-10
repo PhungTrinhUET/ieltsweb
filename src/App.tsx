@@ -5,6 +5,7 @@ import { BarChart3, BookOpen, ChevronLeft, ChevronRight, FolderInput, Graduation
 import { init, useDb } from './db';
 import Home from './pages/Home';
 import SkillList from './pages/SkillList';
+import WritingList from './pages/WritingList';
 import ReadingTest from './pages/ReadingTest';
 import ReadingStudy from './pages/ReadingStudy';
 import ListeningTest from './pages/ListeningTest';
@@ -17,6 +18,7 @@ import Vocab from './pages/Vocab';
 import { VocabContext, VocabLearn, VocabReview } from './pages/VocabSession';
 import Library from './pages/Library';
 import History from './pages/History';
+import HistoryDetail from './pages/HistoryDetail';
 import Guide from './pages/Guide';
 import Settings from './pages/Settings';
 import MockTest from './pages/MockTest';
@@ -95,7 +97,7 @@ export default function App() {
           <Route path="listening/:id/practice" element={<Practice />} />
           <Route path="speaking" element={<SkillList skill="speaking" />} />
           <Route path="speaking/:id" element={<Speaking />} />
-          <Route path="writing" element={<SkillList skill="writing" />} />
+          <Route path="writing" element={<WritingList />} />
           <Route path="writing/:id" element={<Writing />} />
           <Route path="mock/:skill" element={<MockKeyed />} />
           <Route path="test/:skill/:tid" element={<TestPage />} />
@@ -109,6 +111,7 @@ export default function App() {
           <Route path="dictation/:lid" element={<DictLesson />} />
           <Route path="library" element={<Library />} />
           <Route path="history" element={<History />} />
+          <Route path="history/:aid" element={<HistoryDetail />} />
           <Route path="guide" element={<Guide />} />
           <Route path="settings" element={<Settings />} />
           <Route path="*" element={<Home />} />
