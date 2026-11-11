@@ -195,6 +195,8 @@ a.deck__name:hover strong { color: var(--dk, var(--primary)); }
 /* Chọn bộ khi lưu từ */
 .deckpick { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
 .deckpick select { max-width: 100%; min-width: 0; flex: 1 1 160px; }
+.wpop__form label.deckpick { flex-direction: row; } /* label trong form xếp dọc → select bị kéo cao 160px */
+.wpop__form > .wpop__actions { position: sticky; bottom: -12px; z-index: 1; margin: 0 -14px -12px; padding: 8px 14px 12px; background: var(--surface); border-top: 1px solid var(--border); } /* nút Lưu luôn thấy được */
 .deckpick--new { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
 .deckpick--new .input { flex: 1 1 160px; min-width: 0; }
 /* Hộp tạo bộ */

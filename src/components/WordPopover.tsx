@@ -2,7 +2,7 @@
 // Nghĩa tiếng Việt: từ vựng kèm bài → AI (nếu đã cấu hình) → dịch miễn phí (MyMemory).
 // Phiên âm, loại từ, định nghĩa Anh: Datamuse (dictionaryapi.dev làm dự phòng). Không cần API key.
 import { srcLabel } from '../lib/context';
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { BookmarkPlus, Check, Languages, Loader2, Sparkles, Volume2, X } from 'lucide-react';
 import type { Vocab } from '../types';
 import { aiReady, getAiConfig } from '../store';
@@ -80,8 +80,16 @@ export default function WordPopover({ sel, vocab, from, onClose }: { sel: WordSe
   const addHere = async () => { if (!card) return; rememberDeck(from, deck); await saveWordTo(deck, { word: card.word, meaning: card.meaning }); setJustSaved(deckName(deck)); };
 
   const style = { left: Math.max(8, Math.min(sel.x, window.innerWidth - 372)), top: sel.y + 8 };
+  // Khung cao hơn phần màn hình còn lại (vd khi mở form lưu từ) → đẩy lên cho vừa, không bị khuất nút "Lưu vào bộ".
+  const box = useRef<HTMLDivElement>(null);
+  useLayoutEffect(() => {
+    const el = box.current;
+    if (!el || getComputedStyle(el).position === 'fixed') return;
+    const bottom = window.scrollY + window.innerHeight - 8;
+    el.style.top = `${Math.max(window.scrollY + 8, Math.min(sel.y + 8, bottom - el.offsetHeight))}px`;
+  });
   return (
-    <div className="wpop" style={style} role="dialog" aria-label={`Tra từ ${w}`}>
+    <div className="wpop" ref={box} style={style} role="dialog" aria-label={`Tra từ ${w}`}>
       <div className="wpop__head">
         <strong>{a?.word ?? local?.[0] ?? w}</strong>
         {ipa && <span className="muted small">{ipa}</span>}
