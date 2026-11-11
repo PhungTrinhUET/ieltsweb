@@ -52,7 +52,8 @@ export default function Speaking() {
   }, [id]); // eslint-disable-line
 
   if (!m) return <div className="page"><p className="empty">Không tìm thấy bài.</p></div>;
-  const list = turns[part];
+  /** Tab "Từ vựng" (part 0) không có câu hỏi. */
+  const list = turns[part] ?? [];
   const update = (i: number, patch: Partial<Turn>) => setTurns((t) => ({ ...t, [part]: t[part].map((x, k) => (k === i ? { ...x, ...patch } : x)) }));
   const doGrade = async () => {
     const answered: SpeakingTurn[] = list.filter((t) => t.transcript.trim()).map((t) => ({ question: t.question, answer: t.transcript, seconds: t.rec?.seconds }));
@@ -128,7 +129,7 @@ export default function Speaking() {
       )}
       {part === 1 && <p className="muted small">Part 1 (4–5 phút): trả lời 2–4 câu mỗi câu hỏi, mở rộng bằng lý do / ví dụ. Bấm 🔊 để nghe giám khảo đọc câu hỏi, rồi ghi âm.</p>}
       {part === 3 && <p className="muted small">Part 3 (4–5 phút): câu hỏi trừu tượng, cần quan điểm + lý do + ví dụ + mặt khác. Dùng cấu trúc: "It depends on… / On the one hand… / The main reason is…".</p>}
-      {!speechRecognitionAvailable() && <div className="banner"><Bot size={18} /><span>Trình duyệt này không có nhận dạng giọng nói (hãy dùng Chrome/Edge). Bạn vẫn ghi âm được; để AI chấm, gõ lại transcript vào ô bên dưới mỗi câu.</span></div>}
+      {(part as number) !== 0 && !speechRecognitionAvailable() && <div className="banner"><Bot size={18} /><span>Trình duyệt này không có nhận dạng giọng nói (hãy dùng Chrome/Edge). Bạn vẫn ghi âm được; để AI chấm, gõ lại transcript vào ô bên dưới mỗi câu.</span></div>}
 
       <div className="turns">
         {list.map((t, i) => (

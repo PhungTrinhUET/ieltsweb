@@ -602,6 +602,17 @@ for (const profile of Object.keys(PROFILES)) {
     const inHistory = await page.getByText(/Test 3 · Task 2/).count();
     return { ok: checklist > 0 && inHistory > 0, info: `checklist=${checklist} lịch sử=${inHistory}` };
   });
+  await check(`[${profile}] A3b Speaking do AI tạo: mở tab "Từ vựng" không lỗi`, async () => {
+    await go(page, '/');
+    await page.evaluate(() => new Promise((res) => { const r = indexedDB.open('ielts-practice', 3); r.onsuccess = () => { const t = r.result.transaction('materials', 'readwrite'); t.objectStore('materials').put({ id: 'smk-spk', skill: 'speaking', title: 'Smoke AI speaking', topic: 'Home', addedAt: Date.now(), source: 'AI tạo', part1: [{ topic: 'Home', questions: ['Do you live in a house?'] }], part2: { topic: 'Home', cue: 'Describe your home.', points: ['where', 'what'] }, part3: { questions: ['Why do people move?'] }, vocab: [['cosy', 'adj', 'ấm cúng', 'A cosy room.']] }, 'smk-spk'); t.oncomplete = res; }; }));
+    await page.reload(); await go(page, '/speaking/smk-spk');
+    await page.getByRole('button', { name: 'Từ vựng', exact: true }).click(); await page.waitForTimeout(400);
+    const crashed = await page.getByText('Trang này gặp lỗi').count();
+    const word = await page.getByText('ấm cúng').count();
+    await page.getByRole('button', { name: /^Part 3/ }).click();
+    const p3 = await page.locator('.turn').count();
+    return { ok: !crashed && word > 0 && p3 === 1 && !page.errors.length, info: `lỗi=${crashed} từ=${word} câu P3=${p3} ${page.errors.join(' | ')}` };
+  });
   await check(`[${profile}] A3 Speaking: Nộp bài không cần AI`, async () => {
     await go(page, '/speaking/spk-2023q2-sc1');
     await page.getByRole('button', { name: /Hoặc gõ câu trả lời/ }).first().click();
