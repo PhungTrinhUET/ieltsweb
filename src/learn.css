@@ -339,7 +339,6 @@ a.deck__name:hover strong { color: var(--dk, var(--primary)); }
 .login__box { width: 100%; max-width: 420px; padding: 28px 24px; display: flex; flex-direction: column; gap: 14px; }
 .login__brand { display: flex; align-items: center; gap: 12px; font-size: 1.35rem; }
 .login__tag { margin: 0; color: var(--text-2); line-height: 1.5; }
-.login__ic { display: inline-flex; gap: 4px; vertical-align: -2px; color: var(--primary); }
 .login .acc__form { max-width: none; }
 .login__or { display: flex; align-items: center; gap: 10px; color: var(--text-2); font-size: .85rem; }
 .login__or::before, .login__or::after { content: ''; flex: 1; height: 1px; background: var(--border); }

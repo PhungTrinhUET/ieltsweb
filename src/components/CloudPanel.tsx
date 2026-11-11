@@ -55,7 +55,6 @@ export function LoginForm() {
       <label className="small acc__f">Email<input className="input" type="email" value={email} onChange={(e) => setEmail(e.target.value)} autoComplete="email" required data-testid="acc-email" /></label>
       {mode !== 'forgot' && <Pw value={pw} onChange={setPw} auto={mode === 'up' ? 'new-password' : 'current-password'} testid="acc-pw" />}
       {mode === 'up' && <Pw value={pw2} onChange={setPw2} auto="new-password" label="Nhập lại mật khẩu" testid="acc-pw2" />}
-      {mode === 'up' && <p className="small muted">Ít nhất 8 ký tự. Mật khẩu do Supabase giữ (đã mã hoá); app không lưu mật khẩu.</p>}
       <div className="row wrap">
         <button className="btn btn--primary btn--sm" disabled={busy} data-testid="acc-submit">
           {busy && <Loader2 size={15} className="spin" />} {mode === 'in' ? 'Đăng nhập' : mode === 'up' ? 'Tạo tài khoản' : 'Gửi email'}
