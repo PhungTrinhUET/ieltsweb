@@ -323,3 +323,14 @@ a.deck__name:hover strong { color: var(--dk, var(--primary)); }
   .lt-review .ctx__title, .lt-review .ctx__src { font-size: 13.5px; }
   .lt-review .lt-card .btn .kbd, .lt-review .lt-card .btn kbd { font-size: 12px; }
 }
+
+/* Tài khoản & đồng bộ (Cài đặt) */
+.acc__form { display: flex; flex-direction: column; gap: 10px; max-width: 420px; }
+.acc__f { display: flex; flex-direction: column; gap: 4px; }
+.acc__pw { position: relative; display: flex; }
+.acc__pw .input { flex: 1; padding-right: 40px; }
+.acc__pw .icon-btn { position: absolute; right: 4px; top: 50%; transform: translateY(-50%); }
+.acc__st { display: inline-flex; align-items: center; gap: 4px; }
+.acc__who { gap: 6px 14px; }
+.acc__out { display: flex; flex-direction: column; gap: 6px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface-2, transparent); }
+.acc__out .btn--ghost { background: var(--surface); border: 1px solid var(--border); }

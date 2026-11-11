@@ -838,6 +838,74 @@ for (const profile of Object.keys(PROFILES)) {
       const t = await page.locator('[data-testid="aiw-compare"]').innerText({ timeout: 5000 }).catch(() => '');
       return { ok: /Cập nhật 10\/11\/2026/.test(t) && /DeepSeek/.test(t), info: t.slice(0, 60) };
     });
+    // ---------- S1: tài khoản + đồng bộ (Supabase giả lập, không gọi máy chủ thật) ----------
+    await check('S1 tài khoản: A có dữ liệu → tạo tài khoản → đẩy lên (không kèm API key); B đăng nhập thấy từ; B xoá → A mất từ', async () => {
+      const { gunzipSync } = await import('node:zlib');
+      const users = new Map(); const rows = new Map(); const objs = new Map(); let n = 0;
+      const b64 = (o) => Buffer.from(JSON.stringify(o)).toString('base64url');
+      const tok = (u) => `${b64({ alg: 'none' })}.${b64({ sub: u.id, email: u.email, exp: Math.floor(Date.now() / 1000) + 3600 })}.x`;
+      const uidOf = (req) => { try { return JSON.parse(Buffer.from((req.headers().authorization ?? '').split('.')[1], 'base64url').toString()).sub; } catch { return null; } };
+      const mock = async (route) => {
+        const req = route.request(); const u = new URL(req.url()); const p = u.pathname; const m = req.method();
+        const cors = { 'access-control-allow-origin': '*', 'access-control-allow-headers': '*', 'access-control-allow-methods': '*' };
+        const json = (status, body) => route.fulfill({ status, headers: { ...cors, 'content-type': 'application/json' }, body: JSON.stringify(body) });
+        if (m === 'OPTIONS') return route.fulfill({ status: 204, headers: cors });
+        const body = () => { try { return JSON.parse(req.postData() ?? '{}'); } catch { return {}; } };
+        const sess = (x) => ({ access_token: tok(x), refresh_token: `r-${x.id}`, expires_in: 3600, user: { id: x.id, email: x.email } });
+        if (p === '/auth/v1/signup') { const b = body(); if (users.has(b.email)) return json(422, { msg: 'User already registered' }); const x = { id: `u${++n}-0000`, email: b.email, pw: b.password }; users.set(b.email, x); return json(200, sess(x)); }
+        if (p === '/auth/v1/token') { const b = body(); const x = users.get(b.email); return x && x.pw === b.password ? json(200, sess(x)) : json(400, { error_description: 'Invalid login credentials' }); }
+        if (p === '/auth/v1/logout') return route.fulfill({ status: 204, headers: cors });
+        const id = uidOf(req); if (!id) return json(401, { message: 'no auth' });
+        if (p === '/rest/v1/user_sync') {
+          if (m === 'GET') return json(200, rows.has(id) ? [rows.get(id)] : []);
+          const b = body(); if (b.user_id !== id) return json(403, { message: 'RLS' }); rows.set(id, b); return route.fulfill({ status: 201, headers: cors });
+        }
+        const key = p.replace(/^\/storage\/v1\/object\/(authenticated\/)?/, '');
+        if (!key.startsWith(`userdata/${id}/`)) return json(403, { message: 'RLS' });
+        if (m === 'POST') { objs.set(key, req.postDataBuffer()); return json(200, { Key: key }); }
+        return objs.has(key) ? route.fulfill({ status: 200, headers: { ...cors, 'content-type': 'application/gzip' }, body: objs.get(key) }) : json(400, { statusCode: '404', error: 'not_found', message: 'Object not found' });
+      };
+      const RE = /\/(auth|rest|storage)\/v1\//;
+      const dev = async () => { const p = await newPage('desktop'); await p.context().route(RE, mock); return p; };
+      const idbVocab = (p) => p.evaluate(() => new Promise((res) => { const r = indexedDB.open('ielts-practice', 3); r.onsuccess = () => { const q = r.result.transaction('vocab').objectStore('vocab').getAll(); q.onsuccess = () => res(q.result.map((c) => c.word)); }; }));
+      const synced = (p) => p.getByTestId('acc-synced').waitFor({ timeout: 15000 });
+      // Máy A: đã có 1 thẻ từ + API key trước khi đăng nhập.
+      const a = await dev();
+      await a.addInitScript(() => localStorage.setItem('ielts:ai:v1', JSON.stringify({ mode: 'key', provider: 'deepseek', keys: { deepseek: 'sk-SECRET-123' } })));
+      await go(a, '/');
+      await a.evaluate(() => new Promise((res) => { const r = indexedDB.open('ielts-practice', 3); r.onsuccess = () => { const t = r.result.transaction('vocab', 'readwrite'); t.objectStore('vocab').put({ id: 'smk1', word: 'serendipity', meaning: 'tình cờ may mắn', addedAt: Date.now() }, 'smk1'); t.oncomplete = res; }; }));
+      await a.reload();
+      await go(a, '/settings');
+      await a.getByTestId('acc-tab-up').click();
+      await a.getByTestId('acc-email').fill('hv@test.vn'); await a.getByTestId('acc-pw').fill('matkhau123'); await a.getByTestId('acc-pw2').fill('matkhau123');
+      await a.getByTestId('acc-submit').click(); await synced(a);
+      const obj = objs.get([...objs.keys()][0] ?? '');
+      const up = obj ? gunzipSync(obj).toString() : '';
+      // Máy B: đăng nhập → có từ; xoá từ → đồng bộ.
+      const b = await dev();
+      await go(b, '/settings');
+      await b.getByTestId('acc-email').fill('hv@test.vn'); await b.getByTestId('acc-pw').fill('matkhau123');
+      await b.getByTestId('acc-submit').click(); await synced(b);
+      const onB = await idbVocab(b);
+      await go(b, '/vocab');
+      await b.locator('.lt-listhead').click();
+      b.once('dialog', (d) => d.accept());
+      await b.locator('li', { hasText: 'serendipity' }).getByRole('button', { name: 'Xoá' }).click();
+      await go(b, '/settings'); await b.getByTestId('acc-sync').click(); await b.waitForTimeout(1500); await synced(b);
+      // Máy A: đồng bộ lại → từ đã xoá ở B biến mất (không "hồi sinh").
+      await a.getByTestId('acc-sync').click(); await a.waitForTimeout(1500); await synced(a);
+      const onA = await idbVocab(a);
+      // Đăng ký trùng email → báo lỗi tiếng Việt.
+      await a.getByTestId('acc-logout').click(); await a.getByTestId('acc-out-keep').click();
+      await a.getByTestId('acc-tab-up').click();
+      await a.getByTestId('acc-email').fill('hv@test.vn'); await a.getByTestId('acc-pw').fill('matkhau123'); await a.getByTestId('acc-pw2').fill('matkhau123');
+      await a.getByTestId('acc-submit').click();
+      const dup = await a.getByTestId('acc-msg').innerText({ timeout: 5000 }).catch(() => '');
+      const errs = [...a.errors, ...b.errors];
+      await a.context().close(); await b.context().close();
+      const ok = up.includes('serendipity') && !up.includes('sk-SECRET') && onB.includes('serendipity') && !onA.includes('serendipity') && /đã có tài khoản/.test(dup) && !errs.length;
+      return { ok, info: `file ${obj?.length ?? 0} B, có từ=${up.includes('serendipity')} lộ key=${up.includes('sk-SECRET')} · B=${onB.join(',')} · A sau xoá=${onA.join(',') || '∅'} · trùng: ${dup} ${errs.join(' | ')}` };
+    });
     // ---------- C13: lần mở thứ hai không tải lại toàn bộ dữ liệu ----------
     await check('C13 mở lại app không tải lại 65 file data', async () => {
       const p = await newPage('desktop');

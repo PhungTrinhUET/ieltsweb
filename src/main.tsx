@@ -13,6 +13,7 @@ import './exam.css';
 import './learn.css';
 import App from './App';
 import { applyTheme, getSettings } from './store';
+import { consumeAuthRedirect, startCloud } from './lib/cloud';
 
 applyTheme(getSettings().theme);
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => applyTheme(getSettings().theme));
@@ -20,5 +21,9 @@ matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => appl
 if ('serviceWorker' in navigator && import.meta.env.PROD) {
   import('virtual:pwa-register').then(({ registerSW }) => registerSW({ immediate: true }));
 }
+
+// Link trong email (đặt lại mật khẩu) mang token trong #… → đọc trước khi HashRouter chạy.
+consumeAuthRedirect();
+startCloud();
 
 createRoot(document.getElementById('root')!).render(<StrictMode><App /></StrictMode>);

@@ -204,6 +204,7 @@ src/ai/                 client.ts (Claude SDK + backend OpenAI-compatible), mode
 src/components/         Questions (mọi dạng câu hỏi), WordPopover, Recorder, AudioPlayer, AiSettings, misc (diff, chart, band)
 src/pages/              SkillList, ReadingTest, ReadingStudy, ListeningTest, Dictation (hub + bài), GapFill, MockTest, FullMock (thi 4 kỹ năng + kết quả), Speaking, Writing, Vocab, VocabSession (học/ôn/ngữ cảnh), Stats, Library, History, HistoryDetail, Guide, Settings, About
 src/lib/backup.ts       sao lưu v2 (xuất/nhập Gộp/Thay thế)
+src/lib/cloud.ts        tài khoản Supabase (REST, không thư viện) + đồng bộ
 server/grader-proxy/    Cloudflare Worker giữ API key, cấp mã truy cập + giới hạn lượt/ngày
 content/                đề gốc đã bóc tách (xem mục trên)
 CLAUDE.md               ghi chú cho Claude Code: lệnh, quy ước dữ liệu, việc còn lại

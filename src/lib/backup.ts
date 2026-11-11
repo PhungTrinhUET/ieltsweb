@@ -2,7 +2,7 @@
 // v1: materials, attempts, vocab, notes, logs, kv.  v2 thêm: drafts, settings (localStorage, trừ API key), blobs (tuỳ chọn, base64).
 // Nhập: đọc cả v1 lẫn v2; "Gộp" (giữ bản mới hơn, không nhân đôi) hoặc "Thay thế toàn bộ".
 import type { Attempt, Material, Note, RevLog, VocabCard } from '../types';
-import { _low, getState, saveMaterials } from '../db';
+import { TOMB, _low, getState, saveMaterials } from '../db';
 import { migrate } from './srs';
 import { SAMPLE_MATERIALS } from '../content/samples';
 
@@ -131,10 +131,16 @@ export async function importBackup(json: string | BackupFile, mode: 'merge' | 'r
   set({ materials: mats });
   if (d.materials?.length) await saveMaterials(d.materials);
 
+  // Mục đã xoá ở máy này hoặc máy kia (đồng bộ): không đưa vào, và xoá bản còn sót trên máy.
+  const tombs: Record<string, number> = { ...(mode === 'replace' ? {} : (s.kv[TOMB] as Record<string, number> | undefined)) };
+  for (const [k, t] of Object.entries((d.kv?.[TOMB] ?? {}) as Record<string, number>)) tombs[k] = Math.max(tombs[k] ?? 0, t);
+  const dead = (k: string) => k in tombs;
+
   // Lượt làm bài
-  const attempts = mode === 'replace' ? [] : [...s.attempts];
+  const attempts = mode === 'replace' ? [] : s.attempts.filter((a) => !dead(`a:${a.id}`));
+  for (const a of s.attempts) if (mode === 'merge' && dead(`a:${a.id}`)) await del('attempts', a.id);
   const aIds = new Set(attempts.map((a) => a.id));
-  for (const a of d.attempts ?? []) if (!aIds.has(a.id)) { attempts.push(a); aIds.add(a.id); await put('attempts', a.id, a); }
+  for (const a of d.attempts ?? []) if (!aIds.has(a.id) && !dead(`a:${a.id}`)) { attempts.push(a); aIds.add(a.id); await put('attempts', a.id, a); }
   attempts.sort((a, b) => b.at - a.at);
 
   // Nhật ký
@@ -145,9 +151,11 @@ export async function importBackup(json: string | BackupFile, mode: 'merge' | 'r
 
   // Thẻ từ vựng
   const vocab: Record<string, VocabCard> = mode === 'replace' ? {} : { ...s.vocab };
+  for (const id of Object.keys(vocab)) if (dead(`v:${id}`)) { delete vocab[id]; await del('vocab', id); }
   const byWord = new Map(Object.values(vocab).map((c) => [c.word.trim().toLowerCase(), c.id]));
   for (const raw of d.vocab ?? []) {
     const c = migrate(raw) ?? raw;
+    if (dead(`v:${c.id}`)) continue;
     const hitId = vocab[c.id] ? c.id : byWord.get(c.word.trim().toLowerCase());
     const cur = hitId ? vocab[hitId] : undefined;
     let next: VocabCard;
@@ -175,8 +183,9 @@ export async function importBackup(json: string | BackupFile, mode: 'merge' | 'r
   const inAt = (d.kv?.['meta:draftAt'] ?? {}) as Record<string, number>;
   const curAt = (kv['meta:draftAt'] ?? {}) as Record<string, number>;
   const putKv = (k: string, v: unknown) => (k.startsWith('dict:') ? put('dict', k.slice(5), v) : put('kv', k, v));
+  for (const k of Object.keys(kv)) if (dead(`k:${k}`)) { delete kv[k]; await del('kv', k); }
   for (const [k, v] of Object.entries(d.kv ?? {})) {
-    if (k === 'meta:draftAt') continue;
+    if (k === 'meta:draftAt' || k === TOMB || dead(`k:${k}`)) continue;
     if (k in kv) {
       if (!k.startsWith('udeck:')) continue; // giữ dữ liệu trên máy
       const cur = kv[k] as { words?: { w?: string; word?: string }[] };
@@ -199,6 +208,7 @@ export async function importBackup(json: string | BackupFile, mode: 'merge' | 'r
     await put('drafts', k, v);
   }
   kv['meta:draftAt'] = at; await put('kv', 'meta:draftAt', at);
+  if (Object.keys(tombs).length) { kv[TOMB] = tombs; await put('kv', TOMB, tombs); }
 
   set({ attempts, logs, vocab, notes, kv, drafts });
 

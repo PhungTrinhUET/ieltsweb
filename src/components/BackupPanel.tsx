@@ -2,6 +2,8 @@
 import { useEffect, useState } from 'react';
 import { AlertTriangle, Download, HardDrive, ShieldCheck, Upload, X } from 'lucide-react';
 import { useDb } from '../db';
+import { Link } from 'react-router-dom';
+import { useCloud } from '../lib/cloud';
 import { downloadBackup, importBackup, lastBackupAt, mediaSize, parseBackup, summarize, type BackupFile, type BackupSummary } from '../lib/backup';
 
 const fmtSize = (b: number) => (b < 1024 * 1024 ? `${Math.max(1, Math.round(b / 1024))} KB` : `${(b / 1024 / 1024).toFixed(1)} MB`);
@@ -12,7 +14,7 @@ export function KeepDataTips() {
     <div className="keepdata" data-testid="keepdata">
       <h3 className="h4"><ShieldCheck size={16} /> Giữ dữ liệu không bị mất</h3>
       <ul className="small">
-        <li>Mọi kết quả, từ vựng, bài viết, bản ghi âm <strong>chỉ nằm trong trình duyệt này, trên máy này</strong> – không có tài khoản hay máy chủ lưu hộ.</li>
+        <li>Chưa đăng nhập thì mọi kết quả, từ vựng, bài viết, bản ghi âm <strong>chỉ nằm trong trình duyệt này, trên máy này</strong>. <strong>Đăng nhập</strong> (mục Tài khoản ở trên) để tự đồng bộ lên mây – trừ bản ghi âm.</li>
         <li>Đừng học trong <strong>tab ẩn danh</strong>; bấm "Xoá dữ liệu trang web / cookie" cho trang này là <strong>mất hết</strong>.</li>
         <li>iPhone/iPad (Safari) có thể tự xoá dữ liệu của trang sau <strong>7 ngày không mở</strong> → bấm Chia sẻ → <em>Thêm vào MH chính</em> để mở như app, và vẫn nên sao lưu đều.</li>
         <li><strong>Mỗi tuần xuất sao lưu một lần</strong>, cất vào Google Drive hoặc Zalo "Cloud của tôi".</li>
@@ -113,8 +115,10 @@ const SNOOZE = 'ielts:backup-snooze';
 /** Thanh nhắc ở Trang chủ: có dữ liệu và ≥ 7 ngày chưa sao lưu. */
 export function BackupReminder() {
   const db = useDb();
+  const cloud = useCloud();
   const [hide, setHide] = useState(false);
   if (!db.ready || hide) return null;
+  if (cloud.user && cloud.lastSync && Date.now() - cloud.lastSync < 7 * 864e5) return null; // đã đồng bộ lên mây
   const n = db.attempts.length + Object.keys(db.vocab).length;
   if (!n) return null;
   const oldest = Math.min(db.attempts.at(-1)?.at ?? Infinity, ...Object.values(db.vocab).map((c) => c.addedAt || Infinity));
@@ -126,7 +130,7 @@ export function BackupReminder() {
   return (
     <div className="bk-remind" role="status" data-testid="bk-remind">
       <ShieldCheck size={18} />
-      <span className="small">{lastBackupAt() ? `Đã ${days} ngày chưa sao lưu.` : 'Bạn chưa sao lưu lần nào.'} Dữ liệu chỉ nằm trong trình duyệt này – tải file về để không mất.</span>
+      <span className="small">{lastBackupAt() ? `Đã ${days} ngày chưa sao lưu.` : 'Bạn chưa sao lưu lần nào.'} Dữ liệu chỉ nằm trong trình duyệt này – tải file về{cloud.user ? '' : <> hoặc <Link to="/settings">đăng nhập để tự đồng bộ</Link></>} để không mất.</span>
       <button className="btn btn--primary btn--sm" onClick={async () => { await downloadBackup(); setHide(true); }}><Download size={15} /> Sao lưu ngay</button>
       <button className="btn btn--text btn--sm" onClick={() => { try { localStorage.setItem(SNOOZE, String(now + 3 * 864e5)); } catch { /* */ } setHide(true); }}>Nhắc sau</button>
     </div>

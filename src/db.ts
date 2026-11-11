@@ -70,7 +70,8 @@ export const getVocab = () => state.vocab;
 const subs = new Set<() => void>();
 const emit = () => subs.forEach((f) => f());
 const set = (patch: Partial<State>) => { state = { ...state, ...patch }; emit(); };
-export const useDb = () => useSyncExternalStore((f) => { subs.add(f); return () => subs.delete(f); }, () => state);
+export const subscribe = (f: () => void) => { subs.add(f); return () => { subs.delete(f); }; };
+export const useDb = () => useSyncExternalStore(subscribe, () => state);
 export const getState = () => state;
 /** Truy cập cấp thấp cho lib/backup.ts (sao lưu / khôi phục). */
 export const _low = {
@@ -194,6 +195,20 @@ export async function resolveUrl(src: string | undefined): Promise<string | null
   return url;
 }
 
+// ---------- Mục đã xoá (để đồng bộ nhiều máy không "hồi sinh" thứ đã xoá) ----------
+// kv `meta:tomb` = { "v:<id thẻ>" | "a:<id lượt>" | "k:udeck:<id>": thời điểm xoá }; giữ 180 ngày.
+export const TOMB = 'meta:tomb';
+const TOMB_DAYS = 180;
+async function tomb(keys: string[]) {
+  if (!keys.length) return;
+  const now = Date.now();
+  const cur = { ...(state.kv[TOMB] as Record<string, number> | undefined) };
+  for (const [k, t] of Object.entries(cur)) if (now - t > TOMB_DAYS * 864e5) delete cur[k];
+  for (const k of keys) cur[k] = now;
+  set({ kv: { ...state.kv, [TOMB]: cur } });
+  await put('kv', TOMB, cur).catch(() => {});
+}
+
 // ---------- Attempts ----------
 // Lần đầu có dữ liệu (nộp bài / lưu từ) → xin trình duyệt "lưu lâu dài" để không tự xoá khi thiếu dung lượng.
 let askedPersist = false;
@@ -221,12 +236,15 @@ export async function deleteAttempt(id: string) {
   const a = state.attempts.find((x) => x.id === id);
   set({ attempts: state.attempts.filter((x) => x.id !== id) });
   await del('attempts', id);
+  await tomb([`a:${id}`]);
   const turns = (a?.detail as { turns?: { audio?: string }[] } | undefined)?.turns ?? [];
   for (const t of turns) if (t.audio?.startsWith('idb:')) await del('blobs', t.audio.slice(4)).catch(() => {});
 }
 export async function clearAttempts() {
+  const ids = Object.keys(await all('attempts'));
   set({ attempts: [] });
-  for (const a of Object.keys(await all('attempts'))) await del('attempts', a);
+  for (const a of ids) await del('attempts', a);
+  await tomb(ids.map((a) => `a:${a}`));
 }
 
 // ---------- Vocab ----------
@@ -241,6 +259,7 @@ export async function deleteCard(id: string) {
   delete next[id];
   set({ vocab: next });
   await del('vocab', id);
+  await tomb([`v:${id}`]);
 }
 export async function saveCards(cs0: VocabCard[], keepTime = false) {
   const now = Date.now();
@@ -270,6 +289,7 @@ export async function setKv(key: string, v: unknown) {
   set({ kv: next });
   const [store, k] = key.startsWith('dict:') ? ['dict' as const, key.slice(5)] : ['kv' as const, key];
   await (v === undefined ? del(store, k) : put(store, k, v)).catch(() => {});
+  if (v === undefined && key.startsWith('udeck:')) await tomb([`k:${key}`]);
 }
 export const getKv = <T,>(key: string) => state.kv[key] as T | undefined;
 

@@ -4,6 +4,7 @@ import { EX_NAMES, updateSettings, useSettings } from '../store';
 import type { ExKind } from '../types';
 import { BackupPanel } from '../components/BackupPanel';
 import AiSettings from '../components/AiSettings';
+import CloudPanel from '../components/CloudPanel';
 import { englishVoices, speak, ttsAvailable, voiceGender } from '../lib/tts';
 
 const SAMPLE = 'Good morning. This is a test of the reading voice for IELTS practice.';
@@ -21,6 +22,7 @@ export default function Settings() {
   return (
     <div className="page">
       <div className="page-head"><div><h1>Cài đặt</h1></div></div>
+      <CloudPanel />
       <section className="card settings">
         <div className="setting">
           <div className="setting__title"><strong>Giao diện</strong></div>

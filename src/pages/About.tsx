@@ -35,8 +35,8 @@ export default function About() {
           thi thử đủ 4 kỹ năng như ngày thi thật. Kèm theo là từ vựng ôn theo lịch lặp lại ngắt quãng (FSRS), nghe-chép từng câu, thống kê tiến độ.
         </p>
         <p>
-          Kho đề được bóc tách và soát lại từ các bộ đề gốc, có giải thích trích câu làm bằng chứng. Dữ liệu học của bạn chỉ lưu trong trình duyệt
-          (IndexedDB), cài được như ứng dụng (PWA) và dùng được khi không có mạng.
+          Kho đề được bóc tách và soát lại từ các bộ đề gốc, có giải thích trích câu làm bằng chứng. Dữ liệu học lưu trong trình duyệt
+          (IndexedDB), đăng nhập (tuỳ chọn) để đồng bộ giữa các máy; cài được như ứng dụng (PWA) và dùng được khi không có mạng.
         </p>
         <div className="ab-skills">
           <span><BookOpen size={16} /> Reading</span><span><Headphones size={16} /> Listening</span><span><PenLine size={16} /> Writing</span><span><Mic size={16} /> Speaking</span>
