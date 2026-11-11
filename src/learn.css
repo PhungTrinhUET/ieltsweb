@@ -334,3 +334,24 @@ a.deck__name:hover strong { color: var(--dk, var(--primary)); }
 .acc__who { gap: 6px 14px; }
 .acc__out { display: flex; flex-direction: column; gap: 6px; padding: 10px 12px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface-2, transparent); }
 .acc__out .btn--ghost { background: var(--surface); border: 1px solid var(--border); }
+/* Màn hình chào / đăng nhập */
+.login { min-height: 100dvh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px 16px; background: var(--bg); }
+.login__box { width: 100%; max-width: 420px; padding: 28px 24px; display: flex; flex-direction: column; gap: 14px; }
+.login__brand { display: flex; align-items: center; gap: 12px; font-size: 1.35rem; }
+.login__tag { margin: 0; color: var(--text-2); line-height: 1.5; }
+.login__ic { display: inline-flex; gap: 4px; vertical-align: -2px; color: var(--primary); }
+.login .acc__form { max-width: none; }
+.login__or { display: flex; align-items: center; gap: 10px; color: var(--text-2); font-size: .85rem; }
+.login__or::before, .login__or::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.login__guest { width: 100%; justify-content: center; }
+.login__note { margin: 0; line-height: 1.5; }
+.login__note svg { vertical-align: -2px; }
+.login__foot { margin-top: 14px; }
+/* Lối vào tài khoản (sidebar + topbar trang chủ trên điện thoại) */
+.sidebar__acc { margin-top: auto; border: 1px solid var(--border); min-width: 0; }
+.sidebar__acc + .sidebar__foot { display: none; }
+.acc-link__t { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.acc-ava { display: inline-grid; place-items: center; width: 26px; height: 26px; flex: none; border-radius: 50%; background: var(--primary); color: var(--on-primary); font-weight: 700; font-size: 13px; }
+.app--nav-collapsed .sidebar__acc .acc-ava { display: inline-grid; }
+.app--nav-collapsed .sidebar__acc { border: none; }
+.topbar__acc { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; color: var(--text-2); background: var(--surface); border: 1px solid var(--border); }

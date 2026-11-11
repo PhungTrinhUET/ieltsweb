@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { HashRouter, Link, NavLink, Outlet, Route, Routes, useLocation, useParams } from 'react-router-dom';
+import { HashRouter, Link, Navigate, NavLink, Outlet, Route, Routes, useLocation, useParams } from 'react-router-dom';
 import ErrorBoundary from './components/ErrorBoundary';
-import { BarChart3, BookOpen, ChevronLeft, ChevronRight, FolderInput, GraduationCap, Headphones, History as HistoryIcon, House, Keyboard, Layers, Mic, NotebookPen, Settings as SettingsIcon } from 'lucide-react';
+import { BarChart3, BookOpen, ChevronLeft, ChevronRight, FolderInput, GraduationCap, Headphones, History as HistoryIcon, House, Keyboard, Layers, Mic, NotebookPen, Settings as SettingsIcon, UserRound } from 'lucide-react';
 import { init, useDb } from './db';
 import Home from './pages/Home';
 import SkillList from './pages/SkillList';
@@ -29,6 +29,8 @@ import About, { FOOTER_TEXT } from './pages/About';
 import Practice from './pages/Practice';
 import TestPage from './pages/TestPage';
 import Stats from './pages/Stats';
+import Login from './pages/Login';
+import { cloudEnabled, isGuest, useCloud } from './lib/cloud';
 
 const NAV: { to: string; label: string; icon: typeof House; end?: boolean }[] = [
   { to: '/', label: 'Trang chủ', icon: House, end: true },
@@ -50,11 +52,17 @@ const NAV2: { to: string; label: string; icon: typeof House; end?: boolean }[] =
 function Shell() {
   const loc = useLocation();
   const db = useDb();
+  const cloud = useCloud();
   const focus = /^\/(reading|listening|speaking|writing|mock|dictation)\/[^/]+|^\/test\/[^/]+\/[^/]+\/full/.test(loc.pathname);
   const [collapsed, setCollapsed] = useState(() => { try { return localStorage.getItem('ielts:nav-collapsed') === '1'; } catch { return false; } });
   const toggle = () => setCollapsed((c) => { try { localStorage.setItem('ielts:nav-collapsed', c ? '0' : '1'); } catch { /* ignore */ } return !c; });
   useEffect(() => { window.scrollTo({ top: 0 }); }, [loc.pathname]);
   useEffect(() => { init(); }, []);
+  // Chưa đăng nhập, chưa chọn "dùng không cần tài khoản" → màn hình chào (trừ link chia sẻ bộ từ / giới thiệu).
+  if (cloudEnabled && !cloud.user && !isGuest() && !/^\/(vocab\/share|about)/.test(loc.pathname)) {
+    const next = loc.pathname + loc.search;
+    return <Navigate to={next === '/' ? '/login' : `/login?next=${encodeURIComponent(next)}`} replace />;
+  }
   if (!db.ready) return <div className="boot">Đang mở dữ liệu…</div>;
   return (
     <div className={`app${focus ? ' app--focus' : ''}${collapsed ? ' app--nav-collapsed' : ''}`}>
@@ -66,6 +74,7 @@ function Shell() {
           <div className="sidebar__sep" />
           {NAV2.map(({ to, label, icon: Icon }) => <NavLink key={to} to={to} className="sidebar__link" title={label}><Icon size={20} /> <span>{label}</span></NavLink>)}
         </nav>
+        {cloudEnabled && <AccountLink className="sidebar__link sidebar__acc" />}
         <p className="sidebar__foot">Reading · Listening · Speaking · Writing – tự nạp tài liệu, AI chấm bài</p>
       </aside>
       <main className="main"><ErrorBoundary key={loc.pathname}><Outlet /></ErrorBoundary>
@@ -75,6 +84,17 @@ function Shell() {
         {[...NAV.slice(0, 5), NAV2[0]].map(({ to, label, icon: Icon, end }) => <NavLink key={to} to={to} end={end} className="tabbar__link"><Icon size={22} /><span>{label}</span></NavLink>)}
       </nav>
     </div>
+  );
+}
+
+/** Lối vào tài khoản: chưa đăng nhập → /login, đã đăng nhập → Cài đặt › Tài khoản. */
+export function AccountLink({ className, short }: { className?: string; short?: boolean }) {
+  const c = useCloud();
+  const label = c.user ? c.user.email : 'Đăng nhập';
+  return (
+    <Link to={c.user ? '/settings' : '/login'} className={className} title={c.user ? `Tài khoản: ${c.user.email}` : 'Đăng nhập để đồng bộ giữa các máy'} data-testid="acc-link">
+      {c.user ? <span className="acc-ava" aria-hidden>{c.user.email[0]?.toUpperCase()}</span> : <UserRound size={20} />} {!short && <span className="acc-link__t">{label}</span>}
+    </Link>
   );
 }
 
@@ -89,6 +109,7 @@ export default function App() {
   return (
     <HashRouter>
       <Routes>
+        <Route path="login" element={<Login />} />
         <Route element={<Shell />}>
           <Route index element={<Home />} />
           <Route path="reading" element={<SkillList skill="reading" />} />

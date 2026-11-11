@@ -35,8 +35,10 @@ const results = [];
 const log = (ok, name, info = '') => { results.push({ ok, name, info }); console.log(`${ok ? '✓' : '✗'} ${name}${info ? ` – ${info}` : ''}`); };
 
 async function newPage(profile) {
-  const ctx = await browser.newContext({ ...PROFILES[profile] });
+  const ctx = await browser.newContext({ ...PROFILES[profile === 'fresh' ? 'desktop' : profile] });
   await ctx.addInitScript(FAKE_VOICES);
+  // Bỏ qua màn hình chào/đăng nhập (đã có kiểm tra L1 riêng).
+  if (profile !== 'fresh') await ctx.addInitScript(() => { try { localStorage.setItem('sb:ieltsweb:guest', '1'); } catch { /* */ } });
   const page = await ctx.newPage();
   page.errors = [];
   page.on('pageerror', (e) => page.errors.push(`pageerror: ${e.message}`));
@@ -143,6 +145,7 @@ for (const profile of Object.keys(PROFILES)) {
   });
   await check(`[${profile}] K1 sao lưu → xoá IndexedDB → nhập (Gộp) đủ số, nhập lần 2 không nhân đôi`, async () => {
     const ctx = await browser.newContext({ ...PROFILES[profile], acceptDownloads: true });
+    await ctx.addInitScript(() => { try { localStorage.setItem('sb:ieltsweb:guest', '1'); } catch { /* */ } });
     const p = await ctx.newPage();
     const idb = (fn, arg) => p.evaluate(([src, a]) => new Promise((res, rej) => {
       const r = indexedDB.open('ielts-practice', 3);
@@ -838,6 +841,20 @@ for (const profile of Object.keys(PROFILES)) {
       const t = await page.locator('[data-testid="aiw-compare"]').innerText({ timeout: 5000 }).catch(() => '');
       return { ok: /Cập nhật 10\/11\/2026/.test(t) && /DeepSeek/.test(t), info: t.slice(0, 60) };
     });
+    // ---------- L1: màn hình chào khi mở lần đầu ----------
+    await check('L1 lần đầu mở web → màn hình đăng nhập; "Dùng không cần tài khoản" → về đúng trang; mở lại không hỏi nữa', async () => {
+      const p = await newPage('fresh');
+      await p.goto(`${BASE}#/vocab`); await p.getByTestId('login-page').waitFor({ timeout: 15000 });
+      const url1 = p.url();
+      await p.getByTestId('login-guest').click(); await p.waitForSelector('.main');
+      const url2 = p.url();
+      await p.goto(`${BASE}#/`); await p.waitForSelector('.main'); await p.waitForTimeout(500);
+      const again = await p.getByTestId('login-page').count();
+      const link = await p.getByTestId('acc-link').first().getAttribute('href');
+      const errs = p.errors; await p.context().close();
+      const ok = /#\/login\?next=%2Fvocab/.test(url1) && /#\/vocab$/.test(url2) && !again && /#\/login/.test(link ?? '') && !errs.length;
+      return { ok, info: `${url1.split('#')[1]} → ${url2.split('#')[1]} · hỏi lại=${again} · link=${link} ${errs.join(' | ')}` };
+    });
     // ---------- S1: tài khoản + đồng bộ (Supabase giả lập, không gọi máy chủ thật) ----------
     await check('S1 tài khoản: A có dữ liệu → tạo tài khoản → đẩy lên (không kèm API key); B đăng nhập thấy từ; B xoá → A mất từ', async () => {
       const { gunzipSync } = await import('node:zlib');
@@ -875,17 +892,17 @@ for (const profile of Object.keys(PROFILES)) {
       await go(a, '/');
       await a.evaluate(() => new Promise((res) => { const r = indexedDB.open('ielts-practice', 3); r.onsuccess = () => { const t = r.result.transaction('vocab', 'readwrite'); t.objectStore('vocab').put({ id: 'smk1', word: 'serendipity', meaning: 'tình cờ may mắn', addedAt: Date.now() }, 'smk1'); t.oncomplete = res; }; }));
       await a.reload();
-      await go(a, '/settings');
+      await a.goto(`${BASE}#/login`); await a.getByTestId('login-page').waitFor();
       await a.getByTestId('acc-tab-up').click();
       await a.getByTestId('acc-email').fill('hv@test.vn'); await a.getByTestId('acc-pw').fill('matkhau123'); await a.getByTestId('acc-pw2').fill('matkhau123');
-      await a.getByTestId('acc-submit').click(); await synced(a);
+      await a.getByTestId('acc-submit').click(); await a.waitForSelector('.main'); await go(a, '/settings'); await synced(a);
       const obj = objs.get([...objs.keys()][0] ?? '');
       const up = obj ? gunzipSync(obj).toString() : '';
       // Máy B: đăng nhập → có từ; xoá từ → đồng bộ.
       const b = await dev();
-      await go(b, '/settings');
+      await b.goto(`${BASE}#/login`); await b.getByTestId('login-page').waitFor();
       await b.getByTestId('acc-email').fill('hv@test.vn'); await b.getByTestId('acc-pw').fill('matkhau123');
-      await b.getByTestId('acc-submit').click(); await synced(b);
+      await b.getByTestId('acc-submit').click(); await b.waitForSelector('.main'); await go(b, '/settings'); await synced(b);
       const onB = await idbVocab(b);
       await go(b, '/vocab');
       await b.locator('.lt-listhead').click();
@@ -897,6 +914,7 @@ for (const profile of Object.keys(PROFILES)) {
       const onA = await idbVocab(a);
       // Đăng ký trùng email → báo lỗi tiếng Việt.
       await a.getByTestId('acc-logout').click(); await a.getByTestId('acc-out-keep').click();
+      await a.getByTestId('login-page').waitFor();
       await a.getByTestId('acc-tab-up').click();
       await a.getByTestId('acc-email').fill('hv@test.vn'); await a.getByTestId('acc-pw').fill('matkhau123'); await a.getByTestId('acc-pw2').fill('matkhau123');
       await a.getByTestId('acc-submit').click();

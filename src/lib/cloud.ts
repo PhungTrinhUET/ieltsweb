@@ -45,6 +45,10 @@ let cs: CloudState = { user: sess?.user ?? null, status: 'idle', lastSync: meta(
 const subs = new Set<() => void>();
 const setCs = (p: Partial<CloudState>) => { cs = { ...cs, ...p }; subs.forEach((f) => f()); };
 export const getCloud = () => cs;
+/** Đã chọn "Dùng không cần tài khoản" ở màn hình chào → không hiện lại màn hình đăng nhập. */
+const GUEST = 'sb:ieltsweb:guest';
+export const isGuest = () => { try { return localStorage.getItem(GUEST) === '1'; } catch { return true; } };
+export const setGuest = (on: boolean) => { try { if (on) localStorage.setItem(GUEST, '1'); else localStorage.removeItem(GUEST); } catch { /* */ } setCs({}); };
 export const useCloud = () => useSyncExternalStore((f) => { subs.add(f); return () => { subs.delete(f); }; }, () => cs);
 export const clearNotice = () => setCs({ notice: undefined, error: cs.status === 'error' ? cs.error : undefined });
 
@@ -158,7 +162,7 @@ export async function updatePassword(password: string) {
 export async function signOut(wipe = false) {
   if (sess && meta().dirty) await syncNow().catch(() => {});
   if (sess) await api('/auth/v1/logout', { method: 'POST', auth: true }).catch(() => {});
-  setSession(null); ls.set(META, null);
+  setSession(null); ls.set(META, null); setGuest(false);
   setCs({ status: 'idle', lastSync: undefined, error: undefined, recovery: false });
   if (wipe) {
     for (const st of ['attempts', 'vocab', 'notes', 'drafts', 'revlog', 'kv', 'dict', 'blobs', 'materials'] as const) await _low.clear(st).catch(() => {});

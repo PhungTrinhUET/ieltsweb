@@ -1,5 +1,6 @@
 // Cài đặt → Tài khoản & đồng bộ: đăng ký / đăng nhập email + mật khẩu, quên mật khẩu, đồng bộ, đăng xuất.
 import { useState, type FormEvent } from 'react';
+import { Link } from 'react-router-dom';
 import { AlertTriangle, Check, CloudOff, Eye, EyeOff, Loader2, LogOut, RefreshCw, UserRound } from 'lucide-react';
 import { clearNotice, cloudEnabled, sendReset, signIn, signOut, signUp, syncNow, updatePassword, useCloud } from '../lib/cloud';
 
@@ -32,7 +33,7 @@ function useAction() {
 }
 const Msg = ({ m }: { m: { ok: boolean; text: string } | null }) => (m ? <p className={`small ${m.ok ? 'ok-text' : 'no-text'}`} role="status" data-testid="acc-msg">{m.text}</p> : null);
 
-function LoginForm() {
+export function LoginForm() {
   const [mode, setMode] = useState<'in' | 'up' | 'forgot'>('in');
   const [email, setEmail] = useState('');
   const [pw, setPw] = useState('');
@@ -105,9 +106,9 @@ export default function CloudPanel() {
         {c.notice && <p className="small ok-text" role="status"><Check size={14} /> {c.notice} <button className="btn btn--text btn--sm" onClick={clearNotice}>Ẩn</button></p>}
         {!c.user ? (
           <>
-            <p className="small muted">Không bắt buộc. Có tài khoản thì kết quả, từ vựng và tiến độ ôn, bộ từ, ghi chú, bài viết được <strong>tự đồng bộ giữa các máy</strong> và không mất khi xoá dữ liệu trình duyệt.</p>
+            <p className="small muted">Đang dùng không cần tài khoản – dữ liệu chỉ ở trình duyệt này. Đăng nhập để <strong>tự đồng bộ giữa các máy</strong> và không mất khi xoá dữ liệu trình duyệt.</p>
             {c.status === 'error' && c.error && <p className="small no-text"><AlertTriangle size={14} /> {c.error}</p>}
-            <LoginForm />
+            <div className="row wrap"><Link className="btn btn--primary btn--sm" to="/login?next=%2Fsettings" data-testid="acc-go-login"><UserRound size={15} /> Đăng nhập / Tạo tài khoản</Link></div>
           </>
         ) : c.recovery ? (
           <>

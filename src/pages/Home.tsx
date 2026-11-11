@@ -12,7 +12,8 @@ import { dueCards, startOfDay } from '../lib/srs';
 import { activeDays, dayKey as localDay, logsSince, streakOf, todayPlan, xpSum } from '../lib/stats';
 import { fmtBand, overallBand } from '../lib/band';
 import { Ring } from '../components/ui';
-import { Logo } from '../App';
+import { AccountLink, Logo } from '../App';
+import { cloudEnabled } from '../lib/cloud';
 
 const SKILLS: Skill[] = ['reading', 'listening', 'speaking', 'writing'];
 
@@ -61,7 +62,7 @@ export default function Home() {
 
   return (
     <div className="page home">
-      <div className="topbar topbar--home"><div className="topbar__brand"><Logo /> <strong>IELTS Practice</strong></div></div>
+      <div className="topbar topbar--home"><div className="topbar__brand"><Logo /> <strong>IELTS Practice</strong></div>{cloudEnabled && <AccountLink className="topbar__acc" short />}</div>
 
       <header className="home__head">
         <div>
