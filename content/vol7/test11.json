@@ -1,0 +1,487 @@
+{
+  "vol": 7,
+  "test": 11,
+  "source": "ORIGINAL IELTS PAPERS – VOL 7, Reading Test 11 (FULL READING TEST 11-16 VOL 7.pdf). Chỉ có Reading. Đáp án suy từ bài đọc, bộ đề không có key cho Test 11 (file gốc chỉ có key Test 12–16).",
+  "reading": [
+    {
+      "passage": 1,
+      "title": "Chilli Peppers",
+      "topic": "Health",
+      "level": "medium",
+      "passage_text": "A\nFor thousands of years, humans have taken painful pleasure from adding chillies (also known as peppers or chilli peppers) to their food. A study published in the British Medical Journal in 2015 indicated that a diet filled with spices – including chillies – was beneficial for health. The study, which was carried out by scientists at the Chinese Academy of Medical Sciences, tracked the health of nearly half a million participants in China for several years. They found that participants who ate spicy food once or twice a week had a mortality rate 10% lower than those who ate spicy food less than once a week. Risk of death reduced still further for people who ate spicy food six or seven days a week. Chilli peppers were the most commonly used spice among the sample, and those who ate fresh chilli had a lower probability of death from cancer, heart disease and diabetes.\n\nB\nThe health-promoting properties of chillies can be found in capsaicin, which is the odourless, colourless chemical compound that makes chillies hot. Inside a chilli there are yellow stalks that attach the seeds to its sides and in many types of chilli, this is the location of capsaicin, but there are several varieties where this is not the case. The heat of a chilli is measured in Scoville heat units, which is the number of times a sample of dissolved dried chilli must be diluted by its own weight in sugar water before it loses its heat. For a green bell pepper this is zero. But habanero peppers have a Scoville value of between 100,000 and 350,000. For pure capsaicin the figure is 16 million. Pure capsaicin can be bought on the internet, though its use as a food additive is banned in the European Union. The use of chilli peppers as weapons dates back to pre-Columbian times (before 1492), when, it is said, Mayans burned rows of them to create a stinging smokescreen to protect themselves from their enemies. The Aztecs also put chilli on their teeth to kill toothache pain, and the use of capsaicin as a pain reliever continues today.\n\nC\nJoshua Tewksbury, a natural historian at the University of Washington, thinks the burning sensation we experience when we come into contact with chillies is an evolutionary trick. 'We're not actually being damaged by the capsaicin the way we would be if we were touching a stove, but our brain thinks we are,' he says, adding that all mammals experience the same sensation but that birds do not. 'They can eat chillies like popcorn and they don't feel the heat.' In this way, Tewksbury suggests, the plant evolved to repel animals that might crush its seeds with their teeth, but not ones that would help spread them.\n\nD\nChillies also fight bacteria. This was of great value in the days before refrigeration, when, particularly in the tropics, people were vulnerable to bacteria that could harm them directly or cause their food to spoil. Chillies kill or inhibit 75% of such bacteria. That may just explain the spice's world-conquering success. Just two or three years after the explorer Christopher Columbus brought chilli seeds back to Europe from the New World in 1493, Portuguese merchants took the plants to Asia, where they would transform the cuisine. People in hot countries are said to use more chilli because it makes them generate a lot of sweat, which cools them down. But in 1998, researchers at Cornell University pointed out that the greater use of spices in countries such as India, Thailand and China was likely to be linked to the antibacterial function. By studying books filled with recipes from all over the world, the researchers found that spices including chilli were more likely to be used close to the equator, and were also used more in valleys with high levels of humidity than on high plateaux.\n\nE\nCapsaicin has even been suggested as a potential weight-loss tool. Research conducted by the University of Wyoming on mice that had been fed a high-fat diet found that the substance increased the metabolism of the animals, causing them to burn more energy and preventing weight gain. In another study, researchers at the University of Adelaide found that certain receptors that interact with capsaicin and are located inside the stomach play a role in sensing when you are full. Previous studies on humans seem to back the idea that eating spicy food may curb our appetite.\n\nF\nCapsaicin is a natural painkiller. Capsaicin creams and patches are available in chemists to ease pain. But it's only recently that we have come to understand how something that causes pain can ease it too. Capsaicin binds to the pain receptor TRPV1, which our brains also use to detect changes in temperature – that's why we think chillies are hot. But after being over-stimulated the neurons stop responding, killing the pain. This process involves the release of endorphins, which can give us a 'rush' not unlike the feeling we have when we have done some exercise. This may explain why some people believe that hot food is addictive.",
+      "groups": [
+        {
+          "instruction": "Do the following statements agree with the information given in Reading Passage 1? Write TRUE, FALSE or NOT GIVEN.",
+          "questions": [
+            {
+              "no": 1,
+              "type": "tfng",
+              "text": "The study done by the Chinese Academy of Medical Sciences looked at eating habits in several countries.",
+              "answer": "FALSE",
+              "explanation": "\"tracked the health of nearly half a million participants in China for several years\" – chỉ ở Trung Quốc."
+            },
+            {
+              "no": 2,
+              "type": "tfng",
+              "text": "Eating fresh chillies can decrease the likelihood of dying from certain serious illnesses.",
+              "answer": "TRUE",
+              "explanation": "\"those who ate fresh chilli had a lower probability of death from cancer, heart disease and diabetes\""
+            },
+            {
+              "no": 3,
+              "type": "tfng",
+              "text": "Capsaicin is found in the same place in all chilli varieties.",
+              "answer": "FALSE",
+              "explanation": "\"in many types of chilli, this is the location of capsaicin, but there are several varieties where this is not the case\""
+            },
+            {
+              "no": 4,
+              "type": "tfng",
+              "text": "Habanero peppers are the hottest known peppers.",
+              "answer": "NOT GIVEN",
+              "explanation": "\"habanero peppers have a Scoville value of between 100,000 and 350,000\" – bài không nói đây là loại ớt cay nhất."
+            },
+            {
+              "no": 5,
+              "type": "tfng",
+              "text": "Pure capsaicin is licensed for use in food products in the European Union.",
+              "answer": "FALSE",
+              "explanation": "\"its use as a food additive is banned in the European Union\""
+            },
+            {
+              "no": 6,
+              "type": "tfng",
+              "text": "The Aztecs were the first to use capsaicin as a pain killer.",
+              "answer": "NOT GIVEN",
+              "explanation": "\"The Aztecs also put chilli on their teeth to kill toothache pain\" – không nói họ là người đầu tiên."
+            },
+            {
+              "no": 7,
+              "type": "tfng",
+              "text": "Birds have different physical responses to eating chillies to those of mammals.",
+              "answer": "TRUE",
+              "explanation": "\"all mammals experience the same sensation but that birds do not. 'They can eat chillies like popcorn and they don't feel the heat.'\""
+            }
+          ]
+        },
+        {
+          "instruction": "Complete the notes below. Choose ONE WORD ONLY from the passage for each answer.",
+          "wordLimit": "ONE WORD ONLY",
+          "context": "The health benefits of chilli",
+          "layout": "notes",
+          "table": {
+            "rows": [
+              [
+                "# Using chilli to fight bacteria"
+              ],
+              [
+                "• chilli's ability to fight germs was very significant before the invention of {{8}}"
+              ],
+              [
+                "• it was thought that chilli was eaten because it causes bodies to produce {{9}} which reduces body heat"
+              ],
+              [
+                "• books of {{10}} from around the world show chilli is more commonly used in certain geographical areas"
+              ],
+              [
+                "• chilli is most likely to be used in valleys with a lot of humidity"
+              ],
+              [
+                "# Using chilli for weight loss"
+              ],
+              [
+                "• the University of Wyoming found that chilli raised the mice's {{11}}"
+              ],
+              [
+                "• the University of Adelaide found that receptors in the {{12}} react with chilli to indicate when you've had enough to eat"
+              ],
+              [
+                "# Using chilli as pain relief"
+              ],
+              [
+                "• it reacts with the part of our brain that notices a difference in temperature"
+              ],
+              [
+                "• the sensation we have when eating chilli is similar to the one we have after {{13}}"
+              ]
+            ]
+          },
+          "questions": [
+            {
+              "no": 8,
+              "type": "fill",
+              "text": "Chilli's ability to fight germs was very significant before the invention of ___",
+              "answer": [
+                "refrigeration"
+              ],
+              "explanation": "\"This was of great value in the days before refrigeration\""
+            },
+            {
+              "no": 9,
+              "type": "fill",
+              "text": "It was thought that chilli was eaten because it causes bodies to produce ___ which reduces body heat",
+              "answer": [
+                "sweat"
+              ],
+              "explanation": "\"it makes them generate a lot of sweat, which cools them down\""
+            },
+            {
+              "no": 10,
+              "type": "fill",
+              "text": "Books of ___ from around the world show chilli is more commonly used in certain geographical areas",
+              "answer": [
+                "recipes"
+              ],
+              "explanation": "\"By studying books filled with recipes from all over the world\""
+            },
+            {
+              "no": 11,
+              "type": "fill",
+              "text": "The University of Wyoming found that chilli raised the mice's ___",
+              "answer": [
+                "metabolism"
+              ],
+              "explanation": "\"the substance increased the metabolism of the animals\""
+            },
+            {
+              "no": 12,
+              "type": "fill",
+              "text": "The University of Adelaide found that receptors in the ___ react with chilli to indicate when you've had enough to eat",
+              "answer": [
+                "stomach"
+              ],
+              "explanation": "\"certain receptors that interact with capsaicin and are located inside the stomach play a role in sensing when you are full\""
+            },
+            {
+              "no": 13,
+              "type": "fill",
+              "text": "The sensation we have when eating chilli is similar to the one we have after ___",
+              "answer": [
+                "exercise"
+              ],
+              "explanation": "\"a 'rush' not unlike the feeling we have when we have done some exercise\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "passage": 2,
+      "title": "Stress Less",
+      "topic": "Work",
+      "level": "medium",
+      "passage_text": "A\nHow busy is too busy? For some it means sometimes having to have a short lunch; for others it may mean missing lunch altogether. For a few, it is not being able to take a day off once a month. Then there is a group of people for whom working every evening and weekend is normal, and feeling stressed is taken for granted. For most senior executives, workloads swing between extremely busy and frenzied. Neil Plumridge, vice-president of a management consultancy company, says that his weeks vary from a 'manageable' 45 hours to 80 hours, but average 60 hours.\n\nB\nThree signs warn Plumridge about his workload: sleep, scheduling and family. He knows he is doing too much when he gets less than six hours' sleep for three consecutive nights, when he is constantly having to reschedule appointments, and when he misses a family birthday or anniversary. 'Then', he says, 'I know things are out of control'. Plumridge states that stress is often caused by his having unrealistic expectations of himself. 'I'll promise a client that I'll do something tomorrow, and then I'll promise another client that I'll do the same thing, when I know it's not going to happen. I could have said: \"Why don't I give that to you in 48 hours?\" The client wouldn't care.'\n\nC\nOver-committing is something people experience as an individual problem. However, new research indicates that people may be designed to over-commit. A study in the JOURNAL OF EXPERIMENTAL PSYCHOLOGY shows that people always believe that they will be less busy in the future. This is a misapprehension according to the authors of the report, Gal Zauberman of the University of North Carolina and John Lynch of Duke University. 'On average, an individual will be just as busy two weeks or a month from now as he or she is today. But that is not how it appears in everyday life,' they say. 'People make commitments long in advance that they would never make if the same commitments required immediate action. They discount future time investments relatively steeply.'\n\nD\nBeing 'too busy' is highly subjective, but for any individual there are some concrete signs of stress: disturbed sleep and declining mental and physical health are the most common examples. Figures for National Workers' Compensation (insurance against injury caused by work) show that stress causes the most lost time of any workplace injury: employees suffering stress are absent from work for an average of 16.6 weeks. The effects of stress are also expensive. The Australian Government insurer reports that in 2003-2004, claims for stress-related psychological injury accounted for 7% of insurance claims, but almost 27% of the amount paid out in claim payments.\n\nE\nExperts say the key to dealing with stress is not to focus on relief – a game of golf or a massage – but to reassess workloads. Neil Plumridge says he makes it a priority to work out what has to change: that might mean allocating extra staff to a job, allowing more time, or changing expectations. He also relies on the advice of colleagues, saying that his peers coach each other on business problems: 'Just a fresh pair of eyes over an issue can help,' he states.\n\nF\nExecutive stress is not confined to big organisations. Vanessa Stoykov has been running her own advertising agency and public relations business for seven years. Her company has grown so fast that it appeared on the BUSINESS REVIEW WEEKLY 'Fast 100' list of fastest-growing small enterprises in 2004, just after Stoykov had her first child. In 2005, revenue was projected to double to $2.4 million. She had just had her second child. With a fast-growing business and two small children, Stoykov says she has mastered the art of caring for children, typing, and talking on the phone at the same time. But, unlike many others, she appears to thrive on the mental stimulation of running her own business, despite the stress.\n\nG\nJan Elsner, a psychologist who specialises in executive coaching, says that doing well on a demanding workload is typical of senior executives. Some people work best with high-adrenaline periods followed by quieter times, while others thrive under sustained pressure. Elsner's practice is based on a movement known as positive psychology, a school of thought that argues that positive experiences – feeling engaged and challenged, for example – do not balance out negative experiences such as stress; instead they help people increase their resilience over time. Elsner says that many of the senior business people she coaches are increasingly relying more on regulating stress through methods such as meditation. She points to research showing that meditation can alter the biochemistry of the brain and the way that brains and bodies react to stress.\n\nSome experts believe there is too much emphasis on treating job stress as an individual problem. Tony LaMontagne, of the University of Melbourne, says that while personality traits do have some effect on stress, it is systemic stressors – qualities of job roles and organisations themselves – that have a far greater effect. His recent research shows that the major predictor of stress is the level of job control a person has. The best type of job combines challenging work with high autonomy. The worst jobs combine challenging work and low control. People with demanding jobs but little autonomy have up to four times the probability of depression and more than double the risk of heart attack.",
+      "groups": [
+        {
+          "instruction": "Look at the following statements (Questions 14–18) and the list of people below. Match each statement with the correct person, A–D. NB You may use any letter more than once.",
+          "bank": [
+            "Neil Plumridge",
+            "Gal Zauberman and John Lynch",
+            "Jan Elsner",
+            "Tony LaMontagne"
+          ],
+          "questions": [
+            {
+              "no": 14,
+              "type": "match",
+              "text": "High-level workers tend to react positively to stress.",
+              "answer": 2,
+              "explanation": "\"Jan Elsner … says that doing well on a demanding workload is typical of senior executives\""
+            },
+            {
+              "no": 15,
+              "type": "match",
+              "text": "Stress levels are increased by trying to please customers.",
+              "answer": 0,
+              "explanation": "\"Plumridge states that stress is often caused by his having unrealistic expectations of himself. 'I'll promise a client that I'll do something tomorrow…'\""
+            },
+            {
+              "no": 16,
+              "type": "match",
+              "text": "Support from other workers may relieve stress.",
+              "answer": 0,
+              "explanation": "\"He also relies on the advice of colleagues, saying that his peers coach each other on business problems\" (Neil Plumridge)"
+            },
+            {
+              "no": 17,
+              "type": "match",
+              "text": "Lack of independence at work is often responsible for stress.",
+              "answer": 3,
+              "explanation": "\"His recent research shows that the major predictor of stress is the level of job control a person has\" (Tony LaMontagne)"
+            },
+            {
+              "no": 18,
+              "type": "match",
+              "text": "Workers commonly expect their workloads to lessen over time.",
+              "answer": 1,
+              "explanation": "\"people always believe that they will be less busy in the future\" (Gal Zauberman và John Lynch)"
+            }
+          ]
+        },
+        {
+          "instruction": "Choose the correct letter, A, B, C or D.",
+          "questions": [
+            {
+              "no": 19,
+              "type": "mcq",
+              "text": "Which of the following is NOT mentioned by Neil Plumridge as an indication that his workload is too heavy?",
+              "options": [
+                "an inability to keep to his schedule",
+                "inattention to family celebrations",
+                "a lack of concentration on a task",
+                "a period of insufficient sleep"
+              ],
+              "answer": 2,
+              "explanation": "\"Three signs warn Plumridge about his workload: sleep, scheduling and family\" – không nhắc tới việc mất tập trung."
+            },
+            {
+              "no": 20,
+              "type": "mcq",
+              "text": "Which method of lessening work stress is NOT suggested by Neil Plumridge?",
+              "options": [
+                "rethinking ideas of what can be achieved",
+                "extending the deadline for completing the task",
+                "using more workers on a project",
+                "taking more time off for sport or other recreation"
+              ],
+              "answer": 3,
+              "explanation": "\"the key to dealing with stress is not to focus on relief – a game of golf or a massage – but to reassess workloads … allocating extra staff to a job, allowing more time, or changing expectations\""
+            },
+            {
+              "no": 21,
+              "type": "mcq",
+              "text": "According to Jan Elsner, meditation offers a method of",
+              "options": [
+                "taking a worker's mind off his troubles.",
+                "changing physical response to stress.",
+                "resting more effectively.",
+                "encouraging executives to take breaks."
+              ],
+              "answer": 1,
+              "explanation": "\"meditation can alter the biochemistry of the brain and the way that brains and bodies react to stress\""
+            }
+          ]
+        },
+        {
+          "instruction": "Complete the summary below. Choose NO MORE THAN TWO WORDS AND/OR A NUMBER from the passage for each answer.",
+          "wordLimit": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+          "context": "Stress: its effects and how to reduce it",
+          "questions": [
+            {
+              "no": 22,
+              "type": "fill",
+              "text": "Statistics on workers' compensation show that people take more time off work due to stress than for any other ___ at work.",
+              "answer": [
+                "injury"
+              ],
+              "explanation": "\"stress causes the most lost time of any workplace injury\""
+            },
+            {
+              "no": 23,
+              "type": "fill",
+              "text": "On average, workers who take time off because of stress stay away for ___.",
+              "answer": [
+                "16.6 weeks"
+              ],
+              "explanation": "\"employees suffering stress are absent from work for an average of 16.6 weeks\""
+            },
+            {
+              "no": 24,
+              "type": "fill",
+              "text": "While the number of insurance claims due to stress amount to only ___ of the total, they account for a much higher proportion of the cost of claims payments.",
+              "answer": [
+                "7%",
+                "7 per cent",
+                "7 percent",
+                "seven per cent"
+              ],
+              "explanation": "\"claims for stress-related psychological injury accounted for 7% of insurance claims, but almost 27% of the amount paid out\""
+            },
+            {
+              "no": 25,
+              "type": "fill",
+              "text": "Experts believe that seeking to relieve stress through physical therapies such as sport or ___ may be less effective …",
+              "answer": [
+                "massage"
+              ],
+              "explanation": "\"not to focus on relief – a game of golf or a massage\""
+            },
+            {
+              "no": 26,
+              "type": "fill",
+              "text": "… than simply reviewing your ___.",
+              "answer": [
+                "workloads"
+              ],
+              "explanation": "\"but to reassess workloads\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "passage": 3,
+      "title": "Robert Louis Stevenson",
+      "topic": "Literature",
+      "level": "hard",
+      "passage_text": "The writer of some of the best-known stories in the English language, including Treasure Island and The Strange Case of Dr. Jekyll and Mr. Hyde\n\nA\nIt is more than 100 years since the death of the Scottish writer Robert Louis Stevenson on the South Pacific Island of Samoa, and it seems that time has not been kind to Stevenson's memory. Immediately after his death, his family and friends set to work to fashion the legend of Robert Louis Stevenson or RLS, as he became known – one of the few writers familiar from his initials alone. Subsequent works of biography then turned him into a writer of almost religious importance. One example was literary critic Balfour, who in 1901 portrayed Stevenson's family as ministering angels to the dying genius during his final illness. Similarly, the biographer Crouch absurdly overstated Stevenson's significance by placing him in the same company as those most revered names in English literature: Shakespeare and Keats. The reaction to this nonsense was a number of highly critical assessments of Stevenson's legacy in the 1920s.\n\nB\nNormally, the critical pendulum can be relied on to swing back again, but there are several aspects of Stevenson's work that have, until recently, acted against a more balanced appraisal. First is the allegation that Stevenson was a mere master of linguistic fireworks, who lacked moral depth. Some critics accused him of being a literary charlatan, of juggling words very prettily to strike effects which overawed an ignorant public, and served to distract from the inadequacy of his ideas.\n\nC\nThen there has long been a prejudice against the adventure story as the proper medium for deep moral seriousness, a prejudice which is still extremely influential today. It seems that we can accept that an adventure film can successfully express profound moral truths, but we reject the same idea for a book. The absurdity of this becomes apparent when we think of writers like Joseph Conrad and Graham Greene, but it is no use pretending that this bias against adventure stories is not part of our high culture. A further problem is that Stevenson has often not found favour in the land of his birth because his conservatism so often collides with the strong radical tradition in Scotland. His many escapist stories and preference for living abroad have led to accusations that he camouflaged Scotland's health problems. Lastly the high adventure of Stevenson's own lifestyle has sometimes obscured his output. His globe-trotting, and above all the final phase of his life in Samoa, tended to make his own life a greater story than any he could devise. This was precisely what his friends feared would happen towards the end of his short life: his art might be overwhelmed by the drama of life in Samoa.\n\nD\nOne consequence of this has been that Stevenson's influence on other writers has too often been neglected. The writer and poet Oscar Wilde was deeply influenced by Stevenson, even though he declared that Stevenson would have produced better work if he had lived in London rather than Samoa. Stevenson tends to stick in the throat even of those writers who would like to spit him out, such as Shaw, who claimed to have learned from him that the romantic hero is always mocked by reality. Likewise, the writer Galsworthy, who began as a determined critic, later changed his mind and said that the superiority of Stevenson over the novelist Hardy was that Stevenson was all life and Hardy all death. The influence on the novelist Chesterton would also repay detailed study, for it was through him that Stevenson has managed to cross the ages, emerging as an influence on the modernist movement and our own contemporary Latin American school of 'magical realism'.\n\nE\nWhen making an assessment of his life and work one question must inevitably be asked: was Robert Louis Stevenson Scotland's greatest writer of English prose? For most commentators this honour falls to Sir Walter Scott, author of Ivanhoe among many other classic novels and it is true that in terms of craftsmanship, precision and the ability to minutely regulate language to create the desired effect, Scott takes the Prize. However, this is not the same thing at all as inherent talent: by way of comparison one may take the example of the two great Russian composers Shostakovich and Prokofiev, of whom the former had learned more precise skills of execution but the latter's intrinsic genius was greater, and so it seems to be with Scott and Stevenson. Admittedly, Scott's detailed style does permit his stories to explore levels of tragedy that are beyond Stevenson's reach, but in this regard they have the musty smell of the museum, somehow artificial and removed from modern day reality. On the other hand, Stevenson's skill with plotting and narrative give his books a timeless quality, so that they still live today. And Stevenson was also the shrewder judge of behaviour and psychology. For example, his compelling descriptions of a man with a split personality in The Strange Case of Dr. Jekyll and Mr. Hyde have proved so accessible and accurate that the expression 'Jekyll and Hyde' has entered common English usage. Even if we do not see a revival of critical interest in this great Scottish writer, it is to be hoped that readers go back to Robert Louis Stevenson's magnificent stories and reassess this neglected genius.",
+      "groups": [
+        {
+          "instruction": "Choose the correct letter, A, B, C or D.",
+          "questions": [
+            {
+              "no": 27,
+              "type": "mcq",
+              "text": "In the opinion of the writer, the biographers Balfour and Crouch",
+              "options": [
+                "understated the role played by Stevenson's family",
+                "misunderstood Stevenson's religious beliefs",
+                "overestimated other writers' influence on Stevenson",
+                "elevated Stevenson above his true status as a writer"
+              ],
+              "answer": 3,
+              "explanation": "\"the biographer Crouch absurdly overstated Stevenson's significance by placing him in the same company as … Shakespeare and Keats\""
+            },
+            {
+              "no": 28,
+              "type": "mcq",
+              "text": "What point does the writer make about Stevenson in the second paragraph?",
+              "options": [
+                "The public judged him more fairly than the critics.",
+                "Recent criticism of him has been justified.",
+                "Critics argued that his style covered up his faults.",
+                "The ethical nature of his stories was often criticized."
+              ],
+              "answer": 2,
+              "explanation": "\"juggling words very prettily to strike effects which overawed an ignorant public, and served to distract from the inadequacy of his ideas\""
+            },
+            {
+              "no": 29,
+              "type": "mcq",
+              "text": "According to the writer, the adventure story",
+              "options": [
+                "is more appropriate for books than films.",
+                "can be used by writers to tell moral stories.",
+                "is more fashionable today than in the past.",
+                "has been used by other writers but not Stevenson."
+              ],
+              "answer": 1,
+              "explanation": "\"The absurdity of this becomes apparent when we think of writers like Joseph Conrad and Graham Greene\" – tác giả cho rằng truyện phiêu lưu vẫn có thể chuyển tải chiều sâu đạo đức."
+            },
+            {
+              "no": 30,
+              "type": "mcq",
+              "text": "What point does the writer make about Stevenson and Scotland?",
+              "options": [
+                "His ideas contrasted with those of many Scots.",
+                "He demonstrated great sympathy for Scotland's problems.",
+                "He was not considered a true Scot as he was not born there.",
+                "His unflattering stories about Scotland angered many Scots."
+              ],
+              "answer": 0,
+              "explanation": "\"his conservatism so often collides with the strong radical tradition in Scotland\""
+            },
+            {
+              "no": 31,
+              "type": "mcq",
+              "text": "According to the writer, Stevenson's own lifestyle",
+              "options": [
+                "was envied by his friends.",
+                "was responsible for his early death.",
+                "attracted more attention than his books.",
+                "did not prepare him for living in Samoa."
+              ],
+              "answer": 2,
+              "explanation": "\"the high adventure of Stevenson's own lifestyle has sometimes obscured his output … tended to make his own life a greater story than any he could devise\""
+            }
+          ]
+        },
+        {
+          "instruction": "Do the following statements agree with the claims of the writer in Reading Passage 3? Write YES, NO or NOT GIVEN.",
+          "questions": [
+            {
+              "no": 32,
+              "type": "ynng",
+              "text": "Although Oscar Wilde admired Stevenson's work, he believed Stevenson could have written something better.",
+              "answer": "YES",
+              "explanation": "\"Oscar Wilde was deeply influenced by Stevenson, even though he declared that Stevenson would have produced better work if he had lived in London rather than Samoa\""
+            },
+            {
+              "no": 33,
+              "type": "ynng",
+              "text": "Stevenson encouraged Oscar Wilde to start writing.",
+              "answer": "NOT GIVEN",
+              "explanation": "Bài chỉ nói Wilde chịu ảnh hưởng của Stevenson, không nói Stevenson khuyến khích Wilde viết."
+            },
+            {
+              "no": 34,
+              "type": "ynng",
+              "text": "Galsworthy had greater respect for Hardy than Stevenson.",
+              "answer": "NO",
+              "explanation": "\"later changed his mind and said that the superiority of Stevenson over the novelist Hardy was that Stevenson was all life and Hardy all death\""
+            },
+            {
+              "no": 35,
+              "type": "ynng",
+              "text": "More research is needed regarding Stevenson's influence on Chesterton.",
+              "answer": "YES",
+              "explanation": "\"The influence on the novelist Chesterton would also repay detailed study\""
+            }
+          ]
+        },
+        {
+          "instruction": "Complete the summary using the list of words, A–I, below.",
+          "context": "Robert Louis Stevenson and Sir Walter Scott",
+          "bank": [
+            "natural ability",
+            "critical acclaim",
+            "humour",
+            "romance",
+            "colorful language",
+            "technical control",
+            "story telling",
+            "depth",
+            "human nature"
+          ],
+          "questions": [
+            {
+              "no": 36,
+              "type": "match",
+              "text": "Opinions differ as to whether Robert Louis Stevenson or Sir Walter Scott should be considered Scotland's best writer. Scott had greater ___",
+              "answer": 5,
+              "explanation": "\"in terms of craftsmanship, precision and the ability to minutely regulate language … Scott takes the Prize\""
+            },
+            {
+              "no": 37,
+              "type": "match",
+              "text": "… but Stevenson had more ___, and the same distinction can be made between the two composers Shostakovich and Prokofiev.",
+              "answer": 0,
+              "explanation": "\"this is not the same thing at all as inherent talent … the latter's intrinsic genius was greater, and so it seems to be with Scott and Stevenson\""
+            },
+            {
+              "no": 38,
+              "type": "match",
+              "text": "It is true that Scott's books showed more ___ when it came to tragedy, though in an old-fashioned way,",
+              "answer": 7,
+              "explanation": "\"Scott's detailed style does permit his stories to explore levels of tragedy that are beyond Stevenson's reach, but … they have the musty smell of the museum\""
+            },
+            {
+              "no": 39,
+              "type": "match",
+              "text": "while Stevenson's books are still popular because of his ___.",
+              "answer": 6,
+              "explanation": "\"Stevenson's skill with plotting and narrative give his books a timeless quality, so that they still live today\""
+            },
+            {
+              "no": 40,
+              "type": "match",
+              "text": "And Stevenson's understanding of ___ has resulted in the widespread use of an expression from one of his books.",
+              "answer": 8,
+              "explanation": "\"Stevenson was also the shrewder judge of behaviour and psychology … the expression 'Jekyll and Hyde' has entered common English usage\""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

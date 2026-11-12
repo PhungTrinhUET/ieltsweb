@@ -1,0 +1,344 @@
+{
+ "vol": 0,
+ "test": 0,
+ "id": "nb2026-wbank",
+ "prefix": "Đề thật 2026 (NgocBach)",
+ "tags": [
+  "Đề thật 2026",
+  "NgocBach"
+ ],
+ "source": "TÀI LIỆU THẦY NGOCBACH 2026 – '22 BÀI MẪU TASK 2 TỪ ĐỀ THI THẬT 2026.pdf': 22 đề Task 2 thi thật 2026, mỗi đề có Essay Plan (→ outline) và bài mẫu (→ sample). Đề giữ nguyên câu chữ trong PDF; bài mẫu chỉ bỏ header/footer trang, nối dòng, chia lại đoạn theo bố cục. Phần 'Vocabulary from …' (giải nghĩa tiếng Anh) không đưa vào.",
+ "writing": [
+  {
+   "id": "b1",
+   "task": 2,
+   "type": "opinion",
+   "title": "Raising fuel prices to protect the environment",
+   "topic": "Environment",
+   "prompt": "People think that government should increase the cost of fuel for cars and other vehicles to solve environmental problems. Give your opinion.",
+   "outline": [
+    "Introduction: refer to the task question, using paraphrasing. My own opinion – it is a useful measure, but other measures might be more effective",
+    "Paragraph 2: useful (1) it would limit the number of car journeys, and money raised could be used to improve public transport (2) more goods would travel by rail. Both (1) and (2) would reduce vehicle emissions and reduce the greenhouse effect",
+    "Paragraph 3: other measures more effective. (1) congestion charges e.g. London, money is used to improve public transport (2) free bus and train passes, reducing the use of cars and improving air quality",
+    "Conclusion: useful to raise taxes on petrol, but other transport measures would be more effective to help the environment"
+   ],
+   "sample": "It is widely believed that one solution to environmental problems would be for governments to raise the price of petrol. While I consider that this might be an effective measure, I would argue that other measures might have an even greater impact.\n\nIf national authorities raised taxes on petrol, this would address two environmental issues. Firstly, in terms of private cars, motorists would limit the number and length of their journeys to compensate for the extra expense. Governments would then be forced to upgrade and expand public transport provision, as people would still need to travel to work, to school or to travel to shops and hospitals, for example. Secondly, from the perspective of freight services, more goods would have to be transported by rail rather than by truck. Both these measures would cut down on emissions from vehicles and help to reduce the greenhouse effect.\n\nOn the other hand, while this rise in fuel prices might be a useful stopgap measure, governments could adopt transport policies which would be more effective in the long term. The local authorities in London, for instance, introduced a congestion charge on all vehicles visiting the city centre. They use the money raised to subsidize the cost of fares and to invest in transport infrastructure. In turn, this has improved the air quality in the city, as a result of the reduction in exhaust fumes. Another policy would be to introduce free bus and train passes, as the increased use of public transport would reduce pollution from private cars and help in the effort to combat global warming.\n\nIn conclusion, a sharp rise in petrol prices would be a useful environmentally-friendly transport measure, although in the longer term other steps would be more effective."
+  },
+  {
+   "id": "b2",
+   "task": 2,
+   "type": "discussion",
+   "title": "Physical vs mental strength in sport",
+   "topic": "Sport",
+   "prompt": "Some people think that physical strength is important for success in sport, while other people think that mental strength is more important. Discuss both views and give your own opinion.",
+   "outline": [
+    "Introduction: refer to the task question. My opinion, physical strength is fundamental for success in sport",
+    "Paragraph 2: mental strength is important (1) provides motivation to train hard (2) mental strength helps to overcome failures",
+    "Paragraph 3: physical strength is the basis of success. Examples of physically demanding sports, but also all other sports – sailing, horse-riding. Some sports stars take drugs to enhance physical strength",
+    "Conclusion: physical and mental strength are both important for success, but physical strength is the basis."
+   ],
+   "sample": "In order to achieve success in sport, some people argue that it is more important to be strong mentally than physically. While no sportsperson can reach the top without the mental qualities of determination and dedication, I believe that the basis for success must be physical strength.\n\nOn the one hand, all sports trainers recognise the necessity of a strong mental attitude. Firstly, if trainers cannot foster a competitive spirit, or even a win-at-all-costs attitude, the sportspeople who they train may lack the necessary motivation to work hard and succeed. Hours spent training in the gym, for example, may be repetitive and boring, and aspiring athletes need to stay focused. Secondly, in any sport there will be disappointments and failures, and it is essential to be mentally strong to overcome these and achieve one’s goals. In particular, in the world of professional sport, where news coverage places too much value on sport, it is impossible to have a laid-back attitude and still succeed.\n\nOn the other hand, physical strength must be the basis of all success in sport. While most people take up sport simply to get into shape or to keep fit, those who wish to become successful must be physically strong. Obvious examples are sports such as weightlifting, boxing or judo. Yet all other sports also demand physical strength for stamina and endurance, even sailing or horse-riding. Some sports stars, such as the world-famous professional cyclist Lance Armstrong, have even used illegal substances, like performance-enhancing drugs, in order to reach and maintain top physical condition, risking their careers.\n\nIn conclusion, both physical and mental strength are necessary to become successful in sport, but it is impossible to succeed without being physically strong."
+  },
+  {
+   "id": "b3",
+   "task": 2,
+   "type": "problem",
+   "title": "Young people richer and healthier but less happy",
+   "topic": "Society",
+   "prompt": "In some countries, young people have become richer, healthier, and live longer, but they are less happy. What are the causes? What can be done to address this situation?",
+   "outline": [
+    "Introduction: refer to the task question. There is one major cause, and steps should be taken to deal with this",
+    "Paragraph 2: the major cause – advertising. Youngsters are influenced by marketing (give examples), but having more possessions does not bring happiness",
+    "Paragraph 3: the solutions – ban advertising and encourage people to be active in, for example, sport and music, not passive consumers of the latest products",
+    "Conclusion: restrict marketing and encourage young people to participate actively - this will result in more happiness"
+   ],
+   "sample": "It is true that, particularly in developed countries, the youth of today enjoy longer lives and better health, but are not necessarily happier, despite all the material possessions that they have. I would argue that there is one principal reason why they are not happier, and some steps should be taken to deal with this situation.\n\nThe influence of commercial advertising is at the root of the dissatisfaction of today’s youngsters. Young people have become a target audience for the marketing industry,even children of 5 years old or younger. They are swayed by advertisements to adopt the values of the consumer society, possessing more and more things which, they are told, will bring them happiness, such as toys, electronic goods, a McDonald’s burger or the latest fashions. TV channels and online advertising persuade young people to buy goods impulsively. However, all this personal consumption has failed to bring happiness, and the false promises have resulted in disillusionment among young people.\n\nGovernments could immediately address this problem. They must introduce restrictions on advertising, and it would be even more effective to impose an official ban on all marketing. National and local authorities should allocate resources to schools to provide opportunities for young people to participate actively in sports or to take up a musical instrument. This will bring much more happiness and social interaction into the lives of today’s youth, rather than being passive individual consumers of everything, from violent video games to junk food. These two measures would certainly help efforts to bring more fulfilment and happiness into the lives of today’s youth.\n\nIn conclusion, by taking steps to curb the activities of the marketing industry, governments could help young people to develop into happier citizens of the future."
+  },
+  {
+   "id": "b4",
+   "task": 2,
+   "type": "problem",
+   "title": "Rising consumption of sugary drinks",
+   "topic": "Health",
+   "prompt": "People are consuming more and more sugar-based drinks. Why? What can be done to reduce sugary drink consumption?",
+   "outline": [
+    "Introduction: refer to the task question. There are a number of reasons to explain the trend, but it is possible to reduce the consumption of soft drinks",
+    "Paragraph 2: marketing is the principal reason for the increase. It is targeted at children and young people, with serious consequences for health e.g. diabetes etc.",
+    "Paragraph 3: three effective measures can be taken (1) raise taxes e.g. France (2) remove vending machines from public places e.g. schools, etc (3) health awareness campaigns, health warning labels on bottles",
+    "Conclusion: marketing is the main reason for the increase in consumption of sugary drinks, but measures can be taken to combat this trend"
+   ],
+   "sample": "It is true that the consumption of drinks with added sugar is increasing globally, even in less developed countries. While a number of factors explain this trend, some countries have taken measures to reduce the intake of sweetened drinks.\n\nHeavy marketing is the principal reason why the consumption of sugar-based drinks has increased rapidly. This trend is of concern to the World Health Organisation because it carries health risks, including life-threatening conditions such as diabetes, cardiovascular diseases and certain types of cancer. The soft-drinks manufacturers advertise their products to a target audience of young children and adolescents. This strategy encourages youngsters to form the lifetime habit of buying these drinks, as they are soon addicted to the high sugar content. They put on weight, are prone to obesity and find it difficult to keep their teeth healthy.\n\nThere are three measures that would be effective in tackling the rise in the popularity of sugary drinks. Firstly, governments should raise taxes on the sales of soft drinks. This has been done in France, for example, and could be implemented by other countries, too. Secondly, vending machines must be removed from public places, discouraging the consumption of sugary drinks in schools, bus stations, cinemas and hospitals. Finally, health awareness campaigns on TV and the internet could help in combatting the promotion of soft drinks by marketing agencies, including the compulsory addition of health warnings on labels, as in the case of tobacco products.\n\nIn conclusion, although the promotion of soft drinks has resulted in increased sales, effective steps can be taken to reverse this trend."
+  },
+  {
+   "id": "b5",
+   "task": 2,
+   "type": "advantage",
+   "title": "Social media replacing face-to-face interaction",
+   "topic": "Technology",
+   "prompt": "The use of social media is replacing face-to-face interaction among many people in society. Do you think the advantages outweigh the disadvantages?",
+   "outline": [
+    "Introduction: refer to the task question. My opinion: the disadvantages outweigh the advantages",
+    "Paragraph 2: advantages (1) social media - sometimes the only way to maintain contact with friends/family (2) social media sites – it is possible to keep in touch with a large number of people e.g. Facebook",
+    "Paragraph 3: disadvantages (1) no human contact – people fail to develop social skills (2) lack of privacy of social media – stealing of personal information",
+    "Conclusion: drawbacks of social media outweigh the advantages."
+   ],
+   "sample": "It is true that more and more people all over the world rely on social networking sites to keep in touch with people that they know. While there are some positive aspects of this trend, I believe that overall the disadvantages outweigh the benefits.\n\nOn the one hand, there are two clear advantages of using social media rather than depending on face-to-face communication. Firstly, in the modern world, families and friends may often be scattered across the globe, due to work or study commitments, for example. Large family gatherings may be impossible to organise and, without the existence of social media, a decline in communication with relatives and close friends might result. Secondly, thanks to sites like Facebook or Linkedin, it is now possible to keep in touch with a large number of people, sharing photos, making small talk and exchanging news. Many people have hundreds of followers on their Facebook page, for instance.\n\nOn the other hand, I would argue that there is no substitute for face-to-face interaction. One reason is that social media discourage real interaction and prevent people from developing social skills. Humans use all their senses in order to communicate fully, such as touch and gestures. Also, despite advances in technology, face-to-face interaction avoids some of the dangers of social media. These include computer hackers and online scams, stealing personal information on networking sites. For example, if I announce on Facebook that I will be going abroad on holiday, I may return to find my house has been burgled.\n\nIn conclusion, although most people can now access the internet and social media are widely used, I consider that the drawbacks of lack of personal contact – compared with face-to-face interaction - and issues of privacy outweigh the advantages."
+  },
+  {
+   "id": "b6",
+   "task": 2,
+   "type": "opinion",
+   "title": "Reading stories vs TV and computer games for children",
+   "topic": "Children",
+   "prompt": "Some people believe that reading stories from a book is better than watching TV or playing computer games for children. To what extent do you agree or disagree?",
+   "outline": [
+    "Introduction: refer to the task question. My opinion: reading stories from a book is better for positive and negative reasons",
+    "Paragraph 2: positive reasons (1) bedtime stories strengthen family ties – personal example (2) reading stories from a book stimulates the imagination (3) develops literary appreciation skills",
+    "Paragraph 3: negative reasons (1) health risks of a sedentary lifestyle in front of TV/computer screens – examples diabetes, heart disease (2) too much time in front of screens discourages interaction with others",
+    "Conclusion: it is better for children to spend time reading stories from a book than to watch TV or play video games"
+   ],
+   "sample": "It is true that many people argue that it is better to read stories to children than to allow youngsters to spend too much time watching TV or playing computer games. I completely agree with this argument for both positive and negative reasons.\n\nThere are several positive reasons to encourage children to read stories from a book. Firstly, a regular habit of reading bedtime stories to children helps to strengthen family bonds, by spending time together in a shared activity. For example, when I was a young child, my father used to read stories to me most nights. Secondly, reading stories from books stimulates the imagination, and such stories tend to stick in one’s mind longer than watching videos or playing a computer game. Finally, stories from a book broaden one’s literary horizons and develop literary appreciation skills useful in later life.\n\nBy contrast, there are negative aspects of the habits of watching TV or playing computer games which many youngsters develop as they grow up. A sedentary lifestyle, for instance, is detrimental to health. Children who become couch potatoes through spending too much time in front of the TV or computer screen are prone to obesity, which carries health risks such as diabetes or heart disease. Another factor is that hours spent on computer games or watching TV discourages real interaction, which is important because youngsters need to relate personally to others. This is impossible if they are glued to a screen which occupies all their attention.\n\nIn conclusion, for both positive and negative reasons, I would argue that it is better for children to read stories from a book than to waste time watching TV or playing video games."
+  },
+  {
+   "id": "b7",
+   "task": 2,
+   "type": "opinion",
+   "title": "Is following the news a waste of time?",
+   "topic": "Media",
+   "prompt": "Some people think news has no connection to people’s lives. Therefore, it is a waste of time to read the newspaper and watch television news programs. To what extent do you agree or disagree?",
+   "outline": [
+    "Introduction: refer to the task question. My opinion: completely disagree",
+    "Paragraph 2: some people do not follow the news, because it is often trivial and irrelevant to their own lives e.g. celebrity news, football, fashion. They can discover the news which affects them directly through local sources.",
+    "Paragraph 3: reasons why this view is wrong: (1) it is vital to know about national/international events e.g. climate change, the coronavirus (2) in a democracy, voters must be informed – at least in part through TV/press news coverage (3) financial/business sections of newspapers inform people about economic matters which affect everyone.",
+    "Conclusion: although much news is trivial, it is misguided not to follow the news."
+   ],
+   "sample": "It is true that some people fail to see any relevance to their own lives of the news that they see on TV or read in the newspapers. While they may find some comfort in holding this opinion, I strongly believe that it is absurd to argue that news has no connection to people’s lives.\n\nOn the one hand, some people think that their own individual lives are unaffected by events that take place in the world. This may be true if they consider only such news items as the lives of celebrities, the results of football matches or the latest fashions. They argue that this attitude does not mean that they are set in their ways or behind the times. They also say that they are able to hear through the grapevine about local events which might have a bearing on their own lives. Life for them, therefore, can continue perfectly normally without TV or press news coverage.\n\nOn the other hand, this view is dangerously misguided for several reasons. Firstly, it is vital to see the big picture of national and international news as relevant to each individual. For example, the news media may carry a story about climate change or, very recently, the breaking news of a deadly virus which may affect every person on the planet. Secondly, in any democratic society, it is necessary to have informed and critical citizens who keep abreast of events, at least partly through TV and newspaper reports. Finally, the financial and business sections of newspapers carry important information on economic matters which influence the lives of everyone.\n\nIn conclusion, despite the triviality of much reporting, I totally disagree that it is a waste of time to follow the news."
+  },
+  {
+   "id": "b8",
+   "task": 2,
+   "type": "advantage",
+   "title": "Scientific research controlled by private companies",
+   "topic": "Science",
+   "prompt": "Scientific research should be carried out and controlled by private companies rather than governments. Do the advantages of this situation outweigh the disadvantages?",
+   "outline": [
+    "Introduction: refer to the task question. My opinion: the disadvantages outweigh the advantages",
+    "Paragraph 2: the advantage if private companies carry out scientific research: sometimes there is money available immediately to get quick results – example, developing a vaccine to combat the corona virus.",
+    "Paragraph 3: the advantages if governments carry out this research: (1) research is carried out according to public well-being, not profits – example, preventive medicine, environmental protection (2) research findings are not secret and can be shared among scientists and governments everywhere.",
+    "Conclusion: any advantages are far outweighed by the disadvantages. Governments should conduct scientific research."
+   ],
+   "sample": "It is true that some people believe that private enterprise should be responsible for conducting scientific research. While this may have some minor benefits in the short term, I would argue that this is outweighed by enormous disadvantages.\n\nOn the one hand, one advantage is that private companies sometimes respond more rapidly to demand than governments. People who invest money in these companies are greedy to make the most of any business opportunity. Thus, huge amounts of money become immediately available for these corporations to conduct research which might maximise profits. For example, the outbreak of an epidemic such as the corona virus, presents a spectacular opportunity for the pharmaceutical industry. In the search for a cure, the first company to develop a vaccine stands to make a vast fortune, whether governments buy the vaccine or people have to buy it themselves.\n\nOn the other hand, there are significant benefits if governments determine the direction of scientific research for the well-being of their people. Firstly, they must provide funding for university departments to carry out research according to public need. Advances in technology and knowledge to achieve sustainable development would be used to benefit people, not investors. Thus, research into areas like preventive medicine or to alleviate environmental problems, although unprofitable, is essential. Secondly, as competition between companies is eliminated, the sharing of knowledge through international cooperation among the scientific community becomes the norm.\n\nIn conclusion, private companies sometimes carry out scientific research quickly, whereas governments up to now have been relatively slow to allocate resources to such research. However, the advantages of placing the responsibility for scientific research in government hands far outweigh any disadvantages."
+  },
+  {
+   "id": "b9",
+   "task": 2,
+   "type": "opinion",
+   "title": "Sharing household chores equally",
+   "topic": "Family",
+   "prompt": "Both men and women these days work full-time, so it is logical for them to share household chores equally. To what extent do you agree or disagree?",
+   "outline": [
+    "Introduction: refer to the task question. My opinion: totally agree",
+    "Paragraph 2: 1st argument: traditional roles are no longer appropriate in the modern family – contrast the extended family of the past. Therefore, now, it is only fair to share chores",
+    "Paragraph 3: 2nd argument: people who go to work have to work hard, but things like washing machines, microwaves etc make household chores easier. So, it is easier to share the chores",
+    "Conclusion: totally agree that men and women should share all household chores, especially when household chores are made easier nowadays"
+   ],
+   "sample": "It is true that, throughout the world, the number of dual-income families is increasing. When there are two wages which contribute to the family budget, I firmly believe that both men and women should have equal responsibility for doing the household chores.\n\nFirstly, old patterns of behaviour are no longer appropriate or logical in the modern family, in which both men and women work full-time. Working mothers cannot be expected to do all the jobs around the house if, along with men, they have also to be breadwinners. Traditionally, the woman might expect help with the household chores from the extended family. Some of these family members might live in the home, and cook, clean and do shopping. However, in the modern nuclear family, the working man and woman must adopt new roles and responsibilities.\n\nSecondly, although both men and women often have a heavy workload, at home there are many labour-saving appliances to make chores easier to share. The man and woman arrive home worn out either physically or mentally after a hard day at the office, shop or factory. Therefore, it is only fair to shoulder the burden of chores equally. Fortunately, with two salaries, it is possible to afford to save work in the home. Washing machines, microwave ovens, vacuum cleaners and other aids to housework can be operated by anyone, regardless of gender. In the USA, for example, most families often consume ready meals or takeaways, instead of preparing home-made food. Sharing the chores therefore becomes easier after enduring the pressures of the workplace.\n\nIn conclusion, I totally agree that when men and women are in full-time jobs, they should share the household chores, especially since these chores are made so much lighter these days."
+  },
+  {
+   "id": "b10",
+   "task": 2,
+   "type": "discussion",
+   "title": "Specialising at 15 vs a broad education",
+   "topic": "Education",
+   "prompt": "Some education systems make students focus on certain subjects at the age of 15, while others require students to study a wide range of subjects until they leave school. What are the benefits of each system? Which is better?",
+   "outline": [
+    "Introduction: refer to the task question. My opinion: studying a wide range of subjects is better",
+    "Paragraph 2: the benefit of specialising – example: focusing on maths and science prepares students to get a job when they leave school",
+    "Paragraph 3: the benefits of a broad education (1) preparation for life by stimulating interest in a range of subjects; examples: philosophy, literature and history (2) a wide range of subjects encourages critical thinking, imagination and creativity – art, drama, music",
+    "Conclusion: although each system has benefits, a wide range of subjects is better"
+   ],
+   "sample": "Education systems vary across the world, with some forcing students to specialise when they reach 15, whereas others encourage a wider range of learning. While both systems have advantages, I firmly believe that school students should acquire a broad education.\n\nOn the one hand, if students concentrate on particular subjects at the age of 15, then they will be able to cover a lot of ground in those subject areas. For example, if students at this age study only maths and sciences, they will be able to spend all of their school day on these lessons. They will not have the distraction of studying languages or the arts. They will have a good grasp of their chosen areas of study, and will therefore be well equipped to put the knowledge that they have gained into practice. This system thus improves their job prospects when they leave school.\n\nOn the other hand, I favour a system in which students study a wide range of subjects throughout their years at school. I would argue that this system is better for two important reasons. Firstly, a broad education is a preparation for life. Schools must encourage youngsters beyond the age of 15 to be interested in all aspects of life, by exposing them to subjects such as philosophy, literature and history. Secondly, studying a range of subjects until they leave school, students have the chance to develop critical thinking, imagination and creativity. They may start to learn how to express themselves through painting, drama and writing, taking up a musical instrument or singing in a choir at school.\n\nIn conclusion, although at 15 students may be better prepared for work by concentrating on only a few subjects, studying a wide range of subjects prepares them for life."
+  },
+  {
+   "id": "b11",
+   "task": 2,
+   "type": "problem",
+   "title": "Cyclists and car drivers sharing the roads",
+   "topic": "Transport",
+   "prompt": "Cyclists and car drivers sharing the same roads causes some problems. What are the problems and what can be done to reduce them?",
+   "outline": [
+    "Introduction: refer to the task question and state that some measures can be taken to reduce the dangers",
+    "Paragraph 2: one major problem – the risk of accidents and injuries (especially to cyclists). Cyclists sometimes disobey the rules of the road. Car drivers (for example, when overtaking or turning) are often not aware of cyclists, putting cyclists at risk",
+    "Paragraph 3: two types of government policies can reduce the risks (1) investing in transport infrastructure – special cycle lanes and providing better public transport (2) imposing restrictions on car drivers – speed limits, traffic calming and congestion charges (London).",
+    "Conclusion: there are some steps which can be taken to reduce the risks."
+   ],
+   "sample": "It is true that when motorists and cyclists share the same roads, accidents involving these road users are common. While this is a serious issue, there are measures which can be implemented to reduce the dangers.\n\nThe major problem is the likelihood of accidents on roads which are used by both cyclists and car drivers. Such accidents frequently result in grave injuries, particularly to cyclists who are particularly vulnerable, even when wearing a helmet for head protection. While cyclists are sometimes responsible for causing accidents when they do not abide by the rules of the road, motorists often fail to be aware of other road users. For example, car drivers may not leave enough room when they overtake cyclists, or they may turn left or right without realising that this could put a cyclist at risk. Since cars frequently travel at high speeds, cyclists have little chance to react in such situations.\n\nIn order to reduce the number of road accidents and save lives, national and local authorities across the world have adopted two general types of policies. Firstly, many governments have prioritised expenditure on road safety. They have invested in transport infrastructure by measures such as upgrading and expanding public transport provision and constructing dedicated cycle lanes on busy roads. Secondly, authorities have introduced restrictions on car drivers. London, for instance, has imposed a congestion charge to discourage motorists from entering the centre. Traffic calming in cities and installing speed cameras also make the roads safer for cyclists.\n\nIn conclusion, although there are real dangers when car drivers and cyclists use the same roads, steps can be taken to reduce these risks."
+  },
+  {
+   "id": "b12",
+   "task": 2,
+   "type": "double",
+   "title": "Women having children later in life",
+   "topic": "Family",
+   "prompt": "Many women are choosing to have children later in life. Why is this? Do the advantages outweigh the disadvantages?",
+   "outline": [
+    "Introduction: refer to the task question. Why? There are financial and social factors. My opinion: the advantages outweigh the disadvantages",
+    "Paragraph 2 – reasons why (1) families have more money if the woman works and then has children later (2) divorce, single-parent households, no extended family to help – these things motivate women to have children later",
+    "Paragraph 3: – disadvantage many women want to have children earlier because they bring happiness. Advantage: having children later means having fewer children, and this helps reduce population pressure (e.g. China’s one-child policy).",
+    "Conclusion: the reasons are economic and social. The advantages outweigh the disadvantages"
+   ],
+   "sample": "It is true that many women now prefer to start a family later in life. I believe that there are both financial and social factors which help to account for this trend, and I would argue that this change has more advantages than disadvantages.\n\nThe option of having children when they are older is preferred by many women in today’s world for a number of reasons. Firstly, in a family often both the woman and the man need to work in order to make ends meet. Before embarking on parenthood they must take into account their financial ability to support a family of one or more children. Secondly, in social terms, an increasing number of marriages end in divorce, and women are concerned about maintaining a single parent household. In the past, members of the extended family helped with child-minding, but working mothers now generally have to pay for this.\n\nI consider that the positive aspects of this trend outweigh the negative ones. On the one hand, many women, when they are still young, would love to have children, because children bring happiness and laughter. On the other hand, the explosion of the human population has put enormous pressure on the environment and led to the depletion of natural resources. By having children later in life, women have fewer children and this may help humanity to avoid an ecological crisis which could threaten our existence. For example, the one child policy introduced in China in 1980 led many women to have their first child later, and as a result the population could continue to be fed.\n\nIn conclusion, for economic and social reasons many women are choosing to have children later in life. Despite the disadvantages, I believe that these are outweighed by the positive environmental consequences."
+  },
+  {
+   "id": "b13",
+   "task": 2,
+   "type": "discussion",
+   "title": "Taller buildings vs building on wider areas of land",
+   "topic": "Housing",
+   "prompt": "Some cities create housing for their growing population by providing taller buildings. Other cities create housing by building on wider areas of land. Which solution is better?",
+   "outline": [
+    "Introduction: refer to the task statement. My opinion: building on wider areas of land is better.",
+    "Paragraph 2: constructing tall housing blocks in cities (1) there may be no alternative – lack of space (2) as less land is used, housing is cheaper (3) the major problem – such districts are overcrowded and noisy",
+    "Paragraph 3: expanding the city is better – (1) the drawback is environmental – habitat destruction to provide land for housing (2) the big advantage – the suburbs are much greener and pleasant places to live (3) public transport can solve problems of commuting, for example London, New York.",
+    "Conclusion: building on wider areas is better."
+   ],
+   "sample": "It is true that national and local authorities have adopted different policies to meet the increasing housing needs of their populations. While some favour high-rise apartment blocks, others prefer to see their cities expand outwards. I would argue that the best solution is to allow cities to expand in a planned and organised way.\n\nOn the one hand, there are advantages and disadvantages of constructing tower blocks to provide housing in cities. A city may have little space to expand for geographical reasons such as a coastline, mountains or lakes, and therefore tall buildings are the only option if demand for more housing is to be satisfied. In addition, if more people live in tall apartment blocks, housing will be more affordable, as only a small area of land is required. However, the major drawback is that city districts with a large population housed in a small area suffer from overcrowding and noise. Thus, while the construction of apartment towers to provide more housing may sometimes be the only practical alternative, such districts may not always be pleasant to live in.\n\nOn the other hand, expansion of a city to provide more housing is probably a better solution. The major drawback is such expansion may not be environmentally friendly if it means habitat destruction and loss of wildlife when more land is needed for building. Despite this, the construction of houses in suburbs provides a much more pleasant, green and healthy environment for people. It may mean longer commuting times for people to reach their workplace, but cities like London and New York have met this challenge by expanding and upgrading public transport provision.\n\nIn conclusion, although both solutions have drawbacks, building on wider areas of land provides a better living space for people."
+  },
+  {
+   "id": "b14",
+   "task": 2,
+   "type": "opinion",
+   "title": "Vocational training vs university education",
+   "topic": "Education",
+   "prompt": "A country should spend money on skills training or vocational training for practical work, rather than on university education. To what extent do you agree or disagree?",
+   "outline": [
+    "Introduction: refer to the task question. My opinion – agree with the idea of more funding for vocational training",
+    "Paragraph 2: need to continue funding university education (1) sciences – give examples (corona virus research) (2) the arts – training students for example in drama, advertising",
+    "Paragraph 3: countries must prioritise spending on vocational training (1) these skills are vital in (for example) construction. (2) in some developed countries, there is graduate unemployment, but a shortage of skilled workers",
+    "Conclusion: continue to invest in university education, but greater priority is needed for vocational training."
+   ],
+   "sample": "It is true that in some countries, students are not encouraged to follow a vocational training course. While nobody can deny the need for university graduates, I totally agree that governments should provide funding for more people to qualify as electricians, plumbers or other essential manual workers.\n\nIt is essential to continue to allocate resources to university education. In the sciences, there is a growing demand for researchers and professionals in fields such as genetics, medicine and leading-edge technology. Only through university training can school-leavers acquire a good grasp of specialised areas of knowledge. For example, the search for a vaccine to combat the corona virus outbreak shows the need for virologists, statisticians and other academically-trained experts in related areas. In terms of the humanities, universities play a leading role in the formation of those creative individuals who pursue a successful career in literature, drama, the arts and even in the advertising industry.\n\nHowever, I completely agree with the argument that countries should prioritise expenditure on vocational skills training. Firstly, such workers are vital when, for instance, new buildings are constructed or when existing buildings have to be renovated or simply maintained. Indeed, in many countries, a permanent maintenance staff of skilled tradesmen is employed in hospitals, schools or museums, ensuring the safety of all who use the buildings. Secondly, in some developed countries, there is an existing imbalance in the economy, resulting in graduate unemployment, while at the same time there is a shortage of skilled labour. Governments in those countries need, therefore, to work with employers to ensure that extra vocational training is provided.\n\nIn conclusion, vocational training must be high on the agenda of governments to avoid a shortage of practical, skilled employees, while investment should continue in the universities."
+  },
+  {
+   "id": "b15",
+   "task": 2,
+   "type": "problem",
+   "title": "Increasing car use and the environment",
+   "topic": "Environment",
+   "prompt": "Cars damage the environment and their use is increasing. Why? How can this be controlled?",
+   "outline": [
+    "Introduction: refer to the task question – reasons and measures to adopt",
+    "Paragraph 2: reasons (1) money (cars are cheaper); (2) changes in lifestyles – shopping, leisure, work and schools e.g. the USA",
+    "Paragraph 3: solutions (1) raise fuel taxes and impose restrictions e.g. London, Athens (2) improve and make cheaper public transport (3) electric cars to reduce emissions and help protect the environment e.g. Volkswagen",
+    "Conclusion: reasons for growing car use can be identified, but solutions are possible."
+   ],
+   "sample": "The growing use of cars certainly contributes to environmental degradation. While some reasons can be identified to explain increasing car use, there are policies which could be adopted to tackle this issue.\n\nFinancial reasons and lifestyle changes have led to a growth in car ownership and the more frequent use of cars. In terms of money, cars are now more affordable, and in developed countries two or more members of a household are likely to have their own car. From the perspective of lifestyle, people drive their cars more than in the past for work, shopping, leisure and taking children to and from school. For example, in US cities, shopping malls and leisure complexes are usually sited outside urban centres and they provide large parking areas to attract customers. This encourages dependence on cars.\n\nHowever, measures can be taken to provide a solution to the problem. Firstly, it must be a government priority to raise taxes on fuel and introduce restrictions on cars entering city centres, like the congestion charge in London. Other cities, such as Athens in Greece, impose an official ban on cars entering the city on specified days of the week. Secondly, resources should be allocated to upgrade and expand public transport provision, and to provide public subsidies for people to have free bus or train passes. Finally, in order to cut down on emissions and to reduce our carbon footprint, the production of electric cars must be encouraged, and corporations like Volkswagen are already leading the way in this field.\n\nIn conclusion, the reasons behind the growth in car use are well-known, but there are steps which can be implemented effectively to combat this trend and help protect the environment."
+  },
+  {
+   "id": "b16",
+   "task": 2,
+   "type": "discussion",
+   "title": "Companies sponsoring sport and sports stars",
+   "topic": "Sport",
+   "prompt": "Some companies sponsor sport and sports stars as a way to advertise themselves. Some people think it is good, while others think there are disadvantages. Discuss both views and give your opinion.",
+   "outline": [
+    "Introduction: refer to the task question. My opinion: sponsorship has more drawbacks than benefits",
+    "Paragraph 2: arguments for sponsorship (1) it brings more more for sport , increasing popularity and public interest – eg. cycling (2) sports stars can be paid more and achieve higher standards (3) businesses benefit by linking their product to a healthy and popular activity",
+    "Paragraph 3: arguments against sponsorship (1) companies are not interested in promoting sport, only to make profits – merchandising is not always connected even to the sport eg. Liverpool FC (2) money has corrupted sport – bribery, drugs (3) sports stars eg. Ronaldo live like millionaires",
+    "Conclusion: sponsorship has destroyed the ideals of fun and fair play in sport"
+   ],
+   "sample": "It is true that a growing number of enterprises seek to promote their products and services through sport and sporting celebrities. While some people argue that this is a positive development, I agree with those who consider that the drawbacks outweigh the advantages.\n\nOn the one hand, sponsorship brings money into sport, and some believe that this benefits sport and business in general. Firstly, sponsorship and marketing are linked, and through television sports coverage, for example, both sport and companies profit. Sports, particularly minority sports such as cycling, are able to make the most of sponsorship to increase their popularity and encourage wider public participation. Secondly, as more money is poured into sport, sports stars are paid higher salaries and train full-time to raise their standards. Finally, in terms of advantages for businesses, associating their products with the healthy and popular image of sport enables them to enhance their public image and to break into new markets.\n\nOn the other hand, I support the opposing view that the entry of business money into sport has betrayed the Olympic ideal. Companies simply strive to gain a competitive edge over their rivals and to maximize their profits. Sports merchandising – like Nike and the National Basketball Association in the US – sometimes connects the product and the sport, but often it does not. Liverpool FC, for example, is sponsored by a bank. However, money in sport has resulted in a win-at-all-costs attitude, encouraging bribery or the use of illegal substances such as performance-enhancing drugs. Individual celebrities, like Cristiano Ronaldo, have gained a fortune from the endorsement of sporting goods, and enjoy millionaire lifestyles.\n\nIn conclusion, I totally agree with the critics of sponsorship in sport. While it has made profits for business, sponsorship has destroyed the sporting spirit of fun and fairness."
+  },
+  {
+   "id": "b17",
+   "task": 2,
+   "type": "opinion",
+   "title": "Internet technology vs travelling abroad",
+   "topic": "Technology",
+   "prompt": "Internet technology means people do not need to travel to foreign countries to understand how others live. To what extent do you agree or disagree?",
+   "outline": [
+    "Introduction: refer to the task question. My opinion – partly agree",
+    "Paragraph 2: most people who visit foreign countries experience nothing of the lives of local people – example: Phuket in Thailand. They would learn more by looking at the internet",
+    "Paragraph 3: a few travellers prefer to experience personally the culture and daily lives of those in foreign places which they visit – food, shopping, music. What they find on the internet may supplement this experience, but cannot fully replace it",
+    "Conclusion: the internet provides useful information and analysis, but is not a substitute for personal experience."
+   ],
+   "sample": "It is true that the digital revolution has enabled a growing number of people to gain access to information about how others live in different countries. While such advances in technology have made more information available, I only agree in part that this had led to greater understanding of the lives of those in other countries.\n\nOn the one hand, the tourist trade has experienced phenomenal growth, but this does not mean that those who visit foreign countries leave with any appreciation of the culture or living conditions of the local people. Holiday resorts such as Phuket in Thailand are thronged with tourists at the height of the holiday season. However, overseas visitors remain completely oblivious to how the local inhabitants live. They experience luxury hotels, sunbathe on beaches, or at most go sightseeing on guided tours. To know how people in Thailand live, they would learn much more by watching documentaries or analytical reports on the internet at home.\n\nOn the other hand, there are intrepid travellers who prefer to discover for themselves the culture and daily lives of those in foreign countries which they visit. They avoid package holidays, and instead visit markets, restaurants and places where local people go shopping, eat regional dishes or enjoy music. They enjoy real interaction with locals, and take away memories of the sights, sounds, taste and smells of the culture which they have briefly come to know. In this way, while there might be a wealth of material online describing a country or region, such travellers do not become over-reliant on the opinions or choices of internet contributors.\n\nIn conclusion, while personal experience of a place may be supplemented by material available online, there is no substitute for seeing other cultures at first hand."
+  },
+  {
+   "id": "b18",
+   "task": 2,
+   "type": "opinion",
+   "title": "Is studying literature at high school a waste of time?",
+   "topic": "Education",
+   "prompt": "People say that it is a waste of time for high school students to learn literature such as novels and poems. Do you agree or disagree?",
+   "outline": [
+    "Introduction: refer to the task question, specifically to high school students, novels and poems. My opinion: strongly disagree",
+    "Paragraph 2: reason 1. Economic. There are work opportunities in writing and adapting stories for the publishing and entertainment industries e.g. Harry Potter novels.",
+    "Paragraph 3: reason 2. Cultural. Writers of the past and present provide a literary heritage e.g. Shakespeare, Tolstoy. Need for students to study their language, techniques and ideas to become the creative writers of the next generation.",
+    "Conclusion: for economic and cultural reasons high school students should have the chance to study novels and poems."
+   ],
+   "sample": "Many people hold the view that high school students should focus on practical subjects, such as vocational courses, as well as on the sciences, in order to prepare young people for the world of work or higher education. While these skills are clearly valuable to the community, I strongly disagree that the study of novels, poems and plays should therefore be neglected in high schools.\n\nFirstly, in today’s world, literature has an important role to play in the economy of all countries. The publishing industry is a multi-billion dollar business internationally. For example, the Harry Potter fantasy novels have sold millions of copies worldwide. Then, in terms of working in the entertainment industry, writers are needed to adapt and produce works of literary fiction for television and internet channels. Many of these writers of the future will have been inspired by novels and poems in their high school days.\n\nSecondly, the literary heritage of humanity cannot be calculated only in economic terms. If high school students are not encouraged to appreciate the aesthetic qualities of novels and poems, then the creative writers of the next generation will lack the role models of literary geniuses like Shakespeare or Tolstoy. They must study the language, the techniques, and the portrayal of characters in order to become talented playwrights, novelists or poets. They will learn the skills to appeal to audiences by communicating ideas, images and stories to make people reflect, laugh and cry. In this way, the culture of a society is passed on and enriched through the generations.\n\nIn conclusion, I would argue that it makes not only economic sense, but that it is essential in cultural terms, for students to have the opportunity to study novels and poems in their high school years."
+  },
+  {
+   "id": "b19",
+   "task": 2,
+   "type": "opinion",
+   "title": "Outdoor activities vs computer games for children",
+   "topic": "Children",
+   "prompt": "Some people say that outdoor activities bring benefits to children's development rather than computer games, To what extent do you agree/disagree?",
+   "outline": [
+    "Introduction: refer to the task question. My opinion: totally agree",
+    "Paragraph 2: -ve consequences of playing computer games (1) physically: obesity, do not develop their bodies (bones/muscles) (2) mentally: addiction to computer games e.g. stress and anxiety",
+    "Paragraph 3: +ve consequences of outdoor activities (1) develop strong bodies (2) develop an interest in sports, e.g basketball…. that may continue into their adult lives (3) outdoors -sunshine and fresh air build up their immune systems",
+    "Conclusion: playing computer games harms the physical and mental development of youngsters. Contrast with the benefits of outdoor sports and exercise."
+   ],
+   "sample": "It is true that there is now a large consensus of opinion that outdoor sports and leisure activities promote the health of youngsters, especially when compared with the effect of hours spent playing computer games. While computer games are undeniably fun, I totally agree that outdoor activities are far more beneficial for the physical and mental development of children.\n\nFirstly, when children spend too much time playing computer games, there are negative consequences to consider. In physical terms, youngsters who adopt a sedentary lifestyle, glued to their games consoles, very quickly become prone to obesity. Such a pattern of behaviour does nothing to contribute to the development of strong bones and muscles during their formative years. From the perspective of mental development, children who are addicted to computer games may suffer from mental health problems. These could include, for example, stress and anxiety resulting from hours of intensive concentration.\n\nSecondly, these drawbacks should be contrasted with the positive advantages of outdoor pursuits. Children who take up sport or take regular exercise build up their strength and develop healthy bodies. They may also develop an interest in their favourite outdoor pastimes, such as playing basketball, cycling or swimming, activities which they can enjoy in their adult years. In particular, when children are active outdoors, the sunshine and fresh air help to build up their immune systems. This is even better than being indoors, working out at the gym to keep fit.\n\nIn conclusion, playing computer games for long periods is detrimental to the physical and mental health of youngsters, whereas, in contrast, engaging in outdoor activities promotes their health and well-being."
+  },
+  {
+   "id": "b20",
+   "task": 2,
+   "type": "opinion",
+   "title": "Society needs rules and laws",
+   "topic": "Society",
+   "prompt": "Society is based on rules and laws. It could not function if individuals were free to do whatever they wanted to do. To what extent do you agree or not?",
+   "outline": [
+    "Introduction: refer to the task question. My opinion: completely agree",
+    "Paragraph 2: without laws and rules: consequences for crime (give examples)",
+    "Paragraph 3: without laws and rules: consequences for the environment (the Amazon, pollution of rivers)",
+    "Paragraph 4: without laws and rules: consequences for public health e.g. the coronavirus",
+    "Conclusion: rules and laws are necessary for society to function"
+   ],
+   "sample": "It is true that throughout human history, people living in social groups have always made rules and laws to govern their conduct. While a few people argue in favour of a free and lawless society, I completely agree that the results would be disastrous if individuals were able to do whatever they liked.\n\nFirstly, the idea of crime would not exist if there were no laws to act as a deterrent. For example, domestic violence, murder, assaults, and drug-trafficking could all be carried out freely. Without laws, there could be no organisations to enforce the law. This situation would benefit the most ruthless individuals who have no morality and have no concern for those who are more vulnerable.\n\nSecondly, regulations on environmental protection are increasingly recognised as essential. If such laws do not exist, or if they can be ignored, then the ecological crisis which results will lead to the destruction of all human life. Huge fires, started by individual landowners, have already devastated the Amazon rainforest. Companies will discharge chemical waste into rivers, and nobody will be held accountable for their actions.\n\nFinally, in terms of public health services, it would be impossible to control the outbreak of an epidemic if each person could do what they wanted. For instance, in the present coronavirus crisis, the spread of the virus would be very rapid if no restrictions were imposed. There would be widespread suffering and mortality.\n\nIn conclusion, society would collapse without rules and laws. These define those forms of behaviour which are socially acceptable, and complete freedom for each individual would simply be the ‘law of the jungle’."
+  },
+  {
+   "id": "b21",
+   "task": 2,
+   "type": "discussion",
+   "title": "Should children always aim to do their best?",
+   "topic": "Children",
+   "prompt": "Some people think that children should aim to do their best at whatever they are doing. Others disagree. Discuss both views and give your own opinion.",
+   "outline": [
+    "Introduction: refer to the task question, mentioning both views. My opinion: agree.",
+    "Paragraph 2: reasons against: for children, fun and play are more important than doing well – they stimulate creativity",
+    "Paragraph 3: reasons for: (1) studies – children learn to work hard for exams or study courses (2) sports and hobbies – the Olympic ideal, not a competitive spirit – dangers of trying too hard to become the best eg. Drugs",
+    "Conclusion: agree that children should always aim to do their best."
+   ],
+   "sample": "Some people believe that children should always be encouraged to give their best efforts, no matter what activity they are doing. Others, however, emphasise that childhood is a time for fun and play before entering adult life. I agree with the view that children should aim to do their best in everything, but always in the context of cooperation and consideration for the needs of others.\n\nOn the one hand, having fun and simply playing are important aspects of growing up. These are things which shape a child’s personality by stimulating creativity. Whether they are painting, listening to stories or playing games with their friends, children are able to enjoy the experience of childhood without anxiety about the need to do well. Instead, they can just enjoy themselves in a non-competitive environment.\n\nOn the other hand, children should aim to excel in their studies and in their leisure activities. By trying their hardest at school, for example, children develop a pattern of behaviour which will prepare them for later life, such as doing vocational courses or sitting exams. In terms of sports or hobbies, children should also be motivated to do their best. However, it is important to follow the Olympic ideal of friendship through endeavour, rather than to have a win-at-all costs attitude. It is a mistake to foster a competitive spirit, putting personal achievement as the objective. For instance, the years of dedicated training of young athletes illustrates the dangers of becoming the best for the wrong reasons. Youngsters may be tempted to use illegal substances like performance-enhancing drugs in order to reach the top.\n\nIn conclusion, I would argue that children should be encouraged to learn that it is both satisfying and fun to always do their best."
+  },
+  {
+   "id": "b22",
+   "task": 2,
+   "type": "discussion",
+   "title": "Has modern technology made shopping easier?",
+   "topic": "Technology",
+   "prompt": "Some people say that modern technology has made shopping today easier, while others disagree. Discuss both views and give your opinion",
+   "outline": [
+    "Introduction: refer to the task question, mentioning both views. My opinion – disagree",
+    "Paragraph 2: technology has made shopping easier (1) online shopping – convenient, saves time travelling to shops (2) in supermarkets – self-service checkouts, payment with credit cards",
+    "Paragraph 3: disadvantages of technology when shopping (1) no personal service (contrast shops), and it may confuse older people (2) customers need to see and touch many products before buying eg. clothes, fruit and vegetables",
+    "Conclusion: some people find technology has made shopping easier, but shopping is harder without personal service or the chance to handle goods."
+   ],
+   "sample": "It is true that some people believe that shopping is easier today than ever before, thanks to modern technology. While this is certainly the case in some respects, I agree with those who find the modern high-tech shopping experience more impersonal and stressful.\n\nOn the one hand, advances in technology have transformed and facilitated shopping in the developed world. In terms of the internet, online shopping has grown in popularity, and some experts believe that this trend is still in its infancy. Certainly, ordering goods online from the comfort of your own home saves time and effort. Those trips to the shops, when traffic grinds to a halt or shoppers find themselves caught in rush hour traffic jams, have been superseded by a click of a mouse. Even inside a supermarket, modern technology makes shopping easier, with self-service checkouts and payment using a smart card.\n\nOn the other hand, despite the disappearance of many traditional ways of life, some old shopping habits have not died out. Firstly, many of the older generation are slower to embrace change. They find that the personal service available in shops makes shopping an easier and more pleasant experience, whereas technology may be confusing and discourages real interaction. Secondly, old ways of shopping continue to thrive because some people prefer to see and touch the goods which they buy. For example, although technology provides images of products for sale, many shoppers prefer to try on clothes or shoes or to physically handle fruit or vegetables before choosing.\n\nIn conclusion, while technology has made shopping quicker and easier in the opinion of some people, I would argue that it makes shopping harder because it cannot offer personal service or the physical opportunity to browse."
+  }
+ ]
+}
