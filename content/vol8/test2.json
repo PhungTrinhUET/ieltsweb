@@ -1,0 +1,620 @@
+{
+  "vol": 8,
+  "test": 2,
+  "source": "VOL 8, Test 2 – Listening (chỉ có Listening). Đề: \"VOL 8 TEST 2 LIS.docx\"; transcript + đáp án: \"TRANSCRIPT-KEY VOL 8 TEST 2 LIS.docx\". Không có audio → app đọc transcript bằng giọng máy. Transcript gốc là bản nhận dạng tự động không có tên người nói: đã chia lượt và phân vai (Manager/Peter, Sue/Arthur, Charlie/Gina) theo ngữ cảnh và sửa lỗi nhận dạng (\"Fernley\" → \"Fearnley\" theo đề; \"the performance I've met\" → \"the performers I've met\"; số điện thoại đọc từng chữ số được viết gọn). Đáp án khớp key.",
+  "listening": {
+    "audioDir": "audio/vol8/test2",
+    "timingNote": "Không có audio: mốc thời gian là ước lượng (~2,6 từ/giây, mỗi section bắt đầu từ 00:00, offset 0), chỉ để chia câu cho giọng máy đọc.",
+    "sections": [
+      {
+        "section": 1,
+        "title": "Lifeguard job application – phone call",
+        "topic": "Work",
+        "offset": 0,
+        "transcript": "[00:00] Narrator: You will hear a number of different recordings, and you will have to answer questions on what you hear. There will be time for you to read the instructions and questions, and you will have a chance to check your work. All the recordings will be played once only. The test is in four parts. Write all your answers in the listening question booklet. At the end of the test, you will be given ten minutes to transfer your answers to an answer sheet.\n[00:33] Narrator: Now turn to Part 1 on page 2 of your question booklet. Part 1. You will hear a man called Peter phoning a sports centre manager about a job. First, you have some time to look at questions 1 to 4.\n[01:10] Narrator: Now listen carefully and answer questions 1 to 4.\n[01:14] Manager: Hello, Fearnley Sports Centre. How can I help you?\n[01:18] Peter: Yes, I'd like to apply for one of the lifeguard jobs you advertised this week.\n[01:25] Manager: Right, we can do that now over the phone. I'll just need some information from you. Let me get a form. Okay, so let's start with your name.\n[01:37] Peter: Peter Smith.\n[01:39] Manager: Okay, can you let me have your home address?\n[01:43] Peter: It's 130 South Main Street, Lake Elsinore.\n[01:47] Manager: Okay, I'm new around here. Can you spell that for me?\n[01:52] Peter: Yes, it's E-L-S-I-N-O-R-E.\n[01:54] Manager: Okay, got that. And your phone number?\n[01:58] Peter: My home number's 951 674 3124, but it's best to ring me on my cell phone. That's 077 896 245.\n[02:07] Manager: Okay, now what do you do? Are you still in college or are you working full time?\n[02:15] Peter: I'm in my second year here at Fearnley, and this vacation I've got a job as a part-time waiter.\n[02:23] Manager: Okay, I guess if you're at Fearnley College you'll be studying physical education? They all seem to do that there.\n[02:32] Peter: That's right. Then I hope to go on and coach baseball in high school, something like that. I guess it all depends on how I do in my final exams.\n[02:45] Manager: Okay, sounds good to me.\n[02:48] Narrator: Before you hear the rest of the conversation, you have some time to look at questions 5 to 10.\n[03:16] Narrator: Now listen and answer questions 5 to 10.\n[03:20] Manager: Now, the next part of the form deals with qualifications. Do you have the water safety certificate? We absolutely insist on that.\n[03:29] Peter: Yes, I do.\n[03:31] Manager: So how long will it last before you have to do a refresher course?\n[03:37] Peter: I took it last November, so it'll run out in October.\n[03:42] Manager: Okay, good. Now, what about work experience as a lifeguard?\n[03:47] Peter: Well, I've had about four months' experience.\n[03:51] Manager: Which swimming pool was that at? I need to have details of your employer, obviously, so we can get a reference.\n[04:00] Peter: Oh, it was at the beach here in Fearnley. I can get the number of the person you need to contact.\n[04:09] Manager: Good. And do you have any other additional skills I can put down?\n[04:15] Peter: You can put down diving. I've done that for a long time now. I'm also keen on rock climbing, but that's not really relevant here.\n[04:26] Manager: No. Okay. And I need to ask when you would prefer to work. You can choose either Saturday mornings or any time Monday to Friday. We've got enough people on Sundays at the moment.\n[04:40] Peter: Well, not Monday to Friday, because I'm at the restaurant weekday evenings.\n[04:46] Manager: Okay. We open at six. Could you start that early?\n[04:51] Peter: No, that's fine. I prefer that to working late.\n[04:55] Manager: Okay. Now I need to speak to the committee who run the sports centre here, but you should hear back from us pretty soon, and then they'll probably arrange an interview.\n[05:08] Peter: Thanks very much.\n[05:10] Manager: Great. Now, before you go, I'd just like to ask you how you found out about our advertisement. We always ask this. Was it from the newspaper or the radio?\n[05:23] Peter: I heard the advertisement this morning when I was driving into college. I don't usually read the local paper.\n[05:31] Manager: All right. Thanks. Well, that's all. Hope to see you soon.\n[05:36] Narrator: That is the end of Part 1. You now have one minute to check your answers to Part 1.",
+        "groups": [
+          {
+            "instruction": "Complete the form below. Write NO MORE THAN TWO WORDS AND/OR A NUMBER for each answer.",
+            "wordLimit": "NO MORE THAN TWO WORDS AND/OR A NUMBER",
+            "context": "Fearnley Sports Center – Lifeguard Application Form",
+            "layout": "form",
+            "table": {
+              "title": "Fearnley Sports Center – Lifeguard Application Form",
+              "rows": [
+                [
+                  "# Personal details"
+                ],
+                [
+                  "Name",
+                  "Peter Smith"
+                ],
+                [
+                  "Home address",
+                  "130 South Main Street, Lake {{1}}"
+                ],
+                [
+                  "Contact number",
+                  "{{2}} (cell phone)"
+                ],
+                [
+                  "# Present occupation"
+                ],
+                [
+                  "• has temporary job as a part-time {{3}}"
+                ],
+                [
+                  "• is studying PE"
+                ],
+                [
+                  "• wants to be a high school {{4}} coach"
+                ],
+                [
+                  "# Qualifications"
+                ],
+                [
+                  "Already holds",
+                  "water safety certificate"
+                ],
+                [
+                  "Certificate expires in",
+                  "{{5}}"
+                ],
+                [
+                  "# Relevant work experience"
+                ],
+                [
+                  "Lifeguard at",
+                  "the {{6}} in Fearnley"
+                ],
+                [
+                  "Additional relevant skills",
+                  "{{7}}"
+                ],
+                [
+                  "# Other information"
+                ],
+                [
+                  "• is happy to work on {{8}} mornings"
+                ],
+                [
+                  "• start at {{9}} o'clock"
+                ],
+                [
+                  "How did the applicant find out about this job?",
+                  "on the {{10}}"
+                ]
+              ]
+            },
+            "questions": [
+              {
+                "no": 1,
+                "type": "fill",
+                "text": "Home address: 130 South Main Street, Lake ___",
+                "answer": [
+                  "Elsinore"
+                ],
+                "explanation": "\"It's 130 South Main Street, Lake Elsinore.\" – \"it's E-L-S-I-N-O-R-E.\""
+              },
+              {
+                "no": 2,
+                "type": "fill",
+                "text": "Contact number: ___ (cell phone)",
+                "answer": [
+                  "077896245",
+                  "077 896 245"
+                ],
+                "explanation": "\"it's best to ring me on my cell phone. That's 077 896 245.\" – 951 674 3124 là số nhà."
+              },
+              {
+                "no": 3,
+                "type": "fill",
+                "text": "has temporary job as a part-time ___",
+                "answer": [
+                  "waiter"
+                ],
+                "explanation": "\"this vacation I've got a job as a part-time waiter.\""
+              },
+              {
+                "no": 4,
+                "type": "fill",
+                "text": "wants to be a high school ___ coach",
+                "answer": [
+                  "baseball"
+                ],
+                "explanation": "\"Then I hope to go on and coach baseball in high school\""
+              },
+              {
+                "no": 5,
+                "type": "fill",
+                "text": "Certificate expires in: ___",
+                "answer": [
+                  "October"
+                ],
+                "explanation": "\"I took it last November, so it'll run out in October.\""
+              },
+              {
+                "no": 6,
+                "type": "fill",
+                "text": "Lifeguard at: the ___ in Fearnley",
+                "answer": [
+                  "beach"
+                ],
+                "explanation": "\"Oh, it was at the beach here in Fearnley.\" (không phải bể bơi)"
+              },
+              {
+                "no": 7,
+                "type": "fill",
+                "text": "Additional relevant skills: ___",
+                "answer": [
+                  "diving"
+                ],
+                "explanation": "\"You can put down diving.\" – leo núi \"not really relevant\"."
+              },
+              {
+                "no": 8,
+                "type": "fill",
+                "text": "is happy to work on ___ mornings",
+                "answer": [
+                  "Saturday",
+                  "Saturdays"
+                ],
+                "explanation": "\"You can choose either Saturday mornings or any time Monday to Friday.\" – \"Well, not Monday to Friday\""
+              },
+              {
+                "no": 9,
+                "type": "fill",
+                "text": "start at ___ o'clock",
+                "answer": [
+                  "six",
+                  "6"
+                ],
+                "explanation": "\"We open at six. Could you start that early?\" – \"No, that's fine.\""
+              },
+              {
+                "no": 10,
+                "type": "fill",
+                "text": "How did the applicant find out about this job? on the ___",
+                "answer": [
+                  "radio"
+                ],
+                "explanation": "\"Was it from the newspaper or the radio?\" – \"I heard the advertisement this morning when I was driving into college. I don't usually read the local paper.\""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section": 2,
+        "title": "Becoming a millionaire – radio programme",
+        "topic": "Business",
+        "offset": 0,
+        "transcript": "[00:00] Narrator: Part 2. You will hear part of a radio programme in which a successful businessman is advising listeners on how to become a self-made millionaire. First, you have some time to look at questions 11 to 16.\n[00:35] Narrator: Now listen carefully and answer questions 11 to 16.\n[00:39] Sue: Everybody dreams of becoming a millionaire one day. So, we asked Arthur Knowles, who made his millions in the plumbing business, to give the budding entrepreneurs among you a few tips on how to make your first million. Arthur, welcome to the programme.\n[00:57] Arthur: Thanks, Sue.\n[00:59] Sue: So, Arthur, what advice do you have for our listeners?\n[01:04] Arthur: Well, one thing I've heard people say is that when you're starting up a business, you can't afford to make mistakes. Well, I believe in the old saying, a person who never made a mistake never made anything. You can't really predict when you'll make mistakes and you have to look at them as a positive experience and one that means you won't make the same mistake again.\n[01:31] Arthur: You need to be able to cope with the world of business. But according to recent American business school studies, believing in yourself isn't enough by itself to guarantee success. Confidence can be a good thing, but a person can have too much confidence. And people who try to learn to be confident by buying those how-to-succeed books are just wasting their time.\n[01:56] Arthur: The advice given in these American studies was that being a successful entrepreneur comes down to having the right attitude. It's no good getting depressed every time something goes wrong. Always keep your goals in mind and never give up. And don't listen to all the people around you who say, oh, this will never work.\n[02:19] Arthur: One thing I've learned in business is that you don't have to be an expert in everything. Marketing, for example. When I started my business, I tried to do it all myself. But I soon realised that although I knew everything there was to know about plumbing, I didn't have much idea about how to sell my ideas. So, I got someone who knew more about this to take care of the marketing side of things for me.\n[02:50] Arthur: And as for leadership, well, you've got to be someone your workers look up to because you've been seen to make the right decisions. You have to be able to control people, but listen to them at the same time. Some people are driven to make their companies successful, but that too often leads to a ruthless approach.\n[03:13] Arthur: Then there's the question of taking risks, even calculated ones. I personally feel it's actually better to tread carefully when it comes to taking short-term risks. You need a degree of vision, certainly, but it's easy to get carried away by your desire to increase profits. And if things go wrong, you can end up losing more than you gain.\n[03:37] Narrator: Before you hear the rest of the programme, you have some time to look at questions 17 to 20.\n[04:05] Narrator: Now listen and answer questions 17 to 20.\n[04:09] Sue: So, if you have a great idea for a business, what should you do next?\n[04:16] Arthur: Well, the first thing to ask yourself is whether there's a need for your product or service. Can you cater for people's needs better than existing companies? You don't need to worry about whether it's original or not because there isn't always enough of a demand for completely new ideas.\n[04:36] Arthur: And the second thing to ask yourself is not what colour should the packet be or how much should it cost, but do I care enough about this idea to dedicate the next 10 years of my life to it? Because realistically, that's how long it will take.\n[04:55] Sue: Tell us how you got started, Arthur. How do you explain your early success?\n[05:01] Arthur: Well, I started my business just as the economy was going into a recession, which wasn't the best time and I was lucky to survive, especially as the banks weren't being particularly supportive to small businesses at that time. If I'd listened to the business advice I was given back then, I'd never have got started.\n[05:24] Arthur: My strengths were that I knew I could provide a better service than my competitors, who really hadn't spotted the opportunities that were out there, and that my wife had a good job and was able to pay the household bills while I was getting the company on its feet. The first couple of years were very tough, but I knew I would make it eventually.\n[05:50] Sue: OK, now we're going to take some calls from listeners.\n[05:55] Narrator: That is the end of Part 2. You now have 30 seconds to check your answers to Part 2.",
+        "groups": [
+          {
+            "instruction": "Choose the correct letter, A, B or C.",
+            "context": "Becoming a millionaire",
+            "questions": [
+              {
+                "no": 11,
+                "type": "mcq",
+                "text": "Arthur feels that when starting a business, mistakes should be",
+                "options": [
+                  "seen as an opportunity to learn.",
+                  "predicted and minimised.",
+                  "avoided at all costs."
+                ],
+                "answer": 0,
+                "explanation": "\"you have to look at them as a positive experience and one that means you won't make the same mistake again.\""
+              },
+              {
+                "no": 12,
+                "type": "mcq",
+                "text": "Recent American studies found that confidence will",
+                "options": [
+                  "sometimes reduce people's chances of success.",
+                  "be increased by reading self-help books.",
+                  "ensure good results on business courses."
+                ],
+                "answer": 0,
+                "explanation": "\"believing in yourself isn't enough by itself to guarantee success. Confidence can be a good thing, but a person can have too much confidence.\""
+              },
+              {
+                "no": 13,
+                "type": "mcq",
+                "text": "The American studies recommended that new entrepreneurs",
+                "options": [
+                  "listen to their colleagues' advice.",
+                  "get professional help when things go wrong.",
+                  "remain concentrated on their aims."
+                ],
+                "answer": 2,
+                "explanation": "\"Always keep your goals in mind and never give up.\""
+              },
+              {
+                "no": 14,
+                "type": "mcq",
+                "text": "What does Arthur say about his own experience of marketing?",
+                "options": [
+                  "He relied on what he already knew.",
+                  "He hired an expert to take care of it.",
+                  "He realised its importance too late."
+                ],
+                "answer": 1,
+                "explanation": "\"So, I got someone who knew more about this to take care of the marketing side of things for me.\""
+              },
+              {
+                "no": 15,
+                "type": "mcq",
+                "text": "What does Arthur think is an important quality shared by good leaders?",
+                "options": [
+                  "They are ambitious for their company.",
+                  "They can deal with difficult people.",
+                  "They earn the respect of their workforce."
+                ],
+                "answer": 2,
+                "explanation": "\"you've got to be someone your workers look up to because you've been seen to make the right decisions.\""
+              },
+              {
+                "no": 16,
+                "type": "mcq",
+                "text": "What does Arthur say about taking risks?",
+                "options": [
+                  "He advises being cautious.",
+                  "He favours a long-term view.",
+                  "He believes it is financially advantageous."
+                ],
+                "answer": 0,
+                "explanation": "\"I personally feel it's actually better to tread carefully when it comes to taking short-term risks.\""
+              }
+            ]
+          },
+          {
+            "instruction": "Choose TWO letters, A–E.",
+            "questions": [
+              {
+                "no": 17,
+                "type": "multi",
+                "text": "Which TWO things does Arthur say people should focus on when developing their business idea?",
+                "options": [
+                  "making sure the idea is original",
+                  "offering a better deal than competitors",
+                  "being committed to it",
+                  "paying attention to detail",
+                  "fixing realistic prices"
+                ],
+                "answer": [
+                  1,
+                  2
+                ],
+                "explanation": "B: \"Can you cater for people's needs better than existing companies?\"; C: \"do I care enough about this idea to dedicate the next 10 years of my life to it?\" – không cần ý tưởng mới (\"You don't need to worry about whether it's original\"), không phải màu bao bì hay giá."
+              }
+            ]
+          },
+          {
+            "instruction": "Choose TWO letters, A–E.",
+            "questions": [
+              {
+                "no": 19,
+                "type": "multi",
+                "text": "Which TWO things does Arthur say helped him get his business started?",
+                "options": [
+                  "family support",
+                  "getting a loan from a bank",
+                  "good business advice",
+                  "a favourable economic climate",
+                  "an effective approach to business"
+                ],
+                "answer": [
+                  0,
+                  4
+                ],
+                "explanation": "A: \"my wife had a good job and was able to pay the household bills while I was getting the company on its feet\"; E: \"I knew I could provide a better service than my competitors\". Ngân hàng không hỗ trợ, lời khuyên không nghe theo, kinh tế đang suy thoái."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section": 3,
+        "title": "Performance arts course – student feedback",
+        "topic": "Education",
+        "offset": 0,
+        "transcript": "[00:00] Narrator: Part 3. You will hear two students of performance arts called Charlie and Gina preparing to give feedback at the end of the second year of their three-year course. First, you have some time to look at questions 21 to 26.\n[00:37] Narrator: Now listen carefully and answer questions 21 to 26.\n[00:41] Charlie: So, Gina, we've got to give our tutor some feedback on how we feel about the course now we've come to the end of our second year. Is it OK with you if we have a chat together before we go and see him?\n[00:59] Gina: Sure, Charlie.\n[01:01] Charlie: So did you choose this university to do performance arts because it's got such a good reputation? That's what hooked me in.\n[01:10] Gina: Well, there are other good places which I also considered, but when I looked into things further, I was impressed by the connections this course has with a whole range of theatres of different types. So, even though I was tempted to go and study abroad, I decided to come here in the end.\n[01:32] Charlie: And you don't regret it?\n[01:35] Gina: No, it's been brilliant, especially the options this year. The Body in Dance option I did for this term has been particularly stimulating.\n[01:45] Charlie: I'm sorry I didn't go for that one too, but I did Dance and Drama, which was brilliant too.\n[01:53] Gina: I think the most valuable option I've done was the Movement Analysis course we did in the first year.\n[02:01] Charlie: Absolutely. It's provided a great foundation for all our other work since then.\n[02:07] Gina: So let's talk about our work experience last summer. You went to Finland, didn't you?\n[02:14] Charlie: That's right. I was at their National Ballet Theatre. I didn't get the chance to go on stage, but I helped out with sewing clothes for current productions and even with designing some for future shows. It was brilliant. I got to know a lot of students studying at the local dance school, and I may get the chance to go back there next summer.\n[02:40] Gina: Hmm. I've been offered more work at the place where I was working in Canada.\n[02:47] Charlie: Great. So what do you think you gained most from the experience? I think I've got much better at controlling my stress levels.\n[02:57] Gina: For me, it was probably the fact that I learned a lot about collaborating with others rather than working independently. I was lucky to be able to do that in a situation that wasn't too stressful. Also, I had to organise my time well, but I've always been reasonably good at that.\n[03:18] Charlie: That's good. So we've got quite a few things ready to say to our tutor. It'd be a good chance to ask him any questions we have too, of course.\n[03:31] Gina: I also think it could be helpful to discuss our future plans. For example, what we're planning to do our dissertations on.\n[03:40] Charlie: Sure. I was unsure about whether to focus on globalisation in dance or on stage design. I did an essay on globalisation in my first year and really enjoyed it. But then I saw a spectacular production at the Royal Opera House, and that settled me on stage design. I know another student who's planning to work on that too, so we can discuss things together a bit.\n[04:07] Gina: OK. That could be useful. I'm planning to do something on current trends in contemporary dance for my dissertation.\n[04:15] Charlie: That sounds pretty challenging. It's a big topic. It might not be easy to organise in a coherent way.\n[04:23] Gina: I've thought about it quite a lot, and I think that'll be OK. And I feel confident about how to write a longer piece of work. I'm in a bit of a panic, though, about how I'll get through all the literature. There seems to be so much.\n[04:42] Charlie: Hopefully it won't all be relevant.\n[04:45] Gina: Quite.\n[04:47] Narrator: Before you hear the rest of the discussion, you have some time to look at questions 27 to 30.\n[05:15] Narrator: Now listen and answer questions 27 to 30.\n[05:19] Charlie: So, have you made any career plans yet?\n[05:23] Gina: I'm still undecided. I've thought about performance, of course.\n[05:27] Charlie: Yes, I think lots of graduates from here take that route. But it's a hard life, involving lots of tough, repetitive practice, as well as actually appearing on stage.\n[05:39] Gina: Yes, but the performers I've met know that's essential for the job and say they wouldn't change what they do for the world.\n[05:49] Charlie: I know lots of graduates go into education, teaching at various levels, but that means doing some kind of postgrad certificate. But I think it would be interesting, rewarding work.\n[06:02] Gina: I was wondering about theatre management as a possible option.\n[06:07] Charlie: That's what our tutor did before he got into teaching, isn't it?\n[06:13] Gina: Yes, but he said he quickly realised it wasn't for him. He wasn't earning enough to live on.\n[06:21] Charlie: I can imagine his communication skills are better than his business skills as well.\n[06:27] Gina: Marketing's a possibility, of course.\n[06:30] Charlie: Sure. I've read something saying it can be an interesting career, though I don't think many graduates go for this.\n[06:39] Gina: But that might mean there's not so much competition, as in many other fields of dance.\n[06:46] Charlie: Right. So, now shall we make a list?\n[06:50] Narrator: That is the end of Part 3. You now have 30 seconds to check your answers to Part 3.",
+        "groups": [
+          {
+            "instruction": "Choose the correct letter, A, B or C.",
+            "context": "Feedback on second year of Performance Arts course",
+            "questions": [
+              {
+                "no": 21,
+                "type": "mcq",
+                "text": "Gina chose to study performance arts at this university because the course",
+                "options": [
+                  "has a very good reputation.",
+                  "has links with various theatres.",
+                  "has an international flavour."
+                ],
+                "answer": 1,
+                "explanation": "\"I was impressed by the connections this course has with a whole range of theatres of different types.\" – danh tiếng là lý do của Charlie."
+              },
+              {
+                "no": 22,
+                "type": "mcq",
+                "text": "Which of the options they chose have Gina and Charlie both found useful?",
+                "options": [
+                  "Movement Analysis",
+                  "Dance and Drama",
+                  "The Body in Dance"
+                ],
+                "answer": 0,
+                "explanation": "\"I think the most valuable option I've done was the Movement Analysis course we did in the first year.\" – \"Absolutely. It's provided a great foundation for all our other work since then.\""
+              },
+              {
+                "no": 23,
+                "type": "mcq",
+                "text": "What did Charlie do during his work experience?",
+                "options": [
+                  "He worked in a costume department.",
+                  "He performed with a ballet company.",
+                  "He helped out at a dance school for children."
+                ],
+                "answer": 0,
+                "explanation": "\"I didn't get the chance to go on stage, but I helped out with sewing clothes for current productions and even with designing some for future shows.\""
+              },
+              {
+                "no": 24,
+                "type": "mcq",
+                "text": "What does Gina say she learnt from her work experience?",
+                "options": [
+                  "how to organise her time better",
+                  "how to work better in a team",
+                  "how to cope when under pressure"
+                ],
+                "answer": 1,
+                "explanation": "\"For me, it was probably the fact that I learned a lot about collaborating with others rather than working independently.\" – kiểm soát căng thẳng là ý của Charlie; quản lý thời gian thì cô vốn đã giỏi."
+              },
+              {
+                "no": 25,
+                "type": "mcq",
+                "text": "What does Charlie say about his dissertation topic?",
+                "options": [
+                  "He wanted it to be different from those of other students.",
+                  "He had already done an assignment in this area.",
+                  "He was inspired to choose it by a performance he saw."
+                ],
+                "answer": 2,
+                "explanation": "\"But then I saw a spectacular production at the Royal Opera House, and that settled me on stage design.\""
+              },
+              {
+                "no": 26,
+                "type": "mcq",
+                "text": "Which aspect of writing a dissertation is Gina worried about?",
+                "options": [
+                  "finding enough to say",
+                  "doing the background reading",
+                  "presenting it in an appropriate way"
+                ],
+                "answer": 1,
+                "explanation": "\"I'm in a bit of a panic, though, about how I'll get through all the literature. There seems to be so much.\""
+              }
+            ]
+          },
+          {
+            "instruction": "What do the students say about each of the following types of careers in performance arts? Choose FOUR answers from the box and write the correct letter, A–F, next to questions 27–30.",
+            "bank": [
+              "The pay can be low.",
+              "There is a lot of competition.",
+              "An additional qualification is required.",
+              "Good communication skills are required.",
+              "People with experience feel very positive about it.",
+              "It is a relatively unpopular choice."
+            ],
+            "questions": [
+              {
+                "no": 27,
+                "type": "match",
+                "text": "Performance",
+                "answer": 4,
+                "explanation": "\"the performers I've met know that's essential for the job and say they wouldn't change what they do for the world.\""
+              },
+              {
+                "no": 28,
+                "type": "match",
+                "text": "Education",
+                "answer": 2,
+                "explanation": "\"I know lots of graduates go into education, teaching at various levels, but that means doing some kind of postgrad certificate.\""
+              },
+              {
+                "no": 29,
+                "type": "match",
+                "text": "Theatre management",
+                "answer": 0,
+                "explanation": "\"he said he quickly realised it wasn't for him. He wasn't earning enough to live on.\""
+              },
+              {
+                "no": 30,
+                "type": "match",
+                "text": "Marketing",
+                "answer": 5,
+                "explanation": "\"though I don't think many graduates go for this.\""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section": 4,
+        "title": "Sea lion tracking study – presentation",
+        "topic": "Animals",
+        "offset": 0,
+        "transcript": "[00:00] Narrator: Part 4. You will hear part of a presentation to biology students on new research into sea lions. First, you have some time to look at questions 31 to 40.\n[00:33] Narrator: Now listen carefully and answer questions 31 to 40.\n[00:37] Lecturer: Hello everybody. I'm here today to tell you about a new research study that my team here at the university is doing on the sea lions that live along the coast of Western Australia.\n[00:51] Lecturer: You may be wondering why we've been studying this animal. Well, Australian sea lions have been identified as an endangered species, so there's a real need to count them and find out just how many there are. Up until 1892, the population of these animals was severely depleted because of hunting. That's no longer allowed.\n[01:13] Lecturer: But today there is a new danger. Sea lions often forage for food in the same areas along the coastlines where there are nets used to catch sharks. Unfortunately, they tend to get caught up in the nets by accident and drown.\n[01:30] Lecturer: Now, we wanted to monitor the population of sea lions in this area, but we weren't sure of the best way to do it. There are several different animal tracking methods, which vary in their effectiveness, and there are different factors to consider. One of the most important of these is the cost, but you also have to consider how easy your chosen method is to use.\n[01:57] Lecturer: You may choose a traditional method, like a plastic tag. They're relatively straightforward to attach, but they're really only suitable to use with animals that you can catch quite easily.\n[02:10] Lecturer: You might also go with a more modern method like GPS tracking, which uses satellite technology to transmit data on the animal around the clock. One drawback for marine animals, though, is that they don't transmit a signal in the ocean. You only get data when they're on land.\n[02:30] Lecturer: There are certain large animals in remote areas that have to be tracked using a helicopter. The polar bear is a good example.\n[02:40] Lecturer: Now, an important part of tracking is being able to clearly identify the animal. Some, like zebras, are identified by markings such as their stripes, while the dolphin usually has distinguishing scars on its body that can help tell them apart. Sea lions don't have any markings like this, which is just one of the challenges of tracking them.\n[03:04] Lecturer: When researchers in Perth tried to use electronic tags in a sea lion study, they found that the sea lions had removed their tracking devices by deliberately rubbing up against rocks. This was something the researchers hadn't anticipated.\n[03:20] Lecturer: Researchers in California studying American sea lions tried a different method. They applied paint to the animals. They thought this would be a better, less invasive means of identification. Unfortunately, this didn't work so well either, because sea lions moult every year and shed their fur along with the identifying mark.\n[03:41] Lecturer: So let's look at our current study. We have several aims that we'd like to achieve. The first of these is to try to establish whether sea lions can be identified from the whiskers on their face. These are much coarser than a cat's whiskers, so easier to see. Our theory is that the pattern of these whiskers may be as individual as a fingerprint on a human. If this is in fact true, then we think this could be an effective way to identify them.\n[04:15] Lecturer: Our second aim is to come up with a diagram of sea lion whisker patterns, so this can be used as a guide for us and other studies.\n[04:27] Lecturer: We're using a few different methods to help us do all this. We know that we need to build up a wide range of visual data. So firstly, we've been in touch with zoos around Australia to gather photographs from them of the faces of any sea lions they have. This won't be enough to achieve our purpose though, so we're also broadening our search by inviting the public to take part in our research. We're hoping this will result in hundreds of useful images we can use.\n[05:02] Narrator: That is the end of Part 4. You now have one minute to check your answers to Part 4. That is the end of the listening test. You now have 10 minutes to transfer your answers to the listening answer sheet.",
+        "groups": [
+          {
+            "instruction": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+            "wordLimit": "ONE WORD ONLY",
+            "context": "Sea lion tracking study (Western Australia)",
+            "layout": "notes",
+            "table": {
+              "title": "Sea lion tracking study (Western Australia)",
+              "rows": [
+                [
+                  "# Reason for the study"
+                ],
+                [
+                  "• The Australian sea lion is an endangered species."
+                ],
+                [
+                  "• Until 1892, numbers were affected by hunting."
+                ],
+                [
+                  "• Sea lions are now affected by nets used to control {{31}}"
+                ],
+                [
+                  "# Animal tracking systems"
+                ],
+                [
+                  "• Considerations when choosing a tracking method include {{32}} and ease of use."
+                ],
+                [
+                  "• Plastic tags: the animal must be easy to {{33}}"
+                ],
+                [
+                  "• GPS tracking will not work in the {{34}}"
+                ],
+                [
+                  "• In isolated regions, some animals are tracked by {{35}} (e.g. the polar bear)"
+                ],
+                [
+                  "• Some animals are identified by markings (e.g. the dolphin is identified by its scars)."
+                ],
+                [
+                  "# Challenges of tracking sea lions"
+                ],
+                [
+                  "• Perth study: the sea lions lost their tags. (They rubbed against {{36}} to remove them.)"
+                ],
+                [
+                  "• Californian researchers used {{37}} to identify sea lions. (This was unreliable due to regular loss of fur.)"
+                ],
+                [
+                  "# Our study"
+                ],
+                [
+                  "Aims:"
+                ],
+                [
+                  "i) to find out if sea lions' whiskers can be used to identify them"
+                ],
+                [
+                  "ii) to create a {{38}} to use as a guide"
+                ],
+                [
+                  "Methods:"
+                ],
+                [
+                  "i) contacting {{39}} in Australia for photographs"
+                ],
+                [
+                  "ii) asking the {{40}} to get involved"
+                ]
+              ]
+            },
+            "questions": [
+              {
+                "no": 31,
+                "type": "fill",
+                "text": "Sea lions are now affected by nets used to control ___",
+                "answer": [
+                  "sharks"
+                ],
+                "explanation": "\"Sea lions often forage for food in the same areas along the coastlines where there are nets used to catch sharks.\""
+              },
+              {
+                "no": 32,
+                "type": "fill",
+                "text": "Considerations when choosing a tracking method include ___ and ease of use.",
+                "answer": [
+                  "cost"
+                ],
+                "explanation": "\"One of the most important of these is the cost, but you also have to consider how easy your chosen method is to use.\""
+              },
+              {
+                "no": 33,
+                "type": "fill",
+                "text": "Plastic tags: the animal must be easy to ___",
+                "answer": [
+                  "catch"
+                ],
+                "explanation": "\"they're really only suitable to use with animals that you can catch quite easily.\""
+              },
+              {
+                "no": 34,
+                "type": "fill",
+                "text": "GPS tracking will not work in the ___",
+                "answer": [
+                  "ocean"
+                ],
+                "explanation": "\"they don't transmit a signal in the ocean. You only get data when they're on land.\""
+              },
+              {
+                "no": 35,
+                "type": "fill",
+                "text": "In isolated regions, some animals are tracked by ___ (e.g. the polar bear)",
+                "answer": [
+                  "helicopter",
+                  "helicopters"
+                ],
+                "explanation": "\"There are certain large animals in remote areas that have to be tracked using a helicopter. The polar bear is a good example.\""
+              },
+              {
+                "no": 36,
+                "type": "fill",
+                "text": "Perth study: the sea lions lost their tags. (They rubbed against ___ to remove them.)",
+                "answer": [
+                  "rocks"
+                ],
+                "explanation": "\"the sea lions had removed their tracking devices by deliberately rubbing up against rocks.\""
+              },
+              {
+                "no": 37,
+                "type": "fill",
+                "text": "Californian researchers used ___ to identify sea lions.",
+                "answer": [
+                  "paint"
+                ],
+                "explanation": "\"They applied paint to the animals.\" – không hiệu quả vì sư tử biển thay lông hằng năm."
+              },
+              {
+                "no": 38,
+                "type": "fill",
+                "text": "Aims: to create a ___ to use as a guide",
+                "answer": [
+                  "diagram"
+                ],
+                "explanation": "\"Our second aim is to come up with a diagram of sea lion whisker patterns, so this can be used as a guide\""
+              },
+              {
+                "no": 39,
+                "type": "fill",
+                "text": "Methods: contacting ___ in Australia for photographs",
+                "answer": [
+                  "zoos"
+                ],
+                "explanation": "\"we've been in touch with zoos around Australia to gather photographs from them\""
+              },
+              {
+                "no": 40,
+                "type": "fill",
+                "text": "Methods: asking the ___ to get involved",
+                "answer": [
+                  "public"
+                ],
+                "explanation": "\"we're also broadening our search by inviting the public to take part in our research.\""
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
