@@ -208,3 +208,5 @@ html.exam-open, html.exam-open body { overflow: hidden; }
 /* Điện thoại: đồng hồ gọn ("20 min") để không bị cắt chữ */
 .xclock__short { display: none; }
 @media (max-width: 560px) { .xclock__long { display: none; } .xclock__short { display: inline; } }
+.script-lines__head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 4px; }
+.script-lines .pp { margin-bottom: 10px; }

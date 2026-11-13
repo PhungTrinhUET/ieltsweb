@@ -588,6 +588,21 @@ for (const profile of Object.keys(PROFILES)) {
       info: `kế hoạch=${plan.join(' ')} XP=${xp} chuỗi=${streak} ô=${cells} hôm nay sáng=${lit} câu đúng=${dict} tràn=${over} ${page.errors.join(' | ')}` };
   });
 
+  // ---------- E2: transcript Listening sau khi nộp Thi thử có nút dịch ----------
+  await check(`[${profile}] E3 Thi thử Listening: nộp → Transcript có nút dịch từng lượt + Dịch tất cả`, async () => {
+    await page.route(/mymemory/, (r) => r.fulfill({ contentType: 'application/json', headers: { 'access-control-allow-origin': '*' }, body: JSON.stringify({ responseStatus: 200, responseData: { translatedText: 'Phần hai.' }, matches: [] }) }));
+    await go(page, '/listening/vol5-t6-l2');
+    page.once('dialog', (d) => d.accept());
+    await page.getByRole('button', { name: 'Nộp bài' }).click();
+    await page.getByRole('button', { name: 'Xem transcript' }).click();
+    const btns = await page.locator('.script-lines .pp__tr').count();
+    await page.locator('.script-lines .pp__tr').first().click();
+    await page.waitForSelector('.script-lines .pp__vi', { timeout: 5000 });
+    const vi = await page.locator('.script-lines .pp__vi').first().innerText();
+    await page.unrouteAll({ behavior: 'ignoreErrors' });
+    return { ok: btns > 5 && /Phần hai/.test(vi), info: `nút dịch=${btns} bản dịch="${vi}"` };
+  });
+
   // ---------- A3: Writing nộp được khi chưa cấu hình AI ----------
   await check(`[${profile}] A3 Writing: Nộp bài không cần AI`, async () => {
     await go(page, '/writing/vol1-t3-w2');

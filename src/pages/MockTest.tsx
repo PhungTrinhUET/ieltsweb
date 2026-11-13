@@ -5,7 +5,7 @@
 // Listening: audio các section phát liền một lần, không dừng/tua (chỉ chỉnh âm lượng); hết audio còn 2 phút kiểm tra rồi tự nộp.
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { ArrowLeft, BookOpenCheck, GraduationCap, Keyboard, PenLine, Play, RotateCcw, Shuffle } from 'lucide-react';
+import { ArrowLeft, BookOpenCheck, GraduationCap, Keyboard, PenLine, Play, RotateCcw, Shuffle, ScrollText } from 'lucide-react';
 import type { ListeningMaterial, ReadingMaterial } from '../types';
 import { addAttempt, resolveUrl, useDb } from '../db';
 import { touchStreak, useSettings } from '../store';
@@ -14,7 +14,7 @@ import { GroupsView, isCorrect, scoreGroups, type Answers } from '../components/
 import { ExamClock, ExamFrame, ExamIntro, ExamNav, ExamSheet, ExamSplit, answeredNos, focusQuestion, groupNos, qNos, useExamPrefs } from '../components/Exam';
 import { HighlightBar, HlText, addHls, colorMap, removeHls, type Hl, type HlColor, type HlSel } from '../components/Highlight';
 import WordPopover, { type WordSel } from '../components/WordPopover';
-import { RichText } from '../components/ui';
+import ScriptLines from '../components/ScriptLines';
 import { paragraphs, paraLabel, shuffle } from '../lib/text';
 import { fmtBand, rawToBand } from '../lib/band';
 import { stopSpeak } from '../lib/tts';
@@ -192,12 +192,15 @@ export function ExamRunner({ skill, ids, name, back, intro, full }: {
           : <span className="xhead__status">{audio.playing !== null ? `Part ${audio.playing + 1} · audio is playing` : 'Audio'}</span>}<ExamClock key="l" seconds={minutes * 60} /></>;
 
   const practiceHref = `/${skill}/${m.id}/practice`;
+  const scriptBtn = checked && !isR && (m as ListeningMaterial).transcript.trim()
+    ? <button className={`xtool${showScript ? ' is-on' : ''}`} onClick={() => setShowScript(!showScript)} title="Xem transcript (có nút dịch từng lượt lời)"><ScrollText size={15} /> <span>Transcript</span></button> : null;
   const tools = (full || single || checked) ? (
     <Link to={practiceHref} className="xbtn xbtn--text mode-switch" title="Chuyển sang Luyện tập: không tính giờ, xem đáp án từng câu"
       onClick={(e) => { if (!checked && Object.keys(answers).length && !confirm('Chuyển sang Luyện tập? Bài thi đang làm sẽ không được lưu.')) e.preventDefault(); else audio.halt(); }}>
       <GraduationCap size={16} /> <span>Luyện tập</span>
     </Link>
   ) : null;
+  const headTools = scriptBtn ? <>{scriptBtn}{tools}</> : tools;
 
   const qs = <div onFocusCapture={trackFocus} onClickCapture={trackFocus}><GroupsView groups={m.groups} note={m.note} answers={answers[m.id] ?? {}} onChange={onChange} checked={checked} /></div>;
   const list = hls[m.id] ?? [];
@@ -215,18 +218,16 @@ export function ExamRunner({ skill, ids, name, back, intro, full }: {
   const lm = m as ListeningMaterial;
 
   return (
-    <ExamFrame onExit={exit} status={status} tools={tools} volume={!isR}
+    <ExamFrame onExit={exit} status={status} tools={headTools} volume={!isR}
       banner={{ title: parts[cur].label, text: isR ? `Read the text and answer questions ${range}.` : `Listen and answer questions ${range}.` }}
       footer={<ExamNav parts={parts} cur={cur} curNo={curNo} answered={answered} flagged={flagged} results={results}
         onPart={(i) => { setCur(i); setCurNo(null); }} onGo={go}
         onFlag={(no) => setFlags((f) => { const x = new Set(f[m.id] ?? []); if (x.has(no)) x.delete(no); else x.add(no); return { ...f, [m.id]: x }; })}
         onSubmit={checked ? () => setSheet(true) : () => confirm('Nộp bài? Sau khi nộp không sửa được câu trả lời.') && submit()} submitLabel={checked ? 'Xem kết quả' : 'Nộp bài'} />}>
-      {isR ? <ExamSplit left={passage} right={qs} labels={['Passage', 'Questions']} /> : (
-        <div className="xsingle">
-          {checked && showScript && lm.transcript.trim() && <div className="rich rich--transcript"><RichText text={lm.transcript} /></div>}
-          {qs}
-        </div>
-      )}
+      {isR ? <ExamSplit left={passage} right={qs} labels={['Passage', 'Questions']} />
+        : checked && showScript && lm.transcript.trim()
+          ? <ExamSplit left={<ScriptLines key={m.id} transcript={lm.transcript} stored={lm.translation} onWord={setWord} />} right={qs} labels={['Transcript', 'Questions']} storeKey="ielts:script-split" />
+          : <div className="xsingle">{qs}</div>}
       {isR && <HighlightBar scopeClass="xpassage" onAdd={addHl} onRemove={rmHl} />}
       {word && <WordPopover sel={word} vocab={(m as ReadingMaterial).vocab} from={m.id} onClose={() => setWord(null)} />}
       {checked && sheet && res && (
