@@ -1,0 +1,720 @@
+{
+  "vol": 7,
+  "test": 8,
+  "source": "VOL 7 Test 8 – Listening. Bộ đề gốc không có transcript và key: transcript dựng bằng Whisper từ audio, đáp án suy từ transcript. Đề: ĐỀ LIS VOL 7/Test 8.pdf. Audio gốc là một file cả bài, cắt section theo câu \"Section N\" của người dẫn. Vai người nói gán theo ngữ cảnh (S3 ba người Andy/Bob/Helen nói xen nhau, phân vai là ước đoán); sửa lỗi nhận dạng theo đề và chữ đánh vần (Cotehele, Sherborne, Helen, rear livestock). Đề gốc ghi \"Rock information\" (lỗi gõ) → sửa thành \"Rock formation\" theo lời thoại.",
+  "listening": {
+    "audioDir": "audio/vol7/test8",
+    "timingNote": "Audio là một file cả bài; cắt section theo câu \"Section N\" của người dẫn: S1 0:41, S2 9:30, S3 15:09, S4 20:44. Mốc từng lượt lời lấy từ Whisper (lượt ngắn trong S3 là nội suy).",
+    "sections": [
+      {
+        "section": 1,
+        "title": "Winsham Farm Centre",
+        "topic": "Travel",
+        "cut": "0:41",
+        "transcript": "[00:41] Narrator: Now turn to Section 1 on page 2 of your question booklet. You will hear a telephone conversation about Winsham Farm, a residential education centre. First you have some time to look at questions 1 to 4 on page 2.\n[01:20] Narrator: You will see that there is an example that has been done for you. On this occasion only, the conversation relating to this will be played first.\n[01:33] Receptionist: Hello, Winsham Farm Centre.\n[01:39] Caller: Oh, hello. I want to arrange a weekend away for myself and some people from work, and we heard about your centre. I wonder if you could give me some details.\n[01:50] Receptionist: Yes, certainly. We are a residential centre attached to a working farm, and we organise educational activities for those guests who want them. What else would you like to know?\n[02:06] Narrator: The caller wishes to arrange a weekend away for himself and some colleagues, so option C has been circled. Now we shall begin. You should answer the questions as you listen because you will not hear the recording a second time. Listen carefully and answer questions 1 to 4.\n[02:29] Receptionist: Hello, Winsham Farm Centre.\n[02:34] Caller: Oh, hello. I want to arrange a weekend away for myself and some people from work, and we heard about your centre. I wonder if you could give me some details.\n[02:44] Receptionist: Yes, certainly. We are a residential centre attached to a working farm, and we organise educational activities for those guests who want them. What else would you like to know?\n[02:58] Caller: Well, firstly, what kind of accommodation have you got?\n[03:02] Receptionist: We've got eight rooms altogether and we can sleep 38 at any one time. Three of the rooms have got six bunks and five of them have got four bunks.\n[03:12] Caller: Right. And what other facilities are there?\n[03:16] Receptionist: We have separate toilets and showers for each of the rooms. There's a large dining room and a large meeting room, which can be booked by groups in advance, but I'm afraid we had a flood in there last month and the floor was slightly damaged, so unfortunately it's out of use just now. We've got workmen coming in next week. When were you thinking of staying?\n[03:38] Caller: In three weeks' time, the 28th of September.\n[03:41] Receptionist: Oh, it should be okay by then.\n[03:44] Caller: Oh well, that's okay then. And what about food? Do you provide meals or is it self-catering?\n[03:52] Receptionist: We're very flexible. As long as you give us enough notice, we can cater for you, or if you prefer, you can just bring your own food and use the kitchen facilities. And some people prefer to eat out, which is also fine.\n[04:07] Caller: Fine. And I heard that your farm is organic. Does that mean that you only have crops and no animals?\n[04:14] Receptionist: It doesn't, actually. A lot of people seem to think that, but we do rear livestock as well, and so we have a wide range of food. Organic means it's all produced without the use of artificial fertilisers or pesticides.\n[04:29] Caller: I see. That sounds good. Could you tell me what sort of recreational activities are available, either at the centre or in the area?\n[04:39] Receptionist: Yes. Here at the centre we offer farm tours. They're very popular. One of the farm managers shows people around and explains some of the principles of organic farming, and for any visitors who are really keen, we let them drive a tractor or feed the animals and so on – with supervision, of course.\n[04:57] Caller: I think a lot of our group would be interested in that. It'd make a change from factory work.\n[05:03] Receptionist: Well, if they fancy it, tell them to come prepared. Plenty of old clothing, especially footwear. It can be very messy and wet.\n[05:14] Caller: Okay, I'll warn them.\n[05:19] Narrator: Before you hear the rest of the conversation, you have some time to look at questions 5 to 10 on page 3.\n[05:57] Narrator: Now listen and answer questions 5 to 10.\n[06:00] Receptionist: And another type of activity we do is survival courses, but that's only for groups of five or more, and they've got to be acquaintances. They have to cooperate closely. These courses are very popular, especially with school groups, but adults seem to enjoy them too.\n[06:20] Caller: What do they involve? Things like map reading?\n[06:24] Receptionist: Well, not exactly. What it is, we've got a large area of woodland on the farm and we run this course there. It's mainly about collecting food and water and lighting a fire without any equipment. That kind of thing.\n[06:40] Caller: This weekend could be hard work! What about the area around the centre? What is there to do?\n[06:49] Receptionist: If you look at a map, you'll see that we're very well situated. Our centre's about midway between the Exmoor National Park, which is very popular for hill walking, and the south coast, which has very good beaches.\n[07:03] Caller: Are they both within walking distance?\n[07:05] Receptionist: Well, they're both a bit far unless you're very fit, but they're only about 30 minutes by road. And there's also a cycle path which starts quite near here, about 10 minutes' walk away. You can hire bikes at the starting point.\n[07:18] Caller: What is there to do if the weather's bad? I hope it won't be, but you never know.\n[07:24] Receptionist: Yes, that's right. Well, on most Saturday evenings we show films here, and then once a month a group of local musicians performs in our meeting room. And then Sherborne is only 14 miles away. It's only a small town, but it's got a very good museum and an old abbey which is well worth a visit.\n[07:43] Caller: Well, it sounds perfect for our purposes. One last thing: what about prices? I'm not sure yet, but there'll probably be about 15 of us.\n[07:55] Receptionist: We charge a standard 14 pounds a head for accommodation, whether there are 10 or 20 of you or whatever, and about seven pounds for cooked meals, depending on the menu you want. Use of the kitchen facilities is extra, as is the hire of the meeting room. It depends really what exactly you want and for how many people.\n[08:16] Caller: Right. Well, I've made a note of all that and I'll discuss it with the rest of the group. Then I'll get back to you with a firm booking. Can I do that by phone?\n[08:26] Receptionist: Yes, you can, but once you've made a booking, we would need a deposit within five days to secure it. Then you just pay the balance when you're here.\n[08:34] Caller: Oh yes, of course. Could you give me the address, please?\n[08:38] Receptionist: Yes. It's Winsham Farm, Cotehele Road – that's C-O-T-E-H-E-L-E – near Sherborne, and the postcode is S-H-1-2 1-L-Q.\n[08:58] Caller: Thank you.\n[09:00] Narrator: That is the end of Section 1. You now have half a minute to check your answers.",
+        "groups": [
+          {
+            "instruction": "Choose the correct letter, A, B or C.",
+            "questions": [
+              {
+                "no": 1,
+                "type": "mcq",
+                "text": "The centre has enough accommodation for",
+                "options": [
+                  "18 people.",
+                  "20 people.",
+                  "38 people."
+                ],
+                "answer": 2,
+                "explanation": "\"We've got eight rooms altogether and we can sleep 38 at any one time.\""
+              },
+              {
+                "no": 2,
+                "type": "mcq",
+                "text": "The meeting room is currently",
+                "options": [
+                  "unavailable.",
+                  "flooded.",
+                  "booked."
+                ],
+                "answer": 0,
+                "explanation": "\"we had a flood in there last month and the floor was slightly damaged, so unfortunately it's out of use just now\" – trận lụt là tháng trước, giờ chỉ là không dùng được."
+              },
+              {
+                "no": 3,
+                "type": "mcq",
+                "text": "Visitors must tell the centre in advance if they want to",
+                "options": [
+                  "use the centre's kitchen.",
+                  "have meals cooked for them.",
+                  "eat at restaurants outside."
+                ],
+                "answer": 1,
+                "explanation": "\"As long as you give us enough notice, we can cater for you\""
+              },
+              {
+                "no": 4,
+                "type": "mcq",
+                "text": "All visitors on the farm can",
+                "options": [
+                  "get information about organic farming.",
+                  "help to feed the animals.",
+                  "watch a tractor demonstration."
+                ],
+                "answer": 0,
+                "explanation": "\"One of the farm managers shows people around and explains some of the principles of organic farming, and for any visitors who are really keen, we let them drive a tractor or feed the animals\""
+              },
+              {
+                "no": 5,
+                "type": "mcq",
+                "text": "On the survival course people have to",
+                "options": [
+                  "learn to use a map.",
+                  "find their own food.",
+                  "run through woodland."
+                ],
+                "answer": 1,
+                "explanation": "\"Things like map reading?\" – \"Well, not exactly. … It's mainly about collecting food and water and lighting a fire without any equipment.\""
+              },
+              {
+                "no": 6,
+                "type": "mcq",
+                "text": "From the centre it is easy to walk to",
+                "options": [
+                  "Exmoor National Park.",
+                  "the beach.",
+                  "a cycling route."
+                ],
+                "answer": 2,
+                "explanation": "\"they're both a bit far unless you're very fit … there's also a cycle path which starts quite near here, about 10 minutes' walk away\""
+              },
+              {
+                "no": 7,
+                "type": "mcq",
+                "text": "If the weather is bad visitors can go to a",
+                "options": [
+                  "cinema.",
+                  "theatre.",
+                  "museum."
+                ],
+                "answer": 2,
+                "explanation": "\"Sherborne is only 14 miles away. It's only a small town, but it's got a very good museum\" – phim chiếu ngay tại trung tâm, không phải rạp."
+              },
+              {
+                "no": 8,
+                "type": "mcq",
+                "text": "Groups who wish to stay at the centre must pay",
+                "options": [
+                  "part of the cost in advance.",
+                  "all the cost in advance.",
+                  "all of the cost on arrival."
+                ],
+                "answer": 0,
+                "explanation": "\"we would need a deposit within five days to secure it. Then you just pay the balance when you're here.\""
+              }
+            ]
+          },
+          {
+            "instruction": "Complete the notes below. Write ONE WORD AND/OR NUMBERS for each answer.",
+            "wordLimit": "ONE WORD AND/OR NUMBERS",
+            "layout": "form",
+            "table": {
+              "title": "Address",
+              "rows": [
+                [
+                  "Winsham Farm"
+                ],
+                [
+                  "{{9}} Road"
+                ],
+                [
+                  "Near Sherborne"
+                ],
+                [
+                  "{{10}}"
+                ]
+              ]
+            },
+            "questions": [
+              {
+                "no": 9,
+                "type": "fill",
+                "text": "Address: Winsham Farm, ___ Road",
+                "answer": [
+                  "Cotehele"
+                ],
+                "explanation": "\"It's Winsham Farm, Cotehele Road – that's C-O-T-E-H-E-L-E\""
+              },
+              {
+                "no": 10,
+                "type": "fill",
+                "text": "Address: near Sherborne, (postcode) ___",
+                "answer": [
+                  "SH12 1LQ",
+                  "SH121LQ",
+                  "SH12-1LQ"
+                ],
+                "explanation": "\"the postcode is S-H-1-2 1-L-Q\" (Whisper nghe \"S-H-12-1-L-Q\")."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section": 2,
+        "title": "Student vacation jobs survey",
+        "topic": "Work",
+        "cut": "9:30",
+        "transcript": "[09:30] Narrator: Now turn to Section 2 on page 4. Section 2. You will hear a programme on a student radio station. It describes the findings of a survey on vacation jobs taken by students the previous year. First you have some time to look at questions 11 to 16 on page 4.\n[10:24] Narrator: Now listen carefully and answer questions 11 to 16.\n[10:29] Sarah: Welcome to Student Life. It's spring, and many of you may be thinking about arranging work for the long vacation. So on today's programme, Roger Anwell reports on a survey we conducted into the pleasures and problems of vacation jobs. Roger.\n[10:45] Roger: Thank you, Sarah. Well, the first thing to say is that by far the majority of students we surveyed did just three types of jobs. All of these obviously had their advantages and disadvantages, starting with stocktaking in supermarkets. The thing that students said they enjoyed most about this job was the travelling. They were often required to go to branches to do their stocktakes, and this was regarded as an interesting plus. The main negative, however, was that they tended to find the job tiring, with long hours spent on their feet and climbing high shelves. Now, one thing we did ask the students in our survey was whether they had any recommendations for other people taking on their job, and they said, perhaps not surprisingly, get good shoes. That's the only way you can keep going.\n[11:37] Roger: Another job which lots of students did was office work, and the positive feature of this actually rather surprised me, until I remembered what a hot summer it was last year. Lots of students named air conditioning as the best thing about office work. The downside which many talked about was wearing formal clothes. Obviously this didn't go down too well with students. The advice most people gave was to select a large office. That way you have more variety of social contacts; otherwise the work can get very boring.\n[12:11] Roger: The third job which had attracted large numbers of students was as a theme park attendant, and again I got a surprise here, because the big plus people talked about was good pay. It must have improved since my day, I must say. Anyway, the downside I did recognise: having to deal with difficult customers, especially in the heat when tempers get frayed. Not easy. And people said that it was a good idea to live nearby, because there's a lot of shift work and you don't have to worry about transport at difficult times of the day.\n[12:43] Narrator: Before you hear the rest of the programme, you have some time to look at questions 17 to 20 on page 5.\n[13:11] Narrator: Now listen and answer questions 17 to 20.\n[13:22] Roger: So those were the findings from the survey on the most common student jobs, but not all student jobs have to be mundane and boring. One of the students who responded in our survey spoke at length about his amazing job as a zoo attendant. Peter Marshall had read about work opportunities on the zoo website and just went along with a friend to talk to someone in personnel. He was offered a job there and then – as easy as that. In previous years he'd done singularly unexciting shop work, so he was very pleased to be doing such original work.\n[13:55] Roger: He ended up working for just under three months, which was actually slightly more than he'd anticipated and meant that he had to miss part of university term time, but he said it was well worth it, because he thinks he's found his future career path as a result of this experience. He loved working on the educational side in particular, helping young kids understand about the animals in their natural environment. He said it was the most intriguing thing he'd ever done. He tells us, though, that with final exams coming up, he won't be able to do any paid work this coming vacation – so why don't you apply? If you're interested in getting further information about the findings of the survey…\n[14:39] Narrator: That is the end of Section 2. You now have half a minute to check your answers.",
+        "groups": [
+          {
+            "instruction": "Complete the table below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+            "wordLimit": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+            "layout": "table",
+            "table": {
+              "columns": [
+                "Vacation job",
+                "Main advantage",
+                "Main disadvantage",
+                "Recommendation"
+              ],
+              "rows": [
+                [
+                  "Stocktaking",
+                  "{{11}}",
+                  "tiring",
+                  "{{12}}"
+                ],
+                [
+                  "Office work",
+                  "air conditioning",
+                  "{{13}}",
+                  "choose a {{14}}"
+                ],
+                [
+                  "Theme park attendant",
+                  "{{15}}",
+                  "rude customers",
+                  "{{16}}"
+                ]
+              ]
+            },
+            "questions": [
+              {
+                "no": 11,
+                "type": "fill",
+                "text": "Stocktaking – main advantage: ___",
+                "answer": [
+                  "travelling",
+                  "the travelling",
+                  "traveling",
+                  "travel"
+                ],
+                "explanation": "\"The thing that students said they enjoyed most about this job was the travelling.\""
+              },
+              {
+                "no": 12,
+                "type": "fill",
+                "text": "Stocktaking – recommendation: ___",
+                "answer": [
+                  "get good shoes",
+                  "good shoes"
+                ],
+                "explanation": "\"they said, perhaps not surprisingly, get good shoes\""
+              },
+              {
+                "no": 13,
+                "type": "fill",
+                "text": "Office work – main disadvantage: ___",
+                "answer": [
+                  "wearing formal clothes",
+                  "formal clothes",
+                  "formal clothing"
+                ],
+                "explanation": "\"The downside which many talked about was wearing formal clothes.\""
+              },
+              {
+                "no": 14,
+                "type": "fill",
+                "text": "Office work – recommendation: choose a ___",
+                "answer": [
+                  "large office",
+                  "big office"
+                ],
+                "explanation": "\"The advice most people gave was to select a large office.\""
+              },
+              {
+                "no": 15,
+                "type": "fill",
+                "text": "Theme park attendant – main advantage: ___",
+                "answer": [
+                  "good pay",
+                  "pay"
+                ],
+                "explanation": "\"the big plus people talked about was good pay\""
+              },
+              {
+                "no": 16,
+                "type": "fill",
+                "text": "Theme park attendant – recommendation: ___",
+                "answer": [
+                  "live nearby",
+                  "live near",
+                  "living nearby"
+                ],
+                "explanation": "\"people said that it was a good idea to live nearby, because there's a lot of shift work\""
+              }
+            ]
+          },
+          {
+            "instruction": "Choose the correct letter, A, B or C.",
+            "questions": [
+              {
+                "no": 17,
+                "type": "mcq",
+                "text": "Peter learned about the job",
+                "options": [
+                  "from a college friend.",
+                  "on the computer.",
+                  "from a student job centre."
+                ],
+                "answer": 1,
+                "explanation": "\"Peter Marshall had read about work opportunities on the zoo website\" – bạn chỉ đi cùng anh đến phòng nhân sự."
+              },
+              {
+                "no": 18,
+                "type": "mcq",
+                "text": "Peter mainly enjoyed the job because it was",
+                "options": [
+                  "easy.",
+                  "challenging.",
+                  "unusual."
+                ],
+                "answer": 2,
+                "explanation": "\"In previous years he'd done singularly unexciting shop work, so he was very pleased to be doing such original work.\""
+              },
+              {
+                "no": 19,
+                "type": "mcq",
+                "text": "The job's most interesting aspect was",
+                "options": [
+                  "learning about the environment.",
+                  "working with children.",
+                  "caring for the animals."
+                ],
+                "answer": 1,
+                "explanation": "\"He loved working on the educational side in particular, helping young kids understand about the animals … He said it was the most intriguing thing he'd ever done.\""
+              },
+              {
+                "no": 20,
+                "type": "mcq",
+                "text": "Peter has decided that next vacation he",
+                "options": [
+                  "won't take a job.",
+                  "will work at the zoo.",
+                  "will work elsewhere."
+                ],
+                "answer": 0,
+                "explanation": "\"with final exams coming up, he won't be able to do any paid work this coming vacation\""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section": 3,
+        "title": "Geology study syndicate",
+        "topic": "Education",
+        "cut": "15:09",
+        "transcript": "[15:09] Narrator: Now turn to Section 3 on page 6. Section 3. You will hear three geology students, Andy, Bob and Helen, talking about forming a study syndicate for their forthcoming examinations. First you have some time to look at questions 21 to 25 on page 6.\n[16:00] Narrator: Now listen carefully and answer questions 21 to 25.\n[16:07] Andy: Right then, are we ready, Bob, Helen?\n[16:10] Bob: Yeah.\n[16:11] Andy: And is someone taking notes for John?\n[16:14] Bob: He's at a tutorial, isn't he?\n[16:15] Helen: Yeah, I'll let him know what we agree.\n[16:17] Andy: Good. Okay, well, first thing is, has anyone apart from me actually been in a study syndicate before?\n[16:24] Bob: No.\n[16:25] Helen: What does it actually involve, Andy?\n[16:27] Andy: Well, the idea is that it's a way for us, for students, to study together without a teacher.\n[16:35] Helen: Oh yeah, right.\n[16:36] Andy: When I did it last time, I found it helpful because, well, as I said, there's no teacher, so it means we're teaching one another, and I found I really learned a lot through having to teach it myself. It seemed a very good way to learn.\n[16:47] Bob: And presumably it gives us the chance to share ideas as well.\n[16:52] Helen: And you get fuller notes if you're all doing the reading?\n[16:56] Andy: That's right. And as well as that, because of that really, you can do, you know, much deeper research. So I thought we could try it to revise what we've done on the geology course, because I know this is the one that most of us are worried about, the geology exam.\n[17:12] Helen: Oh yes.\n[17:14] Bob: So the idea is we all look at a different topic from the geology course and then give a presentation and talk about it?\n[17:24] Andy: That's right. I've drawn up the framework of a table which might be useful. Here, I've made a copy.\n[17:30] Helen: Oh, thanks.\n[17:31] Andy: For the first topic, I thought we could maybe do mountain building. Is that all right?\n[17:35] Helen: Yeah, sure.\n[17:36] Bob: Actually, would you mind if I did that? I'm quite interested in it.\n[17:40] Andy: Right. So is May 9th okay for that?\n[17:44] Bob: Yeah.\n[17:45] Andy: I'll just write that down, and it's Bob for mountain building. And the following week, it can't be May 16th because of our tutorial, but what about the 17th?\n[17:56] Helen: Okay.\n[17:57] Andy: And what about the next topic? What would be the next priority?\n[18:01] Bob: Well, there's glaciated areas, but I don't want to do that.\n[18:06] Helen: Fair enough.\n[18:07] Andy: Actually, I don't mind having a bash. I did an assignment on them. Glaciated areas, Andy. Then we need someone to do rock formation. Helen?\n[18:15] Helen: Yeah, okay. And John said he'd like to too, so you can put us both down for that.\n[18:20] Andy: When?\n[18:21] Helen: May 23rd would be best.\n[18:22] Andy: Rock formation, Helen and John, right. That really only leaves one week before the exams. Shall we make it on the 30th?\n[18:30] Bob: I can't make it, I'm afraid.\n[18:32] Helen: 29th of May? The exam's on June 3rd.\n[18:36] Andy: Have to be okay. Any ideas for a topic?\n[18:39] Helen: John said he wouldn't mind doing something on volcanoes.\n[18:44] Andy: Great. That's everyone then.\n[18:49] Narrator: Before you hear the rest of the conversation, you have some time to look at questions 26 to 30 on page 7.\n[19:13] Narrator: Now listen and answer questions 26 to 30.\n[19:24] Bob: And how long should these presentations be?\n[19:27] Andy: Well, it's obviously up to us. In my experience, 30 minutes is about enough.\n[19:32] Helen: Maybe a bit short. I'd have thought 40 minutes would be more like it.\n[19:36] Andy: Well, shall we say 30 to 40 minutes?\n[19:39] Bob: Okay. And presumably time for questions.\n[19:42] Helen: And discussion.\n[19:43] Andy: Yes, together they usually take about 20 minutes.\n[19:46] Bob: Where shall we get the information from? Is it mainly lecture notes?\n[19:50] Andy: Well, actually, I suggest we avoid those, because we already have all that information. I think it's better to go more deeply. We could use the bibliography.\n[19:59] Helen: And anything else we find in the library, any other books.\n[20:02] Bob: And articles, you know, from the journals.\n[20:05] Andy: And then of course there's lots of stuff on the internet.\n[20:08] Helen: Yes, that's the sort of thing. And what about the presentations? Will we just be talking? Presumably we can't use slides.\n[20:16] Andy: It'd be a bit difficult, but we can use the OHP.\n[20:19] Bob: And the whiteboard, of course.\n[20:20] Helen: And we can make photocopies of our notes, so everyone can have a copy.\n[20:24] Andy: Yes, great. So is there anything else?\n[20:27] Narrator: That is the end of Section 3. You now have half a minute to check your answers.",
+        "groups": [
+          {
+            "instruction": "Complete the notes below. Write NO MORE THAN THREE WORDS for each answer.",
+            "wordLimit": "NO MORE THAN THREE WORDS",
+            "layout": "notes",
+            "table": {
+              "title": "Reasons for having study syndicates",
+              "rows": [
+                [
+                  "• Teaching one another is a good way to learn"
+                ],
+                [
+                  "• It gives the opportunity to {{21}}"
+                ],
+                [
+                  "• Shared reading means fuller notes"
+                ],
+                [
+                  "• You can do {{22}}"
+                ]
+              ]
+            },
+            "questions": [
+              {
+                "no": 21,
+                "type": "fill",
+                "text": "It gives the opportunity to ___",
+                "answer": [
+                  "share ideas"
+                ],
+                "explanation": "\"presumably it gives us the chance to share ideas as well\""
+              },
+              {
+                "no": 22,
+                "type": "fill",
+                "text": "You can do ___",
+                "answer": [
+                  "deeper research",
+                  "much deeper research"
+                ],
+                "explanation": "\"because of that really, you can do, you know, much deeper research\""
+              }
+            ]
+          },
+          {
+            "instruction": "Complete the table below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+            "wordLimit": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+            "layout": "table",
+            "table": {
+              "title": "PLAN FOR STUDY SYNDICATE",
+              "columns": [
+                "Date",
+                "Geology topic",
+                "Name of presenter"
+              ],
+              "rows": [
+                [
+                  "9th May",
+                  "{{23}}",
+                  "Bob"
+                ],
+                [
+                  "{{24}}",
+                  "Glaciated areas",
+                  "Andy"
+                ],
+                [
+                  "23rd May",
+                  "Rock formation",
+                  "Helen and John"
+                ],
+                [
+                  "{{25}}",
+                  "Volcanoes",
+                  "John"
+                ]
+              ]
+            },
+            "questions": [
+              {
+                "no": 23,
+                "type": "fill",
+                "text": "9th May – topic: ___ (Bob)",
+                "answer": [
+                  "mountain building"
+                ],
+                "explanation": "\"So is May 9th okay for that?\" … \"it's Bob for mountain building\""
+              },
+              {
+                "no": 24,
+                "type": "fill",
+                "text": "Date: ___ – Glaciated areas (Andy)",
+                "answer": [
+                  "17th May",
+                  "17 May",
+                  "May 17th",
+                  "May 17",
+                  "17/5"
+                ],
+                "explanation": "\"it can't be May 16th because of our tutorial, but what about the 17th?\" … \"Glaciated areas, Andy.\""
+              },
+              {
+                "no": 25,
+                "type": "fill",
+                "text": "Date: ___ – Volcanoes (John)",
+                "answer": [
+                  "29th May",
+                  "29 May",
+                  "May 29th",
+                  "May 29",
+                  "29/5"
+                ],
+                "explanation": "\"Shall we make it on the 30th?\" – \"I can't make it, I'm afraid.\" – \"29th of May?\" … \"John said he wouldn't mind doing something on volcanoes.\""
+              }
+            ]
+          },
+          {
+            "instruction": "Complete the notes below. Write NO MORE THAN THREE WORDS AND/OR A NUMBER for each answer.",
+            "wordLimit": "NO MORE THAN THREE WORDS AND/OR A NUMBER",
+            "layout": "notes",
+            "table": {
+              "rows": [
+                [
+                  "• Presentation should last for {{26}}"
+                ],
+                [
+                  "  (plan time for {{27}})"
+                ],
+                [
+                  "# Sources of information"
+                ],
+                [
+                  "• Bibliography"
+                ],
+                [
+                  "• Library books"
+                ],
+                [
+                  "• {{28}}"
+                ],
+                [
+                  "• {{29}}"
+                ],
+                [
+                  "# For the presentations, use:"
+                ],
+                [
+                  "• Overhead projector"
+                ],
+                [
+                  "• Whiteboard"
+                ],
+                [
+                  "• {{30}}"
+                ]
+              ]
+            },
+            "questions": [
+              {
+                "no": 26,
+                "type": "fill",
+                "text": "Presentation should last for ___",
+                "answer": [
+                  "30-40 minutes",
+                  "30 to 40 minutes",
+                  "30–40 minutes",
+                  "30-40 mins"
+                ],
+                "explanation": "\"Well, shall we say 30 to 40 minutes?\""
+              },
+              {
+                "no": 27,
+                "type": "fill",
+                "text": "(plan time for ___)",
+                "answer": [
+                  "questions and discussion",
+                  "questions, discussion",
+                  "discussion and questions"
+                ],
+                "explanation": "\"And presumably time for questions.\" – \"And discussion.\" – \"Yes, together they usually take about 20 minutes.\""
+              },
+              {
+                "no": 28,
+                "type": "fill",
+                "text": "Sources of information: Bibliography, Library books, ___",
+                "answer": [
+                  "journal articles",
+                  "articles",
+                  "journals",
+                  "articles from journals"
+                ],
+                "explanation": "\"And articles, you know, from the journals.\" (28 và 29 có thể đổi chỗ)"
+              },
+              {
+                "no": 29,
+                "type": "fill",
+                "text": "Sources of information: …, ___",
+                "answer": [
+                  "the internet",
+                  "internet"
+                ],
+                "explanation": "\"And then of course there's lots of stuff on the internet.\""
+              },
+              {
+                "no": 30,
+                "type": "fill",
+                "text": "For the presentations, use: overhead projector, whiteboard, ___",
+                "answer": [
+                  "photocopies",
+                  "photocopies of notes",
+                  "photocopied notes"
+                ],
+                "explanation": "\"we can make photocopies of our notes, so everyone can have a copy\""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section": 4,
+        "title": "The African clawed frog",
+        "topic": "Biology",
+        "cut": "20:44",
+        "transcript": "[20:44] Narrator: Now turn to Section 4 on page 8. Section 4. You'll hear part of a student presentation about a type of frog called the African clawed frog. First you have some time to look at questions 31 to 40.\n[22:13] Narrator: Now listen carefully and answer questions 31 to 40.\n[22:26] Student: The aim of our study was to look at how naturally occurring substances can be used to treat infections, and we carried out a laboratory study using a frog called the African clawed frog, which has the scientific name Xenopus laevis. So before I describe our study in detail, let me give you a general description of this frog.\n[22:53] Student: Like most other frogs, the African clawed frogs have a smooth skin. This is one way you can distinguish them from toads, whose skin is rough. And they can change the colour of their skin to blend in with their surroundings. The surface of their skin also has another feature. It's covered with a layer of mucus. This makes it hard for other creatures to pick them up, and so it provides protection against predators.\n[23:32] Student: How big are they? Well, it depends on whether they're male or female, because the females in this case are a whole lot bigger than the males. A large-sized female may be eight inches long, while the males are about half that size. So they're pretty small in comparison.\n[23:56] Student: What about their natural habitat? As their name suggests, these frogs are native to Africa, and they're found in most parts of Africa south of the Sahara Desert. They make their homes in fresh water, but they're rarely found in running streams. They like still water. As far as the temperature of the water goes, they're not too fussy. It can be warm or cool. They don't need to be in water where there are plants growing, and they can live in water that has quite a lot of salt in it, so they can live in brackish areas, such as marshes and estuaries. However, although they can live in a wide range of conditions, one thing that they are unable to tolerate is even very small traces of metal. That's immediately fatal to them. And that's important to remember when they're being kept in captivity. You've got to be careful what kind of tank you use and what you put into the water. In their natural habitat, the frogs normally live in water the whole time, but in unfavourable conditions, such as drought, they can burrow into the mud and survive there for up to a year until conditions improve.\n[25:31] Student: As far as their diet is concerned, they're carnivorous. They eat other creatures they find in the water, and they're scavengers, which means they'll eat almost anything, living or dead. They've got huge appetites. Because the water they live in is often quite dirty and visibility is limited, they can't locate their food using their sense of sight. Instead, they use smell and also the sensitive fingers on their front legs. And they also have what's called a lateral line system on the sides of their bodies, which is sensitive to vibrations in the water. They use their front legs to get the food into their mouths, together with a type of pump arrangement that sucks the food into the mouth and down into their stomach. They don't have any teeth, so everything just goes straight down.\n[26:41] Student: Okay, well, although Xenopus started off in Africa, they're now quite widespread. One of the reasons for this is that a lot of people in the US like keeping them at home as a pet. They're quite easy to look after, and they can live for up to 20 years. But in some states of the US, such as California and Virginia, they have escaped from captivity and are reproducing in the wild and threatening native species there. So they've been classified as a pest in these areas.\n[27:26] Student: But another very important use for the frogs is for research in laboratories. Because the females lay large numbers of eggs and the embryos are transparent, it's easy to see how they are developing, and so they're used for research into genetics and development. But also, the slippery mucus that covers their skin acts as an antibiotic, killing parasites and bacteria. And this is why we chose this frog for our research. So, let me describe the aim of our study…",
+        "groups": [
+          {
+            "instruction": "Complete the notes below. Write ONE WORD AND/OR A NUMBER for each answer.",
+            "wordLimit": "ONE WORD AND/OR A NUMBER",
+            "layout": "notes",
+            "context": "The African clawed frog (Xenopus laevis)",
+            "table": {
+              "title": "The African clawed frog (Xenopus laevis)",
+              "rows": [
+                [
+                  "# Description"
+                ],
+                [
+                  "• Skin is {{31}} and can vary in colour"
+                ],
+                [
+                  "• Skin is coated with a slippery film for {{32}}"
+                ],
+                [
+                  "• Males are {{33}} the size of females"
+                ],
+                [
+                  "# Habitats"
+                ],
+                [
+                  "• Native to Africa"
+                ],
+                [
+                  "• Live in fresh water – prefer water that is {{34}}"
+                ],
+                [
+                  "• Can survive high levels of {{35}} in water"
+                ],
+                [
+                  "• Cannot survive if there is any metal in water"
+                ],
+                [
+                  "• In drought conditions, may live in {{36}} for up to a year"
+                ],
+                [
+                  "# Diet"
+                ],
+                [
+                  "• Eat living or dead water creatures"
+                ],
+                [
+                  "• Find food using their sense of {{37}}, their fingers, and their lateral lines"
+                ],
+                [
+                  "• Take food into their mouths using front legs and a {{38}} system"
+                ],
+                [
+                  "# Other information"
+                ],
+                [
+                  "• Now popular as a pet in the US"
+                ],
+                [
+                  "• In some US states they are identified as a {{39}}"
+                ],
+                [
+                  "• Used in laboratories for developmental research"
+                ],
+                [
+                  "• Mucus from the skin has {{40}} properties"
+                ]
+              ]
+            },
+            "questions": [
+              {
+                "no": 31,
+                "type": "fill",
+                "text": "Skin is ___ and can vary in colour",
+                "answer": [
+                  "smooth"
+                ],
+                "explanation": "\"the African clawed frogs have a smooth skin\""
+              },
+              {
+                "no": 32,
+                "type": "fill",
+                "text": "Skin is coated with a slippery film for ___",
+                "answer": [
+                  "protection"
+                ],
+                "explanation": "\"It's covered with a layer of mucus. … it provides protection against predators.\""
+              },
+              {
+                "no": 33,
+                "type": "fill",
+                "text": "Males are ___ the size of females",
+                "answer": [
+                  "half"
+                ],
+                "explanation": "\"the males are about half that size\""
+              },
+              {
+                "no": 34,
+                "type": "fill",
+                "text": "Live in fresh water – prefer water that is ___",
+                "answer": [
+                  "still"
+                ],
+                "explanation": "\"they're rarely found in running streams. They like still water.\""
+              },
+              {
+                "no": 35,
+                "type": "fill",
+                "text": "Can survive high levels of ___ in water",
+                "answer": [
+                  "salt"
+                ],
+                "explanation": "\"they can live in water that has quite a lot of salt in it\""
+              },
+              {
+                "no": 36,
+                "type": "fill",
+                "text": "In drought conditions, may live in ___ for up to a year",
+                "answer": [
+                  "mud"
+                ],
+                "explanation": "\"they can burrow into the mud and survive there for up to a year\""
+              },
+              {
+                "no": 37,
+                "type": "fill",
+                "text": "Find food using their sense of ___, their fingers, and their lateral lines",
+                "answer": [
+                  "smell"
+                ],
+                "explanation": "\"they can't locate their food using their sense of sight. Instead, they use smell\""
+              },
+              {
+                "no": 38,
+                "type": "fill",
+                "text": "Take food into their mouths using front legs and a ___ system",
+                "answer": [
+                  "pump"
+                ],
+                "explanation": "\"together with a type of pump arrangement that sucks the food into the mouth\""
+              },
+              {
+                "no": 39,
+                "type": "fill",
+                "text": "In some US states they are identified as a ___",
+                "answer": [
+                  "pest"
+                ],
+                "explanation": "\"they've been classified as a pest in these areas\""
+              },
+              {
+                "no": 40,
+                "type": "fill",
+                "text": "Mucus from the skin has ___ properties",
+                "answer": [
+                  "antibiotic",
+                  "antibacterial"
+                ],
+                "explanation": "\"the slippery mucus that covers their skin acts as an antibiotic, killing parasites and bacteria\""
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

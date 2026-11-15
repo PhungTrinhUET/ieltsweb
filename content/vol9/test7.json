@@ -1,0 +1,620 @@
+{
+ "vol": 9,
+ "test": 7,
+ "source": "VOL 9 – Test 7 (Listening). Đề: TEST 7-L.docx (sơ đồ thư viện câu 16–20 lấy từ hình trong file đề); key + transcript: KEY TEST 7-L.docx. Audio gốc là một file cả bài. Transcript gốc là các khối liền, không tách vai: đã phân vai người nói theo ngữ cảnh (S1 Assistant/Ian, S3 Jack/Dr Rubin – transcript ghi \"Reuben\", đề ghi \"Rubin\"). Câu hỏi trong đề có lỗi ngữ pháp/chính tả đã sửa nhẹ (Q11, Q13–15, Q21 \"He has seen as out-fashioned\" → \"He was seen as old-fashioned\", Q28 \"Wooden scene\" → \"Woodland Scene\", Q5 \"passage seat\" → \"passenger seat\", Q36/39 \"subcontract\" → \"subcontractor\"). Câu 15 chọn C theo transcript (key ghi A). Transcript Part 2 không có lời dẫn đầu phần. Không có Reading/Writing cho test này.",
+ "listening": {
+  "audioDir": "audio/vol9/test7",
+  "timingNote": "Audio là một file cả bài; cắt section theo câu \"Section/Part N\" của người dẫn (nhận dạng bằng Whisper): S1 0:00, S2 6:02, S3 12:40, S4 19:17. Mốc từng lượt lời trong section là ước lượng (nội suy từ transcript gốc).",
+  "sections": [
+   {
+    "section": 1,
+    "title": "Car servicing booking",
+    "topic": "Services",
+    "transcript": "[00:00] Narrator: You will hear a telephone conversation between an assistant at a car service station and a customer. First, you have some time to look at questions 1 and 2. You will see that there is an example that has been done for you. On this occasion only, the conversation relating to this will be played first.\n[00:34] Assistant: Good morning, servicing department.\n[00:36] Ian: Good morning, I'd like to book my car in for a service, please.\n[00:50] Narrator: The customer's name is Ian Croft, so Croft has been written in the space. Now we shall begin. You should answer the questions as you listen because you will not hear the recording a second time.\n[01:07] Narrator: Listen carefully and answer questions 1 and 2.\n[01:12] Assistant: Good morning, servicing department.\n[01:14] Ian: Good morning, I'd like to book my car in for a service, please.\n[01:21] Assistant: Certainly, sir. If I could just take your name.\n[01:24] Ian: Ian Croft.\n[01:27] Assistant: Right, and have you had the car serviced with us before?\n[01:30] Ian: No, I've only just moved here.\n[01:33] Assistant: Right, so I'll need to take some details of the car then. So could I have the registration number, please?\n[01:39] Ian: BD51STR.\n[01:42] Assistant: Is that B for Bravo at the beginning?\n[01:45] Ian: Yes, that's right.\n[01:49] Assistant: And the make of the car?\n[01:51] Ian: It's a Vida.\n[01:53] Assistant: Right, and is that the estate?\n[01:55] Ian: No, the four-door saloon.\n[01:58] Assistant: Good, and do you know the date of manufacture?\n[02:01] Ian: Mmm, about… oh, hold on, I'll have to work this one out. We've had it for ages. It must be 2001.\n[02:09] Assistant: Right, and can you tell me what the mileage is?\n[02:12] Ian: It's done a lot. Let's see, I did make a note of it. Yes, it's 180,000 miles. It's done very well, actually.\n[02:24] Narrator: Before you hear the rest of the conversation, you have some time to look at questions 3 to 10.\n[03:20] Narrator: Now listen and answer questions 3 to 10.\n[03:24] Assistant: Right, well now of course we'll do a full service, but are there any particular problems or things you'd like us to check?\n[03:31] Ian: Yes, a few. I think a couple of the tyres probably need replacing. They're getting a bit worn.\n[03:36] Assistant: OK, we do automatically look at those, but I'll make a note of that anyway.\n[03:40] Ian: Then, it's not a big problem, but it's a bit annoying. When you open the car door, the light ought to come on inside automatically, but it seems to have stopped working.\n[03:50] Assistant: Right, we'll have a look at that for you. I'm sure we can fix that. OK, what else?\n[03:55] Ian: Oh yes, on one of the passenger seats at the back, you can't fasten the belt. It seems to have stuck. It just happened yesterday, so that needs looking at.\n[04:06] Assistant: Yes, that's quite important if you carry passengers in the back. Anything else?\n[04:11] Ian: Er, there was something. Let me see. Well, one thing that's actually going to need replacing, I think, is the radio. It hasn't worked for some time.\n[04:21] Assistant: Would you like us to give you a quote for that before we fit a new one?\n[04:24] Ian: Yes, please. Oh, and I know what I meant to say. I know you'll check the brakes in a service, but can you have a particular look at the front ones? I think they might be a bit worn.\n[04:35] Assistant: Certainly. I'll make a note of that too.\n[04:38] Ian: OK. And the other thing is, I only have one key for the car and I really need a spare.\n[04:44] Assistant: Yes, we'll have to order that for you, but we can do that.\n[04:48] Ian: Great.\n[04:49] Assistant: So, when would you like to come in for the service?\n[04:52] Ian: Well, do you have anything next week? Tuesday would be good. Er, that's the 4th of October, isn't it?\n[04:58] Assistant: No, the 5th. Can you make 8 a.m.?\n[05:02] Ian: Yes, that's fine.\n[05:05] Assistant: And the service will take a few hours, so would you like to have a courtesy car during that time? There's no extra charge.\n[05:11] Ian: Yes, that would be good, but can I have an automatic if possible, please?\n[05:16] Assistant: We'll see what we can do. Right, and now I just need to take your address, Mr Croft.\n[05:24] Ian: It's 361 College Road, Norwich.\n[05:28] Assistant: And would you like to give a phone number?\n[05:30] Ian: Yes. A daytime number would be best, if possible. Right, 07847 355780.\n[05:40] Assistant: Lovely. So, that's it. Thank you very much, Mr Croft.",
+    "groups": [
+     {
+      "instruction": "Complete the form below. Write ONE WORD AND/OR A NUMBER for each answer.",
+      "wordLimit": "ONE WORD AND/OR A NUMBER",
+      "context": "Car Servicing. Example: Customer name – Ian Croft.",
+      "layout": "form",
+      "table": {
+       "title": "Car Servicing",
+       "rows": [
+        [
+         "# Example"
+        ],
+        [
+         "Customer name",
+         "Ian Croft"
+        ],
+        [
+         "# Car details"
+        ],
+        [
+         "Registration number",
+         "{{1}}"
+        ],
+        [
+         "Make and model",
+         "Vida (4-door saloon)"
+        ],
+        [
+         "Date of manufacture",
+         "2001"
+        ],
+        [
+         "Number of miles",
+         "{{2}}"
+        ],
+        [
+         "# Problems"
+        ],
+        [
+         "• needs two new {{3}}"
+        ],
+        [
+         "• the inside {{4}} needs fixing"
+        ],
+        [
+         "• one passenger seat {{5}} is stuck"
+        ],
+        [
+         "• the {{6}} needs replacing"
+        ],
+        [
+         "• the {{7}} brakes of the car need attention"
+        ],
+        [
+         "• needs a spare {{8}}"
+        ],
+        [
+         "# Service arrangements"
+        ],
+        [
+         "Date/Time",
+         "Tuesday 5 October, 8.00 a.m."
+        ],
+        [
+         "Courtesy car?",
+         "Yes, preferably {{9}}"
+        ],
+        [
+         "# Customer details"
+        ],
+        [
+         "Address",
+         "361 College Road, Norwich"
+        ],
+        [
+         "Phone",
+         "{{10}}"
+        ]
+       ]
+      },
+      "questions": [
+       {
+        "no": 1,
+        "type": "fill",
+        "text": "Registration number: ___",
+        "answer": [
+         "BD51STR",
+         "BD51 STR"
+        ],
+        "explanation": "\"So could I have the registration number, please?\" – \"BD51STR.\" – \"Is that B for Bravo at the beginning?\" – \"Yes, that's right.\""
+       },
+       {
+        "no": 2,
+        "type": "fill",
+        "text": "Number of miles: ___",
+        "answer": [
+         "180,000",
+         "180000",
+         "180 000"
+        ],
+        "explanation": "\"Yes, it's 180,000 miles.\""
+       },
+       {
+        "no": 3,
+        "type": "fill",
+        "text": "Needs two new ___",
+        "answer": [
+         "tyres",
+         "tires"
+        ],
+        "explanation": "\"I think a couple of the tyres probably need replacing.\""
+       },
+       {
+        "no": 4,
+        "type": "fill",
+        "text": "The inside ___ needs fixing",
+        "answer": [
+         "light"
+        ],
+        "explanation": "\"When you open the car door, the light ought to come on inside automatically, but it seems to have stopped working.\""
+       },
+       {
+        "no": 5,
+        "type": "fill",
+        "text": "One passenger seat ___ is stuck",
+        "answer": [
+         "belt"
+        ],
+        "explanation": "\"on one of the passenger seats at the back, you can't fasten the belt. It seems to have stuck.\""
+       },
+       {
+        "no": 6,
+        "type": "fill",
+        "text": "The ___ needs replacing",
+        "answer": [
+         "radio"
+        ],
+        "explanation": "\"one thing that's actually going to need replacing, I think, is the radio.\""
+       },
+       {
+        "no": 7,
+        "type": "fill",
+        "text": "The ___ brakes of the car need attention",
+        "answer": [
+         "front"
+        ],
+        "explanation": "\"can you have a particular look at the front ones? I think they might be a bit worn.\""
+       },
+       {
+        "no": 8,
+        "type": "fill",
+        "text": "Needs a spare ___",
+        "answer": [
+         "key"
+        ],
+        "explanation": "\"I only have one key for the car and I really need a spare.\""
+       },
+       {
+        "no": 9,
+        "type": "fill",
+        "text": "Courtesy car? Yes, preferably ___",
+        "answer": [
+         "automatic"
+        ],
+        "explanation": "\"can I have an automatic if possible, please?\""
+       },
+       {
+        "no": 10,
+        "type": "fill",
+        "text": "Phone: ___",
+        "answer": [
+         "07847 355780",
+         "07847355780"
+        ],
+        "explanation": "\"A daytime number would be best … 07847 355780.\""
+       }
+      ]
+     }
+    ],
+    "cut": "0:00"
+   },
+   {
+    "section": 2,
+    "title": "Rosedale Library open day",
+    "topic": "Community",
+    "transcript": "[06:02] David: Good morning, everyone. Welcome to Rosedale Library Open Day. It's good to see that so many members of the public are interested in the future of the library. For those of you who don't know me, my name is David Laws. I'm the new personal assistant to Penny Williams, the library director.\n[06:22] David: Penny was supposed to be leading this meeting, but due to unexpected illness, I will be taking her place this morning. We felt that this would be better than postponing the meeting to a later date.\n[06:34] David: Firstly, a couple of small matters. The guest speaker talks this year have been incredibly popular, and the slight rise in ticket price has not put anyone off. We will continue to hold these events on a monthly basis. It has, however, come to our attention that some people have missed events because they didn't know they were on. We now intend to notify everyone through email reminders.\n[07:05] David: Also, you might be aware that we had a break-in last month, and while the thief or thieves actually left empty-handed, they did smash a number of windows and kick down a door trying to get in. Police believe the offenders were just taking a chance that there might be something valuable in the library. Anyway, we hope that the new security cameras along Roberts Avenue might deter this kind of activity.\n[07:32] David: Now, the purpose of the meeting, of course, is to present the proposals for a new library layout. Rosedale Library has been serving the public for 50 years, but it's not been extended since the renovations in 1969. Since opening, the number of books on our shelves and other items has more than doubled, and visitor numbers have increased 20% in the last 10 years. There is, therefore, a clear need for an extension.\n[08:02] David: We hope that you have noticed some recent improvements to the library, such as the eight new PCs that were installed back in June. We're also aware that the lighting is quite poor, but you'll shortly see a big difference because the City Council continues to support us and has authorised the spending in this area.\n[08:27] David: We've also applied to the Council to approve the addition of another member of staff to work part-time in the afternoons, when mothers and children tend to use the library more often, and this decision will be made in the next few weeks.\n[08:42] Narrator: Before you hear the rest of the talk, you have some time to look at questions 16 to 20.\n[09:05] Narrator: Now listen and answer questions 16 to 20.\n[09:10] David: Now, turning to the proposal for the extensions and alterations to the library, please see the second page of your handout. The double line indicates the rooms in the existing building, and the dotted lines show where the extensions might be.\n[09:25] David: As you can see, the location of the entrance hall to the library would remain unchanged there at the bottom of the plan. Once you go all the way through the entrance hall, on your immediate left would be the local history display that would face the information desk. Behind it, the plan is for an access ramp inside the existing building, meaning that mothers with pushchairs and wheelchair users could ascend to the first new area.\n[09:54] David: This new room is designed to be light and airy, and could be the ideal location for a new children's room looking out onto the park. You will notice there are steps that lead back down to the ground floor. At the bottom of these, on the left, would be the adult fiction section, so no change there.\n[10:17] David: But behind this it is proposed to construct a new community room for public lectures, special events and so forth. This will be the largest new room. To the right of the adult fiction room, with magnificent views of the sea, a cafe could provide visitors with light refreshments and an opportunity to browse a range of magazines. There would be external access to this area via a set of steps leading down towards Queen's Parade.\n[10:47] David: Now, let's go back to the entrance hall again. On the right of the entrance hall, facing onto Roberts Avenue, is the new staff workroom. The fact that the workroom would be overlooking Roberts Avenue means the staff will actually be able to see outside rather than be stuck in the small room behind the toilets.\n[11:10] David: The room looking out onto both Queen's Parade and Roberts Avenue would be the academic study room, a facility we believe could be used by the growing number of local students. Also facing Roberts Avenue but not Queen's Parade would be the multimedia room, with our extensive audio collection right behind it.\n[11:36] Narrator: That is the end of Part 2. You now have half a minute to check your answers.",
+    "groups": [
+     {
+      "instruction": "Choose the correct letter, A, B or C.",
+      "context": "Rosedale Library",
+      "questions": [
+       {
+        "no": 11,
+        "type": "mcq",
+        "text": "Why is David Laws leading the meeting instead of Penny Williams today?",
+        "options": [
+         "Penny Williams is unwell.",
+         "David Laws is now the director.",
+         "The meeting has been postponed."
+        ],
+        "answer": 0,
+        "explanation": "\"Penny was supposed to be leading this meeting, but due to unexpected illness, I will be taking her place this morning.\""
+       },
+       {
+        "no": 12,
+        "type": "mcq",
+        "text": "What does David say has been a problem with guest speaker talks?",
+        "options": [
+         "expensive tickets",
+         "lack of publicity",
+         "inconvenient time"
+        ],
+        "answer": 1,
+        "explanation": "\"some people have missed events because they didn't know they were on. We now intend to notify everyone through email reminders.\""
+       },
+       {
+        "no": 13,
+        "type": "mcq",
+        "text": "What does David say about the break-in at the library?",
+        "options": [
+         "The building suffered some damage.",
+         "Some valuable items were stolen.",
+         "The thieves had prepared well."
+        ],
+        "answer": 0,
+        "explanation": "\"while the thief or thieves actually left empty-handed, they did smash a number of windows and kick down a door trying to get in.\""
+       },
+       {
+        "no": 14,
+        "type": "mcq",
+        "text": "Why do they want to extend the library?",
+        "options": [
+         "It has not been renovated since it was founded.",
+         "It needs to double the number of computers.",
+         "The number of visitors has increased."
+        ],
+        "answer": 2,
+        "explanation": "\"visitor numbers have increased 20% in the last 10 years. There is, therefore, a clear need for an extension.\""
+       },
+       {
+        "no": 15,
+        "type": "mcq",
+        "text": "The investment from the City Council will be used to",
+        "options": [
+         "recruit extra staff.",
+         "buy more computers.",
+         "improve the lighting."
+        ],
+        "answer": 2,
+        "explanation": "\"We're also aware that the lighting is quite poor, but you'll shortly see a big difference because the City Council continues to support us and has authorised the spending in this area.\" – còn việc thêm nhân viên mới chỉ là đề nghị, \"this decision will be made in the next few weeks\". (key trong file ghi A)"
+       }
+      ]
+     },
+     {
+      "instruction": "Label the plan below. Write the correct letter, A–H, next to questions 16–20.",
+      "image": "img/vol9/t7-l2-map.png",
+      "imageAlt": "Sơ đồ Rosedale Library (nét đứt = phần mở rộng dự kiến). Roberts Avenue chạy ngang phía dưới, Queens Parade và biển ở phía đông, công viên (Park) ở phía tây. Entrance Hall ở giữa phía dưới; bên trái là Toilets, F, Access Ramp; Local Historical Display đối diện Information Desk; C là phòng mở rộng ở phía tây nhìn ra công viên, nối bằng bậc thang. Phía trên: Adult Fiction, D ở giữa; A (mở rộng) phía sau Adult Fiction ở trên cùng; B (mở rộng) góc đông bắc cạnh bậc thang ra Queens Parade. Bên phải Entrance Hall: Staff Workroom; Audio Collection; G cạnh Roberts Avenue ngay trước Audio Collection; H ở góc đông nam (nhìn ra cả Roberts Avenue và Queens Parade); E dọc phía đông.",
+      "bank": [
+       "A",
+       "B",
+       "C",
+       "D",
+       "E",
+       "F",
+       "G",
+       "H"
+      ],
+      "questions": [
+       {
+        "no": 16,
+        "type": "match",
+        "text": "Children's room",
+        "answer": 2,
+        "explanation": "\"an access ramp … could ascend to the first new area. This new room … could be the ideal location for a new children's room looking out onto the park.\""
+       },
+       {
+        "no": 17,
+        "type": "match",
+        "text": "Community room",
+        "answer": 0,
+        "explanation": "\"At the bottom of these, on the left, would be the adult fiction section … But behind this it is proposed to construct a new community room\""
+       },
+       {
+        "no": 18,
+        "type": "match",
+        "text": "Café",
+        "answer": 1,
+        "explanation": "\"To the right of the adult fiction room, with magnificent views of the sea, a cafe could provide visitors with light refreshments\""
+       },
+       {
+        "no": 19,
+        "type": "match",
+        "text": "Academic study room",
+        "answer": 7,
+        "explanation": "\"The room looking out onto both Queen's Parade and Roberts Avenue would be the academic study room\""
+       },
+       {
+        "no": 20,
+        "type": "match",
+        "text": "Multimedia room",
+        "answer": 6,
+        "explanation": "\"Also facing Roberts Avenue but not Queen's Parade would be the multimedia room, with our extensive audio collection right behind it.\""
+       }
+      ]
+     }
+    ],
+    "cut": "6:02"
+   },
+   {
+    "section": 3,
+    "title": "The artist Samuel Prout",
+    "topic": "Art",
+    "transcript": "[12:40] Narrator: You will hear an art history student called Jack talking to a lecturer, Dr Rubin, about an English artist called Samuel Prout. First, you have some time to look at questions 21 to 25.\n[13:08] Narrator: Now listen carefully and answer questions 21 to 25.\n[13:12] Jack: Dr Rubin?\n[13:13] Dr Rubin: Hello, Jack. So, have you chosen which artist you're going to give your presentation on?\n[13:18] Jack: Yes, Samuel Prout, the 19th-century English watercolour painter.\n[13:23] Dr Rubin: Right, interesting choice. I always feel he never quite got the fame he deserved, did he?\n[13:30] Jack: No, I think that's true. I mean, I don't think he ever went completely out of vogue even though tastes and fashions come and go. He was really prolific in his day, but there's never really been a high-profile showing of his paintings. That could have brought him to more people's attention.\n[13:48] Dr Rubin: Sure, but I think it's remarkable that he achieved any critical success given the problems that he had. Apparently, he was prone to chronic chest infections throughout his life.\n[14:00] Jack: Yes, it must have been hard for him, but it seems he had a loving wife and family.\n[14:06] Dr Rubin: And a strong network of colleagues and supporters.\n[14:09] Jack: Yeah. I've been trying to find out what got him interested in painting in the first place. He doesn't seem to have learned the skill from his father like so many artists of his time.\n[14:20] Dr Rubin: No, well, I think he painstakingly reproduced other painters' works, essentially sort of schooling himself. And then later on he actually became an art teacher.\n[14:33] Dr Rubin: How do you feel about Prout's style of painting?\n[14:36] Jack: It's interesting how with a lot of artists you can see how their style is developing as their work matures, but not so much with Prout. He seemed to have several on the go all at the same time.\n[14:47] Dr Rubin: Yes, with others you can say, oh, that must be by so-and-so and painted in around 1820, say.\n[14:57] Jack: Right, but not so much with Prout.\n[14:59] Dr Rubin: Of course, Prout's career had a huge boost when the art critic John Ruskin declared him a great artist.\n[15:05] Jack: Yes, but Ruskin's assessment was quite biased, wasn't it?\n[15:08] Dr Rubin: How do you mean?\n[15:09] Jack: Well, Ruskin admired Prout and he didn't seem to mind the fact that many of his paintings showed more or less the same thing – European street scenes – or that the people in Prout's pictures can look rather wooden and not very lifelike. For me, his detailing of architecture was too predictable, but for Ruskin that was where Prout's genius lay.\n[15:32] Dr Rubin: Well, I guess that's what Ruskin was particularly interested in.\n[15:36] Narrator: Before you hear the rest of the discussion you have some time to look at questions 26 to 30.\n[16:20] Narrator: Now listen and answer questions 26 to 30.\n[16:24] Dr Rubin: OK, Jack, so your brief was to prepare a presentation to give to the group and show some pictures associated with the artist, each of which makes a key point about their work, OK?\n[16:36] Jack: Right, well, I wanted to start with A View in Germany: at Würzburg. It's a detailed watercolour showing a busy market scene with a background of flamboyant detail like in so many of his pictures.\n[16:47] Dr Rubin: Yes, basically what Prout had made his name doing so well. It really gives the flavour of his work.\n[16:57] Jack: Right. There's a painting called Bridge on the Ouse, near York, except that experts now think this isn't York at all but somewhere in the south of England.\n[17:08] Dr Rubin: Right.\n[17:09] Jack: But as far as I know the picture has never been renamed.\n[17:12] Dr Rubin: No, that would make cataloguing and researching Prout's pictures more complicated.\n[17:18] Jack: And the next one is called Woodland Scene. This one has a signature, it says S. Prout in the bottom left, but even so experts on Prout say they doubt he actually painted it.\n[17:30] Dr Rubin: Yes, I remember reading that. The detailing is too clumsy, with the sun not casting shade in the right place.\n[17:38] Jack: Exactly, and there's a lot of blue that basically doesn't appear in any other Prout pictures, so it's probably a forgery.\n[17:47] Dr Rubin: Yes. And what's the next one?\n[17:50] Jack: Venice. It's a view from the Grand Canal with some rather grand buildings. They're bathed in sunlight with a sort of picturesque shadow cast by the buildings opposite, which is shown brilliantly.\n[18:06] Dr Rubin: Lovely use of colour. Prout at his best, I think.\n[18:10] Jack: Right. And then there's Entrance to a Harbour.\n[18:13] Dr Rubin: Right. He grew up by the sea, didn't he?\n[18:16] Jack: Yes, in Plymouth. He didn't specialise in seascapes, but this same location with the harbour and the sea also appears in other pictures showing a range of weather conditions. They don't all have figures like this one, but I think they're really well done.\n[18:35] Dr Rubin: Right.\n[18:36] Narrator: That is the end of Section 3. You now have half a minute to check your answers.",
+    "groups": [
+     {
+      "instruction": "Choose the correct letter, A, B or C.",
+      "context": "The artist Samuel Prout",
+      "questions": [
+       {
+        "no": 21,
+        "type": "mcq",
+        "text": "According to Jack, why did Samuel Prout never become very famous?",
+        "options": [
+         "His output was very limited.",
+         "He was seen as old-fashioned.",
+         "His work never had a major exhibition."
+        ],
+        "answer": 2,
+        "explanation": "\"there's never really been a high-profile showing of his paintings. That could have brought him to more people's attention.\" – ông vẽ rất nhiều (\"really prolific\") và \"never went completely out of vogue\"."
+       },
+       {
+        "no": 22,
+        "type": "mcq",
+        "text": "Dr Rubin and Jack agree that many of Prout's problems were caused by",
+        "options": [
+         "poor health.",
+         "jealous colleagues.",
+         "an unhappy marriage."
+        ],
+        "answer": 0,
+        "explanation": "\"he was prone to chronic chest infections throughout his life.\" – \"Yes, it must have been hard for him\""
+       },
+       {
+        "no": 23,
+        "type": "mcq",
+        "text": "How did Prout learn painting?",
+        "options": [
+         "His father taught him.",
+         "He went to art galleries.",
+         "He copied pictures."
+        ],
+        "answer": 2,
+        "explanation": "\"he painstakingly reproduced other painters' works, essentially sort of schooling himself.\""
+       },
+       {
+        "no": 24,
+        "type": "mcq",
+        "text": "What point does Jack make about Prout's style?",
+        "options": [
+         "Prout used different styles simultaneously.",
+         "Many other artists had a similar style.",
+         "Prout's style developed throughout his career."
+        ],
+        "answer": 0,
+        "explanation": "\"He seemed to have several on the go all at the same time.\""
+       },
+       {
+        "no": 25,
+        "type": "mcq",
+        "text": "What did John Ruskin admire about Prout's paintings?",
+        "options": [
+         "their realism",
+         "their presentation of buildings",
+         "their wide range of subject matter"
+        ],
+        "answer": 1,
+        "explanation": "\"For me, his detailing of architecture was too predictable, but for Ruskin that was where Prout's genius lay.\""
+       }
+      ]
+     },
+     {
+      "instruction": "What information do the speakers give about each of the following pictures? Choose FIVE answers from the box and write the correct letter, A–G, next to questions 26–30.",
+      "bank": [
+       "one of several paintings of the same view",
+       "probably an inaccurate title",
+       "may not be genuine",
+       "was never finished",
+       "typical subject matter for Prout",
+       "skilful painting of light and dark",
+       "shows an event that never took place"
+      ],
+      "questions": [
+       {
+        "no": 26,
+        "type": "match",
+        "text": "A View in Germany: at Würzburg",
+        "answer": 4,
+        "explanation": "\"a busy market scene with a background of flamboyant detail like in so many of his pictures.\" – \"Yes, basically what Prout had made his name doing so well.\""
+       },
+       {
+        "no": 27,
+        "type": "match",
+        "text": "Bridge on the Ouse, near York",
+        "answer": 1,
+        "explanation": "\"experts now think this isn't York at all but somewhere in the south of England.\""
+       },
+       {
+        "no": 28,
+        "type": "match",
+        "text": "Woodland Scene",
+        "answer": 2,
+        "explanation": "\"experts on Prout say they doubt he actually painted it … so it's probably a forgery.\""
+       },
+       {
+        "no": 29,
+        "type": "match",
+        "text": "Venice",
+        "answer": 5,
+        "explanation": "\"They're bathed in sunlight with a sort of picturesque shadow cast by the buildings opposite, which is shown brilliantly.\""
+       },
+       {
+        "no": 30,
+        "type": "match",
+        "text": "Entrance to a Harbour",
+        "answer": 0,
+        "explanation": "\"this same location with the harbour and the sea also appears in other pictures showing a range of weather conditions.\""
+       }
+      ]
+     }
+    ],
+    "cut": "12:40"
+   },
+   {
+    "section": 4,
+    "title": "Case study: Chocozine's difficult decision",
+    "topic": "Business",
+    "transcript": "[19:17] Narrator: Now turn to Section 4.\n[19:22] Narrator: You will hear part of a lecture in a business class. The professor is discussing a case study of a company in North America called Chocozine. First, you have some time to look at questions 31 to 40.\n[20:30] Narrator: Now listen carefully and answer questions 31 to 40.\n[20:34] Professor: We've been talking about small businesses and some of the challenges they face. Today, I want to look at a case study based on a company called Chocozine that illustrates the need to evaluate opportunities very carefully.\n[20:52] Professor: A man called Eric Smith and two of his colleagues were struck by the mass customisation movement that was spreading through a large number of industries in the US. This involved mass-producing products and at the same time individually customising them for their customers. Why not apply the same concept to chocolate? Customers could choose the ingredients they'd like to have put into their chocolate bars.\n[21:18] Professor: So Smith and his colleagues decided to launch a customised chocolate operation called Chocozine. Then, when Chocozine was only about nine months old, Smith received an email from a large European luxury retailer. This retailer was enquiring about ordering 15,000 bars of chocolate for their customers.\n[21:38] Professor: They wanted to give these as a gift in their high-end stores in New York City, Miami and Los Angeles during the holiday shopping season. The offer certainly sounded enticing because Chocozine was selling fewer than 150 chocolate bars a day. Smith and his co-founders knew it could also be very good publicity, so they needed to consider it carefully.\n[22:02] Professor: They had many things to consider. Obviously, it was a tempting offer. But at the same time, the risk was great.\n[22:11] Professor: They didn't know whether they could get the order completed in time. Also, if they accepted it and then it turned out they couldn't do it, what about the financial fallout as well as the possible damage to the company's reputation? As well as this, another thing they had to think about was how they were actually going to produce all these chocolate bars, as the number of machines they had was limited. They only had three of them, and that clearly wasn't going to be enough.\n[22:44] Professor: So they decided to think creatively and try to find a subcontractor to produce the bars. They weren't ready to pass up such a rare opportunity. Smith spent two days searching for a suitable subcontractor, but he couldn't find anyone who had experience of making bars with the type of melted toppings that Chocozine used.\n[23:05] Professor: Then something rather unexpected happened. A professor at Harvard Business School was teaching a class about product customisation. So she wrote to Smith and asked if he would speak to the students.\n[23:17] Professor: So in late October, Smith had an opportunity to talk about the deal to about 90 MBA students and to ask them for their advice. Many of the students thought that doing the deal with a luxury retailer would be a mistake. However, after the class, Smith spoke with one of the students.\n[23:36] Professor: This student had worked as a buyer at a major chocolate retailer, and he said he had a contact in the business who might be interested in doing the job. Smith called the new subcontractor the next day. He said he was interested in doing the order, but he found there were difficult technical issues to be worked out, including how to faithfully reproduce the distinctive shape of the Chocozine bars.\n[24:00] Professor: Smith thought about it, and in the end, reluctantly, he sent an email declining the luxury retailer's order. But fortunately for Chocozine, their sales picked up anyway, and the company gradually expanded its market share and is now doing very well.\n[24:19] Professor: Chocozine's case is important. They were wise to carefully consider whether they could actually manage an order of this kind. But not every small business will have the happy ending that Chocozine did. And taking on too big an order has destroyed many a small business.\n[24:36] Narrator: That is the end of Section 4. You now have half a minute to check your answers. That is the end of the listening test.",
+    "groups": [
+     {
+      "instruction": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+      "wordLimit": "ONE WORD ONLY",
+      "layout": "notes",
+      "context": "Case Study: Chocozine's difficult decision",
+      "table": {
+       "title": "Case Study: Chocozine's difficult decision",
+       "rows": [
+        [
+         "# Background"
+        ],
+        [
+         "• Smith and his colleagues noticed the spread of mass-customisation in many US {{31}}"
+        ],
+        [
+         "• They decided to apply the idea to chocolate, and allow clients to decide which ingredients they wanted."
+        ],
+        [
+         "• They called their company 'Chocozine'."
+        ],
+        [
+         "# The email order"
+        ],
+        [
+         "• A European retailer wanted 15,000 chocolate bars to use as a {{32}} for customers."
+        ],
+        [
+         "• The deal could improve their sales and provide {{33}}."
+        ],
+        [
+         "# But there were risks:"
+        ],
+        [
+         "• They might not have sufficient time for the job."
+        ],
+        [
+         "• If they failed, it could affect their finances and their {{34}}"
+        ],
+        [
+         "• They only had three {{35}}, which was not enough."
+        ],
+        [
+         "# They attempt to subcontract"
+        ],
+        [
+         "• At first they couldn't find a subcontractor with the right {{36}}"
+        ],
+        [
+         "• A Harvard professor invited Smith to speak to students."
+        ],
+        [
+         "• Many students said it would be a {{37}} to do the deal."
+        ],
+        [
+         "• One student had a {{38}} in the chocolate industry."
+        ],
+        [
+         "• But this subcontractor had trouble with the unusual {{39}} of the chocolate bar."
+        ],
+        [
+         "• Chocozine finally declined the order, but their sales improved anyway."
+        ],
+        [
+         "# Comment"
+        ],
+        [
+         "• Accepting {{40}} orders has created severe problems for many new businesses."
+        ]
+       ]
+      },
+      "questions": [
+       {
+        "no": 31,
+        "type": "fill",
+        "text": "Smith and his colleagues noticed the spread of mass-customisation in many US ___",
+        "answer": [
+         "industries"
+        ],
+        "explanation": "\"the mass customisation movement that was spreading through a large number of industries in the US.\""
+       },
+       {
+        "no": 32,
+        "type": "fill",
+        "text": "A European retailer wanted 15,000 chocolate bars to use as a ___ for customers.",
+        "answer": [
+         "gift"
+        ],
+        "explanation": "\"They wanted to give these as a gift in their high-end stores\""
+       },
+       {
+        "no": 33,
+        "type": "fill",
+        "text": "The deal could improve their sales and provide ___.",
+        "answer": [
+         "publicity"
+        ],
+        "explanation": "\"Smith and his co-founders knew it could also be very good publicity\""
+       },
+       {
+        "no": 34,
+        "type": "fill",
+        "text": "If they failed, it could affect their finances and their ___",
+        "answer": [
+         "reputation"
+        ],
+        "explanation": "\"what about the financial fallout as well as the possible damage to the company's reputation?\""
+       },
+       {
+        "no": 35,
+        "type": "fill",
+        "text": "They only had three ___, which was not enough.",
+        "answer": [
+         "machines"
+        ],
+        "explanation": "\"the number of machines they had was limited. They only had three of them\""
+       },
+       {
+        "no": 36,
+        "type": "fill",
+        "text": "At first they couldn't find a subcontractor with the right ___",
+        "answer": [
+         "toppings"
+        ],
+        "explanation": "\"he couldn't find anyone who had experience of making bars with the type of melted toppings that Chocozine used.\""
+       },
+       {
+        "no": 37,
+        "type": "fill",
+        "text": "Many students said it would be a ___ to do the deal.",
+        "answer": [
+         "mistake"
+        ],
+        "explanation": "\"Many of the students thought that doing the deal with a luxury retailer would be a mistake.\""
+       },
+       {
+        "no": 38,
+        "type": "fill",
+        "text": "One student had a ___ in the chocolate industry.",
+        "answer": [
+         "contact"
+        ],
+        "explanation": "\"he said he had a contact in the business who might be interested in doing the job.\""
+       },
+       {
+        "no": 39,
+        "type": "fill",
+        "text": "But this subcontractor had trouble with the unusual ___ of the chocolate bar.",
+        "answer": [
+         "shape"
+        ],
+        "explanation": "\"including how to faithfully reproduce the distinctive shape of the Chocozine bars.\""
+       },
+       {
+        "no": 40,
+        "type": "fill",
+        "text": "Accepting ___ orders has created severe problems for many new businesses.",
+        "answer": [
+         "big"
+        ],
+        "explanation": "\"taking on too big an order has destroyed many a small business.\""
+       }
+      ]
+     }
+    ],
+    "cut": "19:17"
+   }
+  ]
+ }
+}

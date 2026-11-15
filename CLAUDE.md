@@ -61,9 +61,9 @@ Chưa có unit test; có `scripts/smoke.mjs` (trình duyệt thật). Sau khi s�
 - Câu thiếu ngay trong đề gốc (không tìm được bản đủ): không bịa. Ghi vào `"gaps": [{ "skill": "reading", "passage": 3, "nos": [27], "note": "…" }]` ở đầu file test (listening dùng `"section"`). `note` hiện trên trang bài đó; `npm run data` báo `⚠` nếu một số 1–40 vừa không có câu vừa không nằm trong `gaps` (câu `multi` tính đủ số theo `answer.length`).
 - Lỗi OCR: sửa chính tả, sắp lại đoạn bị đảo, không bịa thêm nội dung. Nếu buộc phải dựng lại câu hay phương án bị mất, ghi rõ trong `source` hoặc `explanation`.
 
-## Tình trạng (08/11/2026)
+## Tình trạng (12/11/2026)
 
-- **Đã xong 67 file / 863 bài luyện** (10/11/2026, gồm 156 đề Writing tự soạn `content/writing/`): VOL 1–4 đủ 40 đề; VOL 5 đủ 10 đề + 19 đề Writing lẻ; VOL 6 đủ 6 đề (chưa có Writing); 240 bộ Speaking (forecast 2023 Q1, Q2, "gộp đề ver 1", 2024 Q1: 87, Sep 2024–Apr 2025: 74, 2025 Q2: 35).
+- **85 file / 1008 bài luyện** (13/11/2026: thêm VOL 7–9 một phần, Speaking 2026 Q3, 22 đề Writing thật 2026). Trước đó **67 file / 863 bài luyện** (10/11/2026, gồm 156 đề Writing tự soạn `content/writing/`): VOL 1–4 đủ 40 đề; VOL 5 đủ 10 đề + 19 đề Writing lẻ; VOL 6 đủ 6 đề (chưa có Writing); 240 bộ Speaking (forecast 2023 Q1, Q2, "gộp đề ver 1", 2024 Q1: 87, Sep 2024–Apr 2025: 74, 2025 Q2: 35).
 - **TẠM DỪNG 08/11/2026 theo yêu cầu người dùng**; chờ người dùng bảo chạy tiếp (dự kiến tuần sau). Khi tiếp tục: làm VOL 6 Writing, rồi VOL 7 từ Test 1.
 - Đợt audit 08/11/2026 (nhánh `fix/audit-1108`, đã merge vào `master`): A1–A7, B8–B12, C13–C16 xong; smoke 100/100. Audio (A4) tải từ Drive bằng `../ieltsweb-src/tools/dlaudio.py` (gdown), Drive hay chặn tạm ("Cannot retrieve the public link") → chạy lại sau, rồi `npm run audio`.
 - VOL 4 có vài chỗ thiếu: Test 7 (Q15–20) và Test 9 (Section 1) thiếu transcript; Writing trùng VOL 3 nên bỏ qua.
@@ -91,7 +91,7 @@ Task list (đánh dấu `[x]` khi xong; dòng `→` là đang làm):
 - [x] 2. VOL 5 Writing → `content/vol5/writing-bank.json` (19 đề: 9 Task 1 + 10 Task 2, ảnh ở `public/img/vol5/`; Drive không có file Task 1 số 8; đề Task 1 viết lại theo hình vì file gốc chỉ có hình + bài mẫu, đã ghi trong `source`)
 - [x] 3. Speaking quý 1.2024 → `content/speaking/forecast-2024q1.json` (87 bộ; "50 đề mới update.pdf" là scan không đọc được; "CÁC GÓI DỰ ĐOÁN…" chỉ là tờ quảng cáo)
 - → 4a. VOL 6: [x] Test 2 · [x] Test 3 · [x] Test 4 · [x] Test 1 · [x] Test 5 · [x] Test 6 · [x] Speaking (`forecast-2024sep-2025apr.json` 74 bộ, `forecast-2025q2.json` 35 bộ có bài mẫu) · [ ] Writing (đã dừng giữa chừng, làm lại từ đầu). ID thêm: `L-TEST 5.pdf` `1BTzFTv7mUd2dqRKYkO42vznYdP9OBzFN`, `expl 1-4.pdf` `1Fr6tiPAWmwHXFPv57gRco95fCPZIit0e`; Audio Lis: Test 1 `1dP2C3xIe67DyEHbVxzhoLVW3y3v_sxni`, Test 2 `1jf9BOusktTVs8BqyblInKa-9aQwukCnH`, Test 3 `13s3vKn6oiAXwVeWZNvLiGRGeK_d7_td_`, Test 4 `10S_zJ20o5wAJaKOtJXJ9LrwD3I9LbTEG`, Test 6 `1tWYBG7t4FxwDDYlgc3pZVvlusBlb78W3` Test 5 `1N5aWYH9DQxzsS8_3657lv6jQu4EMsKQP`.
-- [ ] 4b. VOL 7 (bản nháp Test 1 do subagent bị dừng, chưa soát, để ở scratchpad phiên cũ; không dùng được ở phiên sau → làm lại) · [ ] 4c. VOL 8
+- [x] 4b–4d (12/11/2026, nguồn mới: zip "FILE VOL 1-9_IELTS NGOCBACH" `1z79OwkjVriJ8c71yu26M4EOOrRkHwFDb` trên Drive, 1,5 GB): VOL 7 Reading T11–16 + Listening T2, 8, 9, 10 (Whisper small.en dựng transcript, cắt audio); VOL 8 Listening T1, T2 (không audio); VOL 9 Listening T4 (không audio), T6, T7 (audio, cut Whisper) + 1 bộ Reading (xếp vào test1); Speaking `forecast-2026q3.json` (66 bộ, không bài mẫu); `content/ngocbach2026/writing-bank.json` (22 Task 2 có bài mẫu). Zip này KHÔNG có: VOL 7 Listening T3–5, T7 đề, T1/T6 audio+key, Reading T1–10 đề; VOL 8 Reading đề (KEY READ.pdf là scan 74 trang, máy không có OCR), Listening T3, 4, 8 key, T5–6 đề; VOL 9 Listening T2, 3, 5, 8, 9 thiếu đề hoặc key. Phần VOL 1–6 trong zip không có gì mới.
 - [x] 5. Audio (09/11/2026): 214 file Drive VOL 1–6 → `npm run audio` → 222 file s<N>.mp3 → MinIO bucket `ieltsweb-audio` (`npm run audio:upload`, ghi `content/audio-manifest.json`). 214/216 section Listening có audio; thiếu VOL1 T5 Part 1 và VOL1 T8 Part 2 (Drive không có; `VOL 7/Reading/các đề update web…/Test 5 vol 1 audio.mp3` 29 phút có thể là cả đề VOL1 T5, chưa cắt). VOL 7 có audio gộp T3, T7, T11 (chưa có content).
 - [ ] 6. `npm run build` + báo cáo cuối
 
@@ -104,6 +104,10 @@ Quyết định đã ghi:
 - Audio đề chỉ có trên Drive (connector không tải được file mp3 lớn) → bước `npm run audio` chờ người dùng tải thư mục về máy.
 
 Đáp án chưa chắc chắn (gom cho báo cáo cuối):
+- VOL7 R T11: không có key → suy từ bài; Q4, Q6, Q33 NOT GIVEN; Q36–40 F A H G I (Q38 kém chắc). T12: sơ đồ Q14–16 không có hình (mô tả bằng chữ); Q13 "speculators" theo key. T14: danh sách heading Q14–20 gốc thiếu vi và ii bị cắt; Q20 iv theo key (có thể là vi); Q10 FALSE (key ghi TRUE). T15 Q40 C theo key. T16 Q19 i (key ghi iii); Q28, Q31 C theo key.
+- VOL7 L (Whisper, không key): T2 Q29–30 D, E phụ thuộc phân vai Delia/Charley; Q17 B (C cũng có thể). T8 Q10 postcode "SH12 1LQ"; Q27 "questions and discussion"; Q28/29 thứ tự có thể đổi. T9 Q8 "Amyes" (theo đánh vần Whisper); Q35 salary/career development; Q26 phụ thuộc phân vai Frances/Sam. T10 phân vai Pam/Jason đoán.
+- VOL8 L T1: Q1 13 March 1988 (key ghi 1998, transcript nhận dạng lộn xộn); Q16–20, Q31–40 câu hỏi gốc ghi tắt → viết lại thành câu; Q35 chỉ nhận "guesses". T2 Q24 phân vai Charlie/Gina.
+- VOL9 L T7 Q15 C (key ghi A); T4 Q1 ngày tháng suy từ "wrong month". VOL9 R (test1, không key): Q2 NOT GIVEN, Q7 "water", Q18 ii, Q21–22 A C, Q39 A.
 - VOL5 T7: L Q2 (số điện thoại ghép "0784, double 0, 51963"), L Q17–18 (C, D), L Q24 (transcript ghi "effective", hiểu là "affected"), L Q30 (phụ thuộc việc sắp lại Step 3/5 bị OCR đảo), R Q1 "adaptation" (câu ghi chú OCR lộn xộn). R P1 đoạn 2 và R P2 đoạn A có chữ dựng lại/mất; P3 không có tiêu đề gốc.
 - VOL5 T8: L Q5 (đuôi "EG" từ transcript "e g"), L Q21 (B, có thể là A), L Q25–26 (A, E). R Q7 FALSE theo key (có thể NOT GIVEN).
 - VOL5 T9: L Q21–22 (A, B), L Q26, L Q27 (A, C cũng hợp lý), L Q37 (nhận "materials"/"content"). R Q34 không có trong đề gốc → dựng lại từ bản công khai (ielts.xdf.cn), khớp key C. R Q35 NO theo key. Đoạn H P3 "more enduring" là đoán.

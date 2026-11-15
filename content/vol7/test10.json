@@ -1,0 +1,594 @@
+{
+  "vol": 7,
+  "test": 10,
+  "source": "VOL 7 Test 10 – Listening. Bộ đề gốc không có transcript và key: transcript dựng bằng Whisper từ audio, đáp án suy từ transcript.",
+  "listening": {
+    "audioDir": "audio/vol7/test10",
+    "timingNote": "Audio là một file cả bài; cắt section theo lời người dẫn: S1 0:40, S2 6:35, S3 13:28, S4 20:05. Mốc từng lượt lời lấy từ Whisper (Whisper bỏ sót lời giới thiệu đầu Part 2 và Part 4).",
+    "sections": [
+      {
+        "section": 1,
+        "title": "Building work",
+        "topic": "Home improvement",
+        "transcript": "[00:40] Narrator: Now turn to Part 1 on page 2 of your question booklet.\n[00:50] Narrator: Part 1. You will hear a woman talking to a builder who is going to do some building work at her house. First you have some time to look at questions 1 to 4.\n[01:22] Narrator: Now listen carefully and answer questions 1 to 4.\n[01:27] Sally: Morning, thanks for coming round. I'm Sally.\n[01:32] Builder: Morning. So just before we get started, I'll just make a few notes. So we're at 15 Hill Street.\n[01:40] Sally: Yes, that's right.\n[01:42] Builder: Okay, great. And then I need to write down your contact information, just for the office, you know. So first, what's your surname, please, Sally?\n[01:52] Sally: It's Keyworth, I'll spell that, K-E-Y-W-O-R-T-H.\n[02:00] Builder: And your phone number, I've got that somewhere, yes, 027 584 6613.\n[02:09] Sally: That's right.\n[02:10] Builder: Okay, Sally, so what building work would you like to have done?\n[02:15] Sally: Well, let's go into the kitchen first. So you see, it's quite dark in here. We've tried having a few lights fitted, but it hasn't really made any difference. So what we've decided is the window is too small. We'd like a larger one.\n[02:31] Builder: That shouldn't be a problem. And is there anything else you'd like done in the kitchen?\n[02:36] Sally: Well, at this time of year, I mean, I shouldn't complain really. But I wish it wasn't so hot in here. Is there anything you can do about that?\n[02:45] Builder: Air conditioning?\n[02:47] Sally: It's too expensive.\n[02:48] Builder: How about a fan then?\n[02:50] Sally: Yes, that would be perfect.\n[02:51] Builder: Ah, righto. And what's next, Sally?\n[02:54] Sally: Well, if we walk through into the bathroom, the thing is, when my father's staying, he can't use the bath. So I thought here, on the back wall, I'd like you to fit a shower. Is that possible?\n[03:07] Builder: Shouldn't be too hard. I'll get you some brochures, because there are a few ways of doing that.\n[03:13] Sally: Thanks.\n[03:14] Builder: Now, those tiles on the wall look new, so do you want to keep those?\n[03:18] Sally: Yes, the tiles are new, but actually my husband doesn't like them. We want to change to those very small ones. But do I have to choose a colour now?\n[03:28] Builder: You can do that later. I'll get some charts for you to look at.\n[03:34] Narrator: Before you hear the rest of the conversation, you have some time to look at questions 5 to 10.\n[03:48] Narrator: Now listen and answer questions 5 to 10.\n[04:14] Sally: Now, the last thing, let's walk outside. I need to show you some things outside the house.\n[04:23] Builder: Righto. Oh, nice garden. And the fence looks in good condition.\n[04:27] Sally: Yes, it's new, but the thing is the gate. It's too low. You have to bend down to open it. We need something that's higher.\n[04:35] Builder: Right, I'll see to that.\n[04:37] Sally: Then the other thing is the garage here. We had a break-in, actually.\n[04:43] Builder: Yeah, I can see.\n[04:44] Sally: The door should be fine, but the lock.\n[04:49] Builder: I'll replace that, shall I?\n[04:50] Sally: Yes, thanks. Then also, if you step back here and look up on the roof, you can see that it's damaged.\n[04:58] Builder: Did that happen in the storm a couple of weeks ago?\n[05:00] Sally: Yes, that's right.\n[05:01] Builder: I'll get up there and take a look at that then. That might be quite a big job, but I'll get back to you once I've had a look.\n[05:07] Sally: OK.\n[05:08] Builder: I can see that your rain gutter is broken as well.\n[05:11] Sally: Can you fix that?\n[05:12] Builder: Well, I'll need to replace it, maybe with a steel one. It'd be stronger.\n[05:17] Sally: No, plastic will be fine, thanks. It's cheaper.\n[05:20] Builder: OK. And that's everything, I think. Is there any other information you need?\n[05:26] Sally: What about a start date?\n[05:28] Builder: Well, I'm completely booked all April, and I've got a job on May the 5th. That'll be a few days, so let's say May the 8th.\n[05:38] Sally: OK.\n[05:39] Builder: Now, what about a key, in case you're out?\n[05:42] Sally: We have a security code. I'll give you that. It's a mix of letters and numbers. The code is AG4176.\n[05:53] Builder: Got that. OK, we'll organise some […]\n[05:59] Narrator: That is the end of Part 1. You now have one minute to check your answers to Part 1.",
+        "cut": "0:40",
+        "groups": [
+          {
+            "instruction": "Complete the form below. Write ONE WORD AND/OR A NUMBER for each answer.",
+            "wordLimit": "ONE WORD AND/OR A NUMBER",
+            "context": "Building Work",
+            "layout": "form",
+            "table": {
+              "title": "Building Work",
+              "rows": [
+                [
+                  "Address",
+                  "15 Hill Street"
+                ],
+                [
+                  "# Contact information"
+                ],
+                [
+                  "Name",
+                  "Sally {{1}}"
+                ],
+                [
+                  "Phone",
+                  "027 584 6613"
+                ],
+                [
+                  "# Kitchen"
+                ],
+                [
+                  "• needs a bigger window"
+                ],
+                [
+                  "• the kitchen is too hot – fit a {{2}}"
+                ],
+                [
+                  "# Bathroom"
+                ],
+                [
+                  "• put in a {{3}} on the back wall"
+                ],
+                [
+                  "• decide the {{4}} of the small tiles later"
+                ],
+                [
+                  "# Outside"
+                ],
+                [
+                  "• put a higher {{5}} in the garden"
+                ],
+                [
+                  "• put a new {{6}} on the garage door"
+                ],
+                [
+                  "• fix the roof – it was damaged by a {{7}}"
+                ],
+                [
+                  "• fit a new rain gutter made of {{8}}"
+                ],
+                [
+                  "# Other information"
+                ],
+                [
+                  "Start date",
+                  "{{9}}"
+                ],
+                [
+                  "Security code",
+                  "{{10}}"
+                ]
+              ]
+            },
+            "questions": [
+              {
+                "no": 1,
+                "type": "fill",
+                "text": "Name: Sally ___",
+                "answer": [
+                  "Keyworth"
+                ],
+                "explanation": "\"It's Keyworth, I'll spell that, K-E-Y-W-O-R-T-H.\""
+              },
+              {
+                "no": 2,
+                "type": "fill",
+                "text": "The kitchen is too hot – fit a ___",
+                "answer": [
+                  "fan"
+                ],
+                "explanation": "\"How about a fan then?\" – \"Yes, that would be perfect.\" (điều hoà thì quá đắt)"
+              },
+              {
+                "no": 3,
+                "type": "fill",
+                "text": "Bathroom: put in a ___ on the back wall",
+                "answer": [
+                  "shower"
+                ],
+                "explanation": "\"on the back wall, I'd like you to fit a shower.\""
+              },
+              {
+                "no": 4,
+                "type": "fill",
+                "text": "Decide the ___ of the small tiles later",
+                "answer": [
+                  "colour",
+                  "color"
+                ],
+                "explanation": "\"But do I have to choose a colour now?\" – \"You can do that later.\""
+              },
+              {
+                "no": 5,
+                "type": "fill",
+                "text": "Put a higher ___ in the garden",
+                "answer": [
+                  "gate"
+                ],
+                "explanation": "\"the thing is the gate. It's too low… We need something that's higher.\""
+              },
+              {
+                "no": 6,
+                "type": "fill",
+                "text": "Put a new ___ on the garage door",
+                "answer": [
+                  "lock"
+                ],
+                "explanation": "\"The door should be fine, but the lock.\" – \"I'll replace that, shall I?\""
+              },
+              {
+                "no": 7,
+                "type": "fill",
+                "text": "Fix the roof – it was damaged by a ___",
+                "answer": [
+                  "storm"
+                ],
+                "explanation": "\"Did that happen in the storm a couple of weeks ago?\" – \"Yes, that's right.\""
+              },
+              {
+                "no": 8,
+                "type": "fill",
+                "text": "Fit a new rain gutter made of ___",
+                "answer": [
+                  "plastic"
+                ],
+                "explanation": "\"No, plastic will be fine, thanks. It's cheaper.\" (thợ gợi ý thép nhưng chị chọn nhựa)"
+              },
+              {
+                "no": 9,
+                "type": "fill",
+                "text": "Start date: ___",
+                "answer": [
+                  "8 May",
+                  "May 8",
+                  "8th May",
+                  "May 8th",
+                  "8th of May",
+                  "May the 8th",
+                  "8/5",
+                  "5/8"
+                ],
+                "explanation": "\"I've got a job on May the 5th. That'll be a few days, so let's say May the 8th.\""
+              },
+              {
+                "no": 10,
+                "type": "fill",
+                "text": "Security code: ___",
+                "answer": [
+                  "AG4176",
+                  "AG 4176"
+                ],
+                "explanation": "\"The code is AG4176.\""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section": 2,
+        "title": "The McFaddin hiking and nature trail",
+        "topic": "Tourism",
+        "transcript": "[06:39] Narrator: You will hear the warden of a nature trail talking to a group of people who are interested in hiking on the trail. First, you have some time to look at questions 11 to 14.\n[07:38] Narrator: Now listen carefully and answer questions 11 to 14.\n[07:55] Susan: Good morning. I'm Susan Meyer, trail warden for the McFaddin Hiking and Nature Trail. Let me tell you a bit about the trail. The trail is 25 miles long, running roughly east to west. To hike it, you may start at either end of the trail or in between. You can hike the whole length of the trail or just a couple of miles, because there are 20 entry points along the trail, each connected to public roads by short paths.\n[08:30] Susan: For hikers coming from Johnson City, there's a shuttle bus to each of the two end points every morning and evening. And four of the entry points have a free car park with television camera surveillance.\n[08:46] Susan: At one-mile intervals along the trail, there are rest stations providing picnic areas, water, toilets, and places where you can recharge your electronic devices. In response to a poll of walkers last year, we've recently installed kiosks at each rest station with clear, easy-to-follow maps and other trail information.\n[09:12] Susan: There are several distinct sections of trail. The Red Rock Walk offers a superb opportunity to study a huge variety of vegetation along the way. There's lots to look at, though you can't see great distances. Birds are actually hard to spot. But with a pair of binoculars and at certain times of day, you may see some rare varieties.\n[09:41] Susan: The River Walk comprises about five miles of trail winding along the bank of the Mulder River. Personally, I prefer this section of the trail in winter. The river does freeze over and the snow can accumulate, but that doesn't always discourage visitors. Sometimes though, if the weather conditions are really unsuitable, we might have to close this walk to the public. But often it can get crowded with hikers who've discovered the attraction of the area.\n[10:20] Narrator: Before you hear the rest of the talk, you have some time to look at questions 15 to 20.\n[10:50] Narrator: Now listen and answer questions 15 to 20.\n[11:02] Susan: Now let me tell you about the Halfway Hostel, located approximately midway along the trail. It has a range of facilities available to help make your walking experience memorable. Let me give you some information about the various facilities available there.\n[11:20] Susan: Of course there are beds in dormitories for use at a very reasonable $7 per person, weekdays or weekends. Unfortunately we found that pre-booking beds just didn't work, so now we allocate them as people arrive, but we have extra cots and sleeping bags to help with any overflow.\n[11:42] Susan: There are two family rooms, accommodating 6 people each, with private bathrooms. They're $35 per room, and for them you will need to make arrangements ahead of time as they're very popular, especially at the weekends.\n[11:59] Susan: A popular facility that we've recently added is coin-operated washing machines for your clothes. You can get awfully wet and dirty if you're walking the trail in bad weather, and since we got these machines, you can put on clean gear when you set out in the morning.\n[12:19] Susan: The hostel serves two meals a day, breakfast at $4 and dinner at $8, the same for adults and kids. There's always a vegetarian and a non-vegetarian option, depending on your preferences. We do ask you to give a hand with serving and cleaning up after meals.\n[12:42] Susan: We have plenty of showers and unlimited hot water available, so you can have this luxury at no charge, and you can enjoy it as long as you like.\n[12:52] Susan: Now some people like to spend time on the trail on mountain bikes, and maybe take a bit of a rest from all that walking, and that's permitted as long as you observe basic safety rules. The hostel's in the process of creating a bike rental scheme, which should be up and running next year. So if you think things […]\n[13:19] Narrator: That is the end of Part 2. You now have 30 seconds to check your answers to Part 2.",
+        "cut": "6:35",
+        "groups": [
+          {
+            "instruction": "Choose the correct letter, A, B or C.",
+            "context": "The McFaddin hiking and nature trail",
+            "questions": [
+              {
+                "no": 11,
+                "type": "mcq",
+                "text": "All entry points along the trail",
+                "options": [
+                  "provide secure parking facilities for cars.",
+                  "are within easy access from public roads.",
+                  "have a regular shuttle bus service."
+                ],
+                "answer": 1,
+                "explanation": "\"there are 20 entry points along the trail, each connected to public roads by short paths.\" – chỉ 4 lối vào có bãi xe, xe buýt chỉ tới 2 đầu tuyến."
+              },
+              {
+                "no": 12,
+                "type": "mcq",
+                "text": "Which facility at the trail rest stations has been added as a result of a user survey?",
+                "options": [
+                  "electric recharge points",
+                  "picnic areas",
+                  "maps and other information"
+                ],
+                "answer": 2,
+                "explanation": "\"In response to a poll of walkers last year, we've recently installed kiosks at each rest station with clear, easy-to-follow maps and other trail information.\""
+              },
+              {
+                "no": 13,
+                "type": "mcq",
+                "text": "On the Red Rock Walk, hikers are easily able to",
+                "options": [
+                  "see many different plants.",
+                  "enjoy spectacular scenic views.",
+                  "identify a wide range of birds."
+                ],
+                "answer": 0,
+                "explanation": "\"The Red Rock Walk offers a superb opportunity to study a huge variety of vegetation along the way… you can't see great distances. Birds are actually hard to spot.\""
+              },
+              {
+                "no": 14,
+                "type": "mcq",
+                "text": "What does the speaker say about the River Walk in wintertime?",
+                "options": [
+                  "There are not many other walkers in the area.",
+                  "The area does not get much ice and snow.",
+                  "It may not be possible to use this section of the trail."
+                ],
+                "answer": 2,
+                "explanation": "\"if the weather conditions are really unsuitable, we might have to close this walk to the public.\" – sông đóng băng, tuyết dày và thường đông người."
+              }
+            ]
+          },
+          {
+            "instruction": "Which information is given about each of the following facilities at the Halfway Hostel? Choose SIX answers from the box and write the correct letter, A–I, next to questions 15–20.",
+            "bank": [
+              "only at weekends",
+              "voluntary donation expected",
+              "not yet available",
+              "help from guests requested",
+              "provided free",
+              "advance booking required",
+              "new equipment",
+              "available on a first-come-first-served basis",
+              "special rate for children"
+            ],
+            "questions": [
+              {
+                "no": 15,
+                "type": "match",
+                "text": "dormitory beds",
+                "answer": 7,
+                "explanation": "\"pre-booking beds just didn't work, so now we allocate them as people arrive\""
+              },
+              {
+                "no": 16,
+                "type": "match",
+                "text": "family rooms",
+                "answer": 5,
+                "explanation": "\"for them you will need to make arrangements ahead of time as they're very popular\""
+              },
+              {
+                "no": 17,
+                "type": "match",
+                "text": "clothes washing",
+                "answer": 6,
+                "explanation": "\"A popular facility that we've recently added is coin-operated washing machines for your clothes.\""
+              },
+              {
+                "no": 18,
+                "type": "match",
+                "text": "meals",
+                "answer": 3,
+                "explanation": "\"We do ask you to give a hand with serving and cleaning up after meals.\" – giá như nhau cho người lớn và trẻ em."
+              },
+              {
+                "no": 19,
+                "type": "match",
+                "text": "hot showers",
+                "answer": 4,
+                "explanation": "\"unlimited hot water available, so you can have this luxury at no charge\""
+              },
+              {
+                "no": 20,
+                "type": "match",
+                "text": "bicycle rental",
+                "answer": 2,
+                "explanation": "\"The hostel's in the process of creating a bike rental scheme, which should be up and running next year.\""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section": 3,
+        "title": "A marketing project on food packaging",
+        "topic": "Business",
+        "transcript": "[13:28] Narrator: Part 3. You will hear two Business Administration students, called Pam and Jason, discussing their project with their professor. First, you have some time to look at questions 21 to 25.\n[14:05] Narrator: Now listen carefully and answer questions 21 to 25.\n[14:27] Professor: Hello Pam, Jason. Thanks for coming to discuss your marketing project. I've read your proposal and outline, so let's go over it.\n[14:35] Pam: Okay.\n[14:36] Jason: Right.\n[14:37] Professor: You've chosen the topic of food packaging. So what did you want to get out of doing this project?\n[14:44] Jason: We decided if we did our project on packaging, we might find some practical tips on how a business could make more money. After all, we're business admin students, and that's the ultimate reason we're on the course, isn't it?\n[14:56] Pam: So although we know the impact of packaging on the environment is important…\n[15:00] Jason: We feel the government regulations are pretty strict already in that area.\n[15:05] Professor: Okay. Now you've decided to look specifically at the packaging of food. What do you think the main issue is for shoppers these days?\n[15:14] Pam: Some people get upset about the waste with all the plastic and stuff used to package food, but I guess most don't pay much attention to that.\n[15:23] Jason: A few years ago, people seemed concerned about packaging food so that buyers knew more about what it contains from labels, like calories, additives, and stuff. But in the current economic climate, Pam and I think people are most interested in packaging that helps keep food fresh for longer.\n[15:42] Professor: And you've chosen to concentrate on big supermarket chains. Why not look at local stores or even convenience stores?\n[15:49] Pam: Well, there are some interesting published studies based on small retail outlets, and we looked at those. But after a little investigation, we found that the managers of the large supermarkets in this area wanted to be helpful and are willing to let us talk to them and their employees.\n[16:08] Jason: Of course, the supermarkets do account for most food sales around here, but that wasn't our reason for choosing them.\n[16:16] Professor: Speaking of this area, you know the food buying choices here are quite unusual. Since we're in a university town, the population is quite young, but actually my research shows that age isn't the factor in making the area unique. And although the education level is pretty high, that doesn't seem very important either.\n[16:36] Pam: I guess it's because we've got people from all over the world living here, with all the foreign students at the university.\n[16:43] Professor: That's it. Our supermarkets cater for a huge diversity of cultures.\n[16:48] Jason: In our survey of the literature, I was struck by what shoppers say is most important to them when they buy. I would have thought how much the buyer had to pay would be the key, but that doesn't appear to be the case.\n[17:01] Pam: That's right. How delicious the buyer considers the product seems to be the main thing. Whether or not the food is good for you is pretty low down on the customer's priorities.\n[17:12] Professor: That's interesting.\n[17:17] Narrator: Before you hear the rest of the discussion, you have some time to look at questions 26 to 30.\n[17:47] Narrator: Now listen and answer questions 26 to 30.\n[17:56] Professor: Let's discuss the practical experiment you're planning. You're going to design the box for a new breakfast cereal which you'll try to market. Not in reality, of course, but by showing different designs to some of your fellow students on a computer, a kind of virtual reality supermarket, and the students will choose the design that appeals most. Let's talk through the experiment, okay?\n[18:19] Pam: That'd be helpful.\n[18:20] Professor: Now, the number of different designs you're proposing to show each student is two. If I were you, I'd make it at least four. That way you can examine their reaction to more variety in the kinds of packaging.\n[18:34] Jason: Okay, good idea. We do have several more designs.\n[18:38] Pam: Now we've got a sample from our class of about 20. Is that enough?\n[18:44] Professor: Probably not. Try talking to the assistant in the business studies department. He can sort out how to recruit some more from other classes for you.\n[18:53] Pam: Right.\n[18:54] Professor: Now, as to how you're going to display your packages to the students, I did talk about those technical issues in one of your first classes. Go back and look over what I said about the practical realities of conducting experiments.\n[19:07] Jason: Okay, we can do that.\n[19:10] Pam: We're going to ask each student to choose the one design they think is best, but how will we know why they chose that one?\n[19:18] Professor: Well, don't just rely on oral prompts. Give them a series of written questions. That way you'll have hard data.\n[19:26] Pam: Okay.\n[19:27] Jason: But what about analysing the data?\n[19:29] Pam: Well, we've got an excellent computer program to gather it all together, but we still need to interpret it ourselves. So we'll need to give ourselves a few more days for that.\n[19:40] Jason: Yes, we will.\n[19:42] Professor: Anyway, it's all looking good.\n[19:48] Narrator: That is the end of Part 3. You now have 30 seconds to check your answers to Part 3.",
+        "cut": "13:28",
+        "groups": [
+          {
+            "instruction": "Choose the correct letter, A, B or C.",
+            "context": "A marketing project on food packaging",
+            "questions": [
+              {
+                "no": 21,
+                "type": "mcq",
+                "text": "What do Pam and Jason primarily hope to learn more about from their project?",
+                "options": [
+                  "maximising profits",
+                  "minimising environmental damage",
+                  "meeting legal requirements"
+                ],
+                "answer": 0,
+                "explanation": "\"we might find some practical tips on how a business could make more money… that's the ultimate reason we're on the course\""
+              },
+              {
+                "no": 22,
+                "type": "mcq",
+                "text": "Which issue about packaging do Pam and Jason feel is most important to food shoppers today?",
+                "options": [
+                  "providing information about contents",
+                  "extending the useful life of products",
+                  "reducing excess waste from packaging"
+                ],
+                "answer": 1,
+                "explanation": "\"in the current economic climate, Pam and I think people are most interested in packaging that helps keep food fresh for longer.\""
+              },
+              {
+                "no": 23,
+                "type": "mcq",
+                "text": "Why have Pam and Jason decided to concentrate specifically on large supermarkets?",
+                "options": [
+                  "They are the subjects of previously published studies.",
+                  "They are the most profitable food retail businesses.",
+                  "They will offer good opportunities for interviews."
+                ],
+                "answer": 2,
+                "explanation": "\"the managers of the large supermarkets in this area wanted to be helpful and are willing to let us talk to them and their employees.\""
+              },
+              {
+                "no": 24,
+                "type": "mcq",
+                "text": "The professor says that the local population has unusual food-shopping habits because of",
+                "options": [
+                  "its range of nationalities",
+                  "its high education level",
+                  "its young age"
+                ],
+                "answer": 0,
+                "explanation": "\"we've got people from all over the world living here\" – \"That's it. Our supermarkets cater for a huge diversity of cultures.\" Tuổi và trình độ học vấn đều bị gạt đi."
+              },
+              {
+                "no": 25,
+                "type": "mcq",
+                "text": "According to the literature, what influences food shoppers most?",
+                "options": [
+                  "taste",
+                  "price",
+                  "health benefits"
+                ],
+                "answer": 0,
+                "explanation": "\"How delicious the buyer considers the product seems to be the main thing.\""
+              }
+            ]
+          },
+          {
+            "instruction": "What action do Pam and Jason agree to take for each of the following aspects of their experiment? Choose FIVE answers from the box and write the correct letter, A–G, next to questions 26–30.",
+            "bank": [
+              "refer to course notes",
+              "widen the choice",
+              "use more colours",
+              "allow for more time",
+              "ask for help",
+              "design a questionnaire",
+              "plan for oral interviews"
+            ],
+            "questions": [
+              {
+                "no": 26,
+                "type": "match",
+                "text": "the number of different designs offered",
+                "answer": 1,
+                "explanation": "\"the number of different designs you're proposing to show each student is two. If I were you, I'd make it at least four.\" – \"Okay, good idea.\""
+              },
+              {
+                "no": 27,
+                "type": "match",
+                "text": "the sample size of students",
+                "answer": 4,
+                "explanation": "\"Try talking to the assistant in the business studies department. He can sort out how to recruit some more\""
+              },
+              {
+                "no": 28,
+                "type": "match",
+                "text": "how to display the packages",
+                "answer": 0,
+                "explanation": "\"I did talk about those technical issues in one of your first classes. Go back and look over what I said\" – \"Okay, we can do that.\""
+              },
+              {
+                "no": 29,
+                "type": "match",
+                "text": "finding the reasons for students' choices",
+                "answer": 5,
+                "explanation": "\"don't just rely on oral prompts. Give them a series of written questions.\""
+              },
+              {
+                "no": 30,
+                "type": "match",
+                "text": "analysis of data collected",
+                "answer": 3,
+                "explanation": "\"we still need to interpret it ourselves. So we'll need to give ourselves a few more days for that.\""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section": 4,
+        "title": "Science in the future",
+        "topic": "Science",
+        "transcript": "[20:07] Lecturer: In this final lecture of our course on the history of science, I would like to look to the future and tell you about some predictions that have been made about scientific developments. The content for my talk is based on some research in which 30 scientific leaders were invited to comment on the developments that they envisage as likely to come about in their own discipline within 50 years. After summarising some of their most interesting contributions for you, I'll ask you to give me your opinions as to the likelihood of these changes occurring within this timescale. You may also like to suggest some other likely changes yourselves.\n[21:09] Lecturer: So first, let's start with computer science, as this is clearly an area where there are bound to be dramatic developments, and even more significantly, perhaps, these developments are likely to impact on every other field of learning. The invention of computers represents an enormous leap forward in the field of human endeavour. It could indeed be considered as being as momentous a development as when our predecessors in caves first learned to make fire and use it for all sorts of purposes. In the future, the computational revolution is certain to be generally recognised as a transformation as significant as, say, the Industrial Revolution.\n[21:59] Lecturer: The computer scientists in the study I referred to felt that, in the coming decades, lives will be significantly enhanced by automated reasoning systems of different types. There was considerable agreement that people will increasingly perceive these computer systems as intelligent. Although many of these will be deployed behind the scenes, others will be in the foreground, working in an elegant, often collaborative manner to help people do their jobs, to learn and teach, to reflect and remember, to plan and decide.\n[22:38] Lecturer: Without going into further detail about this at this point, let's turn to what predictions psychologists had to make. Their key point was that psychological research would inevitably become increasingly varied. It would move into such areas as behavioural economics and social neuroscience. There is likely to be further expansion into domains with more practical relevance as increasing numbers of women become research scientists, so areas such as health, environment, family, and social identity will receive more attention.\n[23:18] Lecturer: At the same time as they broaden their horizons, psychologists will also intensify their search to discover what exactly determines how we act. They will be assisted in this by imaging devices that will be inserted into the brain and provide a great deal of information about how it behaves. There should be some fascinating discoveries coming to light very soon.\n[23:49] Lecturer: Another field that is currently undergoing enormous changes is that of genetics. It is not new to suggest that average life expectancy is likely to continue rising in most countries. However, today geneticists emphasise that it is vital that the increasing number of the elderly in society must take quality of life into account. So how will genetics help this to happen?\n[24:18] Lecturer: To start with, they hope to develop technologies that can sequence each person's genome extremely cheaply. This information about our DNA enables health care providers to predict our likelihood of suffering from any particular disease. From there on, it is a matter of weighing up various factors with a view to determining what can be done to minimise each individual's level of risk. With such information in hand, new treatments will be developed, and the current one-size-fits-all approach to health care will give way to a more personal approach.\n[25:01] Lecturer: The final subject area that I wish to bring to your attention is that of zoology. Once again, computers and technology have a key role to play here. Experts comment specifically on the importance of satellites for future developments in this field. These enable people to explore the world from their homes, offices, and schools. It is now possible, for instance, to go online and see for yourself the abundant wildlife in one part of East Africa and in the surrounding region the harm people have done by destroying the forests, all supposedly in the name of development.\n[25:44] Lecturer: Zoologists believe the breakthrough that lies ahead is how people act on such information. They hope that we will learn to connect our minds to our hearts and apply this knowledge to help protect our planet. They express a clear hope that a greater understanding of the consequences of human short-sightedness will make people anxious to rectify what we can before it is too late.",
+        "cut": "20:05",
+        "groups": [
+          {
+            "instruction": "Complete the notes below. Write ONE WORD ONLY for each answer.",
+            "wordLimit": "ONE WORD ONLY",
+            "context": "Science in the Future",
+            "layout": "notes",
+            "table": {
+              "title": "Science in the Future",
+              "rows": [
+                [
+                  "Scientists were asked to predict changes in their own field in the next 50 years"
+                ],
+                [
+                  "# Computer science"
+                ],
+                [
+                  "• The invention of computers is as significant as the discovery of how to create and use {{31}}."
+                ],
+                [
+                  "• Computers will be seen as being {{32}}."
+                ],
+                [
+                  "# Psychology"
+                ],
+                [
+                  "• Research will become much more {{33}}, and also more practical since more {{34}} will be working in the field."
+                ],
+                [
+                  "• Imaging devices will give information about the behaviour of the {{35}}."
+                ],
+                [
+                  "# Genetics"
+                ],
+                [
+                  "• With increased life expectancy, it is important to consider the {{36}} of elderly people's lives."
+                ],
+                [
+                  "• Knowledge of a person's genome will indicate whether they are likely to be affected by a {{37}}."
+                ],
+                [
+                  "• The approach to treatment will be on an increasingly {{38}} basis."
+                ],
+                [
+                  "# Zoology"
+                ],
+                [
+                  "• People can explore the world via satellite."
+                ],
+                [
+                  "• For example, it is possible to see the effects of the destruction of {{39}} in East Africa."
+                ],
+                [
+                  "• Such increased awareness should enable us to do more to look after the {{40}}."
+                ]
+              ]
+            },
+            "questions": [
+              {
+                "no": 31,
+                "type": "fill",
+                "text": "The invention of computers is as significant as the discovery of how to create and use ___.",
+                "answer": [
+                  "fire"
+                ],
+                "explanation": "\"as momentous a development as when our predecessors in caves first learned to make fire and use it\""
+              },
+              {
+                "no": 32,
+                "type": "fill",
+                "text": "Computers will be seen as being ___.",
+                "answer": [
+                  "intelligent"
+                ],
+                "explanation": "\"people will increasingly perceive these computer systems as intelligent.\""
+              },
+              {
+                "no": 33,
+                "type": "fill",
+                "text": "Research will become much more ___",
+                "answer": [
+                  "varied"
+                ],
+                "explanation": "\"psychological research would inevitably become increasingly varied.\""
+              },
+              {
+                "no": 34,
+                "type": "fill",
+                "text": "…more practical since more ___ will be working in the field.",
+                "answer": [
+                  "women"
+                ],
+                "explanation": "\"more practical relevance as increasing numbers of women become research scientists\""
+              },
+              {
+                "no": 35,
+                "type": "fill",
+                "text": "Imaging devices will give information about the behaviour of the ___.",
+                "answer": [
+                  "brain"
+                ],
+                "explanation": "\"imaging devices that will be inserted into the brain and provide a great deal of information about how it behaves.\""
+              },
+              {
+                "no": 36,
+                "type": "fill",
+                "text": "It is important to consider the ___ of elderly people's lives.",
+                "answer": [
+                  "quality"
+                ],
+                "explanation": "\"the increasing number of the elderly in society must take quality of life into account.\""
+              },
+              {
+                "no": 37,
+                "type": "fill",
+                "text": "Knowledge of a person's genome will indicate whether they are likely to be affected by a ___.",
+                "answer": [
+                  "disease"
+                ],
+                "explanation": "\"predict our likelihood of suffering from any particular disease.\""
+              },
+              {
+                "no": 38,
+                "type": "fill",
+                "text": "The approach to treatment will be on an increasingly ___ basis.",
+                "answer": [
+                  "personal"
+                ],
+                "explanation": "\"the current one-size-fits-all approach to health care will give way to a more personal approach.\""
+              },
+              {
+                "no": 39,
+                "type": "fill",
+                "text": "It is possible to see the effects of the destruction of ___ in East Africa.",
+                "answer": [
+                  "forests",
+                  "forest"
+                ],
+                "explanation": "\"the harm people have done by destroying the forests\""
+              },
+              {
+                "no": 40,
+                "type": "fill",
+                "text": "Such increased awareness should enable us to do more to look after the ___.",
+                "answer": [
+                  "planet"
+                ],
+                "explanation": "\"apply this knowledge to help protect our planet.\""
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

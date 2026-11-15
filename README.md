@@ -176,16 +176,19 @@ Bản deploy không chở audio theo: file nằm ở bucket `ieltsweb-audio` tr�
   - Với `form`/`notes`, `rows` là các dòng: một ô = một dòng (bắt đầu `•` là gạch đầu dòng), `"# Tiêu đề"` = tiêu đề nhỏ, hai ô = nhãn | giá trị.
 - `npm run data` cảnh báo khi có câu trùng số, đáp án nằm ngoài options/bank, câu fill thiếu `___`, hoặc bảng thiếu/thừa `{{n}}`, sai số ô.
 
-### Tình trạng dữ liệu (10/11/2026): 67 file, 863 bài
+### Tình trạng dữ liệu (13/11/2026): 85 file, 1008 bài
 
 | Bộ | Trạng thái |
 |---|---|
-| VOL 1–4 | Xong 40 đề. VOL 4 Test 5 không có audio; Test 7 (Q15–20) và Test 9 (Section 1) thiếu transcript; Writing của VOL 4 trùng VOL 3 nên bỏ qua |
+| VOL 1–4 | Xong 40 đề. VOL 4 Test 7 (Q15–20) và Test 9 (Section 1) thiếu transcript; Writing của VOL 4 trùng VOL 3 nên bỏ qua |
 | VOL 5 | Xong 10 đề + 19 đề Writing lẻ (`writing-bank.json`) |
 | VOL 6 | 6 đề (chưa có Writing). Listening VOL 6 không có transcript (Test 1 dựng bằng Whisper), đáp án theo L-key |
-| VOL 7–8 | Chưa làm |
+| VOL 7 | Reading Test 11–16 (Test 11 không có key → suy từ bài). Listening Test 2, 8, 9, 10: đề gốc không có transcript/key → transcript dựng bằng Whisper, đáp án suy từ transcript, có audio. Thiếu: Listening T1, T6 (không audio, không key), T3–5, T7 (không có đề); Reading T1–10 (chỉ có key) |
+| VOL 8 | Listening Test 1, 2 (không có audio → giọng máy). Reading chỉ có key bản scan, chưa làm |
+| VOL 9 | Listening Test 4 (giọng máy), 6, 7 (có audio, cắt theo mốc Whisper); 1 bộ Reading "FULL READING VOL 9" (không ghi số test, không key → suy từ bài, xếp vào Test 1) |
 | Writing tự soạn | 156 đề (Task 1 Academic, Task 1 GT, Task 2) |
-| Speaking | 240 bộ (forecast 2023 Q1, Q2, "gộp đề ver 1", 2024 Q1, Sep 2024–Apr 2025, 2025 Q2) |
+| Đề thật 2026 | 22 đề Writing Task 2 có bài mẫu + dàn ý (`content/ngocbach2026/writing-bank.json`) |
+| Speaking | 306 bộ (forecast 2023 Q1, Q2, "gộp đề ver 1", 2024 Q1, Sep 2024–Apr 2025, 2025 Q2, 2026 Q3) |
 
 Lưu ý về chất lượng dữ liệu:
 - VOL 5 không kèm key Listening, nên đáp án được suy từ transcript.

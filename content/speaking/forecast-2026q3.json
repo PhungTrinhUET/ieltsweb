@@ -1,0 +1,4226 @@
+{
+ "vol": 0,
+ "test": 0,
+ "id": "spk-2026q3",
+ "prefix": "Speaking Forecast 2026 Q3",
+ "source": "TÀI LIỆU THẦY NGOCBACH 2026 – 'BỘ ĐÈ SPEAKING QUÝ 3_T9 ĐÊN T12_BY NGOCBACH.pdf' (Bộ dự đoán IELTS Speaking quý 3, tháng 9–12/2026). Tài liệu chỉ có câu hỏi, không có bài mẫu. Part 1: 2 khung bắt buộc (Where you live now, Work/Study) + 44 chủ đề; mỗi bộ = 1 khung bắt buộc (luân phiên) + 2 chủ đề chia vòng tròn. c1–c66 theo thứ tự cue card trong PDF; Part 3 giữ nguyên như PDF (một số bộ Part 3 trong PDF không khớp chủ đề cue, ví dụ c33, c35, c41, c51, c63 – giữ nguyên, không sửa). c44 và c60: PDF không có gạch đầu dòng 'You should say'; c45: 2 câu Part 3 không có tiêu đề 'Part 3' trong PDF, c60 cũng chỉ có đúng 2 câu này (không có tiêu đề 'Part 3'). c20, c23 không có Part 3.",
+ "tags": [
+  "Speaking forecast"
+ ],
+ "speaking": [
+  {
+   "id": "c1",
+   "title": "A person you only met once recently and want to know more about",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Computers / Tablets",
+     "questions": [
+      "In what conditions would you use a computer?",
+      "When was the first time you used a computer?",
+      "In what conditions would it be difficult for you to use a computer?"
+     ]
+    },
+    {
+     "topic": "Collecting things",
+     "questions": [
+      "Do you collect things?",
+      "Are there any things you keep from childhood?",
+      "Where do you usually keep things you need?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A person you only met once recently and want to know more about",
+    "cue": "Describe a person you only met once recently and want to know more about",
+    "points": [
+     "Who he/she is",
+     "When you met him/her",
+     "Why you want to know more about him/her",
+     "And explain how you feel about him/her"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "What can we do to leave a good impression on people we meet for the first time?",
+     "What should we not talk about when we meet a person for the first time?",
+     "How do people make friends in your country?",
+     "On what occasions do people like to make friends?",
+     "Is it important to have the same hobbies and interests when making friends?",
+     "What qualities make true friends?"
+    ]
+   }
+  },
+  {
+   "id": "c2",
+   "title": "A gift you would like to buy for your friend",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Street market",
+     "questions": [
+      "Are street markets common in your country?",
+      "What is usually sold there?",
+      "Do you think people like street markets? Why?"
+     ]
+    },
+    {
+     "topic": "Travelling",
+     "questions": [
+      "Do you like to travel?",
+      "Do you often travel by air?",
+      "How long was the longest trip you took?",
+      "Which country would you like to travel to in the future?",
+      "Would you like to travel to space?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A gift you would like to buy for your friend",
+    "cue": "Describe a gift you would like to buy for your friend",
+    "points": [
+     "How you knew your friend",
+     "How long you have known him/her",
+     "How you would choose a gift for him/her",
+     "And explain why you would choose that gift for him/her"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "When do people normally send gifts to others?",
+     "Is it easy to choose clothes as gifts?",
+     "Will people feel happy when receiving an expensive gift?"
+    ]
+   }
+  },
+  {
+   "id": "c3",
+   "title": "A time when you changed an important decision of yours",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Paper / Writing letters",
+     "questions": [
+      "Do you often write things?",
+      "Do you prefer to write by hand or write using computer?",
+      "Do you think computers might one day replace handwriting?",
+      "When do children begin to write in your country?"
+     ]
+    },
+    {
+     "topic": "Losing things / Lost and found",
+     "questions": [
+      "Do you always bring a lot of keys with you?",
+      "Have you ever lost your keys?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A time when you changed an important decision of yours",
+    "cue": "Describe a time when you changed an important decision of yours",
+    "points": [
+     "When you changed the decision",
+     "What the original decision was",
+     "Why you changed it",
+     "And explain how you felt about the experience"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "When do most children begin to make their own decisions?"
+    ]
+   }
+  },
+  {
+   "id": "c4",
+   "title": "A famous person in your local area",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Being polite / Politeness",
+     "questions": [
+      "How did you learn to be polite as a child?",
+      "Do you think being polite is very important?",
+      "Who taught you to be polite when you were young?"
+     ]
+    },
+    {
+     "topic": "Shoes",
+     "questions": [
+      "What’s your favorite type of shoes? Do you know anyone who likes to buy a lot of shoes?",
+      "Have you ever bought shoes online? How often do you buy shoes?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A famous person in your local area",
+    "cue": "Describe a famous person in your local area",
+    "points": [
+     "Who this person is",
+     "What he/she has done",
+     "Why he/she is popular",
+     "And explain how you feel about this person"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Is it always good to be a popular student at school?",
+     "Why are some students popular?"
+    ]
+   }
+  },
+  {
+   "id": "c5",
+   "title": "A time you made an important decision and were happy with the result",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Advertisements",
+     "questions": [
+      "Are there many advertisements in your country?",
+      "Why do you think there are so many advertisements now?",
+      "What are the various places where we see advertisements?",
+      "How do you feel about advertisements?"
+     ]
+    },
+    {
+     "topic": "Secondary school",
+     "questions": [
+      "Where do you go to school?",
+      "Do you think your school is good for every student?",
+      "What changes do you want to make in your school?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A time you made an important decision and were happy with the result",
+    "cue": "Describe a time you made an important decision and were happy with the result",
+    "points": [
+     "What the decision was",
+     "Why you made the decision",
+     "How easy it was for you to make the decision",
+     "And explain why you were happy with the result"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "How can we tell the difference between an important and an easy decision?",
+     "Do you think it is a good idea to make a small decision every day?",
+     "What little decisions do people make every day?",
+     "What if people in a group have different opinions on a decision?",
+     "Do you think most people's decisions are made in their 20s?",
+     "Which is better, to make a decision quickly or slowly?"
+    ]
+   }
+  },
+  {
+   "id": "c6",
+   "title": "A person you know who did something difficult and was successful",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Rubbish / Recycling",
+     "questions": [
+      "Do you recycle now? Why?",
+      "Did you recycle when you were a kid?",
+      "Will you recycle in the future?",
+      "What kind of things do you recycle?"
+     ]
+    },
+    {
+     "topic": "Remembering names",
+     "questions": [
+      "Is it easy for you to remember names?",
+      "Will you forget other people’s names if others forget your name?",
+      "How can you strengthen your memory?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A person you know who did something difficult and was successful",
+    "cue": "Describe a person you know who did something difficult and was successful",
+    "points": [
+     "Who this person is",
+     "What difficult thing this person did",
+     "Why this person was successful",
+     "And explain how you feel about this person"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Is it difficult to do business in today's world?",
+     "How can companies help protect the environment?",
+     "Does money equal success?"
+    ]
+   }
+  },
+  {
+   "id": "c7",
+   "title": "A course that impressed you a lot",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Tiredness",
+     "questions": [
+      "Do you often feel tired?",
+      "When would you feel tired?",
+      "What do you do when you feel tired?",
+      "Do you think you get enough rest?"
+     ]
+    },
+    {
+     "topic": "Glasses",
+     "questions": [
+      "Do people in your country wear sunglasses? Where can you buy sunglasses?",
+      "Do you like to wear sunglasses?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A course that impressed you a lot",
+    "cue": "Describe a course that impressed you a lot",
+    "points": [
+     "What the course was about",
+     "Where you took the course",
+     "What you did during the course",
+     "And explain why it impressed you a lot"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "What do people need to remember in their daily lives?",
+     "What can we learn from history?",
+     "Why do some people have a better memory than others?",
+     "Do people like things of memorial significance?",
+     "Which can help people remember things better, words or photos?",
+     "Can technology help people remember things better? How?"
+    ]
+   }
+  },
+  {
+   "id": "c8",
+   "title": "A time when someone talked about something you were not interested in but you kept listening",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Food",
+     "questions": [
+      "What kinds of meals do you like?",
+      "Do you often dinner with your family or friends?",
+      "When do you usually eat dinner?",
+      "Are there any fruits or vegetables you don’t like? Why?",
+      "What is your favourite cuisine?"
+     ]
+    },
+    {
+     "topic": "Headphones",
+     "questions": [
+      "Is wearing headphones comfortable?",
+      "Do you use headphones?",
+      "What type of headphones do you use?",
+      "When would you use headphones?",
+      "In what conditions would you not use headphones?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A time when someone talked about something you were not interested in but you kept listening",
+    "cue": "Describe a time when someone talked about something you were not interested in but you kept listening",
+    "points": [
+     "Who the person was",
+     "What he/she talked about",
+     "Why you kept listening",
+     "And explain how you feel about the experience"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "What kind of topics do young people like to talk about today?",
+     "What would happen if the listener didn't listen carefully?",
+     "How can we tell if a listener is listening carefully?"
+    ]
+   }
+  },
+  {
+   "id": "c9",
+   "title": "A person you know who really likes taking photos",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Watches",
+     "questions": [
+      "How often do you wear a watch?",
+      "What was your first watch like?",
+      "What kind of watches do you like to wear?",
+      "Do people still wear watches in your country?",
+      "Did you receive any watch as a gift when you were a child?"
+     ]
+    },
+    {
+     "topic": "Cars / Driving",
+     "questions": [
+      "Will you buy an expensive car in the future?",
+      "Do you think car colours are important?",
+      "Did you enjoy travelling by car when you were a kid?",
+      "What types of cars do you like?",
+      "Do you prefer to be a driver or the passenger?",
+      "What do you usually do when there is a traffic jam?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A person you know who really likes taking photos",
+    "cue": "Describe a person you know who really likes taking photos",
+    "points": [
+     "Who the person is",
+     "When and how you got to know him/her",
+     "Where he/she takes photos",
+     "And explain how you feel about him/her"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Why are some people keen on taking photos?",
+     "What kind of photos do people often take?",
+     "Do you think it's OK to take photos everywhere?",
+     "Why do tourists like taking photos while they are travelling?",
+     "Some people don't mind others walking into their shot when they're taking photos. What do you think?"
+    ]
+   }
+  },
+  {
+   "id": "c10",
+   "title": "A new skill you learned when you were a child",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Websites",
+     "questions": [
+      "What kinds of websites do you usually use?",
+      "What changes compared to the past?"
+     ]
+    },
+    {
+     "topic": "Mirrors",
+     "questions": [
+      "Do you like looking at yourself in the mirror? How often?",
+      "Have you ever bought mirrors?",
+      "Would you use mirrors to decorate your room?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A new skill you learned when you were a child",
+    "cue": "Describe a new skill you learned when you were a child",
+    "points": [
+     "What the skill was",
+     "Who taught you this skill",
+     "How you learned it",
+     "And explain how you feel about learning the skill"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "What skills should children learn before they go to school?",
+     "What are the differences between learning in a group and learning by yourself?",
+     "What are the differences between the way adults learn and the way children learn?",
+     "Do you think it is easier for children to learn new skills than for adults?",
+     "Can a child learn skills from another child?",
+     "Is it important for everyone to have a specialized skill?"
+    ]
+   }
+  },
+  {
+   "id": "c11",
+   "title": "A time when you saved money to buy something you wanted",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Parks",
+     "questions": [
+      "Did you like going to parks as a child?",
+      "Do you still like going to parks now?",
+      "Would you like to see more parks in your city?",
+      "Are there any parks you want to go to in the future?",
+      "Would you prefer to play in a personal garden or public garden?",
+      "How are the parks today different from those you visited as a kid?",
+      "What do you like to do when visiting a park?",
+      "Would you like to play in a public garden or park?"
+     ]
+    },
+    {
+     "topic": "Shopping",
+     "questions": [
+      "Do you like going shopping?",
+      "Do you shop online?",
+      "Does shopping take you a lot of time?",
+      "What is the best part about shopping?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A time when you saved money to buy something you wanted",
+    "cue": "Describe a time when you saved money to buy something you wanted",
+    "points": [
+     "What you wanted to buy",
+     "Why you wanted to buy it",
+     "How you saved money for it",
+     "And explain how you feel after buying it"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Should schools teach children how to manage money from a young age?",
+     "Should parents teach their children to spend money freely or to save money?",
+     "Do you think it is easier to teach teenagers how to manage money when they are around 16 or 17 years old?",
+     "Is it easier to spend money or save money?",
+     "What kind of things do people usually save money for?"
+    ]
+   }
+  },
+  {
+   "id": "c12",
+   "title": "A person you know who is very organized",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Keeping things tidy",
+     "questions": [
+      "Are you a tidy person?",
+      "Are all of your family members tidy?",
+      "Are you tidier at home or at work/ (school)?"
+     ]
+    },
+    {
+     "topic": "Music",
+     "questions": [
+      "Do you like listening to music?",
+      "When do you listen to music?",
+      "Did you learn instruments?",
+      "Did you have any music classes in school?",
+      "Do you think it is necessary for children to have music classes?",
+      "What do you think of Vietnamese traditional music?",
+      "How much time do you spend listening to music every day?",
+      "What is your favorite kind of music?",
+      "When did you start listening to this type of music?",
+      "How do you feel when you listening to music?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A person you know who is very organized",
+    "cue": "Describe a person you know who is very organized",
+    "points": [
+     "Who this person is",
+     "What this person usually does to stay organized",
+     "In what situations you have noticed this quality",
+     "And explain why you think being organized is important to him/her"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Why is it important for people to be organized?",
+     "Do you think children should learn to be organized from a young age?",
+     "Are organized people more likely to be successful at work or in their studies?",
+     "What can people do to become more organized?",
+     "Should parents teach their children to be organized?",
+     "Do you think it is important for managers to be organized?"
+    ]
+   }
+  },
+  {
+   "id": "c13",
+   "title": "A time when you interviewed a famous person",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Teachers",
+     "questions": [
+      "Do you like any teacher of yours?",
+      "Do you still keep in touch with your teachers?",
+      "Do you think it’s important to like your teacher?",
+      "Do you want to be a teacher?",
+      "What qualities should a good teacher have?",
+      "Do you have a favorite teacher?"
+     ]
+    },
+    {
+     "topic": "Social Media",
+     "questions": [
+      "Do you like to use social media?",
+      "Do you think you or your friends use too much social media?",
+      "Do you want to work in social media? Why?",
+      "What’s the most popular social media in VietNam? Why?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A time when you interviewed a famous person",
+    "cue": "Describe a time when you interviewed a famous person",
+    "points": [
+     "Who the famous person was",
+     "When and where you interviewed this person",
+     "What you talked about during the interview",
+     "And explain how you feel about the experience"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "What kinds of people are usually interviewed?",
+     "Why do some people dislike being interviewed?",
+     "Why do some people think interviews are a waste of time?",
+     "What should people do to prepare for a job interview?"
+    ]
+   }
+  },
+  {
+   "id": "c14",
+   "title": "A happy person you know",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Clothes",
+     "questions": [
+      "What's your favorite color of clothes?",
+      "What kind of clothes do you never wear?",
+      "What kind of clothes do you usually wear?",
+      "Do you wear the same style of clothes on weekdays and weekends?"
+     ]
+    },
+    {
+     "topic": "Films",
+     "questions": [
+      "What’s your favourite kind of movie?",
+      "Did you go to the cinema a lot when you were a child?",
+      "Which is more popular in your country, going to the cinema or watching movies at home?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A happy person you know",
+    "cue": "Describe a happy person you know",
+    "points": [
+     "Who this person is",
+     "What he/she is like",
+     "How he/she shows happiness",
+     "And explain why you think he/she is a happy person"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Should teachers know what children are doing all the time?",
+     "Do you think teachers are able to spot the unhappy children?",
+     "How can the arts spread positive emotions in society?",
+     "When do you think people are happiest?"
+    ]
+   }
+  },
+  {
+   "id": "c15",
+   "title": "Your least favourite movie",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Dreams",
+     "questions": [
+      "How long can you remember your dream when you wake up?",
+      "Do you like hearing others dream?",
+      "Do you think dream will affect life?",
+      "Do you often have dream at night?",
+      "Have you had a bad dream before?",
+      "What was the strangest dream you have had?",
+      "What do you usually dream about?"
+     ]
+    },
+    {
+     "topic": "City",
+     "questions": [
+      "Would you recommend your city to others?",
+      "What's the weather like where you live?",
+      "Are there people of different ages living in this city?",
+      "Are the people friendly in the city?",
+      "Is the city friendly to children and old people?",
+      "Do you often see your neighbors?",
+      "What city do you live in?",
+      "Do you like this city? Why?",
+      "How long have you lived in this city?",
+      "Are there big changes in this city?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "Your least favourite movie",
+    "cue": "Describe your least favourite movie",
+    "points": [
+     "When you watched it",
+     "Where you watched it",
+     "What it was about",
+     "And explain why it's your least favourite movie"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "What kinds of movies are the most popular in Vietnam?",
+     "What are the differences between watching movies at home and in a cinema?",
+     "Are movies more likely to help people become more creative than books?",
+     "Can movies help people better understand the cultural background of a country?"
+    ]
+   }
+  },
+  {
+   "id": "c16",
+   "title": "A person who learns history and loves history",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Outer Space",
+     "questions": [
+      "Have you ever learnt about outer space and stars?"
+     ]
+    },
+    {
+     "topic": "Art",
+     "questions": [
+      "Do you like art?",
+      "Have you ever visited an art gallery?",
+      "Is there any art work on the wall in your room?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A person who learns history and loves history",
+    "cue": "Describe a person who learns history and loves history",
+    "points": [
+     "Who this person is",
+     "How he/she learns history",
+     "Why he/she loves history",
+     "And explain how you feel about him/her"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Do you think children should begin learning history from an early age?",
+     "At what age do you think people should begin to learn history?",
+     "How do children learn history before they attend school?",
+     "Is it important to learn how people in the past lived their lives?",
+     "Do you think people should learn ancient history before learning modern history?",
+     "Besides historical events, what else is important when learning history?"
+    ]
+   }
+  },
+  {
+   "id": "c17",
+   "title": "An enjoyable evening you had with your friends",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Singing",
+     "questions": [
+      "Do you often sing?",
+      "When do you like to sing?",
+      "Is it difficult to sing well?",
+      "Do you want to be a singer?",
+      "What kinds of music do you like to sing?"
+     ]
+    },
+    {
+     "topic": "Evening",
+     "questions": [
+      "Do you prefer studying in the morning or in the afternoon?",
+      "What do you usually do in the evening?",
+      "What did you do in the evening when you were little? Why?",
+      "Are there any differences between what you do in the evening now and what you did in the past?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "An enjoyable evening you had with your friends",
+    "cue": "Describe an enjoyable evening you had with your friends",
+    "points": [
+     "When and where it was",
+     "What you did",
+     "Who you spent the evening with",
+     "And explain why it was enjoyable"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "How do people get along in a big family?"
+    ]
+   }
+  },
+  {
+   "id": "c18",
+   "title": "A person who is good at making things by hand",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Old Buildings",
+     "questions": [
+      "Have you ever seen some old buildings in the city?",
+      "Do you think we should keep old buildings in cities?",
+      "Do you prefer living in an old building or a modern house?"
+     ]
+    },
+    {
+     "topic": "Sports",
+     "questions": [
+      "Did you do any sport when you were younger? (Why/Why not?)",
+      "Have you ever supported a sports team? (Why/Why not?)",
+      "Do you enjoy watching sports? (Why/Why not?)",
+      "Do you think there is too much sport on television in your country? (Why/Why not?)"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A person who is good at making things by hand",
+    "cue": "Describe a person who is good at making things by hand",
+    "points": [
+     "Who this person is",
+     "What he/she makes",
+     "What materials or technologies he/she uses",
+     "And why you think this person is good at making things by hand"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Do you think handmade is a good thing?",
+     "Do you think children like making things by hand?",
+     "Is traditional craftsmanship important to the country’s industry?",
+     "What kinds of handmade things did you make as a child?",
+     "What can handmade products bring to tourist attractions?"
+    ]
+   }
+  },
+  {
+   "id": "c19",
+   "title": "A natural place in your city that you enjoy visiting",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Science",
+     "questions": [
+      "Do you like science?",
+      "What science have you studied?",
+      "How do you study science?",
+      "What’s the most difficult part of studying science?",
+      "How has the science that you have studied helped you?"
+     ]
+    },
+    {
+     "topic": "Comedy/Jokes",
+     "questions": [
+      "Do you like watching movies that make you laugh?",
+      "Do you find it easy to make others laugh?",
+      "Do you think it’s a good thing if you always make others laugh?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A natural place in your city that you enjoy visiting",
+    "cue": "Describe a natural place in your city that you enjoy visiting",
+    "points": [
+     "Where it is",
+     "What it is like",
+     "How often you go there",
+     "Who you often go there with",
+     "And explain why you enjoy visiting there"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Do you think there should be many natural places in cities?",
+     "Do you think staying in a natural place would help change people's mood?",
+     "Which is more important, protecting the environment or developing the economy?"
+    ]
+   }
+  },
+  {
+   "id": "c20",
+   "title": "A noisy place you have been to",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "History",
+     "questions": [
+      "Do you like learning history?",
+      "What historical event do you find most interesting?",
+      "Do you think history is important?",
+      "Do you like to watch programmes on TV about history?",
+      "Do you think the internet is a good place to learn about history?"
+     ]
+    },
+    {
+     "topic": "Morning Routine",
+     "questions": [
+      "Do you like to get up early in the morning?",
+      "What do you do in the morning? What is your morning routine?",
+      "Is breakfast important?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A noisy place you have been to",
+    "cue": "Describe a noisy place you have been to",
+    "points": [
+     "Where it is",
+     "When you went there",
+     "What you did there",
+     "And explain why you feel it's a noisy place"
+    ]
+   }
+  },
+  {
+   "id": "c21",
+   "title": "Someone who is older than you that you admire",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Study/Subject",
+     "questions": [
+      "Describe your education.",
+      "What is your area of specialization?",
+      "Why did you choose to study that major?",
+      "What kind of school did you go to as a child?",
+      "What was your favourite subject as a child?",
+      "Do you think your country has an effective education system?",
+      "(Possibly) Are you looking forward to working?"
+     ]
+    },
+    {
+     "topic": "Home/Accommodation",
+     "questions": [
+      "What kind of housing/accommodation do you live in?",
+      "Who do you live with?",
+      "How long have you lived there?",
+      "What’s the difference between where you are living now and where you have lived in the past?",
+      "Do you plan to live there for a long time?",
+      "Which room does your family spend most of the time in?",
+      "Are the transport facilities to your home very good?",
+      "Do you prefer living in a house or a flat?",
+      "What part of your home do you like the most ?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "Someone who is older than you that you admire",
+    "cue": "Describe someone who is older than you that you admire",
+    "points": [
+     "Who this person is",
+     "How you knew this person",
+     "What kinds of things you like to do together",
+     "And explain how you feel about this person"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "What can young and old people learn from each other?",
+     "Has old people's life quality improved when compared to the past?",
+     "Why is there a generation gap between the young and the old?",
+     "What do old people usually do in their daily life?"
+    ]
+   }
+  },
+  {
+   "id": "c22",
+   "title": "An activity you do regularly that you think is a waste of time",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Hometown",
+     "questions": [
+      "Do you like living there?",
+      "Do you think you will continue living there for a long time?",
+      "Please describe your hometown a little.",
+      "What's your hometown famous for?",
+      "Did you learn about the history of your hometown at school?",
+      "Are there many young people in your hometown?",
+      "Is your hometown a good place for young people to pursue their careers?"
+     ]
+    },
+    {
+     "topic": "Neighborhood/Area",
+     "questions": [
+      "Do you know your neighbors?",
+      "What do you think of your neighbors?",
+      "How do you get along well with your neighbors?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "An activity you do regularly that you think is a waste of time",
+    "cue": "Describe an activity you do regularly that you think is a waste of time",
+    "points": [
+     "What it is",
+     "When you usually do it",
+     "Why you do it",
+     "And explain why you think it is a waste of time"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "How do you balance life and work?",
+     "Will you continue doing something when you are aware that it's a waste of time?",
+     "What kinds of things make people feel pressured?",
+     "Why do some people refuse to abide by rules?"
+    ]
+   }
+  },
+  {
+   "id": "c23",
+   "title": "A crowded place you went to",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Computers / Tablets",
+     "questions": [
+      "In what conditions would you use a computer?",
+      "When was the first time you used a computer?",
+      "In what conditions would it be difficult for you to use a computer?"
+     ]
+    },
+    {
+     "topic": "Collecting things",
+     "questions": [
+      "Do you collect things?",
+      "Are there any things you keep from childhood?",
+      "Where do you usually keep things you need?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A crowded place you went to",
+    "cue": "Describe a crowded place you went to",
+    "points": [
+     "Where it was",
+     "When you went there",
+     "Who you went there with",
+     "What you did there",
+     "And how you felt about it"
+    ]
+   }
+  },
+  {
+   "id": "c24",
+   "title": "A time when you received good service in a shop/store",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Street market",
+     "questions": [
+      "Are street markets common in your country?",
+      "What is usually sold there?",
+      "Do you think people like street markets? Why?"
+     ]
+    },
+    {
+     "topic": "Travelling",
+     "questions": [
+      "Do you like to travel?",
+      "Do you often travel by air?",
+      "How long was the longest trip you took?",
+      "Which country would you like to travel to in the future?",
+      "Would you like to travel to space?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A time when you received good service in a shop/store",
+    "cue": "Describe a time when you received good service in a shop/store",
+    "points": [
+     "Where the shop is",
+     "When you went to the shop",
+     "What service you received from the staff",
+     "And explain how you felt about the service"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "What are the differences between the service in large shops and small stores?",
+     "What do people do when they get bad service?",
+     "What are the qualities of being a good restaurant?"
+    ]
+   }
+  },
+  {
+   "id": "c25",
+   "title": "A city you have been to and would like to visit again",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Paper / Writing letters",
+     "questions": [
+      "Do you often write things?",
+      "Do you prefer to write by hand or write using computer?",
+      "Do you think computers might one day replace handwriting?",
+      "When do children begin to write in your country?"
+     ]
+    },
+    {
+     "topic": "Losing things / Lost and found",
+     "questions": [
+      "Do you always bring a lot of keys with you?",
+      "Have you ever lost your keys?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A city you have been to and would like to visit again",
+    "cue": "Describe a city you have been to and would like to visit again",
+    "points": [
+     "When you visited it",
+     "What you did there",
+     "What it was like",
+     "And explain why you would like to visit it again"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "What's the difference between the city and the countryside?",
+     "Some people say large cities are suitable for old people. What do you think?",
+     "Do you think it is possible that all of the population move to cities?",
+     "Do you think people in the countryside are friendlier than people in the city?",
+     "Are there any changes in your city?",
+     "What should the government do to improve citizens' safety?"
+    ]
+   }
+  },
+  {
+   "id": "c26",
+   "title": "A place where you don't like the music they play",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Being polite / Politeness",
+     "questions": [
+      "How did you learn to be polite as a child?",
+      "Do you think being polite is very important?",
+      "Who taught you to be polite when you were young?"
+     ]
+    },
+    {
+     "topic": "Shoes",
+     "questions": [
+      "What’s your favorite type of shoes? Do you know anyone who likes to buy a lot of shoes?",
+      "Have you ever bought shoes online? How often do you buy shoes?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A place where you don't like the music they play",
+    "cue": "Describe a place where you don't like the music they play",
+    "points": [
+     "Where this place is",
+     "What kind of music they play there",
+     "When you went there",
+     "And explain why you don't like the music they play there"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Do you think music is important in public places?",
+     "What kind of music do people usually listen to in cafés?",
+     "Why do some people like listening to music while studying or working?",
+     "Do young people and older people have different tastes in music?",
+     "Is it a good idea for shops to play music?",
+     "Should restaurants allow customers to choose the music?",
+     "Can music affect people's behaviour?",
+     "Do you think people listen to too much music nowadays?"
+    ]
+   }
+  },
+  {
+   "id": "c27",
+   "title": "An experience that you were proud of",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Advertisements",
+     "questions": [
+      "Are there many advertisements in your country?",
+      "Why do you think there are so many advertisements now?",
+      "What are the various places where we see advertisements?",
+      "How do you feel about advertisements?"
+     ]
+    },
+    {
+     "topic": "Secondary school",
+     "questions": [
+      "Where do you go to school?",
+      "Do you think your school is good for every student?",
+      "What changes do you want to make in your school?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "An experience that you were proud of",
+    "cue": "Describe an experience that you were proud of",
+    "points": [
+     "What the experience was",
+     "When and where it happened",
+     "Who you were with",
+     "And explain why you were proud of it"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "What kinds of achievements make people feel proud?",
+     "Do young people feel proud of the same things as older people?",
+     "Is it important for parents to praise their children?",
+     "Why do some people find it difficult to accept praise?",
+     "Do you think people should be proud of their achievements?",
+     "Is it better to be proud of yourself or to receive recognition from others?",
+     "Can being too proud of yourself have negative effects?",
+     "What can people learn from experiences that make them proud?"
+    ]
+   }
+  },
+  {
+   "id": "c28",
+   "title": "A quiet place that you would love to go to",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Rubbish / Recycling",
+     "questions": [
+      "Do you recycle now? Why?",
+      "Did you recycle when you were a kid?",
+      "Will you recycle in the future?",
+      "What kind of things do you recycle?"
+     ]
+    },
+    {
+     "topic": "Remembering names",
+     "questions": [
+      "Is it easy for you to remember names?",
+      "Will you forget other people’s names if others forget your name?",
+      "How can you strengthen your memory?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A quiet place that you would love to go to",
+    "cue": "Describe a quiet place that you would love to go to",
+    "points": [
+     "Where this place is",
+     "How you know about this place",
+     "What you would do there",
+     "Who you would like to go there with",
+     "And explain why you would like to go there"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Why do people like going to quiet places?",
+     "What kinds of places are usually quiet?",
+     "Do people nowadays have enough opportunities to enjoy peace and quiet?",
+     "Why is it difficult for people to find quiet places in cities?",
+     "Do young people prefer quiet places or lively places?",
+     "Is it important for children to spend time in quiet places?"
+    ]
+   }
+  },
+  {
+   "id": "c29",
+   "title": "A long trip that you often take but do not like",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Tiredness",
+     "questions": [
+      "Do you often feel tired?",
+      "When would you feel tired?",
+      "What do you do when you feel tired?",
+      "Do you think you get enough rest?"
+     ]
+    },
+    {
+     "topic": "Glasses",
+     "questions": [
+      "Do people in your country wear sunglasses? Where can you buy sunglasses?",
+      "Do you like to wear sunglasses?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A long trip that you often take but do not like",
+    "cue": "Describe a long trip that you often take but do not like",
+    "points": [
+     "Where you go",
+     "How you usually travel",
+     "How long the trip takes",
+     "Why you often have to make this trip",
+     "And explain why you do not like it"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Why do people dislike long journeys?",
+     "What are the most common reasons people make long trips?",
+     "Do people prefer travelling by car, train or plane for long journeys?",
+     "What can people do to make a long journey more enjoyable?",
+     "Why do some people enjoy travelling while others do not?",
+     "Do you think travelling by public transport will become more popular in the future?"
+    ]
+   }
+  },
+  {
+   "id": "c30",
+   "title": "A party that was held after a special event",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Food",
+     "questions": [
+      "What kinds of meals do you like?",
+      "Do you often dinner with your family or friends?",
+      "When do you usually eat dinner?",
+      "Are there any fruits or vegetables you don’t like? Why?",
+      "What is your favourite cuisine?"
+     ]
+    },
+    {
+     "topic": "Headphones",
+     "questions": [
+      "Is wearing headphones comfortable?",
+      "Do you use headphones?",
+      "What type of headphones do you use?",
+      "When would you use headphones?",
+      "In what conditions would you not use headphones?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A party that was held after a special event",
+    "cue": "Describe a party that was held after a special event",
+    "points": [
+     "What the special event was",
+     "Where the party was held",
+     "Who attended the party",
+     "What you did at the party",
+     "And explain why you remember this party"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Why do people like having parties after special events?",
+     "What kinds of events do people usually celebrate with a party?",
+     "Do people prefer large parties or small gatherings?",
+     "What makes a party enjoyable?",
+     "Why are some people reluctant to attend parties?",
+     "Do you think people spend too much money on parties?"
+    ]
+   }
+  },
+  {
+   "id": "c31",
+   "title": "A change that you made recently",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Watches",
+     "questions": [
+      "How often do you wear a watch?",
+      "What was your first watch like?",
+      "What kind of watches do you like to wear?",
+      "Do people still wear watches in your country?",
+      "Did you receive any watch as a gift when you were a child?"
+     ]
+    },
+    {
+     "topic": "Cars / Driving",
+     "questions": [
+      "Will you buy an expensive car in the future?",
+      "Do you think car colours are important?",
+      "Did you enjoy travelling by car when you were a kid?",
+      "What types of cars do you like?",
+      "Do you prefer to be a driver or the passenger?",
+      "What do you usually do when there is a traffic jam?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A change that you made recently",
+    "cue": "Describe a change that you made recently",
+    "points": [
+     "What the change was",
+     "What caused the change",
+     "What you did for the change",
+     "And explain how you feel about the change"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Is it easier for young people to change?",
+     "Is it easy for old people to change?",
+     "How can people change their daily routine if they want to?",
+     "What are the disadvantages when people keep making changes?"
+    ]
+   }
+  },
+  {
+   "id": "c32",
+   "title": "A time when you changed an important opinion of yours",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Websites",
+     "questions": [
+      "What kinds of websites do you usually use?",
+      "What changes compared to the past?"
+     ]
+    },
+    {
+     "topic": "Mirrors",
+     "questions": [
+      "Do you like looking at yourself in the mirror? How often?",
+      "Have you ever bought mirrors?",
+      "Would you use mirrors to decorate your room?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A time when you changed an important opinion of yours",
+    "cue": "Describe a time when you changed an important opinion of yours",
+    "points": [
+     "When you changed your opinion",
+     "What the original opinion was",
+     "Why you changed it",
+     "And explain how you felt about the experience"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Why do people change their opinions?",
+     "Is it easy for people to admit they were wrong?",
+     "Do older people change their opinions less often than young people?",
+     "Can other people influence our opinions? How?",
+     "Is it important to listen to different viewpoints?",
+     "Should people always stick to their own opinions?"
+    ]
+   }
+  },
+  {
+   "id": "c33",
+   "title": "A law on environmental protection",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Parks",
+     "questions": [
+      "Did you like going to parks as a child?",
+      "Do you still like going to parks now?",
+      "Would you like to see more parks in your city?",
+      "Are there any parks you want to go to in the future?",
+      "Would you prefer to play in a personal garden or public garden?",
+      "How are the parks today different from those you visited as a kid?",
+      "What do you like to do when visiting a park?",
+      "Would you like to play in a public garden or park?"
+     ]
+    },
+    {
+     "topic": "Shopping",
+     "questions": [
+      "Do you like going shopping?",
+      "Do you shop online?",
+      "Does shopping take you a lot of time?",
+      "What is the best part about shopping?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A law on environmental protection",
+    "cue": "Describe a law on environmental protection",
+    "points": [
+     "What it is",
+     "How you first learned about it",
+     "Who benefits from it",
+     "And explain how you feel about this law"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "What kinds of rules do schools in China have?",
+     "Do you think school rules are important?",
+     "Are children unhappy with the school rules?",
+     "How can parents help their children understand and follow rules?",
+     "What are the rules people should obey at work?",
+     "What is the purpose of punishment?"
+    ]
+   }
+  },
+  {
+   "id": "c34",
+   "title": "A long-term goal/ambition you would like to achieve",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Keeping things tidy",
+     "questions": [
+      "Are you a tidy person?",
+      "Are all of your family members tidy?",
+      "Are you tidier at home or at work/ (school)?"
+     ]
+    },
+    {
+     "topic": "Music",
+     "questions": [
+      "Do you like listening to music?",
+      "When do you listen to music?",
+      "Did you learn instruments?",
+      "Did you have any music classes in school?",
+      "Do you think it is necessary for children to have music classes?",
+      "What do you think of Vietnamese traditional music?",
+      "How much time do you spend listening to music every day?",
+      "What is your favorite kind of music?",
+      "When did you start listening to this type of music?",
+      "How do you feel when you listening to music?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A long-term goal/ambition you would like to achieve",
+    "cue": "Describe a long-term goal/ambition you would like to achieve",
+    "points": [
+     "How long you have had this goal/ambition",
+     "What it is",
+     "How you will achieve it",
+     "And explain why you set it"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "What kinds of ambitions do people have?",
+     "Why should parents encourage children to have ambitions?",
+     "Should parents interfere with children’s ambitions?",
+     "Is there any difference between children’s ambitions and those of grown-ups?"
+    ]
+   }
+  },
+  {
+   "id": "c35",
+   "title": "A time when you sent a message or an email to someone but received no reply for a long time",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Teachers",
+     "questions": [
+      "Do you like any teacher of yours?",
+      "Do you still keep in touch with your teachers?",
+      "Do you think it’s important to like your teacher?",
+      "Do you want to be a teacher?",
+      "What qualities should a good teacher have?",
+      "Do you have a favorite teacher?"
+     ]
+    },
+    {
+     "topic": "Social Media",
+     "questions": [
+      "Do you like to use social media?",
+      "Do you think you or your friends use too much social media?",
+      "Do you want to work in social media? Why?",
+      "What’s the most popular social media in VietNam? Why?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A time when you sent a message or an email to someone but received no reply for a long time",
+    "cue": "Describe a time when you sent a message or an email to someone but received no reply for a long time",
+    "points": [
+     "Who you sent it to",
+     "What the message/email was about",
+     "Whether you finally received the reply",
+     "And explain how you felt about the experience"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Do you think children are born smart or they learn to become smart?",
+     "How do children become smarter at school?",
+     "Why are some people well-rounded and others only good at one thing?",
+     "Why does modern society need talents of all kinds?"
+    ]
+   }
+  },
+  {
+   "id": "c36",
+   "title": "A story/book with animals in it",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Clothes",
+     "questions": [
+      "What's your favorite color of clothes?",
+      "What kind of clothes do you never wear?",
+      "What kind of clothes do you usually wear?",
+      "Do you wear the same style of clothes on weekdays and weekends?"
+     ]
+    },
+    {
+     "topic": "Films",
+     "questions": [
+      "What’s your favourite kind of movie?",
+      "Did you go to the cinema a lot when you were a child?",
+      "Which is more popular in your country, going to the cinema or watching movies at home?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A story/book with animals in it",
+    "cue": "Describe a story/book with animals in it",
+    "points": [
+     "What animals are in it?",
+     "What the story/book is about",
+     "Why you read the story/book",
+     "And explain what you think of this story/book"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Why do children enjoy stories about animals?",
+     "What can people learn from animal stories?",
+     "Do films influence how people view animals?",
+     "Why are animals often used in stories?",
+     "Should children learn about animals at school?",
+     "Do people care more about animal welfare nowadays?"
+    ]
+   }
+  },
+  {
+   "id": "c37",
+   "title": "An advertisement with a famous person in it",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Dreams",
+     "questions": [
+      "How long can you remember your dream when you wake up?",
+      "Do you like hearing others dream?",
+      "Do you think dream will affect life?",
+      "Do you often have dream at night?",
+      "Have you had a bad dream before?",
+      "What was the strangest dream you have had?",
+      "What do you usually dream about?"
+     ]
+    },
+    {
+     "topic": "City",
+     "questions": [
+      "Would you recommend your city to others?",
+      "What's the weather like where you live?",
+      "Are there people of different ages living in this city?",
+      "Are the people friendly in the city?",
+      "Is the city friendly to children and old people?",
+      "Do you often see your neighbors?",
+      "What city do you live in?",
+      "Do you like this city? Why?",
+      "How long have you lived in this city?",
+      "Are there big changes in this city?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "An advertisement with a famous person in it",
+    "cue": "Describe an advertisement with a famous person in it",
+    "points": [
+     "Who the person is",
+     "Where you can see it",
+     "What the advertisement is about",
+     "And explain how you feel about the advertisement"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Why do companies use celebrities in advertisements?",
+     "Do celebrity advertisements influence consumers?",
+     "Are advertisements more creative nowadays?",
+     "What makes an advertisement effective?",
+     "Do children get influenced by advertisements easily?",
+     "Should there be stricter control of advertising?"
+    ]
+   }
+  },
+  {
+   "id": "c38",
+   "title": "A place you have travelled to that you would like to recommend to others",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Outer Space",
+     "questions": [
+      "Have you ever learnt about outer space and stars?"
+     ]
+    },
+    {
+     "topic": "Art",
+     "questions": [
+      "Do you like art?",
+      "Have you ever visited an art gallery?",
+      "Is there any art work on the wall in your room?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A place you have travelled to that you would like to recommend to others",
+    "cue": "Describe a place you have travelled to that you would like to recommend to others",
+    "points": [
+     "What it is",
+     "Where it is",
+     "What you saw and did there",
+     "And explain why you would like to recommend it to others"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Is it important to take photos while traveling?",
+     "Can you trust other people’s travel journals on the Internet?",
+     "What factors affect how people feel about travel?"
+    ]
+   }
+  },
+  {
+   "id": "c39",
+   "title": "A challenging technological problem you faced",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Singing",
+     "questions": [
+      "Do you often sing?",
+      "When do you like to sing?",
+      "Is it difficult to sing well?",
+      "Do you want to be a singer?",
+      "What kinds of music do you like to sing?"
+     ]
+    },
+    {
+     "topic": "Evening",
+     "questions": [
+      "Do you prefer studying in the morning or in the afternoon?",
+      "What do you usually do in the evening?",
+      "What did you do in the evening when you were little? Why?",
+      "Are there any differences between what you do in the evening now and what you did in the past?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A challenging technological problem you faced",
+    "cue": "Describe a challenging technological problem you faced",
+    "points": [
+     "What the problem was",
+     "When and where you faced it",
+     "How challenging it was",
+     "And explain how you solved it"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "What kinds of technological problems do people often face?",
+     "How has technology made people's lives easier?",
+     "Do you think people depend too much on technology nowadays?",
+     "What should people do when technology fails?",
+     "Will technology become more reliable in the future?"
+    ]
+   }
+  },
+  {
+   "id": "c40",
+   "title": "A person who is good at learning and speaking new languages",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Old Buildings",
+     "questions": [
+      "Have you ever seen some old buildings in the city?",
+      "Do you think we should keep old buildings in cities?",
+      "Do you prefer living in an old building or a modern house?"
+     ]
+    },
+    {
+     "topic": "Sports",
+     "questions": [
+      "Did you do any sport when you were younger? (Why/Why not?)",
+      "Have you ever supported a sports team? (Why/Why not?)",
+      "Do you enjoy watching sports? (Why/Why not?)",
+      "Do you think there is too much sport on television in your country? (Why/Why not?)"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A person who is good at learning and speaking new languages",
+    "cue": "Describe a person who is good at learning and speaking new languages",
+    "points": [
+     "How you got to know him/her",
+     "How he/she learns a new language",
+     "What languages he/she can speak",
+     "And explain how you feel about him/her"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "At what age should children start learning a foreign language?",
+     "Which skill is more important, speaking or writing?",
+     "Does a person still need to learn other languages if he or she is good at English?",
+     "Do you think minority languages will disappear?"
+    ]
+   }
+  },
+  {
+   "id": "c41",
+   "title": "A food that people eat on special occasions/events",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Science",
+     "questions": [
+      "Do you like science?",
+      "What science have you studied?",
+      "How do you study science?",
+      "What’s the most difficult part of studying science?",
+      "How has the science that you have studied helped you?"
+     ]
+    },
+    {
+     "topic": "Comedy/Jokes",
+     "questions": [
+      "Do you like watching movies that make you laugh?",
+      "Do you find it easy to make others laugh?",
+      "Do you think it’s a good thing if you always make others laugh?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A food that people eat on special occasions/events",
+    "cue": "Describe a food that people eat on special occasions/events",
+    "points": [
+     "What the special event/occasion is",
+     "How it is cooked/made",
+     "And explain why people eat it on that special occasion/event"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Do Vietnamese people grow plants?",
+     "Which food is generally popular in your country?",
+     "Why do some people prefer planting food themselves?",
+     "Will there be more and more people planting food in the future?"
+    ]
+   }
+  },
+  {
+   "id": "c42",
+   "title": "A live sports event you watched and liked",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "History",
+     "questions": [
+      "Do you like learning history?",
+      "What historical event do you find most interesting?",
+      "Do you think history is important?",
+      "Do you like to watch programmes on TV about history?",
+      "Do you think the internet is a good place to learn about history?"
+     ]
+    },
+    {
+     "topic": "Morning Routine",
+     "questions": [
+      "Do you like to get up early in the morning?",
+      "What do you do in the morning? What is your morning routine?",
+      "Is breakfast important?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A live sports event you watched and liked",
+    "cue": "Describe a live sports event you watched and liked",
+    "points": [
+     "What it was",
+     "When and where you watched it",
+     "Who you watched it with",
+     "And explain why you liked it"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "What kinds of sports events are broadcast on TV or other media in your country?",
+     "Do people in your country enjoy watching football games?",
+     "Does encouragement and applause from the audience have an impact on athletes? What are the impacts?"
+    ]
+   }
+  },
+  {
+   "id": "c43",
+   "title": "A person you know who would like to choose a career in the medical field (e.g. a doctor, a nurse)",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Study/Subject",
+     "questions": [
+      "Describe your education.",
+      "What is your area of specialization?",
+      "Why did you choose to study that major?",
+      "What kind of school did you go to as a child?",
+      "What was your favourite subject as a child?",
+      "Do you think your country has an effective education system?",
+      "(Possibly) Are you looking forward to working?"
+     ]
+    },
+    {
+     "topic": "Home/Accommodation",
+     "questions": [
+      "What kind of housing/accommodation do you live in?",
+      "Who do you live with?",
+      "How long have you lived there?",
+      "What’s the difference between where you are living now and where you have lived in the past?",
+      "Do you plan to live there for a long time?",
+      "Which room does your family spend most of the time in?",
+      "Are the transport facilities to your home very good?",
+      "Do you prefer living in a house or a flat?",
+      "What part of your home do you like the most ?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A person you know who would like to choose a career in the medical field (e.g. a doctor, a nurse)",
+    "cue": "Describe a person you know who would like to choose a career in the medical field (e.g. a doctor, a nurse)",
+    "points": [
+     "When you knew him/her",
+     "When he/she started to think about that",
+     "What he/she would like to do",
+     "And explain why he/she would like to choose this career"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Why do some people choose to work in the medical field?",
+     "How does working in a medical-related profession impact a person's life?",
+     "Do you think medical professionals are valued in society?",
+     "In your opinion, which profession is more important: doctors or nurses?",
+     "How can technology influence medical-related professions in the future?",
+     "What qualities are essential for someone to succeed in a medical profession?"
+    ]
+   }
+  },
+  {
+   "id": "c44",
+   "title": "A time when you worked in a group",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Hometown",
+     "questions": [
+      "Do you like living there?",
+      "Do you think you will continue living there for a long time?",
+      "Please describe your hometown a little.",
+      "What's your hometown famous for?",
+      "Did you learn about the history of your hometown at school?",
+      "Are there many young people in your hometown?",
+      "Is your hometown a good place for young people to pursue their careers?"
+     ]
+    },
+    {
+     "topic": "Neighborhood/Area",
+     "questions": [
+      "Do you know your neighbors?",
+      "What do you think of your neighbors?",
+      "How do you get along well with your neighbors?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A time when you worked in a group",
+    "cue": "Describe a time when you worked in a group",
+    "points": []
+   },
+   "part3": {
+    "questions": [
+     "How do other people in your team think he is?",
+     "What do you think are the characteristics of a good leader?",
+     "What happens if you don’t have a good leader?",
+     "Why do some people not like teamwork?",
+     "Do you think young people are suitable for teamwork?"
+    ]
+   }
+  },
+  {
+   "id": "c45",
+   "title": "A person you know who has a successful business",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Computers / Tablets",
+     "questions": [
+      "In what conditions would you use a computer?",
+      "When was the first time you used a computer?",
+      "In what conditions would it be difficult for you to use a computer?"
+     ]
+    },
+    {
+     "topic": "Collecting things",
+     "questions": [
+      "Do you collect things?",
+      "Are there any things you keep from childhood?",
+      "Where do you usually keep things you need?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A person you know who has a successful business",
+    "cue": "Describe a person you know who has a successful business",
+    "points": [
+     "Who this person is",
+     "How you got to know him/her",
+     "Why and how he/she started the business",
+     "What business he/she does",
+     "And explain why you think the business is successful"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Would you like to start a family business?",
+     "What are the advantages and disadvantages of family businesses?"
+    ]
+   }
+  },
+  {
+   "id": "c46",
+   "title": "A person who loves to grow plants (e.g. vegetables, flowers) at home or in the garden",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Street market",
+     "questions": [
+      "Are street markets common in your country?",
+      "What is usually sold there?",
+      "Do you think people like street markets? Why?"
+     ]
+    },
+    {
+     "topic": "Travelling",
+     "questions": [
+      "Do you like to travel?",
+      "Do you often travel by air?",
+      "How long was the longest trip you took?",
+      "Which country would you like to travel to in the future?",
+      "Would you like to travel to space?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A person who loves to grow plants (e.g. vegetables, flowers) at home or in the garden",
+    "cue": "Describe a person who loves to grow plants (e.g. vegetables, flowers) at home or in the garden",
+    "points": [
+     "Who this person is",
+     "What plants he/she grows",
+     "How he/she grows the plants",
+     "And explain why he/she loves growing plants"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "What do you think of the job of a farmer?",
+     "Are there many people growing their own vegetables now?",
+     "Do you think it’s good to let kids learn how to plant?",
+     "What are the differences between traditional and modern agriculture?"
+    ]
+   }
+  },
+  {
+   "id": "c47",
+   "title": "An interesting video",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Paper / Writing letters",
+     "questions": [
+      "Do you often write things?",
+      "Do you prefer to write by hand or write using computer?",
+      "Do you think computers might one day replace handwriting?",
+      "When do children begin to write in your country?"
+     ]
+    },
+    {
+     "topic": "Losing things / Lost and found",
+     "questions": [
+      "Do you always bring a lot of keys with you?",
+      "Have you ever lost your keys?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "An interesting video",
+    "cue": "Describe an interesting video",
+    "points": [
+     "When and where you watched it",
+     "What it is about",
+     "Why you watched it",
+     "And explain how you feel about it"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "What kinds of things are popular on social media?",
+     "What are the advantages and disadvantages of using social media?",
+     "What do you think of making friends on social network?"
+    ]
+   }
+  },
+  {
+   "id": "c48",
+   "title": "A tall building you like or dislike",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Being polite / Politeness",
+     "questions": [
+      "How did you learn to be polite as a child?",
+      "Do you think being polite is very important?",
+      "Who taught you to be polite when you were young?"
+     ]
+    },
+    {
+     "topic": "Shoes",
+     "questions": [
+      "What’s your favorite type of shoes? Do you know anyone who likes to buy a lot of shoes?",
+      "Have you ever bought shoes online? How often do you buy shoes?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A tall building you like or dislike",
+    "cue": "Describe a tall building you like or dislike",
+    "points": [
+     "What it is used for",
+     "Where it is",
+     "What it looks like",
+     "And explain why you like/dislike it"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "How easy is it to find a place to live in your country?",
+     "Do you think it's better to rent or to buy a place to live in?",
+     "What are some of the pleasures involved in making a home for ourselves?"
+    ]
+   }
+  },
+  {
+   "id": "c49",
+   "title": "A boring place",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Advertisements",
+     "questions": [
+      "Are there many advertisements in your country?",
+      "Why do you think there are so many advertisements now?",
+      "What are the various places where we see advertisements?",
+      "How do you feel about advertisements?"
+     ]
+    },
+    {
+     "topic": "Secondary school",
+     "questions": [
+      "Where do you go to school?",
+      "Do you think your school is good for every student?",
+      "What changes do you want to make in your school?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A boring place",
+    "cue": "Describe a boring place",
+    "points": [
+     "Where it is",
+     "Who you went there with",
+     "What you did there",
+     "And explain why you think it is a boring place"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Why do some people get bored easily?",
+     "What kinds of places do young people enjoy visiting?",
+     "Do people have different ideas of what is interesting?",
+     "How can tourist attractions become more appealing?",
+     "Is it important to try new experiences?",
+     "Do people today have less patience than in the past?"
+    ]
+   }
+  },
+  {
+   "id": "c50",
+   "title": "A plan that you had to change recently",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Rubbish / Recycling",
+     "questions": [
+      "Do you recycle now? Why?",
+      "Did you recycle when you were a kid?",
+      "Will you recycle in the future?",
+      "What kind of things do you recycle?"
+     ]
+    },
+    {
+     "topic": "Remembering names",
+     "questions": [
+      "Is it easy for you to remember names?",
+      "Will you forget other people’s names if others forget your name?",
+      "How can you strengthen your memory?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A plan that you had to change recently",
+    "cue": "Describe a plan that you had to change recently",
+    "points": [
+     "When this happened",
+     "What made you change the plan",
+     "What the new plan was",
+     "And how you felt about the change"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Why do people sometimes change their plans?",
+     "Is it important to be flexible in life?",
+     "Do young people change plans more often than older people?",
+     "How do people feel when their plans suddenly change?",
+     "Can changing plans sometimes lead to better results?",
+     "How can people deal with unexpected changes?"
+    ]
+   }
+  },
+  {
+   "id": "c51",
+   "title": "A new law you would like to introduce in your country",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Tiredness",
+     "questions": [
+      "Do you often feel tired?",
+      "When would you feel tired?",
+      "What do you do when you feel tired?",
+      "Do you think you get enough rest?"
+     ]
+    },
+    {
+     "topic": "Glasses",
+     "questions": [
+      "Do people in your country wear sunglasses? Where can you buy sunglasses?",
+      "Do you like to wear sunglasses?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A new law you would like to introduce in your country",
+    "cue": "A new law you would like to introduce in your country",
+    "points": [
+     "What it is",
+     "What changes that law brings",
+     "Whether the new law will be popular",
+     "How you came up with the new law",
+     "And explain how you feel about this new law"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Is it important to take photos while traveling?",
+     "Can you trust other people’s travel journals on the Internet?",
+     "What factors affect how people feel about travel?"
+    ]
+   }
+  },
+  {
+   "id": "c52",
+   "title": "An important decision that you made",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Food",
+     "questions": [
+      "What kinds of meals do you like?",
+      "Do you often dinner with your family or friends?",
+      "When do you usually eat dinner?",
+      "Are there any fruits or vegetables you don’t like? Why?",
+      "What is your favourite cuisine?"
+     ]
+    },
+    {
+     "topic": "Headphones",
+     "questions": [
+      "Is wearing headphones comfortable?",
+      "Do you use headphones?",
+      "What type of headphones do you use?",
+      "When would you use headphones?",
+      "In what conditions would you not use headphones?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "An important decision that you made",
+    "cue": "An important decision that you made",
+    "points": [
+     "What the decision was",
+     "How you made your decision",
+     "What the results of the decision were",
+     "And explain why it was important"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "What decisions do people usually make in their daily lives?",
+     "Which is easier, making a decision by yourself or making a decision after group discussion?",
+     "Why are many young people unwilling to follow their parents’ advice?",
+     "Why would middle-aged people tend to second-guess their own decisions?"
+    ]
+   }
+  },
+  {
+   "id": "c53",
+   "title": "A friend from your childhood",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Watches",
+     "questions": [
+      "How often do you wear a watch?",
+      "What was your first watch like?",
+      "What kind of watches do you like to wear?",
+      "Do people still wear watches in your country?",
+      "Did you receive any watch as a gift when you were a child?"
+     ]
+    },
+    {
+     "topic": "Cars / Driving",
+     "questions": [
+      "Will you buy an expensive car in the future?",
+      "Do you think car colours are important?",
+      "Did you enjoy travelling by car when you were a kid?",
+      "What types of cars do you like?",
+      "Do you prefer to be a driver or the passenger?",
+      "What do you usually do when there is a traffic jam?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A friend from your childhood",
+    "cue": "A friend from your childhood",
+    "points": [
+     "Who he/she is",
+     "Where and how you met each other",
+     "What you often did together",
+     "And explain what made you like him/her"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Do you still keep in touch with your friends from childhood? Why or why not?",
+     "What do you think of online social media?",
+     "Do you think online social media will replace face-to-face communication?",
+     "How important is childhood friendship to children?"
+    ]
+   }
+  },
+  {
+   "id": "c54",
+   "title": "A time when you were stuck in a traffic jam for a very long time",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Websites",
+     "questions": [
+      "What kinds of websites do you usually use?",
+      "What changes compared to the past?"
+     ]
+    },
+    {
+     "topic": "Mirrors",
+     "questions": [
+      "Do you like looking at yourself in the mirror? How often?",
+      "Have you ever bought mirrors?",
+      "Would you use mirrors to decorate your room?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A time when you were stuck in a traffic jam for a very long time",
+    "cue": "A time when you were stuck in a traffic jam for a very long time",
+    "points": [
+     "When it happened",
+     "Where you were stuck",
+     "What you did while waiting",
+     "And explain how you felt in the traffic jam"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Which vehicles are more likely to be in a traffic jam, cars or buses?"
+    ]
+   }
+  },
+  {
+   "id": "c55",
+   "title": "A special day out that cost you little money/didn't cost you much",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Parks",
+     "questions": [
+      "Did you like going to parks as a child?",
+      "Do you still like going to parks now?",
+      "Would you like to see more parks in your city?",
+      "Are there any parks you want to go to in the future?",
+      "Would you prefer to play in a personal garden or public garden?",
+      "How are the parks today different from those you visited as a kid?",
+      "What do you like to do when visiting a park?",
+      "Would you like to play in a public garden or park?"
+     ]
+    },
+    {
+     "topic": "Shopping",
+     "questions": [
+      "Do you like going shopping?",
+      "Do you shop online?",
+      "Does shopping take you a lot of time?",
+      "What is the best part about shopping?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A special day out that cost you little money/didn't cost you much",
+    "cue": "A special day out that cost you little money/didn't cost you much",
+    "points": [
+     "When the day was",
+     "Where you went",
+     "How much you spent",
+     "And explain how you feel about the day"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "How do people spend their leisure time in VietNam?"
+    ]
+   }
+  },
+  {
+   "id": "c56",
+   "title": "A time when you organized a happy event successfully",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Keeping things tidy",
+     "questions": [
+      "Are you a tidy person?",
+      "Are all of your family members tidy?",
+      "Are you tidier at home or at work/ (school)?"
+     ]
+    },
+    {
+     "topic": "Music",
+     "questions": [
+      "Do you like listening to music?",
+      "When do you listen to music?",
+      "Did you learn instruments?",
+      "Did you have any music classes in school?",
+      "Do you think it is necessary for children to have music classes?",
+      "What do you think of Vietnamese traditional music?",
+      "How much time do you spend listening to music every day?",
+      "What is your favorite kind of music?",
+      "When did you start listening to this type of music?",
+      "How do you feel when you listening to music?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A time when you organized a happy event successfully",
+    "cue": "A time when you organized a happy event successfully",
+    "points": [
+     "What the event was",
+     "How you prepared for it",
+     "Who helped you to organize it",
+     "And explain why you think it was a successful event"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "How would you feel when you were not well prepared for something?",
+     "Do you prefer to prepare and organize an activity or just take part in an activity?",
+     "How can parents help children to be organized?",
+     "On what occasions do people need to be organized?",
+     "Does everything need to be well prepared?",
+     "Do people need others' help when organizing things?"
+    ]
+   }
+  },
+  {
+   "id": "c57",
+   "title": "A special cake you received from others",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Teachers",
+     "questions": [
+      "Do you like any teacher of yours?",
+      "Do you still keep in touch with your teachers?",
+      "Do you think it’s important to like your teacher?",
+      "Do you want to be a teacher?",
+      "What qualities should a good teacher have?",
+      "Do you have a favorite teacher?"
+     ]
+    },
+    {
+     "topic": "Social Media",
+     "questions": [
+      "Do you like to use social media?",
+      "Do you think you or your friends use too much social media?",
+      "Do you want to work in social media? Why?",
+      "What’s the most popular social media in VietNam? Why?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A special cake you received from others",
+    "cue": "A special cake you received from others",
+    "points": [
+     "When it happened",
+     "Where it happened",
+     "Who you got the cake from",
+     "And explain why it's a special cake"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "What are the differences between the special food in Vietnam and foreign countries?",
+     "Do people usually cook special food in Vietnam?",
+     "Should special food be easily available?"
+    ]
+   }
+  },
+  {
+   "id": "c58",
+   "title": "A thing you did to learn another language",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Clothes",
+     "questions": [
+      "What's your favorite color of clothes?",
+      "What kind of clothes do you never wear?",
+      "What kind of clothes do you usually wear?",
+      "Do you wear the same style of clothes on weekdays and weekends?"
+     ]
+    },
+    {
+     "topic": "Films",
+     "questions": [
+      "What’s your favourite kind of movie?",
+      "Did you go to the cinema a lot when you were a child?",
+      "Which is more popular in your country, going to the cinema or watching movies at home?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A thing you did to learn another language",
+    "cue": "A thing you did to learn another language",
+    "points": [
+     "What language you learned",
+     "What you did",
+     "How it helped you learn the language",
+     "And how you feel about it"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "What difficulties do people face when learning a language?",
+     "Do you think language learning is important? Why?"
+    ]
+   }
+  },
+  {
+   "id": "c59",
+   "title": "A place you would like to visit in your free time",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Dreams",
+     "questions": [
+      "How long can you remember your dream when you wake up?",
+      "Do you like hearing others dream?",
+      "Do you think dream will affect life?",
+      "Do you often have dream at night?",
+      "Have you had a bad dream before?",
+      "What was the strangest dream you have had?",
+      "What do you usually dream about?"
+     ]
+    },
+    {
+     "topic": "City",
+     "questions": [
+      "Would you recommend your city to others?",
+      "What's the weather like where you live?",
+      "Are there people of different ages living in this city?",
+      "Are the people friendly in the city?",
+      "Is the city friendly to children and old people?",
+      "Do you often see your neighbors?",
+      "What city do you live in?",
+      "Do you like this city? Why?",
+      "How long have you lived in this city?",
+      "Are there big changes in this city?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A place you would like to visit in your free time",
+    "cue": "A place you would like to visit in your free time",
+    "points": [
+     "Where it is",
+     "What you will do there",
+     "How long you will stay there",
+     "And explain why you would like to visit it"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Do people prefer planned travel?",
+     "Why do places with historical attractions develop tourism more aggressively?",
+     "Why do you think people usually travel?",
+     "Why does living in tourist cities experience more noise?"
+    ]
+   }
+  },
+  {
+   "id": "c60",
+   "title": "A person who works in a successful company",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Outer Space",
+     "questions": [
+      "Have you ever learnt about outer space and stars?"
+     ]
+    },
+    {
+     "topic": "Art",
+     "questions": [
+      "Do you like art?",
+      "Have you ever visited an art gallery?",
+      "Is there any art work on the wall in your room?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A person who works in a successful company",
+    "cue": "A person who works in a successful company",
+    "points": []
+   },
+   "part3": {
+    "questions": [
+     "Would you like to start a family business?",
+     "What are the advantages and disadvantages of family businesses?"
+    ]
+   }
+  },
+  {
+   "id": "c61",
+   "title": "An important river/lake in your country",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Singing",
+     "questions": [
+      "Do you often sing?",
+      "When do you like to sing?",
+      "Is it difficult to sing well?",
+      "Do you want to be a singer?",
+      "What kinds of music do you like to sing?"
+     ]
+    },
+    {
+     "topic": "Evening",
+     "questions": [
+      "Do you prefer studying in the morning or in the afternoon?",
+      "What do you usually do in the evening?",
+      "What did you do in the evening when you were little? Why?",
+      "Are there any differences between what you do in the evening now and what you did in the past?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "An important river/lake in your country",
+    "cue": "An important river/lake in your country",
+    "points": [
+     "Where it is located",
+     "How big/long it is",
+     "What it looks like",
+     "And explain why it is important"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "What are the popular water sports in your country?",
+     "Are rivers and lakes important to a country?",
+     "How can rivers and lakes benefit local people?",
+     "Do you think rivers and lakes attract tourists?",
+     "How do rivers and lakes affect local tourism?",
+     "Are rivers and lakes good for transport? Why?"
+    ]
+   }
+  },
+  {
+   "id": "c62",
+   "title": "A home that you like to visit but do not want to live in",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Old Buildings",
+     "questions": [
+      "Have you ever seen some old buildings in the city?",
+      "Do you think we should keep old buildings in cities?",
+      "Do you prefer living in an old building or a modern house?"
+     ]
+    },
+    {
+     "topic": "Sports",
+     "questions": [
+      "Did you do any sport when you were younger? (Why/Why not?)",
+      "Have you ever supported a sports team? (Why/Why not?)",
+      "Do you enjoy watching sports? (Why/Why not?)",
+      "Do you think there is too much sport on television in your country? (Why/Why not?)"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A home that you like to visit but do not want to live in",
+    "cue": "A home that you like to visit but do not want to live in",
+    "points": [
+     "Where it is",
+     "What it is like",
+     "Why you like to visit it",
+     "And explain why you would not like to live there"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "What are the differences between houses or buildings in the city and in the countryside?",
+     "Do you prefer to live in the city or in the countryside?",
+     "What safety risks are there in residential buildings in cities?",
+     "Is it expensive to decorate a house or an apartment in the place where you live?"
+    ]
+   }
+  },
+  {
+   "id": "c63",
+   "title": "An environmental law you would like your country to introduce",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Science",
+     "questions": [
+      "Do you like science?",
+      "What science have you studied?",
+      "How do you study science?",
+      "What’s the most difficult part of studying science?",
+      "How has the science that you have studied helped you?"
+     ]
+    },
+    {
+     "topic": "Comedy/Jokes",
+     "questions": [
+      "Do you like watching movies that make you laugh?",
+      "Do you find it easy to make others laugh?",
+      "Do you think it’s a good thing if you always make others laugh?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "An environmental law you would like your country to introduce",
+    "cue": "An environmental law you would like your country to introduce",
+    "points": [
+     "What law it should be",
+     "Why people should follow the law",
+     "Whether the law will be popular",
+     "And explain how you feel about this law"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Is it important to take photos while traveling?",
+     "Can you trust other people’s travel journals on the Internet?",
+     "What factors affect how people feel about travel?"
+    ]
+   }
+  },
+  {
+   "id": "c64",
+   "title": "A piece of local news that people are interested in",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "History",
+     "questions": [
+      "Do you like learning history?",
+      "What historical event do you find most interesting?",
+      "Do you think history is important?",
+      "Do you like to watch programmes on TV about history?",
+      "Do you think the internet is a good place to learn about history?"
+     ]
+    },
+    {
+     "topic": "Morning Routine",
+     "questions": [
+      "Do you like to get up early in the morning?",
+      "What do you do in the morning? What is your morning routine?",
+      "Is breakfast important?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A piece of local news that people are interested in",
+    "cue": "A piece of local news that people are interested in",
+    "points": [
+     "What it was about",
+     "Where you saw/heard it",
+     "Who was involved",
+     "And explain why people were interested in it"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "How do people usually get local news nowadays?",
+     "Do you think local news is more important than international news? Why?",
+     "Why are some news stories more popular than others?",
+     "Do social media affect the way people receive news?"
+    ]
+   }
+  },
+  {
+   "id": "c65",
+   "title": "A time when you got up early",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Where you live now",
+     "questions": [
+      "Which town or city do you live in now?",
+      "Are there any things you don't like about your area? (What are they?)",
+      "Do you think you will continue to live there for a long time? (Why? Why not?)",
+      "What are some changes in the area recently?",
+      "Do you live in a house or an apartment?",
+      "What is your favourite room in your home? (Why?)",
+      "What things make your home pleasant to live in? (Why?)",
+      "Are the people in your neighbourhood nice and friendly?",
+      "Do you know any of your neighbours?",
+      "Do you know any famous people in your area?"
+     ]
+    },
+    {
+     "topic": "Study/Subject",
+     "questions": [
+      "Describe your education.",
+      "What is your area of specialization?",
+      "Why did you choose to study that major?",
+      "What kind of school did you go to as a child?",
+      "What was your favourite subject as a child?",
+      "Do you think your country has an effective education system?",
+      "(Possibly) Are you looking forward to working?"
+     ]
+    },
+    {
+     "topic": "Home/Accommodation",
+     "questions": [
+      "What kind of housing/accommodation do you live in?",
+      "Who do you live with?",
+      "How long have you lived there?",
+      "What’s the difference between where you are living now and where you have lived in the past?",
+      "Do you plan to live there for a long time?",
+      "Which room does your family spend most of the time in?",
+      "Are the transport facilities to your home very good?",
+      "Do you prefer living in a house or a flat?",
+      "What part of your home do you like the most ?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A time when you got up early",
+    "cue": "A time when you got up early",
+    "points": [
+     "When it was",
+     "What you did",
+     "Why you got up early",
+     "And how you felt about it"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "Is it good to arrive early in any situation?",
+     "Do you know anyone who likes to get up early?",
+     "Why do people get up early?",
+     "What kinds of occasions need people to arrive early?",
+     "Why do some people like to stay up late?",
+     "What kind of people like getting up early?"
+    ]
+   }
+  },
+  {
+   "id": "c66",
+   "title": "A friend's home you visited and liked but didn't want to live there",
+   "topic": "Part 2",
+   "level": "medium",
+   "tags": [
+    "Forecast 2026 Q3"
+   ],
+   "part1": [
+    {
+     "topic": "Work / Study",
+     "questions": [
+      "Do you work or are you a student?",
+      "(Work) What kind of work do you do?",
+      "(Work) What do you find most interesting about your work? (Why?)",
+      "(Work) Which is more important to you – the people you work with or the work you do? (Why?)",
+      "(Work) Do you work best in the morning or the afternoon? (Why?)",
+      "(Study) What do you study?",
+      "(Study) What do you find most interesting about your studies? (Why?)",
+      "(Study) Which is more important to you – the teachers or the other students on your course? (Why?)",
+      "(Study) How much time do you spend studying every week?",
+      "(Study) How do you usually travel to the city where you study?",
+      "(Study) Do you study best in the morning or the afternoon? (Why?)",
+      "(Study) Have you always wanted to study this subject / these subjects? (Why? Why not?)"
+     ]
+    },
+    {
+     "topic": "Hometown",
+     "questions": [
+      "Do you like living there?",
+      "Do you think you will continue living there for a long time?",
+      "Please describe your hometown a little.",
+      "What's your hometown famous for?",
+      "Did you learn about the history of your hometown at school?",
+      "Are there many young people in your hometown?",
+      "Is your hometown a good place for young people to pursue their careers?"
+     ]
+    },
+    {
+     "topic": "Neighborhood/Area",
+     "questions": [
+      "Do you know your neighbors?",
+      "What do you think of your neighbors?",
+      "How do you get along well with your neighbors?"
+     ]
+    }
+   ],
+   "part2": {
+    "topic": "A friend's home you visited and liked but didn't want to live there",
+    "cue": "Describe a friend's home you visited and liked but didn't want to live there",
+    "points": [
+     "Whose home it was",
+     "When and why you visited it",
+     "What the home was like",
+     "What you liked about it",
+     "And explain why you didn't want to live there"
+    ]
+   },
+   "part3": {
+    "questions": [
+     "What kind of homes do people usually prefer to live in?",
+     "Why do some people prefer living in houses rather than apartments?",
+     "What are the advantages of living in a large house?",
+     "Do you think people need a lot of space in their homes?",
+     "What makes a home comfortable and pleasant to live in?",
+     "Why do some people like visiting other people's homes?",
+     "Do you think people's homes reflect their personalities?",
+     "What factors should people consider when choosing a place to live?",
+     "Is it better to live in the city or in the countryside?",
+     "Do you think people's preferences for homes change as they get older?"
+    ]
+   }
+  }
+ ]
+}

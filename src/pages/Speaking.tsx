@@ -42,7 +42,7 @@ export default function Speaking() {
     if (!m) return;
     setLastOpen(m.id, `/speaking/${m.id}`, 'practice');
     const p1 = (m.part1 ?? []).flatMap((t) => t.questions.map((q, i) => ({ question: q, transcript: '', sample: t.samples?.[i] })));
-    const p2 = m.part2 ? [{ question: `${m.part2.cue} You should say: ${m.part2.points.join('; ')}.`, transcript: '', sample: m.part2.sample }, ...(m.part2.followUp ?? []).map((q) => ({ question: q, transcript: '' }))] : [];
+    const p2 = m.part2 ? [{ question: m.part2.points.length ? `${m.part2.cue} You should say: ${m.part2.points.join('; ')}.` : m.part2.cue, transcript: '', sample: m.part2.sample }, ...(m.part2.followUp ?? []).map((q) => ({ question: q, transcript: '' }))] : [];
     const p3 = (m.part3?.questions ?? []).map((q, i) => ({ question: q, transcript: '', sample: m.part3?.samples?.[i] }));
     setTurns({ 1: p1, 2: p2, 3: p3 });
     setGrade({ 1: null, 2: null, 3: null });
@@ -122,8 +122,10 @@ export default function Speaking() {
             </div>
           </div>
           <h2 className="cue__title">{m.part2.cue}</h2>
-          <p>You should say:</p>
-          <ul className="cue__points">{m.part2.points.map((p, i) => <li key={i}>{p}</li>)}</ul>
+          {m.part2.points.length > 0 && <>
+            <p>You should say:</p>
+            <ul className="cue__points">{m.part2.points.map((p, i) => <li key={i}>{p}</li>)}</ul>
+          </>}
           <textarea className="textarea" rows={3} placeholder="Ghi chú nhanh trong 1 phút chuẩn bị (từ khoá, ý chính)…" value={notes} onChange={(e) => setNotes(e.target.value)} />
         </div>
       )}
