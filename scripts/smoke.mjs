@@ -611,7 +611,7 @@ for (const profile of Object.keys(PROFILES)) {
     await go(page, '/listening/vol5-t6-l2');
     page.once('dialog', (d) => d.accept());
     await page.getByRole('button', { name: 'Nộp bài' }).click();
-    await page.getByRole('button', { name: 'Xem transcript' }).click();
+    await page.getByRole('button', { name: 'Xem transcript', exact: true }).click();
     const btns = await page.locator('.script-lines .pp__tr').count();
     await page.locator('.script-lines .pp__tr').first().click();
     await page.waitForSelector('.script-lines .pp__vi', { timeout: 5000 });
