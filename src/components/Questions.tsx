@@ -1,7 +1,8 @@
 // Render & chấm mọi dạng câu hỏi Reading / Listening.
 import ZoomImage, { publicUrl } from './ZoomImage';
-import { Fragment, type ReactNode } from 'react';
-import { Check, Eye, X } from 'lucide-react';
+import { Fragment, useEffect, useState, type ReactNode } from 'react';
+import { Check, Eye, Languages, Loader2, X } from 'lucide-react';
+import { translateLines } from '../lib/freeTranslate';
 import type { Question, QuestionGroup } from '../types';
 import { answerMatches } from '../lib/text';
 import { Options, PickMenu, RichText, Segmented } from './ui';
@@ -178,12 +179,14 @@ export function QuestionView({ q, group, value, onChange, checked, onFocus, comp
   );
 }
 
-export function GroupsView({ groups, answers, onChange, checked, onFocus, revealed, onReveal, note }: {
+export function GroupsView({ groups, answers, onChange, checked, onFocus, revealed, onReveal, note, translate, translateAll }: {
   groups: QuestionGroup[]; answers: Answers; onChange: (no: number, a: Answer) => void; checked: boolean; onFocus?: (no: number) => void;
   /** Chế độ luyện tập: các câu đã kiểm tra riêng. */
   revealed?: Record<number, boolean>; onReveal?: (no: number) => void;
   /** Ghi chú của đề (Material.note), vd. câu thiếu trong đề gốc. */
   note?: string;
+  /** Luyện tập: nút dịch đề từng nhóm; translateAll = bật dịch mọi nhóm. */
+  translate?: boolean; translateAll?: boolean;
 }) {
   return (
     <div className="qgroups">
@@ -193,7 +196,7 @@ export function GroupsView({ groups, answers, onChange, checked, onFocus, reveal
         const range = nos.length > 1 ? `Questions ${nos[0]}–${nos[nos.length - 1]}` : `Question ${nos[0]}`;
         return (
           <section key={gi} className="qgroup">
-            <h3>{range}</h3>
+            {translate ? <GroupTr g={g} range={range} all={!!translateAll} /> : <h3>{range}</h3>}
             <p className="instruction"><Instruction text={g.instruction} limit={g.wordLimit} /></p>
             {g.bank && g.questions.some((q) => q.type === 'match') && !g.bank.every((b) => b.length <= 2) && (
               <ol className="qbank">{g.bank.map((b, i) => <li key={i} draggable={!checked} onDragStart={(e) => { e.dataTransfer.setData('text/x-bank', String(i)); e.dataTransfer.effectAllowed = 'copy'; }} title={checked ? undefined : 'Kéo vào ô trả lời'}>{(() => { const k = /heading/i.test(g.instruction) || (g.bank!.length > 8 && !/letter/i.test(g.instruction)) ? ROMAN[i] : LETTERS[i]; return new RegExp(`^${k}\\s*[–.:-]`, 'i').test(b) ? null : <span>{k}</span>; })()}{b}</li>)}</ol>
@@ -204,6 +207,60 @@ export function GroupsView({ groups, answers, onChange, checked, onFocus, reveal
         );
       })}
     </div>
+  );
+}
+
+/** Các dòng cần dịch của một nhóm câu: hướng dẫn, tiêu đề, bảng, ngân hàng phương án, câu hỏi + phương án. */
+function trLines(g: QuestionGroup): { k: string; en: string }[] {
+  const out: { k: string; en: string }[] = [];
+  const clean = (t: string) => t.replace(/\{\{(\d+)\}\}/g, '($1) …').replace(/_{3,}/g, '…').replace(/\s+/g, ' ').trim();
+  const add = (k: string, t?: string) => { const e = t && clean(t); if (e && /[A-Za-z]{2}/.test(e)) out.push({ k, en: e }); };
+  add('Hướng dẫn', g.instruction);
+  add('', g.context);
+  if (g.table) {
+    add('', g.table.title);
+    if (g.table.columns) add('', g.table.columns.join(' | '));
+    g.table.rows.forEach((r) => add('', r.join(' | ').replace(/^# /, '')));
+  }
+  const rom = !!g.bank && (/heading/i.test(g.instruction) || (g.bank.length > 8 && !/letter/i.test(g.instruction)));
+  g.bank?.forEach((b, i) => add(rom ? ROMAN[i] : LETTERS[i], b.replace(/^[A-Za-z]{1,4}\s*[–.:-]\s*/, '')));
+  for (const q of g.questions) {
+    if (!g.table || !g.table.rows.some((r) => r.some((c) => c.includes(`{{${q.no}}}`)))) add(String(q.no), q.text);
+    ('options' in q ? q.options ?? [] : []).forEach((o: string, i: number) => add(`${q.no}${LETTERS[i]}`, o.replace(/^[A-H]\s*[–.:-]\s*/, '')));
+  }
+  return out;
+}
+
+/** Tiêu đề nhóm + nút "Dịch đề" (luyện tập, cho người mới): bản dịch tiếng Việt hiện ngay dưới tiêu đề. */
+function GroupTr({ g, range, all }: { g: QuestionGroup; range: string; all: boolean }) {
+  const [on, setOn] = useState(false);
+  const [vi, setVi] = useState<string[] | null>(null);
+  const [busy, setBusy] = useState(false);
+  const [err, setErr] = useState('');
+  const lines = trLines(g);
+  const load = async () => {
+    if (vi || busy) return;
+    setBusy(true); setErr('');
+    try { setVi(await translateLines(lines.map((l) => l.en))); } catch (e) { setErr(e instanceof Error ? e.message : String(e)); setOn(false); }
+    setBusy(false);
+  };
+  useEffect(() => { setOn(all); if (all) load(); }, [all]); // eslint-disable-line react-hooks/exhaustive-deps
+  const toggle = () => { const n = !on; setOn(n); if (n) load(); };
+  return (
+    <>
+      <div className="qgroup__head">
+        <h3>{range}</h3>
+        <button type="button" className={`qtr-btn${on ? ' is-on' : ''}`} onClick={toggle} data-testid="qtr-btn" title={on ? 'Ẩn bản dịch đề' : 'Dịch đề nhóm câu này sang tiếng Việt'}>
+          {busy ? <Loader2 size={13} className="spin" /> : <Languages size={13} />} {on ? 'Ẩn dịch' : 'Dịch đề'}
+        </button>
+      </div>
+      {err && <p className="no-text small">{err}</p>}
+      {on && vi && (
+        <div className="qtr" data-testid="qtr" lang="vi">
+          {lines.map((l, i) => vi[i] ? <div key={i} className={`qtr__l${l.k === 'Hướng dẫn' ? ' qtr__l--ins' : ''}`} title={l.en}>{l.k && <b>{l.k}</b>}<span>{vi[i]}</span></div> : null)}
+        </div>
+      )}
+    </>
   );
 }
 

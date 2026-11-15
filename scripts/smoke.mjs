@@ -261,6 +261,23 @@ for (const profile of Object.keys(PROFILES)) {
     return { ok: /\/tˈɛst\//.test(head) && /procedure for testing/.test(body) && /tơ, lụa/.test(body), info: `${head.replace(/\s+/g, ' ')} | ${body.replace(/\s+/g, ' ').slice(0, 120)}` };
   });
 
+  await check(`[${profile}] T1 Listening luyện tập: Dịch đề từng nhóm + cả bài`, async () => {
+    await page.route(/api\.mymemory\.translated\.net/, (r) => r.fulfill({ contentType: 'application/json', headers: { 'access-control-allow-origin': '*' },
+      body: JSON.stringify({ responseStatus: 200, responseData: { translatedText: 'VI ' + new URL(r.request().url()).searchParams.get('q').slice(0, 20) }, matches: [] }) }));
+    await go(page, '/listening/vol5-t6-l2/practice');
+    const groups = await page.locator('.qgroup').count();
+    await page.getByTestId('qtr-btn').first().click();
+    await page.waitForSelector('[data-testid="qtr"]', { timeout: 8000 });
+    const one = await page.getByTestId('qtr').count();
+    const txt = await page.getByTestId('qtr').first().innerText();
+    await page.getByTestId('qtr-btn').first().click();
+    const hidden = await page.getByTestId('qtr').count();
+    await page.getByTestId('qtr-all').click();
+    await page.waitForFunction((n) => document.querySelectorAll('[data-testid="qtr"]').length === n, groups, { timeout: 15000 }).catch(() => {});
+    const allN = await page.getByTestId('qtr').count();
+    await page.unrouteAll({ behavior: 'ignoreErrors' });
+    return { ok: one === 1 && /VI /.test(txt) && hidden === 0 && allN === groups && !page.errors.length, info: `nhóm=${groups} 1 nhóm=${one} ẩn=${hidden} tất cả=${allN} "${txt.slice(0, 60).replace(/\s+/g, ' ')}"` };
+  });
   await check(`[${profile}] B10 bảng/form/flowchart gọn như đề giấy`, async () => {
     await go(page, '/listening/vol1-t2-l4/practice');
     const blanks = await page.locator('table.qtable .tblank input').count();

@@ -68,3 +68,23 @@ export async function translateText(text: string): Promise<string> {
   }
   return freeTranslate(text);
 }
+
+const linesCache = new Map<string, string>();
+/** Dịch nhiều dòng ngắn (đề bài, phương án): AI dịch một lượt; bản miễn phí dịch từng dòng (có cache). */
+export async function translateLines(lines: string[]): Promise<string[]> {
+  const todo = [...new Set(lines.filter((l) => l.trim() && !linesCache.has(l)))];
+  if (todo.length) {
+    const { aiReady, getAiConfig } = await import('../store');
+    if (aiReady(getAiConfig())) {
+      const { translateMany } = await import('../ai/assist');
+      const vi = await translateMany(todo, getAiConfig());
+      todo.forEach((l, i) => vi[i] && linesCache.set(l, vi[i]));
+    } else {
+      // 4 lượt song song cho nhanh; lỗi hết lượt thì dừng.
+      let i = 0;
+      const worker = async () => { while (i < todo.length) { const l = todo[i++]; linesCache.set(l, await freeTranslate(l)); } };
+      await Promise.all([worker(), worker(), worker(), worker()]);
+    }
+  }
+  return lines.map((l) => linesCache.get(l) ?? '');
+}

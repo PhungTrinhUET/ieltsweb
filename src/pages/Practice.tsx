@@ -35,6 +35,7 @@ export default function Practice() {
   const [sel, setSel] = useState<WordSel | null>(null);
   const [tr, setTr] = useState<Tr>({});
   const [showAllVi, setShowAllVi] = useState(false);
+  const [qVi, setQVi] = useState(false);
   const [err, setErr] = useState('');
   const [tab, setTab] = useState<'text' | 'questions'>(isL ? 'questions' : 'text');
   const [showScript, setShowScript] = useState(false);
@@ -140,7 +141,7 @@ export default function Practice() {
 
   const questionsPane = (
     <>
-      <GroupsView groups={m.groups} note={m.note} answers={answers} onChange={(no, a) => setAnswers((s) => ({ ...s, [no]: a }))} checked={all}
+      <GroupsView groups={m.groups} note={m.note} answers={answers} onChange={(no, a) => setAnswers((s) => ({ ...s, [no]: a }))} checked={all} translate translateAll={qVi}
         revealed={revealed} onReveal={(no) => setRevealed((r) => ({ ...r, [no]: true }))} />
       <section className="xnotes">
         <strong><StickyNote size={15} /> Ghi chú của bạn</strong>
@@ -161,6 +162,7 @@ export default function Practice() {
   const tools = (
     <>
       {stored.length > 0 && (!isL || hasScript) && <button className={`xtool${showAllVi ? ' is-on' : ''}`} onClick={() => setShowAllVi(!showAllVi)} title="Hiện bản dịch tiếng Việt cả bài"><Languages size={15} /> <span>Dịch cả bài</span></button>}
+      <button className={`xtool${qVi ? ' is-on' : ''}`} onClick={() => setQVi(!qVi)} title="Dịch đề: hướng dẫn, câu hỏi, phương án sang tiếng Việt (cho người mới)" data-testid="qtr-all"><Languages size={15} /> <span>Dịch đề</span></button>
       {hasScript && <button className={`xtool${showScript ? ' is-on' : ''}`} onClick={() => setShowScript(!showScript)} title="Nên nghe và làm trước, sau đó mở transcript để dò lại và học từ">{showScript ? <EyeOff size={15} /> : <Eye size={15} />} <span>Transcript</span></button>}
       {hl.list.length > 0 && <button className="xtool" onClick={hl.clear} title="Xoá hết highlight"><Eraser size={15} /> <span>{hl.list.length}</span></button>}
       {(all || checkedNos.length > 0) && <button className="xtool" onClick={reset} title="Làm lại"><RotateCcw size={15} /> <span>Làm lại</span></button>}
@@ -170,7 +172,7 @@ export default function Practice() {
   const status = <span className="xhead__status">Luyện tập · {done}/{total} câu{checkedNos.length > 0 && <> · đúng <strong>{res.score}/{res.max}</strong></>}</span>;
   const qPane = (
     <div onFocusCapture={trackFocus} onClickCapture={trackFocus}>
-      <p className="small xtip">Không tính giờ. <b>Bấm vào một từ</b> để tra nghĩa · <b>bôi đen</b> để highlight · <Languages size={12} /> cuối {isL ? 'lượt lời' : 'đoạn'} để dịch · <em>Kiểm tra câu này</em> (câu điền: <Eye size={12} />) để xem đáp án và giải thích.</p>
+      <p className="small xtip">Không tính giờ. <b>Bấm vào một từ</b> để tra nghĩa · <b>bôi đen</b> để highlight · <Languages size={12} /> cuối {isL ? 'lượt lời' : 'đoạn'} để dịch · <b>Dịch đề</b> ở đầu mỗi nhóm câu · <em>Kiểm tra câu này</em> (câu điền: <Eye size={12} />) để xem đáp án và giải thích.</p>
       {err && <p className="no-text small">{err}</p>}
       {questionsPane}
     </div>
