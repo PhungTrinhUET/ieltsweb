@@ -1,7 +1,7 @@
 // Chuyển content/<vol>/<test>.json (đề gốc đã bóc tách) → public/data/*.json (Material của app) + public/data/index.json.
 // Chạy: node scripts/build-data.mjs   (tự chạy trước `npm run dev` / `npm run build`)
 // Audio: đặt mp3 vào public/<audioDir>/s1.mp3 … s4.mp3 (xem scripts/copy-audio.mjs). Thiếu file → bài dùng giọng máy.
-import { readdirSync, readFileSync, writeFileSync, mkdirSync, existsSync, statSync } from 'node:fs';
+import { readdirSync, readFileSync, writeFileSync, mkdirSync, existsSync, statSync, unlinkSync } from 'node:fs';
 import { join, basename } from 'node:path';
 import { createHash } from 'node:crypto';
 
@@ -278,5 +278,8 @@ let context;
   context = { file: 'context.json', hash: createHash('sha1').update(body).digest('hex').slice(0, 12), words: r.found, sentences: r.data.s.length };
   if (r.missing.length) console.log(`  ngữ cảnh: ${r.missing.length} từ không có câu trong đề (vd. ${r.missing.slice(0, 6).join(', ')})`);
 }
+// Dọn file đề cũ không còn trong content/ (để không lọt vào dist).
+const keep = new Set([...index.map((x) => x.file), 'index.json', 'context.json', 'vocab-deck.json']);
+for (const f of readdirSync(OUT)) if (f.endsWith('.json') && !keep.has(f)) { unlinkSync(join(OUT, f)); console.log(`  xoá file cũ public/data/${f}`); }
 writeFileSync(join(OUT, 'index.json'), JSON.stringify({ generatedAt: new Date().toISOString(), files: index, ...(vocab ? { vocab } : {}), context }));
 console.log(`build-data: ${index.length} test(s), ${total} materials${vocab ? `, ${vocab.words} từ vựng / ${vocab.topics} chủ đề, ${vocab.tests} bộ theo đề` : ''}, ngữ cảnh ${context.words} từ / ${context.sentences} câu → public/data/`);
