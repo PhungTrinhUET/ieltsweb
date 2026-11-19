@@ -20,6 +20,15 @@ const CONTRACT: Record<string, string> = {
   "there's": 'there is', "here's": 'here is', "what's": 'what is', "where's": 'where is', "who's": 'who is', "he's": 'he is', "she's": 'she is',
   "how's": 'how is', "y'all": 'you all', "ma'am": 'madam', okay: 'ok', 'o.k.': 'ok',
 };
+// Đơn vị viết tắt / số ít / kiểu Mỹ → một dạng chung.
+const UNIT: Record<string, string> = {
+  km: 'kilometres', kms: 'kilometres', kilometer: 'kilometres', kilometers: 'kilometres', kilometre: 'kilometres',
+  kg: 'kilos', kgs: 'kilos', kilo: 'kilos', kilogram: 'kilos', kilograms: 'kilos', kilogramme: 'kilos', kilogrammes: 'kilos',
+  cm: 'centimetres', centimeter: 'centimetres', centimeters: 'centimetres', centimetre: 'centimetres',
+  mm: 'millimetres', millimeter: 'millimetres', millimeters: 'millimetres', millimetre: 'millimetres',
+  ml: 'millilitres', milliliter: 'millilitres', milliliters: 'millilitres', millilitre: 'millilitres',
+  mph: 'miles per hour', celsius: 'c', centigrade: 'c', fahrenheit: 'f', euro: 'euros', dollar: 'dollars', degree: 'degrees',
+};
 // Mỹ → Anh (từ hay gặp). Quy tắc chung -ize → -ise, -yze → -yse xử lý riêng.
 const US_UK: Record<string, string> = {
   color: 'colour', favor: 'favour', favorite: 'favourite', honor: 'honour', humor: 'humour', labor: 'labour', neighbor: 'neighbour', neighborhood: 'neighbourhood',
@@ -42,15 +51,21 @@ const ukify = (w: string) => {
 
 /** Một từ gốc → các token chuẩn (chưa xử lý số). */
 function baseTokens(raw: string): string[] {
-  let s = raw.toLowerCase().replace(/[’‘`]/g, "'").replace(/[“”"]/g, '');
-  // tiền & phần trăm & giờ trước khi bỏ dấu câu
-  s = s.replace(/£\s?(\d+)\.(\d{2})\b/g, '$1 pounds $2').replace(/£\s?(\d[\d,]*)/g, '$1 pounds').replace(/\$\s?(\d[\d,]*)/g, '$1 dollars')
-    .replace(/(\d)\s?%/g, '$1 percent').replace(/\bper\s?cent\b/g, 'percent')
+  // Bỏ dấu chữ (café → cafe, résumé → resume) vì bàn phím khó gõ.
+  let s = raw.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/[’‘`]/g, "'").replace(/[“”"]/g, '');
+  // Ký hiệu khó gõ (£ € $ % ° ×) → token "~…" là phần KHÔNG bắt buộc: gõ "5", "5 pounds" hay "£5" đều đúng.
+  s = s.replace(/(\d+) pounds? (\d{2})\b/g, '$1.$2 pounds')
+    .replace(/£\s?(\d[\d,]*(?:\.\d+)?)/g, '$1 ~pounds').replace(/€\s?(\d[\d,]*(?:\.\d+)?)/g, '$1 ~euros').replace(/\$\s?(\d[\d,]*(?:\.\d+)?)/g, '$1 ~dollars')
+    .replace(/(\d[\d,]*(?:\.\d+)?)\s?(£|€)/g, (_, n, c) => `${n} ~${c === '£' ? 'pounds' : 'euros'}`).replace(/[£€$]/g, ' ')
+    .replace(/(\d)\s?%/g, '$1 ~percent').replace(/\bper\s?cent\b/g, 'percent').replace(/%/g, ' ')
+    .replace(/(\d)\s?°\s?([cf])\b/g, '$1 ~degrees ~$2').replace(/(\d)\s?°/g, '$1 ~degrees').replace(/°/g, ' ')
+    .replace(/(\d)\s?×\s?(\d)/g, '$1 ~by $2').replace(/(\d)\s?x\s?(\d)/g, '$1 by $2').replace(/×/g, ' ')
+    .replace(/&/g, ' ~and ')
     .replace(/(\d),(\d{3})\b/g, '$1$2').replace(/(\d)[.:](\d)/g, '$1$2')
     .replace(/(\d)(st|nd|rd|th)\b/g, '$1 #ord').replace(/(\d+)(am|pm)\b/g, '$1 $2').replace(/\b(a\.m\.|p\.m\.)/g, (m) => m.replace(/\./g, ''));
   const out: string[] = [];
   for (let w of s.split(/[\s\-–—/]+/)) {
-    w = w.replace(/^[^a-z0-9#'@]+|[^a-z0-9#]+$/g, '');
+    w = w.replace(/^[^a-z0-9#'@~]+|[^a-z0-9#]+$/g, '');
     if (!w) continue;
     if (CONTRACT[w]) { out.push(...CONTRACT[w].split(' ')); continue; }
     const m = w.match(/^(\w+)(n't|'m|'re|'ve|'ll|'d)$/);
@@ -59,9 +74,12 @@ function baseTokens(raw: string): string[] {
       const tail = { "n't": 'not', "'m": 'am', "'re": 'are', "'ve": 'have', "'ll": 'will', "'d": 'would' }[m[2]]!;
       out.push(head, tail); continue;
     }
-    w = w.replace(/'s$/, 's').replace(/'/g, '').replace(/[^a-z0-9#@]/g, '');
-    if (!w) continue;
+    w = w.replace(/'s$/, 's').replace(/'/g, '').replace(/(?!^~)[^a-z0-9#@]/g, '');
+    if (!w || w === '~') continue;
     if (w === 'pound') w = 'pounds';
+    if (UNIT[w]) { out.push(...UNIT[w].split(' ')); continue; }
+    const tc = w.match(/^(\d+)([cf])$/); // "20c" = "20 c" (độ C)
+    if (tc) { out.push(tc[1], tc[2]); continue; }
     if (MON_SHORT[w]) w = MON_SHORT[w];
     out.push(ukify(w));
   }
@@ -155,7 +173,16 @@ export function canon(text: string): Tok[] {
   const words = text.trim().split(/\s+/).filter(Boolean);
   const toks: Tok[] = [];
   words.forEach((w, i) => { for (const t of baseTokens(w)) toks.push({ t, src: [i] }); });
-  return numberize(toks);
+  const out = numberize(toks);
+  // "12 pounds 50 (pence)" = "£12.50"
+  for (let k = 0; k + 2 < out.length; k++) {
+    if (/^\d+$/.test(out[k].t) && /^~?(pounds|dollars|euros)$/.test(out[k + 1].t) && /^\d{2}$/.test(out[k + 2].t)) {
+      out[k] = { t: out[k].t + out[k + 2].t, src: [...out[k].src, ...out[k + 2].src] };
+      const drop = /^(pence|p|cents?)$/.test(out[k + 3]?.t ?? '') ? 2 : 1;
+      out.splice(k + 2, drop);
+    }
+  }
+  return out;
 }
 export const displayWords = (text: string) => text.trim().split(/\s+/).filter(Boolean);
 
@@ -188,11 +215,14 @@ export interface CheckResult {
 /** So bản gõ với câu đáp án. */
 export function check(answer: string, typed: string): CheckResult {
   const words = displayWords(answer);
-  const A = canon(answer), B = canon(typed);
+  const opt = (x: Tok) => x.t.startsWith('~');
+  const key = (x: Tok) => x.t.replace(/^~/, '');
+  const A = canon(answer), B = canon(typed).map((x) => ({ ...x, t: key(x) }));
+  const req = (arr: Tok[]) => arr.filter((x) => !opt(x)).map(key).join('');
   // gộp không khoảng trắng bằng nhau (mã bưu điện, email viết liền…) → đúng hết
-  if (B.length && A.map((x) => x.t).join('') === B.map((x) => x.t).join('')) return { marks: words.map(() => 'ok'), score: 1, extra: [], wrongWords: [] };
+  if (B.length && (A.map(key).join('') === B.map(key).join('') || req(A) === B.map(key).join(''))) return { marks: words.map(() => 'ok'), score: 1, extra: [], wrongWords: [] };
   const n = A.length, m = B.length;
-  const sim = (i: number, j: number) => (A[i].t === B[j].t ? 2 : A[i].t.length >= 3 && !/\d/.test(A[i].t) && lev1(A[i].t, B[j].t) === 1 ? 1 : 0);
+  const sim = (i: number, j: number) => { const a = key(A[i]); return a === B[j].t ? 2 : a.length >= 3 && !/\d/.test(a) && lev1(a, B[j].t) === 1 ? 1 : 0; };
   const dp: number[][] = Array.from({ length: n + 1 }, () => new Array(m + 1).fill(0));
   for (let i = n - 1; i >= 0; i--) for (let j = m - 1; j >= 0; j--) {
     const s = sim(i, j);
@@ -207,6 +237,8 @@ export function check(answer: string, typed: string): CheckResult {
     else if (dp[i + 1][j] >= dp[i][j + 1]) i++;
     else j++;
   }
+  // ký hiệu khó gõ (£, %, °…) không gõ cũng không tính sai
+  A.forEach((x, k) => { if (opt(x) && tokMark[k] === 'miss') tokMark[k] = 'ok'; });
   const marks: WordMark[] = words.map(() => 'ok');
   const seen = new Array(words.length).fill(false);
   A.forEach((tk, k) => {

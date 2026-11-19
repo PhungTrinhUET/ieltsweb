@@ -188,7 +188,7 @@ export default function Practice() {
           </div>
           <Volume2 size={18} className="muted" />
         </div>
-      ) : <div className="banner"><span>Đề này chưa có audio và bộ đề gốc không có transcript, nên chỉ luyện được phần câu hỏi (đáp án theo key gốc).</span></div>}
+      ) : <div className="banner"><span>Đề này chưa có audio và bộ đề gốc không có transcript, nên chỉ luyện được phần câu hỏi (đáp án theo key gốc).{(m as ListeningMaterial).transcriptNote && <> {(m as ListeningMaterial).transcriptNote!.replace(/\s*Chạy `npm run audio`.*$/, '')}</>}</span></div>}
     </div>
   );
 

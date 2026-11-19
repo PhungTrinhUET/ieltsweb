@@ -156,12 +156,12 @@ for (const vol of readdirSync(CONTENT).filter((d) => d !== 'vocab' && statSync(j
       const srtPath = join(ROOT, 'public', audioRel.replace(/\.mp3$/, '.srt'));
       const segs = existsSync(srtPath) ? parseSrt(readFileSync(srtPath, 'utf8')) : segments;
       if (!transcript.trim()) {
-        // Tài liệu gốc thiếu transcript: lấy từ SRT (whisper) nếu có, không thì ghi chú.
-        transcript = existsSync(srtPath) ? segs.map((x) => x.text).join(' ') : (s.transcriptNote ?? 'Transcript chưa có trong tài liệu gốc. Chạy `npm run audio` (có cài whisper) để tự tạo từ file mp3.');
+        // Tài liệu gốc thiếu transcript: lấy từ SRT (whisper) nếu có, không thì để rỗng (ghi chú ở transcriptNote, không lọt vào nghe-chép/TTS).
+        transcript = existsSync(srtPath) ? segs.map((x) => x.text).join(' ') : '';
       }
       validate(`${id}-l${s.section}`, s.groups);
       out.push({ ...base, id: `${id}-l${s.section}`, skill: 'listening', title: `${prefix} · Section ${s.section} – ${s.title}`, topic: s.topic, section: s.section, level: s.section <= 2 ? 'medium' : 'hard',
-        transcript, segments: hasAudio ? segs : undefined, audio: hasAudio ? audioRel : undefined, groups: s.groups, voice: 'en-GB' });
+        transcript, transcriptNote: s.transcriptNote, segments: hasAudio ? segs : undefined, audio: hasAudio ? audioRel : undefined, groups: s.groups, voice: 'en-GB' });
     }
     for (const r of t.reading ?? []) {
       validate(`${id}-r${r.passage}`, r.groups);

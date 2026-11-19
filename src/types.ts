@@ -92,6 +92,8 @@ export interface ListeningMaterial extends MaterialBase {
   /** URL audio, hoặc "idb:<key>" nếu đã nạp file vào trình duyệt. Thiếu → đọc transcript bằng giọng máy (TTS). */
   audio?: string;
   transcript: string;
+  /** Ghi chú về transcript (vd. tài liệu gốc không có) – tiếng Việt, chỉ để hiển thị. */
+  transcriptNote?: string;
   /** Mốc thời gian từng câu (từ SRT/VTT) – dùng cho chép chính tả theo câu. */
   segments?: Segment[];
   groups: QuestionGroup[];
