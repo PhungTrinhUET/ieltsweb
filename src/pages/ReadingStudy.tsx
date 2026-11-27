@@ -4,7 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { ArrowLeft, BookmarkPlus, Check, Languages, Loader2, Pause, Play, Sparkles, StickyNote } from 'lucide-react';
 import type { ListeningMaterial, ReadingMaterial, Vocab } from '../types';
 import { findCard, getState, saveCard, saveMaterial, saveNote, useDb } from '../db';
-import { parseHl } from '../components/Highlight';
+import { HighlightBar, parseHl } from '../components/Highlight';
 import { aiReady, getAiConfig, touchStreak } from '../store';
 import { paragraphs, paraLabel, sentences } from '../lib/text';
 import { speak, stopSpeak, ttsAvailable } from '../lib/tts';
@@ -159,6 +159,7 @@ export default function ReadingStudy() {
           </section>
         </aside>
       </div>
+      <HighlightBar scopeClass="passage--study" onLookup={setSel} />
       {sel && <WordPopover sel={sel} vocab={m.vocab} from={m.id} onClose={() => setSel(null)} />}
     </div>
   );

@@ -13,6 +13,7 @@ import { speak, stopSpeak } from '../lib/tts';
 import { fmtTime, isKeyword } from '../lib/text';
 import { bare, check, displayWords, findLesson, frame, LEVEL_NAMES, type CheckResult, type DSentence, type Lesson, lessonsOf, type WordMark } from '../lib/dictation';
 import WordPopover, { Clickable, type WordSel } from '../components/WordPopover';
+import { HighlightBar } from '../components/Highlight';
 import { stopAudio } from '../components/AudioPlayer';
 import { SKILL_META } from './SkillList';
 import { fromDictation } from '../lib/bridge';
@@ -364,6 +365,7 @@ function Runner({ lesson, onNew }: { lesson: Lesson; onNew: () => void }) {
         <button className="btn btn--primary" onClick={doCheck}><Check size={18} /> Kiểm tra</button>
         <button className="btn btn--ghost dl-bar__nav" onClick={() => go(1)} aria-label={pos + 1 >= order.length ? 'Hoàn thành' : 'Câu sau'}>{pos + 1 >= order.length ? <Check size={20} /> : <ChevronRight size={20} />}</button>
       </div>
+      <HighlightBar scopeClass="dict__hint--full" onLookup={setSel} />
       {sel && <WordPopover sel={sel} from={lesson.materialId} onClose={() => setSel(null)} />}
     </div>
   );

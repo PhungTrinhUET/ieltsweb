@@ -1,7 +1,8 @@
 // Highlight nhiều màu: bôi đen một đoạn chữ trong bài → hiện thanh màu ngay cạnh vùng chọn.
 // Lưu trong Note.highlights dạng "<màu>::<chữ>" (bản cũ không có tiền tố = vàng).
+// Thanh này còn có nút "Tra" khi vùng chọn là một cụm ngắn (≤ 8 từ): tra + lưu cụm từ như "carry out", "in terms of".
 import { useEffect, useState } from 'react';
-import { Eraser } from 'lucide-react';
+import { BookmarkPlus, Eraser } from 'lucide-react';
 import { saveNote, useDb } from '../db';
 import { cleanWord } from '../lib/text';
 import type { WordSel } from './WordPopover';
@@ -101,7 +102,7 @@ export function HlText({ text, map, offset = 0, onWord, sentence, para }: { text
     return <span key={i} className={cls} data-w={onWord && /\S/.test(tok) ? cleanWord(tok) || undefined : undefined}>{tok}</span>;
   });
   return (
-    <span data-hlp={para} data-hlo={para != null ? offset : undefined} onClick={onWord ? (e) => {
+    <span data-sent="" data-hlp={para} data-hlo={para != null ? offset : undefined} onClick={onWord ? (e) => {
       const t = e.target as HTMLElement;
       if (t.dataset.w === undefined) return;
       if (window.getSelection()?.toString().trim()) return; // đang bôi chọn để highlight
@@ -134,9 +135,37 @@ function selPieces(range: Range, scope: Element, text: string): HlSel[] {
   return text.split(/\n+/).map(norm).filter((x) => x.length >= 2).map((t) => ({ text: t }));
 }
 
-/** Thanh màu nổi lên khi bôi chọn chữ bên trong phần tử có class `scopeClass`. */
-export function HighlightBar({ scopeClass, onAdd, onRemove }: { scopeClass: string; onAdd: (sel: HlSel[], c: HlColor) => void; onRemove: (sel: HlSel[]) => void }) {
-  const [st, setSt] = useState<{ sel: HlSel[]; x: number; y: number } | null>(null);
+/** Cụm từ tối đa bao nhiêu từ thì cho tra/lưu như một mục từ vựng. */
+const PHRASE_MAX_WORDS = 8;
+/** Vùng chọn ngắn → cụm từ cần tra + câu chứa nó (để tra theo ngữ cảnh và làm ví dụ khi lưu). */
+export function phraseOf(range: Range, text: string): WordSel | null {
+  if (/\n/.test(text.trim())) return null;
+  const phrase = norm(text).replace(/^[^\p{L}\p{N}']+|[^\p{L}\p{N}']+$/gu, '');
+  if (!phrase || phrase.split(' ').length > PHRASE_MAX_WORDS || phrase.length > 80) return null;
+  const start = range.startContainer;
+  const el = start.nodeType === 1 ? (start as Element) : start.parentElement;
+  const host = el?.closest('[data-sent]') ?? el?.closest('p, li, td, dd, blockquote');
+  let sentence = phrase;
+  if (host) {
+    const all = host.textContent ?? '';
+    const r = document.createRange(); r.selectNodeContents(host); r.setEnd(start, range.startOffset);
+    const at = r.toString().length;
+    // mở rộng tới dấu kết câu gần nhất hai phía
+    let a = at; while (a > 0 && !(/[.!?]/.test(all[a - 2] ?? '') && /\s/.test(all[a - 1]))) a--;
+    let b = Math.min(all.length, at + text.length); while (b < all.length && !(/[.!?]/.test(all[b - 1]) && /\s/.test(all[b]))) b++;
+    const cand = norm(all.slice(a, b));
+    sentence = cand.toLowerCase().includes(phrase.toLowerCase()) ? cand : norm(el?.closest('p, li, td')?.textContent ?? all) || phrase;
+  }
+  const rc = range.getBoundingClientRect();
+  return { word: phrase, sentence, x: rc.left + window.scrollX, y: rc.bottom + window.scrollY };
+}
+
+/**
+ * Thanh nổi lên khi bôi chọn chữ bên trong phần tử có class `scopeClass`:
+ * các chấm màu để highlight (nếu có `onAdd`), nút "Tra" để tra/lưu cụm từ (nếu có `onLookup`).
+ */
+export function HighlightBar({ scopeClass, onAdd, onRemove, onLookup }: { scopeClass: string; onAdd?: (sel: HlSel[], c: HlColor) => void; onRemove?: (sel: HlSel[]) => void; onLookup?: (s: WordSel) => void }) {
+  const [st, setSt] = useState<{ sel: HlSel[]; phrase: WordSel | null; x: number; y: number } | null>(null);
   useEffect(() => {
     let t = 0;
     const check = () => {
@@ -149,20 +178,27 @@ export function HighlightBar({ scopeClass, onAdd, onRemove }: { scopeClass: stri
         if (!scope) return setSt(null);
         const range = s.getRangeAt(0);
         const r = range.getBoundingClientRect();
-        setSt({ sel: selPieces(range, scope, text), x: Math.max(8, Math.min(r.left + r.width / 2 - 120, window.innerWidth - 248)), y: r.bottom + 10 > window.innerHeight - 60 ? Math.max(8, r.top - 54) : r.bottom + 10 });
+        const phrase = onLookup ? phraseOf(range, text) : null;
+        if (!onAdd && !phrase) return setSt(null);
+        const w = (onAdd ? 248 : 0) + (phrase ? 72 : 0);
+        setSt({ sel: selPieces(range, scope, text), phrase, x: Math.max(8, Math.min(r.left + r.width / 2 - w / 2, window.innerWidth - w - 8)), y: r.bottom + 10 > window.innerHeight - 60 ? Math.max(8, r.top - 54) : r.bottom + 10 });
       }, 120);
     };
     document.addEventListener('selectionchange', check);
     return () => { document.removeEventListener('selectionchange', check); window.clearTimeout(t); };
-  }, [scopeClass]);
+  }, [scopeClass, !!onAdd, !!onLookup]); // eslint-disable-line react-hooks/exhaustive-deps
   if (!st) return null;
   const done = () => { window.getSelection()?.removeAllRanges(); setSt(null); };
   return (
     <div className="hlbar" style={{ left: st.x, top: st.y }} onMouseDown={(e) => e.preventDefault()} role="toolbar" aria-label="Highlight">
-      {HL_COLORS.map((c) => (
+      {onAdd && HL_COLORS.map((c) => (
         <button key={c.id} className={`hlbar__dot hl--${c.id}`} title={`Tô ${c.label}`} aria-label={`Tô ${c.label}`} onClick={() => { onAdd(st.sel, c.id); done(); }} />
       ))}
-      <button className="hlbar__clear" title="Bỏ highlight ở đoạn đã chọn" aria-label="Bỏ highlight" onClick={() => { onRemove(st.sel); done(); }}><Eraser size={15} /></button>
+      {onRemove && <button className="hlbar__clear" title="Bỏ highlight ở đoạn đã chọn" aria-label="Bỏ highlight" onClick={() => { onRemove(st.sel); done(); }}><Eraser size={15} /></button>}
+      {st.phrase && onLookup && (
+        <button className="hlbar__look" title={`Tra và lưu “${st.phrase.word}”`} data-testid="hl-lookup"
+          onClick={() => { const p = st.phrase!; done(); onLookup(p); }}><BookmarkPlus size={15} /> Tra</button>
+      )}
     </div>
   );
 }

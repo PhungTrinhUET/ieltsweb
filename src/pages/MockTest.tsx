@@ -228,7 +228,8 @@ export function ExamRunner({ skill, ids, name, back, intro, full }: {
         : checked && showScript && lm.transcript.trim()
           ? <ExamSplit left={<ScriptLines key={m.id} transcript={lm.transcript} stored={lm.translation} onWord={setWord} />} right={qs} labels={['Transcript', 'Questions']} storeKey="ielts:script-split" />
           : <div className="xsingle">{qs}</div>}
-      {isR && <HighlightBar scopeClass="xpassage" onAdd={addHl} onRemove={rmHl} />}
+      {isR ? <HighlightBar scopeClass="xpassage" onAdd={addHl} onRemove={rmHl} onLookup={checked ? setWord : undefined} />
+        : checked && <HighlightBar scopeClass="script-lines" onLookup={setWord} />}
       {word && <WordPopover sel={word} vocab={(m as ReadingMaterial).vocab} from={m.id} onClose={() => setWord(null)} />}
       {checked && sheet && res && (
         <ExamSheet onClose={() => setSheet(false)}>

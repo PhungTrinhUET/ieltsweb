@@ -261,6 +261,32 @@ for (const profile of Object.keys(PROFILES)) {
     return { ok: /\/tˈɛst\//.test(head) && /procedure for testing/.test(body) && /tơ, lụa/.test(body), info: `${head.replace(/\s+/g, ' ')} | ${body.replace(/\s+/g, ' ').slice(0, 120)}` };
   });
 
+  await check(`[${profile}] D3 bôi chọn cụm 2 từ → nút "Tra" → tra cụm từ, lưu được`, async () => {
+    await page.route(/api\.(datamuse\.com|mymemory\.translated\.net|dictionaryapi\.dev)/, (r) => r.fulfill({ contentType: 'application/json', headers: { 'access-control-allow-origin': '*' },
+      body: r.request().url().includes('mymemory') ? JSON.stringify({ responseStatus: 200, responseData: { translatedText: 'tiến hành' }, matches: [] }) : '[]' }));
+    const pick = async (scope) => page.evaluate((sc) => {
+      const ws = [...document.querySelectorAll(`${sc} [data-w]`)];
+      const i = ws.findIndex((w, k) => k > 3 && /^[a-z]{3,}$/.test(w.dataset.w) && /^[a-z]{3,}$/.test(ws[k + 1]?.dataset.w ?? '') && w.parentElement === ws[k + 1].parentElement);
+      const r = document.createRange(); r.setStart(ws[i].firstChild, 0); r.setEnd(ws[i + 1].firstChild, ws[i + 1].textContent.length);
+      const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+      return `${ws[i].dataset.w} ${ws[i + 1].dataset.w}`;
+    }, scope);
+    await go(page, '/reading/vol1-t1-r1/practice');
+    if (profile === 'iphone') await page.locator('.tabs--mobile .tabs__btn').first().click();
+    const phrase = await pick('.passage');
+    await page.getByTestId('hl-lookup').click({ timeout: 4000 });
+    await page.waitForSelector('.wpop', { timeout: 5000 });
+    const head = (await page.locator('.wpop__head').innerText()).toLowerCase();
+    const dots = await page.locator('.hlbar').count();
+    // trang Học (chỉ có nút Tra, không chấm màu)
+    await go(page, '/reading/vol1-t1-r1/study');
+    const phrase2 = await page.locator('.passage--study [data-w]').count() ? await pick('.passage--study') : '';
+    const look2 = phrase2 ? await page.getByTestId('hl-lookup').waitFor({ timeout: 3000 }).then(() => 1, () => 0) : -1;
+    const dots2 = await page.locator('.hlbar__dot').count();
+    await page.unrouteAll({ behavior: 'ignoreErrors' });
+    return { ok: head.includes(phrase) && dots === 0 && look2 === 1 && dots2 === 0, info: `"${phrase}" head=${head.replace(/\s+/g, ' ').slice(0, 40)} | study "${phrase2}" nút=${look2} chấm=${dots2}` };
+  });
+
   await check(`[${profile}] T1 Listening luyện tập: Dịch đề từng nhóm + cả bài`, async () => {
     await page.route(/api\.mymemory\.translated\.net/, (r) => r.fulfill({ contentType: 'application/json', headers: { 'access-control-allow-origin': '*' },
       body: JSON.stringify({ responseStatus: 200, responseData: { translatedText: 'VI ' + new URL(r.request().url()).searchParams.get('q').slice(0, 20) }, matches: [] }) }));

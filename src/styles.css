@@ -1426,6 +1426,9 @@ mark { background: #fde68a; color: #1a1a1a; border-radius: 3px; padding: 0 1px; 
 .hlbar { position: fixed; z-index: 60; display: flex; align-items: center; gap: 6px; padding: 6px 8px; border-radius: 999px; background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow-lg); }
 .hlbar__dot { width: 26px; height: 26px; border-radius: 50%; border: 2px solid rgba(0,0,0,.12); cursor: pointer; padding: 0; }
 .hlbar__dot:hover { transform: scale(1.12); }
+.hlbar__look { height: 30px; padding: 0 12px 0 10px; border-radius: 999px; border: none; background: var(--primary); color: var(--on-primary, #fff); display: inline-flex; align-items: center; gap: 5px; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+.hlbar__look:hover { filter: brightness(1.08); }
+.hlbar__clear + .hlbar__look { margin-left: 4px; }
 .hlbar__clear { width: 30px; height: 30px; border-radius: 50%; border: none; background: var(--surface-2); color: var(--text-2); display: grid; place-items: center; cursor: pointer; margin-left: 2px; }
 .hl-list .hl { padding: 0 2px; }
 

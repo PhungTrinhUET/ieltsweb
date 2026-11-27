@@ -15,9 +15,9 @@ export async function translateMany(texts: string[], cfg: AiConfig): Promise<str
 
 // ---------- Tra từ ----------
 const LookupSchema = z.object({
-  word: z.string().describe('Dạng từ điển (lemma) của từ'),
+  word: z.string().describe('Dạng từ điển (lemma) của từ; nếu là cụm từ thì dạng gốc của cụm (vd. "carried out" → "carry out")'),
   ipa: z.string().describe('Phiên âm IPA (Anh-Anh)'),
-  pos: z.string().describe('Loại từ: n, v, adj, adv, phr…'),
+  pos: z.string().describe('Loại từ: n, v, adj, adv; cụm từ: phr v (cụm động từ), idiom, phr (cụm khác)…'),
   meaning: z.string().describe('Nghĩa tiếng Việt đúng với ngữ cảnh câu'),
   meaningEn: z.string().describe('Định nghĩa tiếng Anh ngắn'),
   otherMeanings: z.array(z.string()).describe('Nghĩa khác (tiếng Việt), tối đa 3'),
@@ -29,7 +29,7 @@ const LookupSchema = z.object({
 export type Lookup = z.infer<typeof LookupSchema>;
 export function lookupWord(word: string, sentence: string, cfg: AiConfig) {
   return callStructured(cfg, LookupSchema, 'Bạn là từ điển Anh–Việt theo ngữ cảnh cho người học IELTS.',
-    `Từ: "${word}"\nTrong câu: "${sentence}"`, { light: true, maxTokens: 2000 });
+    `${/\s/.test(word.trim()) ? 'Cụm từ' : 'Từ'}: "${word}"\nTrong câu: "${sentence}"`, { light: true, maxTokens: 2000 });
 }
 
 // ---------- Sinh đề ----------

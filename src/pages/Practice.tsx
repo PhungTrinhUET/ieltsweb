@@ -172,7 +172,7 @@ export default function Practice() {
   const status = <span className="xhead__status">Luyện tập · {done}/{total} câu{checkedNos.length > 0 && <> · đúng <strong>{res.score}/{res.max}</strong></>}</span>;
   const qPane = (
     <div onFocusCapture={trackFocus} onClickCapture={trackFocus}>
-      <p className="small xtip">Không tính giờ. <b>Bấm vào một từ</b> để tra nghĩa · <b>bôi đen</b> để highlight · <Languages size={12} /> cuối {isL ? 'lượt lời' : 'đoạn'} để dịch · <b>Dịch đề</b> ở đầu mỗi nhóm câu · <em>Kiểm tra câu này</em> (câu điền: <Eye size={12} />) để xem đáp án và giải thích.</p>
+      <p className="small xtip">Không tính giờ. <b>Bấm vào một từ</b> để tra nghĩa · <b>bôi đen</b> để highlight hoặc tra cụm từ (nút <b>Tra</b>) · <Languages size={12} /> cuối {isL ? 'lượt lời' : 'đoạn'} để dịch · <b>Dịch đề</b> ở đầu mỗi nhóm câu · <em>Kiểm tra câu này</em> (câu điền: <Eye size={12} />) để xem đáp án và giải thích.</p>
       {err && <p className="no-text small">{err}</p>}
       {questionsPane}
     </div>
@@ -207,7 +207,7 @@ export default function Practice() {
           {showScript && hasScript ? <ExamSplit left={textPane} right={qPane} labels={['Transcript', `Câu hỏi (${done}/${total})`]} storeKey="ielts:practice-split" /> : <div className="xsingle">{qPane}</div>}
         </>
       ) : <ExamSplit left={textPane} right={qPane} labels={['Passage', `Questions (${done}/${total})`]} storeKey="ielts:practice-split" />}
-      <HighlightBar scopeClass="passage" onAdd={hl.add} onRemove={hl.remove} />
+      <HighlightBar scopeClass="passage" onAdd={hl.add} onRemove={hl.remove} onLookup={setSel} />
       {sel && <WordPopover sel={sel} vocab={m.vocab} from={m.id} onClose={() => setSel(null)} />}
     </ExamFrame>
   );

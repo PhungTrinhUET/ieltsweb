@@ -20,6 +20,8 @@ export interface WordSel { word: string; sentence: string; x: number; y: number 
 
 export default function WordPopover({ sel, vocab, from, onClose }: { sel: WordSel; vocab?: Vocab[]; from?: string; onClose: () => void }) {
   const w = cleanWord(sel.word);
+  /** Cụm nhiều từ (bôi chọn) – vd "carry out", "in terms of". */
+  const isPhrase = /\s/.test(w);
   const local = vocab?.find((v) => v[0].toLowerCase() === w || v[0].toLowerCase().split(/[\s/(]/)[0] === w);
   const [dict, setDict] = useState<DictEntry | null | 'busy'>('busy');
   const [vi, setVi] = useState<string | null | 'busy'>(null);
@@ -49,7 +51,7 @@ export default function WordPopover({ sel, vocab, from, onClose }: { sel: WordSe
   const d = dict !== 'busy' ? dict : null;
   const a = typeof ai === 'object' && ai ? ai : null;
   const ipa = a?.ipa || d?.phonetic || d?.phonetics?.find((p) => p.text)?.text || '';
-  const pos = a?.pos || local?.[1] || (d?.meanings[0] ? POS_VI[d.meanings[0].partOfSpeech] ?? d.meanings[0].partOfSpeech : '');
+  const pos = a?.pos || local?.[1] || (d?.meanings[0] ? POS_VI[d.meanings[0].partOfSpeech] ?? d.meanings[0].partOfSpeech : '') || (isPhrase ? 'phr' : '');
   const meaningVi = a?.meaning || (typeof vi === 'string' ? vi : '') || '';
   const meaningEn = a?.meaningEn || d?.meanings[0]?.definitions[0]?.definition || '';
 
@@ -89,7 +91,7 @@ export default function WordPopover({ sel, vocab, from, onClose }: { sel: WordSe
     el.style.top = `${Math.max(window.scrollY + 8, Math.min(sel.y + 8, bottom - el.offsetHeight))}px`;
   });
   return (
-    <div className="wpop" ref={box} style={style} role="dialog" aria-label={`Tra từ ${w}`}>
+    <div className="wpop" ref={box} style={style} role="dialog" aria-label={`Tra ${isPhrase ? 'cụm từ' : 'từ'} ${w}`}>
       <div className="wpop__head">
         <strong>{a?.word ?? local?.[0] ?? w}</strong>
         {ipa && <span className="muted small">{ipa}</span>}
@@ -153,9 +155,10 @@ export default function WordPopover({ sel, vocab, from, onClose }: { sel: WordSe
 /** Văn bản mà mỗi từ bấm được; `sentence` để tra theo ngữ cảnh. */
 export function Clickable({ text, onWord, className }: { text: string; onWord: (s: WordSel) => void; className?: string }) {
   return (
-    <span className={className} onClick={(e) => {
+    <span className={className} data-sent="" onClick={(e) => {
       const t = e.target as HTMLElement;
       if (t.dataset.w === undefined) return;
+      if (window.getSelection()?.toString().trim()) return; // đang bôi chọn cụm từ
       const r = t.getBoundingClientRect();
       onWord({ word: t.dataset.w, sentence: text, x: r.left + window.scrollX, y: r.bottom + window.scrollY });
     }}>
