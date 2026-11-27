@@ -1,7 +1,10 @@
-// Dịch Anh → Việt miễn phí, không cần API key: MyMemory (api.mymemory.translated.net, CORS mở).
-// Giới hạn ẩn danh ~5000 ký tự/ngày/IP, mỗi lượt ≤ 500 byte → tách theo câu, cache trong localStorage.
+// Dịch Anh → Việt miễn phí, không cần API key:
+// 1) Google Translate (clients5.google.com, cổng của tiện ích từ điển Chrome; CORS mở) – chuẩn hơn nhiều, có nghĩa theo từ loại;
+// 2) dự phòng MyMemory (api.mymemory.translated.net, ~5000 ký tự/ngày/IP, mỗi lượt ≤ 500 byte; với từ đơn hay trả nghĩa lạc).
+// Tách theo câu, cache trong localStorage.
 
-const CACHE_KEY = 'ielts-free-tr-v1';
+const CACHE_KEY = 'ielts-free-tr-v2'; // v1 chứa bản dịch từ đơn kém của MyMemory → bỏ
+try { localStorage.removeItem('ielts-free-tr-v1'); } catch { /* */ }
 let cache: Record<string, string> | null = null;
 function load(): Record<string, string> {
   if (cache) return cache;
@@ -20,10 +23,32 @@ function store(k: string, v: string) {
 
 export class QuotaError extends Error {}
 
+/** Nghĩa theo từ loại (Google): [{ pos: 'v', terms: ['cấm', 'ngăn trở'] }]. */
+export interface ViSense { pos: string; terms: string[] }
+const GPOS: Record<string, string> = { noun: 'n', verb: 'v', adjective: 'adj', adverb: 'adv', preposition: 'prep', conjunction: 'conj', pronoun: 'pron', interjection: 'interj', phrase: 'phr', abbreviation: 'abbr' };
+const senseCache = new Map<string, ViSense[]>();
+
+async function google(text: string): Promise<{ text: string; senses: ViSense[] }> {
+  const r = await fetch(`https://clients5.google.com/translate_a/single?client=dict-chrome-ex&sl=en&tl=vi&dt=t&dt=bd&dj=1&q=${encodeURIComponent(text)}`);
+  if (!r.ok) throw new Error(`Google ${r.status}`);
+  const d = await r.json() as { sentences?: { trans?: string }[]; dict?: { pos: string; terms: string[] }[] };
+  const out = (d.sentences ?? []).map((x) => x.trans ?? '').join('').trim();
+  if (!out) throw new Error('Google: rỗng');
+  return { text: out, senses: (d.dict ?? []).map((x) => ({ pos: GPOS[x.pos] ?? x.pos, terms: x.terms.slice(0, 5) })) };
+}
+
 async function one(text: string): Promise<string> {
   const key = text.trim();
   const hit = load()[key];
   if (hit) return hit.replace(/\s+([,;:.!?])/g, '$1').replace(/([,;])(?=[^\s\d])/g, '$1 ');
+  try {
+    const g = await google(key);
+    let out = g.text;
+    if (!/\s/.test(key) && key === key.toLowerCase()) out = out.toLowerCase();
+    if (g.senses.length) senseCache.set(key.toLowerCase(), g.senses);
+    store(key, out);
+    return out;
+  } catch { /* Google chặn/lỗi → MyMemory */ }
   const r = await fetch(`https://api.mymemory.translated.net/get?langpair=en|vi&q=${encodeURIComponent(key)}`);
   if (!r.ok) throw new Error(`Dịch miễn phí lỗi (${r.status})`);
   const d = await r.json();
@@ -56,6 +81,17 @@ export async function freeTranslate(text: string): Promise<string> {
   const out: string[] = [];
   for (const p of parts) out.push(await one(p));
   return out.join(' ');
+}
+
+/** Nghĩa Việt của một từ/cụm + các nghĩa theo từ loại (nếu nguồn có). */
+export async function freeWordVi(word: string): Promise<{ vi: string; senses: ViSense[] }> {
+  const k = word.trim().toLowerCase();
+  let senses = senseCache.get(k);
+  if (!senses) {
+    try { const g = await google(word.trim()); senses = g.senses; senseCache.set(k, senses); if (!load()[word.trim()]) store(word.trim(), /\s/.test(k) ? g.text : g.text.toLowerCase()); }
+    catch { senses = []; }
+  }
+  return { vi: await freeTranslate(word), senses };
 }
 
 /** Dịch: ưu tiên AI nếu đã cấu hình (chính xác hơn), không thì dùng bản miễn phí. */

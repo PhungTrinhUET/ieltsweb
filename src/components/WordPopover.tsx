@@ -11,7 +11,7 @@ import { deckName, decksOfCard, rememberDeck, saveWordTo } from '../lib/decks';
 import { DeckSelect, useDeckChoice } from './DeckPicker';
 import { speak } from '../lib/tts';
 import { cleanWord } from '../lib/text';
-import { freeTranslate, translateText } from '../lib/freeTranslate';
+import { freeWordVi, translateText, type ViSense } from '../lib/freeTranslate';
 import type { Lookup } from '../ai/assist';
 import { type DictEntry, freeDict, POS_VI } from '../lib/dict';
 
@@ -25,6 +25,7 @@ export default function WordPopover({ sel, vocab, from, onClose }: { sel: WordSe
   const local = vocab?.find((v) => v[0].toLowerCase() === w || v[0].toLowerCase().split(/[\s/(]/)[0] === w);
   const [dict, setDict] = useState<DictEntry | null | 'busy'>('busy');
   const [vi, setVi] = useState<string | null | 'busy'>(null);
+  const [senses, setSenses] = useState<ViSense[]>([]);
   const [ai, setAi] = useState<Lookup | null | 'busy' | string>(null);
   const [sentVi, setSentVi] = useState<string | 'busy' | null>(null);
   const [err, setErr] = useState('');
@@ -37,15 +38,23 @@ export default function WordPopover({ sel, vocab, from, onClose }: { sel: WordSe
   const hasAi = aiReady(getAiConfig());
 
   useEffect(() => {
-    setDict('busy'); setAi(null); setSentVi(null); setErr(''); setForm(null); setJustSaved('');
+    setDict('busy'); setAi(null); setSentVi(null); setErr(''); setForm(null); setJustSaved(''); setSenses([]);
     freeDict(w).then(setDict);
     if (local) setVi(local[2]);
-    else { setVi('busy'); freeTranslate(w).then(setVi, (e) => { setVi(null); setErr(e instanceof Error ? e.message : String(e)); }); }
+    else setVi('busy');
+    freeWordVi(w).then((r) => { if (!local) setVi(r.vi); setSenses(r.senses); }, (e) => { if (!local) { setVi(null); setErr(e instanceof Error ? e.message : String(e)); } });
   }, [w]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => {
     const esc = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+    // Bấm ra ngoài popup → đóng (bấm vào từ khác thì popup mới mở ngay sau đó; thanh "Tra" cụm từ không tính là ngoài).
+    const out = (e: PointerEvent) => {
+      const t = e.target as Element | null;
+      if (!t || box.current?.contains(t) || t.closest?.('.hlbar')) return;
+      onClose();
+    };
     document.addEventListener('keydown', esc);
-    return () => document.removeEventListener('keydown', esc);
+    document.addEventListener('pointerdown', out, true);
+    return () => { document.removeEventListener('keydown', esc); document.removeEventListener('pointerdown', out, true); };
   }, [onClose]);
 
   const d = dict !== 'busy' ? dict : null;
@@ -103,7 +112,12 @@ export default function WordPopover({ sel, vocab, from, onClose }: { sel: WordSe
         <span className="wpop__k">Nghĩa</span>
         <span className="wpop__vi">{pos && <em>{pos}</em>} {vi === 'busy' && !a ? <Loader2 size={13} className="spin" /> : meaningVi || <span className="muted">—</span>}</span>
       </div>
-      {a && a.otherMeanings.length > 0 && <div className="wpop__row"><span className="wpop__k">Nghĩa khác</span><span className="small">{a.otherMeanings.join('; ')}</span></div>}
+      {a && a.otherMeanings.length > 0 ? <div className="wpop__row"><span className="wpop__k">Nghĩa khác</span><span className="small">{a.otherMeanings.join('; ')}</span></div>
+        : !a && senses.length > 0 && (
+          <div className="wpop__row" data-testid="wpop-senses"><span className="wpop__k">Nghĩa khác</span>
+            <span className="small">{senses.slice(0, 3).map((x, i) => <span key={i} className="wpop__def"><em>{x.pos}</em> {x.terms.join(', ')}</span>)}</span>
+          </div>
+        )}
       {dict === 'busy' ? <p className="small muted"><Loader2 size={13} className="spin" /> Đang tra từ điển…</p> : (meaningEn || (d && d.meanings.length > 1)) ? (
         <div className="wpop__row">
           <span className="wpop__k">English</span>

@@ -39,6 +39,8 @@ async function newPage(profile) {
   await ctx.addInitScript(FAKE_VOICES);
   // Bỏ qua màn hình chào/đăng nhập (đã có kiểm tra L1 riêng).
   if (profile !== 'fresh') await ctx.addInitScript(() => { try { localStorage.setItem('sb:ieltsweb:guest', '1'); } catch { /* */ } });
+  // Dịch miễn phí: Google (clients5) bị chặn mặc định → các kiểm tra dùng bản giả lập MyMemory như cũ; D4 giả lập Google riêng.
+  await ctx.route(/clients5\.google\.com/, (r) => r.abort());
   const page = await ctx.newPage();
   page.errors = [];
   page.on('pageerror', (e) => page.errors.push(`pageerror: ${e.message}`));
@@ -285,6 +287,25 @@ for (const profile of Object.keys(PROFILES)) {
     const dots2 = await page.locator('.hlbar__dot').count();
     await page.unrouteAll({ behavior: 'ignoreErrors' });
     return { ok: head.includes(phrase) && dots === 0 && look2 === 1 && dots2 === 0, info: `"${phrase}" head=${head.replace(/\s+/g, ' ').slice(0, 40)} | study "${phrase2}" nút=${look2} chấm=${dots2}` };
+  });
+
+  await check(`[${profile}] D4 nghĩa Việt từ Google (có nghĩa theo loại từ); bấm ra ngoài popup thì tự đóng`, async () => {
+    await page.route(/clients5\.google\.com/, (r) => r.fulfill({ contentType: 'application/json', headers: { 'access-control-allow-origin': '*' },
+      body: JSON.stringify({ sentences: [{ trans: 'BỊ CẤM', orig: 'x' }], dict: [{ pos: 'verb', terms: ['cấm', 'ngăn trở'] }] }) }));
+    await page.route(/api\.(datamuse\.com|mymemory\.translated\.net|dictionaryapi\.dev)/, (r) => r.fulfill({ contentType: 'application/json', headers: { 'access-control-allow-origin': '*' },
+      body: r.request().url().includes('mymemory') ? JSON.stringify({ responseStatus: 200, responseData: { translatedText: 'văn bản' }, matches: [] }) : '[]' }));
+    await go(page, '/reading/vol1-t1-r2/practice');
+    if (profile === 'iphone') await page.locator('.tabs--mobile .tabs__btn').first().click();
+    await page.locator('.passage [data-w]').nth(9).click();
+    await page.waitForSelector('[data-testid="wpop-senses"]', { timeout: 5000 });
+    const body = (await page.locator('.wpop').innerText()).replace(/\s+/g, ' ');
+    // bấm vào tiêu đề Part (ngoài popup) → đóng
+    await page.locator('.passage h2, .passage h3, .passage__p').first().click({ position: { x: 2, y: 2 } });
+    await page.waitForTimeout(300);
+    const left = await page.locator('.wpop').count();
+    await page.unrouteAll({ behavior: 'ignoreErrors' });
+    await page.context().route(/clients5\.google\.com/, (r) => r.abort());
+    return { ok: /bị cấm/.test(body) && !/văn bản/.test(body) && /cấm, ngăn trở/.test(body) && left === 0, info: `${body.slice(0, 110)} | còn popup=${left}` };
   });
 
   await check(`[${profile}] T1 Listening luyện tập: Dịch đề từng nhóm + cả bài`, async () => {
